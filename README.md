@@ -11,7 +11,7 @@ A gamification platform for reading
 
 ## I know how many words I've read
 
-- [ ] I know how many words I've read from The Wandering Inn
+- [x] I know how many words I've read from The Wandering Inn
 - [ ] I know how many words I've read on Royal Road
 - [ ] I know how many words I've read on Kindle
 - [ ] I know how many words I've read on Audible

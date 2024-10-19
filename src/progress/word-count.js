@@ -52,6 +52,8 @@ async function countWordsInJsonFiles(baseDirectoryPath) {
   }
 }
 
-// Usage
-const baseDirectoryPath = './data';
-countWordsInJsonFiles(baseDirectoryPath);
+if (import.meta.url === `file://${process.argv[1]}`) {
+  const baseDirectoryPath = './data';
+  countWordsInJsonFiles(baseDirectoryPath);
+}
+
