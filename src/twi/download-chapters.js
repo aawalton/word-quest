@@ -8,19 +8,19 @@ const { setTimeout } = require('timers/promises');
 async function downloadChapters() {
   try {
     // Read the table of contents JSON file
-    const tocPath = path.join('data', 'twi', 'table-of-contents.json');
+    const tocPath = path.join('data', 'twi', 'json', 'table-of-contents.json');
     const tocData = await fs.readFile(tocPath, 'utf-8');
     const chapters = JSON.parse(tocData);
 
     // Create the output directory if it doesn't exist
-    const outputDir = path.join('data', 'twi', 'chapters');
+    const outputDir = path.join('data', 'twi', 'html');
     await fs.mkdir(outputDir, { recursive: true });
 
     // Launch a browser instance
     const browser = await puppeteer.launch();
 
     for (const chapter of chapters) {
-      const { title, url } = chapter;
+      const { number, title, url } = chapter;
       console.log(`Downloading: ${title}`);
 
       // Create a new page for each chapter
@@ -34,9 +34,10 @@ async function downloadChapters() {
       });
 
       if (content) {
-        // Create a safe filename from the chapter title
+        // Create a safe filename from the chapter title with a 4-digit zero-padded prefix
         const safeTitle = title.replace(/[^a-z0-9]/gi, '_').toLowerCase();
-        const fileName = `${safeTitle}.html`;
+        const paddedNumber = number.toString().padStart(4, '0');
+        const fileName = `${paddedNumber}_${safeTitle}.html`;
         const filePath = path.join(outputDir, fileName);
 
         // Write the content to a file
