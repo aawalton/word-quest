@@ -14,7 +14,7 @@ async function downloadTableOfContents() {
     const htmlContent = await page.content();
     
     // Ensure the directory exists
-    const dirPath = path.join('data/twi/html');
+    const dirPath = path.join('data/twi');
     await fs.mkdir(dirPath, { recursive: true });
     
     // Write the HTML content to a file

@@ -7,7 +7,7 @@ async function parseTableOfContents() {
   const page = await browser.newPage();
 
   // Load the HTML file
-  const htmlPath = path.join(__dirname, '..', '..', 'data', 'twi', 'html', 'table-of-contents.html');
+  const htmlPath = path.join(__dirname, '..', '..', 'data', 'twi', 'table-of-contents.html');
   await page.goto(`file://${htmlPath}`);
 
   const chapters = await page.evaluate(() => {
@@ -35,7 +35,7 @@ async function parseTableOfContents() {
   }));
 
   // Save the result as JSON
-  const jsonPath = path.join(__dirname, '..', '..', 'data', 'twi', 'json', 'table-of-contents.json');
+  const jsonPath = path.join(__dirname, '..', '..', 'data', 'twi', 'table-of-contents.json');
   await fs.writeFile(jsonPath, JSON.stringify(numberedChapters, null, 2));
 
   console.log(`Table of contents saved to ${jsonPath}`);

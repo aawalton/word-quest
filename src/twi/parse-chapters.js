@@ -26,7 +26,7 @@ async function extractChapterText(filePath) {
 }
 
 async function processChapters() {
-  const chaptersDir = path.join(__dirname, '..', '..', 'data', 'twi', 'chapters');
+  const chaptersDir = path.join(__dirname, '..', '..', 'data', 'twi', 'html');
   const outputDir = path.join(__dirname, '..', '..', 'data', 'twi', 'json');
 
   try {

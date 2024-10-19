@@ -8,7 +8,7 @@ const { setTimeout } = require('timers/promises');
 async function downloadChapters() {
   try {
     // Read the table of contents JSON file
-    const tocPath = path.join('data', 'twi', 'json', 'table-of-contents.json');
+    const tocPath = path.join('data', 'twi', 'table-of-contents.json');
     const tocData = await fs.readFile(tocPath, 'utf-8');
     const chapters = JSON.parse(tocData);
 
