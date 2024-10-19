@@ -24,7 +24,6 @@ async function calculateLevelInfo() {
       xpRemainingForNextLevel,
       xpGainedTowardsNextLevel,
       percentProgressToNextLevel: Math.round(percentProgressToNextLevel * 100) / 100, // Round to 2 decimal places
-      xpNeededForNextLevel,
     };
   } catch (error) {
     console.error('Error:', error.message);
@@ -34,7 +33,6 @@ async function calculateLevelInfo() {
       xpRemainingForNextLevel: 1000,
       xpGainedTowardsNextLevel: 0,
       percentProgressToNextLevel: 0,
-      xpNeededForNextLevel: 1000,
     };
   }
 }
@@ -43,10 +41,9 @@ if (import.meta.url === `file://${process.argv[1]}`) {
   calculateLevelInfo().then(({ currentLevel, totalXp, xpRemainingForNextLevel, xpGainedTowardsNextLevel, percentProgressToNextLevel, xpNeededForNextLevel }) => {
     console.log(`Current level: ${currentLevel}`);
     console.log(`Total XP: ${totalXp}`);
-    console.log(`XP remaining for next level: ${xpRemainingForNextLevel}`);
-    console.log(`XP gained towards next level: ${xpGainedTowardsNextLevel}`);
+    console.log(`XP needed for next level: ${xpRemainingForNextLevel}`);
+    console.log(`XP gained for next level: ${xpGainedTowardsNextLevel}`);
     console.log(`Progress towards next level: ${percentProgressToNextLevel}%`);
-    console.log(`Total XP required for next level: ${xpNeededForNextLevel}`);
   });
 }
 
