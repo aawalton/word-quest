@@ -63,8 +63,7 @@ export async function processChapters() {
         // Check if the output file already exists
         try {
           await fs.access(outputPath);
-          console.log(`Skipping: ${file} (already processed)`);
-          continue; // Skip to the next file
+          continue; // Skip to the next file without logging
         } catch (error) {
           // File doesn't exist, proceed with processing
         }

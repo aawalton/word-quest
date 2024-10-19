@@ -1,0 +1,1405 @@
+
+
+          <span class="nav-previous">
+        <a href="https://wanderinginn.com/2024/03/20/10-08-pt-1/" rel="prev"><span class="meta-nav">←</span> Previous Chapter</a>    </span>
+    <span class="nav-next" style="float: right" ;="">
+        <a href="https://wanderinginn.com/2024/03/24/10-09-e/" rel="next">Next Chapter <span class="meta-nav">→</span></a>    </span>
+      <!-- <hr/> -->
+      <header class="entry-header">
+        <h1 class="entry-title">10.08 (Pt. 2)</h1>
+                <button class="show-settings-btn" onclick="document.querySelector('#reader-settings-wrapper').classList.toggle('is-hidden')">
+          <img class="show-settings-btn-img" src="https://wanderinginn.com/wp-content/themes/solstice/assets/images/ui/reader-settings-button.webp">
+        </button>
+      </header>
+
+      
+<!-- Reader Settings -->
+<div id="reader-settings-wrapper" class="is-hidden">
+    <div id="reader-settings">
+        <header id="reader-settings-header">
+            <h2>Reader Settings</h2>
+            <button onclick="closeModal()">
+                <svg width="100%" height="100%" viewBox="0 0 33 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M16.5 30.75C24.0939 30.75 30.25 24.5939 30.25 17C30.25 9.40608 24.0939 3.25 16.5 3.25C8.90608 3.25 2.75 9.40608 2.75 17C2.75 24.5939 8.90608 30.75 16.5 30.75Z" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M20.625 12.875L12.375 21.125" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M12.375 12.875L20.625 21.125" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+            </button>
+        </header>
+
+        <fieldset id="fieldset-font">
+            <legend>Font</legend>
+
+            <div>
+                <label for="font-size-select">Size</label>
+                <select id="font-size-select" class="reader-settings-select" data-setting="reader-font-size" onchange="updateSetting(this.getAttribute('data-setting'), this.value);">
+                    <option value="10pt" class="reader-settings-option">10</option>
+                    <option value="11pt" class="reader-settings-option">11</option>
+                    <option value="12pt" class="reader-settings-option" selected="">12</option>
+                    <option value="13pt" class="reader-settings-option">13</option>
+                    <option value="14pt" class="reader-settings-option">14</option>
+                    <option value="16pt" class="reader-settings-option">16</option>
+                    <option value="18pt" class="reader-settings-option">18</option>
+                    <option value="20pt" class="reader-settings-option">20</option>
+                    <option value="22pt" class="reader-settings-option">22</option>
+                    <option value="24pt" class="reader-settings-option">24</option>
+                    <option value="26pt" class="reader-settings-option">26</option>
+                    <option value="28pt" class="reader-settings-option">28</option>
+                    <option value="30pt" class="reader-settings-option">30</option>
+                    <option value="36pt" class="reader-settings-option">36</option>
+                    <option value="42pt" class="reader-settings-option">42</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="font-family-select">Family</label>
+                <select id="font-family-select" class="reader-settings-select" data-setting="reader-font-family" onchange="updateSetting(this.getAttribute('data-setting'), this.value);">
+                    <optgroup label="Sans Serif">
+                        <option class="reader-settings-option" value="OpenSans, sans-serif" selected="">Open Sans</option>
+                        <option class="reader-settings-option" value="Arial, Helvetica, sans-serif">Arial</option>
+                        <option class="reader-settings-option" value="Roboto, sans-serif">Roboto</option>
+                    </optgroup>
+                    <optgroup label="Serif">
+                        <option class="reader-settings-option" value="Playfair, serif">Playfair</option>
+                        <option class="reader-settings-option" value="EBGaramond, serif">Garamond</option>
+                        <option class="reader-settings-option" value="'Times New Roman', Times, serif">Times New Roman</option>
+                    </optgroup>
+                    <optgroup label="Other">
+                        <option class="reader-settings-option" value="OpenDyslexic">OpenDyslexic</option>
+                        <option class="reader-settings-option" value="HennyPenny">Henny Penny</option>
+                    </optgroup>
+                </select>
+            </div>
+            <div>
+                <label for="font-weight-select">Thickness</label>
+                <select id="font-weight-select" class="reader-settings-select" data-setting="reader-font-weight" onchange="updateSetting(this.getAttribute('data-setting'), this.value);">
+                    <option class="reader-settings-option" value="300" selected="">Thin</option>
+                    <option class="reader-settings-option" value="400">Regular</option>
+                    <option class="reader-settings-option" value="500">Thick</option>
+                </select>
+            </div>
+        </fieldset>
+
+        <fieldset id="fieldset-spacing">
+            <legend>Spacing</legend>
+            <div>
+                <label for="margins-select">Page Width</label>
+                <select id="margins-select" class="reader-settings-select" data-setting="reader-article-width" onchange="updateSetting(this.getAttribute('data-setting'), this.value);">
+                    <option value="320px" class="reader-settings-option">Extra Narrow</option>
+                    <option value="500px" class="reader-settings-option">Narrow</option>
+                    <option value="680px" class="reader-settings-option" selected="">Medium</option>
+                    <option value="1000px" class="reader-settings-option">Wide</option>
+                    <option value="1200px" class="reader-settings-option">Extra Wide</option>
+                    <option value="100%" class="reader-settings-option">Max</option>
+                </select>
+            </div>
+            <div>
+                <label for="line-spacing-select">Line</label>
+                <select id="line-spacing-select" class="reader-settings-select" data-setting="reader-line-height" onchange="updateSetting(this.getAttribute('data-setting'), this.value);">
+                    <option class="reader-settings-option" value="1.2">Small</option>
+                    <option class="reader-settings-option" value="1.625" selected="">Medium</option>
+                    <option class="reader-settings-option" value="2.2">Large</option>
+                    <option class="reader-settings-option" value="3.5">Extra Large</option>
+                </select>
+            </div>
+            <div>
+                <label for="paragraph-spacing-select">Paragraph</label>
+                <select id="paragraph-spacing-select" class="reader-settings-select" data-setting="reader-paragraph-spacing" onchange="updateSetting(this.getAttribute('data-setting'), this.value);">
+                    <option class="reader-settings-option" value="0.5em">Small</option>
+                    <option class="reader-settings-option" value="1.625em" selected="">Medium</option>
+                    <option class="reader-settings-option" value="2.75em">Large</option>
+                    <option class="reader-settings-option" value="4.25em">Extra Large</option>
+                </select>
+            </div>
+        </fieldset>
+        <div class="ml-5 mb-4">
+            <label for="theme-select">Theme</label>
+            <select id="theme-select" class="reader-settings-select" data-setting="reader-theme" onchange="updateSetting(this.getAttribute('data-setting'), this.value);">
+                <option class="reader-settings-option" value="reader-theme-grey" selected="">Dark Grey</option>
+                <option class="reader-settings-option" value="reader-theme-blue">Dark Blue</option>
+                <option class="reader-settings-option" value="reader-theme-black">Black</option>
+                <option class="reader-settings-option" value="reader-theme-white">White</option>
+                <option class="reader-settings-option" value="reader-theme-sepia">Sepia</option>
+            </select>
+        </div>
+        <button id="reset-settings-btn" onclick="resetSettings()">Reset To Default</button>
+        <!-- <div> -->
+        <!-- </div> -->
+
+
+    </div>
+</div>
+      <div class="entry-content">
+        <p><strong>(Two chapters were released at the same time! Make sure you’ve read 10.08 (Pt. 1) before this one!)</strong></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>It took Erin Solstice a full day and a bit to get to Elvallian, but she made it without further incident. The Selphids who had split from Hoisq’s force needed patching up and reclassifying as ‘her’ [Soldiers]. Lizardfolk had to be dispersed away from Forgotten Wing territory, their oath or not.</p>
+<p>Gloriam had to have a shouting match with Niers and then try the same with Foliana, and of course, the television crews did their best to get to anyone important in Elvallian. Niers had them funneled at the students, who had a lovely time realizing everything they said could and would be broadcast on the news for all to see and to define their personality in the eyes of…everyone.</p>
+<p>—But largely, things were uneventful. Forgotten Wing was capable of dealing with these things, and Strategist Mella conducted her duty of escorting Erin to the city <em>without further incident</em> quite satisfactorily.</p>
+<p>Erin Solstice still entered the gates of the city like a storm. In deference to his perceived understanding of her personality, Niers had not arranged for a full parade. But he didn’t restrict the citizens, and the moment her band of strange folk—Earthers, Selphids, Fraerlings, and Erin Solstice herself—slowed, he could hear cheering at the gates.</p>
+<p>For once, the Titan didn’t want to see Erin Solstice on a scrying orb as he stood just inside the palace’s reception hall. It was a lovely place for visitors, new students, and enemies to arrive; it had this courtyard-like feeling. Plush, fireproof carpets. Balconies on either side where you could wave down to intruders trying to take the entryway.</p>
+<p>Foliana and Niers stood on the far end of the walkway as the floor raised two feet, ending in a left and right hallway behind them. Niers had dressed himself in what he’d call battle-finery: red coat, polished black boots, feather in his cap, blue undershirt; like a colorful cardinal perched on a pedestal.</p>
+<p>Foliana had her armor on. When Niers had snapped at her, she’d put a yellow flower behind one ear. She was still nibbling at some, by now, moldy mac and cheese. People kept trying to take it from her. In the end, Niers had Beth dragged to one side.</p>
+<p>He was watching the image of Erin Solstice getting closer out of the corner of his eye. She was riding with the Bushrangers, who were waving awkwardly or trying to look cool as personalities dictated. But Erin Solstice? She had a raised fist and had a half-smile on her face.</p>
+<p><em>The Selphids are cheering her. </em>Elvallian had a large contingent, but Niers swore it just wasn’t them.</p>
+<p>“Tallguard Commanders. Find out <em>who</em> broke the restrictions on leaving the palace and censure them. No objections.”</p>
+<p>Iuncuta Eirnos was in a bad mood. However, the Fraerlings who were lining the roofs and gutters were shouting gustily, and Niers happened to know Commander Rozcal and his entire Crelerbane Armor unit had snuck out this morning.</p>
+<p>To them, the Tallguard of Feiland were real heroes who had gone down to the wire against a Tallfolk company in defense of their city. Niers swore he could hear Rozcal bellowing, a catch in his voice. He couldn’t see Tallguard Cotm or Enchanter Resk, but he reminded himself to shake their hands.</p>
+<p>But Erin? Ryoka Griffin was staring at the orb, as pale-faced as she had been yesterday. She didn’t look like she’d slept. Wil, Merrik, Venaz, and Peki were all pushing among the students standing behind the columns of soldiers at attention, looking just as surprised as everyone else.</p>
+<p>No one knew what had come over her. It was like her and not. But all Niers thought was—</p>
+<p><em>Time to finally meet her.</em></p>
+<p>He had a dreadful feeling of anticipation as he always had had when two sides of an army were running at each other. Watching a full squadron of Centaurs dipping their lances. Hearing the screams give way to silence as bodies accelerated, straining for every bit of momentum before the clash.</p>
+<p>Ryoka Griffin sneezed. Everyone stared at her. She turned red as Geneva fished for a handkerchief, and the Wind Runner brushed at the feather tickling her nose. Then she took the handkerchief from Foliana, saw the Squirrel Beastkin staring at her, and screamed.</p>
+<p>“<em>Aaah!</em>”</p>
+<p>“Foliana. Behave.”</p>
+<p>Seneschal Atmodeca spoke, and Foliana hopped away from Ryoka with a pleased look on her face. The illusion of her standing next to Niers wavered, and the Titan didn’t quite glare at Foliana as the audience tittered.</p>
+<p>She’d been doing this all of yesterday, and the hand Ryoka put over her heart indicated the Wind Runner was regretting embarrassing Foliana. The [Rogue] had ambushed Ryoka multiple times, despite whatever trick Ryoka had. She’d hidden under Ryoka’s bed, in a cupboard, snuck up on Ryoka over twelve times—even tied a Fraerling into the Wind Runner’s hair without either noticing.</p>
+<p>…The cupboard was pretty funny. Ryoka hadn’t had anything to eat like Foliana expected, so Geneva ended up opening the cupboard six minutes later and seeing a very sad, squished Squirrel Beastkin staring at her.</p>
+<p>—He was waiting so long with the urbane amusement of the distracted, unable to sit in any moment, because the one he was waiting for was here at last. Never as he expected. Niers kept thinking of Erin’s strange transformation. It fit exactly zero Skills on record. Some elements, maybe. Transformation Skills were a thing. But for an [Innkeeper]? Why horns, and how did it square with her class?</p>
+<p>Why Ramok? No, seriously. She did <em>not</em> know the Selphids. Now she did, and now they owed her a favor, but she had run in there like she really was a heroine who saved anyone who caught her eye. And she wasn’t. Was it guilt? Trauma? A plan he couldn’t see? Gloriam being a shitass annoyance? Why Erek?</p>
+<p>“—<em>Erin Solstice, the Innkeeper of Liscor!</em>”</p>
+<p>Then he almost missed the moment she walked in. Niers jerked upright. His head rose, and he saw a group of twelve Humans, the Bushrangers, walking in a loose circle around a young woman who slowed a step as she saw the procession.</p>
+<p>The cheering had fallen silent, and in this place, no one said a word.</p>
+<p>Veteran [Soldiers], students, Fraerlings, and distant leaders like Gloriam, Diomedes, and even Perorn looked at the young woman who stood there. A vast mirror showed Diomedes’ eye; Perorn’s face reflected the moving terrain behind her.</p>
+<p>Erin Solstice was taller than he remembered. Right. Paeth had made her taller. Niers saw she had travelling clothing on: leather armor that clashed with the lighter cloth she wore. Sensible. She had a crossbow hanging conspicuously at her side, a holster for a wand at her hip, and two more wands hidden on her back.</p>
+<p>“<em>Dagger on a necklace. Six magical rings. Unknown-grade enchantment defying all [Appraisal] and other analysis—</em>”</p>
+<p>Niers slapped his earpiece, and the appraisal coming from one of their top [Mages] cut off. Everything was going wrong.</p>
+<p>Including the fact that absolutely no one was applauding as Atmodeca announced Erin Solstice in. Niers shot a glare at Perorn, and Commander Fleethoof gave him a steady stare. Had she dropped the ball on <em>applause?</em></p>
+<p>Erin Solstice slowly walked forwards on the gentle, royal Terandrian red carpet, eyes taking in the vast entryway, the ranks of [Soldiers], the Fraerlings gathered on pedestals or watching from high above.</p>
+<p>She paused at the scrying mirrors reflecting Gloriam’s and Diomedes’ stares. Her eyes followed the course of the room to Niers. She almost tripped; Siri had to catch her.</p>
+<p>No one laughed. The [Innkeeper] regained her posture, and Niers studied her face. Erin Solstice wasn’t smiling. She wasn’t glaring either, but her lips were a faint line on her face. The precursor to a frown. Her eyes were flinty hazel, set, determined.</p>
+<p>Yet he felt like something shone from those depths. A kind of wonder and excitement. She took a few more steps forwards, breathing in and out, then—stopped.</p>
+<p>Not a sound came from the [Soldiers] on her right and left. They stared at her in perfect military straightness, bearing the Forgotten Wing’s sigil—a stylized face of Foliana and a tiny Fraerling resting on a wing—on their chests.</p>
+<p>Erin Solstice looked into the eyes of a Gorgon. Then at a Dullahan holding his head under one arm, staring through the air just past her navel. She walked forwards, and a Centauress looked down at her as a Selphid held a spear upright, chin raised, smiling slightly.</p>
+<p>Erin half turned, and Daly Sullivan jerked his head towards Niers as if to indicate she was keeping him waiting. But the [Innkeeper] continued a slow rotation of the hall for a second. Looking at the students, the people there.</p>
+<p><em>Then</em>—her eyes came back to Niers, Foliana, and spotted Ryoka in the crowd. Erin Solstice took a slow breath and began to walk forwards again.</p>
+<p>This time—her chin rose. Her shoulders relaxed, and she walked forwards proudly. As if her deeds escorted her forwards, her triumphs and failures were on display for all to see.</p>
+<p>She walked into Elvallian as the best foes and allies had. As, once, Niers Astoragon and Foliana had passed into the shattered palace after a victory. Her eyes drinking in every moment, her ears straining to record it all, for no recording would ever be enough.</p>
+<p>Then—halfway towards him, the first Fraerlings began to applaud. It was quiet at first, barely audible, but Commander Rozcal joined in, panting, and his armored gauntlets made a terrible clacking sound. Then hundreds of Fraerlings were applauding, and the Tallfolk took it up.</p>
+<p>A wave of applause without a single voice. Niers Astoragon’s eyes never left Erin’s. Her gaze flicked between him, Foliana—she noticed Atmodeca, Iuncuta Eirnos, and some of the other leaders of the Fraerlings. Studied the officers behind Niers. Glanced at Ryoka Griffin and Geneva Scala.</p>
+<p><em>And she wasn’t real, still. </em>She was still someone in a scrying orb. Too far to touch, even when she was barely six feet from him. Still—not real. Because after coming so far, after so long of having stupid ideas of what she would be like, expectations he knew she would dash—</p>
+<p><em>She still seemed to glow. </em>She was still a grand adventure, a mystery, someone he wanted to talk to—even when he met her.</p>
+<p>He hadn’t felt that since he was a young man. Niers Astoragon realized everyone was looking at him. <em>What had his face been like? </em>Erin was hesitating, mouth the faintest fraction open. Niers spoke for her.</p>
+<p>“Welcome to Elvallian, Erin. You’ve come a long way from home.”</p>
+<p>He had completely forgotten his speech, of course. The notes crinkled in his pocket as he bowed at the waist. A real bow. Beside him, Foliana nodded her head.</p>
+<p>“Mm. I’m Foliana. You knew that.”</p>
+<p>“Hello, Niers. Commander Foliana. It’s nice to finally meet you two at last.”</p>
+<p>Erin Solstice paused a second, then bowed towards Niers and Foliana. When she straightened, Niers Astoragon exhaled. He glanced at Ryoka, Geneva, Beth—all the officers dressed up around him, then chuckled.</p>
+<p>“Stuffy atmosphere, isn’t it? Look at all these people I made dress up just to greet you.”</p>
+<p>A titter ran around the room, and Eirnos, waiting to be introduced, glared at Niers. The [Innkeeper]’s lips quirked.</p>
+<p>“I appreciate it. And everything you’ve done for me and my friends.”</p>
+<p>“Well. The Forgotten Wing company has a soft spot for the insane, so long as insanity is backed up by something real. You are our guest; the Bushrangers of the United Nations company and the Tallguard of Feiland and Paeth likewise. For these two groups, we should offer nothing less. Captain Sullivan, Tallguard Cotm, welcome.”</p>
+<p>Niers raised his voice, and the two, Daly and Cotm, standing on Siri’s shoulder, bowed.</p>
+<p>“Paeth sends its regards, Lord Astoragon.”</p>
+<p>“The United Nations company, uh, likewise. Honored to be here.”</p>
+<p>Daly was red-faced; Cotm was giving Niers that look most Fraerlings did when they met him. Disbelieving, almost disappointed, fascinated. Children re-hearing stories.</p>
+<p>Niers was about to say something else, but Foliana hopped forwards. So it was really her there? Niers fell silent, and Daly swallowed as Foliana’s gaze of three colors, yellow, green, and pink, found his.</p>
+<p>The glowing eyes of bleeding colors blinked, and Foliana spoke without projecting her voice for all to hear.</p>
+<p>“I greet your company, Daly Sullivan. Do your United Nations come as friends or foes to my domain?”</p>
+<p>Niers’ fingers twitched at his side; aside from that, he didn’t react. Gloriam smiled, the damn idiot; and Geneva, Beth, and Ryoka all reacted to his left.</p>
+<p>Daly Sullivan froze. He inhaled as the Bushrangers around him stared at Foliana. She stared down at Daly.</p>
+<p>“…We come as friends, Commander Foliana. The United Nations…company comes as friends too, I’d like to think. I can only speak for us, but we’re damn sick of war. Sorry for my language.”</p>
+<p>Behind Niers, he heard a chuckle from his officer core, and the [Soldiers] grinned. Foliana looked down at Daly, unsmiling.</p>
+<p>“Then we shall see. Welcome. Meaningless pleasantries. Mm. You are my guests.”</p>
+<p>Foliana paused, glanced at Cotm, and nodded.</p>
+<p>“Tallguard.”</p>
+<p>Then her eyes slid to Erin Solstice.</p>
+<p>“Hello. You. You’re my guest too. I am Foliana, Three-Color Stalker. Legend of Baleros. We’ll find out who you are.”</p>
+<p>She turned, her bushy tail wagging, and hopped off. Not back to where she was standing next to Niers. She just left. Daly, Cotm, and Erin’s eyes found Niers Astoragon, and he exhaled.</p>
+<p>“She has ignored literal monarchs. However, they were just [Kings] and [Queens] with classes and birthrights. You <em>belong </em>here. Be welcome. Now, let’s finally talk.”</p>
+<p>The applause began again, and Niers nodded to Erin. Her eyes found his, and he half-smiled. She looked nervous and set, and Niers sighed as he saw Atmodeca checking her notes of what she was supposed to say next.</p>
+<p>Almost…</p>
+<p>They could almost meet like people.</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>The applause was still going as Niers finished talking and half-turned and waved a hand, and Ryoka Griffin had no idea what to do.</p>
+<p>She was vibrating, wondering when she could speak, and she <em>thought</em> the ceremony was over, but this was not the moment to jump forwards and grab Erin and shake her and hug her. The [Innkeeper] glanced at the giant Crocodile woman that walked over.</p>
+<p>“Atmodeca, prepare a sitting room for me to speak with Miss Solstice. It might not be used right away. See if Foliana wants anything. You can show the guests to their rooms at a due moment.”</p>
+<p>“Prepare a sitting room. It might not be used right away. See if Commander Foliana wants anything. Show the guests to their rooms at a due moment. When is that?”</p>
+<p>Niers had turned off the spell amplifying his voice, but his <em>sigh</em> was audible even above the applause.</p>
+<p>“Use your judgment.”</p>
+<p>Atmodeca said nothing as Niers half-spun, looking exasperated.</p>
+<p>“Oh, no you don’t! Someone curtail my students. Then put them in a room and give them a lecture about the difference between being forthright young leaders learning to push their luck and <em>getting in my way.</em>”</p>
+<p>He pointed, and a group of excited students were captured as they tried to sneak towards Erin. Niers caught Erin’s eyes.</p>
+<p>“What a shambles of a welcoming.”</p>
+<p>He seemed…well, not embarrassed, but harried. That stage you got to after you’d had one too many awkward moments and it was just—‘oh well, here we are again’.</p>
+<p>Ryoka envied his aplomb. So she began walking forwards and tried to enter the conversation. Niers’ eyes slid to Ryoka, and she halted mid-step.</p>
+<p>Okay. <em>Not</em> the moment to enter. Ryoka stepped back, and Erin glanced at Ryoka.</p>
+<p>“Hey, Ryoka. I’m glad you’re alive.”</p>
+<p>She turned back to Niers.</p>
+<p>“Thank you for interceding with Gloriam, Niers. And for everything up till now. I was—”</p>
+<p>“—<em>What the fuck?</em>”</p>
+<p>Ryoka’s aggrieved <em>shout</em> interrupted Erin and Niers. She stared at Erin incredulously, and it was Erin! Taller! She was Ryoka’s height, and—but it was Erin! Totally Erin. She didn’t look like she was on fire or dying, and they’d washed the blood off, and she didn’t have scars—</p>
+<p><em>But that was her. </em>Her features, her hazel eyes. She half-sighed and looked at Ryoka with a glower, and Niers rolled his eyes skywards.</p>
+<p><em>That was it?</em> She had last seen Erin Solstice literally sailing off to her death before her ship <em>exploded,</em> and the [Innkeeper] just nodded to her like someone in an action movie.</p>
+<p>“Erin, as you can see, we’ve found a few of your friends. Most, I gather, were on Calanfer’s ship, <em>Throne’s Will,</em> when you were separated. As I understand it, they landed south of here and began to explore the jungles. They’re far from my ports. Ryoka arrived yesterday.”</p>
+<p>Ryoka turned beet red as she found herself in the conversation. She shuffled forwards, and Erin stared down at Ryoka’s feet.</p>
+<p>“…Are you barefoot? <em>Here?</em>”</p>
+<p>Daly, the Bushrangers, and even the Tallguard had turned to stare at the Wind Runner. Now, everyone looked at Ryoka’s bare feet. The Wind Runner turned even redder, but Niers came to her defense.</p>
+<p>“I let the Centaurs clop around in here, and Beastkin go barefoot. Don’t mind it one bit.”</p>
+<p>He nodded sideways, and everyone glanced at Seneschal Atmodeca; she had crocodile feet, big, stubby, and webbed. She waggled finned talon-toes…<em>in sandals.</em> Several Centaurs picked up a hoof to indicate <em>they</em> were shod.</p>
+<p>“Erin. You’re okay! <em>Are </em>you okay? You’re alive!”</p>
+<p>Ryoka felt like she had to re-establish the stakes, which were absolute tears of joy of seeing Erin again. However, Erin wasn’t shedding them, and Ryoka was so off-kilter she wasn’t crying. She did go in for a hug.</p>
+<p>Erin let it happen. By which, she stood stock still, and Ryoka awkwardly hugged her. Niers saw the Wind Runner clasp Erin in a big bearhug. Hesitate. Stare at Erin as the [Innkeeper] met her eyes. Let go. Back up slowly…</p>
+<p><em>Dawson was gnawing on a fist trying not to die laughing.</em> Aldenon looked like he wanted to sink into the ground. Daly was just giving Ryoka a second look, as if he had expected something other than—than this.</p>
+<p>“It’s great to see you’re okay, Ryoka. Erek’s somewhere back there. I think he’s shy.”</p>
+<p>The Orangutan had actually hung back at the procession. Ryoka stared at Erin and mumbled, red-faced.</p>
+<p>“Great. Have you met Geneva? Here’s Geneva!”</p>
+<p>She pointed, and the [Doctor] strode forwards. She offered a hand, and Erin took it.</p>
+<p>“Geneva Scala, [Doctor] in class.”</p>
+<p>“Hello. Erin Solstice. [Innkeeper].”</p>
+<p>The Last Light of Baleros nodded as Beth covered her face with much the same expression of Niers, like someone watching the wagon rolling towards the proverbial City Runner’s leg. Geneva checked Erin’s arm. Then gestured.</p>
+<p>“Erin, I understand Niers wants to speak, but if you have fifteen minutes, I’d like to look at you for injuries. Paeth sent me their evaluation of your condition, but I’d really like to see it myself—”</p>
+<p>Then someone put her in a headlock.</p>
+<p>“<em>Geneva! We talked about this!</em>”</p>
+<p>Ryoka was to Erin as Beth was to Geneva. The Selphid <em>glared</em> as Geneva stumbled and reflexively grabbed Beth’s hands. Daly was staring at Geneva, hesitating, relief and uncertainty holding his tongue—but Beth completely threw the Bushrangers.</p>
+<p>Any semblance of propriety was already gone, and the Titan of Baleros exhaled as the two medical practitioners struggled. He turned to Erin and raised his brows.</p>
+<p>“I expected this might happen.”</p>
+<p>“It usually does. Chaos.”</p>
+<p>Erin waved her hands vaguely and sardonically. Ryoka was still just eying her up and down. She was definitely Erin. She looked like Erin. Totally. But who <em>was</em> this woman?</p>
+<p>“Take five? I would love to speak with you, but not with interruptions, and I can sense at least one or two more.”</p>
+<p>Niers glanced at Venaz, then at the Fraerlings, and gave Erin another studying look.</p>
+<p>“A conversation later? In private?”</p>
+<p>“With Commander Foliana?”</p>
+<p>“Hopefully not. A game of chess as soon as you get your bearings?”</p>
+<p>“We’ll see.”</p>
+<p>Erin smiled, and Niers nodded. He glanced at Atmodeca, and the seneschal bowed.</p>
+<p>“I am Seneschal Atmodeca, Erin Solstice. I will have a meeting arranged tonight. After dinner. I have rooms to show you.”</p>
+<p>She glanced at Niers, and he gave her a nod. Atmodeca looked very pleased with herself. Ryoka took Erin’s arm.</p>
+<p>“And I’d love to get a word in between now and then. Erin! I’ve been worried sick! Glad you’re <em>alive!</em>”</p>
+<p>Erin half-glanced at Ryoka and gave her a smile that was definitely genuine.</p>
+<p>“Me too. Buddy.”</p>
+<p>Both Genevas stopped fighting and glanced at Ryoka. The Wind Runner looked so hurt Erin relented and patted her on the arm. Which just made it worse.</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>Niers Astoragon and Erin Solstice once again did not have the chance to speak. And yes, it was Ryoka Griffin’s fault in no small principle. Ryoka Griffin was…a stressed-out woman.</p>
+<p>Young woman didn’t really apply. The eponymous Wind Runner had a gravitas to her that reflected suffering. Both mental and physical. Guilt was implicit in a lot of her descriptions of herself or her deeds. She didn’t brag about, well, anything.</p>
+<p>She didn’t excuse any actions either, like beheading Archmage Eldavin. When pressed, she acknowledged that any given action might have been a mistake at the time.</p>
+<p>Ryoka was in need of serious therapy in Geneva Scala’s unqualified medical opinion. It wasn’t her field of expertise; she hadn’t exactly been planning on becoming a general practitioner, but speaking as an informed layperson, Ryoka Griffin was in need of serious antidepressants.</p>
+<p>Geneva Scala actually wanted to give Ryoka Griffin a bit of a hug. But the timing had never come up when they got to talking, and she’d felt like it would freak the Courier out. Certainly, that hug had <em>not</em> gone well between Ryoka and Erin.</p>
+<p>It was in the candidacy for top three worst hugs Geneva had ever seen in her life, and that included a funeral hug where with her mother and aunt. The two hated each other, and the hug had <em>not</em> mended those bridges. Still, she was glad Ryoka Griffin was sticking to Erin Solstice like glue and inserting herself in whatever conversations Erin was going to have in the foreseeable future.</p>
+<p>Because <em>frankly—</em></p>
+<p>“<em>(Okasha? Can you hear me?)</em>”</p>
+<p>Geneva subvocalized, which was a trick she had learned where she formed the words but didn’t let them come out. Okasha could read her intentions more or less.</p>
+<p>“<em>(Yep, Geneva? What is it?)</em>”</p>
+<p>The Selphid helping pilot Geneva’s body and the [Doctor] herself had a strange relationship. One of mutual broken trust, loss, torture—she felt both could claim that—and a second chance born out of necessity and loss.</p>
+<p>They got along better now. Enough so that Geneva was comfortable talking to Okasha when even Beth was hard to confide in. Now, Geneva said what she was thinking.</p>
+<p>“<em>(I think I quite dislike Erin.)</em>”</p>
+<p>“<em>(Whoa. Seriously? You don’t even hate Niers that much, and he’s the Titan.)</em>”</p>
+<p>Geneva stared at Erin as Ryoka half-dragged her ahead, following Atmodeca. The [Innkeeper]’s head was constantly swiveling, and Geneva saw her look back twice. She recognized Geneva, and the [Doctor] tried to smile.</p>
+<p>“<em>(</em>…<em>I’m evaluating.)</em>”</p>
+<p>But the image of Erin Solstice raising a fist in triumph or striding into Ramok—or just her words from the interview—wouldn’t leave Geneva’s head. She tried to replace it with other images, but she’d seen the [Innkeeper] <em>dancing</em> with the blood of her enemies in the streets. It wasn’t just the <em>very</em> diabolic transformation that Erin had made. Geneva liked to think her Catholic upbringing didn’t predispose her that badly to…that.</p>
+<p>It was everything else.</p>
+<p>“Geneva? <em>Geneva!</em>”</p>
+<p>The [Doctor] was so focused on Erin that she almost forgot the Bushrangers were there until someone grabbed her arm. She turned—and when she saw Daly looking at her, scarred but the same and completely different—Geneva stared down at his leg.</p>
+<p>She knew he’d lost it. Asked to see pictures. But seeing him favoring his other leg, dressed like the mercenary he was, eyes wide—</p>
+<p>Her arms rose, and it was Geneva who hugged him. Okasha made a sound.</p>
+<p>“<em>(Oooh!)</em>”</p>
+<p>“<em>(Shut up, Okasha.)</em>”</p>
+<p>Daly hugged Geneva hard. A proper squeeze—then he let go, or tried to, but Dawson grabbed them, then Kami and several Bushrangers joined in.</p>
+<p>“Geneva! You’re alive! You’re fucking alive and palling around with the <em>Titan!</em> It’s so good to see you!”</p>
+<p>“You too, Daly! Is anyone else from the United Nations company here? Luan? Ken? I didn’t see any—”</p>
+<p>“They didn’t want to go on procession. Especially with Erin getting potshots taken at her—<em>look</em> at you! You look—good. How’s the back?”</p>
+<p>Daly stood back, beaming, then remembered the salient fact. Geneva blinked, noticed Erin and Ryoka looking back, and spoke.</p>
+<p>“Same old. My stay with the Minds didn’t change that, but everything’s—better? Same situation, better. It was quite—difficult, but Niers saved my life.”</p>
+<p>“Holy fuck. So it <em>was</em> the Minds? Geneva, I’m so sorry. If I’d been keeping lookout—”</p>
+<p>Aldenon burst out, and Geneva didn’t know if he was guilty in general or had been supposed to guard the clinic the day she vanished. She realized some of them had tears in their eyes. Geneva looked around and realized her eyes were stinging a bit.</p>
+<p>“<em>(Okasha, stop that.) </em>Everyone, it’s none of your faults. The Bodies of Fellden spirited me away; I doubt you could have stopped them even if they hadn’t meticulously planned it out. No one short of a Great Company could have extracted me from the Gathering Citadel.”</p>
+<p>“That’s no excuse.”</p>
+<p>Siri spoke up, and Geneva gave her a stare of disbelief. However, the [Sniper] just grabbed Geneva’s arm.</p>
+<p>“I’m so glad you’re alive. Kirana is too—oh, she sent food.”</p>
+<p>“Of course she did. …Is it my favorite?”</p>
+<p>Beth perked up as Siri fumbled for her bag of holding. Meanwhile, Tofte was pulling something out.</p>
+<p>“We’ve got letters from everyone. You don’t have to write back, but tons of people wrote. Sorry—”</p>
+<p>They were all around her, and Geneva looked around, breathing harder than normal.</p>
+<p>“<em>(Seriously, Okasha, cut it out.)</em>”</p>
+<p>A smug Selphid’s voice replied.</p>
+<p>“<em>(I’m not doing anything. Want me to stop it?)</em>”</p>
+<p>Geneva didn’t dignify that with a response. However, conscious of the Selphid to her right, she half-turned.</p>
+<p>“Everyone, I’m glad you’re well, and we have to catch up so I can explain as much as there is to explain. But first, I’d like to introduce you to someone. This…is Beth.”</p>
+<p>She turned, and the Selphid waved a hand.</p>
+<p>“Hey, guys. Daly, how’s Captain Eldima doing?”</p>
+<p>Daly Sullivan turned with a polite, if cautious, look to the Selphid wearing a Human’s body. But the question—threw him. He stared at her, and Geneva took a breath.</p>
+<p><em>Oh boy. </em>They’d debated this, but how else could they justify Beth? They’d already told Ryoka and hoped the Bushrangers would have a better reaction than the Wind Runner.</p>
+<p>“Beth is okay to talk in front of. She’s one of us.”</p>
+<p>“Wh—”</p>
+<p>Tobi’s eyes swung from Geneva to Beth’s clearly Selphid form. Siri had gone still; her head swiveled, and Geneva said the rest in a rush.</p>
+<p>“She’s not just one of us. She’s—me.”</p>
+<p>For a second, no one said anything. Dawson began to chuckle—then fell silent. Geneva saw Daly’s eyes opening wider, and then the penny dropped. Tofte looked at Beth. He stared at Geneva.</p>
+<p>“No. They <em>cloned</em> you?”</p>
+<p>“…Yes.”</p>
+<p>“<em>What!?</em>”</p>
+<p>The scream made Seneschal Atmodeca, Ryoka, and Erin turn back. Geneva looked behind her and remembered they were supposed to keep the Minds’ crimes secret. She began to push urgently.</p>
+<p>“We’ll talk about it in private.”</p>
+<p>“<em>They did—</em>what kind of fucking sci-fi twist is—<em>what the fuck? </em>What. The. <em>Fuck!?</em>”</p>
+<p>Beth joined in pushing, and the two Earthers shoved their friends towards their rooms. Some of the Bushrangers recoiled from her, but Beth was giving them, Geneva realized, a terrified smile.</p>
+<p>“Everyone okay? I’d like to visit. I would have, but—”</p>
+<p><em>I’m her too. I’m also Geneva. </em>It was just that Beth had become, well, <em>Elizabeth.</em> Geneva who’d begun to develop her own personality and certainly had her own body and species, now. They were alike, but already, the two had stopped being able to finish the other’s…</p>
+<p>Thoughts. It put paid to the idea that identity was something that depended solely on personality and memory. Or at least, that minute changes of a few months could diverge what had been a literal clone.</p>
+<p>Beth was a [Telekinetic] and a [Healer]—she seemed to be leaning more on the abilities of a Selphid than even Geneva, and she was pushy. Literally. And in a Selphid’s body, she could shove even the Bushrangers forwards.</p>
+<p>“We have a lot to talk about. Is Paeth still alright? Are they…how many Fraerlings were hurt? I was told all was well.”</p>
+<p>Geneva hadn’t actually met the Fraerlings, unlike the others, but the plight of the small folk had struck a chord with her, and the United Nation’s defense of the city had been their finest moment to her, even if she hadn’t been able to tell it to them at the time.</p>
+<p>A loud voice clearing itself made Geneva jump, and a tiny man poked his head up from Siri’s head.</p>
+<p>“Paeth is quite well, Doctor Scala. And we know about everything except Beth. Whoof! Now there’s one for the history books. That’s a breach of the Minacien Wall. I know it when I see it.”</p>
+<p>Alchimagus Resk fanned at himself as Geneva’s mouth fell open. She stared at the pink-bearded Fraerling, then at Siri. The [Sniper] shrugged.</p>
+<p>“<em>(They’re so cute!)</em>”</p>
+<p>Okasha whispered. Geneva had to agree.</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>“—at least six? Some of them have revealed themselves; a Dullahan is actually taking my moniker of ‘The Last Light’ and giving medical lessons on television. I know the Lamia went with Jungle Tails, and another Geneva’s gone to The Last Tide. But I suspect more are around, if they’re alive.”</p>
+<p>“This is fucking crazy.”</p>
+<p>Daly had his head between his legs, mostly so he wouldn’t pass out. He raised it now, and Siri snapped her fingers.</p>
+<p>“That Dullahan? I’ve <em>seen</em> her giving advice. Everyone thought she was copying you—or that she was a [Nurse] you’d taught.”</p>
+<p>“Nope. She’s me. They all are. Only…the body changes them, I think. Or, simply, our personalities might have been altered. Or we just all chose to be something different, if that makes sense.”</p>
+<p>“Specialize. Geneva’s the main Geneva. No one can take it from her. No one <em>wants</em> to, frankly. That lets us do our own thing. Like medical practitioners in general.”</p>
+<p>Beth cut in helpfully, and all the Bushrangers turned to her. They were sitting in the rooms they’d been given, and Resk was nibbling on a huge, peeled and roasted hazelnut. Everyone else was eating them from a bowl.</p>
+<p>“That’s insane. And the Minds were just floating brains?”</p>
+<p>Geneva nodded.</p>
+<p>“Gestalts of thousands of Selphids. Yes.”</p>
+<p>Everyone looked at each other, and Daly’s mouth worked for an appropriate question. It was Dawson who leaned forwards.</p>
+<p>“How fucked was it, Geneva? Horror-movie?”</p>
+<p>Geneva thought about it, and the frank question actually helped.</p>
+<p>“Horror movie with special effects. When they went insane…that was the most terrifying thing I’d ever seen in my life.”</p>
+<p>The other Earthers fell silent. After a second, Daly gestured at his leg.</p>
+<p>“All we did was fight a fucking war. Sort of…boring compared to what you went through.”</p>
+<p>Everyone started laughing at that. Geneva got to her feet, seeing the sun receding through the magnificent view of the city on the fourth floor. The forest beyond was catching sunlight as if it were autumn, not the end of winter, a faint orange haze on the treetops.</p>
+<p>Beautiful. Bloody.</p>
+<p>Baleros. She was glad the Bushrangers were doing well, and they had described a far better Talenqual. A far more <em>hopeful</em> one, with opportunity, that Geneva wished she could have been part of.</p>
+<p>But she was with the Forgotten Wing company, and the most opportunity was here.</p>
+<p>“We need to keep talking. I can call Talenqual as well. I was going to—but I didn’t know how to begin. After dinner. However, I need to speak to Erin Solstice.”</p>
+<p>“The Fraerlings are actually pretty good at medicine, Geneva. They’re the best damn doctors in this world.”</p>
+<p>Geneva shook her head at Daly.</p>
+<p>“I know that. But I want to speak to <em>her.</em> I do owe her a debt of gratitude for the Yellow Rivers penicillin proxy, and I need to talk to her and Ryoka. Is she…”</p>
+<p>Geneva trailed off, and Beth interrupted, more cheerful.</p>
+<p>“What’s she like? As nutso crazy as we just saw?”</p>
+<p>The Bushrangers fell silent and looked at each other. Tofte shook his head.</p>
+<p>“That was insane. She just charged into Ramok. She’s really, really intense. Like—she visited us, and she was in Paeth, but she was out of Talenqual as soon as they cleared her to walk. She’s sort of friendly, but man, she’s the scariest [Innkeeper] I’ve met. She’s sort of like you, Geneva.”</p>
+<p><em>Me? </em>An image of Erin Solstice firing both crossbow and wand as she strode down the street was fixed in Geneva’s mind. She looked like an action hero—or, if Geneva remembered the battle at sea—a force of nature herself, ready to carve a path through anything in her way.</p>
+<p>“<em>Me?</em>”</p>
+<p>They looked at her as if it were obvious, and Geneva turned to Beth. <em>Beth</em>, the traitor, gave Geneva a nod.</p>
+<p>“I can totally see it.”</p>
+<p>“Beth!”</p>
+<p>“What? We’re a bit intense too.”</p>
+<p>“Thank you! My god! She’s so hard to talk to!”</p>
+<p>Kami jumped to her feet and gave Beth a high-five. Beth chortled.</p>
+<p>“I didn’t get it, but it’s like looking into a mirror. Geneva’s still intense; I’ve cheered up a bit. She’s like the Terminator, if the Terminator were a doctor. <em>Have you had a medical exam?</em>”</p>
+<p>She actually deepened her voice, and Aldenon choked on a hazelnut. The laughter was the cue for Geneva to exit. She turned at the door.</p>
+<p>“Beth, are you coming? Daly, you could join us—”</p>
+<p>He looked so rattled by the revelation about Geneva and Beth that he didn’t immediately stand.</p>
+<p>“Uh—give me five, Geneva? I’ll come by in a sec with Siri if it’s okay. We don’t need a crowd. Can we—process things?”</p>
+<p>Beth’s smile faded, and she got up. She saw all the Bushrangers regarding her and Geneva, and even Resk was staring at the Selphid.</p>
+<p>“Of course. It’s good to see you all.”</p>
+<p>The two smiled with more or less the same expression until the door closed. Then they looked at each other. Geneva and Beth began walking; they still had similar enough reactions to anticipate each other. Geneva spoke first.</p>
+<p>“I think Daly was freaking out.”</p>
+<p>“You think? Tobi was shivering every time he looked at me. I know it’s crazy.”</p>
+<p>“Are you okay, Beth?”</p>
+<p>The Selphid gave Geneva a wan smile.</p>
+<p>“Always looking out for me?”</p>
+<p>“I’m not the—the clone.”</p>
+<p>“Well, I’m not a clone, so that helps.”</p>
+<p>“I apologize. I just meant—”</p>
+<p>“I <em>know</em>, Geneva. Don’t worry. I need to show them I’m my own person. My own Beth. I don’t want them feeling sorry for me. Too much. <em>You </em>alright?”</p>
+<p>Geneva glanced at Beth.</p>
+<p>“I’m fine. I’m relieved to see they’re all alive. Why would I be in trouble?”</p>
+<p>Beth slowed, faced Geneva.</p>
+<p>“Okay, so I’m the only person who wants to cry and eat all the hazelnuts with ice cream until I puke?”</p>
+<p>The problem with having someone who knew you…the Last Light avoided Beth’s gaze until her mouth moved and a hand rose.</p>
+<p>“Okasha here. I hate hazelnuts. Can we do another légume?”</p>
+<p>All three of them laughed at that. Then sombered. Beth exhaled.</p>
+<p>“Okay, one hard part down. Erin?”</p>
+<p>“Erin. Let’s catch her before Niers. Ryoka seemed—off put.”</p>
+<p>“No kidding? I think Erin’s scaring everyone, including her friends. Don’t psychoanalyze her, Geneva. You don’t actually know how. You can do the medical checkup later.”</p>
+<p>“It just popped out.”</p>
+<p>The two began arguing again as they headed up a corridor, then stopped. Geneva turned to Beth, who’d been following her.</p>
+<p>“…Do you know where her rooms are?”</p>
+<p>“No clue.”</p>
+<p>The problem was solved as a coincidental duck waddled across the floor behind them. Or rather…a tiny ball of Selphids floated past both Genevas. They stared at the <em>Duck</em>, the Mind assigned to guard them.</p>
+<p>“Quack. Quack. (Hey, I was just following you two. Erin? One floor up, hallway next to one of those mini-complexes the Fraerlings are building. Two [Stalkers] on the ceiling. Two ordinary [Guards] on the door.)”</p>
+<p>“Ah. Thanks. Did you have anything to add, Duck?”</p>
+<p>Beth was more at home with the Duck than Geneva was. The Duck quacked softly.</p>
+<p>“(Eh…no? Thank her for saving those Selphids, I guess, but don’t tell her about me, maybe? The Minds think she’s dangerous.)”</p>
+<p>“What do you think?”</p>
+<p>The Duck’s mental tone was amused.</p>
+<p>“(I’m a Mind, aren’t I? The old ones say they recognize that transformation. Be careful. She’s got dangerous allies.)”</p>
+<p>The Duck paused, floated, and then dumped some hazelnuts on its body so its component parts could eat. Then its tone grew sulky.</p>
+<p>“(I’m not lying or acting cool, by the way. They didn’t tell <em>me</em> who those allies were or what the transformation was. Because I’m ‘compromisable’. Big Minds are all ego. Anyways. Let me know if we’re going on an adventure or something. I’m getting fat with all the snacks people keep feeding me.)”</p>
+<p>The Duck floated off, and the Genevas looked at each other. They hurried upstairs.</p>
+<p>Neither one spotted the [Stalkers] on the ceiling when they looked up, but the [Guards] did recognize them. A Lizardwoman rang a bell on the door.</p>
+<p>“Innkeeper Solstice? Will you take Geneva Scala and Beth as visitors?”</p>
+<p>The rooms were soundproofed, so the only way to hear Erin was after she either pressed a corresponding sigil on the inside or opened the door.</p>
+<p>She opened the door.</p>
+<p>“Let them in. Thanks.”</p>
+<p>When she pulled the door open wider, both Genevas entered and saw Ryoka Griffin, hair a mess, standing in the middle of Erin’s guest rooms. She had a suite, and Ryoka stood before a couch that surrounded a round table, much like the one the Bushrangers had been using, with a fireplace against one wall, bookshelves, a rack of board games and curios on other shelves, a veranda and porch that you could walk out onto…pillows, cushions, and objects littering the room…</p>
+<p>It looked like a <em>storm</em> had blown in here. And in fact, one had. Ryoka was breathing hard, and Erin gestured.</p>
+<p>“Come on in, Geneva…Beth. I assume you two are together?”</p>
+<p>Geneva waited until the door was closed to respond.</p>
+<p>“We’re both on the same side. We know about Earth, and Beth and I…can be trusted. Daly and Siri might show up, if it’s alright?”</p>
+<p>“Go ahead. Sorry about the mess. Ryoka was just having a tantrum.”</p>
+<p>“<em>I’m</em> the one having a tantrum? I didn’t just walk into a city and murder dozens of people! And turn into a fucking <em>L—a goat woman!</em>”</p>
+<p>Ryoka’s voice was slightly hoarse. She gave the two Genevas a longer look and stared at Beth a fraction longer than Geneva. Beth sat down next to Ryoka; Geneva wavered, then took a seat across from her. Erin sat slightly away from both so she could face Geneva, Beth, and Ryoka in a rough triangle.</p>
+<p>Beth patted Ryoka’s shoulder, smiling.</p>
+<p>“So those are your wind powers? Are they spontaneous with your feelings?”</p>
+<p>Ryoka reddened, and Erin crossed her arms and legs as Ryoka exhaled. There was a breeze in the rooms, faint but blowing; it died down as Ryoka calmed herself.</p>
+<p>“Bit of both. It’s not power so much as speaking to the wind and getting it to do things. I’m a bit <em>on edge.</em> Sorry, guys. Erin, this is Geneva Scala. And this is <em>Beth—</em>also Geneva Scala. The Minds cloned her.”</p>
+<p>She did the introductions fast and with, Geneva thought, a bit of a vindictive tone. But if she was hoping for a reaction from Erin, the [Innkeeper] didn’t give any. She just sat there, eyes flicking from Geneva to Beth.</p>
+<p>So did Ryoka; she clearly recognized Beth from the scrying call, but the leap of logic that it took to understand Beth completely…that rocked her. Erin too, who shook her head as she found her voice.</p>
+<p>“So they <em>did</em> breach the Minacien Wall. Hello, Geneva. It’s good to meet you at last. And you, Beth.”</p>
+<p>“Hey! We’re not really clones. I’m more like just—a copy of Geneva who’s gone her own way. A Geneva if she were a Selphid.”</p>
+<p>Beth waved a hand, and Ryoka flushed guiltily. That made Erin twitch.</p>
+<p>“…I can see why it was prohibited by other species. How do you feel? Geneva? Beth? Let me see if I have it straight. You were kidnapped…the Minds held you captive. Niers rescued you, Geneva, and destroyed the Gathering Citadel with the help of other nations. While you were there, you were—made into a clone in Beth?”</p>
+<p>“Clones. There are maybe up to a dozen copies of me running around. All different species.”</p>
+<p>“<em>Fuck.</em>”</p>
+<p>That exploded out of Ryoka, and Geneva realized they hadn’t gotten that far with Ryoka when they’d talked yesterday. The Wind Runner and Erin Solstice, at least as they were now, were studies in contrast.</p>
+<p>Ryoka had a reasonable reaction. Even a sympathetic, earnest one. Erin? Calm as ice. Cool as glass in a snowstorm.</p>
+<p><em>Oh, yes. Geneva liked Ryoka more than Erin. </em>There was something almost unfeeling about the way Erin regarded Beth.</p>
+<p>“Well, I can understand why the Minds did it. Nasty, but it seems like an advantage.”</p>
+<p>The other three women stared at Erin, and Beth nodded slowly.</p>
+<p>“Yes…it is. Very nasty, though. The Minds were exceptionally dangerous.”</p>
+<p>“You’ll have to tell me the whole story. This is the first time we’ve met face-to-face, Geneva. As I said, I greatly respect your work.”</p>
+<p>The [Doctor] nodded to Erin, and they shook hands again. She noted Erin’s hands were smooth, uncalloused; she seemed exceptionally hearty for someone who’d been suffering from exposure at sea for a month. Paeth and Silvenia’s magic must have restored Erin’s condition quite well.</p>
+<p>“Thank you, Erin. I’m in your debt for supplying the penicillin mold—I apologize, the Octavium mold—to combat the Yellow Rivers disease. But for that, countless people might have died. It’s also just good to meet an Earther who’s not from Baleros.”</p>
+<p>Erin’s lips actually twitched at the reference to the mold.</p>
+<p>“Octavium. Sorry, I completely forgot…the United Nations company in Talenqual, and you and Beth seem well set up. You’ve done well. You’re the first Earthers I’ve met as well, outside of Izril. What about you, Ryoka?”</p>
+<p>“Oh—I met Cara. The Singer of Terandria. And there’s Laken and the guys at the inn. But Baleros is put together better than all of us.”</p>
+<p>Ryoka muttered, still coming down off her emotions. Beth swivelled around.</p>
+<p>“So Cara’s definitely an Earther?”</p>
+<p>“Yup. Ireland. She’s a character. And we have an [Emperor] and a handful of people with us. Only a few compared to you guys.”</p>
+<p><em>An [Emperor]? </em>Laken Godart…was he the blind man from Erin’s call? Remembering that, Geneva recalled the image of the young woman standing in the center of her theatre, not as poised, but desperate, earnest. And brave.</p>
+<p>She looked at the Erin sitting across from her and got a jolt as she saw Erin’s eyes were locked on her face.</p>
+<p>“<em>(Hey, Daly wasn’t joking. She really is scary, Geneva.)</em>”</p>
+<p>“<em>(She’s not worse than Sergeant Thriss or Honorguard Calectus, Okasha.)</em>”</p>
+<p>“<em>(Um. No. She is. Especially if she’s Level 50.)</em>”</p>
+<p>That drew Geneva up short. And it felt like they had finished doing the introductions. What else was there to say? Erin was an [Innkeeper]? Geneva knew of both her and Ryoka Griffin by reputation if nothing else. Their major deeds were in front of them.</p>
+<p>So…Geneva took a breath.</p>
+<p>“How are you, Erin? I know I’m harping on it and don’t growl at me, Beth, but are you fine from the…battle yesterday?”</p>
+<p>Erin shrugged and raised an arm.</p>
+<p>“I feel fine. The—transformation protected me from most injuries, and I had a healing potion.”</p>
+<p>“No problems with your legs? No pain in your right leg? That crossbow bolt might have left fragments or been enchanted.”</p>
+<p>Geneva peered down at Erin’s leg, and the young woman shrugged.</p>
+<p>“You can check if you want. Resk gave me a clean bill of health.”</p>
+<p>Geneva did feel at the leg just in case, and Ryoka clarified for some reason as she sat there, not quite glaring at Erin.</p>
+<p>“Arrow.”</p>
+<p>“Hm?”</p>
+<p>“It was an arrow, Geneva. Erin’s immune to crossbows.”</p>
+<p>That drew both Beth and Geneva up short. The Selphid had actually bent over Erin and had put a hand to the leg.</p>
+<p>“No splinters that I can sense, Geneva. She’s fine. We have mind powers, by the way.”</p>
+<p>“Okay.”</p>
+<p>Even Ryoka seemed too tired to explode at that. But Geneva sat back and gave Erin a very strange look.</p>
+<p>“By…immunity…do you mean <em>crossbows</em> don’t harm you? At all?”</p>
+<p>Erin paused and glanced at Ryoka. She gave the Wind Runner a smile that made Ryoka flinch.</p>
+<p>“Well, since Ryoka’s revealing my best Skills—”</p>
+<p>“Come <em>on,</em> Erin. Give me a break.”</p>
+<p>The [Innkeeper] shrugged.</p>
+<p>“I’m immune to crossbows. That’s right. It happened after I was shot and killed.”</p>
+<p>“I…remember that.”</p>
+<p>Geneva spoke dryly, and Erin paused.</p>
+<p>“Ah. Right. I guess you do.”</p>
+<p>“As someone who helped bring you back, I hope you’ll be nicer to her—and to <em>Niers </em>for protecting Mrsha and the inn, Erin. Sorry, she’s not normally like this.”</p>
+<p>Ryoka gestured at Erin. Geneva sat back, trying to be friendly and cordial. Since it wasn’t her field, she stared at Beth, then did her best.</p>
+<p>“No, I quite understand. It’s been a traumatizing few months. Your battle at sea, your kidnapping by Roshal…”</p>
+<p>Hairs ran up her neck. Niers had given more clarity to that situation and spelled out her worst fears in detail. She had hoped human trafficking wasn’t as prevalent in this world as on Earth. However, Erin barely reacted to the mention of the kidnapping.</p>
+<p>“A lot’s happened. I’m alive—that’s the most I can ask for. I was just catching up with Ryoka before I had my talk with the Titan. We have to get on the same page before I talk with him.”</p>
+<p>“Dead gods, Erin. Just be nice. Don’t strategize.”</p>
+<p>Ryoka began to raise her voice, but Erin just shot her a cool look, and Geneva fidgeted until something burst out of her.</p>
+<p>“I’m happy to talk about home or what’s been going on with you, Erin. I have countless questions about the Winter Solstice. Or what you saw when you were dead.”</p>
+<p>Erin paused, and there were some untouched cups and a pitcher of water on the table. She began pouring drinks for everyone and took a sip of water. It was lemon-flavored, and Erin went on after a second.</p>
+<p>“I can share as much as I remember. I’ve forgotten a lot, but I’ll try. As for the situation with the dead gods…you know as much as I do. Or rather, Ryoka claims she has the full picture.”</p>
+<p>“I, um, have friends. Who have told me a lot, yes.”</p>
+<p>Geneva looked from Erin to Ryoka, and it felt like they were pulling a Niers and Foliana. They had so many pieces of the puzzle it was making Geneva realize how much of this world’s machinations, and the entire reason for their presence here, she <em>didn’t</em> understand.</p>
+<p><em>How had either woman gained so much knowledge? </em>She was keen to learn, but still, there was a remove from Erin that made it hard for Geneva to even sip from her drink. Let alone the destroyed room, the sense of being able to talk intimately was not here, and the Bushrangers, hectic as they were, had been easier.</p>
+<p>Perhaps she just had to say it. Geneva put down her cup, picked it back up, took a sip, and then coughed.</p>
+<p>“I—just hope that regardless of what we discuss, after you speak to Niers, you’ll steer him away from further bloodshed, Erin. He is the leader of a Great Company fighting monsters from the Dyed Lands and at war with the Jungle Tails company. I can understand the former, if not reconcile the latter. But the last thing we need, I hope we can agree, is more meaningless slaughter. Like you’ve participated in yesterday and recently.”</p>
+<p>Beth covered her face with one hand. Ryoka sat up a bit—and Geneva met Erin Solstice’s eyes. The [Innkeeper] had paused in taking a sip of water, and now…</p>
+<p><em>Geneva Scala really didn’t like Erin Solstice.</em></p>
+<p>It was instinctual. Immediate. Not just what Erin had done. Geneva Scala got the sense that if she left the room, right now, and it was time to sleep, Erin would roll over and go straight to slumberland without a problem.</p>
+<p>There was no apology, no guilt in her eyes that even Daly wore around him like a painful badge. Nor even in her tone as she replied.</p>
+<p>“Ah. I can see you have something to say, Geneva. Go ahead. It’s good to get that sort of thing out in the open. Ryoka already said her piece.”</p>
+<p>Geneva gave the Wind Runner a quick glance, but she squared her shoulders.</p>
+<p>“I don’t have anything else to say. I hope I don’t sound…preachy.”</p>
+<p>“You do.”</p>
+<p>Beth’s mutter earned her a glower. Geneva went on.</p>
+<p>“I understand fighting monsters. It seems—necessary. Everything else? That bloody slaughter at Ramok? I have sworn an oath to try and do no harm, Erin. I cannot support anything you or Niers do if it endangers lives.”</p>
+<p>Even being here was a conflict, but Geneva had taken the principle that no one could just exist in a bubble of altruistic deeds. Better to push Niers away from some of the things she was sure he was capable of than to wash her hands of it. Beth quite agreed, but Erin seemed to rankle at Geneva’s suggestion.</p>
+<p>“Can you explain just what you found so objectionable about Ramok? I went in there to <em>stop</em> the Selphids from being ground into pieces.”</p>
+<p>This was the trouble. Geneva knew that. She could even, in a sense, admire that. But her mouth kept moving.</p>
+<p>“I won’t argue about any part of that. It was incredibly brave, risky, even. You may have stopped a bloodbath—but you still let Gloriam execute the officers.”</p>
+<p>She’d heard Niers talking about that. Erin’s eyes narrowed.</p>
+<p>“I convinced him to let eighteen thousand Lizardfolk go.”</p>
+<p>“<em>And I respect that. Greatly.</em> But you—murdered a [Prince] on live television, Erin. I know it was to protect your friend. Your actions still drew the Iron Vanguard into a battle and have led to an ongoing war between multiple nations. I am simply stating that I understand you have influence. And I fear how you might use it.”</p>
+<p>“I see.”</p>
+<p>Erin Solstice and Geneva had locked eyes and proverbial horns, and neither one was backing down. Geneva’s gaze hurt, but she didn’t need to blink with Okasha’s help…and Erin blinked first. The [Doctor] tried to clarify. <em>Be nice.&nbsp;</em></p>
+<p>“If I’m honest, Erin—I—I quite admired you. When I looked at your history. When you were waving a white flag in front of an army at Liscor? I read an account of that, and I found myself taken. The Solstice. The battle at sea. Ramok. These might have been necessary things, but at least at Ramok, I feel as though you could have petitioned Gloriam. Stopped the slaughter altogether.”</p>
+<p>She knew it was her worst trait, and Beth was noisily grinding her teeth together. Erin had saved probably twenty thousand lives. But it was the way she’d done it that Geneva disliked.</p>
+<p><em>That raised fist and smile. </em>Geneva was ready to actually throw herself the other way, but Erin Solstice’s reply put paid to her apology.</p>
+<p>“Maybe the Jungle Tails company needed to lose that city. Maybe Roshal—Erribathe’s [Prince]—and the people I’ve killed, like Kaligma—needed to die.”</p>
+<p>Ryoka drew in a breath, and both Genevas stirred. Geneva Scala’s throat felt scratchy, so she took a sip of water.</p>
+<p>“You…that’s exactly what I feared you’d say. We need less bloodshed in all parts of the world, Erin, not more. There’s no need for it.”</p>
+<p>The [Innkeeper] sat back, folding her arms, and her eyes lit up as if she’d uncovered something fascinating. She did a double-take, inspected Geneva again, and then laughed.</p>
+<p>“Ah. A pacifist. Of course. That’s what you are.”</p>
+<p><em>Geneva would have assumed that was implicit. </em>She almost flushed, not because the term offended her, but because of how Erin said it.</p>
+<p>“You have a problem with that?”</p>
+<p>Erin waved a quick hand.</p>
+<p>“Oh, no, not at all. I quite respect you, Geneva. Even more so because you are a [Doctor]. The world needs people like you. It also needs people like <em>me. </em>So I will happily keep our differences of opinion.”</p>
+<p><em>Our differences of opinion?</em> Geneva felt a spark of ire in her breast.</p>
+<p>“<em>(Okasha, shut me up.)</em>”</p>
+<p>“<em>(Nope. Let her have it, [Princess].)</em>”</p>
+<p>Damned empowering Selphids. Geneva Scala held her own tongue, but Beth sat forwards. Another problem was having two of you; even if one thought better, the other decided to go for it.</p>
+<p>“Hey, Erin. Sorry, I know Geneva’s been talking this entire time, and she’s sort of…pushy with her ideals. But I’m like her. Neither she nor I wants anyone to get hurt. We get monsters and Crelers and—the Forgotten Wing company is at war, and they were attacked first, if that’s worth anything.”</p>
+<p>She shrugged and even indicated Ryoka.</p>
+<p>“We saw Ryoka cut off someone’s head, even if he apparently got better, and I’m completely willing to be friends with her. But you’re sounding a bit—<em>bloodthirsty </em>there.”</p>
+<p>“Realistic. I can’t believe either of you survived on Baleros this long like this. Did you not see people trying to kill me? They’ve been trying to assassinate me nonstop since I woke up. I am a target. I’m <em>being</em> a target, Beth, Geneva, Ryoka. That’s my job. They can kill me. They can try. My job is to take as many out as possible. To do what I can. Then die. If I leave them filled with rage or fear—even better.”</p>
+<p>Erin Solstice sat back on the coach, spreading her arms, looking…relaxed. Ryoka choked.</p>
+<p>“<em>Erin. Fuck!</em>”</p>
+<p>Now, Geneva felt like the storm that had preceded their arrival was justified. Her own face felt frozen as she looked at Erin.</p>
+<p><em>Ryoka needs trauma counseling. This woman…</em>she wasn’t sure what Erin needed, but not meeting the Titan sounded like a good first step. Geneva whispered.</p>
+<p>“Refraining from murder is not a weakness, Erin. Reconciling with people might end the bloodshed. You could at least attempt it.”</p>
+<p>“I’m not going to bother trying.”</p>
+<p>The words were like a slap in the face. Geneva jerked, and Erin went on, studying the [Doctor].</p>
+<p>“I get what you’re trying, Geneva. It’s great. Wonderful. It misses the point. I’m not a…a [Negotiator] trying to make peace between two warring tribes. I’m a [Warrior] right now, and all I see are Crelers. You are necessary. Probably a better person than me, who will leave behind more living people. Don’t tell me to stop what I’m doing.”</p>
+<p>“If you’re prepared to make an enemy of half the world, I won’t, then. You’re choosing the most painful existence, Erin.”</p>
+<p>Geneva Scala snapped back, angrier with Erin than she remembered being with Niers or Foliana! For a response, Erin laughed.</p>
+<p>“<em>I’m </em>the one making enemies and choosing pain? You know, Geneva, they talk about you in Talenqual. I didn’t stay with the United Nations company long, but every Earther there brought you up, even the ones who’d never met you. Geneva Scala, the Last Light. The inspiring [Doctor]. Founder of the United Nations company.”</p>
+<p><em>They do?</em> Geneva hesitated, and Erin went on.</p>
+<p>“They speak of you in the past tense. No one is dying to have you back. Maybe they accept you’ve moved on to bigger and better things, but I think they understood just what a problem it was to have you around. Now, if <em>Daly</em> vanished and went to join the Iron Vanguard? I think they’d miss him more.”</p>
+<p>That one hurt. Geneva Scala rocked back a bit and thought Erin had made a mistake. Because Geneva really did mean she didn’t want to hurt anyone. Even monsters. But Erin had just provoked an argument, and the [Doctor] didn’t avoid that kind of strife.</p>
+<p>“Perhaps that’s true, Erin. But where does <em>your</em> line end? I’m willing to acknowledge monsters are a threat. If people have to fight them, that’s fine. You murdered a man in cold blood from behind. Perhaps there was no choice in that situation. Would you have executed those officers in Gloriam’s stead? <em>How many enemies are you going to kill? </em>All of them?”</p>
+<p>Erin studied her fingernails.</p>
+<p>“I let the Lizardfolk go. As for the officers? I was there. Why do you think I only let the [Soldiers] go? When someone has a knife to your friend’s throat—Beth, there—will you wait for me or Daly to kill them or will you only hurt them to save Beth?”</p>
+<p>Beth interrupted before Geneva could fire back.</p>
+<p>“In that circumstance, Erin—who’s holding the knife? Some random killer? A monster? Or is it because someone executed their father or mother in cold blood? You said it yourself: Geneva is fine to keep doing what she’s doing. She grapples with what she does every day. Do you?”</p>
+<p>The [Innkeeper] took a breath, eyes set in her face, and Geneva braced for something, anything—until she heard a voice.</p>
+<p>“<em>Whoa</em>~♪”</p>
+<p>It was a musical ‘<em>whoa</em>’. It came from Ryoka Griffin. The Wind Runner had stood up and left the couch, ignored by the contentious argument. She had set her back to the others, and the sound made Erin, Geneva, and Beth turn.</p>
+<p><em>What?</em></p>
+<p>Ryoka Griffin turned, and her face was beet red. She looked at Erin, who had her mouth slightly open, at Beth, who was checking her ears, and at Geneva’s blank face. She coughed.</p>
+<p>“That’s the opening to a song. You all join in. A capella.”</p>
+<p>“What?”</p>
+<p>Geneva stared at Ryoka, and the Wind Runner spread her hands.</p>
+<p>“I dunno. I was just thinking—here we are, Earthers. All four of us. And you were about to get into a fight with Erin, which is a bad idea, Geneva, Beth, because she’s really, <em>really</em> good at brawling. And I thought—what the hell are we doing?”</p>
+<p>She strode back, tossed herself over the couch, and lay there, feet propped up on a pillow. Giving them a thousand-yard stare.</p>
+<p>“Can we stop? I get it. Erin, I’m sorry for shouting and being upset. Beth, Geneva? Hear me out. We’re not going to resolve this, are we? Erin’s said her piece. You’ve said yours. I know how this goes. At some point, someone hurls a chair through the window, and we have a blowout fight. No hair pulling; gut shots and knees to the face.”</p>
+<p>“I…wouldn’t do that.”</p>
+<p>Geneva muttered faintly. Okasha was giggling in her mind.</p>
+<p>“<em>(I would.)</em>”</p>
+<p>Ryoka sat up a bit, spreading her hands.</p>
+<p>“How about no, guys? Girls? Come on. Truce. We’re Earthers, and the first thing we do is judge each other? <em>Here we are.</em> Two of us from another continent, even if how we got here sucked. Why don’t we take a chill pill, break, have something to eat, and, like, sing a stupid song? Be friends or at least make peace before we start murdering each other? Can we do that? Or are we gonna leave here fighting when we’re the only people from the same world, on the same side?”</p>
+<p>She was not the best speaker. She sounded nervous; Ryoka was still red-faced, and when she looked at Erin, she was genuinely hurt. However, she had a compelling directness and, more than that…experience. It was as if Ryoka had not only had said fight before, but gone down the bad road so many times that she was sick of repeating herself.</p>
+<p>And frankly, it struck a chord with all of them. Both Genevas and Erin looked at each other, and Beth was the first person to snort.</p>
+<p>“Wait, and your first go-to was a song?”</p>
+<p>“Hey! It worked. I thought—no one’s going to punch me if I burst into song. If I shouted, you might.”</p>
+<p>Ryoka grinned at Beth, and the Selphid clapped her hands together. Geneva relaxed slowly, and when she looked up, she saw Erin giving her a speculative glance.</p>
+<p>Neither one liked each other, but Geneva manually blinked her eyes, and Okasha moved her lips up in a smile. Erin gave her a crooked one.</p>
+<p>“True. Niers is waiting for a talk, and if you think this one’s contentious, that one <em>will</em> be. I need to find my friends, and Geneva’s on the list of people I owe and, therefore, will help.”</p>
+<p>“Me?”</p>
+<p>Geneva sat up, genuinely surprised. Erin gave her a studious once-over.</p>
+<p>“Yep. Logic says that the Titan won’t give up an Earther, much less the Last Light of Baleros, no matter how many there are. If you want a way out…well, that’s tricky since I’ll bet Forgotten Wing is listening to us.”</p>
+<p>“Maybe not. The Fraerlings swept your room, Erin, and he wants to be an ally.”</p>
+<p>“Allies spy on each other, Ryoka. Either way, it’d be hard to spirit Geneva off. But if she wants help or anything, that’s why I’m here.”</p>
+<p>Erin jerked a thumb at her chest, and Geneva blinked.</p>
+<p>“I—don’t need to leave. I’m here of my own free will. That might not mean I am able to leave. But my interest is in the Dyed Lands, actually.”</p>
+<p>“Because of the monster attacks?”</p>
+<p>Ryoka sat forwards, and Beth gave Geneva a quick glance.</p>
+<p>“No, actually, both our interests align there. Geneva and I are tackling the Wasting sickness that affects Selphids.”</p>
+<p>…The what? Erin frowned as if she sort of knew what that was, but Geneva wasn’t surprised Ryoka had a blank look on her face. They had to explain, and Ryoka whistled.</p>
+<p>“Damn! Every species has a problem! That’s serious. Wait, does Jelaqua have…?”</p>
+<p>“Not everyone does, but it strikes all Selphids in time. It is vital we go to the Dyed Lands; something there may be a cure. Or at least, an answer. I, myself, wanted to know if your friends were alright, Erin. I am a [Doctor]. It may be trite, but anyone in need is someone I’d like to help.”</p>
+<p>Erin Solstice gave Geneva a cautious nod.</p>
+<p>“Rabbiteater, Ulvama, Ksmvr…there are a lot of them around Baleros.”</p>
+<p>“Don’t forget Nerry, Erin.”</p>
+<p>Ryoka muttered, and Erin rolled her eyes.</p>
+<p>“I won’t. If Niers can help me get to them—that’s my priority. We’re not headed to the Dyed Lands; that’s westwards, right?”</p>
+<p>“You have it right. Still, if we can align in any way…”</p>
+<p>The two were nodding at each other reasonably. Beth glanced at Erin and slapped her knees.</p>
+<p>“Well, I can go with Erin and make sure her friends aren’t dying of dysentery or something.”</p>
+<p>“What? <em>Beth!</em>”</p>
+<p>Geneva jerked, and Erin’s brows actually rose. But the Selphid was running a hand through her hair.</p>
+<p>“Don’t scream, Geneva. I told you I was sick of sitting around. You’re the [Doctor]. I’m the medic. Plus, it makes no sense for <em>both</em> of us to look into the Dyed Lands. You need someone to make sure people are in good health, Erin? I’m not that much better than a healing potion, but those are in short supply.”</p>
+<p>“I…could use that. Thank you, Beth. I won’t endanger the Bushrangers or anyone else if I can help it. Niers is the one giving me aid, at least, I think so. But I’ll take any help I get. Erek’s with us.”</p>
+<p>Ryoka started at this, and Geneva remembered the Orangutan, and her stomach twisted. Ryoka peered at Erin.</p>
+<p>“Erek? But Seve’s…dead.”</p>
+<p>Erin didn’t blink.</p>
+<p>“Because of me. Yes. Erek’s got no one else, Ryoka. No support…what is he going to do? Go back into the jungles and find his tribe, if he has one? I asked him to go with me, and I convinced him.”</p>
+<p>“Just like that? When?”</p>
+<p>“Last night. It didn’t take long. He’s smarter than he looks.”</p>
+<p>So Erin had an Orangutan and a Geneva clone on her side. And presumably the Wind Runner as well. Geneva Scala could see why people like Niers described Erin as a woman who could alter the course of large events. She still didn’t like Erin, but she could see why other people did.</p>
+<p>Well. They could keep going back to the arguments or take this as forwards momentum. Geneva scratched at her head.</p>
+<p>“I don’t suppose I need to talk about what we’re sharing with Niers?”</p>
+<p>“No guns?”</p>
+<p>“No guns.”</p>
+<p>Beth and Geneva chorused, and Erin looked sardonic.</p>
+<p>“No fear.”</p>
+<p>“Actually, <em>yes</em> fear, Erin. He stole my Faeblade! I forgot to even bring it up—he just yanked it! And Foliana’s been scaring the shit out of me all day!”</p>
+<p>Ryoka burst out, and Erin frowned at her.</p>
+<p>“You mean your super-advanced blade you won’t shut up about? I’d yank it too. Wait, I did. Remember? Didn’t I show it to Teriarch or something?”</p>
+<p>Ryoka <em>slapped</em> a hand over Erin’s mouth so hard the [Innkeeper] actually went over the couch and came up swearing. Ryoka gave Geneva and Beth a terrified look—and a guilty one, and the two doctors exchanged looks. Okay. They’d been feeling bad about not mentioning the Duck, but secrets went both ways.</p>
+<p>“Uh—uh—sorry. That’s complicated. Damn, I didn’t even mention the <em>fae—</em>”</p>
+<p>The what now? Geneva saw Ryoka hyperventilate, then calm down. Even when Erin got up and gave her a punch to the kidney, the Wind Runner actually stopped—smiled with a wince—and gestured.</p>
+<p>“Let’s try again. From the top.”</p>
+<p>“Okay.”</p>
+<p>Everyone sat down and inched a bit closer together. At this point, Geneva wasn’t sure if she should introduce Okasha, but she felt like it mattered.</p>
+<p>“Um…actually, there’s something I should say. Okasha, do you want to say hello?”</p>
+<p>When Okasha introduced herself, Erin leapt <em>off</em> the sofa.</p>
+<p>“<em>You have a Selphid in you?</em>”</p>
+<p>She was horrified. Ryoka? Merely unnerved. Okasha grew shy at Erin’s response, but Ryoka just shook Okasha’s hand.</p>
+<p>“Okay, five of us ladies. Chill, Erin. Let’s take it from the top. No questions off the table. Let’s get to know each other. Like…favorite foods.”</p>
+<p>“<em>Nope!</em>”</p>
+<p>Another chorus from three voices. When Ryoka gave them a blank look, Beth explained.</p>
+<p>“Not around Commander Foliana. She eats your favorite food so she can figure out how to assassinate you. Everyone knows that.”</p>
+<p>Ryoka covered her face with her hands.</p>
+<p>“<em>I knew that! And I still told her! </em>Well, at least she can’t make Reese’s Pieces.”</p>
+<p>That was a silver lining, and Ryoka’s face rose with a slight smile of satisfaction at that. Everyone chuckled, and Ryoka looked around awkwardly. Geneva had to admire that.</p>
+<p><em>She’s as good at defusing a situation as Ken. In her unique way. </em>Geneva still thought she needed to get Ryoka alone and give her that hug. But Beth, chuckling, raised a hand.</p>
+<p>“Okay, okay. Let’s actually ask any questions? Everything on the table?”</p>
+<p>“Lay it on us. I’m an open book.”</p>
+<p>Ryoka spread her hands, smiling, and Geneva tried not to instantly ask how she’d lost her fingers. Erin raised her brows.</p>
+<p>“I’m not, but I’ll do my best.”</p>
+<p>Beth’s eyes twinkled.</p>
+<p>“Okay…then what song was Ryoka going to have us all sing?”</p>
+<p>The Wind Runner turned crimson, and Geneva snorted. Ryoka wavered, then muttered.</p>
+<p>“Okay—I know it’s stupid, but what about…”</p>
+<p>She named a song that had Geneva and Beth laughing—Erin raised her brows.</p>
+<p>“I don’t know that one. From home?”</p>
+<p>“Erin! It’s a <em>classic.</em> How do you not—? We could totally sing it.”</p>
+<p>“Yes!”</p>
+<p>“We have to do it!”</p>
+<p>“No.”</p>
+<p>“Nope.”</p>
+<p>They voted. The ‘yes’s came from Beth and Okasha. Geneva and Erin refused. Unfortunately, they were outvoted.</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>Niers wasn’t spying on Erin. He was anticipating what she was talking about with the other three Earthers. He wasn’t spying on Erin because that predisposed him for a conversation, and it was frankly not foolproof and because spying was a breach of trust.</p>
+<p>He <em>did</em> have surveillance spells in the corridor outside her rooms. But come on. Everyone did that. He wasn’t watching them.</p>
+<p>He just happened to notice Daly and Siri were coming to join the meeting, which checked out because obviously they were leaders of the United Nations company, even if they weren’t publicly their version of High Command.</p>
+<p><em>I mean, that was obvious. Anyone with a single [Informant] would pick that up.</em> Niers had half a mind to let Lyonette into the palace, but he didn’t want to relax the anti-surveillance spells.</p>
+<p>She was actually pacing back and forth in front of the palace. A spectral [Princess], arguing with Mrsha as a bunch of students and off-duty [Soldiers] stared at her.</p>
+<p>“<em>No, I can’t get to Erin, Mrsha. I just know she’s in Elvallian. I told you; no one can find Erin, not even her stupid theatre! And the Titan’s palace is warded too! Stupid Fraerlings.</em>”</p>
+<p>…That was pretty amusing, and Niers bent over his writing task for tonight. He wasn’t impatient; he was savoring the wait. Definitely.</p>
+<p>When the door to Erin’s rooms opened, Niers sat up, ready to tell Atmodeca to get the sitting room ready and do a private dinner.</p>
+<p>But what he saw next was not what he expected. Nor what Daly, Siri, or the [Guards] outside the rooms expected.</p>
+<p>“<em>Whoa</em>~♪”</p>
+<p>That was the sound four—well, five if you counted Okasha—women made as they exited the doorway.</p>
+<p>Singing.</p>
+<p>They were snapping their fingers, but the performance was almost completely a capella.</p>
+<p>Daly Sullivan stopped in the corridor as Ryoka, beet-red, exited first, followed by Beth, then Geneva, and lastly Erin. Geneva looked like she wanted to die, but she and Okasha did their part, and at least one of them was having a lot of fun.</p>
+<p>Beth looked delighted. And Erin?</p>
+<p>Erin was singing, not looking amused—but she was on pitch along with the two Selphids. In fact, Ryoka was the weakest voice. They might not have had time to practice long, but—</p>
+<p>“Dead gods. She can <em>sing?</em>”</p>
+<p>Wait, he knew that. But she was a…good singer? Niers had no idea what song it was, only that it was definitely from Earth.</p>
+<p>The sight of four of the unlikeliest members of an impromptu music group slowly strolling down the corridor, singing a tune from Earth, had potentially stopped Daly’s brain. Siri took one look at them and turned red with giggles.</p>
+<p>Erin, Ryoka, Geneva, and Beth were performing <em>The Longest Time</em> by Billy Joel with backup by Okasha.</p>
+<p>It killed the Bushrangers. Just wiped them out. A single skirmish and Dawson was on the ground. Dying. Tofte was bleeding out, clutching his chest as Tobi and Kami fell. Even if they didn’t know the song as non-Americans—and it was a famous song—the sight of Geneva awkwardly trying to perform next to a tall Erin, or Ryoka going ‘<em>oooh~</em>’, was threatening to break ribs.</p>
+<p><em>Worse or better—</em>they were definitely filming it. Aldenon was holding his smartphone steady. And they had arguably too much talent to make this a train-wreck.</p>
+<p>Erin’s rhythm and vocals were on point, as were Beth’s. Niers realized his quill was dripping ink onto his piece of paper. Absently, he put the quill back in the inkpot.</p>
+<p>The premise of the song, which did have a kind of lingering presence in Ryoka Griffin’s mind, as well as Earthers like Geneva’s, if not Erin’s, was that you were also supposed to be singing it while moving, albeit at a musically slow pace.</p>
+<p>That was how the group ended up heading down the stairs of Elvallian as students emerged from classes. The Bushrangers <em>and</em> both Genevas, Erin, and Ryoka strolled down the steps.</p>
+<p>Strategist Mella, giving an impromptu lecture on her experiences since graduation—poked her head out of the classroom. Venaz stopped as Erin sang-walked past him, pointing a finger at him, and the Minotaur backed up, as if terrified he was going to be caught in another Solstice Moment™.</p>
+<p>Of course, he already was. And the Earthers kept singing, walking through the palace, trying not to burst out laughing with every colorful expression they passed by.</p>
+<p>The song, incidentally, also referenced relationships and romance in a way that Niers felt might be aimed at him. He tried not to tap his foot and realized he was going to be hearing this all day.</p>
+<p>Because the first thing Fraerlings like Resk or Rozcal did when they saw this was decide to put on the same performance, but better, in the Fraerways.</p>
+<p>And they kept singing…<em>The Longest Time. </em>Right up until the green faerie slammed into a window on the second floor as Ryoka was passing by it. The Wind Runner whirled and stared at the green blob that made Niers sit up. Then four blue faeries hit the window, one after another. The last two managed to avoid hitting the window and started pelting it with snowballs.</p>
+<p><em>Niers just wanted a word with Erin.</em></p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p><span style="color: #96be50;">“Found ye.”</span></p>
+<p>&nbsp;</p>
+<p>Shaestrel looked <em>terrible. </em>Ryoka Griffin held her as the dazed and battered-looking Spring Faerie lay in her hands. The song was over; the Earthers were all staring down at Shaestrel in awe, mistrust if they knew faerie stories like Tofte and Siri—or pure confusion, like Kami.</p>
+<p>“What are you all staring at? It’s just a blob of green.”</p>
+<p>Someone hadn’t eaten enough preservatives in her healthy, organic-food diet life. Ryoka Griffin couldn’t believe it.</p>
+<p>“Shaestrel! You’re alive!”</p>
+<p>&nbsp;</p>
+<p><span style="color: #96be50;">“Course I am, you daft…eh. I can’t do it. Shite glass windows. I’ve been looking for ye ever since the damn Solstice.”</span></p>
+<p>&nbsp;</p>
+<p>Shaestrel was sitting up, holding her head; some of the other concussed faeries were groaning. They all looked <em>terrible.</em> Their icy forms were bedraggled, dirty, and a few had tears in their wings!</p>
+<p>“What? Since the <em>Solstice? </em>I was at sea—then getting my bearings in Baleros. Doing deliveries, searching for people—I found the Nelgaunt with Erek and directed them to shore!”</p>
+<p>“Ook!”</p>
+<p>Erek nodded, and Shaestrel sat upright. Her voice was audibly weary, and Ryoka had thought…they were gone for good.</p>
+<p>Like Theillige. But only three of the Winter Fae had vanished; no, wait. What about that Satyr that Ryoka had seen? Shaestrel answered for Ryoka.</p>
+<p>&nbsp;</p>
+<p><span style="color: #96be50;">“There are six of us left. Three damned she of death with Theillige. One’s gone to her destiny. So that leaves six.”</span></p>
+<p><span style="color: #8ae8ff;">“Five. Shaestrel, that’s five.”</span></p>
+<p><span style="color: #96be50;">“Fuck, five, whatever. I forgot Theillige was in disguise.”</span></p>
+<p>&nbsp;</p>
+<p>Four Frost Faeries, one Shaestrel. Something was <em>off</em> about them that Ryoka didn’t get. But she realized what it was while Shaestrel explained why it had taken so long to find Ryoka.</p>
+<p>&nbsp;</p>
+<p><span style="color: #96be50;">“We were searching around Liscor first. Then, when we realized ye’d gone off thanks to Lord Stoneface, Tyrion, we tried to cross the sea.”</span></p>
+<p>&nbsp;</p>
+<p>“And?”</p>
+<p>One of the Frost Faeries snapped.</p>
+<p>&nbsp;</p>
+<p><span style="color: #8ae8ff;">“We fucking got </span><span style="color: #8ae8ff;"><em>lost!</em></span><span style="color: #8ae8ff;"> Then we had to get directions, and then we got lost </span><span style="color: #8ae8ff;"><em>again,</em></span><span style="color: #8ae8ff;"> figuring out where ye were, you stupid bint! You didn’t leave directions or nuffin! We had to fight these damn shrimps underwater! They gave me this! Tasted alright, though.”</span></p>
+<p>&nbsp;</p>
+<p>She showed Ryoka a tear in her wings. Daly was having a sit down. Shaestrel coughed.</p>
+<p>&nbsp;</p>
+<p><span style="color: #96be50;">“Eh, pipe down, Osewixthe. We got here. Took a bit, but she’s alive…is, eh, is Erin here? I think we’re on time. Are we on time?”</span></p>
+<p>&nbsp;</p>
+<p>She turned to the other faeries, worried, and the other four shrugged or shook their heads.</p>
+<p>&nbsp;</p>
+<p><span style="color: #8ae8ff;">“Fucked if I know.”</span></p>
+<p><span style="color: #8ae8ff;">“Reckon we’re on time if anyone is.”</span></p>
+<p><span style="color: #8ae8ff;">“I don’t see no rot between the worlds eating people, so I reckon this is the good outcome.”</span></p>
+<p><span style="color: #8ae8ff;">“Those hazelnuts? Give ‘em here, you great, tall shit. Hey! You! What’re you looking at, you midgets?”</span></p>
+<p>&nbsp;</p>
+<p>That was directed at the Fraerlings, who had just encountered beings as small as them. If even more magical. Then Ryoka placed what was so off about the fae…because only she knew them so well.</p>
+<p>“Shaestrel, you slammed into the window.”</p>
+<p>&nbsp;</p>
+<p><span style="color: #96be50;">“It looked open. What were ye doing, singing? That’s daft. Are we in the future where everyone sings what they’re doing instead of talking? Someone kill me if that’s the case.”</span></p>
+<p>&nbsp;</p>
+<p>Shaestrel grumbled, and Ryoka’s hands began to tremble. She didn’t want to hurt Shaestrel, who was still dazed, but of course, she couldn’t. If she attacked Shaestrel with a punch or anything else, the faerie would, annoyingly, dodge.</p>
+<p>She <em>never</em> got hurt. None of them did. The most Ivolethe had ever done was sacrifice herself. And Shaestrel was confused. Uncertain. As if…</p>
+<p>“Shaestrel. You don’t know what’s going on? You can’t see the future anymore?”</p>
+<p>The Spring Faerie’s head slowly rose, and her eyes glinted with approval. She sat there, cross-legged, as the other faeries rubbed their noses, scratched behind their heads, or shrugged.</p>
+<p>&nbsp;</p>
+<p><span style="color: #96be50;">“Like I said, Ryoka. Fate’s awhirl after the battle at sea, and the [Pirates] made a mess of it. No one’ll see anything for a while. Not the King himself; well, maybe scraps for him. But not yer foes, and not us. The greatest advantage they had is dashed to the winds. ‘Tis hard beating the fates in any world. Easiest way is to burn their damn tapestry. Unhook the wheel and let the pieces fly free.”</span></p>
+<p><span style="color: #8ae8ff;">“They get awful stroppy about it, too! Can’t figure out a thing to do! Hah! Wish I’d seen Emmer…hoon’s face when it happened!”</span></p>
+<p>&nbsp;</p>
+<p>Another faerie piped up, and Ryoka stared at Shaestrel’s triumphant face. So <em>that</em> was what they’d done.</p>
+<p>“You helped beat Ka…ligma.”</p>
+<p>&nbsp;</p>
+<p><span style="color: #96be50;">“Aye. She was always the most dangerous for that. And we stoppered up the rest of the plans. Eh…but as you can see, it’s left us a bit out of sorts. Don’t worry, we’re still here. Till the very end.”</span></p>
+<p>&nbsp;</p>
+<p>Shaestrel smiled, but the Wind Runner looked so horrified Shaestrel sprang into the air and tweaked Ryoka’s ear with a small hand.</p>
+<p>&nbsp;</p>
+<p><span style="color: #96be50;">“Argh, stop worrying! It’s all going according to plan! Mostly! Is Erin here or what?”</span></p>
+<p>&nbsp;</p>
+<p>She looked around, and Erin Solstice stood there. Shaestrel gave Erin a once-over.</p>
+<p>&nbsp;</p>
+<p><span style="color: #96be50;">“Eh, pretty good, don’t yeh say?”</span></p>
+<p><span style="color: #8ae8ff;">“Aye.”</span></p>
+<p><span style="color: #8ae8ff;">“Whatever. I don’t care for that one.”</span></p>
+<p><span style="color: #8ae8ff;">“I’m hungry.”</span></p>
+<p>&nbsp;</p>
+<p>And that was that. The faeries settled on Ryoka Griffin like a cloud of faerie midges and stared at Resk, who sat on Siri’s head. The Alchimagus blinked at the faeries, then smoothed back his hair, checked his beard, and gave them a smile.</p>
+<p>“Alchimagus Resk of Paeth. Good to meet you, er, Winter Sprites?”</p>
+<p>One of them stared at the Fraerling and sighed.</p>
+<p>&nbsp;</p>
+<p><span style="color: #8ae8ff;">“Great. The walking toadstools are talkin’ to us. Or is that later?”</span></p>
+<p>&nbsp;</p>
+<p>She waved a hand, and a gust of snow blew Resk off Siri’s head. The faeries stared at the Fraerlings, and one of them whispered to Ryoka.</p>
+<p>&nbsp;</p>
+<p><span style="color: #8ae8ff;">“Ye should probably keep us safer, Ryoka Griffin. We’re on your side, so steal as much food from the banquet as you can. Also, dessert. I’m hungry to pishing myself for a good drink, and I wouldn’t say no to some brains or whatnot either. In return, we give you wisdom, guidance, or something, and we’ll throw hands with these tiny folk if ye want. We can take them. How many is there?”</span></p>
+<p>&nbsp;</p>
+<p>“Um. Thousands?”</p>
+<p>The Frost Faerie counted how many faeries there were. Five.</p>
+<p>&nbsp;</p>
+<p><span style="color: #8ae8ff;">“Eh, we can probably do it.”</span></p>
+<p>&nbsp;</p>
+<p>The sudden rivalry of fae and Fraerlings. The realization of the fae’s weakness. Shaestrel was patting Ryoka on the arm, regarding Ryoka, a staring Geneva, who had more questions than answers so far—then she whirled and swore.</p>
+<p>&nbsp;</p>
+<p><span style="color: #96be50;">“</span><span style="color: #96be50;"><em>What the feck is that giant thing? </em></span><span style="color: #96be50;">Nama? No, wait—I recognize ye!”</span></p>
+<p>&nbsp;</p>
+<p>She pointed, and a patch of air <em>rippled</em>, sighed, and Ryoka nearly had a heart-attack as Foliana stopped leaning on Ryoka’s shoulder. Three-Color Stalker looked exceptionally displeased.</p>
+<p>“I have to work even harder. Mm. What’s your favorite food? And where did you see me? I’ve never met a green Winter Sprite.”</p>
+<p>She and Shaestrel traded stares, and Shaestrel folded her arms.</p>
+<p>&nbsp;</p>
+<p><span style="color: #96be50;">“At the inn, of course! In a when that never was. Better and worse for yer presence, I daresay. As to my favorite food—”</span></p>
+<p>&nbsp;</p>
+<p>Ryoka tried to shush her, but Shaestrel had no foresight.</p>
+<p>&nbsp;</p>
+<p><span style="color: #96be50;">“That’d be Phoenix breast braised in the ambrosia of stolen deities! With a pinch of pepper. Just a smidge, aye. Peppercorn’d do.”</span></p>
+<p>&nbsp;</p>
+<p>Foliana paused.</p>
+<p>“…Is just Phoenix breast with another braising okay?”</p>
+<p>&nbsp;</p>
+<p><span style="color: #96be50;">“Nope! The real thing’s better than anything ye mortals can do. Also, it’s when a Phoenix dies of natural causes other than you. I know their flesh is very tough, but that’s what the ambrosia is for, and then you don’t feel bad about eating them. Why d’you ask?”</span></p>
+<p>&nbsp;</p>
+<p>“Damn. No reason.”</p>
+<p>Foliana stowed a notepad, then looked around.</p>
+<p>“Well, well, well. You’re interesting. And you’re more than mm…even we thought.”</p>
+<p>She poked Ryoka with each ‘well’, and the Wind Runner flinched. Shaestrel slapped the furry finger down on the last poke, and Foliana peered at her. The Spring Faerie and Three-Color Stalker stared each other down until Foliana turned.</p>
+<p>“But you’re the most interesting of all. Don’t keep Niers waiting.”</p>
+<p>She met Erin Solstice’s gaze, and the [Innkeeper] exhaled. She had not said a word since the faeries appeared, perhaps caught as off-guard by them as everyone else.</p>
+<p>Chaos and too many conversations to be had. Too many little meetings, clarifications, and establishing of lines.</p>
+<p>It didn’t matter. There was never enough time. But for once, nothing could wait. No more delays.</p>
+<p>It was time to meet the Titan of Baleros.</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>Niers Astoragon had chosen the venue for their meeting and prepared for this extensively and, at the same time, less than everyone expected.</p>
+<p>Oh, he’d put work into the little sheaf of papers next to one cup of water, waited until after a rambunctious dinner mostly filled with people talking to Erin while he and she occasionally mentioned perspectives of their shared events like the Meeting of Tribes battle, or listened to Ryoka’s amusing lies about the fae or one of them challenging Rozcal to a drinking contest and losing—</p>
+<p>But by mutual consent, they had waited like two competitors preparing for a showdown. Erin Solstice had been untalkative in general, preferring to let other people speak to her of events she had lived.</p>
+<p>She was not what he had expected. This situation was not what he had anticipated. But the broad strokes of his plan were the same.</p>
+<p>She had a chair. He had a chair. They sat in a seldom-used sitting room, which was not so small as to be intimate; it had furnishings of books he’d written, or that he’d read, maps on the wall—all personal, you see.</p>
+<p>Nothing like the rooms filled with conversation pieces. Everything here was him. He’d decorated it, and he seldom used anything within, but if you asked, he could tell you where that sword had gotten too damaged for use or why that book mattered.</p>
+<p>He seldom brought anyone in here, because the room was tiny. Not the size of a matchbox, but truly small, even so.</p>
+<p>It was Fraerling-sized, you see. Adjoining his regular rooms, set not in the Fraerways, but in his actual rooms. Erin Solstice was arriving as a Fraerling-sized person.</p>
+<p>A simple potion enabled the transformation. She could drink it, wait for about a minute, and put on some smaller clothes and come meet him, Fraerling-sized, or grow. Power beyond any Signim. A reason to ally with the Death of Magic in itself…or oppose her.</p>
+<p>Ludicrous power of the highest-level spellcaster of this world. Niers envied it. He wanted it. But right now, he was just grateful that she could use it to come here.</p>
+<p>Oh, he could have let her remain as a Tallfolk. If she asked, he probably would have. But for once, Niers didn’t want to look up at someone or fiddle with the difference between heights. Fate had given him a chance to see this person, this [Innkeeper], on the same height.</p>
+<p>So. Niers sat, counting down the seconds until Atmodeca knocked on the tiny door with a knuckle, opened it—and she walked in.</p>
+<p>Erin Solstice had on Fraerling-wear from Paeth. She didn’t know that the cities had styles unique to their culture, but she had worn the blue coat lined with aphid fur, spidersilk green tunic, neat boots, and comfortable trousers. She paused, removed the coat at the door as she sensed the room was plenty warm enough, and nodded to him.</p>
+<p>What did she see? They were both half a foot tall, but for Fraerlings, Niers realized they were both taller than average. He didn’t know if Paeth had messed around with Erin’s height, but he hoped she saw a taller man sitting in a comfortable, relatively spacious parlor.</p>
+<p>Long legs resting on the floor, dressed for war, a parade, and politics all in one, his cardinal coat a splash of color that stood out with his fading hair color. War hadn’t left him with that many visible scars, and he liked to think you couldn’t even tell where he’d broken bones. Sharp features of a man who sat up slightly.</p>
+<p>He almost resembled the image that some writers liked to use in books; the wily old fox in stories, the cunning statesman who’d outlasted his rivals. But the Titan never quite fit that image; he was old, but he wasn’t a fox among wolves. He was the fox who hunted bears down in their dens and brought the soft word or wrath across the battlefield.</p>
+<p>And won. He tried to keep his aura suppressed, tried to sit there like a normal person. But at some point, he had forgotten how that looked, so when the Titan was caught off-guard, sometimes he didn’t look as though he fit in any room, or merely afraid or startled or uncertain, but focused, like someone watching a bunch of daggers he was juggling fall through the air and wondering which one to grab.</p>
+<p>Titan. Erin Solstice, boots clacking over the rosy hue of floorboards illuminated by a fake fire, heating spells warming the room. Eyes surveying a room full of trophies, and then drawn ever-back to his violet eyes. A storm contained in two irises in this gentle, auspicious, grandly disused room.</p>
+<p>“Niers. Sorry for all the chaos today. I bring it with me it seems. Even here.”</p>
+<p>“I’ve known worse. Chaos suits Elvallian. When I get bored, I stir some up just for the fun of it. Or Foliana does. Welcome. Come in—ah—have a seat. Can I get you anything?”</p>
+<p>He fumbled from the start. Which was fine; being too polished was stupid. Niers stood up, indicating a chair facing him across a coffee table. Not too far, not too close. Erin walked over and smiled briefly. She sat down, folded one leg, and he sat himself down as well, keeping his breathing calm.</p>
+<p><em>She was close enough to touch. </em>Now that she was here, he didn’t think she was real. It was like a dream…but he was rapidly coming down to earth. And the words slipped from his mouth before he could even reach for the piece of paper he’d prepared.</p>
+<p>“<em>O he Elame-Mirake—</em>er, do you want to play a game of chess?”</p>
+<p><em>You fool! </em>But it burst out of him. Erin Solstice stopped. She stared at him, and Niers indicated something. A table and two chairs set up, <em>coincidentally, wouldn’t you happen to know it, </em>with their shared chessboard.</p>
+<p>His version. The spectral pieces were waiting for someone to play, and the white side was closest to him. Niers smiled as he sat forwards, about to rise. And then Erin did bring him to earth.</p>
+<p>Like a comet. Her brows snapped together, and heat entered her tone.</p>
+<p>“Chess. Is now the <em>time</em> for chess, Niers?”</p>
+<p>The question threw Niers. He stopped, half-rising, and the [Strategist] in him replied first. <em>You’re off-balance. Is she doing it on purpose or—</em>maybe now wasn’t the time for chess.</p>
+<p>“I just assumed you would want to play a game. We don’t have to. It’s a good conversation opener.”</p>
+<p>“Gloriam asked me to play. I had Fraerlings ask in Paeth. Chess. It’s a fun game for me. But do I deserve to play it? Chess is a pastime. I am the Goblinfriend of Izril. Wanted dead. We’re meeting for the first time, you and I, and we have important things to ask each other. Is chess the distraction?”</p>
+<p>She met his eyes. Niers wavered, then sat back, schooling his face to impassiveness.</p>
+<p>“—No, I understand. Chess might occupy us mentally. Especially at our level. But I want to emphasize—you’re a guest. I know you don’t usually drink. But I’d like to meet as friends first.”</p>
+<p>This wasn’t going well. At least, for his hopes. But Erin cocked her head, as if considering.</p>
+<p>“I’ll take wine.”</p>
+<p>“Really? Ah, very well then.”</p>
+<p>Flustered, Niers got up and perused his mostly ornamental display cabinet. He pulled out a wine bottle, checked it, and realized he didn’t have a damn bottle opener. He ended up drawing a belt knife and lopping the top off.</p>
+<p>Erin smiled at that as he brought it back and drained a cup of water. He splashed the wine into both cups in a way that would make people who knew the bottle’s contents cry or try to murder him.</p>
+<p>“—To your recovery. And to surviving great journeys.”</p>
+<p>“To your hospitality and that of Fraerlings. And to important conversations.”</p>
+<p>She took a sip and made an appreciative face. So did Niers. <em>Dead gods, he’d actually cracked this one. </em>He wondered if Eirnos would give him a look of horror if he told her…</p>
+<p>No, focus. She was right there. Now the coffee table seemed like a great divide, and Erin sensed it.</p>
+<p>“I’m sorry. I came in here, and the first thing I did was shoot down a friendly game of chess. I just…I can’t. Not right now. You saw me.”</p>
+<p><em>I did indeed.</em> The image of her horns and hooves sprang to mind, and Niers took another sip, then put his cup down.</p>
+<p>“You had your first war. A proper war, not to sound condescending to the others. I…have been there. I suppose I’m the insensitive one, treating this like a fun meeting while your friends are in danger. Let’s be more direct. Is this the right venue for you?”</p>
+<p>Erin peered at him.</p>
+<p>“We’re a bit far away.”</p>
+<p>“True. This is a sort of ‘snack as you talk’ situation. I thought a chess board would be closer.”</p>
+<p>“What about that close without the board?”</p>
+<p>That took a few seconds of moving their chairs and the table to the side. Then they were close enough, now, that they filled each other’s vision. Niers stared at Erin from about what Tallfolk would have called three feet between their legs. She paused and inspected him up and down.</p>
+<p><em>She could see all his grey hairs and perhaps the lines that had appeared without him noticing. </em>They were often invisible to him, but sometimes he would check his appearance and wonder when he had stopped being thirty or forty or only fifty and gotten so damn <em>old.</em></p>
+<p>After a moment, Niers jerked his eyes from doing a full body sweep of Erin, but she didn’t seem to mind.</p>
+<p>“So. I realize this is overplaying my hand a bit, but I prepared something for you. I hope it’s not too embarrassing for either of us. If you’d let me read it?”</p>
+<p>“Go ahead.”</p>
+<p>Niers smoothed the crinkling paper out and read, enunciating as best he could, though he knew his diction was largely intelligible.</p>
+<p>“O he Elame-Mirake. Uro Kinita-shónu. Funu Erin Solstice! Va he Tilhatan. Kótómehie va o…faira o kava?”</p>
+<p>He looked up at Erin sheepishly. But he hoped she’d crack a smile or…the [Innkeeper] gave him a long stare.</p>
+<p>“Goblin.”</p>
+<p>“Ah. You didn’t get any of that?”</p>
+<p>“—No.”</p>
+<p>His heart sank. He was sure she knew Goblin. But Erin was giving him a studious look.</p>
+<p>“You didn’t hear about the Goblins, then? Surprising. I thought Paeth would have told you.”</p>
+<p>Niers almost spilled his drink.</p>
+<p>“The what? Goblins? Chieftain Shaik? Ulvama?”</p>
+<p>“No, I haven’t seen either of them. The Goblins. Two of them found me just outside of Talenqual the first day I was outside. They said something to me, but I didn’t catch them.”</p>
+<p>“<em>What?</em>”</p>
+<p>He was genuinely shocked. Niers hadn’t seen Goblins, an actual tribe in Baleros, since the day Velan had left Baleros’ shores. He wiped wine off his coat’s sleeve.</p>
+<p>“That’s…not impossible, but unprecedented. No, Paeth doesn’t tell me everything. Two <em>found</em> you? Deliberately. Due to your Skill? You have a Skill about Goblins, don’t you? I think you mentioned you were a [Natural Ally].”</p>
+<p>Erin shrugged.</p>
+<p>“Maybe. But I doubt it. I didn’t know either one, and I haven’t seen Ulvama or…Shaik.”</p>
+<p>He recalled she probably didn’t know the Goblin of the Ghostly Hand tribe. Niers leaned forward.</p>
+<p>“What did they say? What did they look like? Where did they come from? No, pardon me. Tell me in your time.”</p>
+<p>Erin thought about how to explain it as he tried not to look worried.</p>
+<p>“At first, we thought one was a Lizardfolk. She appeared in the forest. She was fast. High-level enough to bypass the Tallguard. She had on a costume.”</p>
+<p>“…What?”</p>
+<p>The hairs began to rise on Niers’ neck with familiarity. Erin gestured at her face.</p>
+<p>“A skin. It made her look—”</p>
+<p>“<em>Like a Lizardfolk?</em>”</p>
+<p>Erin nodded. Then she described the other one. Niers pictured him. Tall. Huge. A War Walker in size. He whispered.</p>
+<p>“Fomirelin. That would be massive, even for one of the Great Goblins. Two of them found you? And they were speaking in Goblin?”</p>
+<p>“Yes…”</p>
+<p>“And you don’t speak Goblin? Not a word?”</p>
+<p>Erin hesitated.</p>
+<p>“I didn’t catch what these ones said.”</p>
+<p>That, at least, checked out. Niers grunted.</p>
+<p>“Velan told me he had trouble talking with other Goblins. Something about the dialect in Baleros being more complex. Okay. Go over the conversation fully, please.”</p>
+<p>He wished she had notes of what they’d said exactly, but Erin only had a few phrases from Cotm. But when she described their failed attempts at communication, Niers covered his face.</p>
+<p>“He didn’t use my book. That was the stupidest thing…oh no.”</p>
+<p>“What <em>did</em> he say? I caught one word…”</p>
+<p>Niers spoke.</p>
+<p>“Cotm probably said…damn, I’ve said it thousands of times. ‘Van he elame zelmalaile Velan an.’ The <em>worst</em> thing to say to a Goblin these days.”</p>
+<p>“That sounds dead on. What does it mean?”</p>
+<p>Niers wearily translated.</p>
+<p>“It means—and Goblin is difficult, believe me, but we got this from native speakers—‘<em>we are friends of Velan’s tribe</em>’.”</p>
+<p>“…Ah.”</p>
+<p>The [Innkeeper] sat back and actually smiled a second. She at least had a sense of humor about it. Niers did not and poured himself a slow cup. He could almost see that Goblin sitting in front of him, now, drinking from a cup…sane.</p>
+<p><em>Not like the images of him. </em>Not like the figure on a ship, the last sight Niers had of him before that of the raging monster charging to his death.</p>
+<p>Velan the Kind.</p>
+<p>“I knew him.”</p>
+<p>That was all Niers said. He took a long drink of wine as Erin sat there, just studying him, inhumanly calm…but she had not. For all she was the Goblinfriend…</p>
+<p>He was the original. Niers passed a hand over his face.</p>
+<p>“When Velan the Kind had the only Goblin company of Baleros, that was what we said to the other Goblins. It sometimes worked. Sometimes didn’t. After he became Goblin King, every tribe went with him or was hunted to oblivion. Goblins <em>don’t</em> exist on Baleros. Or so I thought. These were either reinforcements from his isle or something else. Either way—you just told her…”</p>
+<p>“…That we were friends with the Goblin King’s tribe. A lie. She said something else. Velan Fasna? King Velan is dead, I think.”</p>
+<p>“No. Fasna is ‘kind’.”</p>
+<p>Niers corrected Erin. She twitched and studied his face.</p>
+<p>“So you <em>do</em> know the language.”</p>
+<p>“I can’t exactly converse fluently, but I am good enough. So’s Foliana. Not that we advertise it.”</p>
+<p>“—I see. I can’t tell you what else they said because I missed it. I heard ‘Naga’ and Greydath.”</p>
+<p>“Probably asking about the whereabouts of them. As for Nagas…damn. Maybe it’s the Eyes of Baleros. Goblins aren’t stupid. Did you hear anything else?”</p>
+<p>Niers drummed his fingers on the armrest of his chair and then caught himself. Here they were splitting into serious talk when…he supposed he couldn’t help it.</p>
+<p>And to his surprise, Erin gestured at Niers’ paper.</p>
+<p>“Actually, the same thing you called me. Elame…”</p>
+<p>“Elame-Mirake? Oh. <em>Goblin-friend. </em>Mirak means ‘Goblin’.”</p>
+<p>Her not knowing that was surprising. Had she never learned? Then again, would a Goblin trust a Human after Velan? Erin blinked at Niers, then smiled at the paper.</p>
+<p>“I suppose you know what you said. Will you translate for me?”</p>
+<p>He was calming down a bit. He’d added that bit to the things to discuss, but Niers was only too happy to, which was why he’d prepared the paper in the first place. He read out his words slower.</p>
+<p>“Don’t repeat it to the [Bard] you have; my grammar is doubtless atrocious. I did my best. O he Elame-Mirake. That means, ah, ‘you are the Goblinfriend’.”</p>
+<p>“That’s…not similar to how we speak at all. What’s ‘you?’”</p>
+<p>“Just ‘o’. ‘He’ is a kind of thing you add in to designate ‘is’, or how things are. I quite understand. So then I said, ‘you are <em>not</em> an ‘Earth-girl’.”</p>
+<p>Erin snorted at that, and Niers gave her a smile.</p>
+<p>“You are <em>only</em>—funu—Erin Solstice. Then, uh, ‘I’ is ‘va’, but Tilhatan is the name they called me. I am Titan. I appreciate…you. Do you want to speak?”</p>
+<p>Most Goblins would probably laugh at him for the way he’d said it, but Erin Solstice’s eyes lit up. She chuckled to herself and sat back. Her cheeks were faintly flushed from the wine and she seemed to be enjoying herself. The Titan spread his hands, smiling.</p>
+<p>“You can laugh harder. I know it’s rather silly.”</p>
+<p>“No. I have a piece of paper for you, too. Though it’s less well said. Here. I suppose if we’re being…direct and silly—”</p>
+<p>She handed something to him. Niers took it, and their hands touched just for a second, and he felt a thrill run up his arm.</p>
+<p>She was real. He took the paper and made a show of unfolding it—but it was no flowery missive or another language. It was a list.</p>
+<p>&nbsp;</p>
+<p><em>Badarrow</em></p>
+<p><em>Ulvama</em></p>
+<p><em>Ksmvr</em></p>
+<p><em>Vofea…</em></p>
+<p>&nbsp;</p>
+<p>The list went on. Niers looked up after checking all the names, and Erin Solstice indicated the piece of paper.</p>
+<p>“I’m sure you know most of them, but I thought I’d write it down. That’s everyone I don’t know the whereabouts of. If you can help me find them—I will be in your debt. It’s…why there’s no time for chess.”</p>
+<p>Ah. They were back to business, and yet, more intimate now. Niers exhaled and tucked the list into his breast pocket after scanning it.</p>
+<p>“We are looking for everyone on the list. Frankly—Ulvama and Nerry are in the most danger as Goblin and Sariant Lamb. I regret to tell you that Sariants are not a popular pet in Baleros. Some keep them, but many Lizardfolk would, ah—eat her.”</p>
+<p>Erin’s eyes crinkled into a grimace, but she just exhaled.</p>
+<p>“Nerry’s tough. If she’s alive, I’ll find her. If not—it’s my fault.”</p>
+<p>Simply said and accurate. Niers studied Erin, then nodded.</p>
+<p>“I suppose I can’t fault you for snapping about the chess thing. There’s no time to relax, is there? Or even hang up your hat?”</p>
+<p>He stared above her head, but there was no flicker of flames even when he tried to see it, like an aura. Erin’s eyes rose, and she paused.</p>
+<p>“…No. There’s no hat to hang up at the moment.”</p>
+<p>“Did you lose your class? Did it consolidate?”</p>
+<p>Niers was concerned. Erin shook her head after a second. She spread her hands.</p>
+<p>“No. No. I’m just…not using my [Witch] powers. You know my craft?”</p>
+<p>“Wonder?”</p>
+<p>Erin nodded.</p>
+<p>“I can’t harvest any. No wonder, no hat. I think I’ve—broken my ability to feel it for a while.”</p>
+<p><em>That </em>sounded like a [Witch] problem. Nor did he disagree that was likely. Niers exhaled.</p>
+<p>“Understandable. No wonder you were keeping your powers under wraps. So the, ah, change of forms…?”</p>
+<p>“Level 50 Skill. Among others.”</p>
+<p>He raised his brows, but she didn’t elaborate. Erin opened her mouth, staring at Niers.</p>
+<p>“Thank you for speaking to me in Goblin, or trying to. I remember, now, you were Velan’s friend.”</p>
+<p>“Yes.”</p>
+<p>Erin studied Niers, looking him up and down strangely, with a sympathy that embarrassed him and hurt, and he tried to say something.</p>
+<p><em>I don’t regret it? </em>A lie. That Velan was a good man? In doubt. That he had questions about Goblins, but too much mistrust to continue? Needless.</p>
+<p>—The two studied each other, meeting each other’s eyes, glancing away, inspecting the other’s dress, posture—Erin with arms on knees, leaning forward, Niers with crossed legs, holding a cup of wine in hand, wine on his soaked cuff—and they said it about the same time.</p>
+<p>“This is uncomfortable. It was a stupid idea.”</p>
+<p>“Oh, thank the Gnomes. I was about to say the exact same thing.”</p>
+<p>Sitting with knees practically touching, staring each other in the face, was a horrible idea. Niers stood up, and Erin laughed.</p>
+<p>“We have to at least talk to each other!”</p>
+<p>“Not like that. I’d say a ‘walk’, but every Fraerling will come up to us. Damn. We could sit out where I work? It’s a mess.”</p>
+<p>“Do you have anything else around here?”</p>
+<p>Niers stared at the chess board, but waved a hand around.</p>
+<p>“Oh, I have suites of rooms I don’t use. Anything you want in a king’s palace? Go ahead. Bathrooms, bedrooms, a ballroom for some damn reason—the idiot who built this all for me fancied I wanted to be a monarch <em>in</em> my rooms. Half of it’s dusty. Where would you like to go?”</p>
+<p>He looked at Erin, expecting maybe to sit in a garden if the terrarium wasn’t fully overgrown, maybe somewhere like his table, or just…Erin Solstice eyed Niers, and this time, he was sure she deliberately disarmed him.</p>
+<p>“Do you have…a bath?”</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>The Titan had never, ever been more uncomfortable or more titillated in his life. A fascinating word that he couldn’t help but feel had been constructed on purpose.</p>
+<p>He sat in a bubbling tub of water that magically heated itself. The Fraerling was bare to his chest with some shorts on, as Erin Solstice sat down with a Fraerling two-piece swimsuit that was mostly underwear.</p>
+<p><em>Dead gods.</em></p>
+<p>And he’d thought the song and dance or the Winter Sprites was the most unbelievable thing that would happen today.</p>
+<p>Niers took another sip of his drink—then put it aside. It was hot—and frankly, he wanted his senses unmuddled.</p>
+<p>“…This might have been a bad idea.”</p>
+<p>“We can get out!”</p>
+<p>Niers was about to leave, but Erin just sat down as the bubbling water obscured her. The tub was big enough that they weren’t about to bump into each other, and she exhaled.</p>
+<p>“Dead gods, this is <em>nice.</em>”</p>
+<p>“Isn’t it? I should do this every night.”</p>
+<p>Niers was surprised; he hadn’t had the old tub filled, but he’d forgotten how damn fun it was. He stretched out, and a foot touched hers—he jerked it back, but then relaxed as she snorted.</p>
+<p>“I guess it’s not something you can do with anyone bigger, right? And the Fraerlings weren’t really in Elvallian until now.”</p>
+<p>“Hah. You underestimate Fraerling stupidity and bravado. I have gotten in a tub with my fellow friends and adventurers. If you think that’s risky, sometimes I’d sit in this floating cup…other times, I’d just get in. Or fall in. I nearly died one time being blown around by scalding bubbles underwater.”</p>
+<p>Erin began laughing, and Niers went on with a huge grin.</p>
+<p>“So, of course, to harass my officers, I had a huge tub commissioned that Diomedes could fit in. Gives the others a taste of my medicine.”</p>
+<p>“Is…is that what you do for fun? Play pranks on the rest of the Great Company or your students only you can get away with?”</p>
+<p>The question made Niers exhale, and he let himself float a second. Was this happening?</p>
+<p>Yes. So he gave her a real answer.</p>
+<p>“Sometimes, it’s the only thing that keeps me sane. Other times? It’s just the fun between battles. When you can do almost anything, you have to go back to having rules and propriety and be a normal person. Or you forget yourself.”</p>
+<p>Erin sat back in the tub, copying Niers, closing her eyes and seeming to relish the heat herself. They had fruit drinks now, courtesy of Atmodeca, who had reminded them, as a Crocodile would, about not boiling themselves and proper hydration.</p>
+<p>“So…I realize this is gauche, Erin. But you’re here. I’m here. Did Ryoka tell you about her sword?”</p>
+<p>Erin cracked one eye open and looked at Niers.</p>
+<p>“Are you going to give it back?”</p>
+<p>He nodded.</p>
+<p>“The Fraerlings aren’t getting much out of it. They’re quite upset. Half of it’s that; the other half is the [Enchanters] trying to one-up whomever did the temporary enchantments on the Faeblade and not really being able to, aside from improving quality minutely.”</p>
+<p>She snorted.</p>
+<p>“Fraerlings have huge egos.”</p>
+<p>“They have to. The same for every species. Most people just think we don’t deserve ours.”</p>
+<p>He hoped he didn’t sound too snappish there, but Erin waved a lazy hand.</p>
+<p>“No, I quite agree. Here I am, Niers. Am I what you expected? Or wanted?”</p>
+<p>The Titan was about to ask that question of her, damn. He shrugged, trying not to always stare at her, but also not look away all the time. He sat up a bit. Sank down.</p>
+<p>“Honestly? No. But what I hoped for was just an image of someone. I suppose my great fear is that you’ll head straight back to Liscor. I…would help as soon as that’s practical. You’re not well-loved, and a sea voyage or even Ryoka flying you over is risky, as you could guess.”</p>
+<p><em>I could induct you into my company and teleport you with my Skill…</em>he didn’t say that as a first option. Erin Solstice shook her head.</p>
+<p>“I’m not dying to go back to Izril right away.”</p>
+<p>“<em>Oh?</em>”</p>
+<p>He tried not to sound hopeful at that. Erin Solstice exhaled.</p>
+<p>“You heard my interview. Thoughts?”</p>
+<p>“I quite liked it. Powerful speaking. But if I can be frank—I thought you didn’t <em>really</em> mean it. You were speaking to an audience. They’ll be set on you. Your inn? Safe, I hope. Lyonette isn’t without means.”</p>
+<p>Erin nodded at Niers, then lifted a hand.</p>
+<p>“Rabbiteater. Ksmvr.”</p>
+<p>“Finding them. Then, after that?”</p>
+<p>“Maybe I’ll see. This is the part where you tell me there’s conditions for your help, by the way.”</p>
+<p>In response to that pointed comment, Niers just snorted.</p>
+<p>“Perhaps if I wasn’t in charge of a Great Company. I can do all that, Erin. It might not be easy, but I’d be happy to.”</p>
+<p>“Okay. So you don’t have any requests of me?”</p>
+<p>He wasn’t annoyed, he was—exasperated? Of course she knew that he knew that…Niers exhaled.</p>
+<p>“I suppose I’d like to talk to you more.”</p>
+<p>“<em>Just</em> talk? Or something else for an army to rescue my friends if I need—”</p>
+<p>He couldn’t help it. Niers splashed Erin with some water with genuine irritation. She blinked, wiped water out of her face, and his heart sank, but the Titan growled at Erin.</p>
+<p>“What <em>do</em> you think of me? No! And if getting into this hot tub is what you think I ‘want’ as a condition for your help, you can leave, and I’ll grab your friends even if we never speak words again. I don’t want that, Erin. I don’t <em>want—</em>”</p>
+<p>Roshal. He looked for a sign of it on her. Not a physical trace…damn them. His heart sank, but Erin just wiped at her face.</p>
+<p>“…That was unworthy of me. I’m sorry, Niers. I didn’t mean that. It’s just—you quite like me. You will be disappointed by me. I’m regretting that.”</p>
+<p>She lifted an arm, and Niers watched water sliding down her skin. No scars, really. He remembered seeing her raising that white flag—the moment he fell in love—standing with knife in hand, speaking defiance to the world, and standing in the streets of Ramok, fist raised.</p>
+<p><em>Oh, disappointed?</em> Niers swallowed and took a long sip from his fruit drink.</p>
+<p>“I…am an adult. Or I should be, at my age, Erin. Yes, I quite like you. I know Earl Altestiel did too. We make our choices.”</p>
+<p>There. He put it out there as smoothly as anyone could ask for, and Erin Solstice looked Niers in the eyes.</p>
+<p>“If I tell you now that you’ll be unhappy—no.”</p>
+<p>She looked past him.</p>
+<p>“I can use that too. I will. I have my own goals, Niers. You have yours. The Forgotten Wing company is fighting Jungle Tails. The Dyed Lands too.”</p>
+<p>“Not just to kill monsters; we’re looking for Fraerlings lost to it. There’s a city Jungle Tails is holding hostage.”</p>
+<p>They were back to business, but this time, the two spheres were conflating. And Erin Solstice cursed.</p>
+<p>“They took Fraerlings hostage? Paeth never said.”</p>
+<p>“Paeth keeps secrets. Even from allies like you.”</p>
+<p>“Damn them. No wonder the Fraerlings are here. So that’s why you’re fighting.”</p>
+<p>Niers lifted a finger.</p>
+<p>“Part of it is just that Jungle Tails are old rivals and we’re keen to stay on top. You’ve talked to Geneva; she’s working with us and we with her because she can make a difference. I am still the Titan of Baleros. Foliana—don’t be fooled by her, Erin. We want to keep winning.”</p>
+<p>Now he was pushing at her, trying to get her to acknowledge that, but Erin refused to rise to the bait. Or if she did, it was in her own way. She dipped her head down, blowing a few bubbles before rising.</p>
+<p><em>I could probably bottle this bathwater and sell it. I hope no part of me wants to save it. Then again, that’s probably how you get a second Yellow Rivers.&nbsp;</em></p>
+<p>Sometimes, Niers regretted being able to think laterally about everything. Everyone had horrifically stupid or intrusive thoughts. His sometimes felt original. The [Strategist] listened as Erin turned to him.</p>
+<p>“Impasse. With Geneva, she’s unlike me. She doesn’t like me. But we’re willing to work together.”</p>
+<p>“Because you’re from Earth.”</p>
+<p>Erin paused.</p>
+<p>“You say it so naturally.”</p>
+<p>The Titan half-shrugged.</p>
+<p>“It still boggles my mind, even though I’ve talked to Geneva for months. Seeing the genuine thing will be more impactful. Earth would be a completely different can of Crelers if we opened it; I’m going to use what I can get. I assure you, other nations are. Roshal has been buying sulfur.”</p>
+<p>Erin’s face was blank a second too long, and he clarified.</p>
+<p>“For gunpowder.”</p>
+<p>“Ah. Damn.”</p>
+<p>Damn indeed. Niers hadn’t missed that some [Slavers] not busy trying to excuse their kidnapping had been trying to insert themselves into discussions of arms trading. He didn’t like what his mind told him, but he steered the conversation back to safer waters.</p>
+<p>“—If you stay around Elvallian, it might be the most practical use of your time.”</p>
+<p>Erin tilted her face upwards, soaking her hair.</p>
+<p>“Do you really think I’ll stay put if I know where Rabbiteater or my friends are?”</p>
+<p>“…Probably not. So how do I help you without keeping you from running off? Or without running after you and compromising my entire company? I did that once. Now is not the time.”</p>
+<p>Erin Solstice opened one urbanely amused eye.</p>
+<p>“You know something, Niers? It’s funny that you ask. It’s so…direct. So let me be direct: I don’t care about Baleros.”</p>
+<p>“Ah. Fair? It’s only a continent.”</p>
+<p>The [Innkeeper] laughed as the Titan kept his voice level. Her voice pitched lower, and she rasped. Then the woman from the interview was in the tub with him.</p>
+<p>“You know what I mean. I don’t care about the Forgotten Wing company either. Or you. I like you; that’s different. Did you know I actually admired the Titan?”</p>
+<p>“Really?”</p>
+<p>He tried not to sound pleased, and Erin nodded her head slightly. Then Niers felt despondent. Oh, because—</p>
+<p><em>She had heard of the legend before knowing the joke. </em>Either that or she admired the Titan, and Niers was just the man behind the legend. Having a reputation had destroyed too many relationships, platonic and otherwise, before they could even form.</p>
+<p>The Titan grew morose, but Erin went on, and her next words made his head rise slightly, bobbing ever-upwards on that silly tide of hope.</p>
+<p>“When I found out about him. Of course. A Fraerling who created a Great Company. Not because you were <em>small</em>, you understand. But because you did it from nothing. I thought it was amazing. Inspiring. But you know—you did it. You made a Great Company, but until recently, it was empty of Fraerlings. You were the one Fraerling everyone knew, but your people still stayed in hiding. What a waste, I thought.”</p>
+<p>She sounded like <em>him.</em> Niers sank down and muttered.</p>
+<p>“They never came.”</p>
+<p>“You should have dragged them out of their cities! Make this a Great Company for them. How long will your Great Company endure after you die, Niers?”</p>
+<p>“I’d like to think for a while.”</p>
+<p><em>Not long, perhaps. </em>And Erin knew it. She splashed some water at him, and it went over the side.</p>
+<p>“You define it. And even if it does—what does it matter? What was the point? To replace Jungle Tails? Now—if it was a company for Fraerlings or did something else? That matters. Look what happens when they let their guards down. Paeth.”</p>
+<p>He shivered despite the hot water toasting him.</p>
+<p>“Oierdressql. That’s the thing about free will, Erin. You have to give it to people or what’s the point?”</p>
+<p>The [Innkeeper] and the Titan were arguing, actually fairly passionately, and Niers was suddenly invested in this conversation for more reasons than just her. She looked at him, eyes alight, and his closed as he listened to her rasping voice.</p>
+<p>“…You can lead them, though. Or else they’ll be damned forever. Same with allies. I don’t care about you. I don’t care about the Forgotten Wing company. I only want to protect my friends. Niers, I am drawing a target on my chest. I am marked to die. And if I do? That’s fine. I’ve already won enough battles just by getting this far. Don’t mistake me: I don’t <em>want</em> to die, but if I do, it will be fine. The world will be fine. So I don’t care about anything other than protecting those who need it and standing right here.”</p>
+<p>When he opened his eyes: he searched her for any sign of bravado. Any tell of weakness or doubt. Niers had seen many people who had spoken lines even more fiery. People who thought this was the moment when they took a stand.</p>
+<p>—But he couldn’t find the false front. The lie within the words. And that shook him more than anything else.</p>
+<p><em>She’s real.</em> <em>She thinks she’ll die.</em></p>
+<p>She reminded him of Foliana when they had first met. And Niers…</p>
+<p>“I would like to avoid that. So what do I do? No…my answer is that I have to make you care, of course. Obvious. We barely need to say it. So then you have me…”</p>
+<p>His mind moved ahead to the answer. And Erin’s eyes lit up as she saw him doing the work before she could even speak it.</p>
+<p>“Make me care. You are the leader of the Forgotten Wing company. In a way, the greatest ally I could ever ask for aside from Fetohep, perhaps.”</p>
+<p>“<em>I have more troops in a single city than his entire damn nation. </em>Living ones, at least.”</p>
+<p>Niers muttered, and Erin laughed.</p>
+<p>“And you give and give and expect me to keep caring? Or that I’ll swoon into your arms?”</p>
+<p>“Sit in the hot tub long enough and we’ll both be belly up.”</p>
+<p>He was actually getting sort of hot, but the fruit drinks were good—and there were three of them for each. Of course, then you’d have to pee, but that was a separate issue. Erin Solstice eyed Niers, and he thought to himself.</p>
+<p><em>Was this conversation invariably inevitable? </em>He wished he could have met her in a time of peace last year. Relative peace…where Daquin was all that mattered, not two wars.</p>
+<p>But if he had—would she even have stayed? Or if she did, for months, would it just be as a vaguely interested person who liked many people? At last, Niers sighed.</p>
+<p>“…Who are the Winter Sprites?”</p>
+<p>“Fae. From another world.”</p>
+<p>“<em>Another</em> one? What do they want?”</p>
+<p>Erin tilted her head, getting some water out of her ear.</p>
+<p>“According to Ryoka, there are weapons left around the world to fight Kaligma and the like. The kind that can actually kill them for good.”</p>
+<p>“…What? Like some game of treasure hunting for the Adamantium sword? Well, that’s just adventuring.”</p>
+<p>Niers snorted. But part of him tensed up, and when Erin spoke next—he slipped and went underwater.</p>
+<p>“Yes, well, I know it’s crazy, but they say there are artifacts left by the Elves. Not half-Elves, the Elves. Buried deep in—Niers? <em>Niers?</em>”</p>
+<p>He came out of the water like a drowned rat. No, like a rising Krakenbane Destroyer staring at her.</p>
+<p>“…No.”</p>
+<p>“Yes?”</p>
+<p>Niers sat down hard.</p>
+<p>“No. Weapons left by <em>Elves?</em>”</p>
+<p>He covered his face, and Erin Solstice looked at him.</p>
+<p>“—You know where one is.”</p>
+<p>The Titan refused to reply. He spoke, covering his face.</p>
+<p>“Your turn. Vetn, the Thief of Clouds. Guest at your inn. He left; he went to a Drake harbor, I forget the name, and was in the company of Bviora, a lesser-known [Thief], and Tesy, the [Magical Painter] I assume to be Sellme. Tesy and Bviora were killed in a clash with Klbkch the Slayer and multiple Walled City secret agencies, including Symphony. Coincidences that tie to your inn. Did you know about it?”</p>
+<p>“…No. Tesy’s dead? I liked him.”</p>
+<p>Erin sat there, head bowed, and Niers went on, ruthless.</p>
+<p>“I don’t care. Truly. Same as you; they’re allies, individuals of note, but I wouldn’t care even about the Slayer except in a geopolitical sense aside from one thing: Vetn might have an Eye of Baleros. And if he brings it to Baleros, if Jungle Tails snatches the other one from where it’s hiding—they will resurrect their Great Company. And everything I labored for since I was a Silver-rank adventurer will go up in flames. And perhaps your ambitions and chunks of the damn world too, Erin.”</p>
+<p>She looked at him, and Niers sighed.</p>
+<p>“Ever read the tales of The Lightning Thief? Thivian Stormless?”</p>
+<p>She snorted.</p>
+<p>“Everyone’s heard of him. I never read his books.”</p>
+<p>“They’re not bad. I met the man. Just like Velan. His life’s work was siring too many children, stealing countless treasures—and stealing the Eyes of Baleros from Jungle Tails. Every time they get them, the Nagas put them in their temples and create Nagas at a rate unheard of. The Eyes are beyond Relic-class artifacts. If they get <em>one</em>—they’ll find the other and start the old empires up. Remember how Selphids once took over the world? Lizardfolk have the record for the most world-spanning empires. <em>And those damn eyes are the reason.</em>”</p>
+<p>Niers snapped, and he clenched a fist. Erin stared at him.</p>
+<p>“…That’s bigger than I thought. I’m now invested.”</p>
+<p>“Thank you. I got rid of the Eyes with Thivian—okay, I played a small role in one book and was mischaracterized greatly. He’s not that smart. Clever. Not smart. At any rate, we hid one away—I daren’t even tell you. The other we thought was lost in the damn ocean, and the Drowned Folk would have hidden it if they found it.”</p>
+<p>“…Why didn’t you destroy them? Or toss them over the edge of the world?”</p>
+<p>Niers pointed a finger at Erin.</p>
+<p>“Ah! One reason is they’re a tremendous source of power. You can fuel magical nations off of them. But I’d chuck one off the side of the ocean…if you didn’t get a magically empowered Seamwalker rising from the depths a hundred years later.”</p>
+<p>“I see. Destroying it?”</p>
+<p>“We have five continents left. I like that number.”</p>
+<p>Erin lay back, exhaling as she fiddled with her top. She spoke.</p>
+<p>“The Dyed Lands?”</p>
+<p>“Just monsters. I want to know what the hell they’re like.”</p>
+<p>“So, you’re really doing it for the public good? No ulterior motives besides rescuing Fraerling cities and stopping the monster invasion?”</p>
+<p>The wood-lined walls of the room where the hot tub was steaming were running with condensation; a glass window gave them a view of the rest of Niers’ room, lit by only a single lantern on his desk. A shadow stood there; Seneschal Atmodeca, waiting for them to ask for towels or a refill of their drink.</p>
+<p>Niers chuckled.</p>
+<p>“Hard as it is to believe, I like doing things that are genuinely good. They’re rarer opportunities than I’d like, but I don’t lose sleep over them.”</p>
+<p>Erin smiled as sweat ran down both of them, mixing with the scented hot tub water. Her eyes flicked to Niers’ face as he stretched out more.</p>
+<p>“What about the children in Oelnnox? A [Noble] called Loiqe asked me to petition you to free them—”</p>
+<p>Niers froze, and a colder sweat ran down his back. <em>That fool, Loiqe. I should have shut him up…</em></p>
+<p>Why? He wasn’t powerful in many ways, but he was notable and innocent. But he was also uncontrollable. Even so—Niers tried to ease himself back into his seat, but he had tensed up.</p>
+<p>“Ah.”</p>
+<p>“No denials?”</p>
+<p>She was staring at him like a lighthouse suddenly. He’d walked into it. But Niers Astoragon just reached for a drink, took a long draft, and exhaled.</p>
+<p>“I’m glad you asked rather than letting it stew.”</p>
+<p>He was more relaxed than she expected, perhaps; her eyes narrowed.</p>
+<p>“It sounded like a straightforwards problem when it was described to me. I don’t really like kids as much as people might think, but if what Loiqe said is true…”</p>
+<p>“It’s not. He’s only got pieces of the puzzle, and the problem is a knot that you can’t untangle with the swipe of a sword. Or rather—”</p>
+<p>Niers grimaced and took another drink from a tray.</p>
+<p>“—It’s not one that I’d solve with the swing of a sword. Jungle Tails tried to cover up <em>their</em> mess like that. Atmodeca? Get me something stronger. Still refreshing. This might be a conversation for after the big stuff, Erin.”</p>
+<p>“So it’s not big?”</p>
+<p>Niers had to stop prevaricating. He marshaled his thoughts, looked up, met her eyes, and didn’t look away.</p>
+<p>“Not in the grand scheme of things. Loiqe’s children are alive. They <em>are</em> at Oelnnox. If you would like, I can arrange for you to be let in. It’s south of here, partly buried in the jungles bordering the Gazers’ territory. The children are in good health…more or less. Not from a lack of effort on our parts. I’m not releasing them. I’d sooner unleash two Creler nests on Baleros.”</p>
+<p>Her mouth had begun to open when he said that. Erin paused, and her own body didn’t untense, but she wavered.</p>
+<p>“Explain?”</p>
+<p>“I will. The briefest summary? Jungle Tails initiated the kidnappings nearly a decade back; no, that was when I got word of them. They began the project before even that. An attempt to recover lost footing. My company’s rise might have pushed them to it.”</p>
+<p>An unpleasant thought he’d had many times. Niers stared at his cup.</p>
+<p>“—Suffice it to say that if the Minacien Wall exists for Selphids, well, we don’t have the same terms for other species. You’d call these simply…war crimes? That’s too banal a word. The most unethical deeds. I found their facility. The children stay. They’re too dangerous to let loose. And Loiqe is better off not meeting them.”</p>
+<p>“Their families—”</p>
+<p>“—Will talk. Loiqe’s not powerful, but he would be noticed if he vanished. I could use a contract to ensure his silence. Better that I don’t and hope that, someday, in ten more years, he can meet his children and hold it all over me. But I’ll swear on whatever you like I’m not mistreating them.”</p>
+<p>Erin Solstice eyed Niers and took a long drink at last as Atmodeca used a tiny dumbwaiter to deliver more drinks.</p>
+<p>“—I may insist on a visit. And clarity. But that sounds…genuine. Experiments?”</p>
+<p>“Oh, absolutely. And yes. Experiments.”</p>
+<p>He relaxed. Niers waited for Erin to demand more answers, but instead, she reached for something alcoholic and downed half of it.</p>
+<p>“I can picture that. I have some idea of what that means. Did you kill the people responsible?”</p>
+<p>“…I didn’t have to. The children did it for me.”</p>
+<p>The conversation fell silent, and after a moment, Niers turned up the heat in the hot tub for both of them. Erin looked at him, but they were too sober for this conversation, so she let Niers guide them back to more pleasant topics.</p>
+<p>“The Dyed Lands aren’t as easy to crack as I’d like to admit, either. Between them and Jungle Tails, my company <em>is</em> very widely engaged, Erin. You’d think monsters wouldn’t stand a chance against multiple Great Companies, but they tore up an entire division of the Iron Vanguard. Named-rank monsters, all. Stopping them from breeding and multiplying is actually a continent-wide concern.”</p>
+<p>“I get that. But there’s no…mysterious treasure buried there? Is that where the Elves’ secret dungeon is?”</p>
+<p>Niers’ heart felt dangerously fragile, and he took a longer drink to steady himself. He was telling secrets, but it felt good. Too good.</p>
+<p><em>Damn it. Maybe she can help those children. No one else could—and even Gloriam had visited and been routed in his way.</em> Niers exhaled. And that was nothing compared to this. He wished it didn’t feel so good to speak.</p>
+<p>“No…the secret of Elves, and their faces, are buried in the Labyrinth of Souls, the dungeon which Foliana, myself, and the Forgotten Wing company emerged from. Everyone knows where it is. We have it under lock and key. It began to activate when you came back to life. And I thought we’d lose that entire chunk of Baleros. Because that dungeon was never conquered. We just <em>survived</em> long enough to see what was down there and then left. If you want to explore it—my Great Company might get you down there in good order. But I don’t think we can take it.”</p>
+<p>Erin Solstice twisted around in the tub.</p>
+<p>“Not with General Gloriam and Diomedes backing you, Foliana, Perorn, and…”</p>
+<p>“Not with a hundred thousand Venazes. No. My team was Named-rank, and the first Old One I ever slew was in that dungeon. Writhing through the passageways, whispering profane secrets. It never got to the heart. It grew to that—<em>without even getting to the heart of it all.</em> My team reached one of the innermost parts of the dungeon. We looked up, and a damn Hydra killed half of us before murdering two leaders of Jungle Tails and every [Soldier] trying to hunt us down. I hit Level 50; Foliana and I led our company out of the dungeon, and we became a Great Company of Baleros. And I never went back.”</p>
+<p><em>Someday. </em>It was one of those things Niers contemplated, then took a good hard look at the odds and knew he couldn’t do.</p>
+<p>If…if he had a suicidal King of Destruction with nothing left to lose and the remnants of his Seven? Or Cognita Truestone? Or a few more legends—he would dare it. But when Niers looked at the [Innkeeper] who might be Level 50 sitting across from him and thought of her cute Winter Sprites and the Wind Runner and all the Fraerlings?</p>
+<p>He saw no chance.</p>
+<p>But she was smiling. And she lifted an arm out of the steaming water.</p>
+<p>“I have goosebumps.”</p>
+<p>“I have nightmares. You’re not ready.”</p>
+<p>“I understand. But Niers? You have something I <em>want.</em>”</p>
+<p>She reached out and grabbed his arm, and the Titan eyed Erin, then began laughing. Out of sheer, exasperated delight with how little she knew. With cynical amusement.</p>
+<p><em>Oh, fate. You are too kind to me.</em></p>
+<p><em>So I’m waiting for the trick, you bastard.</em></p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>That night, a lot of people who wanted to talk to Erin Solstice did not get their chance.</p>
+<p>Iuncuta Eirnos, Commander Rozcal, Wil, Umina, Lyonette, Ryoka Griffin…and many more. Not everyone was so lucky.</p>
+<p>She did not have time for any of them. But Seneschal Atmodeca reported to a disbelieving number of Forgotten Wing officers that things were going ‘well’. Negotiations were good.</p>
+<p>She based that on splashing and laughing, the Titan striding out to demand she fetch a cabinet of maps for him, and Niers and Erin even going to tour his personal armory of real weapons.</p>
+<p>A lack of chess. A surfeit of talking.</p>
+<p>Ryoka Griffin surreptitiously stared at Erin as the young woman headed back to her rooms late that night. She stared and stared, but all she saw was Erin Solstice. The [Innkeeper] greeted a figure who gave her a salute outside her rooms.</p>
+<p>Not the [Guard], but an Orangutan. She said something only he could hear, patted him on the shoulder, and he <em>ooked.</em></p>
+<p>“The fuck.”</p>
+<p>&nbsp;</p>
+<p><span style="color: #8ae8ff;">“I know, right? If they were swiving each other, it’d be hilarious. ‘Tis a mystery what she sees in the Titan fellow. What he sees in her…eh, any tall person would do.”</span></p>
+<p><span style="color: #8ae8ff;">“It’s her character.”</span></p>
+<p><span style="color: #8ae8ff;">“Ryoka’s got more character than Erin.”</span></p>
+<p><span style="color: #8ae8ff;">“Some men don’t like character. They like a real lack of it. I see that, myself.”</span></p>
+<p>&nbsp;</p>
+<p>Four Frost Faeries argued around Ryoka, and she tried to shoo them away, but accidentally hit one in the eye. However, the Wind Runner just stared at Erin’s door. Then at Erek.</p>
+<p>The Orangutan gave Ryoka a strange look as he sauntered over to his rooms. He met her eyes.</p>
+<p>“Ook. Ok. Ooook.”</p>
+<p>“Is it…what I think it is?”</p>
+<p>“Ook?”</p>
+<p>He had no idea what he meant. But he gave Ryoka Griffin a long look, and she floundered.</p>
+<p>“I’m sorry about Seve—”</p>
+<p><em>Click.</em></p>
+<p>The door shutting was loud. Ryoka Griffin was left standing in the hallway with only her thoughts and the frost faeries.</p>
+<p>And Commander Foliana of the Forgotten Wing. The Wind Runner tried to take a step, and the footwraps that Foliana had retied around her ankles made her fall flat. She yelped, cursed, looked up at Foliana—</p>
+<p>“Boo.”</p>
+<p>Ryoka fled, tumbling, crawling, then hopping until she got one foot loose and just ran for it down the hallway. That was pretty amusing, even now. Foliana hopped about in triumph; even the Frost Faeries had fled, cursing, which suggested she’d actually spooked them.</p>
+<p>Then, since the corridor was empty of people to impress, Foliana stopped hopping around like a child and sighed.</p>
+<p>She walked down the corridor, wondering if her back was hurting, and then noticed some of the Fraerlings, including Eirnos, having a poker game in the Fraerways in a room glowing with light high up along one of the corridor intersections.</p>
+<p>Funny thing about the Fraerways. You could see into them unless they lowered shutters. Fraerlings liked to peek at Tallfolk and forgot the same held true.</p>
+<p>Small people liked to think they were hard to notice because they were <em>small. </em>For instance, Tallguard loved to think they were stealthy and shadow Foliana.</p>
+<p>[Walking Shadow]. Foliana activated that Skill, then a few <em>good</em> Skills and let some Tallguard pass behind her as a shadow of her slid down the palace. She told it to head to the gates of the city.</p>
+<p>Now, the Earthers were interesting. They were unguarded, but they kept the real secrets of Earth hidden. They’d tell you about nuclear weapons all day, like Geneva, but never mention the real things she considered immediately deadly.</p>
+<p>Ryoka? Ryoka was a book that shouted ‘I have secrets!’ then put a lock on the cover. Foliana knew how to pick locks. All kinds of locks, any which way.</p>
+<p>She also knew how to swing a hammer, which often opened locks too. But she was <em>Commander Foliana.</em> Usually, she just let Niers sort out the locks.</p>
+<p>He did strategy. He did troop disbursements, hiring, firing, supplies, the students, politics, and almost everything. Seriously—anything Foliana did, Niers would do.</p>
+<p>Except that Foliana sometimes did all the things Niers did. Like hire Seneschal Atmodeca. Or train [Stalkers]. Or open locks.</p>
+<p>The Titan was a busy man. Foliana was not; they complemented each other. So, Foliana had the time <em>not</em> to interview Erin Solstice. She had the time to watch, sit around, and eventually walk up to a little, green faerie sitting on one of the outdoor balconies.</p>
+<p>A Fraerling had put some chairs out, and the palace was warded against bugs; no Fraerling wanted a mosquito sucking <em>their</em> blood. Mind you, Foliana had the suspicion that Shaestrel was bug-like herself.</p>
+<p>She materialized, but had the suspicion the faerie had seen her already.</p>
+<p>“…Hello.”</p>
+<p>&nbsp;</p>
+<p><span style="color: #96be50;">“Hey.”</span></p>
+<p>&nbsp;</p>
+<p>Foliana sat down on the edge of the balcony, feet dangling over the sheer drop. They were facing the jungle, dark, where the sounds of Baleros could still reach the city. Foliana’s ribs hurt as she remembered nearly dying there, fighting Lizardfolk and that stupid new weapon.</p>
+<p>Shaestrel was scratching at a cut on one arm; it was bloodless, but it looked like it annoyed her. Foliana was fishing around in a pouch, but she offered something to Shaestrel.</p>
+<p>It was…a tiny cup with a straw in it that Foliana had pilfered from the Fraerlings. The beverage was definitely alcoholic; it was probably fermented ant honey.</p>
+<p>“Mm?”</p>
+<p>Shaestrel hesitated.</p>
+<p>&nbsp;</p>
+<p><span style="color: #96be50;">“I probably shouldn’t, but eh—”</span></p>
+<p>&nbsp;</p>
+<p>She took the cup and grimaced as she extended her shoulder.</p>
+<p>&nbsp;</p>
+<p><span style="color: #96be50;">“Everything hurts. Hey, why are you here?”</span></p>
+<p>&nbsp;</p>
+<p>“That’s my question.”</p>
+<p>The Squirrel Woman sat there, bushy tail blowing in the faint breeze, and produced her own drink and snack. She nibbled at it as Shaestrel took a long draft of her drink and sighed.</p>
+<p>&nbsp;</p>
+<p><span style="color: #96be50;">“Not a bad thing for mortals. You first.”</span></p>
+<p>&nbsp;</p>
+<p>It was an odd question, but Foliana decided to be as truthful as she got. She waved a paw at the jungle, the city. Everything. Her company.</p>
+<p>“…I enjoy it. This is my place. I’m doing a job someone gave me that I used to think mattered. And doing what I think matters. Someone has to give Niers things to do.”</p>
+<p>&nbsp;</p>
+<p><span style="color: #96be50;">“Heh. Sounds good. He’s the tiny one, aye? The one who’d slay the sky if he could only find a ladder tall enough?”</span></p>
+<p>&nbsp;</p>
+<p>“That’s him.”</p>
+<p>Shaestrel chuckled.</p>
+<p>&nbsp;</p>
+<p><span style="color: #96be50;">“The right sort, you two are. Fit right into the stories we like to tell back home, you two do.”</span></p>
+<p>&nbsp;</p>
+<p>Foliana liked that, but she assumed it was a false compliment. She sat next to the most dangerous thing she’d encountered for a long time and bet she could kill Shaestrel with one paw before the faerie could even react. But she wondered…</p>
+<p><em>What the consequences would be. </em>If the answer was ‘nothing’, perhaps that was scariest of all. Foliana nibbled, sipped, and spoke.</p>
+<p>“Why are you here?”</p>
+<p>Shaestrel stared out across the jungle as if it were a patch of moss she’d found growing on her windowsill. Her eyes captured sights unseen—then focused on this world, as if, like Foliana, she had learned to appreciate small things for what they were. But her perspective mattered.</p>
+<p>Foliana understood that too. They were older. If Erin, Ryoka, were young women for all they were women…when Shaestrel spoke, it was as someone who had done it more than once, to Foliana.</p>
+<p>&nbsp;</p>
+<p><span style="color: #96be50;">“When I was younger, I swore an oath. I promised I’d kill this cunt, ye know? The kind of promise you make that won’t fade. </span><span style="color: #96be50;"><em>That</em></span><span style="color: #96be50;"> sort of thing.”&nbsp;</span></p>
+<p>&nbsp;</p>
+<p>“Mm.”</p>
+<p>They sipped again, and Shaestrel exhaled with a burp.</p>
+<p>&nbsp;</p>
+<p><span style="color: #96be50;">“Technically, I didn’t have to. Sorta, technically, it happened, and I didn’t have to come back. But I did. There’s all sorts of other bullshit in it, too, you know. Hopes, dreams, prophecy—but that’s why I’m here. Settling things.”</span></p>
+<p>&nbsp;</p>
+<p>“I understand that.”</p>
+<p>After a bit longer, they watched as some bats flew around, skirting the protections of Elvallian. Shaestrel finished her drink, so Foliana handed her another—and some of her snack. The faerie took the drink, but balked at the food.</p>
+<p>&nbsp;</p>
+<p><span style="color: #96be50;">“Feck’s this?”</span></p>
+<p>&nbsp;</p>
+<p>“Mac and cheese.”</p>
+<p>The Spring Faerie stared at the slightly stale bite that Foliana was nibbling on. Then she took some and chewed. Naturally, it gave Shaestrel nothing but a gag reflex and, possibly, nutrition. But Foliana saw something else when she ate the food.</p>
+<p>She always did, if the circumstances were right. Distance…mattered a great deal, of course. Sometimes it was just a flicker. She saw Shaestrel chomping away and wondered what the fae saw. Shaestrel muttered to herself.</p>
+<p>&nbsp;</p>
+<p><span style="color: #96be50;">“Like a decayed maggot. Hey, I didn’t say I wasn’t hungry. So. What do you think of our [Innkeeper]?”</span></p>
+<p>&nbsp;</p>
+<p>“Seen it before.”</p>
+<p>&nbsp;</p>
+<p><span style="color: #96be50;">“Me too.”</span></p>
+<p>&nbsp;</p>
+<p>The two lapsed into silence. What they saw was always hard to reconcile with what other people saw. Three-Color Stalker. Think of that. Foliana was one of the world’s most famous [Rogues]. Arguably the most famous. She was a giant Squirrel Woman…and they called her by that.</p>
+<p>Her eye-color, not her deeds or other abilities. And yet people only talked about how she killed or ate food. As if the name meant nothing. Names often meant something in Foliana’s experience.</p>
+<p>In the end, Foliana murmured, eyes shifting to Shaestrel.</p>
+<p>“Do you want me to tell you what I see?”</p>
+<p>Shaestrel passed a weary hand over her face, but glanced up and nodded slowly. Acknowledging a being other than herself had an insight she lacked. And that uncertainty—made Shaestrel lick her lips.</p>
+<p>&nbsp;</p>
+<p><span style="color: #96be50;">“Might be nice. My eyes aren’t what they used to be.”</span></p>
+<p>&nbsp;</p>
+<p>The Squirrel woman nodded. She took another bite of the mac and cheese. Her power was to see through the eyes of those whose favorite food she ate. Of course, she often just did that to scare the living daylights out of people. When she took a bite—she did not see a dark room in the palace of Elvallian or a young woman undressing before bed.</p>
+<p>The Squirrel Woman, commander of Forgotten Wing—she liked people forgetting that—spoke, her voice quiet. Not without emotion, just holding it back.</p>
+<p>“That’s not Erin Solstice. The real one went to sea. Not by her own will, but she went. She never came back.”</p>
+<p>Shaestrel had closed her eyes to lean back in the chair. She fanned one translucent gossamer wing.</p>
+<p>&nbsp;</p>
+<p><span style="color: #96be50;">“Aye. The one before us has her spite and spit. Courage enough to spit in the eyes of gods twice. But not the [Innkeeper].”</span></p>
+<p>&nbsp;</p>
+<p>Foliana paused and tilted her head. She took another bite of her food.</p>
+<p>“No, not the [Innkeeper]. Good disguise. Does she know she’s an imposter?”</p>
+<p>Shaestrel’s voice was amused. Then it grew worried, like a dark stain of fear oozing out of the weary triumph in her body.</p>
+<p>&nbsp;</p>
+<p><span style="color: #96be50;">“Aye, of course. It’s a good act. And to a point this one came. But where’s the one who went to sea? Dead?”</span></p>
+<p>&nbsp;</p>
+<p>Her anxiety was born of what she could not see. So Foliana took another bite. She stared at something else, and her lips quirked.</p>
+<p>“No. Lost, maybe. Not dead at all. She’ll be back. Until then, this one’s tough enough. Whomever she is.”</p>
+<p>That last part was unknown to her. However, the Spring Faerie had all the answers here, and she lay back with a huge exhalation of relief. Of course, what she feared and Foliana did…perhaps the Squirrel Beastkin could relax? Foliana didn’t as Shaestrel shook her head and jerked a thumb over her shoulder.</p>
+<p>&nbsp;</p>
+<p><span style="color: #96be50;">“Poor girl. Both of them. This Erin Solstice…she plays her part well. All the qualities ye mortals love of her—there is too much passion in her deed and words. She is real enough to fool most. Makes ye think about her, doesn’t it?”</span></p>
+<p>&nbsp;</p>
+<p>She stared up at the sky, and Foliana shot a glance at her—but whatever the Spring Faerie saw was also something beyond Foliana.</p>
+<p>“Mm. Maybe. Not you?”</p>
+<p>&nbsp;</p>
+<p><span style="color: #96be50;">“I have seen it before, as I said.”</span></p>
+<p>&nbsp;</p>
+<p>The two sat there for a while longer as the night deepened, and eventually, Foliana finished eating. They sat there in good silence until Shaestrel sat up. She glanced at Foliana and seemed to search for something to say, then gave up.</p>
+<p>&nbsp;</p>
+<p><span style="color: #96be50;">“So, eh…you like pranks?”</span></p>
+<p>&nbsp;</p>
+<p>Foliana’s tail twitched.</p>
+<p>“Mm. Yep.”</p>
+<p>&nbsp;</p>
+<p><span style="color: #96be50;">“Good, good. ‘Tis always time to make a friend. Or so I like to think.”</span></p>
+<p>&nbsp;</p>
+<p>Shaestrel lay back, sighing, and Foliana twitched her head towards Ryoka, who had gone to sleep.</p>
+<p>“Aren’t you hers?”</p>
+<p>Shaestrel’s chuckle was sad.</p>
+<p>&nbsp;</p>
+<p><span style="color: #96be50;">“Nah. Maybe a bit. But they won’t tell stories of her friendship and mine. Prophecy’s a right bitch. I should know; she’s my best friend.”</span></p>
+<p>&nbsp;</p>
+<p>“Hah.”</p>
+<p>They sat together as the night dragged out, and around them, smallfolk slept. Foliana stared into the world beyond—and at some point, she blinked.</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>The night was interrupted for only one more person, once. Niers Astoragon paced around his rooms for hours until he was dragged into bed and hopped out of it to pee, to plan, to pace—until leaden limbs carried him back, and his slumber was dreamless, a smile on his face.</p>
+<p>A thought surfaced below his conscious mind, replaying the events of the day. A deep suspicion rising ever upwards, waking him in the night. A conclusion melded together from fragments and clues into a single inescapable insight of reason.</p>
+<p>The Fraerling started out of his bed. Not in terror, nor shock, and not even anger. But—the [Strategist]’s eyes snapped open.</p>
+<p>In the silence of Elvallian, slumbering beneath the lives of thousands, buried under the groaning nation he had built, which weighed down on him, his duty and treasure, bearing down heavy on him…</p>
+<p>The Titan woke up. He spoke.</p>
+<p>“…Who <em>was</em> that?”</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><strong>Author’s Note:</strong></p>
+<p>In the end, I wrote a lot, again, and had to take an update off to edit this. It’s still two chapter’s worth, but the main thing was writing 40,000 words in one sitting.</p>
+<p>I think it literally blew a fuse in my head; I tried to edit the next day and began falling asleep at the keyboard. Which, by the way, is a body’s reaction to extreme overwork. Giving myself time off let me edit my way to the finish line, and it’s why I’m scaling down.</p>
+<p>But this chapter matters. This arc matters, and I moved on it as fast as I thought was acceptable. In fact, I think there should be one more big chapter this month, but it will be the last one I publish before my break, and I wonder if I should delay it till April so I have the most energy possible.</p>
+<p>These are the decisions of someone who doesn’t actually want readers to wait…all the time. The push and pull of web serial writing, as opposed to saying ‘read my book when it comes out’, be that one year from now, or over a decade.</p>
+<p>It’s the best thing about web serials: the luxury of time. Also, the curse, and that’s all I have to prevaricate on that because you’ve heard it before.</p>
+<p>Let us talk now about revelations. About mystery and foreshadowing and the interplay of readers and text. I once read a theory I can’t remember that talked of a bell curve scale of readers, some of whom will figure out the mystery from the start, a majority of whom you hope to reveal the truth to moments before it occurs, and the 10% who never get it.</p>
+<p>Of course, G.R.R Martin has also opined on the subject of narrative twists, correctly, I feel, and the television show of Game of Thrones arguably demonstrates how to fail in the execution of that ideal.</p>
+<p>Then we shall move into a discussion of the new Star Wars movies, or the effects of social media in general that both aid—and often hinder—an artist’s attempts to interject this kind of suspense into their story, and arguably ruins (or empowers) the very narrative or narrative suspense and mystery.</p>
+<p>Let us talk about this, dear readers. Ahem:</p>
+<p><em>There may have been some of that going on.</em></p>
+<p>See you next chapter, and let me know what you thought. Thanks for reading!</p>
+<p>&nbsp;</p>
+<p><strong>Nerry Smiling and Innocent and ‘Nerin’ by Artsynada!</strong></p>
+<p><strong>Instagram:</strong> <a class="anchor_c8ddc0 anchorUnderlineOnHover__78236" tabindex="0" title="https://www.instagram.com/illudanajohns/" role="button" href="https://www.instagram.com/illudanajohns/" target="_blank" rel="noreferrer noopener">https://www.instagram.com/illudanajohns/</a></p>
+<p><strong>Ko-fi:</strong> <a class="anchor_c8ddc0 anchorUnderlineOnHover__78236" tabindex="0" title="https://ko-fi.com/illudanajohns" role="button" href="https://ko-fi.com/illudanajohns" target="_blank" rel="noreferrer noopener">https://ko-fi.com/illudanajohns</a></p>
+<p><a href="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/03/Nerrin_lol-by-Artsynada.jpg?ssl=1"><img fetchpriority="high" decoding="async" data-attachment-id="17055" data-permalink="https://wanderinginn.com/2024/03/20/10-08-pt-2/nerrin_lol-by-artsynada/" data-orig-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/03/Nerrin_lol-by-Artsynada.jpg?fit=508%2C746&amp;ssl=1" data-orig-size="508,746" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="Nerrin_lol by Artsynada" data-image-description="" data-image-caption="" data-medium-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/03/Nerrin_lol-by-Artsynada.jpg?fit=204%2C300&amp;ssl=1" data-large-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/03/Nerrin_lol-by-Artsynada.jpg?fit=508%2C746&amp;ssl=1" class="alignnone size-full wp-image-17055" src="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/03/Nerrin_lol-by-Artsynada.jpg?resize=508%2C746&amp;ssl=1" alt="" width="508" height="746" srcset="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/03/Nerrin_lol-by-Artsynada.jpg?w=508&amp;ssl=1 508w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/03/Nerrin_lol-by-Artsynada.jpg?resize=204%2C300&amp;ssl=1 204w" sizes="(max-width: 508px) 100vw, 508px"></a> <a href="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/03/NerryInnocent-by-ArtsyNada.png?ssl=1"><img decoding="async" data-attachment-id="17056" data-permalink="https://wanderinginn.com/2024/03/20/10-08-pt-2/nerryinnocent-by-artsynada/" data-orig-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/03/NerryInnocent-by-ArtsyNada.png?fit=1170%2C1170&amp;ssl=1" data-orig-size="1170,1170" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="NerryInnocent by ArtsyNada" data-image-description="" data-image-caption="" data-medium-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/03/NerryInnocent-by-ArtsyNada.png?fit=300%2C300&amp;ssl=1" data-large-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/03/NerryInnocent-by-ArtsyNada.png?fit=1024%2C1024&amp;ssl=1" class="alignnone size-full wp-image-17056" src="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/03/NerryInnocent-by-ArtsyNada.png?resize=1170%2C1170&amp;ssl=1" alt="" width="1170" height="1170" srcset="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/03/NerryInnocent-by-ArtsyNada.png?w=1170&amp;ssl=1 1170w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/03/NerryInnocent-by-ArtsyNada.png?resize=300%2C300&amp;ssl=1 300w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/03/NerryInnocent-by-ArtsyNada.png?resize=1024%2C1024&amp;ssl=1 1024w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/03/NerryInnocent-by-ArtsyNada.png?resize=150%2C150&amp;ssl=1 150w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/03/NerryInnocent-by-ArtsyNada.png?resize=768%2C768&amp;ssl=1 768w" sizes="(max-width: 1000px) 100vw, 1000px" data-recalc-dims="1"></a> <a href="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/03/NerrySmile-by-ArtsyNada.png?ssl=1"><img decoding="async" data-attachment-id="17057" data-permalink="https://wanderinginn.com/2024/03/20/10-08-pt-2/nerrysmile-by-artsynada/" data-orig-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/03/NerrySmile-by-ArtsyNada.png?fit=1170%2C1170&amp;ssl=1" data-orig-size="1170,1170" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="NerrySmile by ArtsyNada" data-image-description="" data-image-caption="" data-medium-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/03/NerrySmile-by-ArtsyNada.png?fit=300%2C300&amp;ssl=1" data-large-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/03/NerrySmile-by-ArtsyNada.png?fit=1024%2C1024&amp;ssl=1" class="alignnone size-full wp-image-17057" src="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/03/NerrySmile-by-ArtsyNada.png?resize=1170%2C1170&amp;ssl=1" alt="" width="1170" height="1170" srcset="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/03/NerrySmile-by-ArtsyNada.png?w=1170&amp;ssl=1 1170w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/03/NerrySmile-by-ArtsyNada.png?resize=300%2C300&amp;ssl=1 300w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/03/NerrySmile-by-ArtsyNada.png?resize=1024%2C1024&amp;ssl=1 1024w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/03/NerrySmile-by-ArtsyNada.png?resize=150%2C150&amp;ssl=1 150w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/03/NerrySmile-by-ArtsyNada.png?resize=768%2C768&amp;ssl=1 768w" sizes="(max-width: 1000px) 100vw, 1000px" data-recalc-dims="1"></a></p>
+<p>&nbsp;</p>
+<p><strong>Evil Nerry and Eviler Nerry by BoboPlushie! (What’s up with all the Nerry art?)</strong></p>
+<p><strong>Twitter: </strong><a class="anchor_c8ddc0 anchorUnderlineOnHover__78236" tabindex="0" title="https://twitter.com/Bobo_Snofo" role="button" href="https://twitter.com/Bobo_Snofo" target="_blank" rel="noreferrer noopener">https://twitter.com/Bobo_Snofo</a></p>
+<p><strong>Ko-Fi:</strong> <a class="anchor_c8ddc0 anchorUnderlineOnHover__78236" tabindex="0" title="https://ko-fi.com/boboplushie" role="button" href="https://ko-fi.com/boboplushie" target="_blank" rel="noreferrer noopener">https://ko-fi.com/boboplushie</a></p>
+<p><a href="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/03/EvilNerry-by-BoboPlushie-commissioned-by-Yura.png?ssl=1"><img loading="lazy" decoding="async" data-attachment-id="17054" data-permalink="https://wanderinginn.com/2024/03/20/10-08-pt-2/evilnerry-by-boboplushie-commissioned-by-yura/" data-orig-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/03/EvilNerry-by-BoboPlushie-commissioned-by-Yura.png?fit=507%2C507&amp;ssl=1" data-orig-size="507,507" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="EvilNerry by BoboPlushie, commissioned by Yura" data-image-description="" data-image-caption="" data-medium-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/03/EvilNerry-by-BoboPlushie-commissioned-by-Yura.png?fit=300%2C300&amp;ssl=1" data-large-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/03/EvilNerry-by-BoboPlushie-commissioned-by-Yura.png?fit=507%2C507&amp;ssl=1" class="alignnone size-full wp-image-17054" src="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/03/EvilNerry-by-BoboPlushie-commissioned-by-Yura.png?resize=507%2C507&amp;ssl=1" alt="" width="507" height="507" srcset="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/03/EvilNerry-by-BoboPlushie-commissioned-by-Yura.png?w=507&amp;ssl=1 507w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/03/EvilNerry-by-BoboPlushie-commissioned-by-Yura.png?resize=300%2C300&amp;ssl=1 300w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/03/EvilNerry-by-BoboPlushie-commissioned-by-Yura.png?resize=150%2C150&amp;ssl=1 150w" sizes="(max-width: 507px) 100vw, 507px" data-recalc-dims="1"></a></p>
+<p><a href="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/03/EvilerNerry-by-BoboPlushie.png?ssl=1"><img loading="lazy" decoding="async" data-attachment-id="17053" data-permalink="https://wanderinginn.com/2024/03/20/10-08-pt-2/evilernerry-by-boboplushie/" data-orig-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/03/EvilerNerry-by-BoboPlushie.png?fit=429%2C486&amp;ssl=1" data-orig-size="429,486" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="EvilerNerry by BoboPlushie" data-image-description="" data-image-caption="" data-medium-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/03/EvilerNerry-by-BoboPlushie.png?fit=265%2C300&amp;ssl=1" data-large-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/03/EvilerNerry-by-BoboPlushie.png?fit=429%2C486&amp;ssl=1" class="alignnone size-full wp-image-17053" src="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/03/EvilerNerry-by-BoboPlushie.png?resize=429%2C486&amp;ssl=1" alt="" width="429" height="486" srcset="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/03/EvilerNerry-by-BoboPlushie.png?w=429&amp;ssl=1 429w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/03/EvilerNerry-by-BoboPlushie.png?resize=265%2C300&amp;ssl=1 265w" sizes="(max-width: 429px) 100vw, 429px" data-recalc-dims="1"></a></p>
+<p>&nbsp;</p>
+<p><strong>Nerin and Erin’s Warform by Yura!</strong></p>
+<p><a href="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/03/nerrin_20240314110638-by-Yura.png?ssl=1"><img loading="lazy" decoding="async" data-attachment-id="17051" data-permalink="https://wanderinginn.com/2024/03/20/10-08-pt-2/nerrin_20240314110638-by-yura/" data-orig-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/03/nerrin_20240314110638-by-Yura.png?fit=1600%2C2458&amp;ssl=1" data-orig-size="1600,2458" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="nerrin_20240314110638 by Yura" data-image-description="" data-image-caption="" data-medium-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/03/nerrin_20240314110638-by-Yura.png?fit=195%2C300&amp;ssl=1" data-large-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/03/nerrin_20240314110638-by-Yura.png?fit=667%2C1024&amp;ssl=1" class="alignnone size-full wp-image-17051" src="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/03/nerrin_20240314110638-by-Yura.png?resize=1600%2C2458&amp;ssl=1" alt="" width="1600" height="2458" srcset="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/03/nerrin_20240314110638-by-Yura.png?w=1600&amp;ssl=1 1600w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/03/nerrin_20240314110638-by-Yura.png?resize=195%2C300&amp;ssl=1 195w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/03/nerrin_20240314110638-by-Yura.png?resize=667%2C1024&amp;ssl=1 667w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/03/nerrin_20240314110638-by-Yura.png?resize=768%2C1180&amp;ssl=1 768w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/03/nerrin_20240314110638-by-Yura.png?resize=1000%2C1536&amp;ssl=1 1000w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/03/nerrin_20240314110638-by-Yura.png?resize=1333%2C2048&amp;ssl=1 1333w" sizes="(max-width: 1000px) 100vw, 1000px" data-recalc-dims="1"></a> <a href="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/03/Nerrin_Warform_20240315061652-by-Yura.png?ssl=1"><img loading="lazy" decoding="async" data-attachment-id="17052" data-permalink="https://wanderinginn.com/2024/03/20/10-08-pt-2/nerrin_warform_20240315061652-by-yura/" data-orig-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/03/Nerrin_Warform_20240315061652-by-Yura.png?fit=1600%2C2458&amp;ssl=1" data-orig-size="1600,2458" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="Nerrin_Warform_20240315061652 by Yura" data-image-description="" data-image-caption="" data-medium-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/03/Nerrin_Warform_20240315061652-by-Yura.png?fit=195%2C300&amp;ssl=1" data-large-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/03/Nerrin_Warform_20240315061652-by-Yura.png?fit=667%2C1024&amp;ssl=1" class="alignnone size-full wp-image-17052" src="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/03/Nerrin_Warform_20240315061652-by-Yura.png?resize=1600%2C2458&amp;ssl=1" alt="" width="1600" height="2458" srcset="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/03/Nerrin_Warform_20240315061652-by-Yura.png?w=1600&amp;ssl=1 1600w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/03/Nerrin_Warform_20240315061652-by-Yura.png?resize=195%2C300&amp;ssl=1 195w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/03/Nerrin_Warform_20240315061652-by-Yura.png?resize=667%2C1024&amp;ssl=1 667w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/03/Nerrin_Warform_20240315061652-by-Yura.png?resize=768%2C1180&amp;ssl=1 768w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/03/Nerrin_Warform_20240315061652-by-Yura.png?resize=1000%2C1536&amp;ssl=1 1000w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/03/Nerrin_Warform_20240315061652-by-Yura.png?resize=1333%2C2048&amp;ssl=1 1333w" sizes="(max-width: 1000px) 100vw, 1000px" data-recalc-dims="1"></a></p>
+<p>&nbsp;</p>
+<p><strong>Nerin by Brack!</strong></p>
+<p><strong>DeviantArt: </strong><a class="anchor_c8ddc0 anchorUnderlineOnHover__78236" tabindex="0" title="https://www.deviantart.com/shurkin/gallery/" role="button" href="https://www.deviantart.com/shurkin/gallery/" target="_blank" rel="noreferrer noopener">https://www.deviantart.com/shurkin/gallery/</a></p>
+<p><strong>Ko-Fi:</strong> <a class="anchor_c8ddc0 anchorUnderlineOnHover__78236" tabindex="0" title="https://ko-fi.com/brack" role="button" href="https://ko-fi.com/brack" target="_blank" rel="noreferrer noopener">https://ko-fi.com/brack</a></p>
+<p><strong>Twitter:</strong> <a class="anchor_c8ddc0 anchorUnderlineOnHover__78236" tabindex="0" title="https://twitter.com/Brack_Giraffe" role="button" href="https://twitter.com/Brack_Giraffe" target="_blank" rel="noreferrer noopener">https://twitter.com/Brack_Giraffe</a></p>
+<p><a href="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/03/Nerin-by-Brack.png?ssl=1"><img loading="lazy" decoding="async" data-attachment-id="17049" data-permalink="https://wanderinginn.com/2024/03/20/10-08-pt-2/nerin-by-brack/" data-orig-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/03/Nerin-by-Brack.png?fit=1616%2C2074&amp;ssl=1" data-orig-size="1616,2074" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="Nerin by Brack" data-image-description="" data-image-caption="" data-medium-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/03/Nerin-by-Brack.png?fit=234%2C300&amp;ssl=1" data-large-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/03/Nerin-by-Brack.png?fit=798%2C1024&amp;ssl=1" class="alignnone size-full wp-image-17049" src="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/03/Nerin-by-Brack.png?resize=1616%2C2074&amp;ssl=1" alt="" width="1616" height="2074" srcset="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/03/Nerin-by-Brack.png?w=1616&amp;ssl=1 1616w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/03/Nerin-by-Brack.png?resize=234%2C300&amp;ssl=1 234w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/03/Nerin-by-Brack.png?resize=798%2C1024&amp;ssl=1 798w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/03/Nerin-by-Brack.png?resize=768%2C986&amp;ssl=1 768w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/03/Nerin-by-Brack.png?resize=1197%2C1536&amp;ssl=1 1197w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/03/Nerin-by-Brack.png?resize=1596%2C2048&amp;ssl=1 1596w" sizes="(max-width: 1000px) 100vw, 1000px" data-recalc-dims="1"></a></p>
+<p>&nbsp;</p>
+<p><strong>Nerin by Yootie!</strong></p>
+<p><strong>Ko-Fi</strong>: <a class="anchor_c8ddc0 anchorUnderlineOnHover__78236" tabindex="0" title="https://ko-fi.com/yootie" role="button" href="https://ko-fi.com/yootie" target="_blank" rel="noreferrer noopener">https://ko-fi.com/yootie</a></p>
+<p><a href="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/03/NerryErin-by-Yootie.png?ssl=1"><img loading="lazy" decoding="async" data-attachment-id="17048" data-permalink="https://wanderinginn.com/2024/03/20/10-08-pt-2/nerryerin-by-yootie/" data-orig-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/03/NerryErin-by-Yootie.png?fit=844%2C833&amp;ssl=1" data-orig-size="844,833" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="NerryErin by Yootie" data-image-description="" data-image-caption="" data-medium-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/03/NerryErin-by-Yootie.png?fit=300%2C296&amp;ssl=1" data-large-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/03/NerryErin-by-Yootie.png?fit=844%2C833&amp;ssl=1" class="alignnone size-full wp-image-17048" src="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/03/NerryErin-by-Yootie.png?resize=844%2C833&amp;ssl=1" alt="" width="844" height="833" srcset="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/03/NerryErin-by-Yootie.png?w=844&amp;ssl=1 844w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/03/NerryErin-by-Yootie.png?resize=300%2C296&amp;ssl=1 300w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/03/NerryErin-by-Yootie.png?resize=768%2C758&amp;ssl=1 768w" sizes="(max-width: 844px) 100vw, 844px" data-recalc-dims="1"></a></p>
+<p>&nbsp;</p>
+<hr>
+<p><a href="https://wanderinginn.com/2024/03/20/10-08-pt-1/">Previous Chapter</a> <a href="https://wanderinginn.com/2024/03/24/10-09-e/"><span style="float: right;">Next Chapter</span></a></p>
+      </div>
+
+      <hr>
+          <span class="nav-previous">
+        <a href="https://wanderinginn.com/2024/03/20/10-08-pt-1/" rel="prev"><span class="meta-nav">←</span> Previous Chapter</a>    </span>
+    <span class="nav-next" style="float: right" ;="">
+        <a href="https://wanderinginn.com/2024/03/24/10-09-e/" rel="next">Next Chapter <span class="meta-nav">→</span></a>    </span>
+    

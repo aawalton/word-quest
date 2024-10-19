@@ -1,0 +1,1125 @@
+
+
+          <span class="nav-previous">
+        <a href="https://wanderinginn.com/2024/02/07/10-01-l/" rel="prev"><span class="meta-nav">←</span> Previous Chapter</a>    </span>
+    <span class="nav-next" style="float: right" ;="">
+        <a href="https://wanderinginn.com/2024/02/14/10-03-y/" rel="next">Next Chapter <span class="meta-nav">→</span></a>    </span>
+      <!-- <hr/> -->
+      <header class="entry-header">
+        <h1 class="entry-title">10.02 Y</h1>
+                <button class="show-settings-btn" onclick="document.querySelector('#reader-settings-wrapper').classList.toggle('is-hidden')">
+          <img class="show-settings-btn-img" src="https://wanderinginn.com/wp-content/themes/solstice/assets/images/ui/reader-settings-button.webp">
+        </button>
+      </header>
+
+      
+<!-- Reader Settings -->
+<div id="reader-settings-wrapper" class="is-hidden">
+    <div id="reader-settings">
+        <header id="reader-settings-header">
+            <h2>Reader Settings</h2>
+            <button onclick="closeModal()">
+                <svg width="100%" height="100%" viewBox="0 0 33 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M16.5 30.75C24.0939 30.75 30.25 24.5939 30.25 17C30.25 9.40608 24.0939 3.25 16.5 3.25C8.90608 3.25 2.75 9.40608 2.75 17C2.75 24.5939 8.90608 30.75 16.5 30.75Z" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M20.625 12.875L12.375 21.125" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M12.375 12.875L20.625 21.125" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+            </button>
+        </header>
+
+        <fieldset id="fieldset-font">
+            <legend>Font</legend>
+
+            <div>
+                <label for="font-size-select">Size</label>
+                <select id="font-size-select" class="reader-settings-select" data-setting="reader-font-size" onchange="updateSetting(this.getAttribute('data-setting'), this.value);">
+                    <option value="10pt" class="reader-settings-option">10</option>
+                    <option value="11pt" class="reader-settings-option">11</option>
+                    <option value="12pt" class="reader-settings-option" selected="">12</option>
+                    <option value="13pt" class="reader-settings-option">13</option>
+                    <option value="14pt" class="reader-settings-option">14</option>
+                    <option value="16pt" class="reader-settings-option">16</option>
+                    <option value="18pt" class="reader-settings-option">18</option>
+                    <option value="20pt" class="reader-settings-option">20</option>
+                    <option value="22pt" class="reader-settings-option">22</option>
+                    <option value="24pt" class="reader-settings-option">24</option>
+                    <option value="26pt" class="reader-settings-option">26</option>
+                    <option value="28pt" class="reader-settings-option">28</option>
+                    <option value="30pt" class="reader-settings-option">30</option>
+                    <option value="36pt" class="reader-settings-option">36</option>
+                    <option value="42pt" class="reader-settings-option">42</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="font-family-select">Family</label>
+                <select id="font-family-select" class="reader-settings-select" data-setting="reader-font-family" onchange="updateSetting(this.getAttribute('data-setting'), this.value);">
+                    <optgroup label="Sans Serif">
+                        <option class="reader-settings-option" value="OpenSans, sans-serif" selected="">Open Sans</option>
+                        <option class="reader-settings-option" value="Arial, Helvetica, sans-serif">Arial</option>
+                        <option class="reader-settings-option" value="Roboto, sans-serif">Roboto</option>
+                    </optgroup>
+                    <optgroup label="Serif">
+                        <option class="reader-settings-option" value="Playfair, serif">Playfair</option>
+                        <option class="reader-settings-option" value="EBGaramond, serif">Garamond</option>
+                        <option class="reader-settings-option" value="'Times New Roman', Times, serif">Times New Roman</option>
+                    </optgroup>
+                    <optgroup label="Other">
+                        <option class="reader-settings-option" value="OpenDyslexic">OpenDyslexic</option>
+                        <option class="reader-settings-option" value="HennyPenny">Henny Penny</option>
+                    </optgroup>
+                </select>
+            </div>
+            <div>
+                <label for="font-weight-select">Thickness</label>
+                <select id="font-weight-select" class="reader-settings-select" data-setting="reader-font-weight" onchange="updateSetting(this.getAttribute('data-setting'), this.value);">
+                    <option class="reader-settings-option" value="300" selected="">Thin</option>
+                    <option class="reader-settings-option" value="400">Regular</option>
+                    <option class="reader-settings-option" value="500">Thick</option>
+                </select>
+            </div>
+        </fieldset>
+
+        <fieldset id="fieldset-spacing">
+            <legend>Spacing</legend>
+            <div>
+                <label for="margins-select">Page Width</label>
+                <select id="margins-select" class="reader-settings-select" data-setting="reader-article-width" onchange="updateSetting(this.getAttribute('data-setting'), this.value);">
+                    <option value="320px" class="reader-settings-option">Extra Narrow</option>
+                    <option value="500px" class="reader-settings-option">Narrow</option>
+                    <option value="680px" class="reader-settings-option" selected="">Medium</option>
+                    <option value="1000px" class="reader-settings-option">Wide</option>
+                    <option value="1200px" class="reader-settings-option">Extra Wide</option>
+                    <option value="100%" class="reader-settings-option">Max</option>
+                </select>
+            </div>
+            <div>
+                <label for="line-spacing-select">Line</label>
+                <select id="line-spacing-select" class="reader-settings-select" data-setting="reader-line-height" onchange="updateSetting(this.getAttribute('data-setting'), this.value);">
+                    <option class="reader-settings-option" value="1.2">Small</option>
+                    <option class="reader-settings-option" value="1.625" selected="">Medium</option>
+                    <option class="reader-settings-option" value="2.2">Large</option>
+                    <option class="reader-settings-option" value="3.5">Extra Large</option>
+                </select>
+            </div>
+            <div>
+                <label for="paragraph-spacing-select">Paragraph</label>
+                <select id="paragraph-spacing-select" class="reader-settings-select" data-setting="reader-paragraph-spacing" onchange="updateSetting(this.getAttribute('data-setting'), this.value);">
+                    <option class="reader-settings-option" value="0.5em">Small</option>
+                    <option class="reader-settings-option" value="1.625em" selected="">Medium</option>
+                    <option class="reader-settings-option" value="2.75em">Large</option>
+                    <option class="reader-settings-option" value="4.25em">Extra Large</option>
+                </select>
+            </div>
+        </fieldset>
+        <div class="ml-5 mb-4">
+            <label for="theme-select">Theme</label>
+            <select id="theme-select" class="reader-settings-select" data-setting="reader-theme" onchange="updateSetting(this.getAttribute('data-setting'), this.value);">
+                <option class="reader-settings-option" value="reader-theme-grey" selected="">Dark Grey</option>
+                <option class="reader-settings-option" value="reader-theme-blue">Dark Blue</option>
+                <option class="reader-settings-option" value="reader-theme-black">Black</option>
+                <option class="reader-settings-option" value="reader-theme-white">White</option>
+                <option class="reader-settings-option" value="reader-theme-sepia">Sepia</option>
+            </select>
+        </div>
+        <button id="reset-settings-btn" onclick="resetSettings()">Reset To Default</button>
+        <!-- <div> -->
+        <!-- </div> -->
+
+
+    </div>
+</div>
+      <div class="entry-content">
+        <p>The closer you got to the New Lands of Izril, the more you realized that the changes to the continent weren’t just in the nations arriving, the political turmoil, or even the land itself.</p>
+<p>It was affecting <em>all</em> of Izril. The raising of so much landmass, nearly a fifth the size of the original continent, hadn’t just made a new zone to explore. The added geography was influencing everything from sea currents to plant life, and even the weather.</p>
+<p>It had also ruined lives, or at least, sent entire cities into spirals of uncertainty. How, you may ask? Well, consider this: you were a happy, coastal city far south from the Hivelands minding your own business when, one day, the earth rumbles. The sea you’ve used for transport and food and your people’s income vanishes.</p>
+<p>How…what were you supposed to do? If the one thing your home was known for vanished, how did you survive?</p>
+<p>Ylawes Byres had been thinking about that a lot since his home was in the same predicament. And it seemed to him that you pivoted to whatever made money. You sold everything you could, dipped into all the savings you had for a rainy day—and hoped you’d earned the goodwill of friends and neighbors and made enough preparations—</p>
+<p>Then you struggled. There was no other word for it. You struggled and ran ahead, as if someone had cast a [Blindness] spell on you, flailing until you found a new purchase, even if it hurt. That was the Byres way. Advance until you could find something to set yourself against, even if it was a mountain.</p>
+<p>That was a family quote, actually. Ylawes had heard one of his great-aunts say it once. He’d thought it was very inspiring. It occurred to him, at the age of twenty-eight, that it might not have actually been meant as a good thing.</p>
+<p>…He raised one hand, and his fingertips brushed something twirling out of the skies. Not snow; rather, a pale blue tuft of what looked like cotton or some such. He caught another and saw it was much like the seeds of some plant. Huge, puffy strands of fiber caught the wind and carried a single seed in an aerodynamic fashion; with the strong breeze behind it, such a strange seed could travel dozens of miles in an hour.</p>
+<p>He did not know from how far they blew, but they filled the sky, and his heart leapt as the Yorrned Caravan slowed. People, mostly Human, who’d come all the way from past Invrisil craned their heads out of covered wagons—rounded canvas frames reinforced by metal sheltering goods and people within.</p>
+<p>The caravaners, from the [Guards] to the adventurers to the new colonists, gazed upwards as a new kind of storm blew over them. Not a miserable snowstorm, but one of strange seeds from another land.</p>
+<p>“We’re getting close, lad.”</p>
+<p>A deep, gravelly voice made Ylawes turn. A Dwarf, beard and face covered with blue fuzz, brushed at the seedlings and sneezed.</p>
+<p>“Dead gods, if this is poisonous, no one tell my kin how I died. Looks nice though, eh?”</p>
+<p>He swatted at the seeds, and Ylawes realized they were mostly bouncing off his armor, but they were tangling on anything made of fabric. And Falene’s hair.</p>
+<p>“Argh! Ylawes, they’re all over me! [Mana Barrier]!”</p>
+<p>She actually cast a Tier 4 spell to protect herself, and a green outline sprang up around her, deflecting more flying tufts from catching in her hair. Ylawes almost smiled—until he heard Falene’s note of alarm.</p>
+<p>“Is it poisonous? Is that what Dawil said? Don’t eat any, anyone! <em>All stop! </em>Merchant Yorrned, <em>halt the caravan! </em>No one touch or collect any of this stuff!<em> Halt the caravan!</em>”</p>
+<p>Then she raised her staff, shot a bolt of fire upwards, and it exploded in the air, making all the [Guards] flinch and look around for trouble. Ylawes hesitated, and Dawil groaned.</p>
+<p>“Pointy—you could have just ridden over and told him.”</p>
+<p>A [Guard] shouted.</p>
+<p>“<em>Bandit attack! To the wagons!</em>”</p>
+<p>“No, signal that city! <em>Bandit attack!</em>”</p>
+<p>A panicked man with purple travelling clothes—and gold, Merchant Yorrned liked gold—waved his arms, and several other wagons from neighboring caravans ground to a halt. Falene turned her horse towards him, and he tried to flee towards his personal wagon.</p>
+<p>“<em>Attack! Formations!</em>”</p>
+<p>Ylawes Byres covered his face. Half the [Guards] were staring around, some looking scared, others scanning the distance. A disparity of competencies on display, but the flare had alerted the <em>other</em> protectors.</p>
+<p>Five Silver-rank adventurers came pouring out of a wagon, and an Antinium and Goblin poked their heads out of their shared wagon. The Goblin aimed a crossbow around sleepily.</p>
+<p>“We under attack?”</p>
+<p>“Fuzzy attack.”</p>
+<p>Infinitypear held his spear at the ready as Ylawes sighed, then raised his voice to shout. He felt, not for the first time, that this job was <em>not</em> what he would have picked normally. Ylawes had chosen the most lucrative contract he could find. He’d missed out on the first rush, so he’d had to negotiate hard…but he hadn’t been planning on going to the New Lands like this.</p>
+<p>House Byres’ sudden, desperate need for gold had forced this, and his one consolation was that all the gold was going back to his lands and people. His guilt was that he’d made Falene and Dawil come with him for no profit.</p>
+<p>So many delays, and so much chaos. Rightly or wrongly…he sort of felt like the Horns of Hammerad should have been here. The Silver Swords were a veteran Gold-rank team. Then again, they had new members. He waved a hand at Infinitypear and Rasktooth, the two <em>Bronze</em>-rank adventurers in his team, and made a lowering hand-sign.</p>
+<p>“Oh, he say it not that bad. Maybe not bad attack?”</p>
+<p>Rasktooth relaxed, and Infinitypear nodded. They kept still—Vuliel Drae <em>missed</em> the hand-signs, and Insill, Dasha, Larr, Pekona, and Anith all charged towards Falene and their employer, weapons at the ready.</p>
+<p>By the time they managed to clarify the issue, they’d lost forty-five minutes and the city they were approaching had sent out a patrol to investigate <em>them.</em></p>
+<p>So it went.</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>“It could have been poisonous. Proper protocol with adventurers dictates we look at any unknown fauna or flora as a threat, Merchant Yorrned. It is what you have employed us to do.”</p>
+<p>Falene was still sulking after another fifteen minutes, and the [Merchant] was being polite—if insistent. That was his way.</p>
+<p>He was a shorter man than Ylawes, five foot seven, with the kind of nervous energy that meant he would be through a market and have talked to everyone, somehow, in less than an hour. He had cultivated a thin beard, and he wore purple emblazoned with his name and group.</p>
+<p><em>Yorrned’s Caravans.</em> He’d made up a flag of all things, put the title on all the wagons—and gifted the Silver Swords each with a custom-made shirt for them to wear.</p>
+<p>No one had worn them. The man was an [Ore Merchant], the principal employer of the Silver Swords. <em>Not</em> Level 30 as far as Ylawes knew; he and a consortium of fellow [Merchants] had contracted the Gold-rank team to escort them to the New Lands and guard them for two weeks, pending renewal of the contract.</p>
+<p>Thus far, Ylawes had been on the road over a month, and he had travelled the great distance from House Byres to Invrisil, then to Pallass, then south, skirting the Hivelands along the trade roads, southwest past Manus, then westwards from there, following the roads to what <em>had</em> been Izril’s western coast.</p>
+<p>They had finally reached one of the port-cities—again, a former Drake city on the waters. The New Lands? They’d be rolling into it within the hour.</p>
+<p>Everyone was excited, so much so that Falene’s alarm hadn’t drawn that much ire from the other [Merchants], but Falene was the unhappy one.</p>
+<p>“Adventurer Skystrall, I am, uh, perfectly aware of how seriously you take your job. My word, when we ran into that pack of hungry wolves, you sent them packing in a trice! And you have been very good with spells and whatnot, but if we stopped for every new thing, we’d never get anywhere inland! This blue stuff is just a bit sticky, but it’s marvelous, isn’t it?”</p>
+<p>“It <em>could</em> be dangerous, Merchant Yorrned.”</p>
+<p>“Really? Well, perhaps, but what would you have us do?”</p>
+<p>Falene hesitated, and Ylawes took over, nodding from his saddle.</p>
+<p>“Ordinarily, Master Yorrned, we’d collect specimens—carefully—and submit them to either an Adventurer’s Guild or a local expert we trusted. If we could do neither, we’d avoid or shield ourselves from contact.”</p>
+<p>“From…seed tufts? I’ve seen the likes of this stuff all the time, Captain Ylawes! It’s blue, but that’s all.”</p>
+<p>Yorrned was incredulous. Ylawes exchanged a look with Falene.</p>
+<p>“It is good adventurer practice, Master Yorrned.”</p>
+<p>“Ah, but, um, consider this, Captain Ylawes. I grant you that might be wise, but I’m a [Merchant]. And I notice that the port-city of Goisedall—former port-city—isn’t raising the alarm over these things. You have to follow trends, and if the people are fine with this stuff, so are we.”</p>
+<p>The merchant gave Ylawes a very reasonable answer as he pointed at some Drakes riding towards them. Ylawes craned his head towards the city ahead of them and thought it looked odd. Of course, he noted the harbor, crumbling away, revealing a huge basin where the sea <em>had </em>been and even several ships listed on their sides.</p>
+<p><em>Are those…those aren’t roofs I see on the walls. What’s going on?</em></p>
+<p>He saw a lot of odd spires jutting from the city, and he was interested if they had a chance to stop to see what they were. In response to Yorrned’s statement, Ylawes smiled.</p>
+<p>“I’m sure that would work, Master Yorrned.”</p>
+<p>“Unless it’s Humans who are allergic to the seedlings. Or they have some long-lasting effect like slow poison. Or are infested with parasites.”</p>
+<p>Falene’s sour comment made the [Merchant] visibly uneasy. Yorrned hesitated, then rode ahead.</p>
+<p>“I don’t think that’s an issue. We can inquire at the latest city, but let’s make contact first. Captain Ylawes? It would be splendid if you could, ah, announce me?”</p>
+<p>Ylawes had been anticipating that. He sighed under his breath and called out as Yorrned spurred his horse ahead.</p>
+<p>“In a moment, Master Yorrned!”</p>
+<p>“He’s not listening, Ylawes.”</p>
+<p>“He’s got a point that it was overkill, Falene. Inquire at the city—later, would you?”</p>
+<p>She did seem happier that he asked her to do that and nodded. Then both adventurers sighed and pursued the [Merchant].</p>
+<p>That was the Silver Swords. Ylawes waved at Dawil, who was lecturing Anith about <em>noting hand-signs</em>, and the Dwarf waved and moved his pony over. The chastened Vuliel Drae held back as the three Gold-rank adventurers moved forwards. Yorrned was beaming, as he always was, and the other [Merchants] were hanging back a bit as they waited for the Drakes.</p>
+<p><em>City Watch patrol. Or their army?</em> They seemed casual, if not overly friendly, and Ylawes saw Yorrned watching him.</p>
+<p>“Don’t put on a show for him, Falene. Let’s not annoy our guests.”</p>
+<p>“He asked me to write his name in the air. Fat chance. Where’re our passports?”</p>
+<p>“Got them here.”</p>
+<p>Dawil proffered them to Ylawes, and the [Knight] took them gratefully. He squared his shoulders and decided he was earning his pay.</p>
+<p>That was—gold in not-inconsiderable sums to do basic guard duty for a caravan. Dicey in theory. In practice, it had been a boring month. It might get interesting soon, but thus far, the Silver Swords felt more like expensive salad dressing Yorrned used to make himself look good to every city and group they met.</p>
+<p><em>We’re earning the gold for House Byres.&nbsp;</em></p>
+<p>It didn’t make the sting to his pride go away. And it was strange because Ylawes had thought his pride wouldn’t sting. But something about having to stevedore for Yorrned wasn’t pleasant. Having this be his first look of the New Lands slightly tainted the occasion—and yet Ylawes craned his neck up and stared at that storm of blue now drifting downwards and coating the coast.</p>
+<p>Some landed in the snow, blowing around a bit, and Ylawes saw more Drakes advancing past the city of…he’d already forgotten the name. They were on foot and had baskets?</p>
+<p>The patrol leader waved a claw the moment they got in earshot. Ylawes advanced with a stiff smile as Yorrned waited for a lightshow he didn’t get.</p>
+<p>“Morning.”</p>
+<p>The [Patrol Leader] looked <em>tired.</em> Drakes could develop a version of dark circles under their eyes, and this fellow seemed ready to fall asleep any moment.</p>
+<p>“Good morning, sir. We’re the Silver Swords, representing Merchant Yorrned and the Consortium of Enterprise headed to the New Lands of Izril.”</p>
+<p>By now, the refrain was second-nature to Ylawes. <em>Consortium of Enterprise</em> sounded like a lot for six [Merchants] who’d pooled their resources together for this caravan. It certainly had cost thousands of gold pieces. Ylawes continued, proffering a sheaf of stamped documents with wax seals.</p>
+<p>“We have our passports and papers. From Pallass.”</p>
+<p>They’d had trouble before with other Drake cities, some of whom had told the caravans they had to wait outside rather than stay overnight. This city? The patrol leader barely glanced at the papers before waving a claw.</p>
+<p>“Silver Swords? Silver-rank team? I’m [Patrol Leader] Dulc. You’ve come to Goisedall. I don’t need to see papers. We’ve had thousands of you lot passing through. They just sent me out to check what that spell was. Also, if you’re staying in the city, we have fees for that many wagons entering.”</p>
+<p>Ylawes found the Drake rather agreeable, even if he was brusque. The other Drakes were peering at Ylawes and Dawil, and the Silver Swords tried not to look offended.</p>
+<p>“Gold-rank team, actually. We were alarmed by the blue—seeds—and called for a halt. Dramatically. I apologize.”</p>
+<p>“<em>Gold?</em> Not bad.”</p>
+<p>The Drake’s brows went up at this. No point in asking if he’d ever heard of them. He jerked a thumb-claw over his shoulder.</p>
+<p>“Well, that’s sorted. Want to enter the city? We’re riding back.”</p>
+<p>“Er—let me consult with our employers. Would you wait a second?”</p>
+<p>“Sure. Also, if you don’t mind, we’ll be collecting the fimie-seeds. Feel free to pick up whatever you want. It’s not like there’s a scarcity.”</p>
+<p>The Drake waved his claw at the blue tufts, and Ylawes blinked at him. Then Ylawes saw the Drakes on foot were using long poles with nets, meshes of string, that they swung over the ground, picking up most ‘fimie-seeds’ in a single motion. They’d dump the seeds into a basket someone else carried, usually a younger Drake. Then Ylawes’ mind identified what was jutting out of the city and even hanging off the walls.</p>
+<p><em>Nets. They’re catching the stuff in fishing nets.</em></p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>Merchant Yorrned tried to chat up Patrol Leader Dulc, but when he realized the Drake wasn’t in charge, he hurried towards the city itself. He wanted intelligence on the caravans who’d gone ahead, any profitable spots in the New Lands, and of course, to buy whatever they had, stock up, and maybe offload some cargo.</p>
+<p>The Drake, Dulc, and Ylawes watched him go as they chatted, moving at a more sedate trot. Dulc didn’t mind the enterprising [Merchants] seeking a profit.</p>
+<p>“He’s welcome to it. Ancestors know we need most of everything these days.”</p>
+<p>“Yorrned’s got steel.”</p>
+<p>That made Dulc actually brighten up a bit.</p>
+<p>“Really? We need steel. Pallassian steel?”</p>
+<p>“Er—his own.”</p>
+<p><em>They had laughed him out of Pallass’ markets when he tried to offload his ore. </em>Nevertheless, he’d sold a lot of ingots he’d ported south and proven he did have the right to his class. Dulc rubbed at his neck-spines.</p>
+<p>“We might buy all we can get. Not much chance for trade overland these days; everything’s got to go south, so steel…other metals?”</p>
+<p>“Bronze. Tin. Iron…not much magical.”</p>
+<p>Dulc nodded.</p>
+<p>“We can’t buy anything magical anyways. City’s gone to seed. Literally. If your fellow passes back north, I hope he’ll buy as much fimie-cloth as he can. Or else we’ll all starve.”</p>
+<p>He laughed too hard at that. Ylawes didn’t and glanced at the city ahead. Especially the port.</p>
+<p>“If you don’t mind me asking—”</p>
+<p>“Oh, no, go ahead. We’ve heard it all, now. How’s it feel to be landlocked? What was it like? If you have any good jokes, tell them before you get to the old harbor district. Anyone who had a fishing-type class will throw a punch.”</p>
+<p>Dawil rumbled as he stroked his beard, extracting more of the blue seeds.</p>
+<p>“Seems like a poor joke to tell. You’ve had it rough, eh, lads?”</p>
+<p>The Drakes glanced at him, but didn’t take offense to the term as they might if Ylawes said it. There was something personable about Dawil that Ylawes had long known to trust, so Dulc and several Drakes opened up, not that they had been unwilling to talk.</p>
+<p>“You know, before we realized it was <em>permanent</em>, it was actually sort of hopeful. When the waters began spilling everywhere, of course it was chaos, and we thought it was some kind of attack—then we noticed all the fish.”</p>
+<p>“Oh.”</p>
+<p>“<em>Thousands </em>of ‘em. Everyone in the city was rushing out. Rare fish, even giant ones. A whale was beached south of here. Huge. We were in a rush to preserve as much as we could—then we realized the waters were <em>gone.</em>”</p>
+<p>Dulc gestured at the harbor, and Ylawes saw, as the caravans moved past the city—they wouldn’t stay overnight—that the ships lying on their sides had been arranged oddly.</p>
+<p>“Look at that.”</p>
+<p>The ships had been carved up, and smoke was exiting some of them. They’d been remodeled, Ylawes realized, into buildings.</p>
+<p>“You used your ships as buildings?”</p>
+<p>“We had to. There’s no way we could haul them to a sea. That big one’s our warship, <em>A Hunting.</em> Well, now she’s our watchtower. We just angled her hull, and she’s got attack spells—but there goes our fishing. At least we have our catches, but it’ll be planting, the Council says, unless there’s a lot of wildlife from the New Lands. And fimie-cloth. That’s what we’re working on.”</p>
+<p>Dawil waved one of the blue tufts.</p>
+<p>“Is that what you call this? Who named it?”</p>
+<p>The Drake scratched at his neck, yawning.</p>
+<p>“Someone. It caught on—it’s light, and we got the first shower, oh, two weeks back. Something out there decided it’s already spring. All the nets and such are to harvest it.”</p>
+<p>“To make cloth?”</p>
+<p>“It’s not impossible. And it’s blue. The Council reckons it’ll sell, and what else are we supposed to do? The only other thing might be trade overland; all you lot heading for the ‘New Lands’ have been making a decent profit. Though the Watch had to investigate each caravan until we just gave up.”</p>
+<p>Ylawes nodded, and Dawil muttered his condolences. They traded a look. <em>An entire city’s industry ruined. </em>That they’d pivoted so quickly to trying to make…fimie-cloth proved how resourceful these Drakes were.</p>
+<p><em>Or how desperate.</em> No wonder Dulc looked so exhausted.</p>
+<p>“It must have been one hell of these last few months, Leader Dulc.”</p>
+<p>The Drake gave Ylawes a smile that didn’t even have the energy for bitterness.</p>
+<p>“Well. At least we’re alive. The way I hear it, the Gnolls could have snapped one of the Walled Cities in two. If those idiots want to invade the Great Plains again, they can count us out. Manus keeps sending us notes about the battle at the Bloodfields or ‘hostile nations’. We told them we’d commit our fleet wherever they wanted, and it took them a week to get the joke.”</p>
+<p>Thus, Goisedall. The last city before the New Lands of Izril. Ylawes spent a bit more time with the Drake, enough for Falene to interject with surprising tact.</p>
+<p>“If you’re that tired, may I offer you a drink of coffee, sir? I’ve brought a lot of roasted beans south.”</p>
+<p>“Coffee? What’s this?”</p>
+<p>The Drake took a drink of the dark brown stuff as Dawil and Ylawes rolled their eyes. Dulc hesitated and grimaced.</p>
+<p>“Dead gods, that’s bitter.”</p>
+<p>“Milk? Sugar?”</p>
+<p>Falene energetically talked up the beverage that Ylawes had decided he didn’t need in his life. It was a rare quarrel with Falene; she had made it her life’s duty to addict every single person she encountered. It seems coffee had its appeal in Goisedall.</p>
+<p>Ylawes made his way back to his greater team as Falene talked.</p>
+<p>“Vuliel Drae, Infinitypear, Rasktooth, quick meeting.”</p>
+<p>“That not our team name!”</p>
+<p>Rasktooth hollered as the other adventurers came out of the two wagons they’d been allotted. Ylawes sighed louder as Dulc caught sight of Rasktooth and nearly spat his coffee out. Thankfully, Dawil and Falene talked him down.</p>
+<p>“Fine. Vuliel Drae and…Poke Duo. Quick meeting.”</p>
+<p>Rasktooth and Infinitypear cheered and hurried towards him, the Cave Goblin sitting on Infinitypear’s shoulders. Rasktooth was paralyzed from the waist down, but he was very animated, and they <em>were</em> a registered Bronze-rank team. The first Goblin-Antinium team ever.</p>
+<p>Just—the name. They were all part of the Silver Swords, nominally, but as they were wildly underleveled, Ylawes sometimes performed social roles without them.</p>
+<p>“Looks like Goisedall, this city, has been hit by hard times. I don’t think it’s a concern; we’re not staying more than a few hours, Merchant Yorrned says. But watch the caravans.”</p>
+<p>“Can do, boss. I’ll watch out for any sneak-thieves with Larr.”</p>
+<p>Insill nodded. The Drake [Rogue] had a past with theft, and Larr, the one Gnoll, nodded too. Anith raised a paw.</p>
+<p>“Captain Ylawes. May I request permission to enter the city and ask around for news and information?”</p>
+<p>“…Go ahead. Falene and I might enter. Anyone else?”</p>
+<p>“Me—”</p>
+<p>Infinitypear lowered Rasktooth’s hand for him. Ylawes shook his head.</p>
+<p>“It’s a Drake city, Rasktooth.”</p>
+<p>“Damn.”</p>
+<p>Anith raised a paw after a moment’s thought.</p>
+<p>“Could we take…Pekona? She’s more familiar with the sea than we are. It could help.”</p>
+<p>The silent, one-handed woman from Drath bowed her head and kept her hand on the curved sword at her side. Ylawes shrugged.</p>
+<p>“That’s the plan. Dawil’s in charge until I get back. Oh, and the fimie-seeds, the blue stuff, are apparently fine according to Dulc. Just don’t eat them.”</p>
+<p>Rasktooth and Infinitypear hesitated, and Ylawes was reminded, again, that he’d asked for them to join his team. But dead gods, telling someone not to eat the obviously strange blue stuff was a first for him.</p>
+<p><em>They were brave, honorable, and had faced down Facestealer. You asked for them and they appeared.</em></p>
+<p>In fact, the younger adventurers had made this trip easier. Otherwise, Ylawes would have been brooding about the war at sea, the Horns’ mysterious appearance in the sky, and the fate of House Byres far more this entire time. He gave them all a wan smile, then turned his attention west.</p>
+<p>“Just a bit further and we’re in the New Lands. Technically, we already are, but it doesn’t start until the coastline fully vanishes, apparently. We’ll find a large ridgeline; that’s where the New Lands rose over the seabed. Once we climb that, we’re there.”</p>
+<p>The adventurers sat up in excitement, and Rasktooth shaded his eyes and pointed.</p>
+<p>“I see it! Huh. Doesn’t look that different.”</p>
+<p>“That’s because it’s snowy.”</p>
+<p>Infinitypear observed, and it was true; aside from the speckled blue, the New Lands were frozen with the rest of the world. Yet…Ylawes felt the wind blowing again and raised one hand.</p>
+<p><em>Yonder comes a wind from a land that’s never been before. We’re not the first—but we’re far from the last.</em></p>
+<p>They’d set a hard pace, and Ylawes reckoned they were a bit before the entire rush; their caravan had passed a lot of slower-moving ones, but everyone was within days, a week at most, of arriving.</p>
+<p>Soon, the roads would be packed without end behind him. And there were ships landing all along the coast and moving inland.</p>
+<p><em>Inland would be the least explored. I wonder where Merchant Yorrned wants to settle? He’s not said. Perhaps he doesn’t know.&nbsp;</em></p>
+<p>The sooner they were encamped, the sooner the Silver Swords’ two-week guarding period began. Then, the sooner Ylawes could go back to adventuring work or find more guard-duty work.</p>
+<p><em>Now comes the hard part, though. Blue seeds are only the start. I wonder what monsters await?&nbsp;</em></p>
+<p>They were ready. Yorrned’s Caravans and the ‘Consortium of Enterprise’ weren’t the biggest players. Not by far. The Walled Cities and the Five Families had sent their own caravans. There were nations sending colonies, and not all had met with disaster at sea like the Terandrians.</p>
+<p>However, Yorrned’s Caravans <em>did</em> have six [Merchants], each with their own field, who’d brought samples of their goods to trade, ample supplies to travel with—or so Ylawes was assured—and [Guards]. The Silver Swords were technically the ‘specialty’ of this caravan, being a higher grade of escort than most. Ylawes’ team wasn’t the most well-versed with exploration. Griffon Hunt was far better…</p>
+<p><em>Dead gods. Halrac’s dead. </em>Ylawes paused a second and closed his eyes. Then he opened them.</p>
+<p>“We’ll see how we do.”</p>
+<p>He meant that for the future. Then he went to find Merchant Yorrned. If Ylawes had one reservation about all this, well, it was just that he didn’t know what he’d find. Adventurers hated that, but everyone else seemed so enthusiastic. Ylawes had often been told ‘a monster’ was terrorizing a village or farm and had gone off to fight it. That was fine. It was just that he had never applied that logic to an entire region.</p>
+<p>That, he supposed, was called exploration. Or true adventure.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><strong>Day 1 of the Consortium of Enterprise Expeditions</strong></p>
+<p>&nbsp;</p>
+<p>The first day proper, Ylawes reckoned, was crossing the line dividing the New Lands and Izril.</p>
+<p>And it was a line. You could see it from above, apparently, and he certainly saw it on the ride there.</p>
+<p>It was as if a wall of dirt had suddenly risen a good fifteen feet above the sand and gravel of the seabed the caravan had been descending into past Goisedall. It was probably equivalent to other parts of Izril, which were higher above sea level, but the change was—dramatic.</p>
+<p><em>The New Lands looked different.</em> Even the soil, what Ylawes could see of it, packed and barely eroded yet, was substantially <em>paler</em> than Ylawes had expected.</p>
+<p>It had come from the seafloor, and he supposed a lot of it was sand or some such. Of course, everyone had cheered upon seeing it, and Ylawes hadn’t seen much underneath the snow.</p>
+<p>Spring would reveal more, but he felt, strongly, the sense of excitement that had helped him get this far. Though the crossing of the New Lands did take more work than he imagined.</p>
+<p>For one thing, the caravans, with their wooden wheels, were excellent for crossing roads. The Consortium of Enterprise had bought classic, covered wagons with that rounded hump to shelter the normally-open design. Prairie wagons, they were called.</p>
+<p>Ylawes didn’t know about wagons or expedition planning, so he’d thought it was a fair choice. They had horses to pull, but as it turned out, those wheels did <em>not</em> do well in sand.</p>
+<p>The seafloor that led up to the New Lands was obviously all sand from where the water had retreated, and so the caravan had to stop and <em>push</em> the wagons over particularly bad spots. Or rely on Falene to cast [Stabilized Ground] or [Stone Floor] to let the wagons roll smoothly on.</p>
+<p>Yorrned asked her to do the <em>entire</em> two-mile stretch to the New Lands and was put out when Ylawes told him that was completely unreasonable both in scope and to ask Falene to exhaust herself when it wasn’t her job. Another [Merchant], Miss Tivete, was more reasonable. She was in her forties, a magic specialist, and her wagons were enchanted and rolled over the sands.</p>
+<p>“Let’s just push on through! Come on, if all the riders get out and push, we’ll get through this. My lot will help the unenchanted wagons.”</p>
+<p>Six [Merchants], all of good standing and reputation, as well as countless volunteers and people head-hunted for the job. Ylawes didn’t push himself; he was on lookout, but he saw Infinitypear and Rasktooth pushing their wagon along with Vuliel Drae.</p>
+<p>People avoided the Antinium and Cave Goblin. It was a sort of balance; Ylawes was well-thought of by the Humans, and they knew enough about Liscor to accept this was like the Halfseekers. Even so, their wagon was last to roll towards the New Lands.</p>
+<p>Problem two: the New Lands were fifteen feet <em>above</em> the sea floor.</p>
+<p>…How did you get up there?</p>
+<p>A ramp, as it turned out. There was a benefit to not being first; a crude ramp of dirt had been built, but the effort it took to hitch multiple horses to a wagon and pull it up the ramp was exhausting.</p>
+<p>Also, it ruined the Consortium’s plans; Yorrned advocated loudly for them to do this in the morning so they could have an impactful crossing to the New Lands.</p>
+<p>His counterparts sensibly pointed out that they weren’t the only caravan on the way; camping in the sand was no fun, and if another group bottlenecked behind them, there would be trouble.</p>
+<p>Thus, Ylawes had to watch for three hours as the caravan’s wagons slowly came up the ramp. By the time all was said and done, it was dusk and they were in the New Lands…he barely noticed as he set up camp.</p>
+<p>Most people had elected to sleep in the wagons, a big saving in effort, rather than tents. Ylawes’ team had tents; Vuliel Drae and the Silver Swords already had them, and he’d bought a tent for Poke Duo.</p>
+<p>It was cold, and everyone was tired, but a [Chef] of all things came around with a full platter of braised sausage links, a creamy soup, and fresh bread.</p>
+<p>“You have a—a [Chef], Merchant Yorrned?”</p>
+<p>Ylawes hadn’t paid attention to food, but now he realized it hadn’t really lost quality despite them leaving the cities where they had fresh, good food available for meals. The proud [Merchant] was coming around with wine glasses to toast, and he explained as he brought over a friend and introduced him around.</p>
+<p>“Captain Ylawes, I do intend to make this an <em>enterprise. </em>Chef Votto here is an old friend.”</p>
+<p>The man had a huge belly and laugh, and he clasped Yorrned’s shoulder; the two were clearly old friends. He was even wearing one of those white hats and aprons—Ylawes couldn’t imagine how hard it was to keep clean—and he bowed to the Gold-rank team, clearly wanting to leave an impact.</p>
+<p>“I closed my restaurant just for this! I’ll be serving you, Captain Ylawes, when we set up a town!”</p>
+<p>“A town?”</p>
+<p>Ylawes had reviewed the Consortium of Enterprise’s plans, and he blinked at this.</p>
+<p>“I thought you were setting up an ore mining operation, Master Yorrned.”</p>
+<p>The [Merchant] waved an airy hand.</p>
+<p>“And what does any mine need but a town? Think of it, Captain Ylawes. What is missing from a new colony but good cooking? <em>Culture?</em> I’ve brought a number of things—in my own Chests of Holding, mind you—that will add to the comfort of our enterprise greatly. The Consortium will encamp, but in style! Now, to New Lands and new ventures!”</p>
+<p>He toasted everyone, but Ylawes drank sparsely and then gave his glass to Rasktooth and Infinitypear, who’d somehow not been given a drink. The food <em>was</em> quite good, though he wondered, briefly, how [Chef] Votto would handle new food they’d surely have to acquire in the New Lands.</p>
+<p>In the middle of the night, Ylawes woke up and wondered to himself—</p>
+<p><em>If they had a [Chef], he’d surely brought lots of long-lasting food, hadn’t he? A restaurant was not like a long-term trip.</em></p>
+<p>He was sure someone with that class wouldn’t make that mistake. Or Merchant Yorrned.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><strong>Day 4 of the Consortium of Enterprise Expeditions</strong></p>
+<p>&nbsp;</p>
+<p>After three days, Ylawes began to be convinced there wasn’t much new to the geography of the New Lands.</p>
+<p>“It’s just too snowy to tell, lad.”</p>
+<p>Dawil was of the opinion most of the changes wouldn’t be hugely geographical but in plant life, and the cold snow did turn everything blank. But then, maybe it was that they hadn’t gotten that far.</p>
+<p>Problem one: after they’d passed Goisedall, the road had vanished.</p>
+<p>Oh, there were signs of travel—tracks, trash, campfires, and even, once, a broken wheel—but the point of the New Lands was to go somewhere <em>new.</em></p>
+<p>The moment the Consortium had seen the tracks, Merchant Yorrned had held a vote, and 4-2, they’d agreed to go <em>away</em> from any other tracks. They angled northwards—most tracks seemed to be headed straight west—and encountered problem two:</p>
+<p>Without a road, those wagon wheels got a lot less traction.</p>
+<p>Snow was slick. Grass, which Ylawes could see poking up from the snow, oddly yellowish green, was slick. The wagon wheels had problems.</p>
+<p>Three [Merchants] had solutions. One had [Caravan Unslowed (Mild Terrain)]. Another was Merchant Tivete with her wheels, and the third had enough Chests of Holding that his wagons were relatively unslowed.</p>
+<p>The others slogged on for a day until Dawil, who’d been puzzling over the problem, raised a solution.</p>
+<p>“Aren’t there offroad wheels or the like? Surely we’ve got some. Else, we could notch the wheels so they’ve got more traction.”</p>
+<p>A quick consultation with the [Merchants] proved that they had such wheels, in fact—but Yorrned had not bought enough to outfit his entire caravan with <em>both</em> on-road and off-road wheels.</p>
+<p>“I was assured these wheels would do fine on most surfaces!”</p>
+<p>He complained as they stopped to alter the wheels he had, protesting at the possibility of breakage. Dawil grunted to Ylawes.</p>
+<p>“Off-road a regular road, <em>maybe. </em>For a few hours, or on overgrown trails. But not for days on end. If we get into any highlands, they’ll move a bit better. So long as we’ve got not many rocks. Speaking of which, you seen any monsters yet? Or animals at all?”</p>
+<p>“Not many. But then—since we’ve been following the first few waves, I imagine they’ve scared or hunted anything close to the border.”</p>
+<p>“True enough. Say, you think that [Chef] is going to make demoned eggs again tonight? How many eggs does the fellow <em>have?</em>”</p>
+<p>Ylawes shrugged.</p>
+<p>“As many as you have chickens to lay per day, I’ll wager.”</p>
+<p>Dawil scratched at his head.</p>
+<p>“…We don’t have chickens.”</p>
+<p>The two blinked at each other. <em>Dead gods, how many eggs had that man brought?</em></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><strong>Day 7 of the Consortium of Enterprise Expeditions</strong></p>
+<p>&nbsp;</p>
+<p>You’d think that the hardest part of acting as security on a trip like this would be the threats. But in Ylawes’ experience, adventurers hated guard-jobs because they were always people and politics.</p>
+<p>If you couldn’t smooth things over with the people you were protecting when incidents occurred, or navigate things like jostling with another caravan over a broken wagon wheel, you ran into trouble. And the more you fought, the bigger problems got.</p>
+<p>He liked to think he had a decent personality for smoothing things over. Well, the [Merchants] kept to themselves.</p>
+<p>The caravaners were largely decent folks excited to strike a fortune. Ylawes had gotten to know most by name, if vaguely, but if there was a <em>problem</em> group, it was, well, who you thought it would be.</p>
+<p>Vuliel Drae and Poke Duo were just—new. Both to adventuring and to working together. Including a Cave Goblin and Antinium in his team had been a rash decision. But you could argue they were the solid picks.</p>
+<p>Vuliel Drae had once, inadvertently, nearly destroyed Liscor by destroying a bunch of Face-Eater Moth eggs. Even now, though they were chastened by the experience, they were just unseasoned as adventurers went.</p>
+<p>Dasha was a great example of that.</p>
+<p>Dawil didn’t like Dasha, and the Dwarf got along with almost everyone. But Dasha got on his nerves, probably because she tended to copy his beard-stroking and talked about Dwarves and smithing, but in a way that felt…inauthentic.</p>
+<p>Worse, she seemed to have picked up on this and kept trying to get on Dawil’s good side. On the other hand, you had Larr, who was standoffish to the point of being rude.</p>
+<p>“Need anyone to stand lookout with you, Larr? It’s a long night shift.”</p>
+<p>“I’m fine. I did it for the team all the time. Pekona will trade off midway through the night. You can sleep.”</p>
+<p>Ylawes had tried to offer to help take watches, but Larr seemed to think the Gold-rank team members were too good for night duty. And Pekona? Pekona had lost one hand, but barely spoke to <em>anyone.</em></p>
+<p>At least Insill and Anith were decent, though Anith was more timid as a leader than Ylawes liked. At least, with Ylawes, the Jackal Beastkin deferred to him constantly. Insill was fine, though he seemed to be a kind of easygoing glue; he’d jolly everyone along.</p>
+<p>Frankly, if you put Vuliel Drae on a plate and dissected them, Ylawes bet they would have dissolved by the time they reached Gold-rank. But they were brave.</p>
+<p>They <em>were</em> brave. So he kept at it, trying to build team cohesion as he saw it. Vuliel Drae was still malleable enough for Ylawes to surprise Larr by taking over Pekona’s night shift, offer to practice with her in the morning, and for Falene to befriend Anith by teaching him spells. Dawil went and talked with Dasha about the home she’d never been to, and so Vuliel Drae did improve.</p>
+<p>But Poke Duo?</p>
+<p>…Problems arose the first week of the New Lands expedition.</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>“Hey, Chieftain-boss. You want I eat grass?”</p>
+<p>Rasktooth found Ylawes as the caravan was almost a week past the border of the New Lands. He normally rode Infinitypear’s shoulders or sat in the wagon. He’d waved at Ylawes as the man rode past.</p>
+<p>“Excuse me?”</p>
+<p>“Eat grass. I should eat?”</p>
+<p>Rasktooth had a lot of the yellowish grass on the ground. It looked like, well, grass. Long and lush, despite the snow that had been covering it. Ylawes had multiple questions.</p>
+<p>“I, er—why? And why are you calling me Chieftain, Rasktooth?”</p>
+<p>“Is you <em>not</em> Chieftain? How about Captain-boss?”</p>
+<p>“What about just ‘Captain’?”</p>
+<p>“Eh. Sounds bad. How about Human-Hob?”</p>
+<p>“…No.”</p>
+<p>Rasktooth seemed disappointed at this. He and Infinitypear had been decent companions this ride south. They’d mostly been like children. Running about, chasing racoons, digging for treasure and often finding some—so energetic and eager sometimes Ylawes worried he’d made a mistake.</p>
+<p><em>Children shouldn’t be adventurers. </em>But when he’d told Erin his intent to take them with him, she’d smiled. Antinium and Goblins didn’t get to <em>be</em> children, and for all they were young, Infinitypear had fought in a war, and he had [Spearmaster] Lulv’s spear, which might actually make him high Silver-rank if he used it well.</p>
+<p>And Rasktooth? The Goblin was sitting cross-legged, unable to move, but he and Infinitypear had put anything he might need around him. He had a crossbow at his side, and it was loaded. Ready to fire. Something about him reminded Ylawes a bit of Crossbow Stan.</p>
+<p><em>Ready to fire.</em> The Cave Goblin would take a potshot at anything he saw move. Rabbits, birds—and he often winged them. In a sense, he might be the most veteran fighter aside from the Silver Swords.</p>
+<p>He was also, intriguingly, a [Cook] as well as an actual [Adventurer], and his time living in Liscor’s dungeons had honed Goblin’s natural survival knowledge. Like in this case.</p>
+<p>“Why would you eat grass, Rasktooth?”</p>
+<p>“See if edible. Like good moss or mushrooms. This probably <em>not</em> edible, but maybe? You say word, and I eat grass.”</p>
+<p>Rasktooth smiled, and Ylawes blinked at him.</p>
+<p>“I don’t think we’re in need of that, Rasktooth. Mind you, if it was edible, that would be good to know. Wait. Is <em>any</em> grass edible?”</p>
+<p>He didn’t believe it was so, but Rasktooth grinned as Falene rode over. The half-Elf glanced at Rasktooth awkwardly, and Ylawes saw Rasktooth beaming at her. Falene was less—welcoming with him around, but she smiled politely behind Ylawes.</p>
+<p>“What’s this about grass?”</p>
+<p>When they explained, Falene fiddled with her glasses.</p>
+<p>“Oh, some grass is. Crabgrass, for instance. But only the seeds. Can you identify this grass by that, Rasktooth? It’s not spring.”</p>
+<p>“I can try. Just say word.”</p>
+<p>“If you want to nibble, go ahead.”</p>
+<p>Ylawes gave up, but Rasktooth shook his head energetically.</p>
+<p>“No. I mean…I eat grass and drink water all day. Two days. If I poop bad and get hungry, grass can’t be eat. See?”</p>
+<p><em>A two-day, all-grass diet? </em>Ylawes shuddered at the prospect. He shook his head vehemently.</p>
+<p>“I sincerely doubt the grass is edible, don’t you, Rasktooth?”</p>
+<p>“Yah. Probably not. But could check.”</p>
+<p>Ylawes hesitated, then patted the little Goblin on the shoulder.</p>
+<p>“I appreciate your enthusiasm. But if you want to hunt anything for the cook pots, that would be more useful.”</p>
+<p>“Sure, sure.”</p>
+<p>The Cave Goblin sighed, scratched at his back, and pulled himself over to one side of the moving wagon to lean over. But he never let the loaded crossbow stray out of arm’s reach or let his view of the landscape be obstructed.</p>
+<p>Ylawes turned to look for Infinitypear and saw the Worker awkwardly riding a pony. Both he and Rasktooth were bundled up for the cold, but they had interesting clothing. Rasktooth had a sharp red hat enchanted to apparently give him better sight, and they’d elected to buy thick coats that could hang over both. Infinitypear had had to add space for his extra arms, but he actually had the first Antinium coat Ylawes had ever seen.</p>
+<p>It was huge and bulky to sit over his backshell, but he had four sleeves for his arms. Normally, if it was cold, Antinium just wore a cloak at most.</p>
+<p>“Who made that for him?”</p>
+<p>Ylawes thought to ask about the coat. He doubted many [Tailors] in Liscor would make that coat, even if they were accepting new coin.</p>
+<p>“Oh, that was me.”</p>
+<p>Insill waved a hand, and Ylawes blinked at him.</p>
+<p>“You can sew?”</p>
+<p>“Sure! I just bought another coat, hacked off the sleeves, and sewed them on with a proper cross-stitch. It’s not fancy, but Infinitypear was really happy about—<em>twang.</em>”</p>
+<p>That was the sound of Rasktooth firing a crossbow just past the [Rogue]. Insill <em>dove</em> off his horse, and Ylawes jerked; the Cave Goblin’s laughter from his wagon was loud.</p>
+<p>“<em>I got it! Stupid teleport-rabbit! </em>Infinitypear, victory!”</p>
+<p>Rasktooth had nailed a Waisrabbit. Teleportation only worked if the rabbit saw a threat coming. Infinitypear rode over to it, picked up the rabbit, and the two celebrated. Ylawes opened his mouth to ask Rasktooth <em>not</em> to take potshots when people might get hit, and he hesitated.</p>
+<p><em>It was a good shot. </em>He scratched his head, not sure how to talk to these two adventurers.</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>—The [Chef], Master Votto, didn’t have responsibility for <em>every</em> meal. Lunch was largely your own affair with the supplies brought over, just some hard, unleavened bread and fresh, soft cheese, or some good sausage and olives to go along with everything.</p>
+<p>Sometimes, the caravan decided to stop for a lunch break, and then you were on your own. Everyone had a cooking pot allotted to their wagon, and one of the things the Silver Swords had learned was it was <em>nice</em> to have a hot meal for lunch. You could live on a cold sandwich you gnawed on as you rode, but how much fun was that?</p>
+<p>“Alright, lads. What’ve we got for a stew? Come on, let’s make a proper forever-stew. I reckon we’ve got the basis for a good one.”</p>
+<p>Dawil decided he’d had enough of said cold lunches one break and had Falene start a fire on the ground. The half-Elf rolled her eyes, but she produced a magical flame, and Dawil lugged out a pot.</p>
+<p>“Forever stew? Do we have a magical item?”</p>
+<p>Pekona hesitated. She was one of two people in their group who spoke another language, like Rasktooth, and she looked puzzled until Larr explained.</p>
+<p>“No, that’s what the north calls it. We call it Traveller’s Stew. Or Rock Soup. Master Dawil, want me to find a rock?”</p>
+<p>“Good idea, lad. Make sure it’s nice and washed! Let’s have some good snow. Dasha, Insill, snow. What’ve we scavenged?”</p>
+<p>Pekona grew more confused—and alarmed—by the inclusion of a big, round stone that Larr found. Ylawes strode over with a smile.</p>
+<p>“Is this another joke?”</p>
+<p>She seemed wary of being pranked, but Ylawes explained.</p>
+<p>“It’s no prank, Pekona. Rather—I haven’t had forever stew in a while. It’s something adventurers and travellers make. You put in food, leftovers, and new food. Everyone contributes something. Then you save it for the next day. The rock is heated and helps keep the soup warm.”</p>
+<p>“Also, adds flavor.”</p>
+<p>Larr was helping pack a cauldron with snow that was melting as the iron pot heated over Falene’s flame. Dawil rubbed his hands.</p>
+<p>“Ah, fire magic. I knew you were good for something, Pointy.”</p>
+<p>The arch look she gave him was followed by a spark that landed in his beard. Dawil swore as Falene got laughter from Dasha and Rasktooth. Then the half-Elf eyed the pot critically.</p>
+<p>“Forever stew isn’t something you can just <em>make</em>, Dawil. Unless we’re going to ask Votto for more supplies, do we have enough to make it…palatable?”</p>
+<p>The Dwarf gave her an arch look.</p>
+<p>“Why do you think I’ve been asking for different lunch rations and saving bits of them, Pointy? See here. We’ve got a bunch of carrots and onions; I told you not to eat those the last few days. I bought a bunch of pepper and salt at Goisedell just for this—if we add in the sausages instead of making a sandwich, then we have the bread for dipping.”</p>
+<p>“Thin soup.”</p>
+<p>Dawil waggled a finger at Falene.</p>
+<p>“That’s what <em>scavenging </em>is for. Hey, you lot! Bring out what you’ve grabbed!”</p>
+<p>Vuliel Drae had apparently been under orders to find something for the pot. Indeed, Dawil began chopping the carrots with a belt-knife.</p>
+<p>“Everyone puts one thing in. Go beg another caravan for something if you can’t find something. Butter. Milk I wouldn’t say no to. Cabbage, potato—meat’s quite good, but it’s harder to barter for. No Yellats. I hate Yellats.”</p>
+<p>Even Ylawes had to go find something to add. Amused, but willing to play along, Ylawes hunted in his packs for anything that would go into the pot. Pekona was still asking questions.</p>
+<p>“I don’t understand. What goes in the stew?”</p>
+<p>“Almost anything. For instance…<em>Dawil! </em>How’s this?”</p>
+<p>Ylawes came back with a bag of snacking walnuts he’d bought a while back. Dawil eyed them critically.</p>
+<p>“Could work…but that’s only a handful, lad. You need more unless you want no lunch.”</p>
+<p>“Dead gods, Dawil—fine! Pekona, let’s see if we can trade a few coppers for something.”</p>
+<p>Mildly exasperated, but mostly amused, Ylawes helped Pekona secure some cabbage from a neighboring wagon, who expressed interest in the idea of a stew for lunch. He promised to offer them a bowl if it was good and noticed more people in the caravans drifting over to ask Dawil what the rules for entry were.</p>
+<p><em>One item per person! </em>Pekona actually happened to have an excellent ingredient herself; she turned over a bag of dried rice.</p>
+<p>“From home.”</p>
+<p>Dawil sprinkled it liberally into the pot, and Pekona brightened up as the contents resembled something she could get behind.</p>
+<p>The New Lands might be frozen, but there were at least plants and animals from old Izril that people could scavenge, even if it wasn’t much.</p>
+<p>“Heard you talking about the entire grass thing, Captain Ylawes. I <em>think</em> this is thyme. Tastes like it. Smells like it. I noticed a patch under the snow.”</p>
+<p>“<em>Really?</em>”</p>
+<p>Larr had a double-handful of the stuff. Dawil tasted a bit, and after some thought, he let Larr put it on the condition the Gnoll add something else. He and Insill produced a broth of bones they’d made last night.</p>
+<p>“Nice. That’s a good smell. You two were prepping, weren’t you?”</p>
+<p>Dawil was approving. <em>Anith</em> was upset.</p>
+<p>“My snacking bones! I kept asking, and you two said there were none to be had!”</p>
+<p>One of the peculiarities of the Beastkin was that he liked to gnaw on bones, something Larr didn’t do but found highly amusing. It clearly embarrassed Anith.</p>
+<p>“It’s a trait from my Beastkin heritage, Captain Ylawes. Don’t pay it any mind. I can stop—we’re a bit closer to our roots than other species.”</p>
+<p>“I’ve had bone marrow before. It’s nothing, Captain Anith.”</p>
+<p>Relieved, Anith contributed a lot of jerky he snacked on, and the soup began to look pretty appetizing.</p>
+<p>Of course, the freshest kill was Rasktooth’s. He handed over a skinned rabbit—and, to Ylawes’ mild shock, a cup of blood.</p>
+<p>“You want put blood in now?”</p>
+<p>Dawil hesitated.</p>
+<p>“We don’t cook with blood. Not bad—got the guts out of the rabbit? In the pot it goes!”</p>
+<p>“Oh. Can I eat?”</p>
+<p>Rasktooth put the blood in a cup by the fire, and when it had begun to steam, he began to sip it. Falene’s expression was mildly horrified, but Larr grunted.</p>
+<p>“Reminds me of horse blood when one died. You drink that in the cold, and it warms you up.”</p>
+<p>“Yep. You want cup?”</p>
+<p>Larr declined, but Ylawes decided it was just another peculiarity of the Cave Goblin. He was rather odd—but he spoke fairly fluently, he was affable, a good shot—</p>
+<p><em>Ylawes stared at Rasktooth and the image of a snarling Goblin aiming a spear at him appeared in his mind.</em> A memory. Then the empty eyes of one who’d jumped at him in a cave, staring at the bloody hole in her chest.</p>
+<p>He’d killed Goblins before. Numerous times. Hunting down Goblin tribes was…it was something any adventurer did. They could be cunning threats, and Ylawes hadn’t thought much of it until Esthelm.</p>
+<p>Perhaps he’d stared too long, because Rasktooth saw him and waved the cup.</p>
+<p>“You want sip, Captain-guy?”</p>
+<p>Ylawes started and looked away, guilty. Dawil stopped tasting the soup and glanced up, eyes knowing.</p>
+<p>“Ah—no. Thank you, Rasktooth. Just hungry for the soup. Dawil, where are we at?”</p>
+<p>“<em>Almost</em> done. Dasha and Infinitypear’re the only two to not contribute something. Wait, Pointy, where’s your contribution?”</p>
+<p>“Aside from the flames? I added more spices for a proper taste.”</p>
+<p>“…Hmph. You’re lucky I approve or you’d have ruined the damn pot. <em>Hey, we have to move in fifteen minutes! </em>If you don’t want to be eating on horseback, move it!”</p>
+<p>Some of the other caravaners were wavering on tossing in last-minute additions to the pot, and Dasha ran over, puffing.</p>
+<p>“I’m almost there! Hold your beard—it’s hard to get something nice! <em>Here!</em>”</p>
+<p>Ylawes had seen her and Infinitypear running about; apparently, the Worker didn’t feel like Rasktooth’s rabbit was his contribution. Ylawes went to look for Infinitypear as Dasha held up three huge, bountiful apples. Dawil stared at them for a long time, then sighed.</p>
+<p>“In the pot it goes.”</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>“Captain Ylawes, I do not wish to be hungry. But I cannot find any good food.”</p>
+<p>Infinitypear was scuffing the ground with one foot, having searched about for a good foodstuff and found none. Ylawes scratched his head.</p>
+<p>“No one would barter with you?”</p>
+<p>“No, Captain Ylawes.”</p>
+<p>Ylawes wondered why. He was sure he could get some…perhaps it was the Antinium’s look. But Infinitypear was cheerful, friendly, and Ylawes had often heard him humming and singing.</p>
+<p>“Maybe there’s something in our packs? Did you bring a snack from home?”</p>
+<p>“Snack…maybe? Are snacks acceptable entries into the forever pot of Dawil?”</p>
+<p>Ah, he had Pekona’s problem. Ylawes assured him that was the entire point, and Infinitypear ran off excitedly towards his shared wagon. Ylawes strode back to the gathering as Infinitypear emerged from his wagon, holding something in his hands.</p>
+<p>“Let’s not overboil the grains! We’re <em>almost</em> ready. Get those bowls lined up, and—not you, Pointy. Why are you first in line? Let the younger ones go first. Get, get. Got your food, Infinitypear? Put it in there. Good lad!”</p>
+<p>The Antinium ran over, and Ylawes saw him energetically toss his contribution into the pot. The [Captain] licked his lips and then saw Dawil staring down into the soup pot.</p>
+<p>Rasktooth grinned—but Dasha, who’d gotten to the front of the line, sprang back with an oath. There was a dead silence—then a cry of disgust and outrage rose from the group standing around the forever pot.</p>
+<p><em>What—</em>oh no. Ylawes’ mind connected in a way it really should have a minute ago.</p>
+<p><em>Snacks from home? </em>Infinitypear was an Antinium. Ylawes jogged forwards as Dawil closed his eyes, Insill gagged, and Larr shouted.</p>
+<p>“<em>Roaches?</em>”</p>
+<p>Infinitypear had gone to Garry’s kitchen before he’d left Liscor and loaded up on all kinds of food from home. Real Garry food, meant for Antinium. Among it—</p>
+<p>Travelling, dried snack roaches. They were floating in the pot—Ylawes stared at one sinking with a dried feeler spinning around in the hither-to delicious liquid. Infinitypear looked around uncertainly, then heard all the shouting.</p>
+<p>Then he ran away.</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>“Infinitypear? Where are you?”</p>
+<p>The caravan halted for a good twenty minutes due to the stew incident. Ylawes only found Infinitypear after all that time when Rasktooth pointed him out.</p>
+<p>The Worker was squatting down behind a wagon, hiding his head with all his arms, trembling like a leaf. He was definitely aware he’d messed up the soup—the shouting and disgust from his teammates had sent the Worker into flight.</p>
+<p>“I am sorry, Captain Ylawes. I am sorry—I will pay for the soup.”</p>
+<p>The Worker flinched as Ylawes raised a hand, and the [Knight] stopped.</p>
+<p>He’d been intending to find Infinitypear and lecture him on adding the bugs to the soup, then have the Worker apologize to everyone and move on. But the terror of the Worker cringing away from him made Ylawes feel like the villain.</p>
+<p>He hesitated, then walked over, and when the Antinium cringed away, he squatted down.</p>
+<p>“—It’s just soup, Infinitypear. Dawil’s not happy, but he didn’t mean the cursing.”</p>
+<p>The normally-affable Dwarf <em>had</em> let loose in an alarming way, but that didn’t explain Infinitypear’s response.</p>
+<p>“I have ruined the soup. I am a failure. Please do not send me back. Or kill me.”</p>
+<p>Infinitypear curled up and began rocking. Ylawes was shocked.</p>
+<p>“<em>Kill you? </em>We’d never—at most, I’d ask you to pay for the soup, but Chef Votto said he’d just send us something to eat.”</p>
+<p>The Worker scrabbled at his belt pouch, then turned over all the coins he had. Gold, silver, copper—Infinitypear handed them with all four hands to him.</p>
+<p>“Please do not make me leave, Captain Ylawes.”</p>
+<p>“Infinitypear—<em>stop this. </em>I’m not angry. It was my fault for suggesting you add a snack and not—kill you?”</p>
+<p>Ylawes had seldom been more uncomfortable than he was at this moment. The Worker’s trembling didn’t stop, but abated slightly.</p>
+<p>“You will not kill me for being a failure and messing up the important soup?”</p>
+<p>“I would never kill a man over soup. Kill <em>anyone</em> over soup.”</p>
+<p>This was surreal. Then Ylawes remembered a story from Yvlon about Pawn and…</p>
+<p>“It’s just soup, Infinitypear. Truly. If we go back and apologize to Dawil, he’d forgive you. Would—they have killed you in the Free Hive for messing up food?”</p>
+<p>“Yes.”</p>
+<p>“No. Dead gods. Truly?”</p>
+<p>“If I sabotaged the food for a shift, I am a failure. I did not mean it, but I have ruined the soup. I am bad. I tried my best, Captain Ylawes, I did. Please pay for new soup with my money.”</p>
+<p>Ylawes heard a call and saw Vuliel Drae—at least, Larr and Pekona—had tracked them down. When they saw the shivering Worker flinching from them, they stared at <em>Ylawes</em>—with much the same expression as he thought he had.</p>
+<p>“I’m not angry, Infinitypear. Please stand up.”</p>
+<p><em>Or it will look like I’m beating you or something horrendous. </em>Ylawes helped pull the Worker up, and Larr scratched at one ear.</p>
+<p>“They kill Workers for messing up food? Even back in my tribe, that’s crazy. Even if it were the dead of winter and someone kicked over a cook pot, we’d just hit them.”</p>
+<p>“It’s not as if he even ruined the soup. Really.”</p>
+<p>Pekona’s comment drew Ylawes up short. She was scratching at her side.</p>
+<p>“If it was crickets, it’d be fine.”</p>
+<p>Larr pointed at Pekona.</p>
+<p>“Gross. She eats crickets.”</p>
+<p>Ylawes tried not to make a face of disgust. What…raw? Well, fried apparently, and Pekona had a point. The roaches were long dead—and Ylawes briskly patted Infinitypear on the shoulder. He brushed snow off the Antinium and wished he’d carried Rasktooth over.</p>
+<p>“No one’s going to harm you for making a mistake like that, Infinitypear. My word and honor on it. It wasn’t a good mistake, but—”</p>
+<p>The Captain of the Silver Swords hesitated. He’d never had a junior, not really. Dawil, Falene, and himself had all fallen in together at the same level, and while they’d journeyed with other people and even tried other members, they were just a solid team who really balanced each other.</p>
+<p><em>What to say? </em>He defaulted to what he knew.</p>
+<p>“No member of my team will be punished for doing their best. If anyone comes after you, be it Dawil or anyone, come find me. Just don’t put roaches in the pot and we’re fine, alright?”</p>
+<p>He patted Infinitypear on the shoulder again, and the Worker looked at him.</p>
+<p>“You are a very nice person, Captain Ylawes. You do not want me to pay for the soup?”</p>
+<p>“No. We have plenty of food.”</p>
+<p>Ylawes smiled, and Infinitypear stared at him. He stared at the ground.</p>
+<p>“I am still very sad I ruined the soup. I will apologize. Thank you, Captain Ylawes.”</p>
+<p>He began to head back to the pot—then turned.</p>
+<p>“You are the nicest captain I have ever had. Rasktooth says so too. No one is nicer to us, not even Niers.”</p>
+<p>He trundled off, then turned back.</p>
+<p>“He was scary.”</p>
+<p>Ylawes Byres stood there a second as Larr blinked and asked Pekona if that meant <em>the</em> Niers…and the [Knight] felt unaccountably guilty.</p>
+<p>The nicest captain…? He’d barely done anything for the duo besides bring them on and pay them. He barely knew anything about them. Killed for messing up a soup pot.</p>
+<p>Was that what Yvlon had learned from Ksmvr? Ylawes stood there a second. For the first time, he realized he truly felt bad for an Antinium. And wondered how he could make Infinitypear less terrified and upset. Then he had a bad idea.</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>When they got back to the stew pot, a grumpy Dawil accepted Infinitypear’s apology, moreso when he saw how guilty the Antinium was. Falene was exasperated, the rest of the team disappointed, but Rasktooth patted Infinitypear on the back.</p>
+<p>“You ruin soup, brother. Is okay. You and I can eat, eh?”</p>
+<p>They’d tossed the roaches out of the soup, but no one wanted any, even Pekona. The Cave Goblin didn’t care; he took a bowl as everyone else took some sandwiches Votto had made up. He took a few bites, <em>crunched</em> into something, and chewed.</p>
+<p>“Is good roaches, too. What, they sugar-coated?”</p>
+<p>Infinitypear stared at a bowl of soup, and Dawil sighed to Ylawes.</p>
+<p>“Thanks for finding him, lad. Now I feel like the ogre in the room seeing how afraid the poor lad was of me. At least we’ve got food for <em>them</em> for a few days, huh?”</p>
+<p>He glumly took a sandwich, and Ylawes eyed the pot. <em>This was a bad idea. </em>But Ylawes wasn’t an imaginative person, and he felt like there was only one way to salvage some of the situation.</p>
+<p>“It looked like a good stew. It probably still is—you got the roaches out, and they weren’t alive, were they? G-give me a bowl.”</p>
+<p>Rasktooth and Infinitypear looked up. Dawil blinked, and Falene’s mouth opened, full of food, in a look of pure horror. The rest of Vuliel Drae stared at Ylawes, but the [Knight] walked over, eyed the soup, and very gingerly ladled himself a bowl.</p>
+<p>He sat down, knowing all eyes were on him, and tried to smile at Infinitypear. <em>His stomach was not having it, though.</em></p>
+<p><em>There aren’t any roaches in here—they were barely in for a second</em>. Dead gods, he’d picked weevils out of bad bread and seen nastiness in food before.</p>
+<p>—That was different from this. Ylawes, with the will that had allowed him to face down Facestealer, slowly inserted a spoon into the bowl and inspected the spoonful.</p>
+<p>Rice mixed with carrots, onions, and a brown broth. Food. Even a bit of sausage. His stomach heaved—before he took a bite.</p>
+<p><em>Don’t throw up. Don’t gag. Don’t spit it out—</em>his tongue made an appraisal of the soup, and his mind and taste buds warred.</p>
+<p><em>It tastes good.&nbsp;</em></p>
+<p><em>It’s got bugs in it.</em></p>
+<p><em>Swallow?</em></p>
+<p><em>Spit it out.</em></p>
+<p>The soup—really didn’t taste of bugs. But he barely swallowed it, reached for a canteen, coughed, and took a long drink of water. Then he took another spoonful. And another.</p>
+<p>It was wrong to say Ylawes ate the bowl of soup. It was safer to say he <em>consumed</em> it, a very deliberate action that took a long time. And it helped that he took some of the dried bread and used it to sop up the soup.</p>
+<p>No one else wanted the soup, but Larr and Pekona did argue, then take a <em>small</em> portion. It was worth it to see Infinitypear brighten up and Rasktooth grin.</p>
+<p>“Is good captain-guy.”</p>
+<p>Ylawes was almost done with the soup, and his stomach was held in check by a will of iron. He took a last mouthful of soup, felt a long, spindly <em>something</em> in his mouth—and crunched down on antennae.</p>
+<p>Whatever his face revealed, Dawil, who’d been watching his friend with a puzzled, but gratified look, took cover behind Dasha. Ylawes tilted his head, spat to the side, and had a brief thought as he swallowed the rest.</p>
+<p><em>Dead gods damn it, it is sugary. </em>But the contact almost made him feel better. The worst was over. Ylawes stared down at his bowl, sighed, then locked eyes with a roach head swimming in the dregs. He stopped—sat there as Dasha’s cheeks bulged, and she ran off behind a wagon to vomit.</p>
+<p>But when he looked up and saw Infinitypear staring at him anxiously, Ylawes Byres found a smile.</p>
+<p>“We’re a team. No more bugs, Infinitypear?”</p>
+<p>“Yes, Captain Ylawes.”</p>
+<p>The relief in the Antinium’s tone made Ylawes feel stronger the rest of the day. Even if his stomach complained all night long. He didn’t have the soup the next day; he strained out all the edible meat and vegetables and put them into a sandwich. When Dawil saw that, he just sighed.</p>
+<p>“Lad, give me one of those sandwiches too. Pointy, get in on this. Don’t run. <em>Pointy—</em>”</p>
+<p>And they continued on.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><strong>Day 9 of the Consortium of Enterprise Expeditions</strong></p>
+<p>&nbsp;</p>
+<p>By the time Ylawes saw the first new animals, he definitely sensed the air growing warmer. They’d run into other animals before. Mostly Corusdeer, actually.</p>
+<p>When you offered deer entirely new pastures, it turned out the grass <em>was</em> yellower on the other side. They would scuff the ground with their paws, finding nice snow, then dip their glowing antlers to the ground and melt the snow and lap the water and eat the grass.</p>
+<p>They were very efficient animals—and highly dangerous if they charged you.</p>
+<p>“My [Chef] <em>could</em> use some fresh venison, Captain Ylawes.”</p>
+<p>Yorrned hinted, and Ylawes refused.</p>
+<p>“Not possible unless we were in dire straits, Merchant Yorrned.”</p>
+<p>The rest of the Consortium protested.</p>
+<p>“Surely, Captain Ylawes, you won’t refuse! These are hardly <em>Silver-</em>rank threats. And we could use the food for salting or trade later. Or skinning for their hides.”</p>
+<p>Ylawes sighed. He hated it when people told him what a monster was ranked.</p>
+<p>“Merchants, I do know Corusdeer are ranked as Silver-rank…alone. Herds? Herds are Gold-rank, and I knew a Gold-rank [Hunter] who’d rather kill a Griffin than anger a herd. If we hunt the Corusdeer incautiously, they will all charge us, and they could light the entire caravan aflame.”</p>
+<p>That sobered the [Merchants]’ interest, but then Ylawes caught an idiot trying to shoot one of the deer. First a [Guard], then a colonist.</p>
+<p>The second time, he had Anith go up and down all six caravans telling people <em>not</em> to try and ‘bag a deer’ for the antlers unless they wanted to find out what a pair of burning antlers in their midsection felt like.</p>
+<p>He’d seen a few large bucks eying the caravan, and they could get aggressive. Thankfully, the caravan was moving past the deer without incident.</p>
+<p><em>That </em>was when he saw the new animal.</p>
+<p>“—slushy footing. Reckon the mud will make us faster or slower, lads?”</p>
+<p>Dawil was overseeing the younger adventurers’ practice as the caravan slowed. Part of the commitment of the Silver Swords to taking on new teams was training them, and but for Pekona, everyone needed supervision.</p>
+<p>Insill knew how to fight, for instance, but he needed experience landing blows. Larr was a great shot—but he had to watch out for his team. There was an edge the Silver Swords had that everyone lacked. Ylawes was deflecting Infinitypear’s repeated stabs with the butt of his spear.</p>
+<p>The Antinium Worker fought rather well, and Rasktooth was sitting on the wagon practicing his archery with the two crossbows he carried. The one person Ylawes wasn’t sure he or Dawil was better than was…Pekona.</p>
+<p>But her problem was that she had lost a hand and was retraining herself. Which she did obsessively. Ever since the Village of the Dead, but especially Blademistress Zeladona, Pekona had been practicing forms and styles that looked flowing, if sometimes impractical, to Ylawes.</p>
+<p>He wanted to see how the team held up against regular monsters, not Facestealer, and had been trying to get to know them. But it really was a routine of ‘move-rest-move-sleep’ most days.</p>
+<p>Ylawes was <em>just</em> checking on the Corusdeer herd when he saw the new animal.</p>
+<p>It was…well, grey, and at first, he thought a Corusdeer was giving birth. Then he realized it wasn’t. Rather, something dark and squat was reaching up as the Corusdeer suckled one of its young.</p>
+<p>The deer pawed at the ground, but didn’t notice the strange, four-legged thing with a huge mouth attach itself to an udder.</p>
+<p>It—<em>looked</em> like a lamprey, if you gave one four legs to shuffle around on and a weirdly flexible head. It couldn’t have been more than four feet tall, and it shoved a faun away and began to drink.</p>
+<p>It was so strange Ylawes wasn’t sure his eyes were working—until the mother deer noticed the bleating of her offspring and saw the lamprey-thing. Then the deer panicked and tried to get away.</p>
+<p><em>The sucker-shuffler followed her, refusing to stop. </em>A second was creeping around the other deer and tried to knock another baby deer away.</p>
+<p>At this point, the herd noticed the unwanted guests and reacted as you might expect. Several bucks lowered their horns and called out, and the first one detached itself from the mother, leaving behind a trail of ooze, some blood, and milk, and tried to shuffle off.</p>
+<p>It did not make it far. The mother Corusdeer’s horns ignited, and it <em>charged</em> the sucker-shuffler. Ylawes winced as he saw the thing ‘duck’ its head into its body and try to hide.</p>
+<p>The sizzle and smoke from the thing igniting burst upwards, and it keened a weirdly low, groaning sound as it was trampled, then more blazing horns impaled it. The other one turned to flee and quickly met the same fate.</p>
+<p>Pekona spoke for the first time in days to make an astute observation.</p>
+<p>“Gross.”</p>
+<p>The adventurers had seen the entire thing. Ylawes shuddered.</p>
+<p>“What—was that? Falene? Dawil? Has anyone seen a monster like that?”</p>
+<p>Falene frowned at the monster, opening a diary to take quick notes as she took [Magic Pictures].</p>
+<p>“It was definitely aquatic. Did you see the fins on its legs? It must be a sea-monster, Ylawes. Probably trapped when the New Lands rose.”</p>
+<p>Anith actually identified the thing. He sent a [Message] off with the description and came back.</p>
+<p>“It’s a Lamprey Shuffler. A variant of the fish; new to the New Lands. Drowned Folk stated they’d run into them at Nombernaught and gave them the name.”</p>
+<p>Ylawes sighed.</p>
+<p>“Wonderful. <em>That’s</em> our first new monster? How dangerous is it?”</p>
+<p>“Eh…lower than Bronze-rank. They apparently try to latch onto beasts of burden.”</p>
+<p>“Let’s check the camp at night, then.”</p>
+<p>As it so happened, three <em>did</em> try to go after the animals at night. It was quick; Ylawes heard Falene’s ward go off, and by the time they’d gotten there, two had been driven off by the [Guards], and Falene incinerated the last after shocking it to death.</p>
+<p>“Not very appealing. I don’t think I want <em>that</em> as provisions, Captain Ylawes!”</p>
+<p>Merchant Yorrned laughed uneasily when he saw the corpses. Ylawes hesitated.</p>
+<p><em>Aren’t lampreys edible?</em> He refrained from suggesting they eat the disgusting things, but he noticed Rasktooth trying to cut one with a dagger. Ylawes nudged Infinitypear, who nudged Rasktooth, and the Cave Goblin sulkily refrained from taking a bite.</p>
+<p>“It bite us, we bite it. So many things cannot eat.”</p>
+<p>Ylawes was going to leave it at that, but to his surprise, the Consortium approached him. Merchant Tivete had a thought.</p>
+<p>“The corpses of those monsters are often sought after by Adventurer’s Guilds and collectors, Captain Ylawes. Would you hunt down one and salt it or preserve it for us? We’ll put it in a good Chest of Holding, and we could send it and any other specimens with a Courier.”</p>
+<p>It wasn’t the worst idea, but Ylawes grimaced at having to kill one of those sucker-things then messily bleed and preserve it.</p>
+<p>“That’s a lot of salt and effort for something we won’t be able to get rid of for days, Merchant Tivete.”</p>
+<p>“Oh, but we have the space, Captain Ylawes.”</p>
+<p>“I think we should get moving.”</p>
+<p>He demurred, and Tivete hesitated.</p>
+<p>“I have to press the matter, Captain Ylawes. It is in your contract to render services as they pertain to monsters. I’d hate to <em>insist.</em>”</p>
+<p>The Silver Swords’ captain blinked at her. He wavered—then with less grace than he’d have liked, nodded.</p>
+<p>“One, then. And if you could have someone help with preparing it—”</p>
+<p>Murdering one of the sucker-things wasn’t hard. But when he was watching Insill and Larr try to prepare the thing for the Chest of Holding, Dawil drew Ylawes aside.</p>
+<p>“Ah, there’s the extra bits we get when we sign up for guarding. I’m surprised she talked you into that so easily, lad. Think it was a Skill?”</p>
+<p>Ylawes hadn’t—until he considered it and made a face.</p>
+<p>“Maybe a bit of one. If so, I’ll try to resist it next time. Think it was actually in the contract?”</p>
+<p>The Dwarf gave Ylawes an odd look.</p>
+<p>“Wouldn’t you know, lad? You spent ages on it!”</p>
+<p>Ylawes wished he’d read it more finely and coughed.</p>
+<p>“I spent ages on the bottom line, Dawil. How it’s paid out to House Byres, the advance and recurring payments—the rest was boilerplate from the Adventurer’s Guild. The [Receptionist] said it wasn’t different from what she sees on most contracts.”</p>
+<p>“Huh. Fair enough. Gross sucker, isn’t it?”</p>
+<p>That, at least, they could agree on.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><strong>Day 12 of the Consortium of Enterprise Expeditions</strong></p>
+<p>&nbsp;</p>
+<p>Over the next few days, Ylawes cataloged a number of sea-only animals or ones hither-to unknown. Far more amenable than the Lamprey Shufflers.</p>
+<p>One was a Kelpie. The water-breathing horse was roaming around, and when it saw the caravan, it immediately made tracks, but Ylawes saw it had a mane like, well, kelp, fins along its legs and back, and a tail. For all that, it was speedy enough on land.</p>
+<p>Another was a series of birds, who obviously liked the New Lands as potential grazing sites. Some were <em>extraordinarily</em> feathery and looked like puffballs of feathers. Anith waved at a flock ‘flying’ through the air.</p>
+<p>“They’re being nicknamed ‘Featherballs’, Ylawes. Look at how they fly! Or rather, don’t!”</p>
+<p>The breezes that carried the clouds of blue seedlings had grown more and more frequent; the wind was a lot stronger here for whatever reason. Accordingly, the rather rotund birds didn’t so much fly as spin through the air, their feathers contriving to let them have some kind of drag in the air no matter which direction they faced.</p>
+<p>When standing, they were round, staring birds with big beaks and huge eyes—they’d hop until they were airborne, and they seemed to enjoy rooting around for bugs wherever they landed.</p>
+<p>They tasted like most birds—this was the first animal the caravans hunted, and a dozen went into a pot for dinner after Anith confirmed they’d been deemed edible.</p>
+<p>The last new animals of the friendly sort were what Ylawes decided were like endemic sheep—only, they were plants?</p>
+<p>Shuffling ‘bushes’ covered with prickly leaves ambled past the caravans, and Yorrned insisted one be captured. Then, when it was proven they didn’t put up a fuss, it was partially, well…dissected.</p>
+<p>The leaves and ‘branches’ of the creature were actually an odd camouflage; it was more like a bony pig of some kind? Some kind of mammal that actually grew ‘branches’ of bone that real plants seemed to sprout from.</p>
+<p>The berries were not edible, and the first of these odd bushes expired when the colonists broke too many of the bone-limbs and it began bleeding where the bone met flesh. Ylawes put it out of its misery, but to his annoyance, their [Chef] declined to cook it.</p>
+<p>“It’s, ah, more plant than animal, as far as I can see. Unless I hear it’s edible, I don’t think I’d want to season my pans with the meat, Captain Ylawes. But do get more of those birds! We’re running low on our meat provisions.”</p>
+<p>Bags of holding kept food from decaying at normal rates, but they could slow the rate of decay by as little as ten percent or let something last twice as long, depending on their efficacy. Ylawes squatted over the dead member of the species, which had been eating grass, and decided to at least test it.</p>
+<p>“Is taste like meat, Captain!”</p>
+<p>Rasktooth was actually the self-proclaimed expert of what could and could not be eaten. Falene was highly offended because she fancied herself something of an expert, but Rasktooth had eaten everything from evil caterpillars to other Goblins, and as he pointed out, he ‘knew if it was going to come out fast the other way’.</p>
+<p>He actually fried up a mean slice of what was essentially some kind of gamey…pork? Not really pork, but not venison.</p>
+<p>“It’s not bad!”</p>
+<p>Dasha said in shock. The part-Dwarf [Warrior] saw Rasktooth grin and poke himself in the stomach.</p>
+<p>“Am [Cook]. Is better than stupid chicken braised in wine. With <em>dates.</em>”</p>
+<p>He <em>psshed. </em>Ylawes had to own, Rasktooth had a point. Chef Votto had struggled a bit to fulfill Falene’s request for a proper salad; she wasn’t eating any of the meat, and the chicken from the Featherball birds was decent, but the taste was off, probably due to the wine the man had used giving a too bitter taste. As for the dates—Ylawes pushed one around on his plate a few times.</p>
+<p><em>Strange. Where are all these animals coming from?</em></p>
+<p>He realized he’d wondered it aloud when Anith replied. The Jackal Beastkin’s voice was soft.</p>
+<p>“Some are doubtless from the sea, but people suspect the magic that animated the New Lands and grew so much also affected the wildlife. It can do that.”</p>
+<p>“So we might run into legitimately new species out there?”</p>
+<p>Dawil stroked his beard, smiling after seeing all the new animals.</p>
+<p>“The Featherballs <em>are</em> new. Apparently. Taste good. I feel bad for the suckers, but hey—we’ve finally stopped seeing as many tracks, so we’re in the New Lands for real, eh, lad?”</p>
+<p>It was true. Despite the best efforts of the Consortium, they’d kept running into signs other people had been here. But they were finally all heading different ways, and Ylawes reckoned…twelve days in the New Lands of Izril?</p>
+<p>“How much further until the Consortium wants to stop and find a place?”</p>
+<p>Dawil shrugged.</p>
+<p>“They’ve got to find some decent ore, at least in Yorrned’s case. The fellow asked me if I’d like to join in. Never fear; he’s got at least one [Prospector] with him, so there’s that. W—”</p>
+<p><em>A moaning wail split the night, and all the adventurers froze—then followed Ylawes onto their feet. </em>He whirled around and heard a <em>loud</em> sound in the distance. Ylawes looked around.</p>
+<p>“Someone get me eyes on it. Falene? Larr, on top of the wagon.”</p>
+<p>Silence as they looked around, then Falene called out.</p>
+<p>“<em>There!</em>”</p>
+<p>She’d been checking the area with [Detect Life] and pointed. In the distance, a Corusdeer herd was lighting up their horns. Ylawes strode over and, ignoring the shouts from the caravan, called out.</p>
+<p>“I need to see it—”</p>
+<p>Falene lifted a hand and pointed at Ylawes.</p>
+<p>“[Eagle Eyes].”</p>
+<p>His eyes stung, but Ylawes narrowed his gaze and saw them. Corusdeer, whirling and charging…<em>something</em> that drove down on one, <em>bit</em>, or did something, and then dragged it back. Ylawes swore as he checked its size.</p>
+<p>“Eight—nine feet?”</p>
+<p>“Not the largest, but it’s got to be at least six feet across. Mouth is huge! What is that?”</p>
+<p>Dawil frowned, and Ylawes’ lips moved.</p>
+<p>“…That’s a shark. Walking on two feet. It’s bitten one of the Corusdeer in two, and it’s dragging another off.”</p>
+<p>“<em>A what?</em>”</p>
+<p>Dasha shouted, but the Gold-rank team was looking around. Dawil muttered.</p>
+<p>“No, that’s <em>three</em> of ‘em. They’re hunting together. I don’t see those horns doing much damage to them.”</p>
+<p>“Thick hides. They look wet. Maybe they produce water?”</p>
+<p>The attack was fast, and the Corusdeer herd broke in the night, galloping away. Ylawes counted seven being consumed by the first land…what, landsharks? They dragged their prey away, lumbering with a strange fluidity, and Ylawes glanced at Dawil.</p>
+<p>“Gold-rank threat?”</p>
+<p>“I don’t see Silver-ranks beating that thing easy. Think they’re hungry?”</p>
+<p>“Not tonight.”</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><strong>Day 15 of the Consortium of Enterprise Expeditions</strong></p>
+<p>&nbsp;</p>
+<p>Ylawes was extra vigilant the next few days, but the Landsharks—that was what he was calling them—were clearly more interested in Corusdeer than the caravan.</p>
+<p>That was good; they had mouths big enough to bite a person in two, and their skin looked tough.</p>
+<p>Besides. The caravan had other problems.</p>
+<p>“Adventurer Ylawes! We’ve finally begun our hunt for a good site to launch our new camp, at least, temporarily. Do let us know if your team scouts out anything profitable. Just, ah, one small matter?”</p>
+<p>The Silver Swords weren’t contracted to scout or provide any magical assistance; his team was just there to protect, but obviously he kept a good relationship with the people he was working with.</p>
+<p>“What can we do, Master Yorrned? Bear in mind we’re watching for those Landsharks—we won’t have time to scout.”</p>
+<p>The [Merchant] nodded a few times.</p>
+<p>“Of course, of <em>course.</em> But if you were to see another Corusdeer herd—do you think it’s out of the question to hunt them?”</p>
+<p>“…As I said, Master Yorrned, if you hunt one, you hunt them all—”</p>
+<p>Ylawes was a bit impatient, but Yorrned interrupted anxiously.</p>
+<p>“That would suffice. Not that we need an entire herd’s worth of meat, but some wouldn’t go amiss.”</p>
+<p>Ylawes hesitated.</p>
+<p>“If it’s just fresh meat—surely we have plenty of rations?”</p>
+<p>It was a testing comment, and he did not like how Yorrned tried to assure him they <em>did</em>, but no one wanted to live on rations, and besides, they could keep the horns of the deer. He didn’t like the evasiveness at all.</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>In hindsight, which was always twenty-twenty, Ylawes realized he should have taken more concern with the expedition itself rather than just security. But he had been hired for security. He assumed the merchants knew what they were doing.</p>
+<p>But predictably, when problems arose, it was not on the road where it could be easily remedied with coin, if not convenience, but when things ran out—two weeks into the New Lands.</p>
+<p>“Something’s up. Yorrned asked me about using my magic for hunting, then two more [Merchants] just so happened to bring it up. I told them it was a matter for the [Hunters].”</p>
+<p>Falene complained afterwards, and Ylawes sat with the Silver Swords in the wagon—he was trading off riding lookout—and glanced at Dawil.</p>
+<p>“They’re hiding something, but Yorrned wouldn’t tell me what.”</p>
+<p>“I think we have a problem, lad. And I think we should find out.”</p>
+<p>“Let me ask one of the others, then.”</p>
+<p>Ylawes was about to get up and do that when Dawil grabbed his arm.</p>
+<p>“I did that, and they’re not talking. Lad, in a moment like this, you know what you need?”</p>
+<p>“More tact?”</p>
+<p>“No. What about a nice…[Rogue]?”</p>
+<p>Ylawes stared at the Dwarf [Axe Champion], and his lips twisted.</p>
+<p>“Dawil, that’s underhanded.”</p>
+<p>Dawil held up his hands.</p>
+<p>“If you’ve got a [Rogue], you might as well use him! Like swinging a hammer without a proper apron on, my dad always said. Listen, lad. I know you’re upright, but, uh—let’s not cause a fuss, shall we?”</p>
+<p>It was a conversation the Silver Swords often had when the right thing to do, as Ylawes saw it, sometimes conflicted with what might be…pragmatic. Normally, Ylawes would ignore any comments like this—but they did have a [Rogue]. And…</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>…After two [Merchants] refused to give Ylawes a straight answer, he caved. A quick word to Insill was all it took. The Drake with onyx scales was too eager to please.</p>
+<p>“I can see what’s happening; <em>no problem</em>, Captain Ylawes.”</p>
+<p>“No lockpicking. Or pickpocketing. Or stealing. If you break into somewhere, please close the door afterwards and put everything back where you found it.”</p>
+<p>Ylawes was highly anxious about the entire thing, and Insill gave him a strange look. He hesitated, slipped off, and came back after less than thirty minutes looking a lot less happy.</p>
+<p>“I didn’t break in anywhere, Captain! But I have an idea of some things about the caravan the, uh, [Merchants] haven’t said to you, and it’s no good.”</p>
+<p>“How’d you find out what was going on?”</p>
+<p>Insill shrugged.</p>
+<p>“I bribed one of the [Cook Helpers] with a silver coin.”</p>
+<p>Ylawes stared at him, and Insill grinned. It turned out a [Rogue] only resorted to breaking into places if charm and money in the right spot didn’t work. But his news wiped the smiles off everyone’s faces.</p>
+<p>“I think we’re out of a lot of food.”</p>
+<p>“Out as in, ‘no more braised chicken’, or <em>out</em> as in, ‘we’re out of food’? I can still smell cooking with all kinds of stuff, and it’s not like they’ve been skimping on the quality, Insill.”</p>
+<p>Larr wanted to know. The Gnoll raised his head to the sky and sniffed. Insill raised a finger.</p>
+<p>“Out as in…out as in, ‘the food we have is great’. But it’s <em>too </em>great, if you catch my drift. Do you, uh, think the sausages are getting a bit stale? Well, they’ve been in the cold, so they’re pretty good, right?”</p>
+<p>Right. Ylawes had been dining with everyone, and he’d had nothing to really complain about aside from the [Chef] trying to serve restaurant-quality food for a campfire. He nodded. But he felt his stomach beginning to tighten, and Insill’s next comment was where it got bad.</p>
+<p>“We’ve <em>got</em> Runes of Preservation that stop most of the food from perishing.”</p>
+<p>Dawil waved a hand in front of his face.</p>
+<p>“Oh, thank the grandfathers. I thought you were going to say it was all rotten. We’re just out of fresh meat. Fine. Let them eat cake.”</p>
+<p>Ylawes exhaled too. Runes of Preservation—of course Merchant Yorrned wasn’t <em>stupid.</em> He could bring as much meat as he wanted with that! Raw meat! Well, maybe not raw—it could attract bugs—but there you were! Everyone smiled until Insill licked his lips.</p>
+<p>“Yeah. Lots of fresh food. What if I told you, um—the Runes of Preservation aren’t working?”</p>
+<p>Falene Skystrall slowly lifted her head, and Ylawes Byres sat there a second.</p>
+<p>“—How much food did you say was only fresh, again? Falene. Go and see about those runes.”</p>
+<p>Insill gave Ylawes a wretched look.</p>
+<p>“Aside from some beans and flour and such? A lot of it is <em>really </em>fresh, Captain. Only, the cooks didn’t realize it’s all begun to spoil.”</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>“The runes are dead. I recharged them, but we have a problem. The magic itself was flaking away; we lost sixty percent of them to damage. They were scuffed out, and the kitchen staff never noticed.”</p>
+<p>“How does that happen, Falene?”</p>
+<p>The [Battlemage] shook her head, but she had a theory.</p>
+<p>“I think…the air here is mana-negative, Ylawes. I didn’t say anything because I didn’t sense it—not at first. It’s not affecting me badly. What about you, Anith?”</p>
+<p>The Jackal Beastkin hesitated.</p>
+<p>“I haven’t been casting many spells, Falene. But now that you mention it, I’m not at the top of my mana capacity. I thought it was something else, but—you?”</p>
+<p>Falene nodded. To Ylawes, she explained.</p>
+<p>“If I normally wake up at 100%, Ylawes, I’m more at…93%? Not that much for me, but I’m a [Mage]. A living being. If, say, the mana was draining, a spell that’s not an artifact-quality item is the first to go. Then you can recharge them, but if the staff didn’t notice, the runes were then fragile. So they scuffed the runes up. And it means they were dead for over two weeks if it happened right at the start of the trip.”</p>
+<p>Ylawes covered his eyes. <em>How could that happen?</em></p>
+<p>“Is mana-negative normal, Falene?”</p>
+<p>“No. Not at all. It’s not severe, but I can’t tell when it began. At any rate, the food shortage is the worst part of it. At least we have Larr.”</p>
+<p>As it so happened, when the problem became clear, the Plains Gnoll insisted on seeing how much they had left. Right now, he was ruthlessly discarding some food into the snow and having the rest packed in crates filled with snow.</p>
+<p>“Mister Larr! This is a waste of food! And why are you packing snow with <em>hay?</em>”</p>
+<p>“Keeps it cold. This is spoiled. This is spoiled…<em>don’t put those eggs in that basket. They’re all bad.</em>”</p>
+<p>Larr snapped at a [Cook] trying to rescue some of the food. The [Merchants] protested, but Ylawes strode over.</p>
+<p>“I’ve heard too many stories about bad eggs while adventuring. Merchants, if you’d told us there was an issue when it was noticed, Falene could have saved more food. As it is—she will be monitoring the runes daily, and it’s clear we need supplies. Therefore, I will be instructing my team to look out for any Corusdeer, and I suggest we deploy all the [Hunters], [Gatherers], [Rangers], and so forth to scavenge for food.”</p>
+<p><em>In this frozen place.</em> Ylawes didn’t add that last part, but the [Merchants] looked a bit relieved to hear this. Yorrned clasped Ylawes’ hand, speaking quickly.</p>
+<p>“I suppose it was too embarrassing to say. Of <em>course,</em> if the food’s spoiled, we can’t have any of that. We brought a tremendous amount, and I’m sure—”</p>
+<p>He glanced sideways as Larr grimly discarded another crate. Yorrned swallowed.</p>
+<p>“—We will have a busy spring. The [Farmers] have been told we’ll want a head start on tilling that soil, and I’ll be sending out our [Scouts] to search. We have over forty of them, you know.”</p>
+<p>“<em>Forty</em> [Scouts]?”</p>
+<p>“Well, people willing to ride and search. I’ll have them look for said edibles too.”</p>
+<p>Ylawes exhaled.</p>
+<p>“I suppose that will do. How many can I count on if we do find a herd of Corusdeer?”</p>
+<p>“Oh, for butchering and hauling, the entire caravan is at your disposal, Captain Ylawes!”</p>
+<p>The answer was too quick. Ylawes was almost about to smile and turn away when he realized something. He turned back.</p>
+<p>“Ah, pardon me, Merchant Yorrned. I meant—how many can I count on as [Hunters]? [Trackers]? A [Ranger] or other expert there might do.”</p>
+<p>There was a moment when he just waited. Waited, saw the smaller man smile at him, and thought all was well. But the words didn’t come out of Yorrned’s mouth, and Ylawes stood there. When he finally cleared his throat, Yorrned was smiling and speaking fast.</p>
+<p>“Well, we didn’t wish to waste resources on a variable enterprise. You don’t get ahead in business by gambling on such things, Captain Ylawes. Rest assured, we have a full harvest for the spring and enough [Farmers] to guarantee full crop yields.”</p>
+<p>Larr had been continuing to sort food while arguing with Chef Votto, who had, surprisingly, gone into the snow to rescue as much food as possible, even the bad eggs, and sort it into a bin rather than dispose of it wholesale. But perhaps—that was because he knew what Larr had just heard. The Gnoll’s ears perked up, and Ylawes met that smiling man’s face and spoke slowly.</p>
+<p>“We don’t have any [Hunters]? Gatherers? Are there any woodland experts at all? Master Yorrned?”</p>
+<p>“We have excellent prospectors, Captain Ylawes. Let’s find a camp and set up, shall we?”</p>
+<p><em>There were two weeks till spring. </em>How many [Fast Growers] did they have? Then Ylawes wondered—how many bags of seed did they have?</p>
+<p>Then he began to feel it. A Gold-rank adventurer was still a Gold-rank adventurer, and Ylawes hadn’t liked the Landsharks’ look. But he had a confidence—not overconfidence—but confidence he could fight them or do something, even if a pack emerged.</p>
+<p>When he heard about their supply situation? He began to feel what Gold-rank adventurers might refer to as…<em>pressure.</em> From a monster too big for them to fight.</p>
+<p>The first monster of the New Lands was called ‘hunger’. The next day, it got worse.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><strong>Day 16 of the Consortium of Enterprise Expeditions</strong></p>
+<p>&nbsp;</p>
+<p>When Falene checked on the Runes of Preservation, all but three had drained in the night. Then she reported her mana reserves weren’t recharging adequately. The Consortium of Enterprise agreed it was time to search for a place to camp posthaste.</p>
+<p>Ylawes calculated they were halfway through the last month of winter. In theory, you could sow the ground already, so he elected to have Vuliel Drae and Poke Duo join the scouting effort. He himself decided it was time to earn his pay. They <em>did</em> have [Fast Growth] among their [Farmers]. They were approaching rocky highlands and smaller mountains in the distance. Ore and farming awaited.</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>At roughly the same time as some of the expeditions were first reaching the New Lands proper, a half-Elf began to seriously look into the issue of farming. Along with other concerns he hadn’t anticipated. Of course, he had been set for hardship. He just wondered if everyone else had been.</p>
+<p>His name was Zedalien, and he had once served a [Lady] who’d burned like fire and blazed one final time before going out.</p>
+<p>A fine death.</p>
+<p>A death of deaths. The kind that they’d remember of her long after her deeds and failures vanished. At least, he would.</p>
+<p>Zedalien was formerly Zedalien, a Steward of the House of El in service to Maviola El, and had served one of the Five Families for generations of Human lives.</p>
+<p>With the death of Maviola El, he’d quit. He thought Deilan El was a fine successor, and the man had learned quite well and might have had the head for business his late aunt did not.</p>
+<p>But it would not be the same. Therefore, Zedalien had quit with that vague intention all half-Elves did of going ‘home’ to one of the traditional villages, settling down, and passing centuries in those timeless places.</p>
+<p>He’d gone to Gaiil-Drome, sat in one of those eternal traditional villages, and gotten so sick of it that he’d left after two weeks. Then he’d tried to retire and enjoy the wealth he’d built up over the decades—until he’d heard the call.</p>
+<p>It had come from the New Lands of Izril as they rose. It had been of adventure, danger, yes, but opportunity. Here was a new land free of prejudice and kingdoms. So half-Elves had come to plant new forests on the shores, and Zedalien had gone back to Izril and marshaled every single half-Elf he thought could make the journey.</p>
+<p>It had not been easy to be first. Half-Elves across the world had contributed wealth—sometimes extraordinary amounts—and ancient colony ships, and nations like the Claiven Earth had sent high-level half-Elves, but they were their own worst enemy.</p>
+<p>You had traditionalists from the villages, more worldly half-Elves from Gaiil-Drome’s cities, ‘outsiders’ who had left long ago and become their own people like the Claiven Earth or Baleros’ roaming nomads, and even ones from Rhir, and they all had to get along and compromise on a vision.</p>
+<p>The arguments on board ships, the petty factional disputes, and the Alchemist Irurx haunting them had all been one great ordeal. Now that they were finally here?</p>
+<p>Well, Zedalien had served a [Lady] who had once brawled with Gresaria Wellfar in the surf at dawn, charged an army with a burning flag, and stolen more horses than most [Horsethieves]. He was infamous for his ability to manage both her and the House of El’s admittedly poor finances and organize everything.</p>
+<p>So when Zedalien tossed a [Court Mage] off a balcony, he meant it.</p>
+<p>Over a month had passed since they’d begun construction of Inserelad’reanum. Which was a name he hadn’t chosen to represent the new city of half-Elves.</p>
+<p>It was going up tolerably well, but frankly, he was getting sick of the infighting. You had a lot of Gaiil-Drome’s…privileged half-Elves working on the ‘inner city’ and thus their houses, which they wanted to be more like mansions, while most of the others were still building a wall and harbor.</p>
+<p>Many were still living on the colony ships, which were thankfully large and well-appointed, but the strife was real.</p>
+<p>The Izrilian half-Elves were nominally under Zedalien’s authority. He hadn’t asked for it, but there weren’t <em>that</em> many half-Elves from Izril, and they’d taken one look at the other leaders and appointed the highest-level half-Elf among them with experience in leadership.</p>
+<p>Hence, he had a voice, but a small one. The worst kind to have. But Zedalien had played the game.</p>
+<p>Endear yourselves to the other factions. Claiven Earth were standoffish, but they quite respected his level. The Balerosian half-Elves were wild and restless, but he’d managed to get on their good side by not being as uptight and frankly pretentious as Gaiil-Drome’s lot.</p>
+<p>The Terandrian contingent was the worst, mostly because he was affiliated with the House of El, thus they pulled rank on him for being a half-Elf who’d left home and also one with inferior royal blood. But perhaps the worst were the [Mages].</p>
+<p>“The manaweave bedding should be <em>first</em> on our priority-list, Zedalien.”</p>
+<p>“We don’t have roofs to put over a tenth of the people here, and you want [Mage]-beds, Court Mage Hareithion?”</p>
+<p>The [Court Mage] came from one of the Terandrian nations, and he was Level 28. He brushed at his hair.</p>
+<p>“Zedalien—brother.”</p>
+<p>He tried for the traditional ‘brother’ of half-Elves, which Zedalien had always found pretentious. Hareithion smiled blithely.</p>
+<p>“You must acknowledge that we [Mages] are sinking <em>quite</em> a lot of mana into the daily work.”</p>
+<p>Zedalien folded his arms.</p>
+<p>“I readily acknowledge that, Magus Hareithion. Your spells help lift wood into place. It’s helped alter earth for foundations, even grown trees in the soil we’ve imported.”</p>
+<p><em>Importing soil so some of the plants took root. </em>Not his idea, but it could result in a great first harvest—if they’d stop planting trees that would take centuries to grow. Not even fruit-bearing trees. Zedalien went on.</p>
+<p>“—But our [Warriors] and every other class works as hard. I don’t want to be rude…”</p>
+<p>“Perish the thought, brother.”</p>
+<p>“…But I will, because if I may be <em>blunt</em>, our non-Terandrian cousins don’t feel as though the construction of the ‘inner city’ is a good use of time. To be more blunt, they’re annoyed your people are wasting time building the interior when we have to finish defences. None of them want to build special, mage-centric enclosures for your people.”</p>
+<p>Magus Hareithion’s smile faltered.</p>
+<p>“We would, of course, share, but it would help us replenish our magic without relying on mana potions or meditation, Zedalien.”</p>
+<p>“Steward Zedalien.”</p>
+<p>“I do beg your pardon?”</p>
+<p>Zedalien’s voice was level.</p>
+<p>“If we are being polite, your title is Magus or Court Mage, Hareithion. I was Steward Zedalien. You may refer to me as Speaker for Izril, if you wish.”</p>
+<p>He was being impolite, but frankly, he had had it up to here with Hareithion’s requests. So when the Court Mage hesitated and looked upset, well—</p>
+<p>Some of the younger half-Elves in the ‘inner city’ looked rather offended by Zedalien’s frank talk, but he had no doubt others were hiding smiles at seeing the [Court Mage] being taken down a peg. Zedalien outleveled him and, in a very real sense, probably outranked the kingdom that Hareithion had abandoned. The House of El was one of the Five Families of Izril.</p>
+<p>“—Brother. I do apologize if I’ve seemed <em>rude.</em> Perish the thought! We are all working to the same cause, and as half-Elves, it behooves us to have some decency. Your contingent is one of the most reasonable, and if I may say so, the other factions would listen to your request more than ours.”</p>
+<p>Zedalien ignored the comment as he strode along a <em>walkway</em> being built over an open plaza. A mansion complete with pale marble and wood brought at great cost to create the sweeping, open canopy style that some half-Elves loved so much. Reminiscent of tree-housing, but combined with the richness of nobility.</p>
+<p><em>I wonder why your side is seen to be less reasonable? </em>Hareithion leaned over.</p>
+<p>“<em>Frankly</em>, we will well admit the request for rooms dedicated to [Mages] seems excessive, even from our side. But if it is? Our brothers and sisters from Chandrar, Baleros, and so on <em>are</em> hardier stock. If they could endure a bit longer for this crucial—”</p>
+<p>That was where the balcony came in. Zedalien stopped, grabbed Hareithion by the shoulders, and <em>tossed</em> him.</p>
+<p>The [Mage] shouted and did not fall to his death—he floated at the last second, flailing, then landed on his back and stared up at Zedalien. Calmly, the half-Elf dusted his hands off and walked away.</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>“Zedalien! A word?”</p>
+<p>To his relief, he wasn’t going to be attacked by Gaiil-Drome for the insult of mage-tossing, but rather, Zedalien saw two half-Elves striding towards him and smiled.</p>
+<p>Warden Jespeire and one of his people, Iturtexi, were both half-Elves of the forest. Not ‘connections with the forest’. The actual forest, which meant they wore armor that blended in with both tree trunks and branches, were not shy about bushwacking or stomping on anything that looked like a bug or snake, and had combat experience in Baleros.</p>
+<p>“Warden, how does word circulate that fast?”</p>
+<p>Jespeire clasped a hand with Zedalien, almost as if checking how strong the other half-Elf was, and chuckled.</p>
+<p>“Even a lot of the younger Terandrians are sick of hearing their elders and betters talk. When they saw <em>you </em>lose your temper—what was it about?”</p>
+<p>“Building beds for the Terandrian faction before everything else.”</p>
+<p>“Selphid’s tits, <em>really?</em>”</p>
+<p>Both half-Elves reacted with plain disgust. They came from practical half-Elven communities and had patently felt like they’d been relegated to lesser roles. As Zedalien saw it, there were a few standout groups.</p>
+<p>Gaiil-Drome was a half-Elven nation, and a lot Terandrians had rallied around the [Lady of the Woods], Ruveden, who was one of the highest-level half-Elves present. There had been a Treespeaker—whom Alchemist Irurx had killed.</p>
+<p>Short of a Treespeaker, the Claiven Earth, led by their [Voice of the Earth], was also next—both highly traditional factions with <em>completely</em> different cultures.</p>
+<p>Jespeire was part of one of the ‘lesser’ settlements both in terms of fame and prestige, but there were a lot of half-Elves like his group who had banded together to have a proper say in things. Right now, he was grimacing.</p>
+<p>“Makes you want to pick up and sail right back home, doesn’t it?”</p>
+<p>“I think it will be better when we have things constructed and we can all rest—and be away from one another. Then we can rely solely upon results rather than trust we’re all working at the same pace and with the same intention.”</p>
+<p>It was hard founding a new nation, which is what this was. Later, they could create an economy, but when you were all working without pay, in a sense, it was difficult when one group seemed self-interested.</p>
+<p>Jespeire nodded. He took Zedalien on a walk away from the inner city, then along the huge wall going up at the city’s boundaries, stretching far into the distance in a huge circle. It was an ambitious project, which was part of why it was taking so long; the half-Elves weren’t just building with [Earth Wall] spells or terraforming the land. They intended to create a huge barrier as a first line of defense to their forest. In fact, the wall was a good indication of claimed land. They intended to claim far more, but this is what they could hold, and only a few groups were scouting further.</p>
+<p>Groups like Jespeire’s, actually. He was travel-worn, and Zedalien strode towards the camp where they’d set up. Another thing that all the traditionalists objected to: they didn’t like the cookfires, the trash, the commotion, and would eat on their ships, meditating then complaining about the rapid noise of the waves.</p>
+<p>Well, here at least, Zedalien felt comfortable, like in the workshops of the House of El.</p>
+<p>[Detect Flaw: Extended Range]. Zedalien looked around, then pointed.</p>
+<p>“Someone’s about to poison everyone with food coming out of that pot. Bad mushroom, it looks like. That section of the wall’s got foundational problems.”</p>
+<p>“Damn. Really? Iturtexi, get on it!”</p>
+<p>The younger half-Elf took off at a dead run. Zedalien saw them intercept the first half-Elf about to receive a pot of food, and Jespeire sighed.</p>
+<p>“Another idiot who thinks we’re all in touch with nature so they can pluck a mushroom and stick it in a pot. Or maybe they didn’t wash their hands. I hear that’s ‘natural’ too.”</p>
+<p>“Some are working as hard as others.”</p>
+<p>Zedalien felt compelled to not stomp on their nobler cousins. He felt bad about the toss, but Warden Jespeire rolled his neck.</p>
+<p>“They are…but faces of Elves, how will we work together and become one nation after this?”</p>
+<p>“The Claiven Earth did it.”</p>
+<p>“Well, you think they’d damn well be better at it! Sorry—I suppose we’re upset because we’ve been failing a bit, too. It makes being harped on easier to know you’re as annoyed as we are.”</p>
+<p>Jespeire snapped, then looked embarrassed. Because that was fascinating, Zedalien motioned, and they went for a walk around the walls. All the half-Elves were there, including Terandrians, and they were working roots into the earth walls, letting them grow with magic to create a unique foundation before layering earth and stone through the wall.</p>
+<p>The idea was also to plant seeds so, in time, this wall would become natural—something to draw on if you had a [Druid] handy.</p>
+<p>Half-Elves and nature. Name a more stereotypical combo. Zedalien really felt out of place here. Even more than Jespeire.</p>
+<p>“Trouble with the Balerosian contingent?”</p>
+<p>“I can’t speak for all of us. We’re not one people, not at all. I saw other groups my own side’s warred with, and yet they come to us because we’re now ‘on the same side’. Argh. I suppose there’s no way that’s not embarrassing to say it—we’ve failed to plant our own sapling. Not a Great Tree, but a nice, magical one. It won’t root well.”</p>
+<p>That was surprising. Zedalien’s brows rose.</p>
+<p>“Truly?”</p>
+<p>Warden Jespeire looked miserable.</p>
+<p>“Here we are while Gaiil-Drome’s already got saplings up and transplanted an entire tree into their fancy soil. We’ve got two [Earth Mages]—but we might have to, uh, ask for one of their [Treetenders] to take a look. It’s just <em>not happy.</em>”</p>
+<p>Strange. Now, the Izrilian half-Elves didn’t have a magical tree to plant, not having that kind of long presence. But as Jespeire confided in Zedalien, the Izrilian half-Elf did what came naturally.</p>
+<p>“If that’s the problem, I know a [Treetender] who might not be the first to castigate. Let’s visit the Claiven Earth.”</p>
+<p>“You think that wouldn’t embarrass us?”</p>
+<p>“Not if I ask. Besides, who else has that kind of class?”</p>
+<p>It was indeed a rare one, and the two set out as the relieved Warden told Zedalien about the scouting.</p>
+<p>“It’s bare coastal soil all the way from here to Nombernaught. Mostly because of the winter, but inland? You can <em>see</em> a lot of plant life under the snow. The grass is healthy; it’s already growing in the cleared land.”</p>
+<p>It was true. The grass, overly yellow, but still essentially grass, had begun to grow in the areas the half-Elves had cleared of snow and warmed with magic. And there was more flora inland?</p>
+<p>“What have you seen?”</p>
+<p>“Ruins. Huge valleys—this was all seafloor, so we’re still finding lots of fish bones, but weird monsters. It’s not just us; Nombernaught is trying to expand fast too. But I think they have a problem. Heard about the south?”</p>
+<p>“No. Are they fighting with Drakes already?”</p>
+<p>“Worse. They ran into Sword Crabs. <em>Thousands</em> of them. Nombernaught ran into them and wisely kept from expanding, but it’ll make the southern coast <em>hell</em> to settle. I’ve heard a lot of Chandrarian nations and Drakes thought to just skip around the south coast. I wish them the best of it.”</p>
+<p><em>Sword Crabs.</em> For some reason, Zedalien vaguely remembered those.</p>
+<p>“Nasty, are they?”</p>
+<p>“Gold-rank threats, each one. Better than a Level 20 [Duelist], big, and they fight in packs. Fearless and smart.”</p>
+<p>“Dead gods. And here I thought Crelers were the worst menace at sea. If—”</p>
+<p>They were nearing another section of the wall being worked on by the Claiven Earth when they heard that familiar, wailing moan, and Warden Jespeire swore.</p>
+<p>“<em>It’s another pack!</em>”</p>
+<p>They were running before they knew it. Zedalien got to the wall and saw one of the new species of sadly common threats to the New Lands running across the ground.</p>
+<p><em>Landsharks.</em> Sixteen of them, and they’d gotten close surprisingly fast. They loved to burrow in the snow and approach like, well, sharks, fins poking out of the snow. They could <em>dig</em> and would ambush you—</p>
+<p>And they were big and dangerous.</p>
+<p>“<em>To arms! </em>Call the [Voice of the Earth]!”</p>
+<p>The Claiven Earth were in the way, and for all they were a famous nation who had fought the King of Destruction and Khelt, they were not all high-level. Several produced bows and began to loose arrows, but they just stuck in the Landsharks’ hides or bounced off.</p>
+<p>“<em>Behind the wall! Guard the entrances! </em>[Area: Fleet of Foot]. I’ll hold them here with a sword dance!”</p>
+<p>Warden Jespeire leapt onto a patch of ground where the wall had yet to rise. Behind them, they heard more half-Elves blowing horns, and Zedalien knew help was coming. One Landshark went down, and then he saw the earth turn muddy and two of them splashed into it. The land turned back to soil once more, and the monsters struggled out of it.</p>
+<p><em>Time for me to do something.</em></p>
+<p>Zedalien took two steps onto the wall, pointed, and spoke.</p>
+<p>“Warden! Can you jump over the wall?”</p>
+<p>“Huh? Sure!”</p>
+<p>Zedalien stared down the fifteen feet of wall and then nodded. He called out to the half-Elves retreating.</p>
+<p>“Don’t stop working! Give me everything you have until the Skill runs out! <em>[Meet the Deadline: Rush Work]!</em>”</p>
+<p>The half-Elves looked up at him, down at their tools, then sped <em>up.</em> Earth began to rise, and the stones waiting to be inserted were jammed into place as growth spells caused the roots to grow in seconds. The wall began rising around Jespeire, and he laughed incredulously as it closed off, giving him a <em>real</em> choke-point.</p>
+<p>When Zedalien judged the Landsharks were too close, he shouted.</p>
+<p>“Now! Inside!”</p>
+<p>The half-Elves rushed behind Jespeire, and the half-Elf [Warden] whirled a greatsword as the first Landshark came at him. The others clawed at the wall, and Zedalien retreated, for they had two ways besides through the half-Elf.</p>
+<p>Up. Or down.</p>
+<p>Digging was slower, and the roots extended deep to prevent just that thing. They began to climb <em>up</em> the wall, snarling, with weird fin-arms that still gave them limited purchase. Zedalien felt bad about this next part, he did, but he had been Maviola El’s servant far too long.</p>
+<p>“[Ignite Creation].”</p>
+<p>The wall was, in part, <em>his.</em> So the moment he spoke—the entire section of the wall burst into vivid, red flames.</p>
+<p>Half-Elves cried out in horror, and Zedalien leapt down the steps, feeling the searing heat behind him. Newly-grown roots twisted in agony, but the Landsharks did <em>not</em> like the heat and backed away.</p>
+<p>—By the time the [Voice of the Earth] reached them, the battle was largely over. Jespeire had killed two Landsharks; the Voice of the Earth spoke, and a word <em>reverberated</em> in the earth until a hand dragged two more down into the ground, too deep to survive, Zedalien felt. The rest just fled as more of the Claiven Earth took the walls.</p>
+<p>Then, of course, everyone was talking, and Zedalien was faced with the mild wrath of the Claiven Earth, who regarded the burnt plantlife.</p>
+<p>“I regret to say that I was Maviola El’s servant. Fire is my specialty.”</p>
+<p>Zedalien apologized to the man who had spoken. Voice Ikeiret was a tall half-Elf who whispered unless it came to war, and he had silvering hair, proof of his age.</p>
+<p>A number of half-Elves were pointing at the burnt roots, aghast at the damage despite the loss of lives, but the [Voice of the Earth] silenced them as he raised his voice.</p>
+<p>“Fire burns and regrows, Steward Zedalien. You doubtless saved lives. Your Skill may not create the best wall, but it is a lesson that I would rather have speed and a wall than none with these monsters or other enemies. Would we were all so dedicated, we would be finished by now.”</p>
+<p>He was no more a fan of Gaiil-Drome than most others, which was why Zedalien introduced Jespeire—tactfully, of course.</p>
+<p>“I admit all our feelings have been overripe of late. Would you…take a break with us to discuss matters, Voice of the Earth?”</p>
+<p>“Naturally.”</p>
+<p>They all sat and were treated to oranges, of all things, from the Claiven Earth.</p>
+<p>“Grown from home. We hope to grow many more. A delight in dry Chandrar, you know. The King of Jecrass, the King of Duels, is said to eat one a day.”</p>
+<p>“Very delightful.”</p>
+<p>They were, despite the cool weather, and they all partook of them. Jespeire wasn’t sure how to broach the topic of plants, so Zedalien led, as he had often done with touchy Wellfars or Terlands or Veltras or…they were all touchy. Or smug, in the case of Reinharts. He’d heard they were back. At least he didn’t have to dodge a carriage running over his foot again. Magnolia Reinhart had done well to keep them locked up so long.</p>
+<p>Thirty years was short to some half-Elves, but it was a generation of respite as Zedalien saw it. A great deed that would not go unpunished. They seldom did.</p>
+<p>“—We all have our share of troubles. I’ve heard Gaiil-Drome out overlong, and I thought that, as a kind of—mediator, I should ask if the other groups need some division of our shared efforts. If you’ll allow me the role.”</p>
+<p>He self-appointed himself as head of the ‘communal efforts’ project that had not existed a moment ago. But in Zedalien’s experience, if you were willing and capable of managing it, a project like this could appear.</p>
+<p>It certainly made Voice Ikeiret hesitate.</p>
+<p>“We have not been willing to complain, in the Claiven Earth, of our small issues given the reaction to our…noble cousins from Terandria. We wished to be better thought of, petty as that may seem.”</p>
+<p>Ironically, the Claiven Earth were seen as part and parcel to that snootiness regardless, but Jespeire lied and assured the Voice everyone was grateful.</p>
+<p>“If you have anything we can assist with, please, communication is the key to this entire endeavor.”</p>
+<p><em>What could they have problems with? </em>Zedalien was startled to learn that the Claiven Earth <em>were</em> struggling. The Voice of the Earth looked around, then lowered his voice even more.</p>
+<p>“…gic…see…”</p>
+<p>“Er, I believe that’s too quiet, Ikeiret.”</p>
+<p>“Ah. Forgive me. It is embarrassing to say, especially since Gaiil-Drome has apparently been demanding more rooms of their own, but we were considering—building a retreat for our magic-users. To meditate in, you see.”</p>
+<p>Zedalien blinked, and Jespeire almost snorted—until he got a <em>kick </em>under the table.</p>
+<p>“For peace of mind?”</p>
+<p>“What? No. Our—I thought it was just my lack of connection to a forest, but all our [Mages] are reporting the air is slightly mana-deficient. To be remedied with the right trees and plants, but we are exerting more effort than we should.”</p>
+<p><em>Wait a second. </em>That was exactly what the [Court Mage] had said to Zedalien, except not in so many words. Not being a [Mage] himself, Zedalien had thought—</p>
+<p>“Are you saying you’re all losing mana?”</p>
+<p>“It is not <em>that</em> egregious. Just—taxing.”</p>
+<p>The Claiven Earth did not want to appear weak, but Zedalien could [Read Between the Lines], and he realized this was a larger concern than he’d thought.</p>
+<p><em>We could share the rooms.</em> Wait a second. Had he misread the request for beds completely from Gaiil-Drome? To be fair, it had been made atrociously, but Zedalien drummed his fingers on the table.</p>
+<p>“If that’s the concern, I think it would behoove you to talk with our good [Lady of the Woods] and put in a joint request, Ikeiret. Or raise it yourself at our next gathering.”</p>
+<p>“We wouldn’t want to be cast with the same brush—”</p>
+<p>“Far from it. From them, it’s laziness. From you—it becomes a serious concern. If we do have a magic problem, it’s quite fine to establish a zone where [Mages] can recover. And as I said, we have other issues that we can surely join hands on. Warden Jespeire?”</p>
+<p>They turned to him, and the Warden explained, embarrassed.</p>
+<p>“It’s—our tree. You see, we have not had much success planting it here, Voice of the Earth. If your people could inspect it—”</p>
+<p>“You planted it? <em>Here?</em>”</p>
+<p>The Voice looked incredulous, then alarmed. Warden Jespeire hesitated.</p>
+<p>“Yes. Why? What’s wrong?”</p>
+<p>This entire conversation was taking on an alarming air to Zedalien, and the Voice hesitated, clearly trying not to be insulting. And who should arrive but the [Lady of the Woods] herself, Ruveden, with an escort of several half-Elves and an actual pair of birds singing behind her.</p>
+<p>They stopped and fled into her hair when the Voice of the Earth glared at them, and Ruveden nodded to the other half-Elves.</p>
+<p>“Steward Zedalien, Voice Ikeiret, Warden Jespeire. Forgive me my intrusion—may I join your conclave, brothers? It seems the time has come to make amends.”</p>
+<p>She spoke in a way that put up at least Jespeire’s back, but Zedalien’s bow was sincere.</p>
+<p>“I believe amends are to be made on all sides. Sit, Lady Ruveden.”</p>
+<p>He caught her up to the premise of his point, and even the [Lady of the Woods] seemed gratified by the acknowledgement that, yes, there <em>was</em> a mana issue.</p>
+<p>“It may be local—that we did not notice it is concerning. If we must move our entire base…”</p>
+<p>“Better to scout around and see how widespread the issue is before bringing the concept up. I can have my best [Scouts] on it.”</p>
+<p>The Warden reassured the two, but the [Lady of the Woods] tossed her hair back and fidgeted. Only part of her hair moved; the lower half was flowing and brown, gleaming and hanging free, but the rest was secured by what Zedalien had taken to be a crown at first, made of twigs.</p>
+<p>It turned out, as Lady Rudeven reached up with a sigh, that it was a <em>nest.</em> Two birds flew out, and Zedalien, Jespeire, and Ikeiret stared as Lady Rudeven picked up an egg and handed it to an attendant.</p>
+<p>“They do believe they have every right to my hair. I confess, that is <em>one</em> of two problems we have faced. The second—and we have not mentioned this out of the slight embarrassment—is that aside from the soil we have brought, many of our trees and plants resist germinating in the soil here. They are vocally unhappy, but our [Treespeakers] cannot understand it. They have been carefully settled in, songs of growth sung—multiple times—and fertilizer added.”</p>
+<p>She looked deeply vexed, and Jespeire was relieved.</p>
+<p>“Yours as well? We saw the ones you planted in soil doing so well—we have had the same issue. What can it be?”</p>
+<p>The Voice of the Earth had been looking between the two half-Elves so incredulously that Zedalien knew he was about to say something rude. Zedalien spoke quickly.</p>
+<p>“Speaking for Izril, I regret we have no great trees to plant—many of us do remember the forests our ancestors lived in, but we have lost that green touch—if we ever had one.”</p>
+<p>“True. I commune with nature, not plant it.”</p>
+<p>Lady Ruveden agreed, and Zedalien gave Voice Ikeiret a cautious look. The oldest of the half-Elves swallowed what he’d been about to say and spoke as mildly as possible.</p>
+<p>“In respect to this final, ah—ah—conundrum, we of the Claiven Earth may be able to shed some light. I would advise you both to quickly return your plants to native soil for now as we hunt for more suitable spots. None have been found yet by my people, but there are rituals to convert the earth, and clearly, the grass and other plants of the New Lands grow.”</p>
+<p>All the half-Elves peered at Ikeiret, and Jespeire frowned.</p>
+<p>“That implies something is wrong with the land, Ikeiret?”</p>
+<p>Zedalien had been wondering what other challenges the New Lands might face. Not just for the half-Elves with him, but for the settlers. Yet now he sensed it.</p>
+<p><em>Mana problems were one thing. </em>But what the Voice of the Earth said slowly, with the knowledge any [Farmer] or [Gardener] worth their salt would know, suddenly rang a bell in Zedalien’s head.</p>
+<p>And it was…salt that mattered.</p>
+<p>“This is land drawn from the very seabed. With respect to the Archmage of Grasses who covered this land in greenery—the topsoil is far, <em>far</em> too enriched with minerals to bear any non-native plants. We must import soil or, as I said, use a ritual to grow our city.”</p>
+<p>He looked from face to face, and Zedalien sat back slowly. He recalled this issue cropping up before with salty soil—but the other half-Elves were protesting. Warden Jespeire shook his head.</p>
+<p>“Voice Ikeiret, we are not fools. We knew the saltwater had likely sunk into the topsoil when the New Lands rose. We dug down—nearly fifty feet—and collected soil from there. Are you saying—we counted on <em>some</em> fertile land.”</p>
+<p>His look of dismay sent chills down Zedalien’s spine. The [Voice of the Earth] was the foremost [Geomancer] present; he looked around with a troubled expression that said everything Zedalien needed to know. The New Lands did have plantlife, but it was deceptive. And if it really was <em>that</em> saline…</p>
+<p><em>How many people had come to the New Lands trying to plant in the spring? </em>He would have to send a message to Deilan El as fast as possible. For the rest? His fingers drummed on the table.</p>
+<p>“Mana problems. Growing issues. The New Lands should have more treasure besides the space itself, or I fear it will become a double-edged sword for most would-be colonists, brothers and sisters.”</p>
+<p>They all glanced at him and nodded seriously. Though Lady Ruveden slowly offered one of the two birds in her hair a piece of orange and smiled faintly.</p>
+<p>“At least no one has yet found the Crossroads of Izril besides the Horns of Hammerad. As far as I have been told, the &lt;Quest&gt; is still extant. Finding the Crossroads may have been done. Establishing a link or base? <em>That</em> shall be a triumph of the first to set foot here.”</p>
+<p>She clenched a fist in solidarity of their success, and Jespeire smiled with genuine camaraderie, and Ikeiret nodded firmly. Zedalien bit his lip. The other three half-Elves turned to him with smiles and hesitated.</p>
+<p>“Steward Zedalien?”</p>
+<p>&lt;Quests&gt; were a lovely thing. New to the entire world. Impregnable in many ways to normal magic and Skills, but he <em>had</em> been Maviola El’s second. One of the things the House of El liked to know was…whether a competitor had completed a project before them.</p>
+<p>[Exquisite Insight]. [Survey the Competition]. [Resource Locator: The Passphrase of Imlerith].</p>
+<p><em>Nombernaught glowed like a beacon in his mind. </em>Zedalien sat back with a smile.</p>
+<p>“I think…our delightful neighbors of the water have become our best friends. Do you think they like oranges? Or we could talk to the Horns of Hammerad.”</p>
+<p>In the dead silence, Warden Jospeire slowly and deliberately folded his fingers together.</p>
+<p>“I’ve always thought of Ceria Springwalker as a dear sister to us.”</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><strong>Author’s Note</strong></p>
+<p>Now to the New Lands. Is this the right spot, I wonder? Honestly…I couldn’t tell you, but it’s overdue. Among the things I regret in The Wandering Inn, aside from chapters, the arcs I felt I needed to work more on were the [Witches] of Riverfarm…and the Meeting of Tribes.</p>
+<p>The New Lands might well have the same problem of antici…well, it is time. Volume 9 was filled with other themes, and this is the moment to explore. I hope you find the journey worth the wait, and we will get into it slower and from one perspective for now. I am still ahead on chapters, and that’s setting me up well to take down my Book 12 edits this month.</p>
+<p>For once, I am in an advantaged position on work. I don’t like it. There is part of me that likes having my back to the wall, but I suppose this is good improvement as a writer.</p>
+<p>It won’t last. But I’ll take more breaks, I’ll play with what I write—this is, for now, a return to form. Whether the form is good or not? Let me know. We’re three chapters into Volume 10 already! Time flies? Time slows?</p>
+<p>I am fully into writing. No more days wondering what to do. I worked from waking till a few hours before sleep on 10.04. I think it was that one? Or was it this? Things blur together, and I just write, nothing more. I’ll reclaim the other part of me being a person later, but I do owe you words. Thanks for reading!</p>
+<p>…pation.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><strong>Stream Art: Bushpig by Lime!</strong></p>
+<p><strong>Bluesky:</strong> <a class="anchor_c8ddc0 anchorUnderlineOnHover__78236" tabindex="0" title="https://bsky.app/profile/arcticlime.bsky.social" role="button" href="https://bsky.app/profile/arcticlime.bsky.social" target="_blank" rel="noreferrer noopener">https://bsky.app/profile/arcticlime.bsky.social</a></p>
+<p><strong>Ko-fi:</strong> <a class="anchor_c8ddc0 anchorUnderlineOnHover__78236" tabindex="0" title="https://ko-fi.com/recapturedlime" role="button" href="https://ko-fi.com/recapturedlime" target="_blank" rel="noreferrer noopener">https://ko-fi.com/recapturedlime</a></p>
+<p><a href="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/02/BushPig-by-Lime.jpg?ssl=1"><img fetchpriority="high" decoding="async" data-attachment-id="16793" data-permalink="https://wanderinginn.com/2024/02/11/10-02-y/bushpig-by-lime/" data-orig-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/02/BushPig-by-Lime.jpg?fit=1813%2C1814&amp;ssl=1" data-orig-size="1813,1814" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="BushPig by Lime" data-image-description="" data-image-caption="" data-medium-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/02/BushPig-by-Lime.jpg?fit=300%2C300&amp;ssl=1" data-large-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/02/BushPig-by-Lime.jpg?fit=1024%2C1024&amp;ssl=1" class="alignnone size-full wp-image-16793" src="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/02/BushPig-by-Lime.jpg?resize=1813%2C1814&amp;ssl=1" alt="" width="1813" height="1814" srcset="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/02/BushPig-by-Lime.jpg?w=1813&amp;ssl=1 1813w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/02/BushPig-by-Lime.jpg?resize=300%2C300&amp;ssl=1 300w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/02/BushPig-by-Lime.jpg?resize=1024%2C1024&amp;ssl=1 1024w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/02/BushPig-by-Lime.jpg?resize=150%2C150&amp;ssl=1 150w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/02/BushPig-by-Lime.jpg?resize=768%2C768&amp;ssl=1 768w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/02/BushPig-by-Lime.jpg?resize=1536%2C1536&amp;ssl=1 1536w" sizes="(max-width: 1000px) 100vw, 1000px" data-recalc-dims="1"></a></p>
+<p>&nbsp;</p>
+<p><strong>Silver Swords by Brack!</strong></p>
+<p><strong>DeviantArt:</strong> <a class="anchor_c8ddc0 anchorUnderlineOnHover__78236" tabindex="0" title="https://www.deviantart.com/shurkin/gallery/" role="button" href="https://www.deviantart.com/shurkin/gallery/" target="_blank" rel="noreferrer noopener">https://www.deviantart.com/shurkin/gallery/</a></p>
+<p><strong>Ko-Fi:</strong> <a class="anchor_c8ddc0 anchorUnderlineOnHover__78236" tabindex="0" title="https://ko-fi.com/brack" role="button" href="https://ko-fi.com/brack" target="_blank" rel="noreferrer noopener">https://ko-fi.com/brack</a></p>
+<p><strong>Twitter:</strong> <a class="anchor_c8ddc0 anchorUnderlineOnHover__78236" tabindex="0" title="https://twitter.com/Brack_Giraffe" role="button" href="https://twitter.com/Brack_Giraffe" target="_blank" rel="noreferrer noopener">https://twitter.com/Brack_Giraffe</a></p>
+<p><a href="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/02/SilverSwords-by-Brack.jpg?ssl=1"><img decoding="async" data-attachment-id="16794" data-permalink="https://wanderinginn.com/2024/02/11/10-02-y/silverswords-by-brack/" data-orig-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/02/SilverSwords-by-Brack.jpg?fit=1633%2C1296&amp;ssl=1" data-orig-size="1633,1296" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="SilverSwords by Brack" data-image-description="" data-image-caption="" data-medium-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/02/SilverSwords-by-Brack.jpg?fit=300%2C238&amp;ssl=1" data-large-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/02/SilverSwords-by-Brack.jpg?fit=1024%2C813&amp;ssl=1" class="alignnone size-full wp-image-16794" src="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/02/SilverSwords-by-Brack.jpg?resize=1633%2C1296&amp;ssl=1" alt="" width="1633" height="1296" srcset="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/02/SilverSwords-by-Brack.jpg?w=1633&amp;ssl=1 1633w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/02/SilverSwords-by-Brack.jpg?resize=300%2C238&amp;ssl=1 300w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/02/SilverSwords-by-Brack.jpg?resize=1024%2C813&amp;ssl=1 1024w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/02/SilverSwords-by-Brack.jpg?resize=768%2C610&amp;ssl=1 768w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/02/SilverSwords-by-Brack.jpg?resize=1536%2C1219&amp;ssl=1 1536w" sizes="(max-width: 1000px) 100vw, 1000px" data-recalc-dims="1"></a></p>
+<p>&nbsp;</p>
+<p><strong>Silver Swords by Duchess Ivory!</strong></p>
+<p><a href="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/02/SilverSwords-by-Duchess-Ivory.png?ssl=1"><img decoding="async" data-attachment-id="16795" data-permalink="https://wanderinginn.com/2024/02/11/10-02-y/silverswords-by-duchess-ivory/" data-orig-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/02/SilverSwords-by-Duchess-Ivory.png?fit=2500%2C2100&amp;ssl=1" data-orig-size="2500,2100" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="SilverSwords by Duchess Ivory" data-image-description="" data-image-caption="" data-medium-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/02/SilverSwords-by-Duchess-Ivory.png?fit=300%2C252&amp;ssl=1" data-large-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/02/SilverSwords-by-Duchess-Ivory.png?fit=1024%2C860&amp;ssl=1" class="alignnone size-full wp-image-16795" src="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/02/SilverSwords-by-Duchess-Ivory.png?resize=2500%2C2100&amp;ssl=1" alt="" width="2500" height="2100" srcset="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/02/SilverSwords-by-Duchess-Ivory.png?w=2500&amp;ssl=1 2500w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/02/SilverSwords-by-Duchess-Ivory.png?resize=300%2C252&amp;ssl=1 300w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/02/SilverSwords-by-Duchess-Ivory.png?resize=1024%2C860&amp;ssl=1 1024w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/02/SilverSwords-by-Duchess-Ivory.png?resize=768%2C645&amp;ssl=1 768w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/02/SilverSwords-by-Duchess-Ivory.png?resize=1536%2C1290&amp;ssl=1 1536w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/02/SilverSwords-by-Duchess-Ivory.png?resize=2048%2C1720&amp;ssl=1 2048w" sizes="(max-width: 1000px) 100vw, 1000px" data-recalc-dims="1"></a></p>
+<p>&nbsp;</p>
+<p><strong>Yvlon Fever Dreams by butts!</strong></p>
+<p><strong>Twitter:</strong> <a class="anchor_c8ddc0 anchorUnderlineOnHover__78236" tabindex="0" title="https://twitter.com/buttscord" role="button" href="https://twitter.com/buttscord" target="_blank" rel="noreferrer noopener">https://twitter.com/buttscord</a></p>
+<p><strong>Ko-Fi:</strong> <a class="anchor_c8ddc0 anchorUnderlineOnHover__78236" tabindex="0" title="https://ko-fi.com/buttsarts" role="button" href="https://ko-fi.com/buttsarts" target="_blank" rel="noreferrer noopener">https://ko-fi.com/buttsarts</a></p>
+<p><a href="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/02/YvlonFever-by-Butts.png?ssl=1"><img loading="lazy" decoding="async" data-attachment-id="16796" data-permalink="https://wanderinginn.com/2024/02/11/10-02-y/yvlonfever-by-butts/" data-orig-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/02/YvlonFever-by-Butts.png?fit=1133%2C865&amp;ssl=1" data-orig-size="1133,865" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="YvlonFever by Butts" data-image-description="" data-image-caption="" data-medium-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/02/YvlonFever-by-Butts.png?fit=300%2C229&amp;ssl=1" data-large-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/02/YvlonFever-by-Butts.png?fit=1024%2C782&amp;ssl=1" class="alignnone size-full wp-image-16796" src="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/02/YvlonFever-by-Butts.png?resize=1133%2C865&amp;ssl=1" alt="" width="1133" height="865" srcset="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/02/YvlonFever-by-Butts.png?w=1133&amp;ssl=1 1133w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/02/YvlonFever-by-Butts.png?resize=300%2C229&amp;ssl=1 300w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/02/YvlonFever-by-Butts.png?resize=1024%2C782&amp;ssl=1 1024w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/02/YvlonFever-by-Butts.png?resize=768%2C586&amp;ssl=1 768w" sizes="(max-width: 1000px) 100vw, 1000px" data-recalc-dims="1"></a></p>
+<p>&nbsp;</p>
+<p><strong>Balerosian Children’s Literature by Stargazing Selphid!</strong></p>
+<p><strong>Instagram:</strong> <a class="anchor_c8ddc0 anchorUnderlineOnHover__78236" tabindex="0" title="https://www.instagram.com/megawint/" role="button" href="https://www.instagram.com/megawint/" target="_blank" rel="noreferrer noopener">https://www.instagram.com/megawint/</a></p>
+<p><a href="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/02/Balerosian_Childrens_Literature-by-Stargazing-Selphid.jpg?ssl=1"><img loading="lazy" decoding="async" data-attachment-id="16797" data-permalink="https://wanderinginn.com/2024/02/11/10-02-y/untitled-artwork/" data-orig-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/02/Balerosian_Childrens_Literature-by-Stargazing-Selphid.jpg?fit=3000%2C3000&amp;ssl=1" data-orig-size="3000,3000" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;Untitled Artwork&quot;,&quot;orientation&quot;:&quot;1&quot;}" data-image-title="Untitled Artwork" data-image-description="" data-image-caption="" data-medium-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/02/Balerosian_Childrens_Literature-by-Stargazing-Selphid.jpg?fit=300%2C300&amp;ssl=1" data-large-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/02/Balerosian_Childrens_Literature-by-Stargazing-Selphid.jpg?fit=1024%2C1024&amp;ssl=1" class="alignnone size-full wp-image-16797" src="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/02/Balerosian_Childrens_Literature-by-Stargazing-Selphid.jpg?resize=3000%2C3000&amp;ssl=1" alt="" width="3000" height="3000" srcset="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/02/Balerosian_Childrens_Literature-by-Stargazing-Selphid.jpg?w=3000&amp;ssl=1 3000w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/02/Balerosian_Childrens_Literature-by-Stargazing-Selphid.jpg?resize=300%2C300&amp;ssl=1 300w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/02/Balerosian_Childrens_Literature-by-Stargazing-Selphid.jpg?resize=1024%2C1024&amp;ssl=1 1024w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/02/Balerosian_Childrens_Literature-by-Stargazing-Selphid.jpg?resize=150%2C150&amp;ssl=1 150w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/02/Balerosian_Childrens_Literature-by-Stargazing-Selphid.jpg?resize=768%2C768&amp;ssl=1 768w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/02/Balerosian_Childrens_Literature-by-Stargazing-Selphid.jpg?resize=1536%2C1536&amp;ssl=1 1536w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/02/Balerosian_Childrens_Literature-by-Stargazing-Selphid.jpg?resize=2048%2C2048&amp;ssl=1 2048w" sizes="(max-width: 1000px) 100vw, 1000px" data-recalc-dims="1"></a></p>
+<p>&nbsp;</p>
+<p><strong>Undead Elf by Ainz!</strong></p>
+<p><a href="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/02/UndeadElf-by-Aintz.jpg?ssl=1"><img loading="lazy" decoding="async" data-attachment-id="16798" data-permalink="https://wanderinginn.com/2024/02/11/10-02-y/undeadelf-by-aintz/" data-orig-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/02/UndeadElf-by-Aintz.jpg?fit=3468%2C4624&amp;ssl=1" data-orig-size="3468,4624" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="UndeadElf by Aintz" data-image-description="" data-image-caption="" data-medium-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/02/UndeadElf-by-Aintz.jpg?fit=225%2C300&amp;ssl=1" data-large-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/02/UndeadElf-by-Aintz.jpg?fit=768%2C1024&amp;ssl=1" class="alignnone size-full wp-image-16798" src="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/02/UndeadElf-by-Aintz.jpg?resize=3468%2C4624&amp;ssl=1" alt="" width="3468" height="4624" srcset="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/02/UndeadElf-by-Aintz.jpg?w=3468&amp;ssl=1 3468w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/02/UndeadElf-by-Aintz.jpg?resize=225%2C300&amp;ssl=1 225w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/02/UndeadElf-by-Aintz.jpg?resize=768%2C1024&amp;ssl=1 768w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/02/UndeadElf-by-Aintz.jpg?resize=1152%2C1536&amp;ssl=1 1152w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/02/UndeadElf-by-Aintz.jpg?resize=1536%2C2048&amp;ssl=1 1536w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/02/UndeadElf-by-Aintz.jpg?w=2000&amp;ssl=1 2000w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/02/UndeadElf-by-Aintz.jpg?w=3000&amp;ssl=1 3000w" sizes="(max-width: 1000px) 100vw, 1000px" data-recalc-dims="1"></a></p>
+<p>&nbsp;</p>
+<p><strong>Tolveilouka by Yura!</strong></p>
+<p><a href="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/02/Tolveilouka-by-Yura.png?ssl=1"><img loading="lazy" decoding="async" data-attachment-id="16799" data-permalink="https://wanderinginn.com/2024/02/11/10-02-y/tolveilouka-by-yura-2/" data-orig-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/02/Tolveilouka-by-Yura.png?fit=1080%2C4320&amp;ssl=1" data-orig-size="1080,4320" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="Tolveilouka by Yura" data-image-description="" data-image-caption="" data-medium-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/02/Tolveilouka-by-Yura.png?fit=75%2C300&amp;ssl=1" data-large-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/02/Tolveilouka-by-Yura.png?fit=256%2C1024&amp;ssl=1" class="alignnone size-full wp-image-16799" src="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/02/Tolveilouka-by-Yura.png?resize=1080%2C4320&amp;ssl=1" alt="" width="1080" height="4320" srcset="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/02/Tolveilouka-by-Yura.png?w=1080&amp;ssl=1 1080w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/02/Tolveilouka-by-Yura.png?resize=75%2C300&amp;ssl=1 75w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/02/Tolveilouka-by-Yura.png?resize=256%2C1024&amp;ssl=1 256w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/02/Tolveilouka-by-Yura.png?resize=768%2C3072&amp;ssl=1 768w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/02/Tolveilouka-by-Yura.png?resize=384%2C1536&amp;ssl=1 384w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/02/Tolveilouka-by-Yura.png?resize=512%2C2048&amp;ssl=1 512w" sizes="(max-width: 1000px) 100vw, 1000px" data-recalc-dims="1"></a></p>
+<p>&nbsp;</p>
+<p><strong>Adventurer by Enshuu!</strong></p>
+<p><a href="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/02/Adventurer-by-Enshuu.jpg?ssl=1"><img loading="lazy" decoding="async" data-attachment-id="16800" data-permalink="https://wanderinginn.com/2024/02/11/10-02-y/adventurer-by-enshuu/" data-orig-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/02/Adventurer-by-Enshuu.jpg?fit=4000%2C3000&amp;ssl=1" data-orig-size="4000,3000" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="Adventurer by Enshuu" data-image-description="" data-image-caption="" data-medium-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/02/Adventurer-by-Enshuu.jpg?fit=300%2C225&amp;ssl=1" data-large-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/02/Adventurer-by-Enshuu.jpg?fit=1024%2C768&amp;ssl=1" class="alignnone size-full wp-image-16800" src="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/02/Adventurer-by-Enshuu.jpg?resize=4000%2C3000&amp;ssl=1" alt="" width="4000" height="3000" srcset="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/02/Adventurer-by-Enshuu.jpg?w=4000&amp;ssl=1 4000w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/02/Adventurer-by-Enshuu.jpg?resize=300%2C225&amp;ssl=1 300w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/02/Adventurer-by-Enshuu.jpg?resize=1024%2C768&amp;ssl=1 1024w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/02/Adventurer-by-Enshuu.jpg?resize=768%2C576&amp;ssl=1 768w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/02/Adventurer-by-Enshuu.jpg?resize=1536%2C1152&amp;ssl=1 1536w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/02/Adventurer-by-Enshuu.jpg?resize=2048%2C1536&amp;ssl=1 2048w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/02/Adventurer-by-Enshuu.jpg?w=3000&amp;ssl=1 3000w" sizes="(max-width: 1000px) 100vw, 1000px" data-recalc-dims="1"></a></p>
+<p>&nbsp;</p>
+<p><strong>Vofea by Artsynada!</strong></p>
+<p><strong>Instagram:</strong> <a class="anchor_c8ddc0 anchorUnderlineOnHover__78236" tabindex="0" title="https://www.instagram.com/illudanajohns/" role="button" href="https://www.instagram.com/illudanajohns/" target="_blank" rel="noreferrer noopener">https://www.instagram.com/illudanajohns/</a></p>
+<p><strong>Ko-fi:</strong> <a class="anchor_c8ddc0 anchorUnderlineOnHover__78236" tabindex="0" title="https://ko-fi.com/illudanajohns" role="button" href="https://ko-fi.com/illudanajohns" target="_blank" rel="noreferrer noopener">https://ko-fi.com/illudanajohns</a></p>
+<p><a href="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/02/Vofea-by-ArtsyNada.jpg?ssl=1"><img loading="lazy" decoding="async" data-attachment-id="16801" data-permalink="https://wanderinginn.com/2024/02/11/10-02-y/vofea-by-artsynada/" data-orig-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/02/Vofea-by-ArtsyNada.jpg?fit=5526%2C5050&amp;ssl=1" data-orig-size="5526,5050" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="Vofea by ArtsyNada" data-image-description="" data-image-caption="" data-medium-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/02/Vofea-by-ArtsyNada.jpg?fit=300%2C274&amp;ssl=1" data-large-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/02/Vofea-by-ArtsyNada.jpg?fit=1024%2C936&amp;ssl=1" class="alignnone size-full wp-image-16801" src="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/02/Vofea-by-ArtsyNada.jpg?resize=5526%2C5050&amp;ssl=1" alt="" width="5526" height="5050" srcset="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/02/Vofea-by-ArtsyNada.jpg?w=5526&amp;ssl=1 5526w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/02/Vofea-by-ArtsyNada.jpg?resize=300%2C274&amp;ssl=1 300w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/02/Vofea-by-ArtsyNada.jpg?resize=1024%2C936&amp;ssl=1 1024w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/02/Vofea-by-ArtsyNada.jpg?resize=768%2C702&amp;ssl=1 768w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/02/Vofea-by-ArtsyNada.jpg?resize=1536%2C1404&amp;ssl=1 1536w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/02/Vofea-by-ArtsyNada.jpg?resize=2048%2C1872&amp;ssl=1 2048w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/02/Vofea-by-ArtsyNada.jpg?w=3000&amp;ssl=1 3000w" sizes="(max-width: 1000px) 100vw, 1000px" data-recalc-dims="1"></a></p>
+<p>&nbsp;</p>
+<hr>
+<p><a href="https://wanderinginn.com/2024/02/07/10-01-l/">Previous Chapter</a> <a href="https://wanderinginn.com/2024/02/14/10-03-y/"><span style="float: right;">Next Chapter</span></a></p>
+      </div>
+
+      <hr>
+          <span class="nav-previous">
+        <a href="https://wanderinginn.com/2024/02/07/10-01-l/" rel="prev"><span class="meta-nav">←</span> Previous Chapter</a>    </span>
+    <span class="nav-next" style="float: right" ;="">
+        <a href="https://wanderinginn.com/2024/02/14/10-03-y/" rel="next">Next Chapter <span class="meta-nav">→</span></a>    </span>
+    

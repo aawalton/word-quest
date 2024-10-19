@@ -29,7 +29,6 @@ export async function downloadChapters() {
       // Check if the file already exists
       try {
         await fs.access(filePath);
-        console.log(`Skipping: ${title} (file already exists)`);
         continue; // Skip to the next chapter
       } catch (err) {
         // File doesn't exist, proceed with downloading

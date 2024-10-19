@@ -1,0 +1,1289 @@
+
+
+          <span class="nav-previous">
+        <a href="https://wanderinginn.com/2024/03/10/10-07/" rel="prev"><span class="meta-nav">←</span> Previous Chapter</a>    </span>
+    <span class="nav-next" style="float: right" ;="">
+        <a href="https://wanderinginn.com/2024/03/20/10-08-pt-1/" rel="next">Next Chapter <span class="meta-nav">→</span></a>    </span>
+      <!-- <hr/> -->
+      <header class="entry-header">
+        <h1 class="entry-title">Interlude – Saliss the Architect</h1>
+                <button class="show-settings-btn" onclick="document.querySelector('#reader-settings-wrapper').classList.toggle('is-hidden')">
+          <img class="show-settings-btn-img" src="https://wanderinginn.com/wp-content/themes/solstice/assets/images/ui/reader-settings-button.webp">
+        </button>
+      </header>
+
+      
+<!-- Reader Settings -->
+<div id="reader-settings-wrapper" class="is-hidden">
+    <div id="reader-settings">
+        <header id="reader-settings-header">
+            <h2>Reader Settings</h2>
+            <button onclick="closeModal()">
+                <svg width="100%" height="100%" viewBox="0 0 33 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M16.5 30.75C24.0939 30.75 30.25 24.5939 30.25 17C30.25 9.40608 24.0939 3.25 16.5 3.25C8.90608 3.25 2.75 9.40608 2.75 17C2.75 24.5939 8.90608 30.75 16.5 30.75Z" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M20.625 12.875L12.375 21.125" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M12.375 12.875L20.625 21.125" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+            </button>
+        </header>
+
+        <fieldset id="fieldset-font">
+            <legend>Font</legend>
+
+            <div>
+                <label for="font-size-select">Size</label>
+                <select id="font-size-select" class="reader-settings-select" data-setting="reader-font-size" onchange="updateSetting(this.getAttribute('data-setting'), this.value);">
+                    <option value="10pt" class="reader-settings-option">10</option>
+                    <option value="11pt" class="reader-settings-option">11</option>
+                    <option value="12pt" class="reader-settings-option" selected="">12</option>
+                    <option value="13pt" class="reader-settings-option">13</option>
+                    <option value="14pt" class="reader-settings-option">14</option>
+                    <option value="16pt" class="reader-settings-option">16</option>
+                    <option value="18pt" class="reader-settings-option">18</option>
+                    <option value="20pt" class="reader-settings-option">20</option>
+                    <option value="22pt" class="reader-settings-option">22</option>
+                    <option value="24pt" class="reader-settings-option">24</option>
+                    <option value="26pt" class="reader-settings-option">26</option>
+                    <option value="28pt" class="reader-settings-option">28</option>
+                    <option value="30pt" class="reader-settings-option">30</option>
+                    <option value="36pt" class="reader-settings-option">36</option>
+                    <option value="42pt" class="reader-settings-option">42</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="font-family-select">Family</label>
+                <select id="font-family-select" class="reader-settings-select" data-setting="reader-font-family" onchange="updateSetting(this.getAttribute('data-setting'), this.value);">
+                    <optgroup label="Sans Serif">
+                        <option class="reader-settings-option" value="OpenSans, sans-serif" selected="">Open Sans</option>
+                        <option class="reader-settings-option" value="Arial, Helvetica, sans-serif">Arial</option>
+                        <option class="reader-settings-option" value="Roboto, sans-serif">Roboto</option>
+                    </optgroup>
+                    <optgroup label="Serif">
+                        <option class="reader-settings-option" value="Playfair, serif">Playfair</option>
+                        <option class="reader-settings-option" value="EBGaramond, serif">Garamond</option>
+                        <option class="reader-settings-option" value="'Times New Roman', Times, serif">Times New Roman</option>
+                    </optgroup>
+                    <optgroup label="Other">
+                        <option class="reader-settings-option" value="OpenDyslexic">OpenDyslexic</option>
+                        <option class="reader-settings-option" value="HennyPenny">Henny Penny</option>
+                    </optgroup>
+                </select>
+            </div>
+            <div>
+                <label for="font-weight-select">Thickness</label>
+                <select id="font-weight-select" class="reader-settings-select" data-setting="reader-font-weight" onchange="updateSetting(this.getAttribute('data-setting'), this.value);">
+                    <option class="reader-settings-option" value="300" selected="">Thin</option>
+                    <option class="reader-settings-option" value="400">Regular</option>
+                    <option class="reader-settings-option" value="500">Thick</option>
+                </select>
+            </div>
+        </fieldset>
+
+        <fieldset id="fieldset-spacing">
+            <legend>Spacing</legend>
+            <div>
+                <label for="margins-select">Page Width</label>
+                <select id="margins-select" class="reader-settings-select" data-setting="reader-article-width" onchange="updateSetting(this.getAttribute('data-setting'), this.value);">
+                    <option value="320px" class="reader-settings-option">Extra Narrow</option>
+                    <option value="500px" class="reader-settings-option">Narrow</option>
+                    <option value="680px" class="reader-settings-option" selected="">Medium</option>
+                    <option value="1000px" class="reader-settings-option">Wide</option>
+                    <option value="1200px" class="reader-settings-option">Extra Wide</option>
+                    <option value="100%" class="reader-settings-option">Max</option>
+                </select>
+            </div>
+            <div>
+                <label for="line-spacing-select">Line</label>
+                <select id="line-spacing-select" class="reader-settings-select" data-setting="reader-line-height" onchange="updateSetting(this.getAttribute('data-setting'), this.value);">
+                    <option class="reader-settings-option" value="1.2">Small</option>
+                    <option class="reader-settings-option" value="1.625" selected="">Medium</option>
+                    <option class="reader-settings-option" value="2.2">Large</option>
+                    <option class="reader-settings-option" value="3.5">Extra Large</option>
+                </select>
+            </div>
+            <div>
+                <label for="paragraph-spacing-select">Paragraph</label>
+                <select id="paragraph-spacing-select" class="reader-settings-select" data-setting="reader-paragraph-spacing" onchange="updateSetting(this.getAttribute('data-setting'), this.value);">
+                    <option class="reader-settings-option" value="0.5em">Small</option>
+                    <option class="reader-settings-option" value="1.625em" selected="">Medium</option>
+                    <option class="reader-settings-option" value="2.75em">Large</option>
+                    <option class="reader-settings-option" value="4.25em">Extra Large</option>
+                </select>
+            </div>
+        </fieldset>
+        <div class="ml-5 mb-4">
+            <label for="theme-select">Theme</label>
+            <select id="theme-select" class="reader-settings-select" data-setting="reader-theme" onchange="updateSetting(this.getAttribute('data-setting'), this.value);">
+                <option class="reader-settings-option" value="reader-theme-grey" selected="">Dark Grey</option>
+                <option class="reader-settings-option" value="reader-theme-blue">Dark Blue</option>
+                <option class="reader-settings-option" value="reader-theme-black">Black</option>
+                <option class="reader-settings-option" value="reader-theme-white">White</option>
+                <option class="reader-settings-option" value="reader-theme-sepia">Sepia</option>
+            </select>
+        </div>
+        <button id="reset-settings-btn" onclick="resetSettings()">Reset To Default</button>
+        <!-- <div> -->
+        <!-- </div> -->
+
+
+    </div>
+</div>
+      <div class="entry-content">
+        <p>This was a tale about Saliss of Lights, not Onieva Oliwing. It was about a Drake who didn’t sleep well.</p>
+<p>You’d think that wouldn’t be a problem for a Named-rank adventurer used to venturing into the wilds of the world and fighting, sometimes for days on end, without sleep. Saliss had done that. Of course, the ‘wilds’ of the world used to be few and far between.</p>
+<p>Now that the New Lands had opened up, walking into Medain’s magical dungeons with a pickaxe, nude after being tricked out of all your clothing, without any [Mercenaries] or adventurers to back you up, a lone [Apprentice Alchemist] with a grudge—</p>
+<p>Well, it just wasn’t as cool as the kids these days. Not Archmage. Saliss of Lights had every expectation that by the time the dust settled, there would be a new crop of Named-ranks with stories to tell that blew the old guard out of the water.</p>
+<p>It was like Archmages. He’d pantsed two in his lifetime so far. Or if they had robes, underpantsed them.</p>
+<p>Criminal, really. The fact that he could even lay his claws on them. If the stories about Zelkyr back in the day were true, Saliss should have been hunted to death across the continent by <em>three</em> Truestone Golems over the matter rather than just had to dodge a few [Lightning Bolts].</p>
+<p>The Drake’s mind was wandering. He absently added some red dust to a film of liquid that had an ocre quality to it already, trying to parse where the dust settled on the already-vibrant mixture.</p>
+<p><em>Close. Close…</em>if the liquid within turned orange, he had to instantly let the dust break the oxygen-formed barrier and nullify the reaction about to occur. Then the mixture would turn purple.</p>
+<p>If it <em>kept</em> getting brighter, it was a sign he had added too little of the red dust that suppressed the internal combustion effect and that the vial was about to explode.</p>
+<p>Now, this much liquid—he had only a tablespoon’s worth—wouldn’t be as dangerous as you thought, not <em>really.</em> Oh, it had about enough force to blow a hole through the side of a regular person’s face if the charge was angled right, but normally, Saliss could probably take the hit without even dodging and be fine.</p>
+<p>The <em>problem</em> was that this wasn’t ordinary stuff. A tiny—and by tiny, Saliss meant ‘measured in Fraerling units’—piece of white seith was mixed into the ampule of liquid.</p>
+<p>It had sped up the catalyst effect, and he added more of the red suppression dust made of a spore from the Bloodfields, ironically enough.</p>
+<p>Saliss estimated that if he got this primer liquid right, then, after he added all the regular enhancements to the alchemy vial, akin to someone piling up wood and kindling to enhance a [Fireball] spell—</p>
+<p>“<em>…Potion go boom big.</em>”</p>
+<p>The problem was—he hadn’t slept right. Poor sleep, a restlessness that had dragged him back to the alchemy lab despite knowing it wasn’t a good idea.</p>
+<p>Thoughts whirling around his head. Saliss hated them.</p>
+<p><em>I should go to the New Lands. What am I doing here? Discovering seith, you idiot. Far more valuable.</em></p>
+<p><em>Am I an adventurer or an [Alchemist]? Irrelevant, really. Where am I needed most?</em></p>
+<p><em>Answer…here. I’m just killing time. And perhaps myself.</em></p>
+<p>The problem was—the red liquid was <em>not</em> changing to orange, and if he broke the seal and mixed the dust early, he’d render the precious ampule of liquid useless. It normally had a four-second window for this dangerous maneuver, but the seith was unpredictable.</p>
+<p>The damn stuff was powerful. So powerful that Saliss had <em>not</em> given Lyonette the box he’d been jokingly waving around, and he was legitimately scared of what might happen if it reacted with something magical.</p>
+<p>It was the most magically dense and reactive substance he’d ever encountered. The fact that Warmage Thresk’s buddy, the [Chronomancer] Udatron, had had this stuff sitting around showed he’d been a real old-school [Alchemist]. In other words, completely insane.</p>
+<p>Real corn. That was a Saliss term, by the way.</p>
+<p><em>Change, damn you!</em> Saliss’ eyes hurt. His claw, holding the tip of a simple, non-reactive pair of mithril tweezers, was a fraction above the red liquid, ready to dip and stir.</p>
+<p>His mind hurt. He was in his lab for reasons he damn well knew.</p>
+<p>“Can’t go until I see what the new situation with Pallass is. Can’t go until I see what the inn’s got cooking. Can’t go in case the old man bites it?”</p>
+<p>Saliss blinked. He didn’t die in the moment it took to do that and winnowed his excuses down.</p>
+<p>“…The old man’s gone. The inn’ll be fine without me.”</p>
+<p>Ruthless. Cut down the routes, that was how you did it. Narrow out what mattered from what you <em>wanted.</em> Sacrifice anything for victory.</p>
+<p>The old man—Chaldion, the Cyclops of Pallass—had once said that when Saliss was a kid, Saliss had never forgotten <em>how</em> he said it. Eyes narrowed, making an eleven-year-old Drake child make a battlefield decision with [Soldiers] about to die.</p>
+<p>Then executing on that choice. Saliss wondered if Chaldion would be happy that Saliss could deprioritize his existence.</p>
+<p><em>Serves him right.&nbsp;</em></p>
+<p>The red liquid didn’t move, and Saliss’ exhausted brain refused to stay locked on target. Bad sleep.</p>
+<p>Saliss had given up on visiting the old man in his home or at the inn. As far as Saliss could tell, he really was…</p>
+<p><em>He can’t be gone. Someone just has to shake him hard enough, but Healer Demerra’s got a fast right hook. He’s gotten more Drakes killed before and had lunch afterwards and complained about the bill.</em></p>
+<p>It could be the sheer damage. They’d patched him up with a potion, the idiots. If he hadn’t died of having his throat gouged out and being savaged by a Draugr, he wasn’t about to die before they assessed his condition.</p>
+<p><em>Maybe they got his brain? Whatever Kasig…Kaligma…did to him didn’t let him die. It’s conceivable even with healing he’s just gone.</em></p>
+<p>“Or maybe it’s his grand exit, failing and getting a [General] killed. Almost, old man. You almost got to be a hero. You deserve this.”</p>
+<p>Chaldion didn’t speak. He could still do things like choose clothing or play chess, and he had an appetite and desires. But all the cutting incisiveness, the inability to remain silent, the strategic genius that had carried the Walled Cities for eighty years as [Grand Strategist]? Gone.</p>
+<p>It was something seeing Pallass scramble to replace him overnight. Chaldion had contingencies for his death; he’d had them for decades. But his affliction had put Pallass in the uncertain position of not knowing if he’d come back to himself, and his actions had hugely discredited his own reputation within Pallass’ military itself.</p>
+<p>Nevermind that most of the [Strategists], including Chaldion’s grandson and his replacement, the Garuda Esor, recognized what he had been doing. If Saliss had spotted it earlier, he’d have had Chaldion locked up.</p>
+<p>The play was classic: get a bunch of Drakes too stupid to recognize when it was time to fall back and ignore bad orders killed. Or have them counter-level in a suicide charge that bought the inn time. At the same moment, have the smart officers identify themselves and force them to level by taking command from him. Make them the heroes of the day and pull the Cyclops off the board with a real hero’s moment.</p>
+<p>“Who did it right? General Shirka…that snot-tailed Drake from 8th Army, Lieutenant Caoraz. Olesm.”</p>
+<p>Saliss was waiting for the red liquid to change. It had never taken this long, but he wasn’t about to go and fetch anything to see if the effect was happening. He knew he’d precisely replicated the explosive reaction that was the basis for his Inferno Gel, which went into a Potion of Blast, a Firestorm Bottle, or so many of the dangerous things he could make.</p>
+<p>He, like Rhaldon, controlled the variables. The Earther had said Saliss had the best understanding of Earth principles. For instance, the idea of isolating all the things that could go into a mixture and removing the element of chance.</p>
+<p>He was probably just talking Saliss up, but the [Alchemist] had appreciated the compliment. The seith was literally the only change, and it <em>should</em> have been a pure energy catalyst.</p>
+<p>If Saliss was right and Valeterisa’s and his research corresponded, this stuff was better than Unicorn horns. It was like a fable: all energy, no drawbacks aside from the fact that it was <em>all energy.</em></p>
+<p>It was a rediscovery equivalent of Sage’s Grass, and he’d had fun keeping his sample away from Valeterisa. It beat doing covert research into getting more of the stuff, wondering if he should help Pallass get a monopoly or tell other [Alchemists] about it—and wondering how the hell Erin had known what she was giving him. And whether he was worthy of it.</p>
+<p>Ghosts. Where was he?</p>
+<p>Oh, right. The survivors. Saliss’ eyes hurt again. Nothing for it but to blink. Now, the right thing would b—</p>
+<p><em>The red had turned yellow. Now, the mixture turned white, and Saliss swore as his tweezers dipped.</em></p>
+<p>“F—”</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>It wasn’t the first time he’d had to pull himself out of a pile of rubble.</p>
+<p>It just really sucked when the rubble was your workshop.</p>
+<p>Saliss of Lights sat up, and his first question before his brain even really processed a thought was—should he be dodging? He looked around and saw some intact cupboards made of steel. Hole in the ceiling; blast must have vented up. His claw hurt.</p>
+<p>He stared down and saw soot running down his yellow scales. Judging from how they tapered off in distinctive trails, he’d tossed the vial <em>up</em>—Saliss’ brain clicked a few more times.</p>
+<p>“Ow.”</p>
+<p>He pulled a piece of mithril out of his cheek and spat another fragment out. That was what happened if enough force hit a pair of mithril tweezers. You could make a damn dangerous object with just the force alone.</p>
+<p><em>And that was just the primer. </em>Saliss heard horns blowing and voices shouting.</p>
+<p>Alchemy suppression teams. He stared up at the hole in his ceiling. Bigger than all the rest. The first genuine explosion from attempting, well, to <em>make</em> something with seith rather than figure out what it was.</p>
+<p>Saliss blinked around and calculated costs, assessed how close to death he’d been…then just completed his thought.</p>
+<p>“Right. The smart thing would be to take all the Drakes and Gnolls who made the right call and promote them on the spot. Duln got himself killed protecting the wrong Drake. Harsh, but true. Oh, and the seith now shortens the changeover time to half a second. Great.”</p>
+<p>He lay back in the soot and ash and tried to get forty winks. He couldn’t sleep. That was the main problem when you thought about it.</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>Two hours later, Saliss sat in an office in the secret headquarters of High Command in Pallass.</p>
+<p>7th Floor. Set against the walls; it looked like any one of their checkpoints, but this one let you into the place even the top [Senators] only got access to if they were well-connected and important enough.</p>
+<p>The [Secretary] knew Saliss liked coffee and put some milk and sugar in for him each time. He stared at his empty cup.</p>
+<p>He was still sooty. Definitely naked. They’d asked him if he’d been working on something dangerous this time. To which the answer was…did you not see the blown up workshop?</p>
+<p>Saliss yawned. Surviving a blast like that and having to assess the damage to his workshop was going to <em>suck.</em> He’d rather be staring at another yellow vial of seith-enhanced Inferno Gel than be doing this, though.</p>
+<p>Things happened when the former [Grand Strategist] was replaced. A military was still, well, a military. If it panicked, it did so in a military way and restored order using the chain of command and procedures it knew. Pallass’ military was a logical beast, and Chaldion had helped raise it.</p>
+<p>Shame he couldn’t cull stupidity out of it entirely. For proof of that, Saliss upended his coffee cup into his mouth and snapped his toothy jaw shut a few times, savoring the dregs of liquid.</p>
+<p>“The smart thing to do would be to have Esor take Chaldion’s old role. Not as [Grand Strategist], but [Head Strategist] or whatever stupid class it is. Promote Shirka to 1st Army. No, wait, 1st Army sits on their asses all day. Keep her in 3rd and promote someone useless to the role. So you got that right. Then bump Caoraz up in his post, and hire Olesm and everyone else who acted smart.”</p>
+<p>He spoke, not for the benefit of them, but for the watchers. The room was <em>nominally</em> empty; it had that military office feel. Yellow, pastel walls, which was Pallass’ national color but looked horrible, a framed image of Pallass being constructed on one wall, a simple wood desk facing a chair—</p>
+<p>Saliss had, of course, chosen the desk. He sat behind it, opening and closing drawers and pulling out paper files.</p>
+<p>Just for show, usually; the Eyes of Pallass filled this room with props. The other rooms in the High Command’s little headquarters were more utilitarian; they had places to meet or interview people, but this was their ‘tough negotiations’ room. They brought people into this cramped space, intimidated them, and any observers peeking through the fake wall got to watch the show.</p>
+<p>In this case, Saliss assumed at least one of the Eyes of Pallass was listening in, and probably some of the head honchos. That was [Senators] with the right connections, [Generals], but also influential members of Pallass. Like the Guildmaster of the Engineering Guild—surprising people sometimes.</p>
+<p>Pallass was a democracy. So was the High Command; it was just a democracy of people worthy of being in the democracy, and they voted on who to let in. Chaldion had been, in Saliss’ eyes, a de facto leader for decades, even after his mind began slipping a bit.</p>
+<p>No one reacted to Saliss’ comment. The Drake paused as he began folding an origami Drake out of paper.</p>
+<p>“You know, I can almost <em>see</em> you through the wall, right? Hey, you on the left. Wave. Whose stupid idea was it to put me in here? You don’t intimidate Named-ranks in this room, scales-for-brains. This is the room for a scared [Senator], not someone who helped <em>build</em> it.”</p>
+<p>They didn’t wave. Saliss went back to folding. Here was the problem.</p>
+<p>Sometimes…the right person didn’t get the job. Even if you had Chaldion writing it down and underlining a command like ‘make Esor my replacement you unbelievable morons or I will rise from the grave and shove my wrinkled testicles down your throat’.</p>
+<p>Even if you did that…you had idiots who thought they should reinterpret Chaldion’s command. You had <em>politics,</em> the bane of every democracy.</p>
+<p>You had Drakes who looked around and said, ‘wait a second, Esor’s a Garuda’. So they ignored him, which they couldn’t do when Chaldion was alive.</p>
+<p>The person who should have pulled Saliss aside for a quick chat in the headquarters—and given him a refill of coffee—was Esor. They’d do it in Esor’s office, and the Garuda would be polite, but Saliss would see if Chaldion’s chosen replacement was as good as Chaldion thought he was. They’d hash things out; Saliss would probably try to prank Esor, and it’d be done quick.</p>
+<p>Instead, they sent a Drake that Saliss had never met into the room. He strode in with a <em>bang</em> of the door opening, saw Saliss in the desk, and did a double-take.</p>
+<p>“Corporal Saliss, stand! Salute!”</p>
+<p>The Drake was a [Major], Saliss bet. One look at a badge on his armor told Saliss who and why this was happening.</p>
+<p><em>4</em><em>th</em><em> Army. Must be Edellein’s. </em>That was now 1st Army’s General Edellein, and maybe he was the one sitting to the left. Or maybe he thought this meeting didn’t matter.</p>
+<p>“You poor bastard. Replacing Duln with Edellein was fine. But you really should have kept Esor because he’d tell you this was a stupid idea.”</p>
+<p>As far as Saliss knew, Esor hadn’t been fired; he’d just failed to be promoted. The fact that the Drake [Major] was here meant he was part of High Command and had a lot of authority.</p>
+<p>The fact that he was <em>here,</em> in this room, meant he was stupid as bricks or just didn’t know Saliss. The Drake’s scales prickled.</p>
+<p><em>Here we go. Listen, it’s not too late to stop all this. You know me. You’ve read my files, guys. And statistically, it’s guys since, Shirka aside, Pallass has been sort of a boy’s club. You think you need to rein in Pallass’ biggest ‘rogue’ asset since the old man’s dead. Well…let me tell you, this is not the way to do it.&nbsp;</em></p>
+<p>He didn’t rise. Corporal Saliss was a kid; they must have dug to get his old rank. The [Major] did that stupid double-take when his giving an order failed to elicit a response. Then he strode over, rested his claws on the table, and barked as he stared Saliss in the eyes.</p>
+<p>“You’re still part of the army, soldier. Adventurer or not. High Command’s tasked me with getting you up to speed on the new protocols, and that includes getting an explanation for what happened two hours ago.”</p>
+<p>“Potion go boom. Who’re you?”</p>
+<p>“Major Howkless. Your new liaison.”</p>
+<p>“Hey, I know you. Didn’t you take out two Wyverns in battle personally a few months ago? Solo, I heard. Saved a bunch of [Soldiers]’ lives.”</p>
+<p>Howkless paused and preened a second.</p>
+<p>“I can see we know each other.”</p>
+<p>“Yeah. I took out like a hundred. I stopped counting after the first minute. 4th Army can’t even ambush a pack of Wyverns. Tell Edellein over there to come in and deal with me himself.”</p>
+<p>Howkless had such a stupid look on his face. Saliss closed his eyes for a bit as the [Major] began bawling insults.</p>
+<p><em>Listen, guys. Just activate the mind wiper, and it probably won’t result in me accidentally destroying a floor of Pallass. Or, seriously, get Esor.</em></p>
+<p>He was thinking as hard as he could to High Command, who was observing the suffering of Major Howkless…and possibly reading Saliss’ thoughts at this very moment.</p>
+<p><em>Hello, I am Saliss of Lights. You know me. Named-rank adventurer of Pallass. [Alchemist] extraordinaire. Naked nuisance. Turnscale. My file lists me as Pallass’ problem because I kill things really well. I am the only Named-rank you have complete ‘control’ over, and I’m a continent-wide military asset. The old man’s had me in check, and now you need to reassert control.</em></p>
+<p><em>This is not how you do it.</em></p>
+<p>Saliss wasn’t actually certain they had a mind-reading spell or class. He knew they’d <em>tried</em>, not because he’d ever found the notes on any experiments. Just because he knew Pallass. It was his habit to pretend they were reading his mind every time he came in here.</p>
+<p>It wasn’t like he had any secrets from them. Well, a few, but the annoying thing was that having a Walled City with a literal spy group—the Eyes of Pallass, probably the best of the Walled Cities at surveillance—was that they found stuff out.</p>
+<p>Turnscale? The old man had figured that out ages ago. Mirn? Saliss’ contacts, friends, investments, and whatnot? They probably had a file on where Saliss had left his toothbrush that one time and never found it.</p>
+<p>Other people, like Erin, would have significant problems with this kind of thing. Saliss had grown up with it. Never really made his peace, but he was here. He could have quit.</p>
+<p><em>This is why I’m still here. Okay, show me what you’ve got.</em></p>
+<p>“—<em>sympathy</em> for the [Grand Strategist]’s situation. Pallass is shaken, which is why we’re making sure the gears of the city are all working. We’re aware you like to play games, and I’ve studied your files.”</p>
+<p>“Amazing. You can read.”</p>
+<p>The [Major] was still talking. Saliss had tuned him out. He stared as the mouth kept moving, angrily, and thought to himself.</p>
+<p><em>What’s he going to say? Blah, blah, work together, blah blah, sorry your grandfather’s dead but we’re in charge now, blah, blah, now here’s the time for threats.</em></p>
+<p>He knew it was coming. High Command had one thing they could pull on him, and Saliss’ hopes that Esor would pull him aside and do something smart were dashed. Ah, well. The [Alchemist] closed his eyes.</p>
+<p>There was some vicarious delight in this, too. He could tell the [Major] was trying to use a Skill on him. Probably something like [Stand to Attention] or [Follow my Command, Worm]!</p>
+<p>Level differences were nice. Saliss sat there, and it was not the real him they saw. He wondered if they even wrote down the right thing in their nice little report on all his problems or if they said he was a delusional Turnscale that needed to be humored to keep him running right.</p>
+<p><em>I should go after this. But the inn and seith…</em></p>
+<p>Saliss never thought about relaxing. Relaxing was for Onieva. Onieva could go to a play or just sit and waste time. Saliss? Saliss thought of the New Lands. Of even going to find Erin, though she’d been found, but going out and doing what needed to be done. For the Walled Cities. For Drakes. Even if what they thought they wanted was something else.</p>
+<p>In his way, he was Pallass’ most loyal soldier because no one had to bark orders at him. If he had spare time?</p>
+<p><em>I really wish I’d gone to see that new play the Players of Celum were putting on.</em> <em>Esor would probably give me tickets.</em></p>
+<p>Saliss actually really liked the [Actors] and the stage. He’d never said as much, but he’d fancied that he could have actually put on a really good performance if he’d put his mind to it. He never would ask, of course, because he had a reputation to maintain.</p>
+<p>And also because being a Player of Celum would require him to not already have a role. He was very good at his role. So, as the [Major] got to the threats, Saliss sat up in his chair and gave the stage a smile.</p>
+<p><em>Now presenting for the 33</em><em>rd</em><em> year running: 15 Minutes of Sass, by Saliss Oliwing!</em></p>
+<p>Please clap.</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>The conversation in the room was never pleasant. It had started bad the moment that Saliss had been told to go here, and it had devolved as the [Major] ordered Saliss to stand up, speak with respect, open his eyes, and realized he had to assert some kind of authority or fail entirely. So he pulled out his only card.</p>
+<p>“We’re aware the Cyclops gave you special license to act, Adventurer Saliss. Favors. He covered up your indiscretions. Which is entirely in keeping with the services a Named-rank performs for the City of Invention. You know it, I know it. There’s a reason you can be so confident here.”</p>
+<p>Saliss had his feet up on the desk, and the [Major] was making the mistake of not staring at his naked…ness. He wasn’t used to Saliss. People who talked to Saliss actually forgot he was naked, sometimes. Clothing was just a thing people thought you had to wear. It helped with bugs and sunburn. Nothing else.</p>
+<p>“Confident? Me? I’m terrified.”</p>
+<p>“Hah.”</p>
+<p>“No, seriously. Honest-to-Ancestors. Read my vitals with the truth spells. Here, I’ll take off my ring. Terror. I, Saliss, am afraid.”</p>
+<p>The [Major] actually did a double-take, and Howkless inspected something—he must have had some Skill that let him monitor an information feed. His eyes flickered, and he tried to take a reassuring tone.</p>
+<p>“—The Grand Strategist is going to be well-cared after. And believe me, we intend to restore Pallass’ operations to full efficiency within the week, Saliss.”</p>
+<p>The [Alchemist] stared up at the [Major] with big, earnest eyes.</p>
+<p>“Terrifying. You actually think you can replace Chaldion and that you’re not already making a huge mistake. Whew. This is the scariest thing I’ve seen all year.”</p>
+<p>He patted his heart, put his ring back on, and Howkless snapped.</p>
+<p>“Alright. I can see you’re having fun.”</p>
+<p>“Me? Not at all. Talking to a two-copper [Major] is a waste of my time. Get to the threats.”</p>
+<p>Saliss put his head back and stared at the ceiling. Off-kilter, Major Howkless hesitated, but he believed he had all the cards.</p>
+<p>“Fine, you want to do this? You are taking the position you are invincible due to your level and status in Pallass. You and I both know you’re not. I’ve read the ‘special disbursements’ you’ve been accorded. Orders to the Watch. Orders to [Healers], to our Eyes of Pallass—<em>countless</em> Drake hours spent avoiding certain illicit bars and gatherings, reversing sentences, covering up crimes.”</p>
+<p>“Only in your books, Major. It’s not a crime to be a Turnscale.”</p>
+<p>They came to it faster than Saliss thought. The word itself made Howkless hesitate. <em>Ah, is that it? </em>Saliss peeked at the one person in the hidden room who’d remained this entire time. On the left. Maybe they were just uncomfortable with even meeting someone who would use the word openly.</p>
+<p>“Indecency and depraved acts are a crime.”</p>
+<p>“True. Article 1 of Law #8. Original Pallassian charter law. You could also cite disruptive acts, which are Article 5, or Article 2, Law #44, ‘Any actions by a Citizen or Individuals present within the City of Invention’s aegis that are likely to disrupt the morale and order of the city.’”</p>
+<p>Saliss quoted it by heart. He knew the laws and doubted Howkless did. The [Major] just grunted.</p>
+<p>“See?”</p>
+<p>“I don’t see ‘Turnscale’ mentioned. But go ahead with the next part. You think you’re the first to try this?”</p>
+<p>Saliss waved a claw like someone giving the [Major] a signal, and the fellow did his best.</p>
+<p>“We have lists.”</p>
+<p>“<em>Oh no! They have lists!</em>”</p>
+<p>Saliss clapped his claws to his face. He fell out of his chair and lay there, upside down, tail flopping over his face. Howkless tried to tower over him, and it was really hard to do.</p>
+<p>“Refuse to cooperate and give me any more backtalk and we can see how funny you are with your friends in prison. Should I begin with anyone in particular? What about ‘[Bartender]’ Mirn? I only need to send a single [Message]. On your feet. Now.”</p>
+<p>Saliss lay there, and a loud sigh was all Howkless heard. Howkless waited, counting down from ten in his head. At ‘zero’, he barked.</p>
+<p>“Very well, we can talk tomorrow and see how you feel <em>then.</em>”</p>
+<p>&nbsp;</p>
+<p>—-</p>
+<p>&nbsp;</p>
+<p>The Drake spun on his heel, but a voice spoke as Howkless was half out the door.</p>
+<p>“You really are a sacrificial lamb sent to the slaughter. Funny. I know Lizardfolk do sacrifices, but that’s such a funny term I heard from Kevin one time. I copied it. You don’t even know about <em>Kevin</em>, do you?”</p>
+<p>Howkless turned. Saliss was on his feet. He brushed the origami off the desk, and Howkless suppressed a tight smile.</p>
+<p>“I can see—”</p>
+<p>“Sit down, Major.”</p>
+<p>“You aren’t giving the—”</p>
+<p>“<em>Sit down, Major. </em>And shut up.”</p>
+<p>Howkless hesitated and strode into the room. He didn’t sit down, though he felt an uncanny powerful presence trying to make him sit. <em>Impossible. I outrank him. But he is Chaldion’s grandson…</em></p>
+<p>There might have been something in the military rankings giving Saliss authority over his class. Howkless would note it in his report to High Command. The [Major] held his ground, though; he knew some of them would be watching.</p>
+<p>So did Saliss. The Drake’s eyes flicked across the room, and he spoke.</p>
+<p>“He doesn’t know about Kevin. You sent me a Kevin-less idiot? Seriously?”</p>
+<p><em>Who the hells was Kevin, and why did it matter? </em>Howkless felt like this was actually a secret, and he tried not to sweat.</p>
+<p>“We are discussing—”</p>
+<p>“Earth! Okay, now you’re part of the <em>top</em> top-command—even Innia knows about them. She outranks you.”</p>
+<p>Saliss shouted the word, and Howkless’ earpiece buzzed.</p>
+<p>“<em>Keep him focused, Major.</em>”</p>
+<p>The [Major] did his best. Then he remembered that ‘Innia’ was the [Receptionist] who admitted people. Saliss gave Howkless a smile.</p>
+<p>“Don’t thank me. Now, keep going with the threats.”</p>
+<p>Howkless hesitated, then forced a smile.</p>
+<p>“I don’t think I need to. You’re not willing to sacrifice your friend’s wellbeing.”</p>
+<p>Saliss tasted the word.</p>
+<p>“Wellbeing. That’s a funny word for a group of people who’re constantly afraid of being raided by the Watch for having a drink or putting on some nice clothes and going out. The old man reduced pressure on them. Now we’re back to lockups.”</p>
+<p>“Not if you cooperate.”</p>
+<p>“Oh! So they’re going to be left alone for the rest of their lives? I can work with that.”</p>
+<p>Saliss brightened up, and Howkless’ earpiece buzzed again. He spoke carefully.</p>
+<p>“That depends on how cooperative you are. This attitude—”</p>
+<p>“Right, that’s what I thought. So you decided going the <em>other</em> way is the smart move. As in—threats. Your first threat is to lock Mirn up. Was that with a public charge of being a Turnscale or not? Because you don’t come back from that one.”</p>
+<p>Saliss had sat himself back down at the table. He looked at Howkless, and the [Major] hadn’t thought of either.</p>
+<p>“That depends on—”</p>
+<p>“You’re dumber than the Wyvern Lord that attacked Pallass, Major Howkless. And High Command has less intelligence than a hatchling staring at a shiny gold coin. The fact that Esor isn’t here, that someone made Edellein 1st General—no, wait, that one’s fine. The fact that he’s <em>actually </em>giving orders and the fact that no one’s promoted Caoraz or tried to hire Olesm shows how stupid you all are. Chaldion gave explicit orders, and you can’t even follow them. You don’t even know how to read his orders right.”</p>
+<p>Howkless reddened. <em>They could hear Saliss!</em> He barked back.</p>
+<p>“For that, your friend’s cooling his heels in lockup!”</p>
+<p>“As a Turnscale or for a random charge? What’s the reason?”</p>
+<p>“We don’t <em>need</em> one. We have evidence—”</p>
+<p>Saliss exhaled. He held up a claw.</p>
+<p>“Okay. Let me spell it out for you. Because I need to, apparently. <em>What reason do you have for locking Mirn up the moment you leave this room? </em>I have no doubt a [Guard] can do the arrest. Mirn won’t even fight. Probably. Depending on the reason.”</p>
+<p>At this point, Major Howkless realized something else was going on, but he was not, in fact, an officer familiar with civilian law. He shrugged.</p>
+<p>“Disorderly conduct.”</p>
+<p>“Right, but—okay, this is hard. <em>Disorderly conduct for what? </em>Mirn’s got a job as a supplier of goods. He’s working right now on 3rd Floor, probably, or 1st Floor. Follow me here.”</p>
+<p>Saliss got up, closed the door fully, and found the ink, quill, and paper. He nailed the paper to the wall with the quill—Howkless didn’t know how the hell he did that. The walls were supposed to be reinforced. But the Drake began drawing with one inky claw.</p>
+<p>“Okay, so let’s assume people hear he’s been arrested. He goes to jail. Then he has to go out because I throw myself on your mercy, ‘oh, please, don’t arrest my friends!’ Right?”</p>
+<p>He made some illustrations showing the flow-chart of events, drawing a bunch of crude, smiley people with big heads. Howkless tried to interrupt.</p>
+<p>“How is this—”</p>
+<p>“The excuse matters. Disorderly conduct? They know Mirn. He’s actually a former [Soldier].”</p>
+<p>“I know that.”</p>
+<p>Saliss gave him an appreciative nod.</p>
+<p>“Then you know he’s actually straight-laced. Doesn’t get into fights, runs a tight ship. So you have some people who know him—not his true identity as a Turnscale—and they get to thinking. ‘Well, I didn’t see him doing anything wrong’. But he gets hauled in by, what, some officers? By an entire squad? Disorderly conduct for <em>what?</em> Then they might get to asking questions. Do the [Guards] arresting Mirn know he’s a Turnscale? Because they talk.”</p>
+<p>“If you coop—”</p>
+<p>Saliss’ finger was at Howkless’ lips, and the [Major] recoiled. He was <em>fast. </em>Howkless didn’t like his smile. Was he…flirting? Turnscales. Howkless had dealt with the issue a few times in the ranks, amicably, which was why Edellein had forwarded him for this job, but—Saliss continued.</p>
+<p>“Sh—shh. Stay with me, you sweet, stupid thing. Let’s assume someone knows the truth. Well, how important do they know it is? What if they get to talking? Then—”</p>
+<p>He crossed out the smiles on the other people’s faces.</p>
+<p>“—Mirn’s secret is out. And that doesn’t go away because Pallass hasn’t perfected the mind-control serum I bet some Walled City has. At the very least, the mind-erasing dust. And I know that one’s in our secret records. I made it once.”</p>
+<p>“The what? Alchemist, this isn’t a concern if you’ll just <em>act as part of the squad.</em>”</p>
+<p>Saliss spun, putting his claws behind his back.</p>
+<p>“Oh, but it is, Howkless. Because <em>if</em> this scenario occurs, even once, Mirn’s dead. No, not figuratively. Literally. Have you ever seen a group of ‘patriotic civilians’ corner a Turnscale or ‘degenerate’?”</p>
+<p>His eyes were suddenly serious, and Howkless, reflexively, answered with the truth.</p>
+<p>“I oversaw a judicial committee in 4th Army on that subject and broke up a fight with a suspected Turnscale and regular infantry.”</p>
+<p>“Did they survive to the trial?”</p>
+<p>The [Major] didn’t reply. Suddenly, he saw Saliss’ point, and his eyes flickered across the diagram. Saliss strode around him.</p>
+<p>“See? You get it. Now, here’s why I took the time to remind you and High Command of this fact, Major. Obviously, we can’t have Mirn arrested and revealed as a Turnscale. You can’t because you’d lose the biggest hold over me for a stupid mistake. I can’t because Mirn is my friend.”</p>
+<p>This was all true. Howkless gave a grudging nod. Saliss popped up by his right shoulder.</p>
+<p>“Chaldion got all that. The old man didn’t have to be told this. If he arrests Mirn, I’m <em>certain</em> it’ll be because someone started a fight with Mirn, but Mirn accidentally swung first, or some other reason like he was part of a brawl and got swept up in the arrests. But the old man doesn’t ever arrest Mirn, and you know why? He’s too good for stupid threats like that.”</p>
+<p>He poked Howkless a few times in the shoulder, in a friendly way, but the [Major]’s feet skidded with each poke.</p>
+<p><em>I am losing control of the situation. </em>Howkless’ instincts told him it was time for a retreat. His stupid brain told him he had orders.</p>
+<p>“Saliss. This is all hypothetical.”</p>
+<p>And then the Named-rank adventurer gave him a sad look.</p>
+<p>“No, it’s not. You see, the threat was made. It wasn’t <em>intelligent—</em>High Command didn’t listen to Esor, because he would have told them ‘don’t do it’. But they didn’t listen and, worse, didn’t ask him why or let him explain. Now, I’m here, having to explain to them why it’s a bad idea for reasons Esor and I both know, and the old man knows, and probably most of the Eyes of Pallass with a brain. Which is some of them.”</p>
+<p>He nodded to the fake wall again, and Howkless’ neck spines began tingling. He tried to go on, but Saliss held up a finger under his chin.</p>
+<p>“So here’s the part I have to spell out: the old man never threatens Mirn. He <em>relents</em> on the pressure on Turnscales, but he goes carrot and stick. You know why? Because <em>if</em> Mirn were to die tomorrow—and even that one, nasty word is death—bad things happen. Not ‘Saliss is upset and we have to renegotiate’. Read the file on me. Don’t read the first page. <em>Read the file.</em>”</p>
+<p>Major Howkless was trying to speak. He couldn’t move his jaw, and every time he tried to pivot backwards, Saliss moved with him.</p>
+<p>“And this…is the point where I remind you that you don’t give me orders like I’m some [General]. I remind you <em>what happens if negotiations break down. </em>Which side of your face do you like, Howkless?”</p>
+<p><em>Don’t—don’t—</em>a claw had his shoulder, and someone barked.</p>
+<p><em>“Someone get in there and stop—</em>”</p>
+<p>Saliss had Howkless’ arm in a grip. His eyes were very steady as Howkless’ mind flashed across Saliss’ record. He’d focused on the Turnscale part. Forgotten the rest.</p>
+<p><em>Held off an entire weyr of Wyverns. Dueled Wrymvr the Deathless on three different occasions solo. Thousands of Drakes killed or maimed in his one battlefield deployment against Manus. Destroyed most of Izril’s Guild of Assassins in a single blast. Slayer of two confirmed Old Ones.&nbsp; Killed three Named-rank adventurers in combat.</em></p>
+<p>Saliss of Lights. He <em>lifted</em> Howkless, and the [Major] twisted with an [Extremespeed Reaction]. But Saliss was stronger than he was. He <em>heaved</em> the Drake at the wall, and the Drake moved at speed towards the wall in a simple alchemy where one thing had to give. The enchanted wall or <em>his face—</em></p>
+<p>His cheek touched the wall and halted there. The cold, yellow pastel of the wall and Howkless’ face kissed lightly—but Saliss had halted the throw. He let go of the [Major], patted the Drake on the shoulder, and Howkless sat down.</p>
+<p>In a chair that Saliss had pulled over. The [Alchemist] dusted his clawed hands. He addressed the far wall.</p>
+<p>“I was waiting to see how smart you were. Dead gods, I’m tired.”</p>
+<p>He stretched, yawned, and walked towards the door. Howkless was staring at the wall. He didn’t move as Saliss began to saunter out, then turned. Howkless was not surprised; the Drakes, Gnolls, and Dullahan rushing into the room were, but Howkless had seen the look in Saliss’ eyes.</p>
+<p>“<em>Catch.</em>”</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>Saliss kicked over one of the stunned [Soldiers] after his ears stopped ringing, despite the earplugs he’d inserted. There was a hole in the wall of the room, and he was pleased with himself.</p>
+<p>No one was dead. Mind you, High Command were probably deaf and really unhappy about being showered with masonry, but they had protective spells. Saliss peered at them and nodded.</p>
+<p>General Edellein, Senator Errif—old faces. Too many new ones for his liking. The [General] had a sword half-drawn, and Saliss hoped he’d actually go for it.</p>
+<p><em>Imagine what would have happened if I’d tossed the new vial I was working on. </em>Ah, well, that wasn’t the point. Saliss wished he were happy, but the burning feeling in his chest never felt better.</p>
+<p>It wouldn’t have if he’d carried through and splattered Howkless across the wall. He knew from experience. If it ate, it only grew hungrier, a maw of…</p>
+<p>Saliss paused as he began to leave High Command, currently in alarm mode.</p>
+<p>“Oh. Hey, Esor.”</p>
+<p>The Garuda had been the figure on the left after all. He was giving Saliss a pained look as he dipped his head, a piece of paper with notes in one hand. He looked halfway satisfied, and Saliss threw him an ironic salute.</p>
+<p>Esor wouldn’t have been that stupid.</p>
+<p>Probably. Saliss turned and sauntered out the door. The [Receptionist], Innia, got the door for him.</p>
+<p>“Thanks for the earplugs, Saliss.”</p>
+<p>She had them in. Pallass had good people. It was just a shame the good people could sometimes drown in the rest of it. Saliss walked outside and took a breath.</p>
+<p>“Okay.”</p>
+<p>Now he knew.</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>High Command was not going to take that lying down. At some point, they’d stop being shellshocked enough to stand up, presumably.</p>
+<p>So Saliss moved fast. He doubted the military and surveillance arms were as coordinated as they had been; the Eyes of Pallass were the only people who could stop him in any meaningful way, or follow him at least, and they still followed orders, even if they had their own chain of command.</p>
+<p>They were likely fighting over Saliss with High Command, so they wouldn’t stop this next part.</p>
+<p>Saliss found Mirn on the 3rd Floor, right where he’d said Mirn was: overseeing a group of [Haulers] working one of the many storehouses filled with preserved goods.</p>
+<p>“Hey! <em>Are you the person with my salamander skins?</em>”</p>
+<p>Mirn jerked around, and the entire work crew stared as an angry, naked Saliss of Lights stomped up. Saliss was pointing at Mirn.</p>
+<p>“Dead gods, it’s Alchemist Saliss. The naked weirdo! He just blew up the 9th Floor!”</p>
+<p>A Gnoll groaned, and one of the Drakes stared at Saliss with open-mouthed disgust. Mirn just threw up his claws.</p>
+<p>“Alchemist Saliss? What? I’m doing a bunch of goods for the New Lands—”</p>
+<p>“No, you! I know you! You’re Melm! I’ve been waiting on those salamander skins all day!”</p>
+<p>“It’s Mirn. I—”</p>
+<p>“<em>Excuse me. Excuse me. ‘Mirn’ and I have to have a word. </em>If he’s not Melm, I bet he knows a Melm.”</p>
+<p>Saliss barged forwards and dragged Mirn out of the group. Some people tried to stop him, but Mirn just waved a claw.</p>
+<p>“Damn—tell the [Warehouse Manager]—well, just tell him!”</p>
+<p>“Careful, Mirn! We’ll call the Watch!”</p>
+<p>Mirn’s crew was genuinely concerned, and half-tried to stop Saliss, but Saliss webbed one’s feet down with a vial. Mirn shouted back.</p>
+<p>“Don’t bother! I’ll sort it!”</p>
+<p>He let Saliss drag him down an alleyway, then Saliss deployed silencing spells, and Mirn hissed at him.</p>
+<p>“Saliss! Did you really blow up your workshop? Why are you using our emergency meeting routine?”</p>
+<p>“Yes. Doesn’t matter. Mirn, I just met with High Command. The new group that’s taken over for the old man.”</p>
+<p>Mirn knew more about the inner workings of Pallass’ military than most commanders. He blanched.</p>
+<p>“Oh, Ancestors. It didn’t go well?”</p>
+<p>“I blew a hole in their walls. <em>Guess.</em> Mirn, tell everyone to lock down this month. No parties, nothing, until I give the word.”</p>
+<p>The [Protector]’s eyes widened in horror.</p>
+<p>“What? They’re not negotiating at all?”</p>
+<p>Saliss gave him a grim smile.</p>
+<p>“Oh, they are. But their first move was to arrest you. They don’t <em>get</em> it.”</p>
+<p>“Fuck.”</p>
+<p>“Yes. So here’s what we’re going to do. Call off work—I’m harassing you and the entire Loader’s Guild until I get my damn salamander skins. We’re going with one of the plans. Give me thirty minutes, and I’ll meet you in my house.”</p>
+<p>Mirn’s eyes flickered. He might have been a retired soldier, but the war hadn’t really ended for him. It had just changed nature.</p>
+<p>“Got it. Make it forty in case I have to fake Melm.”</p>
+<p>“Just have them look around. Melm’s a long-dead [Trader]. I’ve probably been scammed.”</p>
+<p>Mirn nodded. He stepped back, and Saliss stormed off. He didn’t even have to pretend to be angry. But then again—citizens of Pallass stared at him, asking what he’d done <em>now.&nbsp;</em></p>
+<p>Hero. Annoyance. Nudist. He was many things to Pallass, and Saliss tried to smile. He was the funny one, the one they took for granted. Their version of the crazy Human of Liscor.</p>
+<p>He wondered if he’d made a mistake, being it for them all that time ago.</p>
+<p>Well, today?</p>
+<p>Today…</p>
+<p>Things were changing.</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>Mirn had a key to Saliss’ house and was inside when Saliss arrived. Saliss was checking a Chest of Holding he’d lugged in.</p>
+<p>“Careful. Don’t touch it; I just salvaged everything I could from my workshop.”</p>
+<p>“Seith?”</p>
+<p>Mirn heard about alchemy projects, too, when they met and Saliss complained. Saliss grimaced.</p>
+<p>“It’s unpredictable. Well, I take it back. It’s predictable, but it makes timings and power go off the scales. I blinked.”</p>
+<p>“Seems like a normal problem for an [Alchemist]. Dead gods, Saliss. Are we doing this?”</p>
+<p>Saliss shot Mirn a sardonic look.</p>
+<p>“Stop panicking. They called my bluff only to realize they made a mistake. I’m calling theirs. Need more gold?”</p>
+<p>“Eh, I just looted your supply. I hope I pull it off.”</p>
+<p>“Just do it long as you can. Put out the word?”</p>
+<p>“Three dead drops and it’ll spread. Saliss…how bad are the new ones?”</p>
+<p>Mirn stopped Saliss, who was trying to expedite this part of things to stay ahead. The Named-rank reluctantly slowed down. Sometimes, he forgot Mirn was the more nervous of the two.</p>
+<p>[Protector], not adventurer. They were both, in the Turnscale system of governance, which was decentralized, ‘Architects’. People who built safe places. However, there were also Sentries, and Mirn doubled as one of them.</p>
+<p>Saliss was more of a Sentry for all of Pallass, but he was also the liability. He wasn’t a Mason who could build things up day-by-day for a few people. Few knew he was even a Turnscale, but those who did—got it.</p>
+<p>“We’ll work it out, Mirn. At the very least, I can maintain the status quo. But I can’t let them push <em>back</em>—hence all of this. I was working on the seith as part of it. So long as they need me, they have to give me what I want. Maybe more with the old man gone. But first, we need to set expectations high as can be. <em>The highest.</em>”</p>
+<p>Saliss waved a claw at their preparations. Mirn gave him a steady nod.</p>
+<p>“Got it. I can do it, Saliss. It’ll be like a vacation from the job. I…”</p>
+<p>He paused a second and grinned.</p>
+<p>“This is so stupid, but it’s probably good I was getting out of Pallass a while. Do we have five minutes?”</p>
+<p>“Mirn. If this is about something like your grocery association or you wanting to adopt a new dog or something—I am really not in the mood.”</p>
+<p>Saliss checked around his house, tossing things he thought he might need into his bag of holding and dividing some more gold and a few potions up for Mirn. They had both been part of a squad that had specialized in using alchemy in battle back in the day, so Saliss trusted Mirn with his gear. Mostly.</p>
+<p>Mirn drank his first potion, and Saliss avoided looking at him as Mirn spoke.</p>
+<p>“No…okay, don’t get mad. It’s just—you know how I have to sometimes take care of a neighbor’s kids?”</p>
+<p>Mirn lived in a neighborhood, not like a pariah, like Saliss, and people liked the former [Soldier], who was respectable, just as Saliss claimed. The [Alchemist] rolled his eyes.</p>
+<p>“Is it more drama with the mother who keeps drinking?”</p>
+<p>“No! Well, sort of. She was having this huge argument with one of her kids, and I was babysitting that Dullahan couple’s child. Which they trusted to me for the first time ever—”</p>
+<p>Saliss’ glower forced Mirn to expedite the conversation.</p>
+<p>“—and they were arguing because one of the things the Drake boy, Lessil, had to do in class—he’s eleven—was write a complimentary letter about someone he appreciated. You know, good writing, etcetera? His mother wanted to help him, but he was writing a letter about his best friend…another boy.”</p>
+<p>Saliss had stopped packing up some clothing. He squeezed his eyes shut as Mirn went on, and the [Protector]’s voice was excited.</p>
+<p>“His mother wasn’t having it, and she kept wanting him to write to a girl—you know, a good opportunity? But Lessil kept saying he liked his friend, Heord—a Dullahan—more than any <em>girl.</em> And his mother said he’d learn, but Lessil was getting upset and saying ‘no, no, it’s the same’. And I kept thinking if I could just get a second to talk to him—”</p>
+<p>The [Protector] was excited, smiling—right up until the point that Saliss grabbed him by the clothing and slammed him against the wall of his house so hard he almost cracked the stone.</p>
+<p>“<em>Are you stupid, Mirn?</em>”</p>
+<p>“Wh—”</p>
+<p>Mirn gasped for air. He struggled, reflexively, and Saliss hissed at him.</p>
+<p>“Do you <em>want</em> to kill him? That boy? No, both of them? Are you <em>trying</em> to kill yourself?”</p>
+<p>“Saliss! I wasn’t going to do it! I was just thinking—”</p>
+<p>“<em>Thinking</em> is the first step to doing something, Mirn. You have a word with that boy and the best case is he reports you. The <em>worst</em> case is that he writes a letter with what you told him. Then he’s dead. His friend’s dead. And you. Are. Dead.”</p>
+<p>The [Protector] managed to grab Saliss’ claws and force him a step back.</p>
+<p>“I <em>wouldn’t. </em>I know all that.”</p>
+<p>“Why are you talking about it? <em>This is how Alcasi died, Mirn.</em>”</p>
+<p>“<em>I know.</em> I just—wanted to say something.”</p>
+<p>The passion in Mirn’s flashing eyes went out like a candle being snuffed and he stood there, unclenching his claws. Saliss was breathing in and out, and fear…genuine fear had replaced the other emotions. He grabbed Mirn.</p>
+<p>“It’s good you’re not staying in the city, then. Neither am I. Get it out of your head.”</p>
+<p>“It’s out, Saliss. I—just—maybe I’m wrong. Maybe he’s just best friends. I can’t stand to think how miserable he’ll be if—”</p>
+<p>“Stop babysitting.”</p>
+<p>Saliss was ruthless. Mirn lifted his claws.</p>
+<p>“I will. If I have to listen to—I will. Calm down, Saliss.”</p>
+<p>“I am calm. I need more sleep. Did I break anything?”</p>
+<p>The [Alchemist] paced around, then turned back to Mirn and, again, averted his eyes. Not in shame…at least, not for slamming Mirn against the wall. A different reason. Mirn produced the second tonic, took a swallow, and grimaced.</p>
+<p>“Doesn’t feel like it. Okay, am I doing this? Are you doing this?”</p>
+<p>Saliss of Lights looked at his friend, who said not a word of complaint in all of this despite having to quit his job and—</p>
+<p>They were asked to do a lot. Turnscales in hiding. Too much. All of it necessary and important, but all of it…<em>extra.</em> To just the job of living. Saliss breathed out, closed his eyes, and felt like he was still staring at that blob of red, waiting for it to turn orange.</p>
+<p>This next part was easy. Even enjoyable, arguably. But what came after that? The old man was no longer in charge.</p>
+<p>Huzzah. Nothing changed?</p>
+<p>Saliss was tired, but he mustered a smile for Mirn.</p>
+<p>“Let’s do it. And I’ll buy you all the drinks when this is done, huh?”</p>
+<p>Mirn nodded and punched Saliss’ shoulder. Saliss let it happen.</p>
+<p>“And let Onieva have some fun, huh?”</p>
+<p>He meant it, but Saliss hesitated for once. He shook his head, thinking of the Faerie Flower drink that let Onieva return…but without any knowledge of Saliss.</p>
+<p>“Onieva’s different these days.”</p>
+<p>Mirn paused and nodded.</p>
+<p>“I know. Actually, I like the old Onieva more.”</p>
+<p>“What? Why?”</p>
+<p>Saliss grew a bit annoyed, and Mirn explained.</p>
+<p>“This Onieva’s too hopeful. Too…happy. I know that’s the most cynical, selfish thing to say, but when she laughs, I think it’s easy. I hate that. Sorry.”</p>
+<p>Saliss blinked at Mirn, then smiled.</p>
+<p>“No. I’d hate that too.”</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>Saliss of Lights walked into the Alchemist’s Guild of Pallass, then the Adventurer’s Guild of Pallass.</p>
+<p>He did not get very friendly looks. The smoking crater of his workshop on the 9th floor was, uh, sort of proof of the contentious relationship Pallass’ top [Alchemist] had with everything in the city.</p>
+<p>Their pride, their embarrassment…the same for the Adventurer’s Guild.</p>
+<p>However, Saliss didn’t stay long. He strolled in, naked as could be except for his belt of potions and bag of holding.</p>
+<p>“Hey, you. And you. And how’s it going, you?”</p>
+<p>“Adventurer Saliss. You don’t have any salamander skins waiting for you at the docks. The Loader’s Guild is lodging a complaint.”</p>
+<p>The [Receptionist] at the Alchemist’s Guild was trying to be polite; normally, Saliss wasn’t that bad. But today? The yellow-scaled Drake gave her a blank look as he sauntered over to the counter and grabbed a piece of parchment. He reached for an inkpot, and she sighed.</p>
+<p>“Oops. Sorry.”</p>
+<p>“No, go ahead.”</p>
+<p>He never usually asked. Saliss gave her an apologetic grin and wrote something down with neat handwriting. Probably a request for salamander skins. The gloomy Garuda waited as Saliss muttered.</p>
+<p>“This isn’t about the Loader’s Guild…here. Sorry for the inconvenience, and have a good day! Hi, you, and you. I’m naked.”</p>
+<p>He handed her the slip of parchment, and she stared at him as he sauntered out. [Alchemists] sighed, averted their gazes, or asked what he’d <em>done</em> to cause such an explosion as the Garuda stared at the piece of parchment.</p>
+<p>“What did he want <em>this time?</em>”</p>
+<p>The new [Guildmaster] asked as he cracked the door open. He was nervous, especially since the last time Saliss had appeared, the old [Guildmaster] had lost their job in dramatic fashion.</p>
+<p>Wordlessly, the Garuda showed him the note, and the [Guildmaster] started laughing. She…did not. And she stared at the parchment again. It said:</p>
+<p>&nbsp;</p>
+<p><em>I quit.</em></p>
+<p><em>—Saliss of Lights.</em></p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>The same message went to the Adventurer’s Guild, and by the time Saliss had reached the Mage’s Guild, word was spreading. But he just waited in line, then decided to skip the queue and stood at one of the [Receptionists]’ desks with a stack of papers.</p>
+<p>And spectacles of all things. The Drake wrote for about forty minutes, grimacing as he handed over a stack of documents, including a passport.</p>
+<p>“Okay, if you copy all that over…that’s thirteen documents. To Oteslia’s Office of Immigration.”</p>
+<p>The [Scribe] at the desk stared at the documents and then at the completed papers. The Dullahan cleared his throat.</p>
+<p>“So you intend to send—”</p>
+<p>“Now. Here’s the payment and tip.”</p>
+<p>Saliss lifted the spectacles and gave the [Scribe] a harried smile. He ignored the people pointing at his back, some incredulously, others worried.</p>
+<p>“Now? So you are planning on—”</p>
+<p>“I believe that’s between me and Oteslia. But yes, that should be the entire application for citizenship. If they have any other forms, please tell them I’ll be able to fill them out in person rather than bouncing a [Message] to me in the city. Thank you.”</p>
+<p>Saliss plonked gold coins down, and it was a very generous tip. Then he strode out of the Mage’s Guild. He took a lift down to the 1st Floor, walked towards the gates, and rented a horse from the stables. Then he rode out, ignoring a few people asking for a quick word. Only the Alchemist Guild’s [Receptionist] and the Adventurer’s Guild’s Guildmaster, really, and a few others.</p>
+<p>The High Command had already heard about the stunt, of course, but that was what they considered it.</p>
+<p>A stunt. They were considering a course of action carefully and had the Eyes of Pallass monitor Saliss’ progress. And indeed, he came back after less than an hour, before news had even begun to spread, and more than one person, including General Edellein, remarked that it was just as well they hadn’t wasted a thought on it.</p>
+<p>The Eyes of Pallass were told to relax. Then, one reported losing sight of Saliss before relocating him…on board a carriage of the fast-moving transportation service, Wonders of Izril.</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>Saliss was fifty miles out from Pallass before he saw the [Driver] doing a double-take at his passenger and raising a speaking stone to his lips.</p>
+<p>So he guessed that was how long it took before they’d noticed. It was sad, really. The Eyes of Pallass weren’t to blame; they had a weak spot: when the top agents watching you were rotated out for the regulars, there was a window when neither group was on top of you.</p>
+<p>It wasn’t supposed to function like that, but if High Command gave orders and the regular procedures were bypassed, you got that sloppy overlap—ironically, almost only in Pallass, where the agents were ‘in the same city’ without the acknowledgement that it was a big damn city.</p>
+<p>Saliss knew that because he had served in the Eyes of Pallass for a while. He hummed to himself as, with breeches on, he finished autographing the other passengers’ cards.</p>
+<p>“Thank you, Alchemist Saliss! And for putting pants on.”</p>
+<p>He winked at one of the gratified Drake ladies sitting in the carriage and drew a smiley-face on a card for her son.</p>
+<p>“I do wear pants, especially on rides like this, Miss Aldatail. I’d hate to inconvenience the other passengers.”</p>
+<p>“Well—we do appreciate it! Would you be willing to tell us some tales of your adventures?”</p>
+<p>“I don’t often—but I suppose to pass the time.”</p>
+<p>He’d brought a book, but Saliss elected to speak for a while until he had to have a sip of something and some snacks. It was a two-day carriage ride to Oteslia, after all. Nearly nonstop.</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>When he arrived at Oteslia, there were people at the gates waiting to stop him. Or maybe just have a word, but the Oteslian contingent just shoved them aside.</p>
+<p>“Adventurer Saliss! We received your application! May I ask, ah, how serious it is?”</p>
+<p>“Hello! I’m naked. What application? Oh, that…well, I was thinking I’d like a dual citizenship. You know, when you’re adventuring, times get tough. And if you had <em>two</em> passports to wipe your ass with, that’s better than one, right?”</p>
+<p>First Gardener Shaerrha Brasswing’s smile grew a bit waxy as Saliss sauntered out naked, but she nodded.</p>
+<p>“Well, we would be delighted to let you fill the application out in peace—and I believe one of your friends offered to put you up, unless you have accommodations?”</p>
+<p>“<em>Mivifa!</em> And her nag of a Pegasus! There’s my favorite Oteslian Named-rank adventurer who rides a Pegasus!”</p>
+<p>“Saliss.”</p>
+<p>Mivifa tried to smile, but she gave him a worried look—Saliss just kept walking, ignoring someone fighting now to get at him.</p>
+<p>“Some peace and quiet is all I need. Oh, whoops—”</p>
+<p>Saliss tossed a [Sticky Webs] potion and nailed a group of bystanders and a cluster of Drakes shouting his name. He waved a claw.</p>
+<p>“Sorry, folks! Hey, nice city. Where’d you get it?”</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>He was joking all the way to Mivifa’s spacious home, and when he got there, Saliss accepted a small bundle of paperwork and thanked Shaerrha Brasswing.</p>
+<p>“I think I can complete this tonight. Then it’s Saliss on the city! Lock up your valuables!”</p>
+<p>Mivifa watched him with great concern. She knew Saliss, and something about him was…off. Oh, he was the same Drake, not much worse for wear despite surviving the Solstice battle that had been a lot hotter than she’d thought it would be.</p>
+<p>He was slightly flushed, though, as he posed naked, and a few scrying mirrors had to manually censor his lower nether region. But she took that to be rage.</p>
+<p><em>What did Pallass say to him? </em>When he got inside, Mivifa’s best friend and mount, Feathi, gave the Drake a odd sniff, but didn’t instantly go to kick him. She snorted, and Saliss turned.</p>
+<p>“I can stay out of your spines if you want, Mivifa, or find another place. It’s going to be annoying for a bit.”</p>
+<p>“No, it’s fine…do you need anything?”</p>
+<p>“I’ll just fill this out first. I might as well get it over with.”</p>
+<p>It was only when he was sitting on a cushion, spreading the papers out and wearing spectacles, that Mivifa’s instincts finally honed in on what she had realized from the start. She gave Saliss a narrow-eyed stare, then traded a glance with Feathi.</p>
+<p><em>Wait a second…</em>Saliss sat there, filling out the forms with a steady hand, and Mivifa checked his neat penmanship. Then stared at Saliss.</p>
+<p>Then she punched him.</p>
+<p>“<em>Ow! </em>Hey, don’t make me use this!”</p>
+<p>Saliss recoiled and waved a potion at her, but that was all the confirmation Mivifa needed. She folded her arms.</p>
+<p>“You’re not Saliss. He’d dodge that. Who <em>are</em> you?”</p>
+<p>For answer, ‘Saliss’ grinned and removed his spectacles. He held out a clawed hand.</p>
+<p>“Mirn. Friend of his. I think we’ve met?”</p>
+<p>“Oh, from the adventuring days—you were staying with Lyonette back with all that chaos! Ancestors, is this a prank? Did Saliss put you up to it?”</p>
+<p>Mirn gave her an apologetic look with Saliss’ features as he shook his head. Feathi came over and sniffed him again; she must have sussed him out that way. Saliss’ more subdued antics, his handwriting, actually filling out forms rather than making someone else do it, and his poorer aim in hitting the civilians had all been clues.</p>
+<p>“It’s real. He’s actually having me apply, which I suspect is fraud, but he filled out the other forms already, so I guess it’s good enough.”</p>
+<p>“Dead gods, that’s a great disguise. If it wasn’t for you blushing in front of all the people and not being as quick as he was—I’d never guess! How’d you do it?”</p>
+<p>Mirn grimaced as he rubbed at his slightly-red scales.</p>
+<p>“I don’t know <em>how</em> he does the naked thing. I don’t think I fooled all the Eyes of Pallass, but I’m not sure how stupid the people he’s feuding with are. As for this? Here.”</p>
+<p>He showed Mivifa two vials.</p>
+<p>“Potion of Features Change and a tonic of Husky Voice. Well, it can do any voice, really.”</p>
+<p>“Impressive!”</p>
+<p>Mivifa had always known Saliss could do a variety of potions, but she was so used to his battle array that this made her do a double-take. Mirn took another sip of potion and sighed.</p>
+<p>“Yes, well, if you’re willing to have me, I’ll be here all week. I’ll actually turn back to normal if that’s okay, or into some random Drake, and hit the town.”</p>
+<p>“Be my guest. Seriously, what did they <em>do?</em>”</p>
+<p>Mivifa had never seen Saliss get this annoyed, but Mirn just shrugged.</p>
+<p>“I can’t actually say, but you know Saliss. He loves his city despite everything they put him through. I think it’s because the Cyclops has retired.”</p>
+<p>“Ah, right…can you tell me what he’s like? Chaldion’s not dead?”</p>
+<p>Mivifa and Feathi sat down for a talk as Mirn put aside the paperwork. After a while, she asked to see the potions, which really were high grade.</p>
+<p>“I never knew Saliss could make potions like these.”</p>
+<p>Mirn’s smile was sad.</p>
+<p>“They’re silly, useless potions, he calls them. Only good for spies. Not what he thinks he’s good at. Imagine how many silly potions he could make if he actually quit?”</p>
+<p>The Oldblood of Feathers looked up and dipped her head.</p>
+<p>“Yeah. So where is he?”</p>
+<p>Mirn shrugged.</p>
+<p>“I think he’s sitting in a basement.”</p>
+<p>“…Why?”</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>At the same time as Pallass was having a bit of drama, a bit of <em>worry,</em> a Goblin was in love.</p>
+<p>“It has a magnifying glass here. See? With notches to show where to shoot. And look at how it reloads!”</p>
+<p>The <em>click</em> of a Paige-quality crossbow was a delightful thing to Rags. She was inspecting Calescent’s gift and seeing modern ideas in the design. Everyone was patting Calescent on the shoulders.</p>
+<p>The [Spice Chef] had obviously shared the design around, and a bunch of Flooded Waters Goblins had come by to check out his new crossbow. Rags already had a bunch of ideas, but what she really wanted was to speak to the inventor.</p>
+<p>“She very nice. They all are. I have many recipes. Paneer. You eat?”</p>
+<p>Rags nodded instantly, and she reflected the inn wasn’t without things to see, even with Erin gone. But Erin…well. That was another thing distracting everyone.</p>
+<p>Everyone except one Goblin, who had left the main party of Rags and her followers to sneak downstairs.</p>
+<p>She was a creature of the night, a being of shadows and malevolence.</p>
+<p>She was…<em>Gothica.</em></p>
+<p><em>And she had levelled up. </em>The Goblin flitted from shadow to shadow, smirking as she noted the inn was busier than usual. But she had only one thing in mind, and that was the basement.</p>
+<p>Ishkr, the [Head Server of Tales and Fables], had a weakness. And that was the terror of having a Goblin jump at him out of the middle of nowhere. Gothica had terrorized him for weeks, and he wouldn’t be expecting her now.</p>
+<p>She knew he regularly moved around the inn, so he was likely to go to the basement any moment. She flitted into the basement and saw a glowing lantern was set next to the organized kegs and food bins and rubbed her claws together. Perfect! She began to find a good hiding spot and crept into a space between two huge casks of ale. She wiggled in, turned her head—and saw a naked Drake, mouth open, eyes bulging, <em>right next to—</em></p>
+<p>“<em>Yeaaaaaaaaagh!</em>”</p>
+<p>Gothica’s shriek and wiggling out of the barrels to run until she slammed into a support beam was the high point of Saliss’ day. When the [Goth] finally got her words back, she pointed.</p>
+<p>“What you doing here?”</p>
+<p>“Working. Shoo.”</p>
+<p>Gothica stared at Saliss as he went back to his desk. She gobbled—and then stomped off to find a better hiding spot.</p>
+<p>Saliss got back to work. He was trying to alter his Inferno Gel recipe to give himself the time he needed to complete the reaction, or just skip the usual process. He didn’t have to mess around with ingredients and risk the inn; his methodology allowed him to do most of the planning on paper first.</p>
+<p>After a while, Ishkr came downstairs.</p>
+<p>“Alchemist Saliss, can I get you anything to drink?”</p>
+<p>“The tears of Gothica? Or just some water.”</p>
+<p>The Gnoll grinned smugly as Saliss raised his head. He got Saliss some water and a snack of something nice—that paneer Calescent was trying with some chips—and Saliss went back to work.</p>
+<p>He was actually pretty boring while Mirn covered for him. Obviously, even with the empty inn, Pallass might notice him here, so Saliss had come here, asked to use the basement, and just gotten to work.</p>
+<p>Let Pallass sweat. Of course, he’d <em>really</em> asked to use the [Garden of Sanctuary], but funny thing—Lyonette had been cagey about that. She’d asked Saliss if the basement was fine, and he’d agreed not to meddle in her thing if she let him do his thing.</p>
+<p><em>Naturally, Saliss knew something was up. </em>He didn’t miss that access had been cut off for most people or the odd sounds he heard—or the fact that if he looked up, he could see recently-replaced floorboards above his head.</p>
+<p>“How much force does it take to snap a floorboard?”</p>
+<p>There’d been some of the replaced ones downstairs. Saliss had gone to snap one, then thought about how much power Erin’s [Reinforced Structure] Skill gave to an inn.</p>
+<p>How much pressure did it take to snap them like that? Also, why were there gold coins in the basement, rolled behind a few objects? There were probably logical reasons for all of it.</p>
+<p>Saliss was interested, he really was. But going upstairs was pointless in a sense; the events would envelop him when they did, and he could put his time to better use. And also…</p>
+<p>It was harder being upstairs.</p>
+<p>The old man was there.</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>Chaldion sat in a chair watching the coverage of the news. Erin Solstice was giving an interview, and everyone was hooked on it. Lyonette kept dashing into the common room to make sure her few guests, like him and Hethon and Sammial, were fine.</p>
+<p>“Mrsha, you promised to play chess with Chaldion!”</p>
+<p>A howl from the [World’s Eye Theatre] said that <em>this was not the time. </em>And Chaldion just sat there without a glint or the intention to move. He just watched…as did Rose, Joseph, and, a rarity, Imani. The [Chef] remarked as she sampled the new dishes.</p>
+<p>“This is so good. That girl’s definitely Indian. Who were the others, Rose?”</p>
+<p>“Aussies.”</p>
+<p>“Huh. I should have known they’d survive in Baleros.”</p>
+<p>Joseph commented as Rose fiddled with some paper and ink. Imani gave Rose a sharp look.</p>
+<p>“And here’s Erin in the news. She’s not even stopped. Rose, are you sure you wanted to come back? Are you ready? For this?”</p>
+<p>She tapped her white eyepatch, and Rose hesitated.</p>
+<p>“I’ve got to, guys.”</p>
+<p>“No. You don’t.”</p>
+<p>Joseph looked up seriously. He seemed older than before, and Rose hesitated. She put down her quill.</p>
+<p>“—Well, I want to help! I’ve done some stuff with Adetr, but I haven’t levelled up hugely. I want to make a difference here.”</p>
+<p>“Got any useful Skills?”</p>
+<p>“I was talking a lot about Earth with Adetr—I even helped him with diagrams and stuff. See?”</p>
+<p>Rose had been sketching a profile of Chaldion. It wasn’t bad…but it wasn’t the greatest thing the other two had ever seen. Imani put her chin in her hand.</p>
+<p>“That’s not bad. Did I know you could sketch, Rose? I found cooking, but I already knew I was good at it.”</p>
+<p>“I had an art major, and I was in college for it. I didn’t know if I wanted to get into, like, designing for a company or anything else.”</p>
+<p>“Huh…not a very applicable skill here. Maybe you could take over Solar Cycles?”</p>
+<p>“I can draw, not do…bicycles.”</p>
+<p>The table fell silent. They went back to watching. After a moment, Imani almost smiled and Joseph sat back in his chair.</p>
+<p>“<em>Damn, Erin.</em> Are you trying to get killed?”</p>
+<p>“Maybe she is.”</p>
+<p>Imani stared at the scrying orb. They looked around, but Chaldion didn’t even smile as his minder ate from their snack bowl. He just…watched.</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>Hard to go above. Saliss wondered about Erin, but in truth, he was just tired.</p>
+<p><em>Still not sleeping right. Regardless if I get this right…</em></p>
+<p>He was thinking, as the hubbub above died down, about the future. In a strategic, yes, damn strategic sense.</p>
+<p>Pallass would sweat when they realized, yes, he <em>was</em> going to get a dual citizenship. Not just High Command. They would know he probably wasn’t serious, but the average citizen would look at that small thing and feel less secure.</p>
+<p>It implicitly pressured the Assembly of Crafts and High Command, and it was a good move.</p>
+<p>Saliss had never pulled it before in his entire time in Pallass for one reason: the old man would have never fallen for it. Seeing how <em>this</em> High Command reacted? Whether they went to more threats when ‘Saliss’ returned or were more cunning or conciliatory?</p>
+<p>That was the goal. He was still, in the end, waiting. Saliss sat there, crossing out ideas and checking his note on alternate reactions, until he was interrupted.</p>
+<p>It was The Wandering Inn. Of course he was interrupted.</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>Empathy and curiosity were linked in The Wandering Inn. Someone had to check on you to see if you were doing okay—or if you were doing something interesting.</p>
+<p>The first to come, in lieu of the [Innkeeper], was a tossup. Saliss almost expected Lyonette but she was busy with some scheme. So it was the other one.</p>
+<p>The rapscallious, the impudent, the annoying child who tried to sneak up on him. He reached down, grabbed her by the head, and messed up her hair before letting her go. In reply, Mrsha furiously kicked his chair, which showed the level of forethought that went into her decision-making.</p>
+<p><span class="mrsha-write">Hey, hey, Saliss. What are you up to? Did you blow up your workshop again? Moving to Oteslia? What about Liscor? I could get a finder’s fee, I think. For me.</span></p>
+<p>Mrsha prowled around Saliss’ desk, but for once, he didn’t play ball. He just kept working, and the notations he was writing down made no sense to her.</p>
+<p>“Not interested, Mrsha. I’m actually busy.”</p>
+<p><em>It’s cool! </em>Mrsha tried to pose by his desk and fell and splatted onto the floor. She got up, sniffling.</p>
+<p><span class="mrsha-write">You want to know what we’re up to? I’ll trade you…for some seith. Want some food? Deathspice? It’ll only cost you an [Invisibility] potion. Something <em>cool</em> is coming. Might be profitable. You want in on it?</span></p>
+<p>She rubbed her thumb and forefinger together. Saliss looked up briefly.</p>
+<p>“Is Lyonette actually intending to pay me for my seith?”</p>
+<p><span class="mrsha-write">Maaaaaaaybe.</span></p>
+<p>“Then I don’t need to go through you. Sort of answers my question. Also, you have gold dust on your face.”</p>
+<p>Mrsha went cross-eyed and then scowled. She sat there a second, thinking.</p>
+<p><span class="mrsha-write">I could tell Pallass you’re actually here! Come on, spill the beans! Or I’ll spill them—<em>on you!</em></span></p>
+<p>She posed dramatically, and Saliss cracked a smile. Not a fake one. But the one Mirn described, like laughter, that had a weight to it Onieva lacked.</p>
+<p>“I do like you, you annoying, little menace. Don’t you change for as long as you can.”</p>
+<p>He meant it and tousled Mrsha’s head. She looked outraged at being treated like what she was: a child.</p>
+<p><span class="mrsha-write">I’m getting older! I walk around on two legs already! I’m not a child any longer!</span></p>
+<p>Saliss gave her a long look. He kept working as he replied absently, too tired to tell a joke or lie to her.</p>
+<p>“That’s true. You’ll be a terror to the Walled Cities when you lose the next battle. A Doombearer, a child of this inn. When Doombearers need you, you’ll be there.”</p>
+<p>Something about the way he spoke wiped Mrsha’s silly, confident expression off her face. She hesitated, then wrote.</p>
+<p><span class="mrsha-write">What do you mean, pray? We won for Doombearers! Forever! Now we’re Doombearers instead of Doom<em>bringers.</em></span></p>
+<p>“Sure you did. You won a battle. War’s not done. Maybe there’s a truce, but Doombearers will need you. Just wait. You’ve got time, I hope.”</p>
+<p>He sat there, writing, a nude Drake with yellow scales and, Mrsha knew…more. What she knew, exactly, of Turnscales and all of this mess, Saliss didn’t know. She knew Elirr and Hexel’s secret, but she was a child.</p>
+<p>She didn’t know enough about hate to be the best at appreciation, if that made sense. He should have left it there as Mrsha scribbled a response, but he felt like his old man today.</p>
+<p>He felt like the positions were reversed, and Mrsha’s indignant words stung him.</p>
+<p><span class="mrsha-write">We won. How could the war continue? Everyone knows Doombearers are good! Innocent!</span></p>
+<p>“Yes. You won a battle that cost Gnolls some of their greatest protectors and heroes. Even if he was a bastard, Xherw was one of the forces that kept the Walled Cities in check. Even if you discount him and every ‘bad Gnoll’, your people lost as much as they gained.”</p>
+<p>Mrsha stared at Saliss.</p>
+<p><span class="mrsha-write">It was a good thing. We beat the Drakes! A bunch of Walled Cities!</span></p>
+<p>Her paw shook a bit, and she glared at him fiercely. <em>Lie, abort, </em>his mind told him. Saliss’ tongue went on.</p>
+<p>“Oh, you did. You foiled their plans and sent their armies packing. Killed a lot of [Soldiers]. You know what the old man upstairs calls that? <em>Phase 2. </em>And that’s probably the plan he inherited from his predecessors. I’ll bet you that we’re on Phase 17 of the plan, all within the ALM.”</p>
+<p><em>What’s the ALM? </em>Mrsha was staring at Saliss, no longer having fun. He read the unspoken question.</p>
+<p>“Acceptable Loss Margin. Drake term. Look it up, Mrsha. Take a long look at the history books, not ‘now’. And ask yourself why Doombearers one day became the bad guys. Are you better off than Gnolls were four hundred years ago, or worse? Did last year change things for the better? Or did you take one step up back a slope you’ve been sliding down for centuries?”</p>
+<p>He sat there, lantern-light playing off of still features, lips moving, naked, but handsome enough. Attractive enough to be a leader. An inspiration for the Walled Cities. The old man had such dreams for his offspring and found, in a grandson, the one Drake who hadn’t yet died.</p>
+<p>A shame Saliss had turned out to be on another side in a war that had been going badly. Why were they fighting? Wouldn’t peace be easier?</p>
+<p>Better Drakes had thought that and tried for it. And watched themselves slip further down the slope. Saliss?</p>
+<p><em>Saliss was just hanging on.</em> He met Mrsha’s eyes, and she tried to write something down. Her little face wavered, and he saw her grow up, again, in a second. Then she fled.</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>Saliss felt bad about that. Bullying a kid was easy and low.</p>
+<p>Thus, he felt less bad about the <em>second</em> person to appear.</p>
+<p>Nanette.</p>
+<p>She was older, slyer, if only by relative margins, and came with another helping of food and some questions.</p>
+<p>“Octavia’s upstairs. She’d never want to bother you, but should I have her come down, Alchemist Saliss? She wants to learn. Oh, and Rhaldon’s going to be back in a week. He could get something for you, if you want, up north?”</p>
+<p>Saliss glanced up from his notes.</p>
+<p>“Cute. Hey, which one is this? The actually smart witch? Or the girl pretending to be smart and getting away with it because she’s young and thinks she’s cute?”</p>
+<p>Nanette’s self-satisfied smile winked out, and she hesitated. She took a breath as she smoothed her skirts unnecessarily and in a perhaps egregious motion.</p>
+<p>“…I’d certainly prefer to be the former, Saliss. What’s the difference between the two?”</p>
+<p>Saliss’ eyes glinted as he grinned at her.</p>
+<p>“The <em>smart</em> witch isn’t stupid enough to push her luck and knows when I’m willing to joke and when I’m not. The girl thinks she’s better than Mrsha.”</p>
+<p>Saliss hadn’t been there for the Mrsha versus Nanette war, or gotten to know the girl as well, but he thought she was cute. Especially when she tried to come back at him as if he were a Grimalkin, a Bird, or anyone less than an Erin Solstice.</p>
+<p>“I can tell when someone needs my help, and I am the only witch in this inn, Adventurer Saliss. I don’t think you’d underestimate Erin…again. And Erin wouldn’t leave you alone.”</p>
+<p>In response, Saliss laughed once, and his voice was direct as a crossbow bolt.</p>
+<p>“<em>Erin </em>is capable of helping or hindering me in any way.”</p>
+<p>The witch retreated. Saliss was now aware he was in a bad mood, but the lack of a third, immediate visitor let him process the fury in him.</p>
+<p>Fury was an emotion that befit someone who saw death, loss, setbacks, and had to endure. Movement. Cause. These were such poor words.</p>
+<p><em>War.</em></p>
+<p>It felt, to Saliss, like his anger came from his prediction of the future. Look ahead at the best case, if his ploy with Mirn won him concessions. They were concessions to the same deal. Perhaps…</p>
+<p>“Was it Kaligma? The old man? This unchanging city? I was so happy when I had the idea for a private space in a damn beach, even though it was never enough. <em>It would never fit everybody. </em>Now?”</p>
+<p>That was the heart of his angst. Onieva. A reduction in Pallass’ policies. Best-case scenario all around and it was a few skirmishes won in a war being lost. But he was afraid to draw new battle lines. He’d gone to war and seen the dead pile up, and now…</p>
+<p>Hence his mood.</p>
+<p>The Drake sharpened a quill in the basement until the third fool descended into the Den of the Alchemist.</p>
+<p>Act 4, Scene 5.</p>
+<p><em>Enter the Innocent Rose. </em>And here the crowd gets up and leaves the theatre. Saliss almost did himself.</p>
+<p>“Oh, come on. The order of progression is supposed to go up after Nanette, not down. Get Lyonette.”</p>
+<p>“Um. What?”</p>
+<p>Saliss’ <em>glower</em> almost stopped Rose dead in her tracks. She flinched; it was hard to approach someone with even a passing awareness of how to use their aura when they were tetchy, but she managed another step.</p>
+<p>“Mrsha and Nanette said you were mad, so I—”</p>
+<p>“—Decided to give it a shot? Please. Oh, by the way, ‘hello’. I thought you were with the Gnolls.”</p>
+<p>They hadn’t seen each other since she’d returned, and Rose’s return had not been significant enough for Saliss to comment on.</p>
+<p><em>Mirn</em> would be happy. But Mirn liked to protect people in need of his help. All Saliss saw was a liability to herself, to people she might spot or who’d endanger both by approaching her—</p>
+<p>He saw another kid; worse than Nanette and Mrsha because she was older and far less adorable.</p>
+<p>“I—I just wanted to see if I could help. Because I’m here. You know, with—”</p>
+<p><em>Finish that thought and I will throw this quill at you.</em> And it would pierce skin and bone if he hurled it right.</p>
+<p>She didn’t know about Onieva. But she <em>did</em> know Saliss was a Turnscale. He and Mirn had gotten Rose aside and quizzed her about things, but she’d gone off to the tribes, and frankly—she was a liability.</p>
+<p>“I thought you wouldn’t come back. I expected you to write that you had a Gnoll kid in your belly and were marrying that nice Adetr Steelfur. Go back somewhere you might be needed.”</p>
+<p>That did make her flinch. Rose. She had ties to the Players of Celum, but hadn’t left with Galina. She wasn’t a Kevin and hadn’t found her thing like Joseph. She was certainly no Imani. She was just Rose, in a way. Even Troydel was tied to Pallass, now.</p>
+<p>“I—I sort of wondered if that was going to happen. <em>Not</em> the kids thing. But I felt like…am I doing this? Y’know? I was there, and I was getting to be part of everything, and Inkar definitely was, but then I had this moment of ‘wait, what about the inn’?”</p>
+<p>“And you left. I applaud your ability to avoid finding a good spot for yourself. Was Adetr Steelfur that uncharming? I heard he’d changed. He was a simpleminded idiot when I met him, but you could work with that.”</p>
+<p>Saliss went back to writing. Rose paused and looked to the stairs, as if thinking of escape, but she folded her arms and tried to lean against the bannister.</p>
+<p>“I liked him. A lot. We had a bunch of discussions about Earth. Not all him nerding out about tech and stuff. I wasn’t going to make kids with him, but I was trying to explain things from Earth. And I was talking with Theikha, Feshi, other Gnolls. Theikha says she’s met you.”</p>
+<p>Saliss pictured the old [Shaman] of the Gaarh Marsh tribe.</p>
+<p>“Amazing. Small continent, isn’t it? Named-rank adventurer Saliss knows everyone.”</p>
+<p>“Yeah, well…a term kept coming up that Adetr only sort of knew the entire time. Turnscale. I ended up talking a lot about that. About my world. And this one. It was a shock to see how many things were the same, here. In my world, we don’t get killed for being a Turnscale and walking down the street. At least, not all the time.”</p>
+<p>Oh, and here it came. Saliss hadn’t been dreading this; he’d forgotten Rose existed and lived his life happily to this day. He wondered what would happen if he just tossed her out of the inn, maybe through a window. He’d open the window first.</p>
+<p>Would she get the hint? This was not what he needed. The Drake took a firmer grip on his quill.</p>
+<p>The Wandering Inn’s basement wasn’t great. Oh, it had been refurbished, but the stacks of crates of food instead of grain sacks with rats living in them and kegs stacked next to each other made it a glorified storehouse.</p>
+<p>A single lantern cast a dingy light over the entire area. Saliss could have illuminated it with something better, but this place that rats were too good for, like Haldagaz and Rhata?</p>
+<p>It suited him. He didn’t <em>miss</em> the hidden tunnel with some fake pieces of stone at the far wall. Saliss didn’t care about a lone Acid Fly crawling around; it had tried to spray him with acid twice, and he’d spat on it.</p>
+<p>He was suited to this spot. Rose was not. She was fresh-washed, with reddish hair he noticed she’d dyed violet in parts to match her eyes. She had on some Gnoll-themed clothing she’d gotten dyed—pale green fur around a jacket’s leather lining, for instance. Or maybe Gnolls just had green sheep. She was eighteen, young, and she had not a single scar he could see on her fair skin.</p>
+<p>It was weathered a bit from living outdoors with the Gnolls, and she had callused hands and could probably ride a horse, but she did not fit <em>here.</em></p>
+<p>Saliss?</p>
+<p>Saliss was the gremlin-Goblin who knew this room. Who fit in a miserable place with roaches that no one else wanted to even sit in, drinking and watching the door, with an escape route in mind. If he looked around he could almost see shades of people, laughing and living as loud as they could amidst whispers because it was the only time they could breathe and exist.</p>
+<p>Now came Rose. She realized, mid-explanation, that he was continuing to write and broke off from her explanation of her time with the Meeting of Tribes.</p>
+<p>“—about the gay rights movement and there are even historical documentaries you can look up. I showed the Gnolls a bunch of stuff. Hey, are you listening?”</p>
+<p>Saliss’ head slowly rose. He glanced at Rose and exhaled.</p>
+<p>“Are you still here? Seriously. Go get Mrsha or Calescent. <em>Please</em> stop talking about your lovely Gnoll boy. Why did you come back? To annoy me? Or would it just not have worked out with him?”</p>
+<p>Rose shook her head instantly.</p>
+<p>“Oh, no. I swing both ways. I think I told you that, rem—”</p>
+<p>Saliss <em>cracked</em> the quill in a claw, and Rose jumped.</p>
+<p>“Are you trying to piss me off? Didn’t Mirn warn you what would happen if some <em>friendly Drakes</em> ever heard you say that and understood what it meant?”</p>
+<p>He stared at her, and she flinched.</p>
+<p>“I got it! I <em>know.</em> We’re safe, here.”</p>
+<p>“Oh, we’re <em>safe.</em> You’re certain Lyonette’s safe and everyone else in the inn is. You’ve checked upstairs, and there were no guests who might remember what they hear, like <em>Chaldion’s minder</em> or anyone else. Good for you. So Adetr wasn’t a problem and you probably <em>weren’t</em> leading him on. Why did you come back?”</p>
+<p>At this point, Rose looked ready to actually run, but she burst out.</p>
+<p>“I came back because I thought I’d be needed. By you and Mirn, if no one else! Adetr agreed! He even got mad I’d come to the tribes!”</p>
+<p>The [Alchemist] had been calculating a throw from his belt and wondering how much six silver’s worth of ingredients was measured in units of Rose. Not a very economical tradeoff in his opinion.</p>
+<p>Getting rid of her, though? Priceless. However, that comment drew him up.</p>
+<p><em>Oh, so that’s why she came back.</em></p>
+<p><em>Wonderful.</em></p>
+<p>His claw itched, and he reached for another potion at his belt before stopping himself, but barely. Saliss’ mind ran ahead of this conversation, and it gave him a simple picture. Of a dead young woman and, perhaps, a lot more.</p>
+<p><em>Here’s another soon-to-be-dead one. She’s going to take Mirn with her. Maybe me. I should send her back to the Gnolls.&nbsp;</em></p>
+<p>Help. Him and Mirn? It fit her, it made sense, and of all the things she could have said, including shouting expletives at him and grabbing a metaphorical pitchfork—this actually made him the angriest.</p>
+<p>Saliss had already activated privacy spells the moment he’d gotten to the basement, but he still checked the stairs.</p>
+<p><em>Where the heck did Tessa go? I forgot to ask since I was in such a pet. She’s not here, anyways; I’ve checked. </em>He snapped at Rose, dropping even the veneer of civility.</p>
+<p>“You aren’t needed. Turn around, go back. Marry that Gnoll or find a position in a tribe. Become a [Chieftain]; go to Wistram. Stay in the inn if you have to. Never speak to me or Mirn about what you think you know again. You don’t get it.”</p>
+<p>“I do.”</p>
+<p>Rose’s chin jutted out. Saliss closed his eyes a second.</p>
+<p>“You are going to kill yourself. By which I mean get yourself killed. Suicide by stupid actions. Which is fine, but I won’t have you killing Mirn or anyone else. You do not understand—”</p>
+<p>“<em>I do, alright?</em>”</p>
+<p>Rose shouted back. Saliss paused, and she lowered her voice.</p>
+<p>“I do. I didn’t at first. I thought it really was a fairy world, even if things were as dark as home. Then I realized it wasn’t even that. It’s not even ‘now’. It’s fifty years ago. A hundred.”</p>
+<p>She had a faraway, scared look in her eyes, and Saliss of Lights pushed his notes aside for a second, and his ire faded as he saw something he appreciated.</p>
+<p>Fear.</p>
+<p>Real fear and understanding. If not complete, enough for him to not chase her away and enough to give Rose a bleak, dark smile.</p>
+<p>“Well, that’s just dandy. Sit down, then, and pull up a chair.”</p>
+<p>There was a wooden stool down here; Saliss got it, and Rose sat down on top of it. Then she squeaked.</p>
+<p>“<em>Hey! Wait—</em>”</p>
+<p>Saliss picked <em>up</em> the stool and began to carry it upstairs with Rose on it. He dumped her on the ground, closed the door, and locked it, then dusted his claws and went back to his desk.</p>
+<p>…Unfortunately, Rose was already there, panting, having used the [Garden of Sanctuary] to get back in. Saliss eyed her.</p>
+<p>“The second time, I throw you as far as I can manage. Want to find out how far that is?”</p>
+<p>“Saliss! I’m on your side!”</p>
+<p>Rose protested, and Saliss’ claw was at her face, poking her nose. The Drake’s voice was very calm and direct.</p>
+<p>“<em>First. </em>I didn’t ask. Second. You’re useless. Third? I don’t even need a <em>third</em> reason because the first two make you completely helpless. You’re not Erin. You’re not even Joseph. You’re <em>certainly</em> not Kevin. Go away. Become a Galina and disappear from the inn, or a Troydel who gets to be marginally useful to the actually competent people. Why did Adetr let you return? If I were that idiot who met someone actually willing to put up with me, I’d have begged you to stay.”</p>
+<p>Rose was pale-faced, and Saliss could just see it. Adetr—a thickheaded Gnoll kid who knew how to fight—and a young woman who lacked his metal fur, but made up for it with her own level of obtuseness. Let them learn, grow up—and do it all away from him.</p>
+<p>However, Rose, who backed up until she was against Saliss’ desk, didn’t run off. She had just enough backbone to be annoying, and she retorted.</p>
+<p>“Go back? Adetr didn’t beg me to go! He got mad when I wasn’t sure if I should come back! He said I had a war to fight instead of helping him with his!”</p>
+<p>The second time she said that, Saliss blinked.</p>
+<p>“What?”</p>
+<p>Rose was breathing in and out.</p>
+<p>“My people. That is—Adetr didn’t really get it. It isn’t as bad a problem with Gnolls, Turnscales, that is. They have a really unhealthy viewpoint about still having to have kids for the good of the tribe, but they’re not stoning anyone for being different, most of them. When I explained it to him, and I showed Adetr how hard it is on Earth, and Theikha told us about Turnscales here—he said that I should come back and fight for <em>my</em> people. Rather than spending all my time with his.”</p>
+<p>The wording was similar to how Saliss talked, but it was such an Adetr-way of framing things that it made Saliss even more annoyed. So she had the Gnoll’s blessing.</p>
+<p>“And you told them you were going to help Saliss and Mirn, your best friends in Pallass?”</p>
+<p>Saliss picked up the quill, and Rose spoke quickly.</p>
+<p>“No! I didn’t mention anyone!”</p>
+<p>The Drake tossed the quill down. Then he sat, annoyed, angry, as Rose looked around and then sat on the stairs. She faced him, across the basement, sitting with light from the closed door filtering down around her. It made the sputtering oil lantern’s radiance grungier by comparison.</p>
+<p>Saliss sat at his table, inhaling, exhaling. Fine. They were doing this. It wasn’t like he wasn’t curious…his voice rasped.</p>
+<p>“Okay, start talking. At the very least, I can finish collecting the facts.”</p>
+<p>“About Earth? You know about Earth and everything else, right?”</p>
+<p>Rose looked at him, and Saliss rolled his eyes.</p>
+<p>“Please. We have Grimalkin <em>and</em> Troydel. I’ve read the reports. I’ve talked to Erin. But you know what they never mention?”</p>
+<p>He tapped his chest and spoke that word he almost never did.</p>
+<p>“Turnscales.”</p>
+<p>It felt so fragile coming out of his mouth. So…dangerous. And Rose? He didn’t trust her. He didn’t like her. But Rose sat down, and when she spoke—</p>
+<p>“For us, it’s…most people outside the community would just call it being gay or LGBTQ+. It’s not as bad as it is here, at least, not where I grew up in Los Angeles. I realized this isn’t…believe me, I figured out how things are over here.”</p>
+<p>The young woman leaned forwards, eyes flashing with indignation.</p>
+<p>“Plus, there’s no way anyone else but maybe Kevin or Imani would tell you about <em>that.</em> Because Troydel doesn’t know anything about us besides lesbian porn.”</p>
+<p>Saliss stared at Rose blankly until she clarified.</p>
+<p>“It was on the computer until I deleted it.”</p>
+<p>He started laughing then. Bitterly, and then shook his head. Then—Saliss listened.</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>“I wish you could have seen the [World of You and Me]. That would have answered so many questions.”</p>
+<p>Saliss wished he could have seen it too. The first thing Rose told him was of the Gnolls’ secret on the condition he swore himself to secrecy. Which he did. High Command would not learn of this from him.</p>
+<p>Perhaps it was a sign of how incautious Rose was to tell him the Gnolls’ greatest gift, but they were of the same nature, the same side, and no matter how much he wanted to deny that, and her, they could talk in ways few people could.</p>
+<p>Yet it was no gift. The more they sat there, the more annoyed Saliss got. It was not just the way Rose had a term for everything he had half-understood, had to figure out and talk with the few people Saliss had ever met who understood—and they were all different in their own ways—</p>
+<p>It was how she was…incautious. How she talked.</p>
+<p>“—So, we won equal representation. Gay marriages. And after that, um, we didn’t get more legislation. There were a lot of challenges, actually. Like this thing about a wedding cake. Okay, I need to explain more about our political system. So we have this Supreme Court—”</p>
+<p>“Hold on. There’s that word again.”</p>
+<p>“Which one? Queer? Transgender?”</p>
+<p>“No. ‘We’. You said you grew up after all these protests and movements. Where’s this ‘we’ coming from?”</p>
+<p>Rose blinked at Saliss. She hadn’t said <em>she’d</em> been marching or rioting. She’d gone to protests and organized events, but she was young.</p>
+<p>“Well, I’m talking about us. You, me, everyone.”</p>
+<p>“Excuse me. I’m a Drake Turnscale. You’re a Human of Earth. Not the same. And from how you define Mirn and me, <em>we’re</em> not the same either, are we?”</p>
+<p>Rose was energetic and had missed how Saliss was growing less and less animated. She nodded.</p>
+<p>“Okay, so Mirn’s gay. Just pure, awesome, gay. And you’d be what we’d call a transgender woman. Someone who—well, you know. I see you. Most people in this world, even back home, might not, but I get it.”</p>
+<p>“Oh. Thanks. And what are you?”</p>
+<p>Saliss’ voice was dangerously saccharine. Rose smiled and pointed a thumb at her chest.</p>
+<p>“Bisexual. I go both ways. I like the boys and the girls. If they’re hot or cute enough.”</p>
+<p>At this, Saliss clapped his clawed hands together and sat back, smiling.</p>
+<p>“Aha! Got it! So that’s why. You’re one of them.”</p>
+<p>“Them what?”</p>
+<p>Rose hesitated, and Saliss gave her a pointed smile. He gestured around the basement, as if it were a Turnscale bar.</p>
+<p>“You’re someone who’s a Turnscale when she feels like it. When things get too uncomfortable or you don’t feel like it, you get to be an upstanding citizen. Great. Can I get a refund on Earthers?”</p>
+<p>The young woman went pale, and Saliss waited for her to cry or protest. But Rose took a long, shuddering breath and put her hands on her knees.</p>
+<p>“Okay. Wow. That’s a bit too much like home. Fuck you.”</p>
+<p>The response was spicier than he anticipated, and Saliss raised his brows.</p>
+<p>“Mirn and I don’t need someone who wouldn’t pass muster as a full member of one of the bars here, much less on Earth.”</p>
+<p>“Go fuck yourself.”</p>
+<p>Rose snapped back, and she stood up, red-faced.</p>
+<p>“You sound exactly like—! I thought people here would be more accepting since everyone’s in hiding, but wow! I hear that all the time back home. I’m not ‘<em>actually queer’ </em>because I can ‘pretend’ to be straight and pass for it. I get it. I’m white. I’m—well, that’s normal back home. But I can’t help being bisexual. It’s not like I’m <em>choosing</em> it.”</p>
+<p>Her eyes flashed, and Saliss blinked at her.</p>
+<p>“Still makes it easier.”</p>
+<p>Rose twitched.</p>
+<p>“Yeah? I can’t help liking boys. I can’t help liking girls, either. Sure, it means I don’t get insulted to my face as much. If I kiss only boys I can hang out around ‘normal’ people. If I pretend I only like girls, I can hang out around ‘real’ people. But guess what? That means I don’t fit in aside from other bi people. Turns out even outcasts hate us.”</p>
+<p>She gave Saliss a betrayed look and one he had to admit seemed genuinely hurt. The [Alchemist] sat there a second and remembered a similar conversation with an upset Drake…</p>
+<p>He refused to apologize. The rest of his points stood. Here was a kid, and she spoke like a child.</p>
+<p>“Pipe down. Fine, you’re a Turnscale. If they catch you, they’ll lynch you, same as us. You didn’t have to come back here. What, do you think you can wave a white flag and undo Watch raids and change public sentiment across the Walled Cities?”</p>
+<p>Rose spread her hands earnestly.</p>
+<p>“I want to help, Saliss.”</p>
+<p>“We don’t need you.”</p>
+<p>“You need my perspective. I come from a world that’s ahead of this one—at least for equal rights! And it’s not perfect! I wish you were back in my world, actually! We’re still fighting, and you would be <em>amazing</em> if you were there.”</p>
+<p>Rose burst out, and Saliss raised his brows.</p>
+<p>“Me?”</p>
+<p>“Yeah. You or Mirn.”</p>
+<p>Rose gave Saliss a side-long look, and he began to grin, thinking it was a joke.</p>
+<p>“A naked Drake waving a sign would be funny.”</p>
+<p>“No, no. I meant <em>you.</em> Because people fight, but there’s no one like <em>you.</em> Someone scary. Someone who could blow up anyone who gets in his way. People fight, but they’re…people. They can get killed. If someone like you were there…”</p>
+<p>Rose gestured, and Saliss blinked. He forgot, sometimes, that Earth was a world without levels. Or healing potions.</p>
+<p>“I can die.”</p>
+<p>“But you’re <em>Saliss of Lights. </em>We have people who lead the charge, but they can’t punch a hole in a wall or destroy the Assassin’s Guild of Izril! Instead, we’re people who have to sue and demonstrate, and if something really bad happens…someone rolls in a tank or opens fire with a gun.”</p>
+<p>Ah. Saliss didn’t understand the analogy, but he got the other part. Regular Turnscales when a Watch squad kicked down the door.</p>
+<p><em>His claws twitched.&nbsp;</em></p>
+<p>“But they do fight.”</p>
+<p>It wasn’t a question. Rose tried to explain.</p>
+<p>“Yeah. There’s not as many riots—well, there are riots, but not like it was when there wasn’t any legal protections for us. Now, it’s more peaceful. <em>More.</em> The police will attack sometimes, but the laws mean they have to protect us. Even if they don’t actually do their jobs.”</p>
+<p>“So a mix of both?”</p>
+<p>“Yeah…sometimes it feels like—like—”</p>
+<p>Rose frowned, and Saliss answered for her.</p>
+<p>“It sounds like they found a good way to make sure you didn’t do as much damage or fight <em>them </em>as much. What, do they tell you when you’re allowed to protest?”</p>
+<p>“They don’t tell us. But you can get a permit. Otherwise, they’ll shut down a protest—”</p>
+<p>“Ah. That’s Drake tactics. You let them protest where it doesn’t matter. Nothing’s scarier to a [Guardsman] than a bunch of really angry people who hate your guts and know it’s you or them. It’s the same here.”</p>
+<p>“What? But Mirn said that no one recognizes Turnscales, and you have the bars he has to change—”</p>
+<p>Saliss laughed as he put his legs up.</p>
+<p>“Oh, sure. We’re still not anything legal. But I used to tear the city up with Mirn and some others back in the day. It wasn’t <em>bars</em>, it was us finding a member of the Watch and going to <em>their</em> bar. Torching shops.”</p>
+<p>“Whoa.”</p>
+<p>He hated that she sat forwards, eyes shining, as she stared at him like that was something…Saliss averted his gaze. Stared up at the ceiling.</p>
+<p>He was recounting the most banal of stuff that any Turnscale could tell you, or anyone with an understanding of what that actually was, in the cities. Nothing personal. Saliss went on, keeping his voice light as he could.</p>
+<p>“The old man cut me a deal. Now, it’s an uneasy truce. Sometimes someone calls in a tip, but the Watch gets slow, and we don’t do much fighting.”</p>
+<p>“Is it—why do it that way?”</p>
+<p>Saliss shrugged his shoulders.</p>
+<p>“Tearing up the city loses its appeal the hundredth time you do it, and if you’re caught, it’s over. I…Mirn and I lost people. It’s life-or-death like that. Mostly? I realized some of the idiots I was hitting didn’t even know why they were fighting us. Some <em>did</em>. Others? They were good people except for this, or they were just following orders. They had families.”</p>
+<p>He fell silent.</p>
+<p>“I wish I’d never figured that out. That was why I cut a deal with him.”</p>
+<p>A nod skywards. Rose’s head lifted, and she began to see the full picture. The deal. The deal now in question or worse…being renewed.</p>
+<p>Saliss was staring a hole in the wall.</p>
+<p>“You can’t murder your way out of a problem like this.”</p>
+<p>He paused, and Rose saw his eyes flick to her.</p>
+<p>“They’re lucky I believe that.”</p>
+<p>The young woman held her breath, then burst out again.</p>
+<p>“I love you. You’re like—a hero. Only twice because you’re a Named-rank adventurer! You do all this, and no one knows, no one—Theikha told me Zel Shivertail was one of us!”</p>
+<p>And there it was again. It was hard to be mad at someone who was giving you the hero worship treatment, but Saliss was doing a good job. He was more annoyed now than purely angry. He saw why she had come back. She thought this was going to be something.</p>
+<p>Saliss thought of Theikha and cursed that bossy, meddling…rather nice damn [Shaman]. The nicest leader of a species he’d met.</p>
+<p>“Yep. Figures she knew.”</p>
+<p>“And General Sserys?”</p>
+<p>“Most of Liscor’s army knew. Or if not knew…they’re a weird bunch. Liscor was always weird. It doesn’t matter, kid. Those two were as Turnscale as you get, I heard, and look where we are.”</p>
+<p>Rose was gabbling, trying to push words out as fast as she could think them.</p>
+<p>“But what if—what if Zel Shivertail had said he was Turnscale! Or Sserys? Or—you?”</p>
+<p>The question hit Saliss straight between the eyes, and he sat up and growled.</p>
+<p>“People <em>did</em> know. Why do you think Zel Shivertail, the Tidebreaker, <em>hero of the Antinium Wars,</em> never had command of all the Walled Cities? Leaders found out about him and Sserys and distanced themselves until he was in the north, alone, with <em>Magnolia Reinhart</em> as his biggest ally.”</p>
+<p>“But if everyone knew, not just the leaders—”</p>
+<p>“—Maybe they would have torn him apart. It’s not your world, Rose. Having someone toss a bottle at me for being a Turnscale? Sounds like a dream. Over here, they’ll be outside my house with swords.”</p>
+<p>Rose caught herself, and her head fell, but again, lifted.</p>
+<p>“—That’s how it happened in my world. People started coming out. It wasn’t easy. They got attacked, persecuted, and you know what? We attacked right back sometimes. But it started, and when it <em>started</em>, it wasn’t stopped. They can pass all the laws they want and argue all day, but the genie’s out of the bottle. It’s never going back in.”</p>
+<p>“You sound like Mrsha. The Djinni can always go back in the bottle. You have no idea how cruel they can be.”</p>
+<p>Saliss turned away, arms folded. The young woman stood up excitedly.</p>
+<p>“Saliss! I wish you could see it! It’s not perfect. It’s not even great, sometimes. But we have—culture! Drag shows, and we dress in ways, yeah, they say are ‘gay’ or we get stereotyped into, but we have songs and celebrities—and stories and movies made just by us. We have parades, and we get attacked, but there is a community out in the open. Not this. Not—”</p>
+<p>She kicked at a gold coin in the basement of the inn and looked around. The [Alchemist] half-turned, and Rose studied him.</p>
+<p>“I came back because I wanted to tell you what it looks like back home. If we can do it, a bunch of Humans—so can you. I live in a world that got this far. And it’ll get better.”</p>
+<p>She gave him a&nbsp; huge smile, and Saliss stared at her and realized she was even more of a kid and, in her way, cuter than Mrsha. What a stupid smile. He had half a mind to toss her headfirst in a keg of ale.</p>
+<p>Saliss of Lights was curled up, unhappy, a bitter ball of it, but when Rose was done, looking at him, a part of him uncurled. He sat up a bit and he managed a sigh.</p>
+<p>“Okay. You got me. That’s a good fairy tale. But saying how it went down in your world and expecting it to go the same here is different. The instant the Walled Cities found out I, even a Named-rank, was a Turnscale, they’d hush it up, excommunicate me, and go back a hundred years. Believe me when I say this is far better.”</p>
+<p>Rose gave him a serious look.</p>
+<p>“I know. But you know what helped the Turnscales in <em>my</em> world, Saliss?”</p>
+<p>“What, having five words instead of one?”</p>
+<p>“No! <em>Television</em> was what helped us. It could do the same here, as well. If we had a moment where someone sits down, explains what being gay is, <em>millions</em> of people maybe go ‘wait, that’s me’, and other people listen and realize that we’re not monsters.”</p>
+<p>Rose spread her hands, framing an imaginary box in the air, and again, part of Saliss’ head lit up.</p>
+<p><em>Mass scrying spells. The Walled Cities had learned how to censor some of it, but they couldn’t block all the broadcasts. And this very inn had proven how pernicious knowledge was…</em></p>
+<p>No. Stop it. He averted his head, but his mind was racing.</p>
+<p><em>And the Earthers had brought it here in its exact form…</em></p>
+<p>“What if Saliss of Lights told all of Izril he was a Turnscale?”</p>
+<p>It flickered in Saliss’ mind. One last gigantic middle finger to Pallass. Better or worse, even if it meant nothing and they covered it all up, a rallying cry. And you could keep people shouting it.</p>
+<p>For a second, he indulged in that fantasy, and his heart lifted. Then a thought sent it crashing down to earth, and Saliss began to laugh.</p>
+<p>Oh.</p>
+<p><em>Oh, he’d just had a thought. </em>Rose looked at the [Alchemist] as he slipped from his chair and landed on the floor. Then covered his eyes.</p>
+<p>“Ah. Aha! <em>Got me one last time, old man! </em>Damn it. Damn it…I never win.”</p>
+<p>Saliss was staring up at the ceiling. Rose blinked at him.</p>
+<p>“What’s wrong with you doing it?”</p>
+<p>The Drake looked up at the rafters, a bitter smile on his face.</p>
+<p>“Saliss is a clown. Saliss is the naked Drake of Pallass. It’s easy to call Saliss literally mad, a crazy Drake. Zel? Zel could do it. Or Sserys. He got me. I thought I was done, but he pitched it to me years ago. Not telling me to take off my clothes, but—was that always in his plan? Making it so that even if <em>I</em> said something, he could save my reputation? What’s being a Turnscale if you’re already Saliss?”</p>
+<p>The [Alchemist] began to giggle. Then broke off. Rose’s voice was quiet, and now she seemed to get it.</p>
+<p>“Oh. Oh, Saliss…how bad was he? Chaldion?”</p>
+<p>“<em>Better than his predecessor.</em> But also better at checkmating me. I really did think…it’s better in other parts of the world. Not that much better, sometimes. Go away, Rose. Go join the Gnolls. Go to Drath or even the Iron Vanguard. In their way, it’ll be easier. Go to Khelt. Don’t do this. You’ll end up like me or Mirn, bashing your head against a wall. And they built these cities to last.”</p>
+<p>The conversation had gone better than he could have hoped. And still—when Rose got up to give him a hand and pull him up, she was all vim and vigor.</p>
+<p>“So you’ll let me talk to Mirn? Introduce me to a Turnscale bar? I could help set up one here and get a movement—”</p>
+<p>Saliss took her claw, yanked Rose down as he rose, and then dragged her up and slammed her onto the desk. It was the third time he’d bodily moved someone today.</p>
+<p>He was in a bad mood. Her eyes went round as the breath left her lungs, and Saliss heard a crunch as she broke the inkpot.</p>
+<p>“That has to hurt. But let me tell you what hurts. What <em>hurts</em> is having a spiked club rake across your face, you little brat. You know why they put spikes in? <em>So they can pick you out of a lineup even if you get away. </em>The Watch puts ink on the spikes so, <em>even if you heal</em>, the ink gets trapped under your scales. The only way to stop that from showing up is by removing the ink by cutting out the scales and flesh around each puncture before you get to use a potion.”</p>
+<p>“S-Saliss. I know they’re bad. I just want to—”</p>
+<p>“You can’t solve this, Rose. You can’t <em>fix</em> it. Look at you, you kid from another world. You think it’s the same? Humans? Drakes? Turnscales don’t fit into Drake society. Drakes loving Drakes of the same gender is bad enough. It messes with our laws, our culture—Drakes like me are the worst. We’re freaks. Worse than Scorchlings who should be blessed. We want to mess with our place in the world, a place the Ancestors gave us. I’m a Drake perverting my nature by playing with my form with alchemy—and I can at least trick people constantly.”</p>
+<p>Rose’s voice was weak; she could barely breathe, but somehow she still spoke to his face.</p>
+<p>“You’re not <em>tricking</em> anyone. Don’t say that. You’re a woman—”</p>
+<p>Saliss’ claws tightened, and Rose lost what air she had left as he leaned on her chest.</p>
+<p>“See that? That’s why you’re a dead woman. I should tie you up and send you on a horse back to Adetr. You don’t get it, Rose. This isn’t Erin’s Goblins. No, wait, it is. She’s chosen to change this world, to make her stand, and you know what they did? They reached for the Tier 7 spells. She won’t win her war. She’ll move her little white flag forwards one step. And then maybe someone will carry it forwards for her and die pushing it, or maybe they’ll wipe out every Goblin they can, like they do after Goblin Kings arise. This is a <em>war.</em>”</p>
+<p>“I know!”</p>
+<p>He let go of her, disgusted. She had such earnest eyes—Saliss snatched his notes out of the growing ink puddle as Rose coughed and lay there.</p>
+<p>“You don’t know Creler shit. You think you’re ready for the war. You’re a [Rookie Soldier] coming to me to enlist. You haven’t <em>seen</em> what they’ll do to you.”</p>
+<p>“So teach me. You and Mirn can. I’m willing to fight, to get hurt—<em>this matters, Saliss. </em>It matters like nothing else to me.”</p>
+<p>Rose scrambled up. She spread her hands.</p>
+<p>“I like the Gnolls. I love them. But I’m not Inkar. When Adetr and I talked, I couldn’t sleep when I heard about Turnscales. I knew I had to return and try.”</p>
+<p>“Yeah? Maybe I don’t want you on my conscience. Did you ever think about that? Maybe you’ll get Mirn killed.”</p>
+<p>“If you give me a chance—”</p>
+<p>The Drake went storming across the room, and this time Rose flinched away, but Saliss stopped, eyes roaming the dark basement. To the door. He could see it in his mind, a thousand times, a thousand different ways, a boot or hand or battering ram going through—a flash of light from an explosion—</p>
+<p>“<em>Mirn and I are the last two alive. </em>Do you think we were the only two? I’ve had dozens of friends, Turnscales, high-level ones, over my life. The last one was Alcasi, and she’s been dead and buried for six years. You want to show Turnscales to the world?”</p>
+<p>“The—there were riots. When the police got down on us, at one point, it was too much. We fought back and marched and <em>won</em>, Saliss. There are so many of us across the world. If we lit a spark—”</p>
+<p>Saliss claw jabbed Rose in the cheek, and she recoiled.</p>
+<p>“<em>If we lit a spark, they’d pour molten rock on us. </em>We lit a fire. Hundreds! Do you know what that idiot, Tesy, is part of? He’s part of <em>my</em> old movement, and I joined that movement when I was a kid. It’s been around for ages, for different names and for different causes. Sellme wasn’t the first. But <em>Sellme</em> made the mistake of actually doing damage to a Walled City. For him, it was Salazsar. For us? Manus.”</p>
+<p>His eyes reflected the flickering lamp light. Rose stared at Saliss’ face, and the ardor of passion drained from her.</p>
+<p>“What did they—?”</p>
+<p>The Drake realized he was leaning over her and stopped. <em>What am I doing? </em>He went to the stairs, sat down, and Rose sat at his desk, feeling at the ink on her clothing. Saliss spoke, too tired to stand.</p>
+<p>“The Watch used to be bad in Pallass. Bad in Manus. The thing about Turnscales is that…it’s different, Rose. Gnolls have always not really cared about us. Back when I was a kid, you’d run off to a tribe. These days, you move to Oteslia, or it’s okay enough in the Walled Cities, most times. You move <em>to</em> a Walled City or a good city like Marwsh where there are good bars and hideouts. But I heard from older Turnscales you left and joined a tribe.”</p>
+<p>“Whoa. And the Gnolls let you in?”</p>
+<p>Saliss shrugged.</p>
+<p>“A lot of people never made it. The Gnolls will let you prove your worth. But guess what the Drake cities thought? They thought ‘these are traitors!’ Better hang them as deserters. Manus used to have a policy. If you got found out as a Turnscale, they didn’t brand you, sell you to Roshal, or let a mob exile or beat you to death like the <em>real</em> good old days. Instead, they enlisted you. You get to be a [Soldier]. They put you on the front lines, and if you die, that’s that. If you live, guess who’s in the army for life?”</p>
+<p>“God. I mean—”</p>
+<p>Rose covered her face, and Saliss looked around for a puffer. He lit it, wishing it didn’t remind him of the old man or the old days, laughing with a crew of friends. Now it was just Mirn, and the ass refused to even smoke as much. Saliss turned and saw a Drake with bright yellow scales to his left, a Gnoll who’d shaved her hair so she had a strip that stood up, an Oldblood Drake tying ‘her’ wings back so no one would recognize her…</p>
+<p>A team.</p>
+<p>“We started a fight with Manus. With Pallass. And we got the bastards. We protested, we got [Soldiers] who were signed up for death to run off, and when the Walled Cities tried going after tribes, we even fought them. You know what Manus did? They got tired of sending their Watch to fight, so they sent [Soldiers]. City of War. Loves that. When we beat their [Soldiers] down, they sent their crack teams. Then they lost those, and they shrugged. Manus let us win. Then they poisoned an entire block with us in it.”</p>
+<p>“They <em>what?</em>”</p>
+<p>Saliss could still smell it. Something sweet in the air as he looked up and reached for a potion. Went for an alchemy set. Too late. He should have learned how to control the air long before that, but he’d been just a kid who knew how to melt Adamantium.</p>
+<p><em>Not how to conjure a poison cloud—or disperse it. </em>All he had was a single Bottle of Air—standard adventurer’s kit. One bottle for a desperate few to share. Not enough for an entire room full of people.</p>
+<p>In his soul, Saliss’ stained soul, he remembered that. Then the first, and only, time he had agreed to go to war between the Walled Cities, for their stupid pride and battles. He watched acid raining from the skies and molten fire and the old man looking at him, for the first time ever, with horror.</p>
+<p><em>And pride.</em> No, it never made him feel better. Saliss was glad it was he, Saliss, who had all that in him.</p>
+<p>Onieva should be better.</p>
+<p>Rose was silent, and when he looked up, she had tears in her eyes. Saliss shook his head.</p>
+<p>“And that’s why you’re useless. Look at you. Come back when you’re Level 50 and you have twenty people with you, ready to die, and we’ll talk, kid. Go get Adetr on your side, and we’ll send Drakes back to the tribes. And maybe when I’m old and gray, you and I will find out they’ve stopped raiding bars every week and it’s down to a month. That’s what we can do, but I don’t want you here.”</p>
+<p>“I’m not going. I’ll sign up, Saliss. I <em>will.</em> You—you expect me to hear that and turn away? <em>Really? </em>That means I have to help even more. 1000%!”</p>
+<p><em>Damn kids. </em>Saliss’ glare didn’t match his heart. His eyes flared, but he was just tired. He shook his head.</p>
+<p>“Rose. If you think you can help, and I admit, being from another world is novel—you can try. But you know what I bet?”</p>
+<p>He lit the cigar and blew on it. A careful stream of smoke, blue and wispy.</p>
+<p>“…I bet the people in your world, the ones still fighting, would say exactly what I’m telling you. This isn’t a fairytale. There’s no Saliss of Lights for us, no Erin Solstice. Turnscales? We’re here on the backs of the dead and the dying and decades of lost dreams.”</p>
+<p><em>Do you want to join us? </em>The Drake looked at Rose—and she beheld him more fully than any other Earther. All the scars masked, ironically, by his nudity. All the shattered hopes and failed attempts to pull them forwards. The halfway compromises, the small victories by working with the old man and selling his soul because it didn’t matter if it was him…Onieva was the only real one.</p>
+<p>Rose gave Saliss a tremulous smile, then. And that damn Earther, that stupid kid, bent forwards.</p>
+<p>“Well, you know what, Saliss? Now you <em>do</em> sound old. I believe we can do it before we die.”</p>
+<p>Her eyes shone with the kind of energy he remembered he’d once had. The Turnscale Drake looked up and resisted the urge to slap Rose across the face. Because what would be the point? Extinguishing the one damn good thing about her? He did feel old.</p>
+<p><em>I dislike your faith and belief and certainty. </em>But all Saliss did was whisper.</p>
+<p>“I am Saliss of Lights. I get people killed, Rose. I’ll throw you out of the inn. Kick you around Pallass. If you think you can stick around after that, I guess I can’t get rid of you. But remember—Saliss of Lights gets everyone killed, like Erin Solstice. Onieva’s someone else entirely. Even for you, my case is different. We’re different people.”</p>
+<p>“Says you. I wish I could…”</p>
+<p>Rose did something with her fingers, making a square out of them, and staring at Saliss through them, like someone using a camera to take a picture.</p>
+<p>“I wish I could <em>see</em> her. You’re not the first person I’ve met who’s trans, Saliss. Someone needs to tell you you’re not alone. That all this is—normal. Harder than anything, but you’re not a freak or accident or wrong. Ask me on a truth spell.”</p>
+<p><em>Great, now she was acting like he needed moral support. </em>And now he had so many questions about the people she’d met and how Earth did things. Saliss grunted as he put down his cigar.</p>
+<p>“I’ll introduce you to her someday. There’s complications lately. You might like her. She’s happier.”</p>
+<p>That was all Saliss managed. He felt very, very fragile, but Rose was just standing there. And as Saliss looked up, he thought of how things were. And how they would not change with the new High Command.</p>
+<p>Then there was Rose.</p>
+<p>No matter how he tried to fit her into a Turnscale bar or the High Command reasserting order…she didn’t fit. Like a piece from another world, Rose, Erin Solstice, and everyone else…there was no fitting her into the same machinery that made Pallass run, was there?</p>
+<p><em>It will break the mechanism or she’ll have to die. Like so many others have. But how many Roses are there? What if she lives?</em></p>
+<p>Slowly, ever-so-slowly, Saliss sat up and rubbed at his face. An idea was blossoming in his mind. Something…that rang with finality. Something that felt like an ending of days, bittersweet and dreadful.</p>
+<p>“Tell me more, Rose. Tell me more of your ridiculous stories. Tell me how it started and how they failed. Then shut up and only speak to Mirn and me. Or I <em>will</em> toss you off the walls or polymorph your mouth off. I can do that.”</p>
+<p>“Does that mean you’re not getting rid of me? Not that you can. Obviously. You need my help!”</p>
+<p>Rose caught her breath, and Saliss rolled his eyes.</p>
+<p>“Oh, please. I could use a guiding light. But this is a matter for Turnscales, not Earthers.”</p>
+<p>He reached forwards and poked her in the stomach.</p>
+<p>“<em>You’re backup.</em>”</p>
+<p>Then his eyes lit up as he had one final idea, and Saliss smiled. If, tomorrow, Saliss of Lights walked into the middle of Wistram News Network and spoke his piece, the world might not change.</p>
+<p>…But he was an [Alchemist], and big reactions started small. Saliss’ eyes flickered as he saw something. A catalyst. And Rose?</p>
+<p>She looked down, and he wondered what she saw.</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>Saliss of Lights returned to Pallass the next day via pegasus. The nerves of the cityfolk were too high; High Command had him fly back so they could talk, civilly, about things.</p>
+<p>Saliss actually did attend another meeting and was fairly conciliatory himself, if in an annoying way. They ended up rehashing a reprieve on any <em>drastic</em> actions, and they assigned a certain Garuda to him as opposed to a [Major].</p>
+<p>However, it was Esor who watched Saliss closely, and the Named-rank adventurer did not immediately go to Mirn or back to Liscor when all was said and done. Instead, he checked the position of the sun and stepped over to the stairs and went for a walk.</p>
+<p>Saliss ended up at a Watch House, of all places, and strode in. He had business in about twenty minutes, but it wouldn’t take too long.</p>
+<p>He seemed visibly uncomfortable, for once, and kept humming at the desk as the Desk Sergeant, Kel, stared at him.</p>
+<p>“Can I help you, Adventurer Saliss?”</p>
+<p>“Oh, no. I mean, yes. Is Watch Captain Qissa present? I need a quick word of harassment. But if you’re volunteering…”</p>
+<p>The Watch Captain of the 8th Floor was currently Watch Captain Qissa, who knew Saliss of Lights, sadly. When Kel sent Saliss up to her office, she put aside her work and tried to smile.</p>
+<p>“Saliss! Come in, have a seat. You’re not quitting Pallass, are you?”</p>
+<p>“Oh, thanks, Qissa.”</p>
+<p>He put his feet on her desk as he sat down, and she tried not to react.<em> Don’t give him what he wants. </em>She let her smile grow as Saliss sighed.</p>
+<p>“High Command has all these things. They like to throw their tiny testicles around now that Chaldion’s a Yellat. So, how can you help me today?”</p>
+<p>“How can I h—I <em>am</em> rather busy, Saliss. Not that I don’t have time for Pallass’ Named-rank adventurer.”</p>
+<p>The anti-Saliss measures weren’t working. Saliss grinned at Qissa, then…took his feet off the desk, stood up, and began pacing around the room. He looked oddly stressed, but turned and smiled hugely.</p>
+<p>“Hey, I was just here to greet my <em>favorite Watch Captain!</em> And you, Kel!”</p>
+<p>He opened the door and blew a noisy kiss downstairs. Desk Sergeant Kel did not dignify that with a response, but Qissa saw Saliss rake a claw through his neck spines, hesitate, then lock the door. Then he cast a silencing charm.</p>
+<p>“Okay, fine. Listen. The old man—that’s what I call Chaldion, use it if you like—isn’t in charge any more. Everyone knows that means a shakeup.”</p>
+<p>Qissa nodded, hesitant. General Edellein was now 1st General, a big shakeup, and she’d been to meetings with him. She was just a Watch Captain though…she was hoping she might edge closer to Watch Commander with Venim gone, but why was Saliss here? The Drake paced another step and swung around.</p>
+<p>“It’s not my job to rein—listen. If she threatened you, lock her up. Chaldion used to do it. House arrest. I’m <em>not</em> endorsing her because she’s crazy, and I’m saying that. But she’s dangerous. Okay? She’s…dangerous, and the old man’s not here to stop her anymore.”</p>
+<p>“Uh…who?”</p>
+<p>Did he mean Erin Solstice? Was she back? Qissa had just seen her on the scrying orb, so she doubted that, but she had no idea who Saliss meant. The Named-rank adventurer stared at her. He coughed into a claw after a second.</p>
+<p>“Er…she didn’t come here and cause a fuss?”</p>
+<p>“Not that I know of. Was this today? Yesterday?”</p>
+<p>Saliss hesitated and raked at his neck spines.</p>
+<p>“Maybe it was another Watch House? Or she didn’t get through the front desk. Onieva? Onieva Oliwing? Cousin of mine? Not that attractive? Dabbles in alchemy and steals my notes? Brings potions to auction? You know?”</p>
+<p>Now that rang a bell. Onieva Oliwing? Qissa sort of recalled her. Yes, right. She delivered Saliss’ potions sometimes; everyone had to have a hanger-on in the family that was made rich by the principal family member. And she’d been at the Festival of Blades…</p>
+<p>That was all Qissa knew of her, but the impression of a female Drake with a confident smile and a lot of sass—that probably ran in the family—made her shake her head.</p>
+<p>“She wasn’t here. Why? Is she in trouble with the Watch?”</p>
+<p>Again, Saliss hesitated, which went to show even he had problems with family.</p>
+<p>“No…but listen. I’m taking her side on the thing.”</p>
+<p>“What thing?”</p>
+<p>Saliss glanced at the door and leaned over the desk.</p>
+<p>“<em>The</em> thing. Obviously, I’m not joining her, and it’s her affair. But listen up. If she’s hurt getting into a brawl with the Watch, that happens. And frankly, the poor [Guards] are getting in trouble. <em>She’s. Dangerous. </em>Gold-rank. The old man taught her to fight. But she doesn’t die or get maimed, got it?”</p>
+<p>Now, a ton of alarm bells were ringing in Qissa’s head. She didn’t like this. Saliss never, <em>ever</em> leaned on the Watch for personal favors, even when they arrested him.</p>
+<p>He stood back as she sat up straight and put on her best, most official tone.</p>
+<p>“Adventurer Saliss. If your cousin gets in trouble with the law, we will do our duties to the best of our ability. But I cannot do you favors due to her position. May I ask…which event you think she’ll be entangled in?”</p>
+<p>Saliss paused, and his eyes flickered. He hesitated—then looked at the door.</p>
+<p>“Watch raids. On bars?”</p>
+<p>He said it like a question. Qissa, who had been jotting notes, underlining ‘Gold-rank’, paused. She glanced at Saliss, and he peered with his head to stare at what she was writing.</p>
+<p>“Ring a bell?”</p>
+<p>“I…believe I understand what you mean.”</p>
+<p>“Good. What did I mean?”</p>
+<p>Saliss gave Qissa a blank look, and her scales began to itch. <em>Wait a second. Did that mean—</em>she forced a smile at Saliss.</p>
+<p>“Listen, Saliss. I like to think we have a decent relationship. You annoy us—but you’re a good Named-rank. If your cousin’s thinking of causing trouble with the Watch, I get family is tough. But we can’t do allowances.”</p>
+<p>“I understand that, Watch Captain Qissa. But she had a word with <em>me</em> and—”</p>
+<p>Saliss paced back and forth, and Qissa saw him turn.</p>
+<p>“She’s family. Annoying family. Family who thinks she’s as good at alchemy as #1. But I can’t talk her down, and she told me people get killed.”</p>
+<p>“They hardly get killed if we’re enforcing public order, Saliss. This is slightly—complex—”</p>
+<p>She had orders not to discuss it. Did Saliss count? Now, Qissa really wished she had a moment to talk to other Watch Captains, get a pulse on this. Wait. Was Onieva…<em>the Drake with the club? </em>The one who’d trashed more watch patrols than…</p>
+<p>This was huge. Saliss’ eyes were fixed on Qissa, though, and they seemed to draw her back.</p>
+<p>“She doesn’t get hurt. Or die. And if those raids are half as deadly as I think they are—what are we talking about, Qissa? Kids getting stones hucked at them? I was in Oteslia when she called me up and shouted my earhole off. I had a word with Mivifa, and she says it’s ugly.”</p>
+<p><em>Damn Oteslians. </em>Qissa made her voice as stern as possible as a knot of complex emotions ran through her chest. It could get ugly if there were rumors—</p>
+<p>“Listen, Saliss. As I said, I cannot promise you anything or give you favors. I am doing my job, and I give no one special treatment. Not you, not [Senators], no one.”</p>
+<p>That was true, at least, if she didn’t have any orders. Qissa smiled at Saliss—</p>
+<p><em>And he pulled her across the desk so fast her chair went flying. </em>In one motion, they were snout to snout, and the <em>crash</em> of a chair hitting a wall must have alerted someone downstairs. There was a sound of alarm—but Saliss’ eyes were locked with Qissa’s.</p>
+<p>She was frozen as Saliss grabbed her with a strength she didn’t know he had.</p>
+<p>“Qissa. I am taking her side. <em>Got it? </em>I’m the jolly, silly [Alchemist] all the time. If you see me in front of a bar or whatever the stupid things are—turn around. Because I’ve just lost one family member, even if that’s probably an improvement for the world. I am not losing another, no matter what she decides she is.”</p>
+<p>He let go, and Qissa sprawled on her desk as the door opened. Kel stared at Saliss and Qissa—and the Named-rank [Alchemist] turned.</p>
+<p>“That’s all. Hey, Kel. Bye, Kel.”</p>
+<p>“Saliss! What are y—”</p>
+<p>The Drake <em>checked</em> Kel with his shoulder and knocked four more [Guards] bodily out of his way. He stormed out of the Watch House, and Qissa, gasping, croaked.</p>
+<p>“Don’t go after him. Someone—get me every Watch Captain on duty. Tell them I want a meeting now. <em>Don’t sound the alarm. </em>But get someone with eyes on Saliss. Carefully.”</p>
+<p>Rattled beyond belief, she grabbed a speaking stone and stared down at her smeared notes. If Saliss of Lights was making that kind of threat—he liked her, or so she assumed.</p>
+<p>Onieva. She circled the name, then worriedly added Saliss’ name and underlined it five times. Then she wondered what Saliss was doing next.</p>
+<p>It wasn’t like she enjoyed that part of her job—and if Saliss of Lights was taking a stand, she knew where she wasn’t going to be.</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>The plan was simple. Rose was nervous about it, but it was mostly on Saliss, who knew the city. His city, his people, his war.</p>
+<p>If he thought it was best to move the needle slowly…he was willing to sacrifice himself for it. Not Onieva; in the Drake’s mind, the two were not one and the same.</p>
+<p><em>“That’s so unhealthy. </em>I need to figure out, like, proper therapy for him. And talk to Mirn and—”</p>
+<p>There was so much to do. Yes, she was afraid, and yes, she was worried because Saliss had given her very frank warnings about what they might do to her, even in this ‘better’ day and age.</p>
+<p>But she had volunteered. In fact, Rose had a pretty good idea of how she could be valuable. Not as the heroine of the tale.</p>
+<p>That was Onieva. If anyone was the heroine, it was that sad, amazingly dangerous, <em>hot</em>—well, Rose wanted to see what else Saliss’ potions could do. She had ideas.</p>
+<p>So no, Rose decided as she finished checking her clothing and walked downstairs. She couldn’t be Saliss or Erin or even Mirn.</p>
+<p>But she could be Rose, that kid from Earth.</p>
+<p>“Hey, Ishkr, thanks for getting the clothing so fast for me. You’re a gem.”</p>
+<p>The Gnoll [Waiter] gave Rose a smile and, perhaps, a knowing look as he walked her downstairs.</p>
+<p>“You need someone to walk you to Pallass?”</p>
+<p>“Nah. I’m good. I…I’m meeting with Saliss, and I’ll be fine.”</p>
+<p>Rose’s heart was beating faster than normal as she walked through the inn. Mrsha was whining about working ‘in the goldmines’ to a sympathetic Ser Dalimont as they had lunch. Something big was about to happen on television with Erin.</p>
+<p>But Rose? Rose just walked past the few guests, and a couple very busily into each other looked up.</p>
+<p>Lady Ieka Imarris and Fierre sometimes went back to the inn. Just for a change of pace, even if the beach garden was gone. Fierre kept complaining she could smell garlic, even if it wasn’t in the kitchens, and she was busy wiping at some lipstick on her neck.</p>
+<p>Ieka caught her breath, looked around, and her eyes widened as she spotted Rose. Distractions or not, she rose to her feet.</p>
+<p>“My word. Um. <em>Young lady! </em>Young lady! You there! Excuse me!”</p>
+<p>Ieka pulled Fierre up. The partly de-oxygenated Vampire caught sight of Rose and—stared.</p>
+<p>The duo saw Rose turn, and the young woman tugged on something.</p>
+<p>“Yeah?”</p>
+<p>Ieka glanced down at a file Fierre showed her.</p>
+<p>“Miss—Rose, isn’t it? I love the attire. But maybe you should consider, ah, toning it down a bit? What a remarkable idea, though.”</p>
+<p>Her eyes lingered on Rose, looking her up and down until she noticed Fierre doing the same, and the two elbowed each other. Rose?</p>
+<p>Rose just checked herself in the reflection of a polished glass mug and smiled. It actually hadn’t been <em>that</em> hard for Ishkr to find what she wanted.</p>
+<p>It was a white, long-sleeved, button-up shirt and simple, black slacks with a belt. Rose had added a formal coat and a striped tie, but she hadn’t bothered putting her arms in the sleeves of the jacket because it wasn’t that cold.</p>
+<p>It was a look.</p>
+<p>A very strange look, which the guests of The Wandering Inn didn’t parse as odd. At least, the Goblins and Antinium didn’t. Mrsha gave Rose a second glance as Lyonette came marching out and stared at Rose in a kind of abject horror.</p>
+<p>Ieka’s glance was far more appreciative, but she read in Rose far, far more than just the attire. And one of the things that was reflected in <em>her</em> eyes was concern.</p>
+<p>“I think it doesn’t suit you, Miss Rose. Why don’t I provide something from my wardrobe? Or I could have someone nip down to the [Clothier]. I should be delighted to help.”</p>
+<p>Fierre hesitated, about to take umbrage with what Ieka had said—then she saw Ieka, a [Lady] who understood fashion and culture of the north, and nodded wordlessly.</p>
+<p>But all Rose did was wink.</p>
+<p>“Sorry, gals, but I have a meeting with a certain Drake in a second. It’s not always my style, actually. Or <em>my look.</em> But with respect to my sisters—”</p>
+<p>She walked towards the door that Ishkr held open, and a very grumpy Liska who wanted a lunch break stopped in the corridor, then zoomed back to her station to be very helpful. Rose marched down the hallway as some people standing in line turned to stare at her with bewilderment, confusion, outrage, a total lack of interest—or that glance that couldn’t tear itself away.</p>
+<p>Rose blew them a kiss and finished her thought. Target on your back. She knew what she was getting into, and still…</p>
+<p>“—Someone’s got to show people how to dress well.”</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>After twenty minutes, Saliss stood on the 4th Floor, sauntering towards a young woman. For once, the [Alchemist] was looking visibly uncomfortable. In fact, he’d put pants on.</p>
+<p>He was inspecting, well…a bar. An empty bar; the door was smashed in, and it looked like it had been vacated in a hurry. Saliss kicked over a mug by the entrance.</p>
+<p>“Cheap mug. Hey…you. Is this the spot?”</p>
+<p>“Adventurer Saliss! Yeah, totally! It’s me!”</p>
+<p>“You!”</p>
+<p>Saliss turned, and there she was, and in her way, she attracted more stares than he did. Of course, Rose was a Human, but she strutted along in her pants, waving at Drakes and Garuda and Dullahans and Gnolls who turned towards her, and at Saliss.</p>
+<p><em>Completely fearless of the Watch or the city. </em>Why shouldn’t she be? She was, after all, a young brat. Not from Pallass. Not even from this world.</p>
+<p>He had to admit, she’d chosen her role well. Brave girl. Soon-to-be-dead girl, maybe.</p>
+<p><em>Not if he could help it. </em>But Saliss just pointed as if trying to remember her name.</p>
+<p>“You! Person!”</p>
+<p>Rose pouted, and Saliss gave her an unconvincing pair of fingerclaw guns.</p>
+<p>“Yep! My 16th-favorite Human! Wait, the digits are in the wrong order. Anyways. Is this the spot?”</p>
+<p>“I think so. I, like, totally don’t know the scene here. But want to check it out?”</p>
+<p>The young woman stepped forwards eagerly, but Saliss, observed by at least a few people, be it random pedestrians or for other reasons, including him exploding his shop or just being Saliss of Lights, hesitated. He lowered his voice.</p>
+<p>“Look, Rose. Maybe let’s do this later? I don’t <em>actually</em> have to know what she’s up to. Onieva’s crazy.”</p>
+<p>“What? She’s <em>not.</em> Don’t be a bigot.”</p>
+<p>“Me? <em>Me?</em>”</p>
+<p>Saliss looked outraged. He hesitated again at the door.</p>
+<p>“—Okay, fine. I have a pretty strong stomach, and I’ve seen that kind of thing in Nerrhavia’s Fallen. How much disinfectant do I need?”</p>
+<p>“They’re probably just <em>drinking,</em> Saliss. Listen, just be chill. Can you be chill?”</p>
+<p>“<em>I’m totally chill. </em>Here, I have a Frost Potion right here!”</p>
+<p>Saliss huffed. They began to inspect the bar, and he shoved his claws in his pockets, rolling his shoulders.</p>
+<p>Both he and Rose spoke, like actors on a stage. Clear, carrying voice, framed so they were visible to the crowd. Saliss was the unwilling one, but the one who listened. Rose was the knower, the outsider…</p>
+<p>It was a team effort that put both in danger, but not as <em>much</em> danger. Rose had more, and Saliss?</p>
+<p>Saliss was relieved. It was almost fun making a show of inspecting the Turnscale bar as if he knew ‘something’ inappropriate occurred here. Then gesturing to Rose.</p>
+<p>“It’s just not something I fussed about.”</p>
+<p>“Well, people are going to get hurt. Your cousin included. Or killed.”</p>
+<p>Saliss took a breath. He lingered in the doorway and stared at the winter skies, clearing for the new year.</p>
+<p>“…Well. That’s why I’m here. We can’t have dead people for just—being weird. Or they’d have killed me a long time ago. Okay, explain away, Rose. Breath mint?”</p>
+<p>He offered her something, and the two began to talk. Rose kept giving Saliss earnest sideways glances, and he was shaking his head in bewilderment—until she brought up the deaths, in which case he was, well, Saliss of Lights.</p>
+<p>Offended. Shocked for the basic decency which had been violated. Angry on behalf of a people he, Saliss, wanted to understand.</p>
+<p>He could do anger. And Rose? She stood like Magnolia Reinhart had once stood on the walls. Not nearly as well, certainly without as much aplomb or gravitas—but with a style that caught the eye. Something so odd, so iconic, that it made you feel like the winds were shifting.</p>
+<p><em>Something new.</em></p>
+<p>Theatre kid. She did pretty well despite having zero Skills, so he supposed she was playing her role for all she was worth. As for him?</p>
+<p>Saliss of Lights was the star role, and it had swept the Walled Cities for decades. Hold your applause, please…the act was just getting started, and it was the role of a lifetime.</p>
+<p>Saliss felt light. Light and relaxed…he ended up shaking his head and having to get back to work, and Rose chased after him before giving up.</p>
+<p>She’d get him back here another time. Or after someone got hurt. There was only one part of the moment that went off-script.</p>
+<p>“Saliss! Saliss, wait, I have something to show you! Guess who levelled last night!”</p>
+<p>“Sweet! I knew [Layabout] or [Useless Eater] was a viable class! Lay it on me, kid.”</p>
+<p>Saliss turned, and Rose looked genuinely hurt. But then she pulled something out, and Saliss froze and fell over as he pulled off his pants. He stared at something she held in front of him, fluttering in the breeze.</p>
+<p>The young woman’s eyes were alight as she looked at him, and oh, he didn’t fear most of them. They came from another world with dangerous weapons, but so was he. Even Erin he didn’t fear, but understand. But her?</p>
+<p>“I drew a sketch of your cousin. She’s so pretty!”</p>
+<p>“She’s…okay. Nice sketch.”</p>
+<p>It was pretty decently done. Nothing to write home about. But Rose had drawn a Drake, claw tip to her mouth, rose pink and cobalt blue, winking at the viewer. She looked at Saliss.</p>
+<p>“Well, I got a good look at her.”</p>
+<p>His eyes roamed upwards, and Saliss met Rose’s eyes. The Named-rank adventurer whispered.</p>
+<p>“Fancy that. Mind if I snag it? Onieva will just add it to her ego.”</p>
+<p>Those eyes crinkled up, and she put it in his claw, and he made a show of crumpling it up. But then he got up, tossed his pants over the floor’s edge—and stood there for a second.</p>
+<p>Damn levels. Now you had Earthers with the eyes of Dragons.</p>
+<p>He felt like that should have been a Level 50 Skill.</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>Saliss stomped up to his workshop and, as he passed into the rebuilt section of the lab, yawned. He got forty winks, woke up in the darkness, gnawed on some food delivered to him by the inn, and got to work.</p>
+<p>Twenty-eight minutes later, he swiftly bottled a glowing red vial of liquid into a larger flask and began to add reactants, only pausing to wipe at his sweaty brow then. Saliss stared at the liquid, and his mind was clear.</p>
+<p>“This is the most dangerous weapon of war I’ve ever made.”</p>
+<p>Saliss put the bottle down, then finally got some sleep.</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>In the inn, an old Drake mumbled something as he stared at the chessboard. Chaldion Oliwing’s mouth was dry, but he got the word out after a few tries.</p>
+<p>“…mate. Checkmate.”</p>
+<p>His claw trembled as he stared at a piece on the board. A little white paw grabbed it, and Mrsha wrote indignantly.</p>
+<p><span class="mrsha-write">Chaldion, you can’t say that until you win! Okay, best out of forty-five! Here comes my new [Strategist] class!</span></p>
+<p>She sat down as Apista buzzed over to give her tips. One of these days, Mrsha would win. The old [Strategist] stared at the pieces on the board.</p>
+<p>“Checkmate.”</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>For Rose—</p>
+<p>&nbsp;</p>
+<p>[Troublemaker Class obtained!]</p>
+<p>[Troublemaker Level 4!]</p>
+<p>[Skill – Eyes of True Self obtained!]</p>
+<p>[Skill – Lesser Charisma obtained!]</p>
+<p>[Skill – Allied Distress Call obtained!]</p>
+<p>&nbsp;</p>
+<p>And for Saliss, the days got more interesting.</p>
+<p>&nbsp;</p>
+<p>[Alchemiaform Oldblood, Grand Alchemist of War Level 56!]</p>
+<p>[Skill – Seithore Basic Handling obtained!]</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><strong>Author’s Note:</strong></p>
+<p>This is a reminder of two things to you. One—why I had to announce I’m moving down to 30,000 words.</p>
+<p>Doing two chapters doesn’t work. I thought to myself, ‘pirateaba’, because I think in the third person, ‘pirateaba, you’ve got to do a short chapter because&nbsp; you’re too tired to do the third Erin chapter justice’.</p>
+<p>So I planned out a 10,000, maybe 15,000 word chapter about Saliss on Saturday, after posting the last one. Did a pretty decent outline, then started the next day to write it in one go. Edited Wednesday.</p>
+<p>24,000 words.</p>
+<p>Sigh.</p>
+<p>Writing this many words does drain my energy battery considerably. Hopefully with a day off, I’ll rally enough come Thursday to do the Erin chapter justice but this is why. This is why.</p>
+<p>Anyways, the other lesson is that you can’t just sit on your thumbs and wait to well, write a chapter like this. There’s a good quote about hesitation. About waiting for the ‘right moment’ and compromising until then.</p>
+<p>I choose to apply it to arcs that aren’t easy, or fun for me to write. They have to happen, and I cannot wait until I am in the right mood or have all my ducks in a row because they never will be. It is imperfect; I was editing the last…five hours which is why this chapter is out later than usual. But even if imperfect, we forge ahead.</p>
+<p>Or sometimes, we take a break! Next month. I do think I’m willing to push harder this month because of my vacation and the reduced workload next month. Did I mention going on a vacation to a country? Do I tell people what country? Eh, you’ll never find me in Puerto Rico. I hear it’s nice.</p>
+<p>Wait, am I going to that country or another one? I’d better check my tickets. (A few were being floated around, okay? I have tickets. I just don’t actually know which one it is.)</p>
+<p>That’s all from me! I’m tired. I wonder if anyone reads The Wandering Inn, in Puerto Rico. I wonder what’s for dinner. I wonder how I’m going to finish this Author’s Note.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><strong>Stream Art: Shh by Artsynada!</strong></p>
+<p><strong>Instagram:</strong> <a class="anchor_c8ddc0 anchorUnderlineOnHover__78236" tabindex="0" title="https://www.instagram.com/illudanajohns/" role="button" href="https://www.instagram.com/illudanajohns/" target="_blank" rel="noreferrer noopener">https://www.instagram.com/illudanajohns/</a></p>
+<p><strong>Ko-fi:</strong> <a class="anchor_c8ddc0 anchorUnderlineOnHover__78236" tabindex="0" title="https://ko-fi.com/illudanajohns" role="button" href="https://ko-fi.com/illudanajohns" target="_blank" rel="noreferrer noopener">https://ko-fi.com/illudanajohns</a></p>
+<p><a href="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/03/Shh-by-Artsynada.png?ssl=1"><img fetchpriority="high" decoding="async" data-attachment-id="17018" data-permalink="https://wanderinginn.com/2024/03/13/interlude-saliss-the-architect/shh-by-artsynada/" data-orig-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/03/Shh-by-Artsynada.png?fit=1031%2C797&amp;ssl=1" data-orig-size="1031,797" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="Shh by Artsynada" data-image-description="" data-image-caption="" data-medium-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/03/Shh-by-Artsynada.png?fit=300%2C232&amp;ssl=1" data-large-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/03/Shh-by-Artsynada.png?fit=1024%2C792&amp;ssl=1" class="alignnone size-full wp-image-17018" src="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/03/Shh-by-Artsynada.png?resize=1031%2C797&amp;ssl=1" alt="" width="1031" height="797" srcset="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/03/Shh-by-Artsynada.png?w=1031&amp;ssl=1 1031w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/03/Shh-by-Artsynada.png?resize=300%2C232&amp;ssl=1 300w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/03/Shh-by-Artsynada.png?resize=1024%2C792&amp;ssl=1 1024w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/03/Shh-by-Artsynada.png?resize=768%2C594&amp;ssl=1 768w" sizes="(max-width: 1000px) 100vw, 1000px" data-recalc-dims="1"></a></p>
+<p>&nbsp;</p>
+<p><strong>Maid Onieva by gridcube!</strong></p>
+<p><a href="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/03/Maid-Onieva-by-gridcube.jpg?ssl=1"><img decoding="async" data-attachment-id="17019" data-permalink="https://wanderinginn.com/2024/03/13/interlude-saliss-the-architect/maid-onieva-by-gridcube/" data-orig-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/03/Maid-Onieva-by-gridcube.jpg?fit=1504%2C1828&amp;ssl=1" data-orig-size="1504,1828" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="Maid Onieva by gridcube" data-image-description="" data-image-caption="" data-medium-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/03/Maid-Onieva-by-gridcube.jpg?fit=247%2C300&amp;ssl=1" data-large-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/03/Maid-Onieva-by-gridcube.jpg?fit=843%2C1024&amp;ssl=1" class="alignnone size-full wp-image-17019" src="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/03/Maid-Onieva-by-gridcube.jpg?resize=1504%2C1828&amp;ssl=1" alt="" width="1504" height="1828" srcset="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/03/Maid-Onieva-by-gridcube.jpg?w=1504&amp;ssl=1 1504w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/03/Maid-Onieva-by-gridcube.jpg?resize=247%2C300&amp;ssl=1 247w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/03/Maid-Onieva-by-gridcube.jpg?resize=843%2C1024&amp;ssl=1 843w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/03/Maid-Onieva-by-gridcube.jpg?resize=768%2C933&amp;ssl=1 768w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/03/Maid-Onieva-by-gridcube.jpg?resize=1264%2C1536&amp;ssl=1 1264w" sizes="(max-width: 1000px) 100vw, 1000px" data-recalc-dims="1"></a></p>
+<p>&nbsp;</p>
+<p><strong>Onieva and Ishkr by Yootie!</strong></p>
+<p><a href="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/03/OnievaIshkr-by-Yootie.jpg?ssl=1"><img decoding="async" data-attachment-id="17020" data-permalink="https://wanderinginn.com/2024/03/13/interlude-saliss-the-architect/onievaishkr-by-yootie/" data-orig-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/03/OnievaIshkr-by-Yootie.jpg?fit=1026%2C1200&amp;ssl=1" data-orig-size="1026,1200" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="OnievaIshkr by Yootie" data-image-description="" data-image-caption="" data-medium-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/03/OnievaIshkr-by-Yootie.jpg?fit=257%2C300&amp;ssl=1" data-large-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/03/OnievaIshkr-by-Yootie.jpg?fit=876%2C1024&amp;ssl=1" class="alignnone size-full wp-image-17020" src="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/03/OnievaIshkr-by-Yootie.jpg?resize=1026%2C1200&amp;ssl=1" alt="" width="1026" height="1200" srcset="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/03/OnievaIshkr-by-Yootie.jpg?w=1026&amp;ssl=1 1026w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/03/OnievaIshkr-by-Yootie.jpg?resize=257%2C300&amp;ssl=1 257w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/03/OnievaIshkr-by-Yootie.jpg?resize=876%2C1024&amp;ssl=1 876w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/03/OnievaIshkr-by-Yootie.jpg?resize=768%2C898&amp;ssl=1 768w" sizes="(max-width: 1000px) 100vw, 1000px" data-recalc-dims="1"></a></p>
+<p>&nbsp;</p>
+<p><strong>Saliss by ashok!</strong></p>
+<p><a href="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/03/Saliss-by-ashok.jpg?ssl=1"><img loading="lazy" decoding="async" data-attachment-id="17021" data-permalink="https://wanderinginn.com/2024/03/13/interlude-saliss-the-architect/saliss-by-ashok/" data-orig-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/03/Saliss-by-ashok.jpg?fit=4032%2C2427&amp;ssl=1" data-orig-size="4032,2427" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;1&quot;}" data-image-title="Saliss by ashok" data-image-description="" data-image-caption="" data-medium-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/03/Saliss-by-ashok.jpg?fit=300%2C181&amp;ssl=1" data-large-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/03/Saliss-by-ashok.jpg?fit=1024%2C616&amp;ssl=1" class="alignnone size-full wp-image-17021" src="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/03/Saliss-by-ashok.jpg?resize=4032%2C2427&amp;ssl=1" alt="" width="4032" height="2427" srcset="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/03/Saliss-by-ashok.jpg?w=4032&amp;ssl=1 4032w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/03/Saliss-by-ashok.jpg?resize=300%2C181&amp;ssl=1 300w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/03/Saliss-by-ashok.jpg?resize=1024%2C616&amp;ssl=1 1024w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/03/Saliss-by-ashok.jpg?resize=768%2C462&amp;ssl=1 768w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/03/Saliss-by-ashok.jpg?resize=1536%2C925&amp;ssl=1 1536w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/03/Saliss-by-ashok.jpg?resize=2048%2C1233&amp;ssl=1 2048w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/03/Saliss-by-ashok.jpg?w=3000&amp;ssl=1 3000w" sizes="(max-width: 1000px) 100vw, 1000px" data-recalc-dims="1"></a></p>
+<p>&nbsp;</p>
+<p><strong>Saliss by Guliver!</strong></p>
+<p><a href="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/03/Saliss-by-Guliver.jpg?ssl=1"><img loading="lazy" decoding="async" data-attachment-id="17022" data-permalink="https://wanderinginn.com/2024/03/13/interlude-saliss-the-architect/saliss-by-guliver/" data-orig-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/03/Saliss-by-Guliver.jpg?fit=4000%2C3000&amp;ssl=1" data-orig-size="4000,3000" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="Saliss by Guliver" data-image-description="" data-image-caption="" data-medium-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/03/Saliss-by-Guliver.jpg?fit=300%2C225&amp;ssl=1" data-large-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/03/Saliss-by-Guliver.jpg?fit=1024%2C768&amp;ssl=1" class="alignnone size-full wp-image-17022" src="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/03/Saliss-by-Guliver.jpg?resize=4000%2C3000&amp;ssl=1" alt="" width="4000" height="3000" srcset="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/03/Saliss-by-Guliver.jpg?w=4000&amp;ssl=1 4000w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/03/Saliss-by-Guliver.jpg?resize=300%2C225&amp;ssl=1 300w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/03/Saliss-by-Guliver.jpg?resize=1024%2C768&amp;ssl=1 1024w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/03/Saliss-by-Guliver.jpg?resize=768%2C576&amp;ssl=1 768w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/03/Saliss-by-Guliver.jpg?resize=1536%2C1152&amp;ssl=1 1536w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/03/Saliss-by-Guliver.jpg?resize=2048%2C1536&amp;ssl=1 2048w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/03/Saliss-by-Guliver.jpg?w=3000&amp;ssl=1 3000w" sizes="(max-width: 1000px) 100vw, 1000px" data-recalc-dims="1"></a></p>
+<p>&nbsp;</p>
+<p><strong>Saliss by jamcubi!</strong></p>
+<p><a href="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/03/Saliss-by-jamcubi.jpg?ssl=1"><img loading="lazy" decoding="async" data-attachment-id="17023" data-permalink="https://wanderinginn.com/2024/03/13/interlude-saliss-the-architect/saliss-by-jamcubi/" data-orig-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/03/Saliss-by-jamcubi.jpg?fit=1080%2C1350&amp;ssl=1" data-orig-size="1080,1350" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;1&quot;}" data-image-title="Saliss by jamcubi" data-image-description="" data-image-caption="" data-medium-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/03/Saliss-by-jamcubi.jpg?fit=240%2C300&amp;ssl=1" data-large-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/03/Saliss-by-jamcubi.jpg?fit=819%2C1024&amp;ssl=1" class="alignnone size-full wp-image-17023" src="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/03/Saliss-by-jamcubi.jpg?resize=1080%2C1350&amp;ssl=1" alt="" width="1080" height="1350" srcset="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/03/Saliss-by-jamcubi.jpg?w=1080&amp;ssl=1 1080w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/03/Saliss-by-jamcubi.jpg?resize=240%2C300&amp;ssl=1 240w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/03/Saliss-by-jamcubi.jpg?resize=819%2C1024&amp;ssl=1 819w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/03/Saliss-by-jamcubi.jpg?resize=768%2C960&amp;ssl=1 768w" sizes="(max-width: 1000px) 100vw, 1000px" data-recalc-dims="1"></a></p>
+<p>&nbsp;</p>
+<p><strong>Maid Onieva by Lei Tencie!</strong></p>
+<p><a href="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/03/maidonieva-by-Lei-Tencie.png?ssl=1"><img loading="lazy" decoding="async" data-attachment-id="17024" data-permalink="https://wanderinginn.com/2024/03/13/interlude-saliss-the-architect/maidonieva-by-lei-tencie/" data-orig-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/03/maidonieva-by-Lei-Tencie.png?fit=2984%2C4612&amp;ssl=1" data-orig-size="2984,4612" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="maidonieva by Lei Tencie" data-image-description="" data-image-caption="" data-medium-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/03/maidonieva-by-Lei-Tencie.png?fit=194%2C300&amp;ssl=1" data-large-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/03/maidonieva-by-Lei-Tencie.png?fit=663%2C1024&amp;ssl=1" class="alignnone size-full wp-image-17024" src="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/03/maidonieva-by-Lei-Tencie.png?resize=2984%2C4612&amp;ssl=1" alt="" width="2984" height="4612" srcset="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/03/maidonieva-by-Lei-Tencie.png?w=2984&amp;ssl=1 2984w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/03/maidonieva-by-Lei-Tencie.png?resize=194%2C300&amp;ssl=1 194w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/03/maidonieva-by-Lei-Tencie.png?resize=663%2C1024&amp;ssl=1 663w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/03/maidonieva-by-Lei-Tencie.png?resize=768%2C1187&amp;ssl=1 768w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/03/maidonieva-by-Lei-Tencie.png?resize=994%2C1536&amp;ssl=1 994w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/03/maidonieva-by-Lei-Tencie.png?resize=1325%2C2048&amp;ssl=1 1325w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/03/maidonieva-by-Lei-Tencie.png?w=2000&amp;ssl=1 2000w" sizes="(max-width: 1000px) 100vw, 1000px" data-recalc-dims="1"></a></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<hr>
+<p><a href="https://wanderinginn.com/2024/03/10/10-07/">Previous Chapter</a> <a href="https://wanderinginn.com/2024/03/20/10-08-pt-1/"><span style="float: right;">Next Chapter</span></a></p>
+      </div>
+
+      <hr>
+          <span class="nav-previous">
+        <a href="https://wanderinginn.com/2024/03/10/10-07/" rel="prev"><span class="meta-nav">←</span> Previous Chapter</a>    </span>
+    <span class="nav-next" style="float: right" ;="">
+        <a href="https://wanderinginn.com/2024/03/20/10-08-pt-1/" rel="next">Next Chapter <span class="meta-nav">→</span></a>    </span>
+    
