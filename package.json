@@ -1,0 +1,15 @@
+{
+  "name": "word-quest",
+  "version": "1.0.0",
+  "description": "A gamification platform for reading",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Your Name",
+  "license": "ISC",
+  "dependencies": {
+    "puppeteer": "^23.5.3"
+  }
+}
+
