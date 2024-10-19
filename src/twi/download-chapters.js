@@ -21,6 +21,22 @@ async function downloadChapters() {
 
     for (const chapter of chapters) {
       const { number, title, url } = chapter;
+      
+      // Create a safe filename from the chapter title with a 4-digit zero-padded prefix
+      const safeTitle = title.replace(/[^a-z0-9]/gi, '_').toLowerCase();
+      const paddedNumber = number.toString().padStart(4, '0');
+      const fileName = `${paddedNumber}_${safeTitle}.html`;
+      const filePath = path.join(outputDir, fileName);
+
+      // Check if the file already exists
+      try {
+        await fs.access(filePath);
+        console.log(`Skipping: ${title} (file already exists)`);
+        continue; // Skip to the next chapter
+      } catch (err) {
+        // File doesn't exist, proceed with downloading
+      }
+
       console.log(`Downloading: ${title}`);
 
       // Create a new page for each chapter
@@ -34,12 +50,6 @@ async function downloadChapters() {
       });
 
       if (content) {
-        // Create a safe filename from the chapter title with a 4-digit zero-padded prefix
-        const safeTitle = title.replace(/[^a-z0-9]/gi, '_').toLowerCase();
-        const paddedNumber = number.toString().padStart(4, '0');
-        const fileName = `${paddedNumber}_${safeTitle}.html`;
-        const filePath = path.join(outputDir, fileName);
-
         // Write the content to a file
         await fs.writeFile(filePath, content, 'utf-8');
         console.log(`Saved: ${fileName}`);
