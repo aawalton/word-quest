@@ -1,0 +1,1168 @@
+
+
+          <span class="nav-previous">
+        <a href="https://wanderinginn.com/2023/01/22/9-33/" rel="prev"><span class="meta-nav">←</span> Previous Chapter</a>    </span>
+    <span class="nav-next" style="float: right" ;="">
+        <a href="https://wanderinginn.com/2023/01/29/9-34/" rel="next">Next Chapter <span class="meta-nav">→</span></a>    </span>
+      <!-- <hr/> -->
+      <header class="entry-header">
+        <h1 class="entry-title">Interlude – Foody Discussions</h1>
+                <button class="show-settings-btn" onclick="document.querySelector('#reader-settings-wrapper').classList.toggle('is-hidden')">
+          <img class="show-settings-btn-img" src="https://wanderinginn.com/wp-content/themes/solstice/assets/images/ui/reader-settings-button.webp">
+        </button>
+      </header>
+
+      
+<!-- Reader Settings -->
+<div id="reader-settings-wrapper" class="is-hidden">
+    <div id="reader-settings">
+        <header id="reader-settings-header">
+            <h2>Reader Settings</h2>
+            <button onclick="closeModal()">
+                <svg width="100%" height="100%" viewBox="0 0 33 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M16.5 30.75C24.0939 30.75 30.25 24.5939 30.25 17C30.25 9.40608 24.0939 3.25 16.5 3.25C8.90608 3.25 2.75 9.40608 2.75 17C2.75 24.5939 8.90608 30.75 16.5 30.75Z" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M20.625 12.875L12.375 21.125" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M12.375 12.875L20.625 21.125" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+            </button>
+        </header>
+
+        <fieldset id="fieldset-font">
+            <legend>Font</legend>
+
+            <div>
+                <label for="font-size-select">Size</label>
+                <select id="font-size-select" class="reader-settings-select" data-setting="reader-font-size" onchange="updateSetting(this.getAttribute('data-setting'), this.value);">
+                    <option value="10pt" class="reader-settings-option">10</option>
+                    <option value="11pt" class="reader-settings-option">11</option>
+                    <option value="12pt" class="reader-settings-option" selected="">12</option>
+                    <option value="13pt" class="reader-settings-option">13</option>
+                    <option value="14pt" class="reader-settings-option">14</option>
+                    <option value="16pt" class="reader-settings-option">16</option>
+                    <option value="18pt" class="reader-settings-option">18</option>
+                    <option value="20pt" class="reader-settings-option">20</option>
+                    <option value="22pt" class="reader-settings-option">22</option>
+                    <option value="24pt" class="reader-settings-option">24</option>
+                    <option value="26pt" class="reader-settings-option">26</option>
+                    <option value="28pt" class="reader-settings-option">28</option>
+                    <option value="30pt" class="reader-settings-option">30</option>
+                    <option value="36pt" class="reader-settings-option">36</option>
+                    <option value="42pt" class="reader-settings-option">42</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="font-family-select">Family</label>
+                <select id="font-family-select" class="reader-settings-select" data-setting="reader-font-family" onchange="updateSetting(this.getAttribute('data-setting'), this.value);">
+                    <optgroup label="Sans Serif">
+                        <option class="reader-settings-option" value="OpenSans, sans-serif" selected="">Open Sans</option>
+                        <option class="reader-settings-option" value="Arial, Helvetica, sans-serif">Arial</option>
+                        <option class="reader-settings-option" value="Roboto, sans-serif">Roboto</option>
+                    </optgroup>
+                    <optgroup label="Serif">
+                        <option class="reader-settings-option" value="Playfair, serif">Playfair</option>
+                        <option class="reader-settings-option" value="EBGaramond, serif">Garamond</option>
+                        <option class="reader-settings-option" value="'Times New Roman', Times, serif">Times New Roman</option>
+                    </optgroup>
+                    <optgroup label="Other">
+                        <option class="reader-settings-option" value="OpenDyslexic">OpenDyslexic</option>
+                        <option class="reader-settings-option" value="HennyPenny">Henny Penny</option>
+                    </optgroup>
+                </select>
+            </div>
+            <div>
+                <label for="font-weight-select">Thickness</label>
+                <select id="font-weight-select" class="reader-settings-select" data-setting="reader-font-weight" onchange="updateSetting(this.getAttribute('data-setting'), this.value);">
+                    <option class="reader-settings-option" value="300" selected="">Thin</option>
+                    <option class="reader-settings-option" value="400">Regular</option>
+                    <option class="reader-settings-option" value="500">Thick</option>
+                </select>
+            </div>
+        </fieldset>
+
+        <fieldset id="fieldset-spacing">
+            <legend>Spacing</legend>
+            <div>
+                <label for="margins-select">Page Width</label>
+                <select id="margins-select" class="reader-settings-select" data-setting="reader-article-width" onchange="updateSetting(this.getAttribute('data-setting'), this.value);">
+                    <option value="320px" class="reader-settings-option">Extra Narrow</option>
+                    <option value="500px" class="reader-settings-option">Narrow</option>
+                    <option value="680px" class="reader-settings-option" selected="">Medium</option>
+                    <option value="1000px" class="reader-settings-option">Wide</option>
+                    <option value="1200px" class="reader-settings-option">Extra Wide</option>
+                    <option value="100%" class="reader-settings-option">Max</option>
+                </select>
+            </div>
+            <div>
+                <label for="line-spacing-select">Line</label>
+                <select id="line-spacing-select" class="reader-settings-select" data-setting="reader-line-height" onchange="updateSetting(this.getAttribute('data-setting'), this.value);">
+                    <option class="reader-settings-option" value="1.2">Small</option>
+                    <option class="reader-settings-option" value="1.625" selected="">Medium</option>
+                    <option class="reader-settings-option" value="2.2">Large</option>
+                    <option class="reader-settings-option" value="3.5">Extra Large</option>
+                </select>
+            </div>
+            <div>
+                <label for="paragraph-spacing-select">Paragraph</label>
+                <select id="paragraph-spacing-select" class="reader-settings-select" data-setting="reader-paragraph-spacing" onchange="updateSetting(this.getAttribute('data-setting'), this.value);">
+                    <option class="reader-settings-option" value="0.5em">Small</option>
+                    <option class="reader-settings-option" value="1.625em" selected="">Medium</option>
+                    <option class="reader-settings-option" value="2.75em">Large</option>
+                    <option class="reader-settings-option" value="4.25em">Extra Large</option>
+                </select>
+            </div>
+        </fieldset>
+        <div class="ml-5 mb-4">
+            <label for="theme-select">Theme</label>
+            <select id="theme-select" class="reader-settings-select" data-setting="reader-theme" onchange="updateSetting(this.getAttribute('data-setting'), this.value);">
+                <option class="reader-settings-option" value="reader-theme-grey" selected="">Dark Grey</option>
+                <option class="reader-settings-option" value="reader-theme-blue">Dark Blue</option>
+                <option class="reader-settings-option" value="reader-theme-black">Black</option>
+                <option class="reader-settings-option" value="reader-theme-white">White</option>
+                <option class="reader-settings-option" value="reader-theme-sepia">Sepia</option>
+            </select>
+        </div>
+        <button id="reset-settings-btn" onclick="resetSettings()">Reset To Default</button>
+        <!-- <div> -->
+        <!-- </div> -->
+
+
+    </div>
+</div>
+      <div class="entry-content">
+        <p>When Erin Solstice called Niers Astoragon the next morning, she looked tired. So tired that the Fraerling’s first comment was, against his desires—</p>
+<p>“Should you be resting, Erin?”</p>
+<p>She gave him a suspicious look. There weren’t bags under her eyes, but there were subtle clues, like how she seemed ready to topple forwards out of her wheelchair or how she kept yawning. And the lack of hair combing that made her hair a tangled mess.</p>
+<p>“Are you exchanging notes with Lyonette? She’s been making me rest all morning. I’m good. I just watched a, uh, movie.”</p>
+<p>“Ah.”</p>
+<p>The [Innkeeper] stared at the Fraerling as he kept his face straight.</p>
+<p>“You know what that is.”</p>
+<p>“Yes, I do.”</p>
+<p>Erin opened her mouth as, behind Niers, an entire team of Fraerlings wearing what looked suspiciously like hard-hats were consulting blueprints. They had opened a tiny tunnel network and were installing some thick magicore into glass venting as [Enchanters] placed down runes.</p>
+<p>“…What’s that behind you?”</p>
+<p>It was not the first time they had met, but it was one of the first times they had ever spoken face-to-face. Niers knew that Erin had talked to him already and they’d done that, but he regretted taking the call at work. Because, annoyingly, he wasn’t the most interesting thing to her.</p>
+<p>He glared—Foliana kept waving her paw and searching for her morning’s abominable creation. Then Niers smiled and gestured behind him.</p>
+<p>“Upgrades. We’re back at Elvallian.”</p>
+<p>“Already? Didn’t you go flying off somewhere?”</p>
+<p><i>To lay waste to a Selphid Gathering Citadel, fight an emergent Old One or the beginnings of what might become one, save a [Doctor], and watch a worldwide bombardment?</i></p>
+<p>“Yes. We got back yesterday—I flew to one of the warfronts to check up on things. But we do have a base of operations here. It was an interesting two weeks. Almost as interesting as yours.”</p>
+<p>Erin made a face.</p>
+<p>“You know, coming from anyone else, that’d sound really stupid. But I’m glad you get it.”</p>
+<p>He couldn’t resist the delighted grin on his face. <i>She got it. </i>You were only allowed to say this to someone else who…who was on this level. Not just Level, but ‘level’. You told some nobleman this and he thought you’d spent all day on a leisurely hunt or something.</p>
+<p>“I was thinking we could talk about your Skill. If you have time.”</p>
+<p>“Sure…but what’re you upgrading? Those Fraerlings are so…not-cute. Cool! Can I say hello?”</p>
+<p>His smile faltered. Tallfolk and Fraerlings. He told himself that everyone had a normal, generic reaction at the start.</p>
+<p>“I could introduce you to—Commander Rozcal of Reton. Rozcal!”</p>
+<p>“Cats! I thought you said your citadel was warded, Astoragon!”</p>
+<p>The largest Fraerling that Erin had ever seen in her life—which meant he looked like an incredibly buff toy doll—broke away from overseeing the supervision and stared up at Erin. She waved at him.</p>
+<p>“Hello! I’m Erin Solstice! It’s amazing to meet you and Niers! Uh—Gnomes laugh at you!”</p>
+<p>The huge Fraerling, who was the most bluff and friendly of the ones who’d come to join the offensive against Jungle Tails and the Dyed Lands, did a double-take with every Fraerling in earshot.</p>
+<p>“Gnomes laugh at you? Er—<i>Gnomes laugh at you too! </i>Is that a traditional saying we have?”</p>
+<p>Niers felt his skin crawl. He was instantly brought out of socialization straight back into what Erin had said yesterday. Rozcal looked at Niers, and the Titan hesitated. It sounded <i>vaguely</i>—</p>
+<p>Erin gave Rozcal a serious—and surprised look.</p>
+<p>“You don’t use Gnome greetings any more? Like ‘Gnomes laugh at you?’ Do you at least know how you’re supposed to greet other Fraerlings or visitors when they come to your settlements?”</p>
+<p>The Commander tugged at a red beard, looking worried.</p>
+<p>“It’s not something we’ve done for…maybe I know it? The Architects have their formalities. Would you oblige us, uh, [Innkeeper] Solstice? Half of my city, Reton, wants to talk with you. And every Fraerling hereabouts too.”</p>
+<p>Erin Solstice nodded seriously and drew herself up.</p>
+<p>“Well, if you were to greet your great cousins if they came to you, or Dragons or Tallfolk—you would say ‘Gnomes laugh at you’. And then as they come into your settlement—you’d say ‘Welcome Gnome’.”</p>
+<p>One of the [Architects] making notes on a piece of foolscap paused with a pencil mid-scratch. Rozcal actually nodded along.</p>
+<p>“Welcome Gnome. So simple yet s…”</p>
+<p>He hesitated. Niers was slowly choking to death. Rozcal looked at him and saw a few Fraerlings laughing, and then he got it.</p>
+<p>“Wait. <i>That’s not—</i>”</p>
+<p>He stared at Erin as she began laughing. Laughing so hard she nearly fell out of her chair.</p>
+<p>“<i>I got you! I got you with a Gnome joke!</i>”</p>
+<p>It was the stupidest thing Niers had ever heard in his life. This was how she opened up with the Fraerling folk? Like—</p>
+<p>The worst part was that all the Gnomes would have approved. Every last one. Rozcal turned beet red—then he laughed so hard he nearly popped out of his armor.</p>
+<p>“Niers! You made it sound like she was some kind of cunning Demon-[Strategist]! I like her.”</p>
+<p>“Hi! Hello, everyone! Whatcha doing? Upgrading the tunnels? I thought Niers had nice ones.”</p>
+<p>“Yeah, trapped to Rhir’s hell and back, but no insulation. It’s cold as a Snow Golem’s ass in there right now. We’re installing magicore conduits for magic, heating, cooling…and a kitchen. Well, you’re Erin Solstice. I expected something weird, and I’m glad to see none of the Titan’s friends are normal. Or maybe that’s just Tallfolk.”</p>
+<p>Another Fraerling stomped over. Iuncuta Eirnos eyed Erin with one eye, the other covered by an eyepatch. Erin groaned.</p>
+<p>“Oh no. You’ve got a Chaldion too. Wait, magical conduits? That’s so…<i>cool. </i>Do we have anything like that? I think Drevish came up with some in my blueprints…”</p>
+<p>That got Niers’ ear, but Eirnos and Rozcal were there, and then Patrol Captain Shoike from Itelloi was also walking forwards, and to his great pique, he realized this wasn’t going to be a daring conversation about Skills.</p>
+<p>Damn it.</p>
+<p>But then—Erin looked better for not discussing matters of state first thing. Eirnos didn’t get the Chaldion reference in context, but even she recognized Drevish’s name.</p>
+<p>“What, do you think the Architect came up with that <i>first?</i> I’ll grant you, he was smart enough to use water and oil and experiment with the concept. Even other materials. But we’re <i>Fraerlings.</i>”</p>
+<p>And by that, Eirnos meant that anything Fraerlings had was a tech level or two above Tallfolk. Which was true. But it was that kind of arrogance that got you stomped on in a war.</p>
+<p>Well, Niers had also just shown her a mass-scale bombardment, and her Fraerlings had gone to war against insane Selphids, so he let her have that one. Erin was delighted.</p>
+<p>“So you’re moving into the citadel? And did I hear ‘kitchens’? I didn’t even have breakfast, actually. I had to do a morning dance.”</p>
+<p>“A what?”</p>
+<p>Erin waved that off, and her stomach rumbled. So did half the Fraerlings’ in reply. And as if summoned, someone decided to bring in cuisine to the conversation.</p>
+<p>“Hello, Erin. It is me. Mm. Foliana.”</p>
+<p>The Squirrel Beastkin shuffled back into frame holding a huge pot with steam rising from the lid. Niers, who had been jockeying with Fraerlings for attention…slowly stepped back as she put it down. Half the Fraerlings sniffed at the pot, looking intrigued, and Erin laughed.</p>
+<p>“Hi again, Foliana. Do you cook?”</p>
+<p>“No. Never. I hate it.”</p>
+<p>“Ah. Um, but you did cook?”</p>
+<p>The Squirrel Woman nodded. She peered at Erin.</p>
+<p>“You like mac and cheese.”</p>
+<p>“Yep. I had some yesterday, actually. Pretty good homemade stuff. I like the box too, but you can’t beat someone doing a homemade. Speaking of which—Lyonette, what’s for breakfast? Continental?”</p>
+<p>The Fraerlings were interested as Lyonette hurried over, saw them, <i>squeaked</i>, ran off to tell everyone there were Fraerlings in the [World’s Eye Theatre], and Ishkr brought over a continental.</p>
+<p>Which was, in Erin terms, scrambled eggs, hot bacon, a slice of toast, and usually an optional other grain-type food. In this case, a pancake with some butter and syrup on it. It was the most American breakfast you could name…aside from perhaps a slice of pizza microwaved.</p>
+<p>Erin Solstice had been surprised when Joseph complained about all the ‘American’ food until Imani took over. But even Imani had refused to make it when she was working at the inn regularly. Calescent didn’t care, but she had assumed most people thought of this as a traditional breakfast.</p>
+<p>Which showed what she knew. The Fraerlings, however, educated Erin rapidly. Half of them looked at her breakfast plate, and their faces fell.</p>
+<p>“Dead gods, Astoragon. Couldn’t you give her some of that gold you claim you’ve got mountains of? What level did you say she was?”</p>
+<p>Rozcal muttered a bit too loudly in Niers’ ear. The Titan, though, was still retreating to where some Fraerlings had their safety equipment stored for working with Magicore. He placed an enchanted mask on his face that filtered toxins and fumes out of the air.</p>
+<p>“What? What’s wrong with this?”</p>
+<p>Erin looked incredibly hurt as she stuck a fork in the eggs. Rozcal was embarrassed.</p>
+<p>“What? Nothing! It’s lovely food, Miss Solstice. A fine inn. Beautiful…eggs. All mashed up like that.”</p>
+<p>“I have a [Chef]. He can do weird eggs, but I like scrambled. I even showed him how! Anyone can do it, even Mrsha!”</p>
+<p>“Yeah. I can tell you didn’t even beat the eggs right. Did you add any milk to it? Just a dram.”</p>
+<p>“Milk? In beaten eggs?”</p>
+<p>Erin looked horrified by the thought, but the Fraerlings were eying her toast.</p>
+<p>“Is that toast?”</p>
+<p>“I think it is.”</p>
+<p>“Tallfolk toast? Here I thought I’d get out to see the world…that’s not toast. That’s not bread.”</p>
+<p>Erin Solstice, who had pioneered Octavia’s baking soda and a certain reform in the local bakeries, looked shocked.</p>
+<p>“Wh—it’s made with <i>baking soda!</i> And yeast! It rises! And it’s fluffy!”</p>
+<p>Patrol Captain Shoike raised a hand as her keen intellect focused on Erin’s implications.</p>
+<p>“By this—do you mean you didn’t have rising bread before this? Is…the ability to make bread rise a selling point in Tallfolk cities?”</p>
+<p>Erin inhaled and exhaled. She pointed a finger.</p>
+<p>“Wh—what do <i>you guys eat, then?</i> Huh? Huh? Hey Foliana, you made mac and cheese? Show ‘em how good it is.”</p>
+<p>“<i>Does she mean macaroni and cheese? </i>Is that literally all the dish is?”</p>
+<p>Rozcal whispered to Eirnos as Foliana proudly took the lid off her pot. She put a bowl down, lifted a ladle up—and if you had a [Food Dangersense], it should have already been going off. Why a ladle?</p>
+<p>“I made it. Tell me if it looks right.”</p>
+<p>Erin’s proud smile turned to distress. Foliana slopped something into a bowl as Niers took cover behind one of the construction areas. Some of it splashed up, and the burning ‘liquid’ landed near Rozcal’s feet.</p>
+<p>The Commander of Reton’s Crelerbane forces stared down at the foreign substance and wished for his armor.</p>
+<p>“Is that—cheese?”</p>
+<p>He took a sniff, and Eirnos <i>gagged. </i>Erin just stared as Foliana lifted the bowl up. She looked expectantly at Erin, and the [Innkeeper] hesitated.</p>
+<p>“What…what’s that supposed to be?”</p>
+<p>The Squirrel Woman frowned.</p>
+<p>“…Mac and cheese?”</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>For the uninitiated, mac and cheese referred to several dishes. Some were from-the-box foods from the USA, which had dried noodles, powdered cheese packets in fast-cooking meals that just required you to boil the noodles in water and add the packet of cheese mix in at minimum.</p>
+<p>You could do more, but even Erin would admit it was basic. And tasty for what it was. More advanced home-cooked meals used actual cheese and bread crumbs, and there were endless variations of the stuff that even a restaurant would serve.</p>
+<p>Foliana didn’t know this. She did not cook. And because Three-Color Stalker was used to eating almost anything in pursuit of her targets, when she had consulted with Geneva Scala about making it, the [Doctor] had, unfortunately, given Foliana an accurate description of what the boxed stuff was.</p>
+<p><i>Powdered cheese. </i>Foliana’s first quest was to find a cheese that was more powder than solid. She had consulted with one of the local food-providers, and after sorting through cheeses of increasing crumbliness, she had found several ones that were practically powder.</p>
+<p>Like the blue part of blue cheese. Or the mold if you scraped it off brie. Not knowing which cheese worked, Foliana had included probably half mold, half cheese and melted it into a pot.</p>
+<p>She had also failed to understand that just because the name was ‘mac and cheese’, it did not mean you had macaroni and cheese noodles in equal parts.</p>
+<p>It was mostly liquid—and the smell actually made one Fraerling walk off and lie down with a gas mask on. And in fairness—everything Foliana had done was actually like other food dishes. But she had mangled even that.</p>
+<p>Iuncuta Eirnos had personally disposed of the offending dish. She had, as Fraerlings shouted at the offended Squirrel Woman to <i>burn </i>it—and the other half pleaded not to spread the smoke and smell of it further—stomped over to a window.</p>
+<p>Eirnos had fired a crossbow with a glowing stone out the window, then slapped the lodestone-bolt into her crossbow and fired the second shot at the pot.</p>
+<p>The teleporting pot of ‘macaroni and cheese’ <i>popped</i> out of the citadel as Foliana glared at Eirnos. It showered down on some new students, who screamed as they made their way to the fortress for class.</p>
+<p>Niers Astoragon decided he’d be nice to them in class today. But in the meanwhile, Erin Solstice was humbled enough to sit there as the aggrieved Fraerlings still in the mood to eat stomped off towards their new kitchens.</p>
+<p>“If you want to have a good breakfast or food in general, Miss Solstice—your food might be <i>new</i>, but everyone has a specialty. Why don’t we give you a tour of our kitchens.”</p>
+<p>Erin huffed a bit and decided she didn’t have the appetite for much breakfast after seeing a moldy, baked soup of cheese. But she crossed her arms defensively.</p>
+<p>“Oh yeah? Oh yeah? Well—I’ll admit some of my cooking is utilitarian, but so what? It tastes good. What do <i>you</i> guys have?”</p>
+<p>The Fraerlings looked at each other. Niers poked his head back up, and Erin’s confident look wavered a bit. She eyed him, and the Titan remarked.</p>
+<p>“You might win at chess, but that was a bad opening play.”</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>Fifty minutes later, Erin was still hungry, but no longer hungry for her breakfast. She was also sulking. She had agreed to call Niers back later, but she’d actually turned off the connection to Elvallian.</p>
+<p>The mockery had hurt her feelings. She’d showed them a pizza, and one of them had laughed so hard he’d fallen off a table. Her tricks that had impressed the Drakes and Gnolls of Liscor and Humans of Celum…would not have won her acclaim in Fraerling cities.</p>
+<p>“It’s just because they have amazing technology. My food is great.”</p>
+<p>“Indeed.”</p>
+<p>“My world might not have <i>magic</i>, but it’s got culture. Lots of it. Countless thousands of years of good food.”</p>
+<p>“This is self-evident.”</p>
+<p>“<i>I don’t deserve to be called basic.</i>”</p>
+<p>Erin scowled as she talked with another of her friends far-flung across the world. She waited for some affirmation, and when it was slow in coming, she glanced up and glared.</p>
+<p>Fetohep of Khelt was staring out a window as if the dawn over Khelt’s capital city were the most wondrous thing he had never seen in his entire six hundred years. When Erin cleared her throat meaningfully, the ruler of Khelt exhaled.</p>
+<p>“Erin Solstice. You are Khelta’s successor and a young woman of great integrity, wisdom, and courage.”</p>
+<p>“Thanks for saying that, Fetohep. And taste.”</p>
+<p>The Revenant stared out the window, and his golden eye-flames shrank a bit. Erin Solstice narrowed her eyes.</p>
+<p>“And <i>taste.</i>”</p>
+<p>He lifted one finger, and a ring shone gold as his robes’ almost transparent seafoam pale layers of cloth blew around him like the wings of some great bird in the morning air. A turban of similar material patterned like a blossom sat upon his head, secured with another binding of gold.</p>
+<p>He hadn’t necessarily been going to do a broadcast worldwide. He’d just taken his time dressing up.</p>
+<p>“—I shall put this as gently as possible, Erin Solstice. Your own…taste…in both attire and cuisine are best informed by your subordinates. Such as your friend Selys, who has some eye for detail in your wardrobe. A good ruler knows when to delegate one’s abilities.”</p>
+<p>He never met Erin’s gaze, but he pointedly glanced at her t-shirt and worn jeans and the apron she’d tossed on in about five minutes. And the long white socks, which didn’t match the denim blue or the forest green shirt.</p>
+<p>Erin’s cheeks puffed out in outrage.</p>
+<p>“You don’t even know my menu! It’s got lots of great food on it!”</p>
+<p>“Yes…your child-guest, Mrsha, has occasionally sent me essays on her favorite meals. And my spies have occasionally rendered me with other details of your inn. The finest meals, it seems, were made by [Chef] Imani.”</p>
+<p>“I make pizza. Are you gonna be a pizza snob too? They even made fun of my <i>toast!</i> Who does that? It’s good bread! Bread is bread!”</p>
+<p>He had been trying. He really had. But when she said that, the King of Khelt took arms against the [Innkeeper] for the first time. Like A’ctelios Salash—some things could not be allowed to stand unchallenged.</p>
+<p>He snapped his fingers and turned so fast that Erin Solstice had to move her scrying projection to keep up.</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>The great [Baker], Shoeme, whose designs inspired and fed many of Khelt’s citizens day-to-day, was taking Farmer Colovt to task over his deliveries of grain when Fetohep of Khelt arrived.</p>
+<p>“I need the mix, the <i>mix, </i>Colovt. Nothing less will do. I—<i>Your Majesty.</i>”</p>
+<p>Farmer Colovt bowed to Fetohep at once, and the ruler of Khelt met the man’s eyes in a moment of…appraisal. It seemed like there were shortages in some of the farms. Due to the skeletons being called off for other tasks, some of the harvests were slower in coming out. And that was <i>definitely</i> the reason.</p>
+<p>Any delay was, of course, unacceptable. But the King of Khelt lifted a hand.</p>
+<p>“Baker Shoeme. It is I who have taken countless thousands of Khelt’s endless servants for my projects. Forgive Colovt any discrepancies in your plans.”</p>
+<p><i>“Your Majesty—</i>of course. Of course, think it forgotten!<i>”</i></p>
+<p>The [Baker] instantly reversed his ire and was so flattered that he would have gone without his deliveries for a month. After all, though Fetohep often visited many industries, he rarely sought out the food artisans—because he didn’t eat. If he praised them for a new dish, it was because it had taken Khelt by storm.</p>
+<p>He wondered if his attempts to make food as Fetohep had ordered had taken the king’s notice. But in fact, Fetohep gestured to a spectral young woman who rolled after him, looking annoyed.</p>
+<p>“This is Erin Solstice. A friend of Khelt and a woman I hold in esteem. Know this, Shoeme, before you speak and know that I come to you as a representative of Khelt. In full awareness that I treasure Erin Solstice’s goodwill, and even her words, and that she is an [Innkeeper] second perhaps to only one in Izril—she has said to me this morning that ‘bread is bread’. <i>Educate her.</i>”</p>
+<p>Shoeme and every baker and apprentice in his kitchen turned from bowing to Fetohep to Erin. The [Innkeeper] gulped.</p>
+<p>“I just meant—”</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>By the time Nanette tugged two boys into the inn’s [World’s Eye Theatre], there was a small crowd. Not as many adults—they had jobs. But the youngest boy squirmed and glared at her.</p>
+<p>“You can’t make me do anything! I’m a [Lord]! I want to see Ryoka. Why am I here?”</p>
+<p>“Because it’s interesting. And it matters. And because I think so.”</p>
+<p>Nanette’s reply made Sammial puff up, but Hethon stared around the theatre.</p>
+<p>“<i>Wow!</i> What is—”</p>
+<p>Then they looked up and saw the broadcast reflected on the dome overhead. Despite the rounded nature, the picture seemed to adjust so they got a straight view. Sammial’s mouth opened, and Nanette glanced down and saw Mrsha, Visma, Apista—snacking on the syrup—Ishkr, Calescent, and even Imani and Palt and others sitting in the chairs and watching.</p>
+<p>Erin was in the center of the domed amphitheater, and despite her indignation and expectations—Sammial blinked up as Nanette watched. Why was he here?</p>
+<p>Well, the little witch had thought that if there was one thing Sammial and Hethon Veltras might learn at the inn—amidst humility, appreciation for non-nobles, a perspective into other species—</p>
+<p>It might be good taste in food. And Sammial, for all he was an impatient, energetic boy, stared up and found a seat without a word.</p>
+<p>Because he was engrossed in watching.</p>
+<p>A Stitch-man had two arms in a pile of flour that he lifted, and it showered down in two plumes of what seemed like smoke. But it was not all one color. Or rather—there were gradients of color in the flour.</p>
+<p>Not pure white—and not all the <i>same</i> flour, in fact. Some of it was slightly coarser, and there were individual grains. Black Ashwheat, a more yellowed flour mixed with the predominant wheat—</p>
+<p>“In Khelt, I have flour from every continent and land in the world. Not all are much different, and not all are good, you understand. It is the work of a fine thing to mix it so that the dough that results is not patchwork. But so I do.”</p>
+<p>He began to stir the black Ashwheat into the regular golden wheat that came from Khelt’s own fields and einkorn, mixed with a <i>hint</i> of soft red winter—</p>
+<p>These were types of wheat. Only Khelt could afford this kind of—experimentation. Someone like Shoeme, with nigh-unlimited resources and funds, could be so picky. But he was not Khelt’s best baker simply because of riches and enthusiasm.</p>
+<p>He did have Skills. To begin with, the baker took the mixed flour, which now seemed to run like some pale river, into a vast mixing bowl. A skeleton stirred it as he poured in water taken from the river and added salt.</p>
+<p>The very foundation of most breads was those three things, and even here, Shoeme did not vastly differ. At first. But the mixing of the dough—a very difficult and laborious effort—went to skeletons with their own white hats.</p>
+<p>That was their only job at first, for the [Baker] showed Erin and the audience a piece of dough already mixed up. He portioned them by hand and instinct, but his apprentices would weigh them on a set of scales to make sure they were exactly the same weight.</p>
+<p>Racks of balls of dough about the size of four hands together sat in front of four gigantic wood tables, each perfectly square. Erin Solstice folded her arms.</p>
+<p>“So you’ve got a special flour mix, and you get skeletons to knead your dough. So what? I’ve done exactly that! I had a skeleton once, you know.”</p>
+<p>Shoeme glanced at Fetohep, who was watching from one side with every citizen in a ten-mile radius cramming the streets for blocks.</p>
+<p>“…Does Your Majesty employ [Assassins]?”</p>
+<p>“Not at such time, Shoeme. Continue to educate her.”</p>
+<p>Erin Solstice huffed as the audience tittered.</p>
+<p>“I get it. You’re working hard, and I do respect it. But food just—goes. You eat it, and it’s gone. So why work super hard on it?”</p>
+<p>The [Baker] turned his eyes to her with a kind of wrath.</p>
+<p>“Why does a man climb a hill, Innkeeper Solstice? Just for his health? If you cook to eat, you will get only that. But this…have you seen a [Fencer] practice his blades? If you watch only a novice, you would say anyone can be a warrior. But <i>this</i> is unto baking what swordsmanship is admired for.”</p>
+<p>And with that, he took one of the pieces of dough, and standing before the table that he could have stretched out on head-to-toe and still had room, the tall Stitch-folk [Baker] tossed the dough up and around in a familiar pattern. Spinning it like a disk so it grew wide…and wider…</p>
+<p>Mrsha was not impressed at first. She could toss dough and catch it. But the small ball of compressed dough stretched out until it was pizza-sized, and she decided that would be nice for lunch. Then it stretched out until it was twice as large, the size of a tower shield all around, and Shoeme caught it, and Ekirra licked his lips.</p>
+<p><i>What a large pizza.</i></p>
+<p>Then he <i>spun it, </i>and it was so huge it could have engulfed Erin if she could stand, and he brought it down like a balloon—catching the air under it—and it sat like some puffed pillow, billowing on the table like a bedsheet made of dough.</p>
+<p><i>Then Mrsha was impressed.</i> Hethon’s mouth opened as the dough caught the air.</p>
+<p>“Whoa! It’s <i>huge!</i>”</p>
+<p>A king-sized bed of dough, equally thin, hovered with the air trapped underneath. Erin protested.</p>
+<p>“Okay, that’s <i>cool</i>, but that’s just a trick.”</p>
+<p>“Trick? The air makes the dough <i>thin</i> in the center, you silly Human. Thinner—and because it is I, Shoeme—”</p>
+<p>The [Baker] took a corner and <i>pulled</i>, and to Erin’s disbelief, the dough stretched across to the very edge of the table. A look of satisfaction fell on the man’s face as he regarded his audience.</p>
+<p>“[Untearable Dough]. A small Skill, like [Faster Mixing], which allows the skeletons to move the dough better. I have other Skills—but observe. Apprentice, where is my shopping list?”</p>
+<p>“Here, great baker.”</p>
+<p>A young Garuda handed Shoeme a list, and he showed the inky, messy writing to the audience. Then he tossed it on the table as he stretched the dough across it in a perfect square. As the dough fell—you could see straight through it.</p>
+<p>It was transparent and so thin that it needed to be patted down or the pockets of air would keep it raised. The [Baker] and an apprentice pulled it across the table, and when that sheet was perfectly set, they covered it with a layer of cloth and took another ball of dough.</p>
+<p>Erin realized the four tables—and the dough—were deliberately set so you could layer the stuff and let it sit like that. The shape of the counters allowed Shoeme to stretch the thin dough—and the result, once it had sat and dried enough, would be layers upon layers of incredibly thin stuff.</p>
+<p>Perfect for pastries or other similar goods. In fact, it was this very dough that another aspiring amateur had used to make his layered pastry with jam between each layer of hundreds.</p>
+<p>“And you call this the same as your bread?”</p>
+<p>Nothing would do for Shoeme but to take some of the prepared dough and create a pastry with it, layering in honey, [Flash Baking] it in an oven with such intensity of heat that it charred the outer layers but left a soft, barely cooked interior. Then he added powdered, subtle herbs and baked nuts and presented it upon a platter with another drizzle of honey.</p>
+<p>Then, and only then, he looked at Erin, and the [Innkeeper] muttered as her audience stared down at her.</p>
+<p>“Fine. It’s hard work, and I don’t know bread. It looks amazing. I get it.”</p>
+<p>“She gets it, Your Majesty?”</p>
+<p>Shoeme turned to Fetohep of Khelt, and the ruler’s eyes flashed with amusement.</p>
+<p>“If she does—summon the Four Winds of Teral. Tell them they can redeem their shattered name if they manage this in two days. Two days…send forth for a Courier. What other dishes might we educate this [Innkeeper] with? Come forth, my greatest citizens of Khelt!”</p>
+<p>“Oh, come on. I don’t need to eat it!”</p>
+<p>Erin began to protest as every [Baker], [Chef], and other expert began calling out. But nothing would do but for Khelt to parade their dishes in front of Erin until the [Innkeeper], in wrath and thoughtlessness, snapped.</p>
+<p>“If I wanted to see cooking all day, I’d watch a food channel! Not this!”</p>
+<p>Drassi, slowly munching on a quesadilla in between her shifts at work, glanced up. Fetohep placed his fingers together and smiled.</p>
+<p>He luxuriated in the laughter of his citizens, the inspiration in Erin’s challenge to his bakers, and this moment like a man standing in the sun. For this was Khelt as it should be. Until a shadow fell across his face and he plucked something from a sheaf of [Messages] and read it.</p>
+<p>“Your Majesty?”</p>
+<p>Pewerthe and Alked Fellbow were often in his company, both to learn and see how Khelt functioned. And because they knew the secret of Khelt’s weakness. Fetohep stood back as Erin’s tour of the culinary world continued. The [Potter] waited as Fetohep read, then added the [Message] to a discard pile with a sigh.</p>
+<p>“Is something wrong?”</p>
+<p>“Nothing, Pewerthe. Ironically, this is merely part and parcel to the correspondence I would have received even before Khelt’s name returned to the minds of the public. It was an appeal from a former citizen.”</p>
+<p>“Oh. Which one?”</p>
+<p>Only Khelt could have so few former citizens that you could reasonably name them. In this case, Pewerthe didn’t recognize the name Fetohep spoke.</p>
+<p>“Adoive.”</p>
+<p>A few of Khelt’s citizens grimaced at the name. After all, they might have known why he…? He was exiled. As Pewerthe knew—either you left or you did something so unforgivable that you were banished. Refusing to obey the few laws could be that or refusing to mend your ways even when given a second chance.</p>
+<p>Sometimes, it was a mix. But almost everyone wanted to come back. In this case…Alked’s sharp eyes had picked out several lines of the rather long missive.</p>
+<p>“He seemed…unusually aggressive, Your Majesty.”</p>
+<p>Few people made <i>threats</i> to Fetohep. The King flicked his fingers dismissively.</p>
+<p>“Adoive is a misguided child of Khelt. He oft considered his importance paramount to any around him. I was glad to know he lived; he has sent more desperate pleas in the decade since he was banished.”</p>
+<p>“That long?”</p>
+<p>Pewerthe was surprised. Many Kheltians did <i>not</i> fare well in a world where they had to pay for food and shelter. Fetohep inclined his head and sighed.</p>
+<p>“His poor threats indicate he has risen in some regard. Pay it no mind. [Bandits] will not try Khelt’s border and find them lacking.”</p>
+<p><i>Even now.</i> His gaze searched Alked’s, and the Named-rank adventurer bowed.</p>
+<p>“Who would be mad enough to try a Jaw of Zeikhal, Your Majesty?”</p>
+<p>“True. True…though he made odder threats this time.”</p>
+<p>Fetohep turned and put his hands behind his back. He stared east then, across the seemingly endless Zeikhal. Not towards any one nation he might pick…his gaze seemed to search and find nothing.</p>
+<p>Fetohep had an unerring sense of direction and the ability to place any nation on a map relative to his current location. Pewerthe frowned.</p>
+<p>“Your Majesty? Who has this Adoive fallen in with?”</p>
+<p>“A…group of troublemakers who had preyed mostly south of Khelt. I say ‘preyed’, but their actions have been beneficial and troublesome, both. They have clashed with Khelt, local empires, and refuse to be bound by any laws. Decent fighters, but civilians. Have you heard of…a ‘Prophet’?”</p>
+<p>He spoke the words slowly. Pewerthe had never heard the word used like that, and Alked frowned. He leaned on his relic of a bow as Fetohep’s gaze searched the sands. What he did not say to his citizens was this.</p>
+<p><i>The Prophet had heard of Khelt’s lands of milk and honey. Despite neither flowing from Khelt’s sands, despite the fact that they imported it, despite location and a world apart, he took it as a sign. Adoive had requested, then demanded, then threatened in the Prophet’s name, and Fetohep had ignored him as he had a decade past.</i></p>
+<p>But this last missive was more direct. And it had ended with one note:</p>
+<p><i>The Prophet comes for Khelt.</i></p>
+<p>And of any threat ever made to him in his six hundred plus years of existence…Fetohep felt a prickle upon his dead flesh. A warning, perhaps, and the light of his eyes shining with undeath and magic felt a strange force pressing at him from far, far away.</p>
+<p>It felt like—</p>
+<p><i>Faith.</i></p>
+<p>&nbsp;</p>
+<p>——-</p>
+<p>&nbsp;</p>
+<p>Today, after yesterday.</p>
+<p>Today, as in, ‘today after yesterday when an [Innkeeper] revealed there were six dead gods who might try to consume my soul and told me she had met Gnomes’…was an interesting day.</p>
+<p>What would today bring? The real question at <i>least</i> eight people asked—most likely many, many more—was this:</p>
+<p><i>“What is Erin Solstice doing today?”</i></p>
+<p>And the answer came to them, by hook or by crook, through informants or conversations with her directly or magic—</p>
+<p>“She’s comparing recipes. For food.”</p>
+<p>Naturally, after they thought about it, laughed, cursed her very existence, or threw the teller out a window—those who heard what Erin was up to decided they could find some good eats as well.</p>
+<p>But first, you had to admit that there was something <i>offensive</i> about comparing Fraerling food and Khelt’s cuisine to cooking as the rest of the world knew it.</p>
+<p>To put it finely, as the [Earl of the Rains] explained to some bemused guests as they toured Desonis—a shower of rain falling on the [Magic Parasol] that Lady Menrise had conjured for the group, a vast pink shield overhead—</p>
+<p>“…I would not say Desonis is <i>poor, </i>but Khelt’s opulence is the very definition of decadent. Kaaz is rich, and you would call Kheltian largesse—?”</p>
+<p>He turned to Hundredlord Cortese, and the dueling [Lord] stalking forwards next to his grumpy cat who was getting her paws wet in the mud—the lioness Baeris—retorted.</p>
+<p>“Disgusting, of course.”</p>
+<p>He was walking next to Princess Seraphel, who kept gingerly poking the ground with a walking stick. She had a riding skirt on, and it was <i>not</i> fit for Desonis’ mud. Even if the walkways were paved with stones and gravel for some kind of grip in the wet—</p>
+<p>They could not use dirt because the endless rainfall would turn it to mud. She had fallen twice already, and one of her Thronebearers had used up her supply of [Restore Appearance]. Seraphel’s new, best servant, the Bringer of Toilet Paper as Rabbiteater had dubbed her, Beacle, had at least two cuts on her arm and leg Seraphel looked incredibly guilty about.</p>
+<p>[I Bear My Mistress’ Stains] included minor cuts and bruises. Rabbiteater kept staring at Beacle, which was why Seraphel had resorted to the unseemly walking stick.</p>
+<p><i>That</i> was so disturbing to the Izrilian Goblin it had quite put off the mood of Altestiel’s tour of his lands. Cortese had told Rabbiteater to stop commenting on it because it was embarrassing Seraphel. Menrise had provoked the discussion of Erin to distract everyone, and Altestiel brought up the cooking.</p>
+<p>In fairness, normally the Thronebearers would have scouted the way, set down actual dirt or made sure Seraphel had not a chance of falling. But, uh…there were about a fifth as many as Seraphel warranted, especially for a state visit.</p>
+<p>She was going to Izril, after all, and most of the Thronebearers were prepping for the journey. The crown was fully in support of the joint effort.</p>
+<p>Just not Seraphel. They could not gainsay her—so they didn’t. Altestiel did try to lighten the mood a bit.</p>
+<p>“Just look on the bright side, you all. You’ll experience some fine Desonis cooking and our hospitality before we sail on across to Izril—and during the dry season!”</p>
+<p>“…The what season?”</p>
+<p>The other four of the Ivorybound, the Umbral Diplomats—Rabbiteater wouldn’t stop coming up with nicknames, and worse, people were starting to refer to them like that—looked askance.</p>
+<p>“Altestiel, I am delighted we can take your fine ships from Desonis—your fleets are as mighty as Pheislant’s and famously so. But <i>dry?</i>”</p>
+<p>Seraphel wanted to get back to his mansion, but he had taken them through the wetlands flowing with literally thousands of streams of water criss-crossed by the high-ground where his citizens walked. But Altestiel had been taken with the notion of cooking, and he was determined to give them the <i>real thing.</i></p>
+<p>“Oh, when it’s monsoon season, we couldn’t <i>walk</i> for being blown away. A noblewoman in full skirts? I once saw a poor woman from Nadel flying two hundred feet before we caught her!”</p>
+<p>Menrise, predictably, started laughing at the idea. Seraphel just shook her head.</p>
+<p>“And why, pray, are we here? I don’t imagine <i>anyone</i> cooks in the rain.”</p>
+<p>Altestiel grew serious.</p>
+<p>“No, we’ll stay at one of the towns up ahead. They have a kitchen—but I asked them to prepare us a fresh bounty.”</p>
+<p>“Ah. Well, what are we eating?”</p>
+<p>Cortese and his lion licked their lips. The man had an appetite for food, duels, and cats. Sex might feature lower down, but those were the top three. In reply, Altestiel gave him the blankest stare in the entire world.</p>
+<p>“I have no idea. Kiish, do you know?”</p>
+<p>“Not a clue, Earl. It’ll be served with <i>forkev</i>.”</p>
+<p>“Ah, good.”</p>
+<p>The Ivory Four gave each other a look of long suspicion. Rabbiteater tapped Altestiel on the shoulder.</p>
+<p>“…You don’t know what we’re eating?”</p>
+<p>“I know <i>what</i> we’ll be eating. Fish, or maybe some game if they’ve got pigs, venison from deer…I hope they don’t try to buy something fancy. It’ll be served with <i>forkev. </i>The cut of meat doesn’t matter as much.”</p>
+<p>That was the main point, <i>obviously.</i> This offended Cortese so much he began to argue with Altestiel—and nearly fell into one of the swampy channels. Not so much a fast-flowing river as a freshwater channel, six feet across and deep. It connected the many lakes and ponds to the inlets that ran into the sea—and when the tide changed—sometimes back <i>up</i> into Desonis’ marshes.</p>
+<p>Freshwater fish lived here, and freshwater <i>monsters.</i> This was Hydra territory, and Rabbiteater himself didn’t relish a marshy fight. Desonis was horrendous to invade for a land-based army, and Altestiel, as their [Earl], was an expert on this kind of fighting front.</p>
+<p>But it was not combat they had today. Altestiel caught Cortese, laughing.</p>
+<p>“Forkev’s a…topping? Spice? All and more, Cortese! Surely you’ve had it?”</p>
+<p>“We, that is to say, <i>I</i> have. It’s delightful. We buy some from [Merchants].”</p>
+<p>“<i>[Merchants].</i> It’s not locally made. I bet it’s just a spice rub.”</p>
+<p>Altestiel scoffed, and Kiish made a similar sound of disapproval as only a local could at their falsely-exported cuisine. Now, Rabbiteater was getting interested, so he turned his helmeted head and saw a bunch of men and women in the rain.</p>
+<p>One was a Drowned Folk; the others had the classic raincloaks of oiled hide or similar material that kept them dry. Only their eyes were visible as they bowed to Altestiel. They were all clustered around what seemed to be a fishing line in the ground.</p>
+<p><i>A big one.</i> Practically a rope, and they were hauling up a huge piece of canvas. Not a net—and the weight was so intense all of them had to lift it as Altestiel suggested they give them a hand.</p>
+<p>“Haul the rope. Come on, it’s probably at least several hundred pounds!”</p>
+<p>Water ran from the sides, and Cortese grumbled. Rabbiteater seized the rope since this was fun, and Seraphel gingerly grabbed a rope—and was nearly hauled off her feet as the energetic Goblin <i>heaved</i>.</p>
+<p>“I didn’t come to <i>work! </i>Why aren’t you using a net, Altestiel?<i>”</i></p>
+<p>“The fish are too small for it! Or rather—”</p>
+<p>“Eels!”</p>
+<p>Menrise shouted as the canvas bag opened and the contents went spilling into an actual net, which caught hundreds of the writhing, <i>tiny</i> little black things—the water and some of the ones so small they went through the net sploshed past the haulers.</p>
+<p>An eel landed in Seraphel’s hair, and she began to freak out.</p>
+<p>“<i>It’s on me! It’s on me—</i>”</p>
+<p>“It’s just a wiggly eel. And there’s only five. Here’s one.”</p>
+<p>Rabbiteater tossed it down the neck of her dress by accident as it flopped out of his gauntleted hand. Cortese saw his lion bite one off the muddy ground.</p>
+<p>“<i>Eels? They’re tiny, Altestiel!</i>”</p>
+<p>“Well, they’re for the forkev. Come on, Cortese. Let’s let them haul this back to the town, and we’ll get to watching them mix it up. It’s always in a Dry Spot.”</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>The towns in Desonis were, naturally, on high ground and monsoon-proofed against wind and rain. But even then, it was so <i>wet</i> that you had to be okay with the rain and water being most places or go insane.</p>
+<p>But because they needed somewhere to store food where it wouldn’t rot, every house and settlement had ‘Dry Spots’. Which were zealously water-free. It was also here you’d retreat if the floods were coming.</p>
+<p>Rabbiteater grunted as a ghostly hand <i>poked</i> him in the shoulder. He ignored it as it went through his armor. Then it poked him again. And again.</p>
+<p>Seraphel was trying to get back at him for the eel and his mockery. The Goblin was used to friendly Redfang punches and studiously ignored her. Menrise took pity on Seraphel and handed the [Princess] a wand. When the 4th Princess tapped Rabbiteater on the side with it, the <i>spark</i> of electricity made him shout and leap to his feet so fast it scared the [Mixer Cook] half to death.</p>
+<p>The old woman nearly dropped the dried baby eels as Rabbiteater apologized and shoved the red-faced Seraphel. Altestiel glowered at them.</p>
+<p>“You’re going to ruin the food! Children, the lot of you. Rabbit has an excuse.”</p>
+<p>“I’m sorry. Forgive me.”</p>
+<p>Cortese ignored the altercation. He was still looking highly offended.</p>
+<p>“I thought we’d eat the eels! They’re quite tasty. I liked how you reared them, but this? Really?”</p>
+<p>They were drying the eels and grinding them up into a paste! The [Mixer Cook] had a rolling pin and a stone base, and she was using the eels as a kind of powder. She had fennel, green onions, and so many spices that Rabbiteater’s mouth was watering. Some looked <i>hot</i>, and he knew Desonis had fiery cooking to make up for the wet.</p>
+<p>“Why baby eels?”</p>
+<p>“They taste better. And it’s not as if we’re taking from the channels. Allet—this town—has several eel channels. They feed them every day like we did.”</p>
+<p>Before they’d come into the town and gotten dry, Altestiel had given them all sacks of what Rabbiteater had discovered were spicy peppercorns and told them to throw them into the channel they’d gotten the eels out of. The water had turned frothing with all the hungry shapes, and Rabbiteater had been astonished to learn it was an entire fishery.</p>
+<p>But rather than a building, Desonis’ folk kept channels of ‘safe’ freshwater creatures they intended to nurture. They hung nets to prevent larger predators, like sharks, Hydras, or anything else, from getting into the area and, in some cases, fed the fish on specific diets.</p>
+<p>The fatty eels went into a lot of dishes, but these little ones, once they’d been baked of their oils and the oil saved for other tasks, were ground up and mixed with a positively neverending amount of shallots, roasted peppers, and even some big, squashy tuber-plant they denuded of shell. They put the charred shell in the <i>forkev </i>as it was ground up.</p>
+<p>It was a kind of ‘waste not’ cooking that created <i>forkev</i>, the main spice you put on the catch of herring that was waiting for the Ivory Five. Over time, it had become a national cuisine, and while the red paste did not seem <i>that</i> appetizing to Seraphel, who thought they’d mostly ground it up, she didn’t often see what went into the individual components her [Chefs] used to prepare their dishes.</p>
+<p>Cortese and Rabbiteater could appreciate when the [Mixer Cook] put the prepared sauce into a big pot and then spooned in lard.</p>
+<p>“Ooh. <i>This is good now.</i>”</p>
+<p>“Ah. No objections.”</p>
+<p>The Hundredlord’s stomach rumbled as he rubbed his hands. To complete <i>forkev, </i>you had to add in a broth and some lard. You could make do with…butter…and some lesser liquid, but each town had their own variation of the recipe.</p>
+<p>When it was done, it was less paste and more a rich, semi-liquid sauce that was drizzled generously over a prime filet grilled on a cast-iron pan and served to the five. Seraphel expected a second course or appetizers, but aside from some braised seaweed salad on the side, Altestiel looked delighted.</p>
+<p>“A simple, filling lunch. Fresh, hot, and perfect after a light shower. Dig in!”</p>
+<p>Rabbiteater sat behind a ‘privacy screen’ as he opened his visor and shoveled a bite in. He stuck his head out from the side as the Desonis folk watched and then raised two thumbs.</p>
+<p>“<i>Ish good!</i>”</p>
+<p>The eels made all the difference, especially when you raised them on a special diet. Altestiel beamed as Seraphel ate faster than she normally did. Maybe it was the cold and wet or being with friends—but she actually had an appetite.</p>
+<p>“If only we could stay here a month! I like this so much!”</p>
+<p>Menrise had her own screen to eat with her face uncovered, and the [Lady] of Tourvecall, with her own helmet, had gifted Rabbiteater his. He nodded, and Altestiel laughed.</p>
+<p>“I’ll take enough forkev for <i>months</i> to the new lands! We’ll make more there if we can get everything. Ship-cooking won’t be as grand, but we’ll have experts with us. And frankly, I’m keen on having some good food from Erribathe and Gaiil-Drome.”</p>
+<p>“Oh? Not a fan of Calanfer, Tourvecall, Kaaz, or anyone else’s cooking, Altestiel?”</p>
+<p>Cortese began to look testy, but Altestiel clarified.</p>
+<p>“Don’t be silly, Hundredlord. I <i>meant</i> that we’re sailing in a wave filled with half-Elves.”</p>
+<p>There were ‘waves’ of ships going out to prevent them running into each other, and the second wave was being led by Altestiel himself. But he had agreed to escort the half-Elves.</p>
+<p>“They wanted either Pheislant or Desonis—or Nadel, but Belchaus isn’t joining in—to be their escorts. Raiding at sea. We’ll probably land with the half-Elves. So you’d better get ready for vegetable and fruit dishes!”</p>
+<p>He laughed at Cortese’s expression. Rabbiteater…looked up slowly as he drank from a straw.</p>
+<p><i>Half-Elves. </i>He knew that the Order of Seasons was going, and he was supposed to talk to the Summer’s Champion and the other [Knights] before he went. He didn’t know who of his friends would join, and he wanted to talk to Ser Greysten—he had gone to The Wandering Inn!—but Rabbiteater was reminded of what Erin had said.</p>
+<p><i>Elves and Gnomes.</i> His blood stirred, and the [Knight] almost said something. But then he nudged Seraphel.</p>
+<p>“Pass the brown stuff.”</p>
+<p>“<i>Which</i> brown—”</p>
+<p>“The soy stuff. From Drath. You have some too. You don’t eat anything you don’t know.”</p>
+<p>He poured some on her plate, and the picky [Princess] glared at him.</p>
+<p>“Ser Solstice, I would like you to not make decisions for me. As in, ‘if I do not know whether I am going swimming’, that is not an invitation to push me! The same with food!”</p>
+<p>He didn’t see how a [Princess] could have every food in the world served to her and always want to eat cake and ice cream. Rabbiteater sighed. Maybe that was why she was so picky.</p>
+<p>“It’s gonna be fun seeing you eat outside a palace. Heh. Heheheheheh.”</p>
+<p>He couldn’t wait. Hundredlord Cortese grinned with understanding as Seraphel bit her tongue and tried not to bring up the sieges she’d survived. But then Cortese leaned over.</p>
+<p>“See here, Altestiel. This is good, but I won’t leave Desonis by boat or by horse until you serve me one meal of Hydra!”</p>
+<p>Rabbiteater looked up, and Seraphel gulped. Hard. But Altestiel just glanced up with a grin as Menrise clapped her hands with delight.</p>
+<p>“Well, Cortese, if you want <i>that</i> dish—you’d better supply the meat yourself. Who wants to organize a hunt?”</p>
+<p>Rabbiteater raised Seraphel’s hand for her. She poured soy sauce all over his food.</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>[Princesses] didn’t respect how hard it was to have food. She thought that a mackerel, which someone had to ride from the coastline up into town—a two hour ride after it had been caught at sea—with fermented soy sauce as a dish, forkev that came from eel fisheries, and all of it made for five noble-type visitors was something you were allowed to ruin to get back at a ‘mean [Knight]’. Then she wondered why Rabbiteater, said [Knight], got so upset that he dumped the rest of his glass of water all over her.</p>
+<p>Altestiel got both sides, although he tended to lean on the dignity of a [Princess]. But if they had been on another continent, say, Chandrar, and in Germina, the Quarass would have known better than for a visitor to disrespect food, her, or her people.</p>
+<p>They were all about appearances, no substance. <i>She</i> respected how hard it was to make any kind of sauce, from forkev to the Drathian condiment.</p>
+<p>In fact—Germina made all of it. They were poison experts, and that also translated into being rather fine fermentation and spice experts in their own right. It was said that even if you died of being poisoned, your last bite would be worth it in Germina.</p>
+<p>In fairness, it was mostly the sauce. Germina was poor. It had rich moments, but like Reim, it often fell back on the Yellats.</p>
+<p><i>Yellats.</i> Plant them, water them once a week, and they grew. They surpassed potatoes, corn, and even crops like rice and wheat for ease of harvesting. They liked dry, hot soil, and so many Chandrarian nations had avoided famine on them.</p>
+<p>But the same benefits made the nations that harvested them poor. They were <i>too</i> plentiful to command huge shares of the market, and while they had become one of the staples worldwide—well, Germina could not compete with actual breadbasket nations either.</p>
+<p>Take Nerrhavia’s Fallen, for instance. The Quarass was staring at a scrying orb. She had given up on scrying the inn after spending most of her morning trying to see what Erin Solstice was up to.</p>
+<p><i>No way to see what her [World’s Eye Theatre] was doing.</i> A shame—her Skill wasn’t penetrable by any of the means the Quarass knew, magical or otherwise. The Quarass wanted to know what Erin Solstice wished of her.</p>
+<p>But the [Innkeeper] appeared to be taking a break, so the Quarass scried the only other targets she could. Namely—the ones she knew Erin Solstice had contacted alongside her to reveal she had met Gnomes and Elves.</p>
+<p>Now—Erin Solstice hadn’t <i>tried</i> to reveal the other people to the Quarass. She had probably thought she was being cunning, and she had been. But the Quarass had heard several voices when she opened the connection, and she could [Replay Memories]. <i>It was sort of her thing.</i></p>
+<p>The two things she had been able to identify, <i>perfectly</i>, and then trace to people with educated guesses were the background sounds from two of Erin’s contacts.</p>
+<p>Namely—the unforgettable voice of Cognita Truestone and the <i>creak</i> of sails and a ship. From the two and Erin’s own contacts, the Quarass had guessed it was either the father of Seborn Sailwinds, Therrium Sailwinds, Minotaurs, or most likely—</p>
+<p>Rasea Zecrew. She confirmed her hypothesis that it was Rasea by observing the [Pirate] at sea. Rasea probably thought no one could scry the <i>Illuminary</i>.</p>
+<p>She was wrong. And how did the Quarass know Erin had contacted Rasea?</p>
+<p>The [Pirate Captain] was having an early lunch.</p>
+<p><i>“Food? Is it some kind of [Innkeeper] power? We’ve got food! We’ve got culture! Tons of it! More culture than Khelt has shit! Someone make me a fancy lunch—if that Erin Solstice contacts me, I want to be eating like some royal!”</i></p>
+<p>She was stomping up and down her ship as the Quarass watched. The young Quarass’ own stomach rumbled, but she glared at one of her bodyguards who tried to offer her a lunch. She was taking a tour of Ger’s own facilities.</p>
+<p>Something about food made you appreciate the effort and styles that went into it around the world. The Quarass had lived hundreds of lives, taken every drug, been an alcoholic, a [Monk], and eaten world-class cooking and literal dirt in times of hunger.</p>
+<p>And she still liked good food. She watched, now, as the [Pirates] demonstrated that while they lacked for manners, a variety of foodstuffs, and a working stable economy—they could cook in interesting ways.</p>
+<p>For one thing—when you thought ‘pirates cooking’, did you think of some evil [Sea Chef] with a cleaver hacking down boarding parties over a stove spitting flames and even worse cuisine?</p>
+<p>Because if you did—that was stereotyping and you were dead wrong. Most [Pirate] ships had a very small galley, their cooking area, and some didn’t even have stoves.</p>
+<p>Hold on now. No fire? Well—let a reasonable mind put their cooking another way. What did fire need?</p>
+<p><i>Fuel.</i> And on a ship where, even with holding magic, you had to store freshwater, food, and everything else, did you want to store cooking wood?</p>
+<p><i>Second—</i>even if you had a magical stove, an expensive, <i>heavy</i> luxury—did you want [Pirates], drunk [Pirates], <i>drunk [Pirates] who rammed each other with ships and often damaged their own ships greatly in battles</i>, to have an open flame <i>anywhere on their ship?</i></p>
+<p>The answer was no. A commonality between [Pirates] of now and the ones of Trey’s world during their golden era was that they had a lot of barrel-food. Hardtack, preserved foods, pickled or dried…</p>
+<p>Dire. No wonder they raided ships for fresh food and fished out of desperation. But the good [Pirates] did have an edge on their Earthworld counterparts.</p>
+<p>“Hm. Trey Atwood knows a lot of history. I wonder what Erin Solstice knows? I want Earthers. At least…at <i>most</i> ten. And if they are all like Trey and Teres, three may be more than I need.”</p>
+<p>The Quarass knew the error of keeping too many prisoners or allies who caused chaos. She had just shown Wistram that.</p>
+<p><i>The New Lands. </i>She was going there too. It was a lure that the Quarass could not ignore. The only question was whether she went in person or delegated. There was much to do, and Flos was one major headache—but for now, the Quarass appreciated [Pirate] cooking.</p>
+<p>Rasea Zecrew demanded bread. Fresh bread.</p>
+<p>She had no fire. Her ship had been built like Drowned Ships, and they <i>hated</i> fire and light in the deep where either could get you noticed and killed. If she had a stove, it would be without magical flames—just heating runes.</p>
+<p>But she intended to cook, and so her [Galley Chef] painstakingly mixed up some dough with a lot of chopped up grapes, oranges, and so on.</p>
+<p><i>“Aw, come on. I hate bread with too much fruit in it.”</i></p>
+<p><i>“It’s Scurvykiller Bread, Captain. Shut up and eat it. It’ll take at least an hour, probably an hour and a half.”</i></p>
+<p><i>“Damn. Well, hoist it over, then.”</i></p>
+<p>The [Chef] slapped the ingredients into the dough ready to bake and then shut and secured the hatch. Then Rasea kicked the entire unbaked loaf of bread over the side of her ship.</p>
+<p>At this, even Highborn Vaitsha, the Quarass’ Chosen who sat with gloves on her hands—for her body was poison—made a confused sound.</p>
+<p>Khalid, the Quarass’ [Champion] in training, also blinked. But the Quarass just murmured softly, humoring her two protectors and closest servants.</p>
+<p>“What separates [Pirates] from other cultures is not what they eat, Vaitsha, Khalid. They take from other cultures like they live—stealing. Drowned Folk are unique. [Pirates] are not. But <i>how</i> they cook is interesting. See?”</p>
+<p>She pointed, and the scrying orb zoomed in on the Signal Stone she’d hidden on Rasea’s ship. Then everyone saw the length of rope that the <i>Illuminary</i> had tied to the bobbing capsule in the waves behind them.</p>
+<p>It was already heating up. What Vaitsha saw, to her amazement, was a <i>glass</i> cylinder, tapered at both ends like a rugby ball—Trey had described it to the Quarass once—with a metal hatch on one side that could be secured. It was water-tight, and the entire thing was enchanted.</p>
+<p>“What is it, Quarass?”</p>
+<p>“An oven. Of sorts. It is the cleverest thing a [Pirate] has ever invented—do you see? It only works on sunny days, and they take it off the ship for fear of fire.”</p>
+<p>It was probably hot in there, even with the water surrounding it. It was, the two citizens of Germina realized, indeed an oven. But they, as a landlocked people, needed the Quarass to explain how it worked.</p>
+<p>It was a <i>solar </i>oven. The glass was making the warm sun shine down a hundred times harder and heat the inside of the capsule to a cooking temperature. The bread might be bumped from bobbing in the waves, but it would come out <i>hot.</i> The glass had a magnification spell on the side of it, and so the entire thing was like putting a magnifying glass on an egg.</p>
+<p>Or bread.</p>
+<p><i>And Erin Solstice had the gall to claim that all bread was alike. </i>The Quarass was mostly interested in seeing if Erin contacted the [Pirate], but she didn’t in the hour it took for the Quarass to arrive at her destination via a carriage.</p>
+<p>What <i>did</i> happen was still worth watching, because in between watching Cognita Truestone at her own work, the Quarass saw Rasea offering the baked bread to a guest.</p>
+<p>But the Drake, predictably, turned her down. He sat stiffly as she assured him, ironically, that no one was listening in, even Erin, that she could tell. The Quarass’ eyes glowed with mirth, but she already knew what the Drake wanted.</p>
+<p><i>“Payment upon signing the contract.”</i></p>
+<p>The representative of Zeres was bold to set foot on the <i>Illuminary</i>. Bold enough to tap the contract—but Rasea just tossed it over her shoulder after crumpling it up.</p>
+<p>“<i>That’s not how I do things. You have my word—pay me half now, half after. But you’d better have a list of sails, and if your friends sail under the wrong ones, don’t blame me.</i>”</p>
+<p>The Drake folded his arms with a glower.</p>
+<p><i>“Any non-Drake sail is our enemy. Keep them from landing, and we’ll put a bounty on each one you down. Too bloody for you? If they turn back and you can prove it, we’ll pay for that too.”</i></p>
+<p>Rasea grinned at that. Not a friendly smile. A warning one, like her Anglerfish half.</p>
+<p>“<i>The </i>Illuminary <i>doesn’t wash our hulls in blood, Drake. Watch your tongue. We’re not your armies after Gnolls.</i>”</p>
+<p><i>“You—”</i></p>
+<p>He got angry, but she had a hand on her sword. Rasea spat on a hand and held it out, and the Drake glowered before doing the same.</p>
+<p>“<i>I’ll not sail against Drakes for one month. One month…and any ship I down, I’ll log and bother your lot about.</i>”</p>
+<p><i>“Through the right channels. Never to a Walled City. Wistram is watching. Not scrying orbs or—”</i></p>
+<p><i>“Aye, aye. Shut up. Have some bread afore I stuff it somewhere else. Then get off my ship.”</i></p>
+<p>Rasea looked discontented, but the Zeres Drake seemed pleased. And well he should. It was probably not easy to buy peace with Rasea’s ship even for a month, or cheap, and it likely galled Zeres to do it after she had taken sides against them.</p>
+<p>“…but they cannot afford to fight her. And if she stops more nations from landing on Izril, the better. If we sail for Izril, I will have to deal with her.”</p>
+<p>She was a roving pain in the butt, and in that sense, the Quarass could see why Erin Solstice wanted her. Rasea could trouble even Flos Reimarch…or be a useful ally.</p>
+<p>But why Cognita Truestone? Of the two—the Golem was the more dangerous, more unpredictable, and at the moment, the most <i>lost.</i></p>
+<p>The Quarass took a break from watching via her orb to tour one of the fermentation facilities that made sauces—including copies of Drathian condiments.</p>
+<p>It was an art. One that many peoples understood, but not <i>why.</i> In fairness—the Quarass herself had had an incomplete understanding of germ theory before Trey told her everything. Microorganisms were in fermentation and broke down food over time to different stages, which people ate.</p>
+<p>Often, it could be dangerous and produce deadly bacteria or just rotten food, but certain foods in the right storage conditions fermented well.</p>
+<p>Cheese, wine, beans, fish…the Quarass knew all of that. So she watched as a frothy mixture of warm water, crushed, dry Yellats, and steamed beans were mixed together. Along with fungus.</p>
+<p>“<i>Fungus?</i>”</p>
+<p>Khalid looked horrified and nauseated to learn that most of his favorite dipping sauces included fungi that were grown on the wet mixtures to give them that flavor. The Quarass flicked her fingers at him as Vaitsha kept well away from the vats.</p>
+<p>“If you eat mushrooms, this is no different. It comes on a smaller level, but this is the heartblood of cooking. Without it, you would have no yeast to make bread. No taste in anything not fresh! Time and time again, Germina has recovered this knowledge and sold it to the world.”</p>
+<p>Especially when apocalypse happened. Germina might be poor now, but at times, it had reinvented yeasts for breads and sold them to a world rebuilding out of ash. The Quarass missed those times. Rebuilding was always in her favor because she <i>remembered.</i> The parts before that…less fun.</p>
+<p>Yeast germ was another component too. She would admit that the brown water looked…brackish at best and unappetizing, especially with a foam of literal bacteria on top. She knew it as a good sign the fermentation was happening, and one of the managers of this plant bowed to her deeply.</p>
+<p>“Germina remembers, Khalid. See? Fraerlings may have the technology we lack…but we have the craft.”</p>
+<p>She had visited Fraerling settlements, and they had magic and metal that could automatically mix dough, harvest huge animals, which they needed…but their quality-of-life tools weren’t always good for the end results.</p>
+<p>Germina used unenchanted wood, solid vats for their fermentation, not metal or enchanted materials. It meant they did wear down over decades, but it added to the growth and flavor. Naturally, Germina had more skill to it than that.</p>
+<p>The workers were adding in yeast to the vats in progress, and this was a process of <i>months</i> of slow fermentation—but the end result would be a sauce so fine that it would drive the Emperor of Drath to buy some of her supply. And Fetohep as well.</p>
+<p>The previous Quarass had let this place go slack—but the new one was making up for her previous incarnation’s laxity. The workers lifted a glowing stone attached to the stirring poles out of the vat—and Khalid and Vaitsha had seen how tubes were affixed to the innards with the same magical stone.</p>
+<p><i>Magic.</i> The yeast and bacterium grew well on it. Too much could be…nasty…but you could also make fine poisons by adding magic to the fermentation process. Just enough to give them a kick and accelerate or enhance an already fine creation.</p>
+<p>The Quarass herself deigned to taste the final result. After months or years of fermentation, the sauces were poured into huge manual vises that were slowly pressed to release raw liquid. You could keep doing this for a long time.</p>
+<p>But she always relished…the Quarass held a little spoon out, caught some dark orange liquid, and it tasted <i>fine</i> on her tongue, rich and sharply salty until it leaked a tiny bit of sweetness for relief.</p>
+<p>“Good. Add two cups more yeast. Two cups…one tablespoon. Two months, and we will have a second taste then.”</p>
+<p>She addressed her manager’s head and licked her lips. She had a lot to offer a friend—and good cooking and sauce were but one thing.</p>
+<p>She was willing to be Erin Solstice’s friend. The [Innkeeper]—had met ghosts, and the Quarass felt a connection there.</p>
+<p><i>But she was wary as well. Wary of Erin Solstice’s incautiousness—or perhaps desperation.</i> The Quarass <i>had</i> to know what Trey Atwood had witnessed. Her spies hadn’t been able to overhear what had put Flos’ army into disarray thanks to Gazi, but she knew something had been said.</p>
+<p>The problem was…if Erin Solstice knew the Quarass, she knew the issue just like the Quarass of Germina. Which was—<i>neither one knew which side the Quarass would choose.</i></p>
+<p>She had been on the ‘right’ side and ‘wrong’ side so many times she lost count. She had been overthrown, been a hero—she took the side her current incarnation thought was best for her and Germina and Chandrar. She wanted to be on Erin’s side.</p>
+<p>Even if some Quarass’ personalities were so bad as to overpower her wisdom—again, like the last one—most Quarasses had learned lessons.</p>
+<p>Such as why Roshal was dangerous. The darkness that lay in delving into their ways. When to stand together, why isolationism would end up with you dying alone and surrounded. Even the benefits of mercy and kindness and a people that were well-fed. Although the Quarass had also observed how a blade was far more direct.</p>
+<p>This was why the Quarass was willing to take Erin’s ‘side’ until she had a better offer. And she knew that Erin had talked to a lot of people.</p>
+<p>Including the Emir Yazdil. He had reached out to the Quarass regarding an alliance on Izril. She had refused to hear him out, citing the King of Destruction as a dangerous foe to gainsay in any way.</p>
+<p>They both knew she was lying, but he had dropped it. The Quarass was going to Izril with few allies, but she mostly wanted the rewards, not to have another colony to manage. She was an opportunist who sought only Germina’s glory, and everyone else was grist to that mill.</p>
+<p>Or so she thought. Right up until someone asked her for an audience that she had not expected—but who was so respected in Germina even she agreed without making them wait.</p>
+<p>“Seer of Steel.”</p>
+<p>“QUARASS. I APOLOGIZE IF I HAVE DISTURB—”</p>
+<p>Tulm adjusted the volume on the scrying orb, and the Quarass took her fingers out of her ears. Even so, the Seer of Steel’s voice was so gargantuan it sounded loud.</p>
+<p>“APOLOGIES. TULM. HOW DO YOU BEAR TO TALK WITH ME SO OFTEN?”</p>
+<p>“Earplugs. Quarass, we salute Ger, our allies of old.”</p>
+<p>“So too to one of Mithril, so too to the one who has chosen to walk war their lives ahead. Leaders of the Iron Vanguard. Why come you to Ger?”</p>
+<p>She was glad they didn’t seem to regard her as a child. They were clever enough to know the Quarass—the Iron Vanguard had some ties to Germina. But she had not nearly as much power as when she had dealt with the Dullahans of old.</p>
+<p><i>The world was changing.</i> Still, the two Dullahans bowed to her as their heads rested on pillows, then their bodies withdrew. There was formality to how the Quarass symbolically lay on one side on a bed of pillows, head propped up as if it, too, were detached from her body.</p>
+<p>It made them smile.</p>
+<p>“GERMINA OF FEW NATIONS HAS LONG SINCE UNDERSTOOD OUR PEOPLE. WHERE THE BLIGHTED KINGDOM DOES NOT. WHERE EVEN BALEROSIANS DO NOT. DRATH, GERMINA, FEW ALLIES.”</p>
+<p>The Seer of Steel nodded to her, and the Quarass nodded back.</p>
+<p>“And Demons? Are they allies or merely fair-weather friends?”</p>
+<p>A Dullahan woman had been serving the two food. She slipped, and Tulm’s body stopped her from falling. She fell back, blushing, as the Seer of Steel frowned a second. Another Dullahan took over, and the Quarass observed their cuisine as something similar was placed in front of her.</p>
+<p>Drath had long traded culture with the Iron Vanguard, so that informed some of their foods—as well as a strong seafaring tradition. But Dullahans were a visual people. If they ate in this situation, it was not for sustenance but to add to the talks.</p>
+<p>Visually, it looked like a flower slowly being unwrapped by two lacquered chopsticks. A beautiful flower, but an artificial one; petals falling away onto a plate. Revealing a disc of soft bread stamped with the heraldry of Germina.</p>
+<p>Very beautiful. Very flattering. Flowers for dry Chandrar; it also baked in a floral element to the bread itself. You had to be very good to keep the bitterness out—and the Dullahans had fruit-based sauces from Baleros’ warmer lands.</p>
+<p>They did love fruit, Dullahans. It was a prized commodity in the cold north and one reason they pushed south so often. The two politely ate as pieces were served to them; this too was ritual. They were not eating at their own pace, but taking moments to have a piece delicately inserted into their mouths by a helper. In a Dullahan-only environment, it meant you were dining the same dish, the same way. Communal.</p>
+<p>The Quarass, for her part, had prepared shaved ice colored with sweet honey and dyes. She had personally had to show Vaitsha how to do it; there was art in drawing a ship among waves on the ice so fast it didn’t melt or grow out of focus.</p>
+<p><i>Just a bit of art she’d picked up. </i>A ship roaring through the waves, no other iconography, but it made the Dullahans smile. They appreciated the other’s menu for a moment until the Seer of Steel spoke.</p>
+<p>“WE ARE NEUTRAL IN RHIR. ANY OTHER STATEMENT WOULD BE UNTRUE AND UNWISE, QUARASS.”</p>
+<p>“Very well.”</p>
+<p>If Wistram were listening in, it wouldn’t be any shock. But she had mainly wanted his reaction. Judging by his frown, they weren’t in direct alliance.</p>
+<p>Tulm had looked a tiny bit disconcerted, though, and hid it with the Dullahans’ ‘blank’ mask they thought they did so well. But nothing obvious stuck out to her.</p>
+<p>Good to know. The Quarass harvested all this data like she always did, and the Dullahans’ heads exchanged a look.</p>
+<p>“RECORDS SPOKE OF HOW DANGEROUS IT WAS TO GO TO THE QUARASS EVEN IN ADAMANTIUM. SHE COULD FIND ANY CHINK IN ARMOR. ANY WORD SPOKEN WAS A VOLUME TO HER. WITH APOLOGIES, QUARASS, I SEE IT IS TRUE.”</p>
+<p>She took it as a grand compliment and smiled. They wrote that of her in their secret files? Tulm took over with a duck of his head.</p>
+<p>“We shall be direct, Quarass. Straight as steel, for we are not the Iron Vanguard that once shone like Orichalcum but a lesser metal. We are headed to the new lands. You surely know that.”</p>
+<p><i>You and every nation. </i>It didn’t surprise the Quarass. Of all of Baleros’ Great Companies, the Iron Vanguard was the only one with a huge naval presence. Howling Maelstrom <i>might</i> want to go, and the Titan surely did, but they had stymied both at their attempts to build up navies.</p>
+<p>It was one of the reasons why she didn’t fear Balerosian invasion as much as Terandrian or—until she had watched the Circle of Thorns explode—Izrilian. The Iron Vanguard was a good check on Balerosian ambition, and ironically, Baleros would be more dangerous if they were gone.</p>
+<p><i>The Titan’s forces on Izril worried her. As did his Fraerling allies.</i> But the Dullahans?</p>
+<p>“If you seek an alliance, I am tethered to the King of Destruction. Surely the Iron Vanguard does not lack for strength?”</p>
+<p>They had great war-vessels of old, and while they kept to their north…how much power would they send to Izril? The Quarass was interested, but the next thing Tulm said made her worry.</p>
+<p>“We are sending fifteen Divisions of Armor to Izril, Quarass. Fifteen to start, and we would count Germina’s fine [Assassins] and your network of knowledge—and advice—among our allies if you would agree to it. Warriors would be welcome, but your favor we crave.”</p>
+<p><i>Fifteen?</i> The Quarass kept her face relaxed, not giving in to any liar’s signs, but she was stunned. That wasn’t a colonization force.</p>
+<p><i>That was an invasion force fit to wipe out any competitors.&nbsp;</i></p>
+<p>“Why…would the Iron Vanguard desire new lands that greatly? Surely they are aware of the axiom your people first spoke: ‘The hammer that falls harder rebounds ever higher’.”</p>
+<p>That many soldiers would make them a huge target. Unless they knew other nations were sending just as much? But Tulm shook his head, and the Seer of Steel spoke quietly.</p>
+<p>“…NO EYES UPON US. SPEAK, TULM.”</p>
+<p>“We do not go for mere treasure or lands, Quarass, though that is one goal. We go…because I have just been informed by two sources, both very trustworthy, that there is every reason for us to make this a matter for our entire company. It stems from the heart of our people, and you, of all, know it full well. I have heard it from a…contact who has spoken to me personally. And from Terandria. Do you know what they say?”</p>
+<p>She knew ahead of time as soon as he began. Only one thing would make them move with such vehemence. Such wariness and anger because they had been burned before. Literally. She spoke, and her brows crossed.</p>
+<p>“<i>Dragons.</i>”</p>
+<p>“At least two. And we believe the Walled Cities hide at least <i>one. </i>Not light foes either. Our allies in Terandria have told us they witnessed one of the oldest, most deadly.”</p>
+<p>“<i>Which?</i>”</p>
+<p><i>Which ones were still alive after the Creler Wars? </i>The Quarass sat there as Tulm spoke, and she sighed very quietly.</p>
+<p><i>Oh, him.</i> Why now? She had thought he was done and had learned every lesson. Why…</p>
+<p>“QUARASS. WILL YOU JOIN US? WE OFFER YOU THIS INFORMATION DESPITE THE DANGERS OF ALERTING OUR FOES OUT OF OUR LONG FRIENDSHIP. FOR THE SHIELD KINGDOMS OF CHANDRAR ARE OUR ALLIES IN THIS FIGHT, AND YOURS IS THE MOST TRUSTWORTHY OF THEM.”</p>
+<p>She looked up as the Dullahans watched her. In response, the Quarass lifted her shoulders.</p>
+<p>“Seer of Steel. When Tulm convinced you to take this call with me, he told you I would not agree or disagree in the moment. Yet still you asked. Why?”</p>
+<p>A startled, booming laugh came from the Dullahan, whose massive face sat four times taller than Tulm’s on a pillow. Tulm himself blinked, but then his head nodded ruefully. The Quarass flicked her fingers and lifted them to her mouth</p>
+<p>It still smelled sweet from the vats of fermenting sauce. Sweet…but it cloyed now, like war and blood and a hefty burden. <i>Again and again…</i>she nodded to them.</p>
+<p>“I will make my decision and remember how we spoke. No more, no less.”</p>
+<p>They bowed, and the Quarass was left sitting in silence afterwards. And this knowledge changed much.</p>
+<p><i>Sides and sides.</i> Shakily, she turned on the scrying orb. Where did Erin Solstice fall? Her people had warred and loved Dragons, or so Trey claimed, but only in stories. If Rasea was an ally that could be relied upon—</p>
+<p><i>One great ally or enemy had left her home. Left it to Eldavin, who was so unsettling, and had seemed to quit her responsibilities for…Nerrhavia? Truly? She had taken on a job, and in her way, had already made it successful.</i></p>
+<p>A [Merchant]. The Quarass had suspicions about why, and it would be a sad thing if she were right, but—</p>
+<p>The image of Cognita Truestone appeared as she walked next to a far shorter Stitch-man, who kept glancing up at her as a bevy of servants moved to the Truestone Golem’s command. Eight feet tall, made of marble, beautiful, carved, precise—the greatest of Golems, Cognita Truestone had been months in Nerrhavia’s Fallen already.</p>
+<p>She had a wide-brimmed wicker hat that seemed to be meant for someone on vacation. Perhaps she was no longer as certain as she had been when the Quarass had seen her last. But her green eyes were still dangerous.</p>
+<p>And she was looking <i>right at the Quarass. </i>The Truestone Golem lifted a finger as the Quarass froze.</p>
+<p>“I dislike spying, Quarass. Do not make me remember Wistram.”</p>
+<p>The Quarass turned off the scrying orb fast and sat back. Her heart was beating faster than it had all day. Dangerous? Dangerous and too smart, even for someone who had lived a fraction of the Quarass’ life.</p>
+<p><i>This was why she hated Golems.</i></p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>Cognita had eaten food before, but she had never tasted it. It had not been high on her master’s list of priorities, even when she and her sisters had expressed an interest in it.</p>
+<p>After all—taste buds weren’t a thing for Golems. Superfluous to their function. Even Zelkyr, who had obsessively created Golems for every purpose to exacting designs, saw no need for something that benefited only them.</p>
+<p>She thought about it after chasing away the Quarass. Why did people demand food in such varieties and with such preparation?</p>
+<p>You could grow Yellats in these vast fields, with their wiry, deep, leafy green stalks—almost spiky—sticking up from the soil. Yellats and a few other cheap plants could feed most species to their nutritious desires.</p>
+<p>But they wanted beef. They wanted sugar. They grew unhappy without such things. Why, Cognita remembered a Drake, first very young and then older and older, scales turning grey and flaking off his body no matter how many unguents and tonics he bought.</p>
+<p>One of his favorite meals was a little sweet dumpling you dipped in sauce. So Cognita had learned to make them up, mixing things she could not taste, obsessively heating them to the right temperature and hoping that he would be hungry enough to nibble on them as he poured over a book or wrote.</p>
+<p>She had been proud of cooking that. But Nerrhavia’s Fallen…she walked with the Merchant Boiregon, who she had been hired by.</p>
+<p>He stared up at her with such a look of glee and gratification that she was serving him—and why not? She had demanded not much gold, only enough to suit her needs. And his business was twice as profitable as it had been already.</p>
+<p>He was a Stitch-man who had grown up in Illivere. And he gazed at her, the greatest Golem still walking this world—and that was something she desired. Desired, but it did not make her feel better when she looked across the fields.</p>
+<p>“Your workers would be better as Golems.”</p>
+<p>She turned her head, and the [Merchant] hastened to reply, mopping at his brow. Boiregon gestured to the fields of toiling Hemp folk.</p>
+<p>“Of course they would be better, Cognita. Tireless, requiring no sustenance or breaks or pay. In time, perhaps Illivere will sell me a dozen such Golems for transport. Whatever you think is best. But the cost…”</p>
+<p>He trailed off, and Cognita’s head turned. She saw Hemp Stitch-folk, looking tougher and often bulkier than their Cotton or Silk counterparts. Even they looked up to stare at her as the dry sun beat against her marble skin.</p>
+<p>They were pulling Yellats up from the soil, cutting away the inedible leaves, and trimming off bad or rotten parts. Efficient motions, but backbreaking work. There had to be at least two thousand here, as far as the eye could see.</p>
+<p>They were replanting the seeds at the same time to avoid wasting any growing time. Already, wagons were piled high with Yellats.</p>
+<p>“It will be a profitable winter. Izril is already demanding more Yellats. Something to do with their fields burning. Campaigns in Baleros, the new lands…you foresaw it all.”</p>
+<p>Boiregon looked smug, as if she had not <i>told</i> him to buy these fields two months ago. Told him she would leave if she was not listened to in every aspect. His nerves over purchasing so much farmland and industry had already been soothed by economic forecasts.</p>
+<p>“Tell me, Merchant Boiregon.”</p>
+<p>“—Boiregon is my name. If anyone has the right to say it, it is you, Cognita. Please.”</p>
+<p>She paused, and not once did her carved face move as he looked at her hopefully.</p>
+<p>“Merchant Boiregon. Tell me. Do you enjoy eating Yellats in any form?”</p>
+<p>He blinked, and some of the [Servants] looked at each other as the Stitch-man puzzled over the odd question. He answered uncertainly. As he did, Cognita gently swatted a fly wanting to buzz in front of his ear. She adjusted his robes—which she had picked out and heated for him before she dressed him.</p>
+<p>A perfect servant. Come nightfall, she would prepare a meal if not by hand, then by his inclination. Report to him on his lands more thoroughly than any [Seneschal] he could hire. Stand with him at events.</p>
+<p>Some mocked Boiregon, calling him the ‘Cognita’s Merchant’ already. But they were envious too, because she had done so much in so little time. He himself did not seem to know why she had decided he was worthy of serving. But he was enjoying it, and answered unguardedly now.</p>
+<p>“Yellats? If it’s part of some dish, I don’t mind. Fried properly, and a [Chef] can make anything taste good. Why, I think yes, I enjoy them.”</p>
+<p>“Could you eat one every single day of your life?”</p>
+<p>He shuddered in reply.</p>
+<p>“What, like some Hemp worker? I would rather eat sand. Or starve.”</p>
+<p>A few of his servants didn’t look at him, and the Silk Stitch-man never noticed. But Cognita did. She looked at him, and his smile turned uncertain. But she did not leave, nor pluck his spine from his frame in one movement. She just raised a hand and gently touched his chin with it.</p>
+<p>He went still at the odd gesture as she held his chin. The servants watched as the [Merchant] froze in uncertain nerves…and Cognita felt nothing.</p>
+<p>No tingle, but perhaps that was because once Zelkyr had done the same to her. And this was not the same. She let go and turned.</p>
+<p>“I am told anything tastes…better…the longer you have gone without. Today, I will study how Yellats are cooked. I shall greet you at noon.”</p>
+<p>She turned and left. The [Merchant], shaken, made as if to stop her, but Cognita was already striding away.</p>
+<p>When she prevailed upon a [Master Chef] in the city, the nervous Stitch-man diced a Yellat like you would a potato, though the tuber was softer and the ‘mouth feel’ was weaker unless you stiffened it with a bit of flour and fried it.</p>
+<p>“—though it does grow less soft in water than a potato, so you may boil it, Miss Cognita. Lady Truestone. Er—er—one takes care with Yellats. Any fool can mash it up or serve it cooked, but you have seen the little potato wedges all fried up? Yellats burn slower, so you will overcook it before charring the sides. You make the cast iron pan <i>scream</i> like so—”</p>
+<p>The pan was so hot that the oil was spitting when he tossed the first slice of Yellats in, and the <i>streak</i> of steam and spatter of oil would have made anyone but him flinch.</p>
+<p>His cloth skin was thicker, arms corded with muscle, and the Stitch-man looked at his nervous Garuda apprentice with satisfaction. Then he gazed up at Cognita, who lifted a cast iron pan that had to weigh fifteen pounds and flipped it like it weighed nothing at all. She caught it with two fingers, and she had been made better than he.</p>
+<p>“I see.”</p>
+<p>“So—I shall do a pan of seared Yellats. Remember, the marination—”</p>
+<p>“Sixteen minutes minimum or two hours. Ideally overnight. I do not need repetition, Chef.”</p>
+<p>Then she copied him motion for motion and sliced each Yellat into identically-sized pieces, waited until her pan was just as hot, and copied his motion beat for beat.</p>
+<p><i>Except for Skills—</i>the [Chef]’s confidence slackened. Perhaps he had never met a cooking Golem and thought there was some…intrinsic quality that she could not copy.</p>
+<p>“Ah, but can you tell when it is perfectly crisp and ready to eat?”</p>
+<p>He blustered as he tried to make his pan exceed hers in method. Then he saw Cognita taking a spatula of wood and flipping certain slices of Yellat, moving others into the center of the pan. She rearranged eight pieces and waited six more minutes before moving. She did not…stir or keep the slices moving.</p>
+<p>He expected them to be burned because she took the pan off the flames first. But when she began flipping them, he saw each side was perfectly seared. Almost identical.</p>
+<p>She caught his eye.</p>
+<p>“I have observed variation makes good cooking. So this—”</p>
+<p>She <i>slightly</i> over cooked some, let the heat distribute itself unequally, to give it that un-uniform texture that some called aesthetic. When she was done, it was hard to tell which plate had been made by which.</p>
+<p>“Skills to regulate temperature, to cook faster or prevent food illness or procure rarer ingredients—without Skills that add magic or something else, there has never been a [Chef] who can do what I cannot. Thank you for teaching me.”</p>
+<p>She put the plate down. The Stitch-man stared down at his plate with hands resting on the table that shook. When he looked up, he did not like her.</p>
+<p>“So that is Golems. I am glad I do not live in Illivere, Lady Truestone.”</p>
+<p>“They cannot do what I do.”</p>
+<p>She met his gaze until he flinched. The [Chef] stared down at her plate and tasted one Yellat. Then his face grew even more frustrated, for he clearly did not taste the inferiority he sought.</p>
+<p>“At least—did you enjoy it? Can you make new dishes?”</p>
+<p>He spoke to her, and Cognita’s jade-green eyes fixed on him. Slowly, she picked up a raw Yellat and crushed it within her hand. He paled and backed away, but all the Golem said was this:</p>
+<p>“It is soft. It feels different than a potato or sponge. I enjoyed touching it for a second. If I could eat it and gain anything from the action, I would have. But neither this nor many other things have been—enjoyable for me. I thank you for your attempt. I will keep searching. Perhaps I was simply not made for it.”</p>
+<p>The wrath of the [Chef] restrained only by his fear of her turned to…something else as Cognita turned away. She turned because she did not like the sympathy in his eyes nor the pity. When she left his kitchens, hurriedly, he came to the doors and threw them open. Then he shouted across the streets of the capital city of Nerrhavia’s Fallen, Tyrant’s Rest.</p>
+<p>“<i>Someday, Cognita Truestone, I will make a dish as even Golems enjoy!</i>”</p>
+<p>Stitch-folk heads turned as they heard his wild pledge. And of that, they told stories, whether or not it would come true, because they enjoyed such things. But Cognita just lifted a hand as she turned her head.</p>
+<p>“I wish you joy in your goals.”</p>
+<p>She whispered back, too quietly to be heard, but she doubted he really wanted to hear her reply anyways. Cognita looked around, then blankly touched the sunhat on her head.</p>
+<p>“I have yet to find mine.”</p>
+<p>Then she went back to find the Merchant Boiregon and tried, for a moment, to serve him. She’d cook the yellats tonight, and wait for a word of praise. To enjoy the affection and respect he gave her. To try to love him and do it all again right. No matter what he asked, to prove she was the servant without peer.</p>
+<p>But it was not the same.</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>Food made by those who would never eat it was a stupid thing. They could make it well, though. You did not have to enjoy cooking to make it taste good.</p>
+<p>A spell could automate stirring a bowl. In the same way, a dedicated Golem could fry an egg. There was a myth that the Quarass liked to tell that the <i>care</i> and craft made for better results, be it cuisine or anything else.</p>
+<p>The myth was that it was the emotion that made it better. The truth was that an artisan just put more effort and detail into their creations. The passion was a means to the greater result. But Cognita, Golems in general, were the lie in that ideal.</p>
+<p>Robots, or the fake Golems of Earth that Nerrhavia had been told about, would be another kind of that lie. They would paint pretty pictures and create delicious food, and someone would say it was <i>wrong.</i> As if you had to enjoy it or feel to surpass. But it had ever been this way.</p>
+<p>For instance. She hated cooking. It was as mundane as lacing up shoes or shoveling dirt to her.</p>
+<p>Yet she could cook. Passionless competence was hers. Whereas—</p>
+<p>Az’kerash seemed to be enjoying every second of this. He was animated, smiling, patting Bea’s head, and speaking of giving the other Chosen, even Venitra, tastebuds.</p>
+<p>He could not cook.</p>
+<p>“Great Nerrhavia. With respect to your…welcome <i>condescension</i> to all that I do, I was the Archmage of Death. Son of…Silvaria. I have dined in countless fine banquet halls, and I have a taste for fine cuisine.”</p>
+<p>“Yes. And you cannot cook. Please stop. I did not beg my enemies when I was tortured in battle. I beg you now. <i>Stop.</i>”</p>
+<p>Nerrhavia clasped her hands together—or rather, her puppetted body did. She gave him an earnest look, and he scowled at her as his Chosen gathered around the kitchens he had ordered cleaned. They each had a table of stone and their own recipes.</p>
+<p>Nerrhavia was cooking mostly because Az’kerash was. He had been inspired by watching Erin Solstice dealing with food. She had agreed to join in because the Chosen might as well learn something, especially Maviola…</p>
+<p><i>And she was worried.</i> Privately, she was. She had expected something else of the Necromancer of such terror. He was refreshingly easy to manipulate in some ways. In others?</p>
+<p>She shifted her gaze left and counted.</p>
+<p><i>Seven Chosen.</i> And one Healing Slime being fed handfuls of flour by a skeleton in an apron and a hat. Of the lot, Toren looked like he actually knew how a kitchen knife worked. He was methodically dicing up a carrot for a stew, and Az’kerash was going to make a terrine.</p>
+<p>Or rather…</p>
+<p>“This is a <i>terrine lox sandeis d’œufs. </i>I recall eating it at a banquet. It may be complex, but we will recreate it and taste it—those that can taste. One should know how to cook as well as dance and sing and fence.”</p>
+<p>Devail looked happy because he could taste, and Oom, the Acid Slime reincarnated, shifted. That might have been unease, though. Nerrhavia stared at Az’kerash.</p>
+<p>“You. Cannot. Cook. Do you even know what you just said?”</p>
+<p>The Necromancer looked annoyed—then uncertain.</p>
+<p>“It’s a dish.”</p>
+<p>“Do you know what a terrine is? Lox sandeis means ‘with fish’ in old Erribathian. <i>D’ouefs</i> is older. It means with eggs. You’re making a terrine; that is a disgusting loaf of ground meat that Terrandians claim is <i>fancy.</i> Out of fish. And you’re putting an egg in it, likely raw.”</p>
+<p>Of the lot, none of the Chosen seemed impressed or disgusted by the concept. Only Toren opened and closed his jaw uncertainly. <i>He</i> knew food, at least food that living people ate, and that sounded sort of gross.</p>
+<p>“I distinctly recall eating it. It will be good practice. We will do it together. Come now, Venitra. Pluck the bones out of the fish like I showed you, and Bea—you have your gloves on?—chop the fish meat up finely.”</p>
+<p>Nerrhavia rolled her eyes, but she was watching the Necromancer. The arrogance of an amateur thinking he could replicate any dish with a bit of effort didn’t surprise her. That was the most normal thing, actually.</p>
+<p>He <i>had</i> been one of the greatest [Mages] of his era, and they thought cookery similar to spellcraft but easier. Meanwhile, she addressed her audience of Toren, Maviola, and a new Chosen.</p>
+<p>“Never do what he is doing. If you <i>must</i> cook—do only what you are certain of. Cooking, like anything else, is a means to an end. If it is an adventure like the Necromancer cooks, it will almost always end in a dark place. Usually a toilet.”</p>
+<p>Az’kerash glared at her as his Chosen looked up uncertainly. Then he scoffed at her ingredients.</p>
+<p>“Do you have enough <i>salt</i>, Nerrhavia? One supposes these new lands risen from the sea will be replete with salt deposits. Possibly enough to replenish how much you are using.”</p>
+<p>He was…<i>too</i> chatty. And he was sniping at the literal pile of salt in front of her. Maviola kept poking it.</p>
+<p>“I don’t think most people eat this much salt, Lady Nerrhavia.”</p>
+<p>“No, of course not. We are baking with salt. This fish will go under it. But first—cut open the belly, girl.”</p>
+<p>She handed Maviola the knife, and the fiery haired [Lady] cut the fish open.</p>
+<p>“Ew, ew…do we have to pull its guts out?”</p>
+<p>“Only the inedible parts. The rest we will bake, including the bones. And stuff the center with herbs. This is a common mix from when I was a girl. Any will do. Skeleton, show the new child how to wash her hands.”</p>
+<p>It was nostalgic. Toren looked slightly nervous as he made the newest Chosen wash her hands. Across from them, Az’kerash was having Devail break an egg into a bowl.</p>
+<p>“I think I recall infusing ground meat with eggs. Maybe a bit of flour.”</p>
+<p><i>“Pepper, Master?”</i></p>
+<p>Ijvani suggested. Az’kerash gave her a blank look.</p>
+<p>“Yes…yes. Put a bit in. This is a lot of meat so—a handful? It’s called a ‘spice rub’. I distinctly remember that.”</p>
+<p>Nerrhavia stared at the four eggs mixing with ground <i>fish</i>, not ground beef, and a handful of black pepper. She was long dead—but she shuddered.</p>
+<p><i>He was already damned.</i> But his Chosen were enjoying themselves, and he was too. He was smiling, white hair a bit messy with flour already. Why he needed flour for a terrine…he wasn’t even making any bread to go with it.</p>
+<p>Nerrhavia stuck the herbs into the fish, making all her Chosen take part, and then pointed at the salt.</p>
+<p>“This goes on top. Then we will bake it until cooked. If you are cooking—you will check on your food to make sure it is done. It is not about memorizing a time—though it is a good rule of thumb. The food should be cooked hot inside and out. Too hot on the outside and cold on the inside will make someone sick.”</p>
+<p>“Why salt, Nerrhavia?”</p>
+<p>Maviola laughed at the fish, which <i>vanished</i> under a pile of salt. It might offend Perril Chandler’s Terandrian sensibilities, but Nerrhavia just shook her head.</p>
+<p>“It was how we cooked when I was a girl. The salt can be reused—though most will not. It is cheap for a place that has access to much salt. I remember when I was hungry, I would take a piece of the salt crust and nibble on it.”</p>
+<p>“Didn’t you cook, Lady Nerrhavia?”</p>
+<p>The new Chosen spoke, and Nerrhavia glanced at her. She was interesting. The Tyrant took her time in responding.</p>
+<p>“We did. But we did not have enough to eat even when we cooked. There is a difference between having enough and making it taste more than adequate. Without enough to fill your stomach, the preparation matters less. Now, you are going to make me bread. And I will touch nothing. Rescue the flour, skeleton.”</p>
+<p>Toren stomped over to grab a bag of it. He felt like the great Necromancer and the Immortal Tyrant of legends were raising a bunch of incredibly stupid and deadly Mrshas. He liked it more than being torn apart every day, but wow.</p>
+<p>Things were weird these days. Belavierr was still trying to reclaim her daughter, and Nerrhavia was teaching them to cook.</p>
+<p>He would have said this was all so silly that they had lost the plot altogether…but the skeleton slowed as he came back with the bag of flour. He reached out…slowly…and a furry paw, dead but beautifully stitched together, took it from him. Two bright eyes blinked at him, and sharp teeth grinned.</p>
+<p>Of all the Chosen, the newest to join their ranks was most well-made—in that you could think she was alive, fully, even more than Kerash and Bea in disguise. She also scared him like nothing else.</p>
+<p>“What is it, Toren? Master, Master Chandler, look, I’m making bread!”</p>
+<p>She waved the bag of flour, and the undead was rewarded with Az’kerash’s smile as flour flew everywhere. Nerrhavia instantly slapped the back of the girl’s head.</p>
+<p>“Do not harm my Chosen, Nerrhavia.”</p>
+<p>“Then teach them not to waste food.”</p>
+<p>The undead Chosen covered her furry head protectively. She was, in fact, what appeared to be a Cat Beastkin. Though she could also turn far more like a cat if she rearranged herself. Toren suspected Az’kerash had copied someone else’s design to come up with a cat…girl. A catgirl? It sounded about right.</p>
+<p>She scared Toren, and he stood behind Maviola, who was trying not to get egg on her hands as she cracked them into a bowl. She didn’t understand what made him so nervous, but she had no context.</p>
+<p>“Nekhti, you may join us in cooking if you do not wish to learn from Nerrhavia.”</p>
+<p>“But I want to make <i>bread.</i>”</p>
+<p>She went back to listening to Nerrhavia scold her. Perhaps the Immortal Tyrant also sensed Nekhti was more…animated than some of the Chosen. She had appeared with personality and even more of an emotional grounding than Devail or Wesixa.</p>
+<p>“You have improved, at least, in your creation of the Chosen. Why…Nekhti? Are you inspired by the ancient greats, Az’kerash?”</p>
+<p>The [Necromancer] was staring at his terrine with the vague apprehension of a man who realized he didn’t know when it was done. It was a slimy mess—he didn’t recall it looking like that.</p>
+<p>“I should…we should bake this, shouldn’t we? Yes. Ijvani, start a fire in the oven.”</p>
+<p>“<i>How hot, Master?</i>”</p>
+<p>“Hot enough to turn meat crispy, but not black. Funny you should mention that, Nerrhavia. By chance, Nekhti named herself when I speculated. It seems she enjoyed the name once it was floated, so I thought it a fitting tribute.”</p>
+<p>The new Chosen beamed as she flicked her ears back and forth. Nerrhavia glanced at Toren as the skeleton watched Nekhti.</p>
+<p>“Hm. How many will you make?”</p>
+<p>“Not a legion. But enough. They will go soon…to the new lands. I will not send them away unsupervised, of course, but they must grow and learn. And—you have said that there is something there that we need. Just put the terrine in the oven, Venitra. Don’t make such a face. You will have to at least <i>pretend</i> to eat, and once I give you the ability to taste, you will appreciate all of this.”</p>
+<p>“Yes, Master.”</p>
+<p>The huge bone-woman sulked, but she seemed to drink in his smile. Nerrhavia…quickly ordered Maviola and Nekhti to mix up a dough.</p>
+<p>“Yes, the new lands. It will be the target for many groups. Across the world.”</p>
+<p>“For land and more that you have not said.”</p>
+<p>“I imagine it was obvious. I showed Erin Solstice two clues…were you not paying attention?”</p>
+<p>She stiffly showed them how to knead the dough. Nerrhavia glanced over, and the Necromancer, who had machinations across the world…</p>
+<p>…Was so busy watching Devail eat a tomato slice and spit it out he only focused on her statement after a moment. Then his head snapped around.</p>
+<p>“What?”</p>
+<p>“The pottery. And thread. Or did you think I was merely taunting her for nothing? Whether or not they find what I dearly suspect to be there…I would think you would scramble to find the missing component of Seithbone.”</p>
+<p>Toren and Maviola were eyeing Nerrhavia now as Az’kerash blinked and grew excited. He swept his hair back and blinked.</p>
+<p>“<i>That’s what’s hidden there?</i>”</p>
+<p>“I thought I would spell it out for you. Since you were so oblivious.”</p>
+<p>She gave him an arch sneer, and Az’kerash’s eyes focused—then he burst out laughing with rueful amusement.</p>
+<p>“<i>Lost to sea!</i> So you’re telling me that we will soon be competing for…?”</p>
+<p>“It will not be simple. Rather amusing, yes.”</p>
+<p><i>Why was she telling him all this for free? </i>Toren looked at Maviola, and Belavierr’s daughter knew intrigue, even if she was only months old. Nerrhavia had led Az’kerash on a merry dance, feeding him tidbits in exchange for his help.</p>
+<p>Right now, she was laying things on the table so obviously even Healing Slime was catching up as it ate an orange. Toren glanced at Nerrhavia’s puppet, the Drake woman tapping a claw to her lips, and he realized something.</p>
+<p><i>She looked a bit worried. </i>She kept interrupting Az’kerash as he tried to lecture his Chosen into making little ornamental figures out of fruit or vegetable.</p>
+<p>“Little tomato soldier-slices. I remember we’d roast them on a pan over a fire and eat them hot. They never looked as good as when they went in.”</p>
+<p>He chuckled. Toren saw him checking on the terrine…the [Necromancer] opened the oven, recoiled from the <i>smoke</i>, and coughed.</p>
+<p>“Eugh. It smells like—perhaps too hot, Ijvani.”</p>
+<p><i>“I am sorry, Master!”</i></p>
+<p>“No, it’s my fault. My fault. We could at least taste it. I’ve seen stranger dishes from the kitchens. If we…don’t we have some of that ‘ketchup’? It’s mostly like the sauce I remember glazing dishes with. Yes, a nice glaze—”</p>
+<p>Flustered, the Archmage of Death rushed around trying to save his creation. It was already doomed to Rhir’s hells, and Nerrhavia pointedly took out her baked saltfish and let Nekhti crack open the baked salt. They unburied the fish, and the cat-Chosen squeezed her eyes shut as she licked the salt.</p>
+<p>“<i>Salty!</i> Taste! Master, I tasted something for the first time ever!”</p>
+<p>“You did? And I missed it?”</p>
+<p>He was woebegone, then Az’kerash stared down at the grey-black ‘terrine’, roughly assembled in a jello mold shape. There was too much egg vaguely holding together diced, not <i>ground,</i> fish, and black pepper had given it all a grittier texture.</p>
+<p>Not enough seasoning, too much seasoning. The ingredients were disturbingly meshed and not at all separate. Toren took it all back.</p>
+<p><i>Az’kerash was about as good at cooking as he, Toren, was.</i> Erin would have fired both of them from her kitchen.</p>
+<p>To be fair, even Perril Chandler knew that he’d messed up, but conscious of all of his undead kids, he was trying to cover his sins with ketchup. He eyed Nerrhavia’s baked fish, which she was dissecting for the edible meat. Nekhti and Maviola gobbled down a piece, and both smiled.</p>
+<p>“Going to taste your fine cuisine, Necromancer? Or shall we focus on Seithbone components?”</p>
+<p>She gave him a mocking smile—but Toren thought it was still <i>worried.</i> She was giving him an out. Yet Az’kerash saw his Chosen staring at the horrible creation with pride and gulped. He lifted a spoon that Wesixa handed him.</p>
+<p>“But we have not tried the food yet, Archmage Chandler.”</p>
+<p>“True, Wesixa. True…Devail, h-how does it taste?”</p>
+<p>Nerrhavia looked up sharply; Devail had taken the first bite of the food, and he looked…confused. The thin undead, all sinew and muscle, with his rapier at his side, turned to Az’kerash.</p>
+<p>“I do not know what taste is, Sir Chandler. My mouth is doing odd things. It wants to do this.”</p>
+<p>He had no real stomach since he was so compact, so he spat out the food, and Az’kerash hesitated. The [Necromancer], who knew <i>exactly</i> why Devail had just done that, hesitated as Ijvani dug him out a mound of food for him to fill his mouth with.</p>
+<p>“You told them to call you Archmage <i>Chandler? Sir Chandler?</i>”</p>
+<p>Nerrhavia tried to interrupt Az’kerash. He looked at her, and the man…</p>
+<p><i>The man, Toren realized, </i>blinked through white pupils and tried to avoid smelling the food. Since when had he <i>smelled? </i>Since when had the <i>undead [Necromancer], </i>the [Undying Lich, Myth of Death and Vengeance] had taste?</p>
+<p>But he looked so <i>nervous</i> as he lifted the bite of horrible terrine to his mouth—then Toren saw Nerrhavia bite her lip as Az’kerash replied.</p>
+<p>“I thought it was more fitting. I will confess, my Chosen—this might not be of the same quality as I had in Silvaria. When I was there, I remember—I remember—”</p>
+<p>He was laughing weakly, taking a half-bite of the food, chewing as his undead body tried to <i>gag</i>—and forcing the food down through the same will that had seen him break armies with his magic alone.</p>
+<p>He <i>barely</i> swallowed, and even Nerrhavia applauded that. A rueful [Archmage] of Wistram, quickly grabbing a cup of water. A famed duelist, trying to look good for his apprentices. A father in front of children trying to teach them—</p>
+<p><i>And then, it came upon him as he remembered more of what it was to live. </i>Az’kerash’s smile, his nauseated look—and the words, the words came back to him as if he had heard them for the first time.</p>
+<p>The smile winked out. He looked up, and Toren saw a man with faint brown eyes, tinged with black sparks radiating outwards, and a face lined by years, black hair slightly floury—staring at him.</p>
+<p><i>Who…? </i>For one second, Toren looked at a living man, or as close as he could see. A copy of, perhaps, the [Archmage of Death]. Sir Perril Chandler. Son of Silvaria.</p>
+<p>Then the rest of the man’s life came flooding in. Toren saw a bloody line <i>open</i> across his neck. As if cut there—twice—one cut halfway through his neck, but stopped—the second severing it all.</p>
+<p><i>An executioner’s axe. </i>Ijvani dropped the spoon as the death-wound appeared. Az’kerash’s eyes opened wide, and the color bled out of them. Even his pupils, black, seemed to bleed outwards until a white core appeared.</p>
+<p>His hair turned white. He stood there—and tears ran from his eyes. Tears…and he looked down at his hands. A dead man’s hands.</p>
+<p>It was then that Toren glanced over and saw Nerrhavia’s worried face. For this was not the impartial lich, the emotionless, nearly inanimate master of death who had barely looked up from his works when Ryoka Griffin first found him. That being had been ground down from a century of war. A century of death and defeat.</p>
+<p><i>This man…</i>this was Perril Chandler, the one who had lived so long, done so much—and been betrayed at the end of it. Been executed by his own kingdom.</p>
+<p>One a living man full of foibles and ego and mistakes.</p>
+<p>The other the very incarnation of undeath’s vengeance against the living. He had been changing this entire year. Reminded of what it was to be alive by Teriarch’s gift. By observing the living.</p>
+<p>By Pisces. And this was good, wasn’t it? He had helped people. Taken sides. If you said that, most people, perhaps even Erin, would have agreed.</p>
+<p>But if you said it to Nerrhavia? She would have looked you in the eyes with the same apprehension that was in hers now and asked you one thing:</p>
+<p><i>Who did you fear more? The Lich who forgot he had ever breathed or the man who had once loved?</i></p>
+<p><i>“Master? Master, are you alright? Venitra, you messed up the fish.”</i></p>
+<p>Ijvani tugged on Az’kerash’s arm, clearly worried. The blackmetal skeleton looked at the huge bone knight, and Venitra protested.</p>
+<p>“I did not! It was…<i>Bea! </i>She cracked too many eggs.”</p>
+<p>“No I didn’t. Did I, Master?”</p>
+<p>The bickering Chosen barely registered with Az’kerash at first. Then…Perril Chandler looked around, and they fell silent. For his mouth was open. Tears fell from his eyes, and his look of horror scared even them into silence.</p>
+<p>“<i>…Master?</i>”</p>
+<p>Bea spoke. And it was she, she who wore the face of a woman long dead and the same name, who looked worriedly at Az’kerash. She reached out—and he recoiled, slamming into the stone table. Bea halted, confused—</p>
+<p>“<i>Oh no.</i> Necromancer—haven’t we wasted enough time? Shall we put aside these childish diversions or what?”</p>
+<p>Nerrhavia muttered, then raised her voice. She tried to sound as arrogant as possible. But he barely looked at her. His eyes were focused on Bea. When he finally looked around—</p>
+<p>Perril Chandler was there. He looked out of a dead man’s eyes and at his hands. Tears still ran from his eyes, and his voice shook almost like his Chosen. For they were afraid and didn’t know why. What Perril Chandler said was this:</p>
+<p>“I’m…I’m sorry, Nerrhavia. My Chosen…my children. I’m sorry.”</p>
+<p><i>They stirred, for he had never called them that. Not fully. </i>Nerrhavia lifted a hand to say something, but it was too late. So she closed her mouth and waited. Az’kerash looked at Toren, then at the fish they’d made and the bread rising in the oven. Slowly, he walked over, checked on the rising loaf.</p>
+<p>“Bread. I haven’t eaten bread in…over a century. I forgot what it tasted like.”</p>
+<p>“If you want it, Master, it is all yours.”</p>
+<p>Nekhti piped up, and he looked at her. Still, the tears rolled down his cheeks.</p>
+<p>“No. No…I would share it with you, Nekhti. With you all. I wish you had tasted the bread I had as a child. Tomato-slice soldiers. Hot bread by the fire in the winter. Terrine?”</p>
+<p>He looked at the mess blankly. Az’kerash was a being of a hundred plus years ago, and his memory had faded over that long while, his reasons lost on Izril with time. But now, he was coming back. And bringing…everything.</p>
+<p>“That is not a terrine. I ate far finer, and I remember now. I thought it was so rich I spat some into a handkerchief just like Devail did. Not even cooked, I remember saying, which made the Lightherald laugh, and I jumped because I was afraid…”</p>
+<p>His hand shook. Toren felt a slight…tingle run down his spine. He looked around for Maviola, his fleshshield, and realized she had crept behind him, holding Healing Slime in her hands. The three slowly backed up behind Nerrhavia as Perril Chandler spoke on.</p>
+<p>“I lied. Ijvani, Bea, Venitra, Devail, Wesixa, Nekhti, Oom, I lied. I don’t know how to make a terrine. I can’t cook. It was never something I pursued. I would burn all the food I made—I could roast things at a campfire or with magic, and that was about it.”</p>
+<p>“I can’t tell you can’t cook, Master. It looks good to me!”</p>
+<p>Venitra spoke up with that way children did, to tell their parents they were infallible because they had to be. But Az’kerash closed his eyes, and he wept.</p>
+<p>“No. I can’t cook. I wish I had learned. But even that foul taste reminded me…reminded me of eating as a boy. Dining with the man I thought was my friend. My land. My kingdom. I was a son of Silvaria. I coined the term, like the Drakes called themselves ‘Sons of the Walls’. I was so proud. And they…<i>they killed me. They lied and put me in chains. And when I looked in his eyes I knew he had lied. </i><strong><i>Then they cut off my head.</i></strong>”</p>
+<p>His voice was changing. It was shaking now, like an echo. Two voices. The Az’kerash of now and a man screaming his last words as the [Executioner]’s axe descended. Perril Chandler looked up, and it was him now.</p>
+<p><strong><span style="font-family: spectral;font-size: large">“And I swore—I would have my revenge. Swore it with the dregs of my soul. My love. My greatest friend. My king. I wrote my grudge in their blood. Drowned in it. Still, it was not enough. The living—no voice rose for me. No nation. I swore it upon them all, my death.”</span></strong></p>
+<p>His Chosen were shaking when he looked at them. He had scared them before, but always with cold words and his dispassionate anger. This?</p>
+<p><i>They had never seen this. </i>Not the shaking hands. The eyes draining of hope. Toren looked down. The flagstones of the castle were blackening, <i>twisting</i> into some strange substance, as if he were killing them.</p>
+<p>Nerrhavia put out a hand, and the seeping madness halted in front of her; it ran across the kitchen.</p>
+<p>“<i>Az’kerash, come to your senses.</i>”</p>
+<p>He looked at her. Then the Necromancer spoke. And—and then Toren saw it.</p>
+<p><i>Oh. </i>There it was. He had wondered if this were really the greatest monster of the modern age. He had supposed that he was, and he was just…in recovery. Beaten. Changing. That even the monster they called the Necromancer of Terandria was a man in the end.</p>
+<p>But now, the skeleton felt different as he saw the figure staring out of Az’kerash’s face. For <i>there</i> was the betrayal and rage to slaughter millions. There was the creature that rose and would not stop. Had not stopped for a century.</p>
+<p>[Undying Lich, Myth of Death and Vengeance].</p>
+<p>“There…you…are.”</p>
+<p>The skeleton’s voice rasped in the air. Everything changed. Sometimes quickly. Az’kerash’s head slowly turned, and he looked at Toren.</p>
+<p>He knew who the skeleton was. He didn’t murder Toren or Healing Slime, and when Bea shook with terror when he stared at her—he slowly reached out and touched her cheek.</p>
+<p>“Bea. Don’t be afraid.”</p>
+<p><i>But it was different. </i>When Az’kerash turned, Nerrhavia saw him focus on something, like a man who had been staring at the brickwork only noticing it was a wall for the first time.</p>
+<p>“The New Lands, you said, Nerrhavia? New land…great treasures. Seithbone.”</p>
+<p>“Yes…more for your creations.”</p>
+<p>He nodded, but in a static way. Up. Down.</p>
+<p>“They’re coming for it. Why didn’t I think of it before? They will come for it. The land first, and treasure later. They will sail across the seas with their banners and soldiers and [Knights]. <i>Terandria. </i>I know they are coming.”</p>
+<p>“Have you not left enough of them dead? I thought you had greater plans for your children.”</p>
+<p>Nerrhavia was trying to draw him back, but it was too late. She, who had beguiled Dragons and tricked Djinni and danced a world upon her fingers like a game of string—</p>
+<p>The Immortal Tyrant searched for words and found she had none. She wished, then, that she had once known an [Innkeeper] or that they walked together. For all Nerrhavia had ever done when she found those who stood on the edge of things was to push them off that cliff. She did not know how to catch them as they fell.</p>
+<p>All this because of a meal. It was perhaps the worst dish she had ever seen served. Food…food…</p>
+<p><i>Damn food.</i> Sometimes, it was just a single meal that was all it took. One bad dish. Toren felt Maviola holding his clavicle tight in terror as Az’kerash spoke.</p>
+<p>“I do, Nerrhavia. They have a future greater than even you or I. A new world for us all, and I will raise them to be better than I was. But in this world I will leave to them—Terrandia will not be in it. <strong><span style="font-family: spectral;font-size: large">If I must crawl, I will drag them into the lands of the dead with me.</span></strong>”</p>
+<p>Nerrhavia slowly exhaled as Az’kerash looked up. She gently lifted the baked fish, without passion made of it. It was still far superior to the terrine, and she would stand by her statement every time.</p>
+<p><i>You could make that which was beautiful and unsurpassed without love or care. Without emotion or desire. Creation was a fickle thing like that, and gave itself to the unworthy, the machine.</i></p>
+<p>But a destroyer? She looked at Az’kerash. And no Golem in the world could break apart a continent like the hatred in his eyes. So, then.</p>
+<p>Now, the Necromancer was going to war.</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>Food, like bodies, inevitably became nothing at all. Ultimately, it was all feces on the ground or a rotting body’s innards lying open to the sun. Even the prettiest corpse was but marrow or a shell slowly decomposing in a wooden box.</p>
+<p>If you hadn’t ever seen that sight, if you were young, you could probably cling to a world where you had never woken up to the sound of glass breaking or a door splintering inwards. If you had never truly screamed, you wouldn’t know how it felt.</p>
+<p>When people spoke, then, of the ‘look’ a [Soldier] had who had killed, or a [Murderer] or anyone else, it was that. You might never come back after stepping foot there.</p>
+<p>In a sense—it was like going on an adventure to another world in a twisted way. You would leave something behind and change until even your friends would not recognize your face.</p>
+<p>What you had to remember with that war—with this, was a simple thing. Food might pass into your stomach, become unrecognizable with the first bite. You might never forget the feeling and the moment when you killed someone—or it might all blur together until it seemed that was ‘normal’.</p>
+<p>…But a meal could still taste good. A simple hug could still feel more real than the roar of a bonfire, and the point to cooking, to eating, was more than to stay alive.</p>
+<p>It was the eternal struggle for people. Not the struggle to live, find love or happiness, but the struggle to come back and sit down and…eat. To find the reason why you cooked for people.</p>
+<p>Even for her.</p>
+<p>Silvenia, the Death of Magic, cooked. She also cleaned, and she would spitefully don a Terandrian uniform, apron and all, and carry a duster as she flew over the lands of the Demons.</p>
+<p>“[Scourge Color: Everpale White]. [Wave of Radiance].<i> Combine spells.</i>”</p>
+<p>A wave of light flashed over stones and grass and what few plants could grow in Rhir’s blasted earth without encouragement. The light did what the spell said it did—</p>
+<p><i>It scourged.</i> Bugs, plants, even the soil twenty feet deep. Then Silvenia shot down pieces of stone floating behind her and fused the ground solid. She kept moving, and she slapped a hardhat on top of the maid’s ruffles on her head as a Demon child stared up at her.</p>
+<p>Silvenia winked. The child ran and hid. The Death of Magic flew on as her ‘people’ kept their distance.</p>
+<p>Scourging places of life to keep it antiseptic-clean was a bad idea. Wistram had done that, but a void of space invited nasty things to settle in. An ecosystem was desirable…except in Rhir.</p>
+<p>Silvenia was creating a ‘ground’ of stone that would be sealed such that anything deeper than twenty feet would have to crack the stone before it came up. There could be Vorepillars, Creler eggs, toxins—she wasn’t going to bother with all that.</p>
+<p>“<i>Cleanup done.</i>”</p>
+<p>It took her an hour to scour an area around a town, and she saluted a floating being like a rookie [Soldier]. Czautha ignored Silvenia’s salute.</p>
+<p>“Thank you, Silvenia—”</p>
+<p>“<i>Happy to help, sir!</i>”</p>
+<p>“—we don’t need any roads—”</p>
+<p>“<i>Just say the word, sir! It’s not like I have anything better to do with my time, sir!</i>”</p>
+<p>The half-Elf’s face was half-flesh—half magic keeping her bones and skin together. She, like Czautha, like all the Deaths, had wounds that might never heal.</p>
+<p>Silvenia’s were just more obvious than the shapeshifting Djinni. She could <i>sense</i> the wounds in Czautha’s very core. But hers were on her body, and it made her gaze difficult to match, even for hardened Demons who had seen countless injuries.</p>
+<p>The Djinni’s glower was unmoved.</p>
+<p>“It had to be done.”</p>
+<p>“<i>Absolutely.</i> Would you like me to weed your garden next? Shine your shoes? Tuck you into bed and give you a kiss? Who’s the Djinni here, me or you?”</p>
+<p>That nettled the Death of Chains. She expanded, like a thundercloud, eyes flashing with lightning.</p>
+<p>“If you objected, you could say so, and no one would protest. Don’t make light of my people.”</p>
+<p>Silvenia laughed and flew back, like a sparrow, doing a loop-de-loop. Then she grabbed at her hair.</p>
+<p>“I apologize, Czautha, truly. But I am going <i>mad.</i> A girl knows Gnomes. <i>That girl knows Gnomes, and Earth comes to Rhir, and I am not allowed to leave?</i>”</p>
+<p>Her own temper was shaking the air, and Czautha exhaled.</p>
+<p>“It could be a trap. <i>And even if it were not—</i>the Demon King has told you no. I have told you no.”</p>
+<p>“Then accept my poor jokes. Because I am, well and truly, going mad. Ask me to do something. Dare me to put another hole in 5th Wall. Please. <i>Please.</i>”</p>
+<p>It was not just her poor sense of humor that was making Silvenia so annoying—it was frustration. They had known each other long enough that Czautha saw it. So the Djinni thought. Czautha’qshe slowly spoke.</p>
+<p>“Serinpotva has returned. Her people are celebrating. Could you…prepare something worthy of that?”</p>
+<p>“For a lovely moonlight dinner? Wine? A feast? I can do that.”</p>
+<p>Silvenia’s eyes brightened. She clicked her fingers.</p>
+<p>“I will see you l—”</p>
+<p>Then she blinked out of existence. Czautha shook her head; when she descended, the Demons flocked to her, and she smiled and they loved her, as did her kin.</p>
+<p><i>Breaker of Chains. </i>She was the hero of Demons. But Silvenia…even to her people, they knew her as destruction.</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>Silvenia knew she was feared. In the few seconds it took to teleport to her destination, she thought it was fair.</p>
+<p>She was war. She loved it, and unlike Czautha, who did it to an end, Silvenia had taken to it. She would use Crelers, tricks, watch soldiers die and sleep comfortably. And this was fair because she had lost everything to war, and it was only right it amuse her.</p>
+<p>In fact, Silvenia had taken the side she thought of as just…or just enough. But the truth was that even she was more than a sword to be swung until it dulled from sheer slaughter.</p>
+<p>There was…a frustration to her that she had seen in Az’kerash, when she had learned what became of that daring Archmage of Death. He had risen and fallen in the time it took her to recover from the wounds.</p>
+<p><i>Wounds he had helped deal her. </i>She had admired him, even if she had shown him on that battlefield the limits of his magic. It had broken Zelkyr. But he…Silvenia had a kinship with the Necromancer of Izril.</p>
+<p>She too knew betrayal. But his was unfocused. He had dragged his kingdom into death with him. She had a cause. And she was far older than he; in that sense, he was one of the prodigies not blessed by immortality that could rise to such heights within a mortal’s lifespan.</p>
+<p>“—You should have been mortal until death kissed you on the brow, Necromancer. Your little [King] should not have wasted that talent. You would have been stronger. Once you have all the time in the world, you level slower.”</p>
+<p>That was a truth as well. It had taken Silvenia far longer to reach this level, and she suspected it was due to her heritage. The same for all beings who had both levels and immortality on their side…well, most were like Dragons and refined what they had rather than chasing levels.</p>
+<p>She was not <i>Dragon-old</i>, but she had met them. And so, she thought of the Necromancer as a worthy rival, if young in this new arena. She thought of him as possibly living, too. <i>Silvenia hadn’t seen his body. </i>She assumed anything she hadn’t personally killed might come back.</p>
+<p>She was the Fallen Archmage, the Curse of Elves, and sometimes, when she was not called to the battlefield or allowed to roam the world—she did despair of it.</p>
+<p>Everything in Rhir was corrupt. Plants could grow in the soil, but vermin burrowed into it. Vorepillars were the least of the issue; at least they ate everything. Contaminants could find their way into almost any room, and the corruption changed even the people, like Bazeth, giving them horns and different skin tones…</p>
+<p>However, you could live here. Cows could, if checked regularly, still produce milk. A Yellat was a damn Yellat, and you could even fish in places. She had left the Demons enough of her magic that even if she was wounded or died in fullness, they could endure.</p>
+<p>—The one thing they could <i>not</i> do was preserve, though. Even with bags of holding or magical storerooms, the one thing Demons did <i>not</i> keep was preserved goods.</p>
+<p>A year was considered the expiry date of even the best foods. Anything longer in storage and something might…pervert it. And not in a fun way. Silvenia had once sliced a wheel of cheese open and saw the remnants of an eye staring at her. To be clear—it hadn’t been there before, and she’d had nothing to do with it.</p>
+<p>So any cheese, wine, or other long-term goods were usually spoils of war and a luxury you ate quick. That was Demon culture. <i>Everything was ephemeral, so make it count.</i></p>
+<p>She liked that. But when Silvenia had returned, she’d restored some of her great magics. They could only function with her vast mana pool, sadly. She could set up powerful barriers and countless great workings—but all of it required mana, and the Demons had deactivated the fun stuff when she was in her coma.</p>
+<p>“Let’s see. Cheese, cheese, cheese. Where’s my hat collection?”</p>
+<p>She had a hat collection in her tower. She’d ported the entire thing from Wistram when she was expelled, at great effort, and they were still mad about it. Silvenia <i>did</i> collect things. Trophies of war, books that Wistram really wanted back, artifacts, a cat…</p>
+<p>It was wearing her hat. Silvenia plucked her farmer’s hat off the cat’s head. She liked cats. She barely ever adopted them, because they died. Everything died around her.</p>
+<p>“Good cat. Did you enjoy your tour of the Traitorous Archmage’s tower?”</p>
+<p>It meowed at her. She smiled at it—then carried it outside and put it in the palace of the Demons.</p>
+<p>“Now, be good and never come back. Everything dies around me.”</p>
+<p>She flew off, conjuring a bucket of metal just for the look of it.</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>She didn’t like wasting time, though, so when she got to a herd of cows, Silvenia just used a spell to milk them. The nervous animals calmed down as she floated past them, yawning.</p>
+<p>It took ten minutes to get a thousand cows worth of milk in one of the vast, safe pastures. Too long for her. She sighed, but then flew with a veritable stream of milk through the air behind her.</p>
+<p>“<i>Grapes! </i>Where are the grapes?”</p>
+<p>She scared some Earthers out of their wits—they might say it was ‘cool’ or ‘their dream’ to fly through the air, but few actually enjoyed having [Flight] cast on them. And they had talked about superheroes—but somehow, Silvenia didn’t fit the bill.</p>
+<p>“G-grapes?”</p>
+<p>Flora was nervous, despite Silvenia telling her multiple times she liked her. It was Bazeth, one of the Demon [Generals], who pointed.</p>
+<p>“They were relocated to one of your Paradise Domes, Archmage…”</p>
+<p>“Oh, the ones I copied from the paradise. Yes, yes. Thank you. Milk?”</p>
+<p>He shook his head, and she cast [Greater Haste]. The fastest milk in the world <i>flashed</i> downwards until she found a dome where a vineyard lay.</p>
+<p>The thing about being the most powerful spellcaster around was that she could do…anything. You wanted to be a half-cat person? She could do that. You wanted pointy ears like a half-Elf? Your vision fixed?</p>
+<p>She had obliged the Earthers’ silly requests for a bit because it amused her. Sometimes, she called Demons to her and, like a Djinni, granted their wishes.</p>
+<p>Czautha hated it, but Silvenia meant well. She was sometimes sad because if there was peace on Rhir…she would have made these paradise domes until she grew sick of it. Probably after the third one. Made places that grew food for you, or Golems, or…</p>
+<p><i>It did not have to be this way.</i></p>
+<p>She had more power in her tonsils than the [Chronomancer], Nereshal, had in his entire body. <i>And she’d had her tonsils removed. </i>The only thing he had on her was his somewhat impressive indigo hair. <i>Damn his style.</i> Silvenia plucked thousands of grapes and tried to remember how you did it.</p>
+<p>Crush grapes, put milk in vats…magic could do all of it. She flew to a special room, a box in her tower bounded by magic, and passed into another dimension with little effort. But the instant she flew in, she spoke.</p>
+<p>“Regular flow. Let’s see. I’ll make it a challenge. <i>Four minutes.</i> Then…<i>a thousand times dilation.</i>”</p>
+<p>Four minutes? She burst into a flurry of spellcasting. <i>Create the vats! Wait, did you stir the milk? </i>Crush the grapes?</p>
+<p>“<i>Aaah! I’m not going to make it!</i> Bottles, bottles…[Create Glass Bottle]! [Shadow Doppelganger]!”</p>
+<p>She split in half so she could panic twice as hard—but at three minutes and fifty-two seconds, she stopped.</p>
+<p>“I made it.”</p>
+<p>Smugly, she folded her arms, and the air—<i>changed.</i> Time sped up. Silvenia, who had speculated on time snapping between Earth and this world like a rubber band, knew something about time magic.</p>
+<p>After all…she saw the milk curdling below her a thousand times faster than it should. Silvenia sighed and pulled an hourglass out of thin air. She watched the grains of sand fall like a never ending stream.</p>
+<p>“I forgot how long wine takes to age. Cheese is easier. Let’s do a stop at…how long does good wine take? Ten years there, fifty there, a hundred…”</p>
+<p>She marked several bottles and a keg out for ten years, demarcated another zone for a longer passage of time, and the last for a hundred years. Even with the time moving faster here, it’d take a while. Silvenia was already getting some cheese out of the process.</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>Later that afternoon, a surreptitious Death of Magic was feeding a cat some cheese and watching it burp. She was a bit mad.</p>
+<p><i>“Wine needs yeast? </i>This is why I stick to magic.<i>”</i></p>
+<p>She’d summoned a [Vintner] to explain why things hadn’t gone well and a [Cheesemaker]. Both had informed the unhappy half-Elf that aging wine a hundred years was mostly a gimmick. Some specialty magical wines benefited, but she’d fixed her bad batches of what was mostly just old grape juice. <i>Rewinding</i> time sucked.</p>
+<p>She wasn’t perfect. In fact, Silvenia quite admired good [Cooks], and they liked her. When she popped into the kitchens to ask if they needed anything else for the banquet, one bowed to her.</p>
+<p>“Stop that.”</p>
+<p>“<i>Death of Magic—</i>without you, we would have starved for the last century. You are peerless in magic, and I shouldn’t bow to you?”</p>
+<p>She laughed at the Demon who looked so at her. She hated that. This was why she preferred the other Deaths’ company. Silvenia touched her chest.</p>
+<p>“Nevertheless, stop. I am a half-Elf; it was always unfair because I had the time to learn magic that my peers didn’t. Most had to chase immortality whereas I had it from the start. I am the greatest magic-user in this world…but I respect the greatest of <i>cooks.</i> If you are that, then make me something delightful. For I am hungry. I was pleased to see how you used my works. And I was last so happy when I killed Othius’ father.”</p>
+<p>This [Cook] had earned her respect. Which took some doing. The bowing woman with two curved horns like a ram did not look like much.</p>
+<p>She had not even been a [Royal Chef], or the other top-level classes, at the time—and the Demons, like the Blighted Kingdom, had high-level people in spades. But she was now…</p>
+<p>A [Cook of Cornucopia]. A very fascinating class. So Silvenia sat and watched with pleasure as the woman showed her what she had done with Silvenia’s cornucopia.</p>
+<p>[Cornucopia]. It was a spell…of sorts. Really, it was more referred to as an artifact. Bags of Plenty, Neverending Feastcloths, and the like could produce food.</p>
+<p>Most people thought of them as adventurer-tools, but many nations had used them as a way to feed people…until they realized the drawbacks.</p>
+<p>Magical food was less filling than regular food. You could literally starve to death on it. It tasted wonderful, but it was magic.</p>
+<p>Some beings could fuel themselves on magic alone, like a [Mage], and there were minimal side-effects. But most people died on such diets, so a [Cornucopia] was a way of stretching food out at best.</p>
+<p><i>Skills </i>that produced food were superior, and Silvenia hated that. But the spell, at least, was inferior. She could obviously win a war against some [Baker] who got [Free Baker’s Dozen] each day. Silvenia could create an automated time-sped garden that, using Golems, spat out a thousand loaves in a day…until the Golems went rogue or the garden got corrupted and produced giant weevils fed for generations upon free food.</p>
+<p>…There was a reason she didn’t do that anymore. So Silvenia had left the Demons a [Cornucopia] spell along with her other gifts of magic, if only that they might use it in dire need.</p>
+<p>Thankfully, they hadn’t starved enough to need it that badly. But the [Cornucopia] had still been around, mostly unused, until this [Cook], Ribe, had come up with an idea. Now, Silvenia watched and laughed in delight.</p>
+<p>“Ah, how clever! How clever! I wish I could show some fancy [Chef] this, or a [Hedonist]! They would be so <i>appalled!</i>”</p>
+<p>Ribe was taking food out of the cornucopia, which could make anything—and she was, at this moment, demanding the highest-quality marbled beef. Perfectly cooked and so succulent they dripped with fat. Bone marrow from Wyverns. She took this fantastic food with no substance…</p>
+<p>And she put it in a steel press, <i>squeezed</i> the ribeye until the meat was a paste devoid of juice, the marrow dripped into a pot, and then began to dip pieces of bread in it. They soaked up the juice and flavor—and by the time the magical food vanished, they had taken on some of the taste.</p>
+<p>“I make a kind of stew too, Death of Magic. I once poured a fine terrine in one to take the flavor and offended a former Terandrian [Lord] terribly. The Drathian visitor told me I had done the world a favor. Thence they fought.”</p>
+<p>Silvenia laughed so hard she nearly cracked her ribs. But then she swooped down and grasped Ribe’s hands, such that the [Cook] was nervous.</p>
+<p>“If you desire anything—height, a change in you, a little piece of magic—ask. Ask, for you have won my favor. This is an idea that I have never heard from a cornucopia! I have seen [Blood Mages] use Cloaks of Plenty to fuel spells, but never to use the food to impart flavor!”</p>
+<p>She had no idea it would even do that! But it worked, and so the richest foods her spell could produce became the flavoring of simpler dishes. It seemed that, unlike merely combining a steak with some other dish, <i>using</i> it in a broth would let the qualities of flavor linger. As if the magic were strong enough to trick water into believing it tasted better than it did.</p>
+<p>So, Silvenia was happy, and she took a plate of food from the delighted Ribe’s hands. It was, the woman protested, a simple bread soup, not fit for the Demon’s highest table. Staler bread flavored in the cornucopia’s richer meats, placed in a broth filled with fresh goat’s meat. There was some purple onion, cream from the same cows Silvenia had milked this morning, and a sausage that turned out to be fish. She put some of the fresh-made cheese in a sprinkling and ate it with a spoon as she sat on one of the towers of the palace of the Demon King.</p>
+<p>She would not eat with the Death of Wings and the Death of Chains; she would let them celebrate, and the Demons, for they were more relaxed without her. Or rather, that was her plan until a giant woman with wings landed next to her.</p>
+<p>“Silvenia. You have prepared my feast. Why do you not sit with us?”</p>
+<p>Silvenia <i>jumped</i>. A bird the size of a house should not be stealthy enough to sneak up on her.</p>
+<p>But then—the Death of Wings, Serinpotva, was the greatest and highest-level Harpy living, and her vast, dark wings revealed her somber face like someone parting a veil.</p>
+<p>“I thought I’d disturb your festivities.”</p>
+<p>“I would be disturbed without you. Come…we shall talk of the world’s affairs. Czautha tells me you are cooped up. I would not have you restless like a chicken.”</p>
+<p>“Nonsense. Go enjoy yourself.”</p>
+<p>The Death of Wings’ cause was older than Silvenia by far, but the half-Elf was older than this particular Harpy. Yet Serinpotva was more direct than Czautha. She <i>struck</i> so fast that Silvenia was too slow. The Death of Magic flailed…then hung from Serinpotva’s claws by the neck of her dress. The Harpy lifted her up, then took off, and Silvenia dangled there like some catch of the day.</p>
+<p><i>“Wheeeeee.”</i></p>
+<p>Because it was hilarious, she laughed all the way into the banquet hall until the Death of Wings popped her into a seat.</p>
+<p>The Demons cheered her, and the Harpies set up a clamor as they ate higher up. Harpies put their dishes at head-height since they didn’t even have wing-arms like garuda. They pecked delicately as they chattered, and Czautha thanked Silvenia for the new food.</p>
+<p>“It was amusing. But come now. Have a bread soup. I saw how my cornucopia was being used, and it made my day.”</p>
+<p>Her mood restored, the half-Elf spoke to the other two Deaths. Czautha, ever-changing, was a rainbow, a cloud of a woman in full motion. Serinpotva, the Harpy, perched as she sat, great wings, like the deep blue sky at night, slightly open as she pecked at the food. She had a Human’s face and torso—bird wings, and the feathers became skin in time. Like Minotaurs, some Harpies had Human features entirely while others took more to their bird side.</p>
+<p>Serinpotva? She wore ancient armor that rippled with her movements, light enough to let her fly. Armor of a kingdom long dead. Proof of her birthright—Izril. And she would have not even claimed the whole of it. Just enough land for her people to thrive. But Drakes and Gnolls and Humans would never give it back. They had claimed it and claimed they were now the rulers by right of generations dead upon that land. Nevermind who had been there first and longer still.</p>
+<p>Czautha looked grumpy, now, and protective of Serinpotva, whom she cared for. She turned to Silvenia and spoke as she tapped a pumpkin filled inside with something that had been roasted within the vessel.</p>
+<p>“Serinpotva had thoughts of the &lt;Quests&gt;. She missed most before she woke. It was not my choice to discuss the world’s state of affairs, but she is keen.”</p>
+<p>Silvenia glanced up, and the ruler of Harpies spoke—the only one among them with a crown.</p>
+<p>“How badly do the Antinium fare?”</p>
+<p>“We have not been overrun by monsters, so I think they’re alive. I have not seen them since, and our few approaches have been warned away. The ones on Izril? Holding. Levelling, to hear it. There is a 7th Hive now.”</p>
+<p>“More dangerous than the rest?”</p>
+<p>Silvenia conjured a toothpick and hid her mouth as she cleaned her teeth. It was a habit of old.</p>
+<p>“But for the Small Queen, I could wipe them out in five minutes I think.”</p>
+<p>“You say that about every army.”</p>
+<p>“It is a good benchmark. But what’s this about the Crossroads of Izril? Do you know where to find them? Our own colonists might use it well.”</p>
+<p>Czautha frowned. She and Serinpotva were old—but ironically, Silvenia was older than the ‘young’ Djinni, who wasn’t nearly as old as some could be, and the Empress of Harpies in exile.</p>
+<p>Serinpotva’s feathers and hair had turned greyer with age, but she was youngest of them all. She frowned at Silvenia.</p>
+<p>“Is this a joke? I would have thought you knew the most of them.”</p>
+<p>Silvenia’s eyes glittered. She put down her toothpick.</p>
+<p>“I know they existed. But I did not live on Izril long. Dragons are zealous. What I <i>know</i> is that they were closed after the City of Shields fell.”</p>
+<p>“Before my existence. Why?”</p>
+<p>“Because they destroyed it, and it was <i>there</i> of course. Do you think that a Tier 9 spell going off wouldn’t leave a scar visible even across the ages?”</p>
+<p>Thanks to their alliance, the Demons knew more of the history of the world than most nations that had forgotten. Serinpotva exhaled.</p>
+<p>“So that is where it was. The records I read indicated not <i>where</i>, and I did not put that together. I know of the Crossroads of Izril. My mother’s empire knew it.”</p>
+<p><i>Ah. </i>Silvenia’s eyes sharpened with great interest.</p>
+<p>“Then you know how to fulfill the quest?”</p>
+<p>The Death of Wings shrugged.</p>
+<p>“To find them—yes. But I had a question. Why were the Crossroads of Izril not used in your time, Silvenia?”</p>
+<p>That was easy. The half-Elf sighed and put her head back as the Demons listened or talked and enjoyed their lives below. She spoke to the ceiling.</p>
+<p>“A Tier 9 spell blasted the City of Shields. It ruined part of the Crossroads of Izril, and, I think, the effects are still felt to this day. Why did I not explore in my days as an adventurer or [Archmage]? Simple. I had heard that they were closed—and entire Walled Cities cut off—because the Crossroads were blighted. Like Rhir. Even opening or passing through it was death. Imagine a firestorm opening where once had been a safe haven.”</p>
+<p>Czautha shook her head.</p>
+<p>“The sins of the City of Shields must have been unimaginable. Or…their foes that wretched.”</p>
+<p>“Both!”</p>
+<p>Silvenia grinned. Then she glanced at Serinpotva. The Death of Wings nodded.</p>
+<p>“It answers why it was closed. But the question is—what has changed over those ages? I know how to get to them. I even suspect they are still used. There is more than one way to enter. Be it Skill. Be it place. I wonder why this [Innkeeper] posted the quest. Was it <i>just</i> the City of Stars?”</p>
+<p>“…You make it sound as if that will be difficult, even if the Crossroads open fully.”</p>
+<p>Silvenia leaned forwards with great, great interest. Serinpotva slowly nodded.</p>
+<p>“What I know, Silvenia, Czautha, is this. The Crossroads of Izril are unto a different plane of Izril…with different challenges. With great reward for treasure seekers, but I know this: it held more than one Walled City. And every single one is lost. If not destroyed completely—<i>lost. </i>Mershi may lie there. But if I were going, I would take <i>you</i>, Silvenia. And no one lesser.”</p>
+<p>The Death of Magic relaxed then. She sat back, smiled, and knew she’d sleep soundly that night after she stopped pacing.</p>
+<p>“Oh, Serinpotva. Then I shall go whenever you call. You do know how to make me smile.”</p>
+<p>She lifted a glass of the wine she’d made, and the Death of Wings exhaled as a gust of wind blew up a glass and she caught it between two feathers. Czautha joined her, and they clinked glasses.</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>That night, Erin Solstice ate an acceptable meal of goulash. She regretted her choice. Goulash was a stew of noodles and beans, a kind of variation on a stew and a nice soup.</p>
+<p>But she’d ordered it to be <i>extra-</i>fancy and impress Niers, and he made fun of her as the Fraerlings ate their food. They kept dropping on by his table where he was playing a game of chess, and Erin scowled hugely as she sat in the [World’s Eye Theatre].</p>
+<p>“Oh, hello, Miss Solstice. I just happened to be coming by with some pulped <i>cerdoy </i>fruit. Well, I say ‘pulped’, but we actually have a machine that harvests the nuts, crushes the fruits, removes the spines, and then we ferment it into this drink. Utterly banal, I know. It’s practically water.”</p>
+<p>“It’s just alcohol.”</p>
+<p>Erin grumbled as Iuncuta Eirnos did a double-take. The woman stared at her glass.</p>
+<p>“<i>Alcohol?</i> I never thought of it like that. I guess it’s the exact same as a beer that tastes like piss. What do you do? Oh yes, you ferment wheat. What’s that you have, Commander Rozcal?”</p>
+<p>“<i>Just Yellat juice.</i> Alcohol made from Yellats. Same as piss-beer. Is that a kovta-kebab?”</p>
+<p>“Oh, it’s just meat on a stick. Not like we put anything on it like spice rub, cut it out of a Melonfrog, put some lovely lemon-orange juice on it—”</p>
+<p>“<i>Frog? Yuck!</i>”</p>
+<p>The Fraerlings threw up their hands.</p>
+<p>“Oh, we can’t eat <i>frogs</i> now? First no eating snails, then no eating <i>frogs</i>; well, I object to you eating cows! I like cows, so no more beef for you!”</p>
+<p>Niers had to save Erin from them, mostly for his own good. The sulking [Innkeeper] was taking it out on him via the chessboard.</p>
+<p>“I suppose we can write this one off. The day, I mean.”</p>
+<p>“You said it. I’ve learned my food lesson. I’ll never fight the food cartel again. Respect the [Chef]. Kiss the [Chef].”</p>
+<p>Calescent hesitated as he poked his head through the [Garden of Sanctuary] to see if she liked her goulash. That was a funny saying. He should put it on a sign or something. You never know what could happen.</p>
+<p>Niers Astoragon smiled as Erin chomped down on her food. He looked at her and exhaled.</p>
+<p>“You know, what with all this momentum happening, it’s good to relax now and then. Healthy. I don’t take my own advice, but I’m decent at giving it. Tomorrow, why don’t we talk about Perorn? She’s my only officer on Izril, but I trust her more than Foliana.”</p>
+<p>A toothpick poked him from the side, and Niers swore, hacked it in half before it could poke again, and shook his fist to the side. Erin laughed faintly.</p>
+<p>“Alright, alright. I would like to meet her, especially if the Horns are in her area. You win.”</p>
+<p>“Good, and tomorrow—”</p>
+<p>Niers Astoragon thought it had been a productive day. Food could really bring things out in people. Bring them closer together, remind them of things…</p>
+<p>Food mattered. Especially because a lot of important events happened at a meal. Assassinations, weddings, food poisoning…</p>
+<p>And sometimes—the Fraerling sat bolt upright. His eyes opened wide, and Erin looked over to see if Foliana had poked him again. Niers was frozen, and the Fraerlings watching stopped laughing, and Foliana drew a dagger. But Niers just held up a hand and then wiped at his brow. He looked around and then coughed.</p>
+<p>“What’s today’s date? Someone? Anyone?”</p>
+<p>Eirnos stared at him, then called out the date. Niers nodded. He pulled out a calendar, made a mark, and then cleared his throat.</p>
+<p>“Alright. Time check. Tomorrow, I’ve got an engagement with Miss Erin.”</p>
+<p>“Aw, come on, don’t use that word.”</p>
+<p>“A date?”</p>
+<p>“…Go back to the first one.”</p>
+<p>He winked at her. Niers heard a laugh, and then he spoke over the beating of his heart. It sounded like excitement and joy.</p>
+<p>“We’ll go over her inn, plans, and so on—and <i>two</i> Skills. And that makes it roughly…<i>four months.</i> My new Skill is off cooldown.”</p>
+<p>He winked at Erin Solstice with all the mirth in the world. Then he reached for a sorbet. You had to have dessert, too.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><strong>Author’s Note:</strong> Ha.</p>
+<p>Haaa…look at how short my chapter is.</p>
+<p>Look how relaxed I am after writing so many big chapters. I really did push hard for the first two chapters back. When’s my break again?</p>
+<p>…Well, I had one bad day when I woke up super-stressed and then I calmed down after that because I at least have some perspective after doing this so long. You go through months where everything sucks and motivation is hard and months where you’re on fire.</p>
+<p>Keep writing through it all. If you only wrote when motivated, you’d be a poet. I think some other great writer slammed poetry in general like that. All this to say that I’m doing okay, but I’m not going to break my back over every chapter.</p>
+<p>And I’m still trying to find that legendary ‘short and easy’ chapter because this one I had planned at 20,000 words, only about food. I’m over by 5,000 and it was not easy.</p>
+<p>Nor did I do the <i>best</i> job at food, but I’m trying. I am not a Redwall, Game of Thrones, or other author who thinks—or appreciates—having ludicrous food descriptions in my story. Most isekais love talking about food. I do not. But I will practice it all. Food, romance, fashion, um…mysteries? Come to think of it, I’d better put up the Patreon poll.</p>
+<p>Let me know how it is and what kind of storywriting you’d like me to practice. Thanks, and eat something culinary for me.</p>
+<p>Also, the Tears of Liscor, Book 9, is up for pre-order on Amazon and Audible. No art yet, but look forwards to that cover.</p>
+<p><a href="https://www.amazon.com/Tears-Liscor-Wandering-Inn-Book/dp/B0BSS7G95X/">https://www.amazon.com/Tears-Liscor-Wandering-Inn-Book/dp/B0BSS7G95X/</a></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><strong>Stream Art: Erin’s ‘taste’ by butts!</strong></p>
+<p><strong>Twitter:</strong> <a class="anchor-1MIwyf anchorUnderlineOnHover-2qPutX" title="https://twitter.com/buttscord" role="button" href="https://twitter.com/buttscord" target="_blank" rel="noreferrer noopener">https://twitter.com/buttscord</a></p>
+<p><strong>Ko-Fi:</strong> <a class="anchor-1MIwyf anchorUnderlineOnHover-2qPutX" title="https://ko-fi.com/buttsarts" role="button" href="https://ko-fi.com/buttsarts" target="_blank" rel="noreferrer noopener">https://ko-fi.com/buttsarts</a></p>
+<p><a href="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/01/erinfood-by-butts.png?ssl=1"><img fetchpriority="high" decoding="async" data-attachment-id="13230" data-permalink="https://wanderinginn.com/2023/01/24/interlude-foody-discussions/erinfood-by-butts/" data-orig-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/01/erinfood-by-butts.png?fit=1768%2C919&amp;ssl=1" data-orig-size="1768,919" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="ErinFood by butts" data-image-description="" data-image-caption="" data-medium-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/01/erinfood-by-butts.png?fit=300%2C156&amp;ssl=1" data-large-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/01/erinfood-by-butts.png?fit=1024%2C532&amp;ssl=1" class="alignnone size-full wp-image-13230" src="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/01/erinfood-by-butts.png?resize=584%2C304&amp;ssl=1" alt="" width="584" height="304" data-recalc-dims="1"></a></p>
+<p>&nbsp;</p>
+<p><strong>Stream Art: Nekhti by Fiore!</strong></p>
+<p><strong>Twitter:</strong> <a class="anchor-1MIwyf anchorUnderlineOnHover-2qPutX" title="https://twitter.com/atlasphenomenon" role="button" href="https://twitter.com/atlasphenomenon" target="_blank" rel="noreferrer noopener">https://twitter.com/atlasphenomenon</a></p>
+<p><strong>Ko-fi:</strong> <a class="anchor-1MIwyf anchorUnderlineOnHover-2qPutX" title="https://ko-fi.com/fiorepandaphen" role="button" href="https://ko-fi.com/fiorepandaphen" target="_blank" rel="noreferrer noopener">https://ko-fi.com/fiorepandaphen</a></p>
+<p><a href="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/01/nekhti-by-fiore.png?ssl=1"><img decoding="async" data-attachment-id="13231" data-permalink="https://wanderinginn.com/2023/01/24/interlude-foody-discussions/nekhti-by-fiore/" data-orig-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/01/nekhti-by-fiore.png?fit=2325%2C2043&amp;ssl=1" data-orig-size="2325,2043" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="nekhti by Fiore" data-image-description="" data-image-caption="" data-medium-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/01/nekhti-by-fiore.png?fit=300%2C264&amp;ssl=1" data-large-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/01/nekhti-by-fiore.png?fit=1024%2C900&amp;ssl=1" class="alignnone size-full wp-image-13231" src="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/01/nekhti-by-fiore.png?resize=584%2C513&amp;ssl=1" alt="" width="584" height="513" data-recalc-dims="1"></a></p>
+<p>&nbsp;</p>
+<p><strong>Mrsha Notes and Tower of Cute by Bobo Plushie!</strong></p>
+<div class="message-2CShn3 cozyMessage-1DWF9U groupStart-3Mlgv1 wrapper-30-Nkg cozy-VmLDNB zalgo-26OfGz" role="article" aria-labelledby="message-username-753355538389008576 uid_1 message-content-753355538389008576 uid_2 message-timestamp-753355538389008576" aria-describedby="uid_3 message-reactions-753355538389008576">
+<div class="contents-2MsGLg">
+<div id="message-content-753355538389008576" class="markup-eYLPri messageContent-2t3eCI"><strong>Twitter:</strong> <a class="anchor-1MIwyf anchorUnderlineOnHover-2qPutX" title="https://twitter.com/Bobo_Snofo" role="button" href="https://twitter.com/Bobo_Snofo" target="_blank" rel="noreferrer noopener">https://twitter.com/Bobo_Snofo</a></div>
+<div class="markup-eYLPri messageContent-2t3eCI"><strong>Ko-Fi:</strong> <a class="anchor-1MIwyf anchorUnderlineOnHover-2qPutX" title="https://ko-fi.com/boboplushie" role="button" href="https://ko-fi.com/boboplushie" target="_blank" rel="noreferrer noopener">https://ko-fi.com/boboplushie</a></div>
+</div>
+<div class="buttonContainer-1502pf">
+<div class="buttons-3dF5Kd container-2gUZhU isHeader-2bbX-L" role="group" aria-label="Message Actions">
+<div class="wrapper-2vIMkT">
+<div class="button-3bklZh" role="button" aria-label="Reply"></div>
+</div>
+</div>
+</div>
+</div>
+<p><a href="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/01/mrshanotes-by-plushie.png?ssl=1"><img decoding="async" data-attachment-id="13222" data-permalink="https://wanderinginn.com/2023/01/24/interlude-foody-discussions/mrshanotes-by-plushie/" data-orig-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/01/mrshanotes-by-plushie.png?fit=386%2C389&amp;ssl=1" data-orig-size="386,389" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="mrshanotes by Plushie" data-image-description="" data-image-caption="" data-medium-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/01/mrshanotes-by-plushie.png?fit=298%2C300&amp;ssl=1" data-large-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/01/mrshanotes-by-plushie.png?fit=386%2C389&amp;ssl=1" class="alignnone size-full wp-image-13222" src="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/01/mrshanotes-by-plushie.png?resize=386%2C389&amp;ssl=1" alt="" width="386" height="389" srcset="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/01/mrshanotes-by-plushie.png?w=386&amp;ssl=1 386w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/01/mrshanotes-by-plushie.png?resize=150%2C150&amp;ssl=1 150w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/01/mrshanotes-by-plushie.png?resize=298%2C300&amp;ssl=1 298w" sizes="(max-width: 386px) 100vw, 386px" data-recalc-dims="1"></a> <a href="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/01/tower-by-boboplushie.png?ssl=1"><img loading="lazy" decoding="async" data-attachment-id="13223" data-permalink="https://wanderinginn.com/2023/01/24/interlude-foody-discussions/tower-by-boboplushie/" data-orig-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/01/tower-by-boboplushie.png?fit=952%2C942&amp;ssl=1" data-orig-size="952,942" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="Tower by BoboPlushie" data-image-description="" data-image-caption="" data-medium-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/01/tower-by-boboplushie.png?fit=300%2C297&amp;ssl=1" data-large-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/01/tower-by-boboplushie.png?fit=952%2C942&amp;ssl=1" class="alignnone size-full wp-image-13223" src="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/01/tower-by-boboplushie.png?resize=584%2C578&amp;ssl=1" alt="" width="584" height="578" data-recalc-dims="1"></a></p>
+<p>&nbsp;</p>
+<p><strong>Santa Mrsha by Uni!</strong></p>
+<p><a href="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/01/saintmrsha-by-uni.png?ssl=1"><img loading="lazy" decoding="async" data-attachment-id="13219" data-permalink="https://wanderinginn.com/2023/01/24/interlude-foody-discussions/saintmrsha-by-uni/" data-orig-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/01/saintmrsha-by-uni.png?fit=2500%2C2500&amp;ssl=1" data-orig-size="2500,2500" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="SaintMrsha by Uni" data-image-description="" data-image-caption="" data-medium-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/01/saintmrsha-by-uni.png?fit=300%2C300&amp;ssl=1" data-large-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/01/saintmrsha-by-uni.png?fit=1024%2C1024&amp;ssl=1" class="alignnone size-full wp-image-13219" src="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/01/saintmrsha-by-uni.png?resize=584%2C584&amp;ssl=1" alt="" width="584" height="584" data-recalc-dims="1"></a></p>
+<p>&nbsp;</p>
+<p><strong>Are…You? By Deepsikk!</strong></p>
+<p><a href="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/01/areyou-by-deepsikk.png?ssl=1"><img loading="lazy" decoding="async" data-attachment-id="13220" data-permalink="https://wanderinginn.com/2023/01/24/interlude-foody-discussions/areyou-by-deepsikk/" data-orig-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/01/areyou-by-deepsikk.png?fit=3000%2C2500&amp;ssl=1" data-orig-size="3000,2500" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="AreYou by Deepsikk!" data-image-description="" data-image-caption="" data-medium-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/01/areyou-by-deepsikk.png?fit=300%2C250&amp;ssl=1" data-large-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/01/areyou-by-deepsikk.png?fit=1024%2C853&amp;ssl=1" class="alignnone size-full wp-image-13220" src="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/01/areyou-by-deepsikk.png?resize=584%2C487&amp;ssl=1" alt="" width="584" height="487" data-recalc-dims="1"></a></p>
+<p>&nbsp;</p>
+<p><strong>Ulvama and Garbichug by pkay!</strong></p>
+<p><strong>Ko-Fi: </strong><a class="anchor-1MIwyf anchorUnderlineOnHover-2qPutX" title="https://ko-fi.com/peekay" role="button" href="https://ko-fi.com/peekay" target="_blank" rel="noreferrer noopener">https://ko-fi.com/peekay</a></p>
+<p><a href="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/01/ulvama_bait_sm-by-pkay.png?ssl=1"><img loading="lazy" decoding="async" data-attachment-id="13224" data-permalink="https://wanderinginn.com/2023/01/24/interlude-foody-discussions/ulvama_bait_sm-by-pkay/" data-orig-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/01/ulvama_bait_sm-by-pkay.png?fit=602%2C1000&amp;ssl=1" data-orig-size="602,1000" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="ulvama_bait_sm by pkay" data-image-description="" data-image-caption="" data-medium-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/01/ulvama_bait_sm-by-pkay.png?fit=181%2C300&amp;ssl=1" data-large-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/01/ulvama_bait_sm-by-pkay.png?fit=602%2C1000&amp;ssl=1" class="alignnone size-full wp-image-13224" src="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/01/ulvama_bait_sm-by-pkay.png?resize=584%2C970&amp;ssl=1" alt="" width="584" height="970" data-recalc-dims="1"></a> <a href="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/01/garbichug-by-pkay.png?ssl=1"><img loading="lazy" decoding="async" data-attachment-id="13225" data-permalink="https://wanderinginn.com/2023/01/24/interlude-foody-discussions/garbichug-by-pkay/" data-orig-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/01/garbichug-by-pkay.png?fit=958%2C707&amp;ssl=1" data-orig-size="958,707" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="Garbichug by pkay" data-image-description="" data-image-caption="" data-medium-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/01/garbichug-by-pkay.png?fit=300%2C221&amp;ssl=1" data-large-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/01/garbichug-by-pkay.png?fit=958%2C707&amp;ssl=1" class="alignnone size-full wp-image-13225" src="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/01/garbichug-by-pkay.png?resize=584%2C431&amp;ssl=1" alt="" width="584" height="431" data-recalc-dims="1"></a></p>
+<p>&nbsp;</p>
+<hr>
+<p><a href="https://wanderinginn.com/2023/01/22/9-33/">Previous Chapter</a> <a href="https://wanderinginn.com/2023/01/29/9-34/"><span style="float: right">Next Chapter</span></a></p>
+      </div>
+
+      <hr>
+          <span class="nav-previous">
+        <a href="https://wanderinginn.com/2023/01/22/9-33/" rel="prev"><span class="meta-nav">←</span> Previous Chapter</a>    </span>
+    <span class="nav-next" style="float: right" ;="">
+        <a href="https://wanderinginn.com/2023/01/29/9-34/" rel="next">Next Chapter <span class="meta-nav">→</span></a>    </span>
+    

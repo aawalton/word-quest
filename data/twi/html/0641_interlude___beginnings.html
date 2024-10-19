@@ -1,0 +1,583 @@
+
+
+          <span class="nav-previous">
+        <a href="https://wanderinginn.com/2023/03/01/9-38-tv-pt-2/" rel="prev"><span class="meta-nav">←</span> Previous Chapter</a>    </span>
+    <span class="nav-next" style="float: right" ;="">
+        <a href="https://wanderinginn.com/2023/03/08/9-39/" rel="next">Next Chapter <span class="meta-nav">→</span></a>    </span>
+      <!-- <hr/> -->
+      <header class="entry-header">
+        <h1 class="entry-title">Interlude – Beginnings</h1>
+                <button class="show-settings-btn" onclick="document.querySelector('#reader-settings-wrapper').classList.toggle('is-hidden')">
+          <img class="show-settings-btn-img" src="https://wanderinginn.com/wp-content/themes/solstice/assets/images/ui/reader-settings-button.webp">
+        </button>
+      </header>
+
+      
+<!-- Reader Settings -->
+<div id="reader-settings-wrapper" class="is-hidden">
+    <div id="reader-settings">
+        <header id="reader-settings-header">
+            <h2>Reader Settings</h2>
+            <button onclick="closeModal()">
+                <svg width="100%" height="100%" viewBox="0 0 33 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M16.5 30.75C24.0939 30.75 30.25 24.5939 30.25 17C30.25 9.40608 24.0939 3.25 16.5 3.25C8.90608 3.25 2.75 9.40608 2.75 17C2.75 24.5939 8.90608 30.75 16.5 30.75Z" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M20.625 12.875L12.375 21.125" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M12.375 12.875L20.625 21.125" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+            </button>
+        </header>
+
+        <fieldset id="fieldset-font">
+            <legend>Font</legend>
+
+            <div>
+                <label for="font-size-select">Size</label>
+                <select id="font-size-select" class="reader-settings-select" data-setting="reader-font-size" onchange="updateSetting(this.getAttribute('data-setting'), this.value);">
+                    <option value="10pt" class="reader-settings-option">10</option>
+                    <option value="11pt" class="reader-settings-option">11</option>
+                    <option value="12pt" class="reader-settings-option" selected="">12</option>
+                    <option value="13pt" class="reader-settings-option">13</option>
+                    <option value="14pt" class="reader-settings-option">14</option>
+                    <option value="16pt" class="reader-settings-option">16</option>
+                    <option value="18pt" class="reader-settings-option">18</option>
+                    <option value="20pt" class="reader-settings-option">20</option>
+                    <option value="22pt" class="reader-settings-option">22</option>
+                    <option value="24pt" class="reader-settings-option">24</option>
+                    <option value="26pt" class="reader-settings-option">26</option>
+                    <option value="28pt" class="reader-settings-option">28</option>
+                    <option value="30pt" class="reader-settings-option">30</option>
+                    <option value="36pt" class="reader-settings-option">36</option>
+                    <option value="42pt" class="reader-settings-option">42</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="font-family-select">Family</label>
+                <select id="font-family-select" class="reader-settings-select" data-setting="reader-font-family" onchange="updateSetting(this.getAttribute('data-setting'), this.value);">
+                    <optgroup label="Sans Serif">
+                        <option class="reader-settings-option" value="OpenSans, sans-serif" selected="">Open Sans</option>
+                        <option class="reader-settings-option" value="Arial, Helvetica, sans-serif">Arial</option>
+                        <option class="reader-settings-option" value="Roboto, sans-serif">Roboto</option>
+                    </optgroup>
+                    <optgroup label="Serif">
+                        <option class="reader-settings-option" value="Playfair, serif">Playfair</option>
+                        <option class="reader-settings-option" value="EBGaramond, serif">Garamond</option>
+                        <option class="reader-settings-option" value="'Times New Roman', Times, serif">Times New Roman</option>
+                    </optgroup>
+                    <optgroup label="Other">
+                        <option class="reader-settings-option" value="OpenDyslexic">OpenDyslexic</option>
+                        <option class="reader-settings-option" value="HennyPenny">Henny Penny</option>
+                    </optgroup>
+                </select>
+            </div>
+            <div>
+                <label for="font-weight-select">Thickness</label>
+                <select id="font-weight-select" class="reader-settings-select" data-setting="reader-font-weight" onchange="updateSetting(this.getAttribute('data-setting'), this.value);">
+                    <option class="reader-settings-option" value="300" selected="">Thin</option>
+                    <option class="reader-settings-option" value="400">Regular</option>
+                    <option class="reader-settings-option" value="500">Thick</option>
+                </select>
+            </div>
+        </fieldset>
+
+        <fieldset id="fieldset-spacing">
+            <legend>Spacing</legend>
+            <div>
+                <label for="margins-select">Page Width</label>
+                <select id="margins-select" class="reader-settings-select" data-setting="reader-article-width" onchange="updateSetting(this.getAttribute('data-setting'), this.value);">
+                    <option value="320px" class="reader-settings-option">Extra Narrow</option>
+                    <option value="500px" class="reader-settings-option">Narrow</option>
+                    <option value="680px" class="reader-settings-option" selected="">Medium</option>
+                    <option value="1000px" class="reader-settings-option">Wide</option>
+                    <option value="1200px" class="reader-settings-option">Extra Wide</option>
+                    <option value="100%" class="reader-settings-option">Max</option>
+                </select>
+            </div>
+            <div>
+                <label for="line-spacing-select">Line</label>
+                <select id="line-spacing-select" class="reader-settings-select" data-setting="reader-line-height" onchange="updateSetting(this.getAttribute('data-setting'), this.value);">
+                    <option class="reader-settings-option" value="1.2">Small</option>
+                    <option class="reader-settings-option" value="1.625" selected="">Medium</option>
+                    <option class="reader-settings-option" value="2.2">Large</option>
+                    <option class="reader-settings-option" value="3.5">Extra Large</option>
+                </select>
+            </div>
+            <div>
+                <label for="paragraph-spacing-select">Paragraph</label>
+                <select id="paragraph-spacing-select" class="reader-settings-select" data-setting="reader-paragraph-spacing" onchange="updateSetting(this.getAttribute('data-setting'), this.value);">
+                    <option class="reader-settings-option" value="0.5em">Small</option>
+                    <option class="reader-settings-option" value="1.625em" selected="">Medium</option>
+                    <option class="reader-settings-option" value="2.75em">Large</option>
+                    <option class="reader-settings-option" value="4.25em">Extra Large</option>
+                </select>
+            </div>
+        </fieldset>
+        <div class="ml-5 mb-4">
+            <label for="theme-select">Theme</label>
+            <select id="theme-select" class="reader-settings-select" data-setting="reader-theme" onchange="updateSetting(this.getAttribute('data-setting'), this.value);">
+                <option class="reader-settings-option" value="reader-theme-grey" selected="">Dark Grey</option>
+                <option class="reader-settings-option" value="reader-theme-blue">Dark Blue</option>
+                <option class="reader-settings-option" value="reader-theme-black">Black</option>
+                <option class="reader-settings-option" value="reader-theme-white">White</option>
+                <option class="reader-settings-option" value="reader-theme-sepia">Sepia</option>
+            </select>
+        </div>
+        <button id="reset-settings-btn" onclick="resetSettings()">Reset To Default</button>
+        <!-- <div> -->
+        <!-- </div> -->
+
+
+    </div>
+</div>
+      <div class="entry-content">
+        <p><strong>(<a href="https://wanderinginn.com/vol-1-title-page/#title-page-img">Volume 1 has been completely rewritten</a> and is up now. </strong><a href="https://wanderinginn.com/vol-1-archive/"><strong>The old version can be found here.</strong></a><strong> Please see the Author’s Note to find what’s been changed.)</strong></p>
+<p>&nbsp;</p>
+<p>This tale was about Mrsha.</p>
+<p>It belonged to her because she had been getting into less trouble of late. Valeterisa trying to pluck all her hair off like a turkey didn’t count because that <em>wasn’t Mrsha’s fault.</em></p>
+<p>…Probably.</p>
+<p>She hadn’t gone on any whirlwind adventures recently, no one had fought a war over her in, like…a month, and the closest Mrsha had come to death in<em> school </em>was when Visma had pointed one of the practice bows at her. And that was less <em>death-death</em> than ‘nearly getting your eye shot out’.</p>
+<p>Visma had gotten in a lot of trouble for that. School was fun.</p>
+<p>Mrsha was content. She would sit, wearied, at lunch with Ekirra and Visma and some of the new students and tell them stories of her great past. She had new friends at school now, too.</p>
+<p>There was Tockie, a boy who came from Esthelm and whose parents had agreed to trial him at the school. He was amazed by all the gems Numbtongue found in the High Passes and kept saying there was lots of coin to be made up there.</p>
+<p>Goess was another Drake from Liscor who didn’t like Antinium. But he was very impressed with Mrsha’s friendship with great and powerful adventurers and listened to her stories, so she tolerated him.</p>
+<p>There were Visma’s doll friends, and Ekirra had his Little Crab teammates, who were tangential friends to Mrsha’s. But her real friends were Gire, although Gire had to be a Chieftain. Lehra, who was her food buddy.</p>
+<p>Nanette was older, but she and Mrsha were the <em>best</em> of friends, which put Nanette in the same category as Gire and Visma and Ekirra, obviously. Lyonette had claimed you couldn’t have multiple best friends, and Mrsha had told the [Princess] that she clearly had never had friends.</p>
+<p>…A lack of dessert was still somewhat constant with Mrsha’s life, but she had changed. Now, she walked around on two legs, wore a kilt—and the inn was different, too.</p>
+<p>Why, when she woke up, she might encounter Yelroan or Jewel and recall they were now part of the inn. Or find Inkpaper hiding in a spare room, reading a book until Peggy found him and hit him and made him work.</p>
+<p>All this was good. Somehow, Mrsha kept waiting for the other shoe to drop. And the other shoe would be spiked, lead-lined, land on her head, and be filled with Crelers.</p>
+<p>…She kept waiting and realizing that there were a lot of kids her age. Not just her classmates. Why, it seemed like you couldn’t swing a Nerry around without finding a child!</p>
+<p>“Grev! You scamp. You can’t bribe Goblins with play tickets! They’re not allowed in Invrisil! And Peggy, play tickets are <em>not</em> coins!”</p>
+<p>Lyonette was taking Grev to task as Mrsha watched over breakfast eggs. Calescent had made hers into a big smile with some sausages, which she appreciated. The boy was trying to spirit an entire cake out the door with his gang of friends.</p>
+<p>“Aw, it’s worth gold, pure’n simple, Miss Lyonette! Plus, them Goblins are good at trading!”</p>
+<p>“Yep. We sell this to Haven guests. Is good trade item.”</p>
+<p>Lyonette covered her face, but she turned with a huge frown.</p>
+<p>“You do <em>what?</em>”</p>
+<p>Mrsha watched with curiosity as Peggy put two of Grev’s tickets to the Season’s Theatre in a pocket. She held onto them until Liska let the Haven’s guests in. [Lords] and [Ladies] went through to Liscor or Invrisil or even <em>Pallass</em> without a second glance at the common room of the inn.</p>
+<p>They liked to pretend that the Antinium and Goblins <em>didn’t exist.</em> Only those who knew Erin like Lord Sanito would even come to the common room.</p>
+<p>As for Lord Tyrion Veltras, he was banned from ever leaving the portal room. Erin had reluctantly allowed him to get back to Invrisil, because if he was stuck at the Haven, it would be a literal political nightmare since the Haven was in Drake lands. But just like Spearmaster Lulv, he was only tolerated to avoid a fight.</p>
+<p>And she only let Lulv in because watching Demsleth bully him was hilarious. Mrsha did see a number of guests come in from Pallass, though, including <em>another</em> Drake girl who ran into the inn before her father caught up.</p>
+<p>“Kenva, wait! I have to meet with Liscor’s Council for work—”</p>
+<p>“It’s your day off! I want to stay here with Aunt Torkessa! Or I’m telling Mother you’re not nice to me!”</p>
+<p>The Drake girl bullied her father as the put-upon Watch Captain of Pallass hesitated. He looked at the Antinium and <em>Goblins—</em>but he gave in as his sister murmured to him.</p>
+<p>“I’ll buy her a snack. Go on and have your meeting, Venim. If we’re not here, try a playground. I’ll leave a note.”</p>
+<p>“Thanks.”</p>
+<p>He adjusted his uniform and strode out the door. Mrsha saw Kenva wave at her, and she waved at the Drake she’d met during the Haven’s visit to Liscor.</p>
+<p><em>However,</em> in the confusion, she had almost missed Peggy’s transaction. It was smooth, and if Peggy hadn’t tipped Mrsha and Lyonette off to the issue of Grev’s play tickets, she would have missed a side-door opening.</p>
+<p>One of the Haven’s staff, in that bright, glossy blue uniform, and no less than <em>Barnethei</em>, the [Vice Innkeeper], stepped out of the secret passage leading past the trapped hallway. Lyonette scowled at that—and at Barnethei, but Mrsha’s ears perked up.</p>
+<p>She saw Peggy sidle over, and the Hob traded two tickets to Barnethei. Mrsha <em>heard</em> them muttering.</p>
+<p>“Two tickets? Very good. Very good. I have a number of my guests who are begging for the tickets. What did the lad buy?”</p>
+<p>“Big cake.”</p>
+<p>“Well, allow me to pay for that…”</p>
+<p>Barnethei was only too eager to ‘pay back’ all of Grev’s purchases with real gold. Mostly because he was in turn selling the play tickets to his guests at a markup that still beat waiting for one of the Season’s reserved booths.</p>
+<p>Lyonette couldn’t believe it. She marched over.</p>
+<p>“Innkeeper Barnethei, have you been buying these tickets from Peggy?”</p>
+<p>“I happened to hear the lad trying to buy goods with the tickets, and I made Miss Peggy an offer…”</p>
+<p>The [Vice Innkeeper] defended himself with a huge smile. Lyonette gasped in outrage.</p>
+<p>“And you’re selling them to <em>your</em> guests at a markup? Peggy—don’t sell him any more tickets! It’s worth way more than a cake!”</p>
+<p>“Okay.”</p>
+<p>The Hobgoblin seemed very amused as Lyonette and Barnethei squared off. She and the Haven’s [Waitress] murmured to each other, which tickled Mrsha to no end. <em>A Human and a Goblin talking so casually?</em> Erin had left her mark on the Haven—or perhaps Ishkr had.</p>
+<p>However, the showdown between the [Princess] and [Vice Innkeeper] didn’t go down like either expected. Because—while Lyonette would have normally had it out with Barnethei, things were no longer the ‘old days’. She didn’t have to do everything personally.</p>
+<p>“Is this another income source for the inn? I think I need to ask the Antinium and Goblins if they’re making money other ways. The inn sells acid jars, magic, operates a transportation service…Miss Lyonette, why don’t we settle this amicably? Innkeeper Barnethei can purchase any tickets Grev ‘sells’ Peggy. We’ll just charge him a fairer price. Retroactively, of course. I assume Barnethei knows how many tickets he’s sold? I’m happy to calculate their value based on each show and the seating.”</p>
+<p>Barnethei’s smile slipped, and Mrsha banged on the table with her fork and knife.</p>
+<p><em>Go, Yelroan!</em></p>
+<p>The [Mathematician] was still at work finding out how the inn was running, but a sign he was doing good work was that Lyonette instantly ceded the floor to him. She stepped back, smiling triumphantly—and didn’t seem to notice how Barnethei relaxed and he and Yelroan stepped over to have a civilized conversation over a breakfast snack.</p>
+<p>Lyonette could be acrimonious when she felt her authority was encroached upon. Yet she was also very happy to let people she <em>trusted</em> do their job. Which meant she had more time to fuss over Mrsha and wipe bits of egg from Mrsha’s face.</p>
+<p><em>A mixed blessing. </em>The Gnoll put up with the fussing, and then Lyonette was off.</p>
+<p>“Oh! Is it little Kenva? Um—Watch Captain Venim’s daughter? Are you here for breakfast or a snack?”</p>
+<p>“I’d like a cupcake! Or—or one of the Shield Spider succulents!”</p>
+<p>“I’m paying for her. Venim is in Liscor. Whichever is cheaper, please.”</p>
+<p>Kenva’s aunt informed Lyonette, and the [Princess] smiled hugely.</p>
+<p>“Why don’t I get you a carrot cupcake you can try, Kenva, and a Shield Spider succulent? All you have to tell me is if you like it—on the house. You and Mrsha like to play, don’t you?”</p>
+<p>“Really?”</p>
+<p>The Drake girl’s eyes lit up, and Lyonette ended up giving her and her aunt a carrot cupcake. She wanted their reactions to know how well it would sell and if they needed any tweaks to the flavor or consistency. It had frosting, which redeemed the Hawk-food in Mrsha’s eyes.</p>
+<p><em>Where’s my cupcake, prithee?</em></p>
+<p>She held up a card meaningfully as Lyonette went to say ‘hello’ to Menolit and get Moore a big breakfast. She was good with people and made them feel very welcome. Lyonette rubbed Mrsha’s head.</p>
+<p>“If you can go to school without causing trouble, I’ll give you and everyone a snack. But no cupcakes now!”</p>
+<p><em>Tyranny is meant to be opposed. Tyranny of sweets is the meanest action of the smallest mind!</em></p>
+<p>Mrsha shook a fist as her mother rolled her eyes. But the argument attracted Kenva, and the Drake girl appeared.</p>
+<p>“Hello, Mrsha! It’s me, Kenva, do you remember?”</p>
+<p>She shyly waved a claw, and Mrsha waved back. Of course she remembered! Kenva seemed to regard Mrsha as a celebrity from television—and Mrsha rather thought Kenva was interesting. Because her father was Venim, one of Pallass’ Watch Captains.</p>
+<p>Kenva had bright yellow scales, which seemed to be more common in Pallass, but she had darker blue scales around her eyes, like speckles or a permanent eye-liner. It was very cool, and Kenva admired Mrsha’s white fur.</p>
+<p>“Are you two friends, Mrsha? Kenva, Mrsha has to go to school in an hour, but you two are free to go around the inn if you like! Just be careful about the World’s Eye Theatre, and no going outside or anywhere in Erin’s inn that makes you sad.”</p>
+<p>Lyonette’s warnings made Mrsha roll her eyes, and Kenva’s aunt looked amused by the injunctions, but Mrsha brightened up as a carrot cupcake magically appeared.</p>
+<p>“<em>School?</em> You have it too? <em>Boring.</em>”</p>
+<p><em>You don’t like school? I quite enjoy the lessons I have had.</em></p>
+<p>Kenva read fairly quickly, which meant she was learning how to read and write, at least. She rolled her eyes.</p>
+<p>“What lessons do <em>you</em> learn? Numbers and words and stuff? Some of it’s fun, but I <em>hate</em> having to recite the pledge to the Walled Cities, and they tell us stories about General Edellein when everyone knows he’s not as good as Thrissiam, and <em>blah blah boring stuff.</em>”</p>
+<p>Mrsha was confused. When she vouchsafed that her classes were nothing like that, she and Kenva compared notes.</p>
+<p>To both girls’ mild outrage, it turned out that the prototype lessons in Liscor were what Kenva called ‘survival lessons’, and she only got a few classes that focused on them. Shooting a bow, growing your own plants, all things [Druid] Shassa was teaching her first class, weren’t Pallassian lessons.</p>
+<p>“If you sign up for soldier classes, you get to shoot bows and stuff, but we get <em>[Soldiers] </em>and [Instructors] for teachers. And our teachers are [Teachers]! Is Oteslian school better?”</p>
+<p><em>What does Pallassian education look like?</em></p>
+<p>“Boring stuff. We find out if we’re good miners or learn numbers so we can work at guilds or study magic, alchemy—”</p>
+<p><em>This sounded really cool to Mrsha!</em> Until it turned out that it was mostly aptitude testing—no one got to make actual potions. Once you or your parents decided on a career, you would take ‘advanced’ classes in a particular field. More math, education in literature or handwriting courses—and then you’d enter an apprenticeship at eleven onwards.</p>
+<p>School was not all-encompassing and usually went from six to twelve. Kenva wasn’t in love with her classes that ran four days out of the eight day week, and Mrsha suggested she join Liscor’s classes.</p>
+<p><em>Ours are better. We might get even more education, like in Illivere!&nbsp;</em></p>
+<p>“Where’s that?”</p>
+<p><em>It’s a nation that makes Golems in Chandrar. I have heard that the Council might fund a comprehensive education system!</em></p>
+<p>Erin certainly believed in it, as did the Earthers, and they had described enough of how their world taught children to Selys, Krshia, Lyonette, and so on. Mrsha wasn’t sure she liked the idea of having to go to school until she was <em>twenty—</em>but more classes on how to identify good mushrooms and hiking around Celum wasn’t bad.</p>
+<p>Kenva was taken by Mrsha’s more engaging school, and she was bouncing in her seat.</p>
+<p>“I have to join your school! <em>It sounds so much more fun.</em> Liscor’s a lot more fun than boring Pallass.”</p>
+<p>Pallass, with its elevators and so many people, was <em>boring?</em> Apparently so to Kenva.</p>
+<p>“You can’t do anything in Pallass. There’s <em>always</em> a [Guardsman] or [Soldier] who’s watching you. And I can’t push the elevator buttons or go skateboarding—<em>Liscor</em> has so much new stuff!”</p>
+<p><em>You should join my class! If you can.</em></p>
+<p>Perhaps it would put her education in Pallass in jeopardy? Kenva chewed on her lip, then developed a sly look.</p>
+<p>“I’ll ask my dad! You know—if he gets a job as the Watch Commander, I might get to go to Liscor’s school anyways.”</p>
+<p>Mrsha was nodding—until her mind registered Kenva’s comment. Then she dropped her fork with her last bite of sausage on it.</p>
+<p><em>His job as what?</em></p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>Jewel of Glitterblade came downstairs into The Wandering Inn and, as usual, always felt a moment of trepidation every time she sensed an ‘event’ occurring.</p>
+<p>She wasn’t used to it. Most inns had drama, but that was the [Innkeeper] and a rowdy guest or someone sleeping with another member of staff. A barfight at most.</p>
+<p>Erin’s inn…was different. She nibbled on her breakfast that a Goblin served her and stared at the smiley-face made of eggs and sausage as she listened in to Erin exclaiming as Mrsha delivered today’s events. Jewel…was trying to calculate whether this would somehow lead to an event where she was fighting for her life and/or at the heart of some dangerous worldwide phenomenon.</p>
+<p>You never knew.</p>
+<p><em>“Watch Commander of Liscor?</em> They’re going to replace Zevara? That’s not right!<em>”</em></p>
+<p>“They’re going to <em>what?</em>”</p>
+<p>Relc roared as he ran downstairs, late <em>again</em> to work. But he skidded to a stop as Erin waved her hands in her wheelchair.</p>
+<p>“Relc, you didn’t know?”</p>
+<p>“We’re getting a Watch Commander? I heard we were getting upgraded, but—<em>Captain Z’s not gonna be in charge?</em> Aw, it’ll be Cellidel all over again! We can’t let this happen! Who okayed that? Jeiss? That traitor!”</p>
+<p>Erin was nodding. She slammed her hands on her wheelchair’s armrests weakly.</p>
+<p>“You’ve gotta stop it. Riot! <em>Riots in the street! </em>If someone else arrests me, it won’t be Liscor anymore! Wait, your breakfast bagel sandwich!”</p>
+<p>She waved as Peggy danced out of the kitchen, hot-handing a bagel still smoking from the griddle. Relc grabbed it.</p>
+<p>“Hey, thanks! I’m gonna get to the bottom of this—”</p>
+<p>He raced out as Erin turned, red-cheeked, and Lyonette undid her apron.</p>
+<p>“I’ll go ask Krshia. They can’t hire some Watch Captain from Pallass over <em>Zevara!</em> That’s—just wrong! Even if the Walled Cities are in charge.”</p>
+<p>“My father’s great at being a Watch Captain!”</p>
+<p>A little Drake shouted, looking hurt. Lyonette hesitated and went over.</p>
+<p>“I didn’t mean he’s <em>bad</em>, Kenva. I’m sure he’d be a great Watch Captain of Liscor if we’re hiring more. It’s just—oh, I apologize.”</p>
+<p><em>Watch Captains?</em> Jewel chewed as she made a face. This was new to her. She was used to Watch Captains being lazy, lower-level, and ineffectual. The kind of people you were hired to do dirty work for, like clean up a sewer or take some [Bandits] to task.</p>
+<p>Drakes respected their Watch Captains more, it seemed.</p>
+<p>“Is there any way this’ll turn into a fight?”</p>
+<p><em>She was worried.</em> She was officially part of the inn’s security—but she didn’t know her job. And frankly, Lyonette had told her to follow Erin around, especially if the [Innkeeper] was exploring her new rooms in the garden, but there wasn’t much direction to Jewel’s day.</p>
+<p>She was a Gold-rank adventurer. Yet somehow, she was incredibly relieved when her ‘superior’ saw her sitting there and trotted over.</p>
+<p>“Miss Jewel.”</p>
+<p>Normen tipped his hat, even though he was wearing the new Demas Metal armor and his hat didn’t fit the brilliant metal at all. He still seemed awkward in it and would instinctively try to walk out of the way of the [Knight]’s path if he saw himself in a mirror.</p>
+<p>The Brother of Serendipitous Meetings was used to the inn, though, and Jewel nodded to him.</p>
+<p>“Are we up to something today, Normen? I could get my team together.”</p>
+<p>The rest of her team and Alcaz were on a later shift and took turns enjoying the inn’s hospitality and acting as a kind of bouncer-guard combo. It wasn’t the work they’d envisioned as Gold-ranks, but they were willing to give this a shot for a while.</p>
+<p><em>Especially after seeing what Erin Solstice could do. </em>Normen sat down, polishing his armguards nervously to make sure there were no spots.</p>
+<p>“Doesn’t seem like it. Miss Solstice might go about, and we’d be with one of the Thronebearers if so. The fellows and the lady know what’s what.”</p>
+<p>Ser Dalimont and the other three [Knights] would tell Jewel where to stand or give orders—they were professional bodyguards. Jewel exhaled.</p>
+<p>“Fighting?”</p>
+<p>“Unless Miss Solstice has us charge the new Watch Captain from Pallass, I don’t think so. Worst comes to it, we’ll be in Pallass, fighting their Watch one against a hundred.”</p>
+<p>She smiled, and Normen grinned at his joke…but the thing was, <em>it could happen.</em> Somehow, the image of Erin Solstice leading Liscor’s Watch against Pallass’ wasn’t impossible. A remote possibility, yes, but…</p>
+<p>What an inn. Jewel saw an upset Kenva being reassured by Mrsha that her dad was great—it was just that Captain Zevara was a staple. Children playing, Antinium wandering about—that silly one, Bird, was telling Numbtongue over breakfast about an encounter he’d had.</p>
+<p>“I am telling you, Numbtongue. It was the <em>Invisibird.</em> Two of them.”</p>
+<p>“Yeah, yeah.”</p>
+<p>“You are not listening. I saw their vapor trails in the sky! They were as big as houses! <em>Bigger!</em> I shot an arrow, but they dodged. <em>This is what the ballista is for. </em>This matters to me, greatly. It matters as much as the butts of other people matter to you.”</p>
+<p>Numbtongue nearly spat out his breakfast and laughed. Bird slapped the table.</p>
+<p>“I do not question your odd hobbies, so do not question mine! Also, would you like to watch a movie tonight with me? Kevin is going to have us watch a movie about someone in a plane.”</p>
+<p>“…Okay? Is it a good one? What’s so interesting about the plane? Do they fly a lot in it? I want to see the inside.”</p>
+<p>“Apparently they are in one. Then it crashes.”</p>
+<p>“Ooh. What time? Can I bring a friend?”</p>
+<p>“Only if they have snacks. Now, if I had a special arrow like Halrac has, maybe I would have hit the bird. Do you think Archmage Valeterisa would enchant my bow and arrows?”</p>
+<p>Numbtongue was nodding along, but Bird was still invested in his failed hunting story. The Goblin sighed and reluctantly engaged with Bird. He tried to settle the matter once and for all.</p>
+<p>“So you didn’t kill the Invisibird or hit it. Maybe it was a dream, Bird? Or you imagined it. Does it even matter?”</p>
+<p>Numbtongue was yawning dismissively, and Bird tilted his head. Then his voice innocently replied as he ate his breaded chicken cut into bird shapes with a side of egg with ketchup for breakfast.</p>
+<p>“You may be right, Numbtongue. I only levelled twice after that.”</p>
+<p>“…You what now?”</p>
+<p>This was one conversation. Goblin and Antinium friends. At another—Jewel peeked over, and there was Archmage Valeterisa. <em>Archmage Valeterisa</em>, who had just invented a new spell and was busy talking with Lady Ieka Imarris. And busy taking notes was Fierre, crimson eyes alight with interest, making occasional comments, and Montressa du Valeross.</p>
+<p>Valeterisa was patting Montressa on the head.</p>
+<p>“…I do not see why we cannot do this in the Haven, Ieka.”</p>
+<p>Ieka smiled and glanced knowingly around The Wandering Inn.</p>
+<p>“Two reasons, Aunt. Put up a privacy spell, would you? Firstly, dearly as I love Innkeeper Larra, she does like to know everything. Innkeeper <em>Solstice</em> is less nosy—and you had better believe House Veltras and every other noble family will try to steal our conversation. Plus, my new employee is a bit allergic to sunlight.”</p>
+<p>“I burn easily. Hello, Archmage.”</p>
+<p>Fierre bowed, and Valeterisa peered at her.</p>
+<p>“I know you. You drove a coach into me. This is my apprentice. She’s a good apprentice.”</p>
+<p>“Archmage, thank you—you can stop patting my head!”</p>
+<p>Montressa protested, embarrassed. Valeterisa smiled.</p>
+<p>“I am saying it more. And I have a proposal, Ieka. Instead of teleportation, a lift spell. I have notes…Apprentice, where is my sketch? You lift up via a platform into the sky, then you send the objects along a pre-arranged route. And before you say ‘toss’, you would have specific coordinates. The odds of hitting someone in the air are remote. Probably. But the savings in mana compared to teleporting mass would be…”</p>
+<p>Their conversation went silent even though Valeterisa’s lips kept moving. Jewel looked at Normen.</p>
+<p>“Normen…”</p>
+<p>“Yes, Miss Jewel?”</p>
+<p>“—If she causes another scene, how do we stop <em>her?</em>”</p>
+<p>Two nights ago, Valeterisa had just put up a [Forcewall], and Jewel hadn’t known if drawing her blade was the right move. Then she’d flown off. Jewel had felt useless—although it hadn’t been that bad—but she had wondered how to take on the inn’s threats.</p>
+<p>Valeterisa could cast [Chain Lightning]. Jewel was a [Swashbuckler], a good fighter, able to weave and dodge, and she had artifacts of personal protection and an enchanted sword.</p>
+<p>…She wasn’t up to ‘dodge lightning bolts at close range’ yet. She had seen Zeladona. She had heard about the Adult Creler.</p>
+<p>The question seemed to pain Normen, and as if summoned by it, two more people sat down at the table. Jewel jumped—but Normen nodded at a Gnoll with yellow fur and sunglasses and—Peggy.</p>
+<p>“Good morning, Adventurer Jewel, Sir Normen. Were you talking about threats to the inn? I was just reviewing the employees, and I noticed we had five full-time members of security, assuming you all keep working here. Goblins, Antinium, and every member of the inn including Mrsha are apparently ready to fight…but what are we fighting?”</p>
+<p>“Yah. Chieftain said this inn was dangerous. Big danger. Crazy poo-pants random danger. Anyone know where next bad thing is coming? First Archmage—what next? Blind [Emperor]? Rock Crabs?”</p>
+<p>Peggy, the Hobgoblin with one peg-leg, was also on a mission from Chieftain Rags. This wasn’t retirement, and she wasn’t just being shuffled off because of her wounds. Rags had sent <em>some</em> Goblins with odd traits like Inkpaper, but she had also warned Peggy that Erin needed saving at times.</p>
+<p>The Hob was rightfully worried that if trouble came, she might not be prepared. Yelroan looked at Normen…and the man was concerned.</p>
+<p>“I’m afraid I don’t know much, ladies and gent. Wilovan and Ratici saw more than me, but even they were ‘new’ to the inn. And even the Gentleman Callers failed.”</p>
+<p>He was the longest-serving member of the inn—and his career wasn’t that long. Jewel raised a hand.</p>
+<p>“Who’re the Gentlemen Callers? Another adventuring team?”</p>
+<p>Peggy had the same question. Normen hesitated as a man from the streets did when mentioning the underworld. Yelroan’s glasses flashed.</p>
+<p>“That’s a famous criminal duo. Level 40 [Rogues]. They were defending <em>this</em> inn? And failed?”</p>
+<p>Jewel’s mouth opened, and Peggy whistled. The Gold-rank felt a twisting in her stomach, but Normen corrected Yelroan.</p>
+<p>“[Thief] and [Thug], sir. [Thief] and [Thug]. Not [Rogues]. They’re fine fellows. Did their best, and Miss Lyonette said they discharged all their debts. They’re…by way of association, related to the Brothers of Serendipitous Meetings.”</p>
+<p>He said that like the title meant something, and it did, to Jewel. Yelroan knew this, but Peggy raised a claw.</p>
+<p>“Who’s that?”</p>
+<p>Normen blinked at her.</p>
+<p>“That would be me, Miss.”</p>
+<p>“<em>You’re a Brother of—</em>I thought they were criminals in a gang!”</p>
+<p>Jewel’s chair shot back. Then she was embarrassed as Normen turned red. Yelroan <em>hmmed</em>.</p>
+<p>“I can see there’s a lot I don’t know. No one’s sat down and given me an accounting of the inn. Oh, features, yes. Locations—although I think even Miss Solstice doesn’t know all her gardens. But when did the Brothers become affiliated with the inn?”</p>
+<p>Normen had to think.</p>
+<p>“I think…the Tallman—that is, the Titan of Baleros hired the Gentlemen Callers to protect the inn.”</p>
+<p>“The Titan? I thought that was a joke. He didn’t really—”</p>
+<p>Jewel’s mouth opened, and even Yelroan lowered his sunglasses in disbelief. Peggy raised her claw higher.</p>
+<p>“Who that also?”</p>
+<p>“It was a rumor in my organization. We don’t do names—I could ask. Alcaz might know, but they were <em>definitely </em>hired. It was right before Miss Solstice was shot. They failed to stop Hectval from doing it, which led to the war.”</p>
+<p>“<em>Wait, the war between Hectval and Liscor started at the inn?</em> That’s how Erin got shot?”</p>
+<p>Jewel’s mind was exploding. The war was all over Liscor—and it had been for months! She’d caused a <em>war?</em></p>
+<p>Her stomach hurt, and Peggy slammed a fist onto the table.</p>
+<p><em>“Who’s Hectval?”</em></p>
+<p>Normen was rubbing at his head.</p>
+<p>“I—what happened before that? I know there was a nasty business with the dungeon. Raskghar. And Miss Mrsha came to the inn by way of the Goblin Lord, I heard. A survivor. The Horns of Hammerad were here—that’s where that fellow, Calruz, became a prisoner, I think. But I never heard the full tale outright.”</p>
+<p><em>Calruz? Goblin Lord? </em>Peggy’s face went dark, but Yelroan was trying to take notes.</p>
+<p>“Let’s see. I think I need a timeline. And…if I’m right, we’re not the only people who don’t know what this inn’s been through. Maybe this should be one of my first tasks.”</p>
+<p>He glanced up, and the other three turned—and saw Rosencrantz and the Antinium peeking over at them. The Workers and Soldiers not busy were obviously curious, and Rosencrantz raised one hand.</p>
+<p>“I have heard it from Pawn that Miss Solstice appeared one day and delivered chess and the sky unto the Antinium. I know all of Priest Pawn’s stories, but they are allegorical, and I understand Miss Solstice is not the sky in actuality. I, too, would be curious about the facts of the inn.”</p>
+<p>Yelroan raised his brows as Jewel looked around. He nodded and then wrote on a fresh piece of paper.</p>
+<p>“I think…we need a timeline. And a story. Funny. Has no one ever thought to tell it?”</p>
+<p>He looked around, and it seemed like the most obvious thing in the world. But then again…Jewel glanced at Erin, at Lyonette, and even silly Bird and Numbtongue and Mrsha. It had never occurred to them because they had lived it.</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>Mrsha du Marquin had a playdate with Kenva that lasted all day. Nanette was busy visiting the [Witches] of Riverfarm, Ryoka was doing something with Shaestrel and Nerry, and most of the inn was debating Watch Captain Zevara <em>not</em> getting promoted.</p>
+<p>She, herself, rather liked Kenva, who was very respectful of Mrsha’s knowledge and wisdom. She even accompanied Mrsha to school where they got to visit the Blue Fruit trees—and Shassa explained the dangers of poison and showed them which fruits were bad with her magic.</p>
+<p>Sticky, blue juice was on both girls’ faces by the time they came back, and Watch Captain Venim found his daughter happily laughing with Mrsha.</p>
+<p>Thus, Mrsha found herself invited to the Watch Captain’s home that night for her first playdate in Pallass. Kenva was overjoyed, and she had suggested it. She whispered as Venim rushed around the kitchen, trying to produce food for three.</p>
+<p>“No one ever visits. They say it’s no fun because my dad’s a <em>Watch Captain.</em>”</p>
+<p><em>Am I to meet your distinguished mother soon?</em></p>
+<p>Kenva’s face fell, and Mrsha realized she’d made a mistake. The Drake kicked her legs under the table.</p>
+<p>“She split up. I live with her half the week and Dad the other half. I don’t like her boyfriend.”</p>
+<p><em>Er…er…I apologize for my indecorous comments. Mothers are a difficult subject for me, too. I have a quite good mother and a faker who has bothered me on occasion too.</em></p>
+<p>Kenva’s face wrinkled up as Mrsha tried to describe her complicated family situation. Then she sniffed the burnt food, and Venim poked his head out of the kitchen.</p>
+<p>“I have some pudding. But, ah, we might need to grab some food from a restaurant. I can head out and place an order.”</p>
+<p>“<em>I want to eat Presto Prelon Stew again!</em> Mrsha, you’ll like it! A Dullahan makes it up in a big pot and sells it in a stand!”</p>
+<p>“Presto Prelon Stew? That’s street food. I don’t know if it’s the thing to feed Miss Mrsha—”</p>
+<p>Venim began to object, but the girls were ecstatic. Mrsha <em>loved</em> street food. He went out, and because everyone in Pallass lived on multiple floors and were squeezed together, the vendor that Kenva knew was only down the block and told Venim they’d have it in fifteen minutes.</p>
+<p>“Can we have the pudding if we have to wait, Father? I’m <em>hungry.</em>”</p>
+<p>Kenva’s stomach was rumbling, but her father was a patient, dutiful adult.</p>
+<p>“Be strong, Kenva. Dessert comes after dinner.”</p>
+<p>He had that air of parenthood about him that made him resist his daughter’s pleas, and Kenva was only a decent [Beggar]. Venim, though, was not prepared for Mrsha. The white Gnoll wrote for a minute on her notepad, and that was odd enough. But when she held up the missive, the Drake stared at it.</p>
+<p><em>Strength. What is strength, sir? Watch Captain Venim, I would say that the strength to eat what delights you and be happy is greater than any fanciful notion that there is an order to enjoyment. Is ‘strength’ the ability to follow rules dogmatically or the strength to see your daughter’s delight regardless of societal pressure and rules?</em></p>
+<p>He stared at her notecard. Then at Mrsha. Kenva’s mouth fell open as Watch Captain Venim thought for a long moment—then got up and brought some pudding out for everyone to share. She looked at Mrsha.</p>
+<p><em>“You’re so cool.”</em></p>
+<p>&nbsp;</p>
+<p><em>——</em></p>
+<p>&nbsp;</p>
+<p>After her dinner date with some rather tasty Presto Prelon Stew, Lyonette picked up Mrsha and brought her back to the inn. The Gnoll had a full belly, a copy of the recipe for Calescent, and she had made up her mind.</p>
+<p>She convened Erin, Bird, Numbtongue, Selys, and all the other members of the inn who were arguing about Zevara not wanting the Watch Commander’s job.</p>
+<p>“She doesn’t know if she’s ‘fit for the position’, Erin. It’s not the Council. Lism—<em>Lism</em> told me he’d appoint her in a heartbeat over a non-Liscorian. That’s like his entire thing.”</p>
+<p>Selys was grimacing as Relc groaned.</p>
+<p>“But Captain Z’s better than some Pallassian! This Venim guy…word is he’s a stickler for the rules, but we don’t want <em>that!</em>”</p>
+<p>“I don’t know. He seemed very respectful, and Mrsha just had dinner with his daughter. What did you think, dear?”</p>
+<p>Lyonette drew everyone’s attention to Mrsha, who was waving her paws and demanding to be ‘heard’. Mrsha waited—then slammed her paws down on the table and showed them her note.</p>
+<p><em>Watch Captain Venim is a fool and a weakling unfit for office! I pressured him into giving me dessert first. Watch Captain Zevara would never fall to pressure like that! A weak leader doesn’t have the strength to lead Liscor’s Watch! If this Drake crumbles in the face of pudding, what will happen when a hundred thousand Crelers come up the walls?</em></p>
+<p>“Yeah. <em>Yeah!</em> What Mrsha said! We need a Watch Commander who’s used to monster attacks, not one with Pallass’ walls! Come to that—they didn’t even take out the Wyverns with an entire Walled City at their disposal!”</p>
+<p>Relc punched a fist into his claw. Erin chewed on her lip.</p>
+<p>“Plus—why are we just asking for Pallass? I bet you Chaldion will have him report on stuff. Isn’t there a good Watch Captain with experience from anywhere else? Invrisil?”</p>
+<p>Relc objected at once.</p>
+<p>“You don’t want Humans. No discipline. At least Venim knows how to command a lot of people.”</p>
+<p>Selys nodded in agreement. Erin scowled.</p>
+<p>“Yeah? Well, can he hold off undead when they’ve invaded the city? Like when Skinner attacked?”</p>
+<p>“That’s what I’m <em>saying.</em> Captain Z’s gotta be Watch Commander.”</p>
+<p>Relc was about to hit the table again when someone held up a hand.</p>
+<p>“U-um.”</p>
+<p>Jewel flinched when everyone looked at her, and Erin blinked.</p>
+<p>“Jewel? What’s up? Do you know a candidate for Watch Commander?”</p>
+<p>The Gold-rank adventurer turned pale.</p>
+<p>“Me? No! I—I just had a question.”</p>
+<p>“We all did, Miss Solstice.”</p>
+<p>Yelroan broke in, and Erin realized the Goblins, Antinium, Jewel, even Normen, Gothica, and members of the inn were gathered around the table. She blinked, and Mrsha looked around.</p>
+<p>“What’s up?”</p>
+<p>“This isn’t about the Watch Commander. We were actually hoping you could clear up a matter of…consistency for us. I’ve been getting up to speed with the inn, but it occurs to me that for all you’ve told me—one of the things I don’t know is <em>history.</em>”</p>
+<p>The Gnoll of the Plain’s Eye Tribe looked at Erin, then at Numbtongue and Bird, Lyonette and Mrsha. Even Apista, who was smoking hard on a mini rollup.</p>
+<p>“History of what?”</p>
+<p>Erin looked around, and the Gnoll grinned at her.</p>
+<p>“Everything. I heard this inn was destroyed—three times. I had no idea of that. With respect, Miss Solstice, I’ve heard anecdotes about you, but I don’t know…how you came to be in the inn. I heard there were five Hobgoblins here, once.”</p>
+<p>Numbtongue’s face fell, and Bird looked up. Lyonette’s mouth fell open as she realized even the other Goblins didn’t know the full story. Gothica, maybe, as a Cave Goblin, but—</p>
+<p>Erin blinked as Yelroan indicated Apista.</p>
+<p>“Why is there a bee on Miss Mrsha’s head? Why is she smoking a tiny cigar? We know there’s a story behind you and Mister Kevin and the other Humans, Miss Solstice.”</p>
+<p>Erin looked vaguely alarmed, but Yelroan waved it off. His eyes were sharp, and <em>he</em> knew about Earth, but he gave Mrsha a slight wink as he looked around.</p>
+<p>“—But I think what would help everyone is if any time a new employee was hired, someone could tell them the story of how…The Wandering Inn started. Properly.”</p>
+<p>“What, you mean like an employee manual? Watch out for moving stones, don’t touch glowing flies? I can see that.”</p>
+<p>Erin rubbed at her chin, but Lyonette saw Yelroan shake his head. Mrsha was bouncing up in her chair with the answer, but Nanette exclaimed with a laugh. She had come back just in time, and she had a bunch of realistic wooden spiders braided into her hair by Oliyaya’s apprentices.</p>
+<p>“No, Miss Erin! He means <em>stories.</em>”</p>
+<p>The little witch and the Gnoll of the Plains both smiled at each other. Erin’s eyes opened wide.</p>
+<p><em>Stories.</em> Both Nanette and Yelroan came from powerful oral traditions of storytelling. And they looked around this inn—and sensed all the stories here. Erin gazed at them, then Lyonette, and murmured.</p>
+<p>“Oh. They don’t know Headscratcher. Or Shorthilt. And…no wonder no one knew who ‘Ser Solstice’ was. None of them were here when Toren was here. Or—”</p>
+<p>“Even the Horns. Calruz. How many people know he was the leader of the Horns?”</p>
+<p>Lyonette’s eyes turned misty, and Erin looked at Mrsha, then around the inn.</p>
+<p>“A story.”</p>
+<p>“Maybe a book? What if you sent word to Krshia Silverfang’s niece? The, um…the one who writes stuff? I saw her on the scrying orb.”</p>
+<p>Relc snapped his claws together.</p>
+<p>“Satar Silverfang? You want her to write The Wandering Inn’s story? It’s not <em>that</em> impressive.”</p>
+<p>Erin laughed, and everyone gave her a look as if she were crazy. But the idea was catching on, and Numbtongue strummed on his guitar.</p>
+<p>“It’s a good story. A long one. I can’t tell the Ballad of the Redfangs in one sitting yet. Maybe write it down?”</p>
+<p>Selys laughed in amusement.</p>
+<p>“Psh. You could write it into a book. Maybe even sell it. I tell you what, I’ll fund it. We could hire someone. We’d call it—<em>The Innkeeper of Liscor! The Human who spits blood!</em>”</p>
+<p>Erin rolled her eyes.</p>
+<p>“No one would read that, Selys. And it’d be like twenty pages long. I came here—no, wait. First, there was Rags’ tribe…but before that there was a Dragon…”</p>
+<p>Demsleth was coming into the inn with Alber, both looking bruised. He froze as Relc rolled his eyes.</p>
+<p>“Yeah, yeah. It was a…well, I <em>thought</em> it was a fire-breathing Wyvern, Erin.”</p>
+<p>Relc hesitated and gave Erin a sidelong look as he recalled what Klbkch had hinted at during the Christmas party. Then he brightened up as he remembered something else.</p>
+<p>“But you called <em>me</em> a Dragon. Ooh, put that in! And Klbkch died…”</p>
+<p>“He <em>what?</em>”</p>
+<p>Erin waved this off as Mrsha’s head rotated between everyone, but the people who had been there exclaimed.</p>
+<p>“He came back. Yeah…the Goblin Chieftain. Wow, you know, I forgot, but back then the inn <em>was</em> further away! I had to walk for half an hour to get here—and that’s when the dungeon was uncovered. I met Pisces when he tried to rob me—nothing’s changed since then. But…”</p>
+<p>Her eyes lit up, and everyone looked at her. Of all the things you do in an inn—they had never really done this.</p>
+<p><em>Told the story.</em> Jewel was sitting forwards, trying to put this together with rumors she’d heard and her own knowledge of adventurers.</p>
+<p>“Where does Crossbow Stan come into this?”</p>
+<p>“<em>Crossbow Stan!</em>”</p>
+<p>Erin laughed and almost cried—and she had not known him that well. Lyonette looked around.</p>
+<p>“So many stories. We should have this written down, Erin. Or organized it. Yelroan, you’re right. And it might be a longer book! Does anyone actually write stories that we know?”</p>
+<p><em>Satar could do it. How long could it be? But be sure to tell only the good parts about me! And I have to relate the great Battle of the Cave!</em></p>
+<p>“Did…someone mention how the inn started? I hear Ysara’s coming back. I never told you all that I met her the first year I was here, did I? I was at the Bloodfields, and she saved my life. I never got the chance to thank her for that. Well, I didn’t even know she was Yvlon’s sister until I heard her name.”</p>
+<p>Everyone turned as Ryoka walked in, stuffing a bunch of books on forests and old maps into her bag of holding, and Erin’s mouth fell open.</p>
+<p>“You <em>what?</em> You met Ysara? When?”</p>
+<p>“Bloodfields. The first time I went. I think I know most of everything that happened—but I could use someone telling me what happened after I left and ran to Reizmelt.”</p>
+<p>Ryoka sat down with Nerry in her arms, and Shaestrel flew over.</p>
+<p>&nbsp;</p>
+<p><span style="color: #96be50"><em>“Ah, the story of the inn! Ivolethe was there. Break out yon burnt corn and tell me stories, mortals! I heard the riddle of the Dragon in the cave was a let down made of shite.”</em></span></p>
+<p>&nbsp;</p>
+<p>She said <em>that</em> so only Erin and Ryoka could hear. But then Kevin, Joseph, Imani—more guests of the inn were being lured over.</p>
+<p>“Oh, the <em>phone call.</em> I mean, text call. We had that happen.”</p>
+<p>“Yes.”</p>
+<p>Imani shook her head, and Kevin apologized for bringing it up. Imani shook her head as she hugged Palt’s torso as he sat next to her, and now Yelroan was taking frantic notes.</p>
+<p>“Timeline, please! We should organize this, and clearly there are a lot of perspectives. Who was here first?”</p>
+<p>“M…me?”</p>
+<p>Erin raised her hands, and everyone turned to her. Mrsha banged her paws on the table.</p>
+<p><em>Story! Story! Tell us how it went!</em></p>
+<p>Everyone knew a bit of it—but the red-faced [Innkeeper] was the only one who had been there. Ulvama stomped over, growling.</p>
+<p>“It’s dance time! Why are you—oh.”</p>
+<p>She spotted a bowl full of popcorn coming out of the kitchen in Ishkr’s paws and decided exceptions could be made. The Gnoll [Server] was smiling, and Erin raised her hands.</p>
+<p>“Alright! Everyone quiet down! Let me start from the beginning. I’m no good storyteller—and like I said, it’s a short tale. I’ll need help. And I guess—we could get someone to write it up and make it pretty. How should we start?”</p>
+<p><em>“It was a dark and stormy night?”</em></p>
+<p>“Shut up, Kevin. It wasn’t stormy at the start. But I did get burned. I was going…to the bathroom.”</p>
+<p>Everyone looked at Erin. She turned red.</p>
+<p>“Well, I <em>was.</em> And then—oh, well. I was running because I ran into this monster. I was teleported. No, let me start. I was in my home in, um…”</p>
+<p>“Michigan?”</p>
+<p>“Do we censor that?”</p>
+<p>Ryoka muttered to Joseph anxiously. Joseph pulled a face.</p>
+<p>“It’s an open secret by now.”</p>
+<p>Erin threw a piece of buttered popcorn at them. Then pointed to it.</p>
+<p>“Aha! See? That. That’s from home. Nutritional yeast on popcorn. Not <em>baking</em> yeast. Nutritional yeast. No one does that but me.”</p>
+<p>“Yeah, that’s because it’s a sin against popcorn.”</p>
+<p>Kevin shot back, but he was eating Erin’s favorite condiment on popcorn. She glowered.</p>
+<p>“You didn’t seem to mind when you guys ate all the food at my inn and didn’t pay for it! But let me start again.”</p>
+<p>She closed her eyes, and a silence fell over the group.</p>
+<p>“I—was going to the bathroom. And I must have run into a teleportation spell or…something. Because the next thing I know, I was face to face with a fire-breathing <em>Wyvern. Definitely a Wyvern. It couldn’t have been anything else.</em>”</p>
+<p>Her mouth kept moving for a second, and then the illusion spell turned off. Erin’s <em>glower</em> found Demsleth as Ryoka slowly turned her head, and Erin continued after a long pause. No one else had noticed.</p>
+<p>They were finding comfy chairs, asking for food, taking notes—and listening. After all, this was a real The Wandering Inn moment.</p>
+<p>Rozencrantz was sitting right next to Bird. The legend of the Free Hive was slowly chewing on crackers as Octavia tried to fit in next to Numbtongue. Rosencrantz was very nervous—especially when Bird turned his head. But then the [Bird Hunter] gave him a cracker. Shaestrel, Nerry, and Apista each stole one, and the bee flew crazily across the inn to land in Nanette’s hands.</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p><em>More Antinium were coming.</em> Pawn was leading a charge straight up Liscor’s streets with all the [Crusaders] and Painted Antinium not on duty.</p>
+<p>“<em>She is telling stories?</em> This is why we put Rosencrantz at the inn! Hurry! Hurry!”</p>
+<p>Yellow Splatters jogged after Pawn. The Crimson Soldier loped after both—and Crusader 57 grumbled.</p>
+<p>“This is stupid.”</p>
+<p>“Free food.”</p>
+<p>One of the other members of Squad 5 poked him, and he decided to shut up. The running Antinium were halfway to the eastern gates when someone blurred past them. They slowed—then ran faster as Klbkch sped up the hill.</p>
+<p>Why, there was even a fully-stressed Watch Captain Zevara, who ran after the Antinium.</p>
+<p>“<em>It’s the inn! Sound the Solstice alarm! What is it this time? Monsters? War with the Humans? Archmages? Another &lt;Quest&gt;? I told Lyonette to give me lead time on those!</em>”</p>
+<p>Pawn shouted back.</p>
+<p>“No, she is telling stories!”</p>
+<p>Watch Captain Zevara nearly tripped over her tail and slowed in disgust—right until a bunch of Silverfangs, off-duty [Guards], and citizens of Liscor nearly ran her over. Krshia Silverfang was dragging Tkrn and Inkar towards the inn, and the two were running to keep up. Satar Silverfang demanded notes. Plus, they wanted to hear this too.</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>Synchronicity. When the Horns of Hammerad heard that Erin Solstice was telling stories of how everything had happened, they were upset.</p>
+<p>Ceria Springwalker was furious, a rarity with her circlet. She was currently kicking across the grass, shouting.</p>
+<p>“Jelaqua’s going to make it! And I bet Halrac will be sitting in a corner with his arms folded. Pretending he doesn’t really care. And—and I bet Ylawes’ team will make it back, and <em>we’re</em> not there. She’ll be breaking out the good cookies, Pisces. <em>The ones with jam inside.</em>”</p>
+<p>“I hate those. I always think of the Acid Fly cookies she fed me. I have been thoroughly disenchanted with surprise cookies as a concept, Springwalker.”</p>
+<p>Pisces sniffed—but even he was looking north. A big, red-furred Gnoll was rolling around on the ground and throwing a tantrum because she was missing storytime. Yvlon Byres raised her head and opened her eyes. She had been daydreaming.</p>
+<p>“Comrade Pisces. I am sorry, once again, for offering you my special cookies.”</p>
+<p>Ksmvr patted the [Necromancer]’s shoulder, and Pisces waved this off.</p>
+<p>“That was a friendly mistake on the road, Ksmvr, between our team of infallibly honorable intent. <em>That woman,</em> on the other hand, is untrustworthy. Someone should be there to clarify all her slanderous statements. Doubtless about me.”</p>
+<p>He doubted Rags would be there to set the record straight. Yvlon eyed Pisces as she sat up.</p>
+<p>“You mean, the part where you tried to rob her, and she saved you from being killed by the Watch? What part is she setting straight, exactly?”</p>
+<p>Pisces turned red. But then he realized he was being flanked. Shaman Theikha stopped ordering her apprentices to spread blankets on the grass, and she sat cross-legged as Honored Deskie had one of the spinners brought out. It began to whir, softly, as she got to work. And they were looking at…</p>
+<p>Cers somersaulted forwards until he was sitting in front of the Horns, and Ceria stopped ranting about pizza as she realized the Gnolls were gathering up. Honored Berr, Gireulashia…they sat down and stared expectantly.</p>
+<p>“So how <em>did</em> it go? To set the record straight.”</p>
+<p>Chieftain Feshi grinned as her former classmates looked around. They were slow to pick up on the event, but the Gnolls of the Plains were already gathering, some with hobbies or tasks to keep their paws working. The Horns realized that they were in the heart of one of the greatest storytelling communities in the world.</p>
+<p>So—Ceria brushed at her hair and laughed and turned to Pisces, who turned beet red. He got up as Ksmvr nervously shuffled some leaves like a deck of cards, trying to get his part right, and Yvlon smiled.</p>
+<p>“Well, I, ah, was not there for the inception of all the events, but I have my own perspective. Which I can admit is biased. T-to be honest, we have to give Miss Erin many plaudits. As I knew it, one day it began in the wilds of Liscor’s floodplains. Mostly deserted on the eastern approach. After the two Antinium Wars, all the existing settlements had been abandoned, so I, myself, was, ah, loitering around the area at the time I believe she came to the inn.”</p>
+<p>“He was hiding in a cave doing necromancy.”</p>
+<p>Ceria clarified unhelpfully, and Pisces scowled. But then he took a breath.</p>
+<p>“To give Erin Solstice credit—I was a graduate of Wistram, a competent [Mage] and able to defend myself and turn invisible. She survived in those wilds against Rock Crabs, a threat that can take out an entire Silver-rank <em>team</em>—by herself. I happened across her mere days after she arrived, so in that sense, I am probably the third person to know her.”</p>
+<p>“Braggart.”</p>
+<p>Yvlon shoved him from one side, and Ksmvr shoved Pisces from the other side to equalize him. But the [Necromancer] was warming to his theme.</p>
+<p>“She has told me numerous anecdotes of how she came to be there. So…if I may…”</p>
+<p>He spoke, absently, trying to remember how it went. Even if they weren’t all there, like Olesm, or Rags…they were surely remembering it, too.</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>And in her inn, surrounded by friends and guests, new employees and old companions. Erin Solstice took a breath and went on. Her eyes were glittering. Her hat was aflame…but it seemed like an old song ran through her.</p>
+<p>If you were a [Bard], you saw it in the flash of a younger woman, more uncertain, calling out to a group of five Hobgoblins who had saved her life.</p>
+<p>If you were a little Gnoll, staring at Ryoka Griffin’s face, you saw a Runner charging through the snow, followed by glowing winter faeries.</p>
+<p>The [Princess] saw an [Innkeeper] in a blizzard. The Gnoll [Shopkeeper] saw a lost young woman trudging through the streets of Liscor.</p>
+<p>The [Priest] saw a smile across a chessboard. A [Strategos] remembered a wink and a sense of vertigo as he met the opponent of a lifetime.</p>
+<p>A Goblin [Great Chieftain] always remembered the first taste of spaghetti and blue fruit juice at a table in that inn. Not the same table or inn, but the same spirit.</p>
+<p>And a [Guardsman] duo? They looked over—and remembered a young woman standing at the door to her inn, staring wide-eyed at them.</p>
+<p>All of that ran backwards as Erin Solstice spread her hands, closed her eyes, and began to tell the story. Maybe not the way it was done perfectly—but it was a start.</p>
+<p>“Let me think. One second I was opening the door to the bathroom in search of a toilet. Then—I didn’t really feel as if I teleported<em>. </em>I opened the door and—bam. Dragon, right in front of my face. He breathed fire, and I—I was in a cave, and I just ran for it. Screaming.”</p>
+<p>She looked around, and a Dragon winced, but he was listening too. He could just picture it, even if he didn’t remember. If he had meant to roast her…it must have been an accidental discharge of his flame right before he panic-teleported. And—the [Innkeeper] met his eyes, then looked out a window and pointed. Every head turned.</p>
+<p>“I don’t know where I was, exactly. First I was in a cave—then there was fire. I remember running out of the cave. I was afraid I was being chased, so I just—ran. For probably half an hour! I was racing across the Floodplains, no idea where I was and it was dark. Just when I was slowing down, guess what I spot? Some little green people. And guess who tries to knife me? <em>Goblins.</em>”</p>
+<p>“Hah. Classic.”</p>
+<p>Peggy high-fived Gothica, and Erin scowled at them. She rubbed her shoulder unconsciously.</p>
+<p>“So there I am running from Goblins—<em>burnt</em>—no idea what’s happening because it’s the first time I’ve ever seen Goblins or a fire-breathing Dragon—and then I see it.”</p>
+<p>She paused dramatically.</p>
+<p>“An inn.”</p>
+<p>Everyone stared at her, and Erin Solstice waited for the gasps and then went on. Awkwardly, laughing, smiling—then growing sad as she recalled all that had passed. Then smiling again at Relc as Lyonette hugged Mrsha and Ryoka sat down, listening.</p>
+<p>And so it began, once more, and it was continuing even now.</p>
+<p>This—was the tale of The Wandering Inn.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><strong>Author’s Note:</strong></p>
+<p>I have left another note at the end of Volume 1, but I feel I should preface the rewrites by explaining what’s changed.</p>
+<p>Seven years ago, I wrote The Wandering Inn’s first volume and had no idea it would be successful, or even read by more than a dozen people. I had hopes—but the first draft had a lot of experimental ideas, or unformed concepts.</p>
+<p>Back then, Antinium were just another species and there were ‘Antinium mages’ hanging out in the Adventurer’s Guild. Liscor was a lot smaller, ten thousand people compared to a hundred thousand, and characters like Rags and Pisces and Gazi weren’t as nuanced as they’d later become.</p>
+<p>This rewrite that you can find on the site has been the work of years. I’ve known that rewriting Volume 1 is something I should do, but I’ve put it off. I wanted to rewrite the first few chapters, or parts of the story because it’s rougher and weaker than what I can currently do.</p>
+<p><em>But rewriting is hard.</em> So hard that I had to learn how to edit by working with professional editors and get two years of experience before I even took on the project—and it still took me months of working in the background as I’m sure readers of Volume 9 are aware of.</p>
+<p>However. I am happy with the rewrites because I did not erase what made Volume 1 good in my mind—I just upgraded the weak parts and kept the bones of what made the story appealing to so many.</p>
+<p>For an old reader, don’t fret. You can find the old chapters and all the comments in an archive on the site. If you want to see what’s new, it might be good to read everything from start to finish. Volume 1 chapters are literally a tenth as long as some Volume 9 chapters.</p>
+<p>But to clarify what I’ve done in the rewrites…some chapters are not touched at all. Others have minor tweaks for consistency’s sake. Mostly, I have added perspectives like Teriarch’s, Rags, and Pawn so the readers can see a bit through their eyes.</p>
+<p>The most fundamental rewrites are two chapters, though. And that would be the Interlude – King chapter, and Ryoka’s final chapter of Volume 1, 1.55 R. I decided both required complete updates in prose and even plot, respectively. If you re-read 1.55 R, you will be surprised by a character you’ve never seen before and hopefully you’ll find Ryoka more relatable, even if her actions are mostly the same.</p>
+<p>It’s my birthday as of posting this, and it’s very fitting. I can finally show people a start to The Wandering Inn I’m proud of, and that opens the way for a lot. Physical books, a polished start for any new readers—and I didn’t do it alone.</p>
+<p>I would like to thank a bunch of people for getting The Wandering Inn to this part. In no particular order, JAD Illustrated and Shawn King for creating the iconic covers for the story. Diana Gill for helping me re-write the story. My assistant, agent, my beta-reading team, and the typo killers, who have slain probably millions of grammatical and spelling errors, even in this very author’s note. My family, from my parents and siblings to my grandfather, who have all supported my writing as it changed from a hobby to a career.</p>
+<p>Last of all, I’d like to thank a certain web developer who has helped upgrade the site. <strong>You may now see a ‘reader settings’ icon</strong>, and it has the ability to change font size, and even enabled the blasphemous light mode and other settings for reader experience. More updates to come, but this may be a huge help for anyone who wants a different reading style. All of this helps for the enjoyment of people who come to the site, and that’s a great thing.</p>
+<p>I could not get here without help, and I hope for any readers new or old they enjoy what’s been rewritten and what’s to come. Thanks so much for reading,</p>
+<p>–pirateaba</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><strong>The Wandering Inn by Miguel!</strong></p>
+<div class="message-2CShn3 cozyMessage-1DWF9U groupStart-3Mlgv1 wrapper-30-Nkg cozy-VmLDNB zalgo-26OfGz" role="article" data-list-item-id="chat-messages___chat-messages-706763723301322763-746949025873526904" aria-labelledby="message-username-746949025873526904 uid_4 message-content-746949025873526904 uid_5 message-timestamp-746949025873526904" aria-describedby="uid_6 message-reactions-746949025873526904">
+<div class="contents-2MsGLg">
+<div id="message-content-746949025873526904" class="markup-eYLPri messageContent-2t3eCI"><strong>Ko-Fi:</strong> <a class="anchor-1MIwyf anchorUnderlineOnHover-2qPutX" title="https://ko-fi.com/cmarguel" role="button" href="https://ko-fi.com/cmarguel" target="_blank" rel="noreferrer noopener">https://ko-fi.com/cmarguel</a></div>
+<div class="markup-eYLPri messageContent-2t3eCI"><strong>Twitter:</strong> <a class="anchor-1MIwyf anchorUnderlineOnHover-2qPutX" title="https://twitter.com/cmarguel" role="button" href="https://twitter.com/cmarguel" target="_blank" rel="noreferrer noopener">https://twitter.com/cmarguel</a></div>
+<div></div>
+</div>
+<div class="twitter-tweet twitter-tweet-rendered" style="display: flex; max-width: 500px; width: 100%; margin-top: 10px; margin-bottom: 10px;"><iframe id="twitter-widget-0" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen="true" class="" title="X Post" src="https://platform.twitter.com/embed/Tweet.html?dnt=true&amp;embedId=twitter-widget-0&amp;features=eyJ0ZndfdGltZWxpbmVfbGlzdCI6eyJidWNrZXQiOltdLCJ2ZXJzaW9uIjpudWxsfSwidGZ3X2ZvbGxvd2VyX2NvdW50X3N1bnNldCI6eyJidWNrZXQiOnRydWUsInZlcnNpb24iOm51bGx9LCJ0ZndfdHdlZXRfZWRpdF9iYWNrZW5kIjp7ImJ1Y2tldCI6Im9uIiwidmVyc2lvbiI6bnVsbH0sInRmd19yZWZzcmNfc2Vzc2lvbiI6eyJidWNrZXQiOiJvbiIsInZlcnNpb24iOm51bGx9LCJ0ZndfZm9zbnJfc29mdF9pbnRlcnZlbnRpb25zX2VuYWJsZWQiOnsiYnVja2V0Ijoib24iLCJ2ZXJzaW9uIjpudWxsfSwidGZ3X21peGVkX21lZGlhXzE1ODk3Ijp7ImJ1Y2tldCI6InRyZWF0bWVudCIsInZlcnNpb24iOm51bGx9LCJ0ZndfZXhwZXJpbWVudHNfY29va2llX2V4cGlyYXRpb24iOnsiYnVja2V0IjoxMjA5NjAwLCJ2ZXJzaW9uIjpudWxsfSwidGZ3X3Nob3dfYmlyZHdhdGNoX3Bpdm90c19lbmFibGVkIjp7ImJ1Y2tldCI6Im9uIiwidmVyc2lvbiI6bnVsbH0sInRmd19kdXBsaWNhdGVfc2NyaWJlc190b19zZXR0aW5ncyI6eyJidWNrZXQiOiJvbiIsInZlcnNpb24iOm51bGx9LCJ0ZndfdXNlX3Byb2ZpbGVfaW1hZ2Vfc2hhcGVfZW5hYmxlZCI6eyJidWNrZXQiOiJvbiIsInZlcnNpb24iOm51bGx9LCJ0ZndfdmlkZW9faGxzX2R5bmFtaWNfbWFuaWZlc3RzXzE1MDgyIjp7ImJ1Y2tldCI6InRydWVfYml0cmF0ZSIsInZlcnNpb24iOm51bGx9LCJ0ZndfbGVnYWN5X3RpbWVsaW5lX3N1bnNldCI6eyJidWNrZXQiOnRydWUsInZlcnNpb24iOm51bGx9LCJ0ZndfdHdlZXRfZWRpdF9mcm9udGVuZCI6eyJidWNrZXQiOiJvbiIsInZlcnNpb24iOm51bGx9fQ%3D%3D&amp;frame=false&amp;hideCard=false&amp;hideThread=false&amp;id=1632229467258249216&amp;lang=en&amp;origin=https%3A%2F%2Fwanderinginn.com%2F2023%2F03%2F05%2Finterlude-beginnings%2F&amp;sessionId=c56a8685aa05467ab2ce69dc80a470dc96370cc8&amp;theme=light&amp;widgetsVersion=2615f7e52b7e0%3A1702314776716&amp;width=500px" style="position: static; visibility: visible; width: 500px; height: 823px; display: block; flex-grow: 1;" data-tweet-id="1632229467258249216"></iframe></div>
+<p><script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+</div>
+<p>&nbsp;</p>
+<p><strong>Erin Solstice by deva arts!</strong></p>
+<p><a href="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/03/erin_solstice__by_deva_arts.jpg?ssl=1"><img fetchpriority="high" decoding="async" data-attachment-id="13830" data-permalink="https://wanderinginn.com/2023/03/05/interlude-beginnings/erin_solstice__by_deva_arts/" data-orig-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/03/erin_solstice__by_deva_arts.jpg?fit=1280%2C2048&amp;ssl=1" data-orig-size="1280,2048" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;1&quot;}" data-image-title="erin_solstice__by_deva_arts" data-image-description="" data-image-caption="" data-medium-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/03/erin_solstice__by_deva_arts.jpg?fit=188%2C300&amp;ssl=1" data-large-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/03/erin_solstice__by_deva_arts.jpg?fit=640%2C1024&amp;ssl=1" class="alignnone size-full wp-image-13830" src="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/03/erin_solstice__by_deva_arts.jpg?resize=1280%2C2048&amp;ssl=1" alt="" width="1280" height="2048" srcset="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/03/erin_solstice__by_deva_arts.jpg?w=1280&amp;ssl=1 1280w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/03/erin_solstice__by_deva_arts.jpg?resize=188%2C300&amp;ssl=1 188w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/03/erin_solstice__by_deva_arts.jpg?resize=640%2C1024&amp;ssl=1 640w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/03/erin_solstice__by_deva_arts.jpg?resize=768%2C1229&amp;ssl=1 768w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/03/erin_solstice__by_deva_arts.jpg?resize=960%2C1536&amp;ssl=1 960w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/03/erin_solstice__by_deva_arts.jpg?resize=1200%2C1920&amp;ssl=1 1200w" sizes="(max-width: 1000px) 100vw, 1000px" data-recalc-dims="1"></a></p>
+<p>&nbsp;</p>
+<p><strong>Rock Crab and Erin Fire by Brack!</strong></p>
+<p><strong>DeviantArt:</strong> <a class="anchor-1MIwyf anchorUnderlineOnHover-2qPutX" title="https://www.deviantart.com/shurkin/gallery/" role="button" href="https://www.deviantart.com/shurkin/gallery/" target="_blank" rel="noreferrer noopener">https://www.deviantart.com/shurkin/gallery/</a></p>
+<p><strong>Ko-Fi:</strong> <a class="anchor-1MIwyf anchorUnderlineOnHover-2qPutX" title="https://ko-fi.com/brack" role="button" href="https://ko-fi.com/brack" target="_blank" rel="noreferrer noopener">https://ko-fi.com/brack</a></p>
+<p><strong>Twitter:</strong> <a class="anchor-1MIwyf anchorUnderlineOnHover-2qPutX" title="https://twitter.com/Brack_Giraffe" role="button" href="https://twitter.com/Brack_Giraffe" target="_blank" rel="noreferrer noopener">https://twitter.com/Brack_Giraffe</a></p>
+<p><a href="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/03/RockCrab-by-Brack.jpg?ssl=1"><img decoding="async" data-attachment-id="13828" data-permalink="https://wanderinginn.com/2023/03/05/interlude-beginnings/rockcrab-by-brack/" data-orig-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/03/RockCrab-by-Brack.jpg?fit=2367%2C2147&amp;ssl=1" data-orig-size="2367,2147" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="RockCrab by Brack" data-image-description="" data-image-caption="" data-medium-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/03/RockCrab-by-Brack.jpg?fit=300%2C272&amp;ssl=1" data-large-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/03/RockCrab-by-Brack.jpg?fit=1024%2C929&amp;ssl=1" class="alignnone size-full wp-image-13828" src="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/03/RockCrab-by-Brack.jpg?resize=2367%2C2147&amp;ssl=1" alt="" width="2367" height="2147" srcset="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/03/RockCrab-by-Brack.jpg?w=2367&amp;ssl=1 2367w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/03/RockCrab-by-Brack.jpg?resize=300%2C272&amp;ssl=1 300w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/03/RockCrab-by-Brack.jpg?resize=1024%2C929&amp;ssl=1 1024w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/03/RockCrab-by-Brack.jpg?resize=768%2C697&amp;ssl=1 768w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/03/RockCrab-by-Brack.jpg?resize=1536%2C1393&amp;ssl=1 1536w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/03/RockCrab-by-Brack.jpg?resize=2048%2C1858&amp;ssl=1 2048w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/03/RockCrab-by-Brack.jpg?resize=1200%2C1088&amp;ssl=1 1200w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/03/RockCrab-by-Brack.jpg?resize=331%2C300&amp;ssl=1 331w" sizes="(max-width: 1000px) 100vw, 1000px" data-recalc-dims="1"></a> <a href="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/03/ErinFire-by-Brack.jpg?ssl=1"><img decoding="async" data-attachment-id="13829" data-permalink="https://wanderinginn.com/2023/03/05/interlude-beginnings/erinfire-by-brack/" data-orig-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/03/ErinFire-by-Brack.jpg?fit=2142%2C2847&amp;ssl=1" data-orig-size="2142,2847" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="ErinFire by Brack" data-image-description="" data-image-caption="" data-medium-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/03/ErinFire-by-Brack.jpg?fit=226%2C300&amp;ssl=1" data-large-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/03/ErinFire-by-Brack.jpg?fit=770%2C1024&amp;ssl=1" class="alignnone size-full wp-image-13829" src="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/03/ErinFire-by-Brack.jpg?resize=2142%2C2847&amp;ssl=1" alt="" width="2142" height="2847" srcset="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/03/ErinFire-by-Brack.jpg?w=2142&amp;ssl=1 2142w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/03/ErinFire-by-Brack.jpg?resize=226%2C300&amp;ssl=1 226w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/03/ErinFire-by-Brack.jpg?resize=770%2C1024&amp;ssl=1 770w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/03/ErinFire-by-Brack.jpg?resize=768%2C1021&amp;ssl=1 768w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/03/ErinFire-by-Brack.jpg?resize=1156%2C1536&amp;ssl=1 1156w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/03/ErinFire-by-Brack.jpg?resize=1541%2C2048&amp;ssl=1 1541w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/03/ErinFire-by-Brack.jpg?resize=300%2C400&amp;ssl=1 300w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/03/ErinFire-by-Brack.jpg?resize=150%2C200&amp;ssl=1 150w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/03/ErinFire-by-Brack.jpg?resize=1200%2C1595&amp;ssl=1 1200w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/03/ErinFire-by-Brack.jpg?w=2000&amp;ssl=1 2000w" sizes="(max-width: 1000px) 100vw, 1000px" data-recalc-dims="1"></a></p>
+<p>&nbsp;</p>
+<p><strong>Rose and Adetr + Dressup by butts!</strong></p>
+<p><strong>Twitter: </strong><a class="anchor-1MIwyf anchorUnderlineOnHover-2qPutX" title="https://twitter.com/buttscord" role="button" href="https://twitter.com/buttscord" target="_blank" rel="noreferrer noopener">https://twitter.com/buttscord</a></p>
+<p><strong>Ko-Fi:</strong> <a class="anchor-1MIwyf anchorUnderlineOnHover-2qPutX" title="https://ko-fi.com/buttsarts" role="button" href="https://ko-fi.com/buttsarts" target="_blank" rel="noreferrer noopener">https://ko-fi.com/buttsarts</a><a href="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/03/RoseAdetr-by-Daryl-Shnmurgenen.png?ssl=1"><img loading="lazy" decoding="async" data-attachment-id="13822" data-permalink="https://wanderinginn.com/2023/03/05/interlude-beginnings/roseadetr-by-daryl-shnmurgenen/" data-orig-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/03/RoseAdetr-by-Daryl-Shnmurgenen.png?fit=1143%2C862&amp;ssl=1" data-orig-size="1143,862" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="RoseAdetr by Daryl Shnmurgenen" data-image-description="" data-image-caption="" data-medium-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/03/RoseAdetr-by-Daryl-Shnmurgenen.png?fit=300%2C226&amp;ssl=1" data-large-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/03/RoseAdetr-by-Daryl-Shnmurgenen.png?fit=1024%2C772&amp;ssl=1" class="alignnone size-full wp-image-13822" src="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/03/RoseAdetr-by-Daryl-Shnmurgenen.png?resize=1143%2C862&amp;ssl=1" alt="" width="1143" height="862" srcset="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/03/RoseAdetr-by-Daryl-Shnmurgenen.png?w=1143&amp;ssl=1 1143w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/03/RoseAdetr-by-Daryl-Shnmurgenen.png?resize=300%2C226&amp;ssl=1 300w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/03/RoseAdetr-by-Daryl-Shnmurgenen.png?resize=1024%2C772&amp;ssl=1 1024w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/03/RoseAdetr-by-Daryl-Shnmurgenen.png?resize=768%2C579&amp;ssl=1 768w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/03/RoseAdetr-by-Daryl-Shnmurgenen.png?resize=200%2C150&amp;ssl=1 200w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/03/RoseAdetr-by-Daryl-Shnmurgenen.png?resize=398%2C300&amp;ssl=1 398w" sizes="(max-width: 1000px) 100vw, 1000px" data-recalc-dims="1"></a><a href="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/03/Dressup-by-Daryl-Shnmurgenen.png?ssl=1"><img loading="lazy" decoding="async" data-attachment-id="13821" data-permalink="https://wanderinginn.com/2023/03/05/interlude-beginnings/dressup-by-daryl-shnmurgenen/" data-orig-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/03/Dressup-by-Daryl-Shnmurgenen.png?fit=458%2C465&amp;ssl=1" data-orig-size="458,465" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="Dressup by Daryl Shnmurgenen" data-image-description="" data-image-caption="" data-medium-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/03/Dressup-by-Daryl-Shnmurgenen.png?fit=295%2C300&amp;ssl=1" data-large-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/03/Dressup-by-Daryl-Shnmurgenen.png?fit=458%2C465&amp;ssl=1" class="alignnone size-full wp-image-13821" src="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/03/Dressup-by-Daryl-Shnmurgenen.png?resize=458%2C465&amp;ssl=1" alt="" width="458" height="465" srcset="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/03/Dressup-by-Daryl-Shnmurgenen.png?w=458&amp;ssl=1 458w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/03/Dressup-by-Daryl-Shnmurgenen.png?resize=295%2C300&amp;ssl=1 295w" sizes="(max-width: 458px) 100vw, 458px" data-recalc-dims="1"></a></p>
+<p>&nbsp;</p>
+<hr>
+<p><a href="https://wanderinginn.com/2023/03/01/9-38-tv-pt-2/">Previous Chapter</a> <a href="https://wanderinginn.com/2023/03/08/9-39/"><span style="float: right">Next Chapter</span></a></p>
+      </div>
+
+      <hr>
+          <span class="nav-previous">
+        <a href="https://wanderinginn.com/2023/03/01/9-38-tv-pt-2/" rel="prev"><span class="meta-nav">←</span> Previous Chapter</a>    </span>
+    <span class="nav-next" style="float: right" ;="">
+        <a href="https://wanderinginn.com/2023/03/08/9-39/" rel="next">Next Chapter <span class="meta-nav">→</span></a>    </span>
+    
