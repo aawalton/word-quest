@@ -3537,17 +3537,17 @@
   {
     "file": "twi/0708_10_15.json",
     "wordCount": 39594,
-    "completed": false
+    "completed": true
   },
   {
     "file": "twi/0709_10_16_n.json",
     "wordCount": 27965,
-    "completed": true
+    "completed": false
   },
   {
     "file": "twi/0710_interlude___another_time.json",
     "wordCount": 11150,
-    "completed": true
+    "completed": false
   },
   {
     "file": "twi/0711_10_17.json",

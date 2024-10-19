@@ -33,7 +33,7 @@ async function syncTWI() {
 
     console.log('Calculating level info...');
     const levelInfo = await calculateLevelInfo();
-    console.log(`Current level: ${levelInfo.currentLevel}`);
+    console.log(`\nCurrent level: ${levelInfo.currentLevel}`);
     console.log(`Total XP: ${levelInfo.totalXp}`);
     console.log(`XP needed for next level: ${levelInfo.xpRemainingForNextLevel}`);
     console.log(`XP gained for next level: ${levelInfo.xpGainedTowardsNextLevel}`);

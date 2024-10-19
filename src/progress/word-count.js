@@ -35,7 +35,7 @@ export async function countWordsInJsonFiles(baseDirectoryPath) {
           const chapterName = path.join(path.basename(path.dirname(directoryPath)), file);
           
           // Check if we should stop marking chapters as completed
-          if (chapterName.includes('10_15')) {
+          if (chapterName.includes('10_16')) {
             stopMarking = true;
           }
           
