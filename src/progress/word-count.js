@@ -30,7 +30,11 @@ async function countWordsInJsonFiles(baseDirectoryPath) {
           return count + text.split(/\s+/).filter(word => word.length > 0).length;
         }, 0);
         
-        return { file: path.join(path.basename(path.dirname(directoryPath)), file), wordCount };
+        return { 
+          file: path.join(path.basename(path.dirname(directoryPath)), file), 
+          wordCount,
+          completed: true
+        };
       }));
       
       allResults = allResults.concat(results);
@@ -39,14 +43,12 @@ async function countWordsInJsonFiles(baseDirectoryPath) {
     // Sort results by file name
     allResults.sort((a, b) => a.file.localeCompare(b.file));
     
-    // Log results
-    allResults.forEach(({ file, wordCount }) => {
-      console.log(`${file}: ${wordCount} words`);
-    });
+    // Write results to JSON file
+    const outputPath = path.join(baseDirectoryPath, 'progress', 'word-counts.json');
+    await fs.mkdir(path.dirname(outputPath), { recursive: true });
+    await fs.writeFile(outputPath, JSON.stringify(allResults, null, 2));
     
-    // Calculate total word count
-    const totalWords = allResults.reduce((sum, { wordCount }) => sum + wordCount, 0);
-    console.log(`\nTotal words across all files: ${totalWords}`);
+    console.log(`Results written to ${outputPath}`);
   } catch (error) {
     console.error('Error:', error.message);
   }
@@ -56,4 +58,3 @@ if (import.meta.url === `file://${process.argv[1]}`) {
   const baseDirectoryPath = './data';
   countWordsInJsonFiles(baseDirectoryPath);
 }
-
