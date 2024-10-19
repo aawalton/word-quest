@@ -39,7 +39,7 @@ export async function downloadChapters() {
 
       // Create a new page for each chapter
       const page = await browser.newPage();
-      await page.goto(url, { waitUntil: 'networkidle0' });
+      await page.goto(url, { waitUntil: 'networkidle0', timeout: 60000 });
 
       // Extract the main content of the chapter
       const content = await page.evaluate(() => {
@@ -56,7 +56,7 @@ export async function downloadChapters() {
       }
 
       // Add a delay between requests
-      await setTimeout(1000);
+      await setTimeout(2000);
     }
 
     await browser.close();

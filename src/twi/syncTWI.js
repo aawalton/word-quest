@@ -20,12 +20,16 @@ async function syncTWI() {
     await processChapters();
 
     console.log('TWI sync process completed successfully!');
+    process.exit(0); // Exit with success code
   } catch (error) {
     console.error('An error occurred during the TWI sync process:', error);
+    process.exit(1); // Exit with error code
   }
 }
 
 if (import.meta.url === `file://${process.argv[1]}`) {
-  syncTWI().catch(console.error);
+  syncTWI().catch((error) => {
+    console.error(error);
+    process.exit(1); // Exit with error code if an unhandled error occurs
+  });
 }
-
