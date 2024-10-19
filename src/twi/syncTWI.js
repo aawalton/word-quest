@@ -2,6 +2,10 @@ import { downloadTableOfContents } from './download-table-of-contents.js';
 import { parseTableOfContents } from './parse-table-of-contents.js';
 import { downloadChapters } from './download-chapters.js';
 import { processChapters } from './parse-chapters.js';
+// Add these new imports
+import { countWordsInJsonFiles } from '../progress/word-count.js';
+import { calculateTotalWordCount } from '../progress/total-word-count.js';
+import { calculateLevelInfo } from '../progress/level.js';
 
 async function syncTWI() {
   try {
@@ -18,6 +22,18 @@ async function syncTWI() {
 
     console.log('Parsing chapters...');
     await processChapters();
+
+    // Add new steps
+    console.log('Calculating word counts...');
+    await countWordsInJsonFiles('./data');
+
+    console.log('Calculating total word count...');
+    const totalWordCount = await calculateTotalWordCount();
+    console.log(`Total word count: ${totalWordCount}`);
+
+    console.log('Calculating level info...');
+    const levelInfo = await calculateLevelInfo();
+    console.log('Level info:', levelInfo);
 
     console.log('TWI sync process completed successfully!');
     process.exit(0); // Exit with success code

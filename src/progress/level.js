@@ -1,6 +1,6 @@
 import { calculateTotalWordCount } from './total-word-count.js';
 
-async function calculateLevelInfo() {
+export async function calculateLevelInfo() {
   try {
     const totalWordCount = await calculateTotalWordCount();
     const xp = totalWordCount; // XP is equal to the total number of words read

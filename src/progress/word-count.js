@@ -1,7 +1,7 @@
 import fs from 'fs/promises';
 import path from 'path';
 
-async function countWordsInJsonFiles(baseDirectoryPath) {
+export async function countWordsInJsonFiles(baseDirectoryPath) {
   try {
     // Get all subdirectories in the base directory
     const subdirectories = await fs.readdir(baseDirectoryPath, { withFileTypes: true });
