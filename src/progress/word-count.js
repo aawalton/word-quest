@@ -13,38 +13,42 @@ async function countWordsInJsonFiles(baseDirectoryPath) {
 
     // Process each JSON directory
     for (const directoryPath of jsonDirectories) {
-      // Read all files in the directory
-      const files = await fs.readdir(directoryPath);
-      
-      // Filter for JSON files
-      const jsonFiles = files.filter(file => path.extname(file).toLowerCase() === '.json');
-      
-      // Process each JSON file
-      const results = await Promise.all(jsonFiles.map(async (file) => {
-        const filePath = path.join(directoryPath, file);
-        const content = await fs.readFile(filePath, 'utf-8');
-        const jsonData = JSON.parse(content);
+      try {
+        // Read all files in the directory
+        const files = await fs.readdir(directoryPath);
         
-        // Count words in chapterText array
-        const wordCount = jsonData.chapterText.reduce((count, text) => {
-          return count + text.split(/\s+/).filter(word => word.length > 0).length;
-        }, 0);
+        // Filter for JSON files
+        const jsonFiles = files.filter(file => path.extname(file).toLowerCase() === '.json');
         
-        return { 
-          file: path.join(path.basename(path.dirname(directoryPath)), file), 
-          wordCount,
-          completed: true
-        };
-      }));
-      
-      allResults = allResults.concat(results);
+        // Process each JSON file
+        const results = await Promise.all(jsonFiles.map(async (file) => {
+          const filePath = path.join(directoryPath, file);
+          const content = await fs.readFile(filePath, 'utf-8');
+          const jsonData = JSON.parse(content);
+          
+          // Count words in chapterText array
+          const wordCount = jsonData.chapterText.reduce((count, text) => {
+            return count + text.split(/\s+/).filter(word => word.length > 0).length;
+          }, 0);
+          
+          return { 
+            file: path.join(path.basename(path.dirname(directoryPath)), file), 
+            wordCount,
+            completed: true
+          };
+        }));
+        
+        allResults = allResults.concat(results);
+      } catch (dirError) {
+        console.warn(`Skipping directory ${directoryPath}: ${dirError.message}`);
+      }
     }
     
     // Sort results by file name
     allResults.sort((a, b) => a.file.localeCompare(b.file));
     
     // Write results to JSON file
-    const outputPath = path.join(baseDirectoryPath, 'progress', 'word-counts.json');
+    const outputPath = path.join(baseDirectoryPath, '..', 'progress', 'word-counts.json');
     await fs.mkdir(path.dirname(outputPath), { recursive: true });
     await fs.writeFile(outputPath, JSON.stringify(allResults, null, 2));
     
