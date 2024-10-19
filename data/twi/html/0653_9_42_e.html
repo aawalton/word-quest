@@ -1,0 +1,760 @@
+
+
+          <span class="nav-previous">
+        <a href="https://wanderinginn.com/2023/06/04/interlude-trade-and-travel/" rel="prev"><span class="meta-nav">←</span> Previous Chapter</a>    </span>
+    <span class="nav-next" style="float: right" ;="">
+        <a href="https://wanderinginn.com/2023/06/07/9-43-l/" rel="next">Next Chapter <span class="meta-nav">→</span></a>    </span>
+      <!-- <hr/> -->
+      <header class="entry-header">
+        <h1 class="entry-title">9.42 E</h1>
+                <button class="show-settings-btn" onclick="document.querySelector('#reader-settings-wrapper').classList.toggle('is-hidden')">
+          <img class="show-settings-btn-img" src="https://wanderinginn.com/wp-content/themes/solstice/assets/images/ui/reader-settings-button.webp">
+        </button>
+      </header>
+
+      
+<!-- Reader Settings -->
+<div id="reader-settings-wrapper" class="is-hidden">
+    <div id="reader-settings">
+        <header id="reader-settings-header">
+            <h2>Reader Settings</h2>
+            <button onclick="closeModal()">
+                <svg width="100%" height="100%" viewBox="0 0 33 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M16.5 30.75C24.0939 30.75 30.25 24.5939 30.25 17C30.25 9.40608 24.0939 3.25 16.5 3.25C8.90608 3.25 2.75 9.40608 2.75 17C2.75 24.5939 8.90608 30.75 16.5 30.75Z" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M20.625 12.875L12.375 21.125" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M12.375 12.875L20.625 21.125" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+            </button>
+        </header>
+
+        <fieldset id="fieldset-font">
+            <legend>Font</legend>
+
+            <div>
+                <label for="font-size-select">Size</label>
+                <select id="font-size-select" class="reader-settings-select" data-setting="reader-font-size" onchange="updateSetting(this.getAttribute('data-setting'), this.value);">
+                    <option value="10pt" class="reader-settings-option">10</option>
+                    <option value="11pt" class="reader-settings-option">11</option>
+                    <option value="12pt" class="reader-settings-option" selected="">12</option>
+                    <option value="13pt" class="reader-settings-option">13</option>
+                    <option value="14pt" class="reader-settings-option">14</option>
+                    <option value="16pt" class="reader-settings-option">16</option>
+                    <option value="18pt" class="reader-settings-option">18</option>
+                    <option value="20pt" class="reader-settings-option">20</option>
+                    <option value="22pt" class="reader-settings-option">22</option>
+                    <option value="24pt" class="reader-settings-option">24</option>
+                    <option value="26pt" class="reader-settings-option">26</option>
+                    <option value="28pt" class="reader-settings-option">28</option>
+                    <option value="30pt" class="reader-settings-option">30</option>
+                    <option value="36pt" class="reader-settings-option">36</option>
+                    <option value="42pt" class="reader-settings-option">42</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="font-family-select">Family</label>
+                <select id="font-family-select" class="reader-settings-select" data-setting="reader-font-family" onchange="updateSetting(this.getAttribute('data-setting'), this.value);">
+                    <optgroup label="Sans Serif">
+                        <option class="reader-settings-option" value="OpenSans, sans-serif" selected="">Open Sans</option>
+                        <option class="reader-settings-option" value="Arial, Helvetica, sans-serif">Arial</option>
+                        <option class="reader-settings-option" value="Roboto, sans-serif">Roboto</option>
+                    </optgroup>
+                    <optgroup label="Serif">
+                        <option class="reader-settings-option" value="Playfair, serif">Playfair</option>
+                        <option class="reader-settings-option" value="EBGaramond, serif">Garamond</option>
+                        <option class="reader-settings-option" value="'Times New Roman', Times, serif">Times New Roman</option>
+                    </optgroup>
+                    <optgroup label="Other">
+                        <option class="reader-settings-option" value="OpenDyslexic">OpenDyslexic</option>
+                        <option class="reader-settings-option" value="HennyPenny">Henny Penny</option>
+                    </optgroup>
+                </select>
+            </div>
+            <div>
+                <label for="font-weight-select">Thickness</label>
+                <select id="font-weight-select" class="reader-settings-select" data-setting="reader-font-weight" onchange="updateSetting(this.getAttribute('data-setting'), this.value);">
+                    <option class="reader-settings-option" value="300" selected="">Thin</option>
+                    <option class="reader-settings-option" value="400">Regular</option>
+                    <option class="reader-settings-option" value="500">Thick</option>
+                </select>
+            </div>
+        </fieldset>
+
+        <fieldset id="fieldset-spacing">
+            <legend>Spacing</legend>
+            <div>
+                <label for="margins-select">Page Width</label>
+                <select id="margins-select" class="reader-settings-select" data-setting="reader-article-width" onchange="updateSetting(this.getAttribute('data-setting'), this.value);">
+                    <option value="320px" class="reader-settings-option">Extra Narrow</option>
+                    <option value="500px" class="reader-settings-option">Narrow</option>
+                    <option value="680px" class="reader-settings-option" selected="">Medium</option>
+                    <option value="1000px" class="reader-settings-option">Wide</option>
+                    <option value="1200px" class="reader-settings-option">Extra Wide</option>
+                    <option value="100%" class="reader-settings-option">Max</option>
+                </select>
+            </div>
+            <div>
+                <label for="line-spacing-select">Line</label>
+                <select id="line-spacing-select" class="reader-settings-select" data-setting="reader-line-height" onchange="updateSetting(this.getAttribute('data-setting'), this.value);">
+                    <option class="reader-settings-option" value="1.2">Small</option>
+                    <option class="reader-settings-option" value="1.625" selected="">Medium</option>
+                    <option class="reader-settings-option" value="2.2">Large</option>
+                    <option class="reader-settings-option" value="3.5">Extra Large</option>
+                </select>
+            </div>
+            <div>
+                <label for="paragraph-spacing-select">Paragraph</label>
+                <select id="paragraph-spacing-select" class="reader-settings-select" data-setting="reader-paragraph-spacing" onchange="updateSetting(this.getAttribute('data-setting'), this.value);">
+                    <option class="reader-settings-option" value="0.5em">Small</option>
+                    <option class="reader-settings-option" value="1.625em" selected="">Medium</option>
+                    <option class="reader-settings-option" value="2.75em">Large</option>
+                    <option class="reader-settings-option" value="4.25em">Extra Large</option>
+                </select>
+            </div>
+        </fieldset>
+        <div class="ml-5 mb-4">
+            <label for="theme-select">Theme</label>
+            <select id="theme-select" class="reader-settings-select" data-setting="reader-theme" onchange="updateSetting(this.getAttribute('data-setting'), this.value);">
+                <option class="reader-settings-option" value="reader-theme-grey" selected="">Dark Grey</option>
+                <option class="reader-settings-option" value="reader-theme-blue">Dark Blue</option>
+                <option class="reader-settings-option" value="reader-theme-black">Black</option>
+                <option class="reader-settings-option" value="reader-theme-white">White</option>
+                <option class="reader-settings-option" value="reader-theme-sepia">Sepia</option>
+            </select>
+        </div>
+        <button id="reset-settings-btn" onclick="resetSettings()">Reset To Default</button>
+        <!-- <div> -->
+        <!-- </div> -->
+
+
+    </div>
+</div>
+      <div class="entry-content">
+        <p>A week passed in the winter like a flurry of snow.</p>
+<p>Ser Normen and the Order of the Solstice, the downfall of Elia Arcsinger, Halrac the Grim. These things took Izril by storm—then the continent was busy talking about a duel between two caravans from the House of El and the City of Zeres that ended in blood.</p>
+<p>The echoes persisted, especially around the Liscor-Invrisil-Pallass-Celum region where each city now often echoed each other when news occurred.</p>
+<p>Someone else who persisted was Seve-Alrelious, who didn’t run off to his next job right away, but enjoyed over a week in The Wandering Inn.</p>
+<p>It must be said, he wanted for very little. His friends, the myriad species, were given free rein of the inn, and it was therefore a joy for them to fly around and allow people to pet or feed them, and Erek, the Orangutan, happily enjoyed all the inn’s amenities.</p>
+<p>Indeed, the worst incident was Reagen, the young cat, trying to assert dominance on Kithru, the magical tomcat, who sent him packing fast, especially because Kithru felt no pain from the other cat’s claws.</p>
+<p>Seve made it up to the outraged Numbtongue by talking about the amazing guitarist in the Jungleclad tribe, recounting his own encounters with famous [Bards] like Barelle, and later, hinting about the Goblins he’d met at sea.</p>
+<p>But he was still the backdrop to the fact that Elia Arcsinger had apparently been checked into Tenbault and the Healer of Tenbault herself was taking over her difficult recovery. Her team, Arcsinger’s Bows, hadn’t disbanded…but three members had quit, one was dead, the other two were in shock, and their reputation was in tatters.</p>
+<p>The Order of the Solstice, for their part, were new celebrities but awkward with it. Normen, the burnt [Knight], was a Grandmaster of his Order. They had no base and no armory, but they had a thousand applicants and several [Knights], new and old.</p>
+<p>A week to mourn Zanze’s passing. A week for Laken to rebuff any visitors onto his land and post real guards around Erin’s door—and to warn any trespassers onto his lands there would be consequences.</p>
+<p>A week closer to the Winter Solstice. But only a few people were thinking about that in dire terms. And because she was with her friends and ready-ish—Ryoka Griffin only had four panic attacks. That was just one every two days.</p>
+<p>Whew. Life was good.</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>What <em>wasn’t</em> good was the damn weather. The winter was at its zenith now, and everyone was shut indoors. The blizzard that had made Normen’s first adventure so difficult? The weather wasn’t as bad as that day…but roughly as much snow fell over the week as it had during the blizzard.</p>
+<p>It was more than Liscor got normally, and the citizens in the city grew used to Antinium crews shoveling the snow out. Even the most anti-Antinium sentiment went a bit silent when you saw them removing literal tons of snow from the streets you weren’t going to damn well shovel.</p>
+<p>However, <em>why</em> was there so much snow? Well…it was, as ever, Ryoka Griffin’s fault. Or rather, a number of pesty blue faeries who kept returning from far and wide to the one inn in the world without iron nails that had food for free.</p>
+<p>So it was Erin’s fault.</p>
+<p>&nbsp;</p>
+<p><span style="color: #8ae8ff;">“Hey, I just got back from dropping snow on Baleros! ‘Twas a lot of it. I hit five herds of Centaurs.”</span></p>
+<p><span style="color: #8ae8ff;">“Didn’t it melt?”</span></p>
+<p>&nbsp;</p>
+<p>A pair of Frost Faeries met, blowing in from different directions at incredible speed. The first shrugged.</p>
+<p>&nbsp;</p>
+<p><span style="color: #8ae8ff;">“Pshaw, so? It was snow! Where’d you go?”</span></p>
+<p><span style="color: #8ae8ff;">“South! To yon Minotaurs. Not a proper maze in sight, but I got their entire island.”</span></p>
+<p><span style="color: #96be50;">“You idiots!”</span></p>
+<p>&nbsp;</p>
+<p>The two faeries did a double-take as a furious, <em>green</em> faerie shot towards them. Both groaned.</p>
+<p>&nbsp;</p>
+<p><span style="color: #8ae8ff;">“Oh, here’s high-and-mighty Shaestrel. You done teaching your precious Human how to pick her nose?”</span></p>
+<p><span style="color: #8ae8ff;">“Wipe her ass?”</span></p>
+<p><span style="color: #8ae8ff;">“Seduce a Unicorn?”</span></p>
+<p><span style="color: #8ae8ff;">“Hah, </span><span style="color: #8ae8ff;"><em>that’s</em></span><span style="color: #8ae8ff;"> not hard. She doesn’t even need to be breathing for that.”</span></p>
+<p>&nbsp;</p>
+<p>The two faeries high-fived and laughed bawdily as they insulted Unicorns as a species. Shaestrel just pointed back the way they’d come.</p>
+<p>&nbsp;</p>
+<p><span style="color: #96be50;">“What is that?”</span></p>
+<p>&nbsp;</p>
+<p>One looked over her shoulder with a sigh. A vortex of frozen crystals, wind, and, yes, <em>snow</em> was coming from the west, a literal stormfront moving at dozens of miles per hour. Below, the [Guards] on the wall were groaning, and some were shaking their fists up at the air. But the Frost Faerie just picked at one nose without concern.</p>
+<p>&nbsp;</p>
+<p><span style="color: #8ae8ff;">“What? That? Oh, that’s just some snow and wind. Don’t worry about it.”</span></p>
+<p><span style="color: #96be50;">“Stop bringing it here! It’s been snowing like an Ice Giant taking a dump the last week!”</span></p>
+<p><span style="color: #8ae8ff;">“Pshaw. It’s not that b—hm. Was that farm buried last time we were here?”</span></p>
+<p>&nbsp;</p>
+<p>The Winter Fae considered the scene below them and looked a tiny bit guilty. They were arguing over whose fault it was when a <em>third</em> Frost Faerie came screeching southwards.</p>
+<p>&nbsp;</p>
+<p><span style="color: #8ae8ff;">“Hey! I finished in the north! There was too much snow in that icy region, so I felt bad and brought it here.”</span></p>
+<p>&nbsp;</p>
+<p>Shaestrel slapped a hand to her face.</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>Snow. It made going out not just unfun, even if you liked the cold and could stand it for a romp for a few days, but intolerable.</p>
+<p>It wasn’t even the snow, honestly. It was the damn cold and wind that froze you to the bone. Mrsha herself ran out into the snow one time to play with Ekirra and Visma, and the miserable trio came knocking on The Wandering Inn’s door eleven minutes later, begging for a warm drink.</p>
+<p>The wonders of winter snow were over. The waiting for the thaw had begun already.</p>
+<p>In truth, it did give the Order of Solstice some time to process what had happened. Jewel was tired of telling her teammates, Toimt and Hilten, <em>why</em> she’d chosen to vaporize a fellow Gold-rank adventurer.</p>
+<p>They got that he’d murdered Zanze, but both said quite plainly they feared they might never get work as adventurers again in some circles. And if she was a [Knight], would they be doing charity? They weren’t [Knights].</p>
+<p>“You don’t have to be. I’m working for Erin, and it’ll be lucrative. We’ve leveled, guys.”</p>
+<p>“Yeah, but we haven’t been paid. Levels are half of what we want.”</p>
+<p>Hilten pointed out, and Jewel exhaled.</p>
+<p>“Listen. This is a huge opportunity.”</p>
+<p>“For you. Nevermind. If you get armor, try to squeeze in some Demas Metal for us, huh?”</p>
+<p>Both stood up and huffed off to Invrisil, and Jewel exhaled. She still remembered the moment when she’d thrown the acid jar.</p>
+<p>She didn’t—no, she regretted having to kill that idiot, but she both wished she hadn’t had to and wished she’d done it sooner. If so, Zanze might be alive.</p>
+<p>It was wrong to call it a ‘Wandering Inn classic’ because that trivialized the moment. It was fairer to say that this feeling of uncertainty, of loss and triumph and <em>change</em>, was what Erin’s inn was becoming known for.</p>
+<p>So perhaps it was more that Erin’s regulars kept waiting for something they were certain she was working on. Something…expected, because the [Innkeeper] had been talking to Vess, Jewel, Durene, Ama, and the others to see how they were doing.</p>
+<p>But she hadn’t addressed the matter fully, or thrown a party or a sad not-party. Everyone was an adult. Perhaps they didn’t need parties to reflect on death and duty.</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>Erin Solstice was suspiciously absent from a lot of the inn during the intervening week. And every time she rolled through the main room, people would stare at her with narrowed eyes.</p>
+<p>“Hey, guys, hey, Menolit. How’s the business? Closed because of the snow?”</p>
+<p>“Erin. We actually still offer winter survival.”</p>
+<p>“<em>Really?</em> Any takers?”</p>
+<p>Menolit shrugged.</p>
+<p>“Sure, for the trophies. Even a crazy [Lady] <em>and</em> Magus Grimalkin have expressed an interest.”</p>
+<p>“Wild.”</p>
+<p>“Mhm. Should I clear my schedule tonight?”</p>
+<p>Erin paused as she rolled across the inn. She turned, and Menolit raised a fork with a bit of crispy potato on the end and gave her a long look.</p>
+<p>“Why would you do that?”</p>
+<p>“Oh, just asking. So not tonight?”</p>
+<p>“I—wouldn’t know anything about that.”</p>
+<p>“So <em>tonight? </em>See here, Erin, I’ve got to deliver some Sage’s Grass to Wales, and I’ve been putting it off because I can’t tell when I should be here.”</p>
+<p>Wailant interrupted noisily, and the [Farmer] turned from his table where he was having the same beer he’d been having all day while reading a book. Erin scowled about.</p>
+<p>“What are you all expecting? I don’t have—if I <em>was—</em>”</p>
+<p>She tried to look innocent, and half the patrons in her inn just stared at her. Menolit folded his arms.</p>
+<p>“Tonight?”</p>
+<p>Erin slowly rolled backwards towards a door in the wall. She tried to laugh.</p>
+<p>“You’re all crazy. Nuts. Tonight. Psh. Why would tonight be so cool you have to—it’s probably midmorning. If anything was going on. And it’s a long thing, but you have no clue.”</p>
+<p>She gave them all an irritated look as she rolled through into her garden, then began screaming.</p>
+<p>“<em>Aaah! Hills! Out of the way, Apistaaaaa—</em>”</p>
+<p>Her wheelchair shot out of view, and no one laughed. Someone, Drassi, took a long sip from her parfait she’d brought from Barehoof Kitchens.</p>
+<p>“She pulled that gag already. Do you think she’s running out of ‘random distractions’ or is she giving up?”</p>
+<p>Erin Solstice reappeared, scowling, out of the kitchen and gave Drassi the stink-eye. Then she rolled away.</p>
+<p>“Calescent! You got a moment to work on something? Since these <em>jerks</em> apparently want to put me on a time-table…”</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>Unbelievable. Erin Solstice asked the Goblin to show her all the fruits and fresh stuff they had in storage, and then she eyed the bowls she had.</p>
+<p>“Too bad we don’t have a mixer. You’ll have to do it by hand.”</p>
+<p>“Nah. Palt showed me new trick for his parfaits.”</p>
+<p>“But not the recipes? They’re killing us in Liscor! Imani, that traitor! Well, we’ll get them today.”</p>
+<p>Erin punched a hand into her palm, and Calescent shrugged. He pointed to a glass jar.</p>
+<p>“Palt has a cooking spell. [Razor Whirlwind]! Only <em>teensy.</em> Dices up things <em>very</em> nice. I want that spell. Could be good for cooking and battle.”</p>
+<p>The use of Tier 4 magic for cooking tickled Erin immensely, and she smiled.</p>
+<p>“Well, I think we’re ready. It’s great we have preservation, and Oteslia’s got so much fruit, by the way. Can I get a peach-mango slushie? It’s <em>hot.</em>”</p>
+<p>She waved at herself, and Calescent, who, despite the kitchen, had a layer of padding on, gave Erin a long look. He obligingly went to a window and hauled a bucket in, and the gust of freezing air made Erin shiver. Calescent mixed some snow into a cup as he began to dice mangos.</p>
+<p>“So lots of work later?”</p>
+<p>“Sure! But if you prep, I think you can take time off. Say, why do all those jerks in there—<em>yeah, I know you’re listening, that’s what I said—</em>know something’s up? I thought I was being stealthy.”</p>
+<p>Erin looked put-out as she shook a fist out her kitchen and got a series of catcalls. Calescent just stared at Erin for a long moment.</p>
+<p>Put aside the fact that people knew Erin. Or that she was conspicuously absent at times. Normally, she was always around when healing or her presence was needed. And ignore that Erin was cheery despite the freeze-your-genitalia weather out there.</p>
+<p>She was wearing a t-shirt and shorts. Indoors, and for all there were two fireplaces going full-roar, the inn was <em>cold.</em> Erin kept asking for smoothies, and she’d had Calescent buy up as much fresh fruit as he could and taught him how to make the icy drinks. She’d asked for roasted corn—which, fair, was warming—but also a lot of seafood dishes.</p>
+<p>Oh, and one last thing. Calescent slowly held up a knife and angled it. Erin stared at her reflection in the mirror finish of the cutting blade.</p>
+<p>“Oh.”</p>
+<p>“Yeah. You need more mirrors in your life.”</p>
+<p>Erin Solstice checked her skin and blushed as she realized the obvious bit.</p>
+<p>“I didn’t realize it was so noticeable! It was the last day or two.”</p>
+<p>She was getting <em>tanned.</em></p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>Octavia Cotton had no idea what Erin was up to, but she thought it was silly.</p>
+<p><em>She</em> was mixing a bunch of experimental oils together and grumbling when Rhaldon walked in with a delivery.</p>
+<p>“This is <em>so </em>stupid. Rhaldon, did you get my stuff? You’re a lifesaver!”</p>
+<p>“Right on cue. Lots of Eir Kelp. Everyone wants it. But this bunch is ‘contaminated’.”</p>
+<p>“What does that mean? I guess Master Saliss will look at it. Put it there and I’ll get it to him, will you? Hey, do you want more lessons in alchemy? I have a spare day.”</p>
+<p>The Stitch-girl gave him a huge smile, and the [Wagon Driver] noticed he was tracking snow in. He was embarrassed, but Octavia waved it away.</p>
+<p>“Leave it, leave it. My best delivery-driver can track all the snow in. Numbtongue and Reagen do it anyways…”</p>
+<p>“What are you making?”</p>
+<p>Octavia was pouring a bunch of liquids together, not heating them up much, but making a series of test-vials. Then she was smearing them on her arm with a grimace and sniffing at the result.</p>
+<p>“I have no idea. Stupid Human stuff. Sorry, but it is. I <em>get</em> Erin needs a new batch today, but really? I’m making ‘sun screen’.”</p>
+<p>Rhaldon began grinning, and Octavia waved her arm at him.</p>
+<p>“Listen, I don’t often think fleshy people are worse—but you get it, right?”</p>
+<p>She gestured at his dark skin and then at her arm, which was fair-skinned and currently smeared with eight different samples of various gels, one of which was pink and goopy, another a greasy smear, a third red…</p>
+<p>“She wants a bucketload and cheap, and I just wish she could replace her skin if it gets ‘burnt’. I had to buy an entirely new arm, but thankfully there was one in the bargain bin.”</p>
+<p>The Stitch-girl really didn’t respect sunburns, especially as a species that was used to dry Chandrar and could change her skin to whatever she wanted. Rhaldon, though, knew exactly how much it could hurt and bent over her pots.</p>
+<p>“What’s the recipe, if you don’t mind me asking?”</p>
+<p>“I don’t know. For once, Master Saliss was no help. He just laughed at me and told me that Drakes get peeling scales and sunburn—but he doesn’t do cosmetics as much. And <em>Xif</em> is furry, so he doesn’t really care either. I thought about buying a recipe from the Alchemist’s Guild in Pallass, but I might have to reach out to Invrisil if I can’t whip something up. I hate wasting money, though. Anyways, I was going to hold this under a [Harsh Light] spell and see how much it hurts after ten minutes.”</p>
+<p>Rhaldon could actually do Octavia better, and as he carefully put down the first crate, he coughed.</p>
+<p>“Olive oil, rice bran, and, uh, jasmine.”</p>
+<p>“Say what now?”</p>
+<p>Octavia’s head came up, and the chemist shrugged.</p>
+<p>“I heard that’s what older civilizations used. That’s cheap enough, right?”</p>
+<p>“Olive oil, rice bran…jasmine?”</p>
+<p>Octavia’s eyes lit up. She looked around, then set up another pot.</p>
+<p>“If that’s true, I’ll double your tip! Thanks! You sure do know a lot about my work. I guess that’s why you can deliver stuff. You sure you don’t want to try your hand at alchemy for real?”</p>
+<p>Rhaldon was double-checking all the boxes were there and counting up how much he’d get paid for this job. He hesitated.</p>
+<p>“Not yet. Not…yet. But soon. If you can give me a few more lessons or let me watch you make stuff, I think I’d be willing to give it a try. I’ve got to go to the Driver’s Guild, though.”</p>
+<p>“Thank you. Wait! The tip!”</p>
+<p>Octavia rushed around, and then, as she counted coins into his palm and he was walking off, it only occurred to Rhaldon to poke his head back into Stitchworks and ask.</p>
+<p>“…Why do you need sunscreen?”</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>Erin Solstice was a homebody. She had travelled, but adventure seemed to always find her when she left her inn, and she wanted to go places—but sometimes you had to make good things come to you.</p>
+<p>The magic door was an example of that. Yet, even the door could not take her to warm places so easily.</p>
+<p>Sometimes, you had to think outside the box. Or outside the garden. Or inside another garden.</p>
+<p>She lay half-upright in a long, slanted chair with some fabric stretched to form a canvas shell for her.</p>
+<p>It was a beach chair, the kind that had stilted feet so they wouldn’t rock in the sand, and it had come from the Unseen Empire. Durene was spending more time in her inn, and Laken had grudgingly turned over his best [Carpenter] to her on a rush job.</p>
+<p>It was a nice feeling, lying back with a warm breeze on your face. The ‘sun’ was very warm. Bright. But perhaps…</p>
+<p>A beach could be <em>too</em> hot, you know. Then the sand was uncomfortable, but there was something to the heat that forced you into shade or made you dance your way into the cooler sand at the water’s edge. Erin <em>hmmed</em> loudly.</p>
+<p>“More sun.”</p>
+<p>Her skin felt warmer in seconds. Erin shaded her face and looked up.</p>
+<p>“<em>Gah, that’s bright! </em>Less light, a <em>touch</em> more heat. Ooh, yeah.”</p>
+<p>That felt like a bake. Erin lay back down and nodded to herself.</p>
+<p>“Yup. Yup. Okay, we’re almost good on lighting. Now—I think we need a dune right <em>here.</em> Then it slopes downwards so you run into the water there. And I’m saying <em>salt-</em>water. Okay? If that’s possible. Not chilly. Warm. But not <em>too</em> warm! The kind of tepid-warm you get from cool water being warmed by the sun. And chilly at the bottom the further in you go, along the edges of the dome. I need seaweed or something. Maybe I should throw some in? Oh, and the sand’s great, but I need seashells. Maybe I can hire someone to get me some rocks to mix in.”</p>
+<p>She spoke out loud, eyes closed as she lay in the sun, and yet, the world was changing around her. Erin cracked one eye open and nodded.</p>
+<p>“Yeah, that’s good stuff. <em>Whoa!</em>”</p>
+<p>The ground <em>rose</em> above her, and she nearly went tumbling down the hill. Erin caught herself, looked down, and shouted.</p>
+<p>“<em>Stop, stop! Too much dune!</em> Give me half that!”</p>
+<p>The ground moved down obligingly, and Erin wiped at her forehead.</p>
+<p>“Jeeze. This place is <em>too</em> reactive. I’d better disable anyone else changing stuff, and I’d better not say firestorm ag—<em>aaaah!</em>”</p>
+<p>She left the beach chair and charged into the water below so fast that even the old Erin would have been impressed. But panic did that to you. Erin poked her head out of the water and screamed.</p>
+<p>“<em>No fire! Never fire!</em>”</p>
+<p>Above her, the whirling mass of flames went out. Erin stared up at the ceiling. She paddled to shore and lay there a second, panting.</p>
+<p>“Waves.”</p>
+<p>One crashed over her, and Erin Solstice swore in the second before it tossed her down her ‘beach’.</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>This Garden of Sanctuary was not always a beach. In fact, it had taken ages of work to figure out how to get multiple features even remotely resembling something like this.</p>
+<p>When Erin had first rolled into the room, she’d thought there was a mistake. She’d asked for a ‘sunny, warm room’, and expected either the arid, aerial Garuda’s garden or somewhere else.</p>
+<p>Not a blank, white room with nothing in it. Erin had found what looked like several <em>ancient</em> wands, magic long-spent, a quill and paper, and other supplies, but the room had been disappointingly barren. But she had recognized the symbol of Wistram and guessed that this had been the room of a [Mage].</p>
+<p>It had only needed a bit of experimentation for Erin to find that the owner of this room had taken full advantage of the Garden of Sanctuary’s power: the ability to conjure things like rain, light, and so on.</p>
+<p>In this case, all the terrain, buildings, and everything else seemed to have been converted into one feature.</p>
+<p><em>Elemental creation.</em></p>
+<p>Flame. Water. Earth!</p>
+<p>…It wasn’t as cool as it sounded. Erin could demand a blazing fire and it would appear, but the room had limits. She could ask for a gale and get one, but it felt like a magical version of the Strongest of Pomle’s training room.</p>
+<p>She wondered if this was really a ‘sanctuary’ for whichever [Mage], probably an [Elementalist], had owned this place. Maybe there was something she was missing?</p>
+<p>Anyways, Erin had had the brilliant idea to convert it to a beach at once.</p>
+<p>Implementing it had taken a week. For one thing, the ‘earth’ that this garden summoned was terrible stuff and vanished. The sunlight was blinding, and Erin had to tune everything very carefully until she had a picture of a beach in her mind.</p>
+<p>The sand she had literally imported into the room by making some of her inn’s staff shovel it in from other gardens and sieving it out. She felt a bit bad about that, but the sand didn’t have to be deep.</p>
+<p>The end result? She finally had her beach done, and Erin wiped her forehead.</p>
+<p>“I’m so smart.”</p>
+<p>She puffed out her chest as she regarded her handiwork. Erin had never felt happier about a Garden of Sanctuary project yet. She admired everything for five whole minutes until she got bored. After all, this hard work wasn’t for her.</p>
+<p>Sand clung to her pants as Erin tromped over to a door waiting for her. She walked through it and into the common room of her inn. She had tanned skin, and she looked a bit sweaty, but the chairs were set up, the water had two bags of salt poured into it, and Calescent had more smoothies than he could count. Erin walked through the door and beamed as she put her hands together.</p>
+<p>“Ladies. Gentlemen. Knights. I bet you’ve been wondering why I called you here.”</p>
+<p>A crowded common room was waiting for her, half of them cold or wet. A scowling [Emperor] was shivering by a fire as Durene looked up with a huge smile on her face. Normen, Jewel, Vess, Ama, sitting together, glanced up from a hand of cards.</p>
+<p>Halrac eyed Erin’s tanned skin and blinked. He hadn’t seen her for a bit—he’d been the talk of Riverfarm and Invrisil and everywhere he’d gone.</p>
+<p>“Ooh. Nice skin tone, Erin. Humans never experiment, usually.”</p>
+<p>Revi called out. Mrsha rubbed her paws together, and Nanette, playing with one of her Stones of the Elements, looked up excitedly.</p>
+<p>“Oh, Erin, don’t keep us in suspense.”</p>
+<p>Lyonette was sheerly exasperated as she hadn’t been allowed to see the project. Only the Goblins and Antinium staff had been allowed in, and they were surprisingly tight-lipped. Although, Rosencrantz and Peggy both had straw hats on.</p>
+<p>“<em>I’ve called you all here </em>because I think we’re all tired of the snow. And because so much has happened—we need a break. Like last time. Only, this time it’s not just for me. So, I’ve put together something for you all, and I hope you enjoy. It’ll <em>just</em> be the regulars for now. I’m not sure about the others. But I will take guesses on what you think it is!”</p>
+<p>Relc was rubbing his hands together as he and Klbkch sat together.</p>
+<p>“Klb, buddy, it’s like the old days.”</p>
+<p>“No, that would be Skinner. This is the new days.”</p>
+<p>“Good point, good point.”</p>
+<p>“Any takers?”</p>
+<p>Visma waved her claw excitedly.</p>
+<p>“Is it a Sand Golem army?”</p>
+<p>“Nope.”</p>
+<p>“<em>Is it…</em>something hot?”</p>
+<p>Ekirra was next as Menolit made impatient sounds. Wailant stomped in, shaking snow off and shouting.</p>
+<p>“I’m not late, am I? What’s going on? I’ll have four!”</p>
+<p>Viceria and Garia followed him in, looking embarrassed, and Erin beamed wider.</p>
+<p>“Nope. You’re just in time, Wailant. Any guesses? Come on—”</p>
+<p>“It’s a beach. She’s made a beachfront, and it’s doubtless pleasant. Hence the drinks. Someone call for Rufelt and have him set up a bar. I’ll do my work there, and damn the heating stones in my office.”</p>
+<p>A sour voice called out, and Erin’s face fell.</p>
+<p>“Chaldion!”</p>
+<p>Everyone’s head turned as Erin scowled. Chaldion of Pallass was wrapped up in a massive fur coat, looking sardonic. Kevin sat up with a huge grin, while Mrsha, Lyonette, and several others gave Erin a puzzled look.</p>
+<p>“You asked me to guess. It wasn’t very hard.”</p>
+<p>“<em>You’re not supposed to get it right. </em>I was gonna—the door appears and—”</p>
+<p>Erin gestured, and the door swung open in front of everyone. Light, glorious and bright, <em>shone</em> through, and Selys gasped as the winter gloom of outside turned into pleasant heat on her scales. There was sand inside! And waves, rolling from the edges of the domed room, and chairs and—</p>
+<p>“Now, it’ll be open all day, and I don’t want random people. No littering, and I can change the waves, but there’s just the beach and water. I would have done palm trees if I could b—”</p>
+<p>“<em>Beach!</em>”</p>
+<p>Erin’s lecture about beach-etiquette was lost. Nanette, Mrsha, Visma, and Ekirra <em>charged</em> through the door so fast that Visma plowed face-first into the sand, and Mrsha went tumbling down the decent hill. Ekirra leapt into the water with a splash and shouted.</p>
+<p>“<em>It’s so nice! This is the greatest day ever!</em>”</p>
+<p>“Wait! There’s—”</p>
+<p>Relc leapt through the doorway, pumping his fists in the air.</p>
+<p>“<em>Alright! Beach!</em> …What do you do here?”</p>
+<p>Joseph was a step behind him and grabbed two non-alcoholic smoothies. He pointed to a chair, handed Relc and Klbkch a smoothie complete with a wood straw, and walked into the hot sands. There…he stood a second, sighing, and then ripped off his coat, shirt, and sat down in a chair.</p>
+<p>“Fuck. It’s so <em>warm</em> and nice.”</p>
+<p>He lay there, then lazily lifted a straw to his mouth and sipped the sweet orange smoothie. Relc stared at him and then took off his coat. He stood there, arms stretched in the sun.</p>
+<p>“Ancestors. Eight hours of patrolling in the snow. This is my reward.”</p>
+<p>He fell face-first into the sands and lay there like a corpse. Klbkch removed his coat as well and peered around.</p>
+<p>“Fascinating. This must be another kind of garden. The sunlight is very pleasant on my shell. Relaxation seems to be what you do here?”</p>
+<p>He took off his winter clothes as people flooded into the room after him. But Joseph and Relc began screaming at him as soon as Klbkch took off his leggings and loincloth.</p>
+<p>“<em>Put it back on! Put it back on!</em>”</p>
+<p>“You have your chests bare.”</p>
+<p>“<em>Totally different!</em>”</p>
+<p>The Antinium <em>sighed</em> loudly, but the heat in the beach-garden was such that even if you were chilled from outside, the coats went flying off.</p>
+<p>However, not everyone was at home with even partial nudity, which was why an exasperated Erin went stomping in after everyone.</p>
+<p>“Excuse me, guys. This is what the <em>changing </em>room is for. I planned it out! I even have beachwear! Well, sorta.”</p>
+<p>It was mostly just trunks or handy notes and crude drawings of what ‘appropriate’ beachwear consisted of. The guests clustered around, seeking clarification, and Erin realized, to her surprise, that most of them didn’t actually know what the beach was.</p>
+<p>“It’s so <em>sandy</em>, Erin. So these things are all over the coast? Uncle Zel and Tekshia told me Chandrar’s mostly sand, but these are fun because…”</p>
+<p>“The waves. You go surfing, snorkeling—you’ve never been to a beach, Selys?”</p>
+<p>The [Heiress] propped her hands on her hips, blushing as Erin laughed.</p>
+<p>“Some of us haven’t gone to a coast, no. Thanks for shaming me. In fact, I’d wager <em>most</em> of us don’t know what a beach is like.”</p>
+<p>“Oh, come on. Relc, you’ve been beach-going, right?”</p>
+<p>The Drake looked around blankly.</p>
+<p>“I’ve fought on this stuff. I hate fighting on sand. And sure, we jumped in the ocean to wash off all the blood, but—”</p>
+<p>“Okay. <em>Halrac.</em>”</p>
+<p>“I have no idea what’s going on, but can I bring some people from Riverfarm? Pebblesnatch, Master Helm—Briganda and Cade, though he’ll probably have to stay away from the water.”</p>
+<p>Erin’s face fell as Halrac lifted a hand. She turned.</p>
+<p>“Revi?”</p>
+<p>The Stitch-girl was peering around the beach-garden, smiling.</p>
+<p>“It’s as warm as home! And you’re getting nothing from me, Erin. I’m made of cloth. I have stitches. Stitches. Cloth. How much swimming do you think I enjoy doing for fun? Hey, Octavia, is that oil for my stitches?”</p>
+<p>“Nope! Sunscreen! Only one silver a pot! <em>I’m kidding, </em>Erin. But if you had told me we were swimming—let’s get some spare thread and oil it up, Revi.”</p>
+<p>Erin gobbled as she looked around for anyone who knew the great art of beaches. But no one did! Not Mrsha, who raced around in the sand then complained it was in her fur. Not the Drakes. They <em>got</em> the idea, but there were in fact only a few people who understood what this was.</p>
+<p>Kevin, and Joseph raced around the beach in delight. Kevin especially, but he rounded on Erin.</p>
+<p>“Dude. Erin.”</p>
+<p>“Dude yourself, Kevin. You’ve gotta be on my side. California has <em>tons</em> of beaches, and you were a surfer-bike-skateboard dude, right?”</p>
+<p>She wondered why he was so upset. Kevin scrubbed at his hair with grease-stained fingers. Kevin had a wild-eyed gaze of delight and exasperation on his face. But he grabbed her shoulder.</p>
+<p>“Erin. You didn’t <em>tell me.</em> Of course, I know beaches. But if I had known—<em>I’d have made a surfboard!</em>”</p>
+<p>He shook her as she gave him a blank stare.</p>
+<p>“There’s not that much room in the garden. Plus, I hate surfing. Boogie-boards are cooler.”</p>
+<p>He stepped back and gave Erin such a disbelieving look that she floundered.</p>
+<p>“Well, I can’t surf.”</p>
+<p>“You and I are now feuding. Laken, back me up!”</p>
+<p>“I hate sand. I can’t tell where I am on beaches. But this is nice. Durene, get me a flag. I’ll claim this beach for the Unseen Empire.”</p>
+<p>The [Emperor] headed into the garden as Erin shook her fist at him, but Durene grabbed her hand in delight.</p>
+<p>“Erin, this is <em>amazing!</em> Don’t mind Laken, he’s just grumpy because he doesn’t have a magic garden.”</p>
+<p>She headed in, and people got the allure, but again—they had to be shown what to do.</p>
+<p>The three most experienced beachers were all people who knew the sea and therefore, what to do. In fact, each one was an iconic member of beach culture.</p>
+<p>Wailant charged forth, practically telling Viceria to ‘take it all off’, and <em>tossed</em> Ekirra and Mrsha into the waves.</p>
+<p>“You lot don’t know beaches? Well, let’s build a fort out of this sand! You stand in it and pelt any bastards with mudballs—and bury fake treasure chests! [Storm Sailors] know how to have fun! Get the drinks out!”</p>
+<p><em>“Treasure, you say?”</em></p>
+<p>Mrsha and the children appeared, and Wailant laughed. He waggled a finger.</p>
+<p>“Fake ones with traps inside, obviously. Then you hide and wait for a bugger to dig them up. Hey, <em>[Pirate].</em> You seeing this?”</p>
+<p><strong>“Already here.”</strong></p>
+<p>Seborn surfaced from the water, looking happier than he had in a long time. He spat out some water thoughtfully.</p>
+<p><strong>“Not salty enough, but it’s not real brine. Still feels good. Hey, anyone pisses in this, and I’ll stab them. I’d better tell the rest of my team.”</strong></p>
+<p>Wailant puffed out his chest as he beamed around the beach, and now people were getting into the spirit of things. Relc charged into the water and stood there blankly.</p>
+<p>“I don’t get what this is about. The water bit, I mean. Cool off? Or wh—”</p>
+<p>A wave hit him. Erin had asked the room to ‘vary’ the waves, and it apparently could randomize them. Unfortunately, because this room had probably been meant for training, it meant one in every thousand waves was <em>intense</em>, and sometimes the waves were six feet high.</p>
+<p>Or ten. Relc looked up, shouted, and the wave tossed him onto shore. He came back, roaring.</p>
+<p>“<em>You bastard! You want to try that again? Aha!</em>”</p>
+<p>He braced himself, and a second wave crashed around him. Then Relc posed, muscles bulging, and flexed.</p>
+<p>“<em>That’s right! Bring it on! </em>Hey, Erin! Can I get some big waves?”</p>
+<p>He <em>slammed</em> into the next one, and Ekirra promptly tried to do the same and got flipped head-over-heels. But the game of smashing into waves was a time-honored tradition.</p>
+<p>The last and most normal of all beach-goers was already staking out a spot with a beach chair. He cast a critical eye around. Then Saliss of Lights, nude as could be, stretched out.</p>
+<p>“We need more attractive people on this beach. Nude. Feel free to join me. Not you, old man. No one wants to see anything. I’ll bury you in the sand, though, if you want.”</p>
+<p>Chaldion walked past him and eyed the dune Erin had built critically. He snapped his fingers as four Drakes hurried in after him.</p>
+<p>“Level this spot closer to the ground. There’s not enough sand. Someone get me a ton of sand, quality stuff, and water. Salt, too. I need a shade spell here. Desk—here. Bring in all the non-critical work and tell Rufelt he’s hired to serve drinks for the day. Oh, and find me five [Masseuses].”</p>
+<p>He sat down, and Saliss threw sand at him until Chaldion ordered him tossed into the sea. Erin wanted to object, but more sand came pouring in, and she was more concerned with her [Knights], anyways.</p>
+<p>“Hey, Normen, hopefully this doesn’t bother your skin. But I thought…y’know, beaches? I hope you like it.”</p>
+<p>She gestured to him as he stood there, wearing his Demas Metal armor, shading his eyes under the sunlight and looking around. The man turned to Erin, and when his one eye focused on her—it was alight, and he was smiling.</p>
+<p>“So this is a beach. I always wanted to know what the Brothers from far off meant when they said it was sand. I want to see it with my own eyes, Miss Erin. This and more.”</p>
+<p>He inhaled, and Erin’s nervous look became a tremulous smile.</p>
+<p>“It’s not <em>perfect.</em> There should be seagulls and more salt in the air, and all we’ve got is Apista—but I even got some shrimp all the way from Zeres! Eat all you want! Seve?”</p>
+<p>“This is incredible.”</p>
+<p>The Courier walked out, looking stunned by Erin’s garden, and Erek sipped from a cup with great delight. Erin’s smile grew wider, and she exhaled.</p>
+<p>It was a beach. She turned to the others.</p>
+<p>“We’ll visit a real one someday, too. But this is good enough for now, huh? Alright, let’s get changed and—the last one in the water is a rotten egg!”</p>
+<p>Saliss stopped trying to drown Chaldion’s bodyguards.</p>
+<p>“<em>Last one in is a burnt potato!</em> Oh, wait, that’s Normen. <em>Wait, don’t throw me out, Erin! The Brothers love that sort of humor! Don’t throw me—</em>”</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>The fun was not in seeing who enjoyed the beach, because that was everyone. It was in seeing how people either knew the allure of the beach or had to find it first.</p>
+<p>Some entered the beach for the first time and knew what to do. Ulvama was already lying down near the ‘calm’ section of the beach, which had a good view of the rest. A Garden of Sanctuary, when converted just to a beach, was surprisingly large, so there was room for over a hundred people before it even began to feel crowded.</p>
+<p>People came in and out, but the net influx was positive. It worked like this: people would have to tear themselves away and enter the cold world outside. They would tromp back to work, and people would ask why they were covered in sand, and the lucky few would describe the beach and graciously be begged into taking more back.</p>
+<p>It was why you stayed in Erin Solstice’s good books and why you nodded at Goblins and Antinium.</p>
+<p>Shake your head too many times, and yes, you might have the moral or whatever high ground. But even Chaldion of Pallass didn’t blink twice at Ulvama eating on a picnic blanket in the sun close by. His staff did, but the Drake knew the score.</p>
+<p>You wanted the beach? <em>Play nice.</em></p>
+<p>And it was such a lure in this cold winter that even Ekirra realized his family had to come by and begged Erin to let them run into the water. Erin’s inn was doing fine business providing food and drinks—anyone not on her best list had to pay—and Erin had slyly blocked Imani and Palt.</p>
+<p>“Well, well, well. What have we here? Y’know, if you guys wanted to sell whatever you have for a day or two at my inn, I could see about letting you in here all the time.”</p>
+<p>Imani gave Erin an outraged look, and Palt blinked.</p>
+<p>“Erin, are you extorting us? That’s so…<em>Larracel</em> of you.”</p>
+<p>Erin scowled, but not even the threat of Larra could make her waver. She gave Palt a sinister smile.</p>
+<p>“Well, I suppose it is, Palt. And I guess we can’t do business. Which is too bad. Because, <em>y’know</em>, I had planned on leaving the beach open all night too.”</p>
+<p>“So?”</p>
+<p>He was unimpressed, but Imani hesitated and elbowed him. Erin folded her hands behind her head.</p>
+<p>“Oh, I guess it’s not fun. Beaches by moonlight? A lūʻau with a bonfire? Dancing? And then it’s quiet and the most beautiful place to be. People have honeymoons there all the time, but if you don’t want to do business—here’s the door.”</p>
+<p>She gestured, and Palt danced in place a few steps.</p>
+<p>“Let’s not be hasty, Erin. I think we can work together. Did I say Larracel? I meant that the Haven herself can’t do better! Can I offer you some of our parfaits?”</p>
+<p>Erin’s self-satisfied smile grew wider and wider, especially because she had the pick of anyone who wanted in.</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>The people Erin didn’t let in could only hear stories of what was inside—and people were willing to <em>pay</em> to sit in the sun. Erin was accepting a few people, and Yelroan was helping manage that with Liska, who actually had the duty of unlocking the main door in The Wandering Inn for people.</p>
+<p>“No access unless you’re on the list. Oh, Hexel and Elirr? Go right through.”</p>
+<p>Liska pointed and, with a huge smirk, watched as the door <em>clicked</em> audibly and swung open.</p>
+<p>“[Door: Remote Locking]. Sorry, sir. You’re not on the list. I can ask Miss Erin to adjudicate, but her word is law.”</p>
+<p>She turned and steepled her paws together smugly. Lism gave her the blankest look in the world as Krshia Silverfang groaned.</p>
+<p>“That Skill seems like the most useless talent in the world, young woman. And I am a <em>Councilmember</em> of Liscor!”</p>
+<p>He threw a tantrum until Erin came out and spotted him and Krshia.</p>
+<p>“Not you. You’re a jerk.”</p>
+<p>“Erin—can you make an exception for today?”</p>
+<p>Krshia tried to reason with Erin, but Erin scowled at Lism. The purple-scaled Drake was flushed with outrage as he tried to flatter, threaten, and wheedle his way into the room.</p>
+<p>“Not for Krshia, and not for anyone. Why would I let you in?”</p>
+<p>She shooed him away with exasperation as her Goblins and Antinium came rushing out to buy more supplies. Peggy tugged Erin’s arm.</p>
+<p>“Erin, do we bring food to people in the beach? Might need more Antinium. <em>Lots</em> of hungry guests.”</p>
+<p>Erin snapped her fingers as Lism calmed down and stared at her sharply.</p>
+<p>“Darn. Break out the roasted corn! Grilling time! Hot dogs! Shame we don’t have marshmallows, but Imani won’t make them. I think they’re made of horse hooves or something.”</p>
+<p>Krshia gave Erin an appalled look, but Lism slowly backed away, and Erin didn’t notice. The Councilmember of Liscor had changed.</p>
+<p>Where once he had just shouted and bullied, he had grown as a person. Now, Lism was capable of shouting, bullying, <em>and</em> bribery. Which was the art of good negotiation.</p>
+<p>When he came back, Erin Solstice stomped out to meet him.</p>
+<p>“It’s you again, Lism? I’m gonna ban you from even entering my inn! Why would I let you in? And all your…friends?”</p>
+<p>She looked over his shoulder, and Lism cleared his throat importantly.</p>
+<p>“I have heard Chaldion of Pallass is in your inn with some staff. But I doubt he did much, did he?”</p>
+<p>“He gave me a lotta sand. Why? Just because you’ve got aides doesn’t mean I want more of you.”</p>
+<p>Erin squinted suspiciously at Lism and then at the Drakes and Gnolls. Funny. She didn’t know he had so many helpers…and they were young, too. In fact, one Gnoll was shirtless already, and Erin frowned at Lism. The Drake gave her a very smug look as he gestured at them.</p>
+<p>“These aren’t <em>my </em>helpers, Miss Solstice. Rather, because I suspect Master Rufelt, Lasica, and all your <em>hard working staff</em> could use a break—the best [Hosts] of Wishdrinks, our premier lounge, have agreed to work at your establishment.”</p>
+<p>Some of Liscor’s most attractive staff gave Erin a hopeful smile as she blinked at Lism—then her brows crossed.</p>
+<p>“Oh no. I see what you’re doing, and we don’t need attractive people working here.”</p>
+<p>“Hah?”</p>
+<p>Even Liska made a disbelieving sound, and she gave Erin an incredulous look. Erin floundered.</p>
+<p>“I mean—”</p>
+<p>“Consider your staff, Miss Solstice. They need breaks, and if you intend to keep this bar open…all you have to do is let me in, and I’ll arrange everything.”</p>
+<p>Like a viper, Lism whispered poison into Erin’s ear. The [Innkeeper] squeezed her eyes shut.</p>
+<p>“Please, Miss Erin? <em>Please?</em> It would be super—nice.”</p>
+<p>Liska herself went to beg Erin, and the [Innkeeper] wavered. Then one of the [Hosts] bowed.</p>
+<p>“We’d be delighted to serve the Antinium and Goblins, and we also can do activities, Miss Solstice. We can run games—”</p>
+<p>“Volleyball.”</p>
+<p>Erin whispered. She hung her head, then pointed at Lism.</p>
+<p>“Net. I need a long net, two poles, and a soccer ball. I forgot to get them. Everyone reports to Ishkr. No racism, you don’t cause trouble, and no ‘other guests’. I approve them all, and if I think someone sneaks in? I’ve tossed fifteen people out who didn’t belong, and you <em>don’t</em> want to see what happens if I yell ‘firestorm’.”</p>
+<p>Lism offered Erin a claw to shake.</p>
+<p>“You have my word, Miss Solstice. I won’t be there at all. I’ll be consulting with Krshia about work. Did I hear this was open all night?”</p>
+<p>She gave him a long look and sighed. Then she gestured to the door.</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>The beach only got better and better as people began adding things that Erin herself lacked. She was like that.</p>
+<p>An enabler. Only, of a good time, rather than anything else. Or a bad time. The point was, Erin couldn’t do things alone, and it was Kevin who took it upon himself to educate the world on <em>how things should be</em>.</p>
+<p>“Erin, can you clear the sand off this part of the beach?”</p>
+<p>Bemused, she cleared the edge of the beach away as Kevin eyed the domed room. He nodded, then pointed.</p>
+<p>“Okay, and can you join the water that normally flows around the room in a huge circle?”</p>
+<p>“But then people would enter into the water—no, wait, I can just move the door so it enters the center of the room. Go on, Kevin.”</p>
+<p>Erin made the adjustments as Kevin stood with Hedault, who was busy at work on something as their test dummy, Mrsha, jumped up and down.</p>
+<p>Mrsha was wet, happy, but had a problem. She was bad at swimming.</p>
+<p>Ekirra and Visma were <em>annoyingly</em> good, as Liscorians. Even if Liscorians didn’t like swimming in the dangerous spring rains with the monsters, they could still swim every year.</p>
+<p>Mrsha, as a Stone Spears Gnoll, swam like a rock. She was learning, but Kevin had a solution.</p>
+<p>Water rushed around the beach, turning it more into an island, and Erin looked at him.</p>
+<p>“Going to do laps?”</p>
+<p>“Nah. I just had a cool thought. You said this room can do whatever it wants, right? Then—the laws of physics don’t completely apply. Like sea currents. Can you do the waves over there—and a <em>current</em> over here?”</p>
+<p>Kevin made a spinning motion and then pointed.</p>
+<p>“Also, we’re going to need a slide down there…”</p>
+<p>Erin’s eyes widened, and she threw up her hands.</p>
+<p>“Kevin, you’re a genius!”</p>
+<p>The water began <em>moving</em>, and Mrsha saw it circling around the dome, now. She was about to hop in when Kevin put something over her head. The [Mechanic] hesitated as Mrsha squirmed and stared at the contraption.</p>
+<p>“It looks stupid.”</p>
+<p>He had to admit that it wasn’t perfect. Mrsha squirmed in outrage, and Hedault sighed.</p>
+<p>“It is…two pillowcases tied together with a rope and enchanted so the air does not escape. With a stabilizer. It will do.”</p>
+<p>“Fair enough. Valeterisa’s busy over there with Relc, so—hey, Mrsha, if you have trouble swimming, don’t do anything. Just—<em>float!</em>”</p>
+<p>With that, Kevin scooped Mrsha up and <em>hurled</em> her into the water. She went in with a howl, and Lyonette came running over.</p>
+<p>“<em>Kevin! What are you—</em>”</p>
+<p>Mrsha bobbed up and then spun around in the lazy current. She began paddling, then realized there was no need to.</p>
+<p>The mock inflatable tube or bobbers worked! She lay back, turning a bit, as Kevin gave Erin a smug look. Erin gave him a thumbs-up.</p>
+<p>“Okay, slip n’ slide? Or a big slide? I can’t do anything fancy, but maybe Moore can make a huge ramp.”</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>The Halfseekers appeared in full as Erin’s beach-garden was nearly complete. Moore stared around the room and burst into a huge smile.</p>
+<p>“I’ve been to beaches like these before. I thought it would be an age before I saw one as nice.”</p>
+<p>“<em>Look at this!</em> It’s like some coastal beach!”</p>
+<p>Jelaqua crowed, and Ulinde danced around in delight. The Halfseekers knew travel, and they went to find Erin.</p>
+<p>Erin was beaming around, making a sand-castle, while Visma, Ekirra, and a bunch of kids buried Saliss up to his feet in the sand…he was in head-first. The lazy river was sending people around it, and even Chaldion had deigned to sit in a more appropriate looking inner tube.</p>
+<p>How he’d gotten one so fast? That ingenious bastard nodded at Felkhr, and the [Visionary of Flight] looked up from making a second tube with an [Engineer]. A Drake was jogging next to Chaldion as he sipped a Chaldion’s Eye and ate barbecued shrimp from a poker he dipped in a bowl floating next to him filled with sauce.</p>
+<p>“And the local search from the Eyes picked up <em>nothing</em> on the duo, Grand Strategist—”</p>
+<p>“Doubtless not. Close the record, but append a note for my personal dictation at a later point regarding the duo. Happily, the Hundredfriends Courier is by ‘chance’ here as well, so I will inquire. Send him to me. Next?”</p>
+<p>The running Drake flipped over to the next report as Seborn stared at Chaldion with something like admiration.</p>
+<p><strong>“Now there’s a captain of his ship.”</strong></p>
+<p>“My ship, Seborn. Anyways, come in, come in! Make yourselves at home! I don’t see you at all, Jelaqua or Ulinde! We’re cool now. Heck, Montressa and Valeterisa are here.”</p>
+<p>Erin pointed at the Archmage, who was solving puzzles on the beach with Relc. Ulinde did a double-take at Valeterisa, and Jelaqua chuckled, looking embarrassed.</p>
+<p>“Actually—can I bring Maughin through with a <em>few</em> of his Dullahan and smith friends, Erin? They’re waiting, and I said I’d ask, but it’d mean a lot.‘</p>
+<p>“Oh—sure!”</p>
+<p>Maughin alone would crowd the beach a bit, but Erin knew he and Jelaqua were a couple. She leaned over.</p>
+<p>“Actually, it’s totally good. But don’t leave! The beach is open all night, and I have something to give you all later.”</p>
+<p>“Oh? I have something to tell you too. I’m—well—it’s—nevermind. Thanks a bunch!”</p>
+<p>Jelaqua went to get Maughin, and Erin gave the other Halfseekers a puzzled look. Moore heaved a huge sigh.</p>
+<p>“I don’t know what will happen now.”</p>
+<p>“Cheer up, Moore. It’s for the best if everyone’s happy. Let’s find Mrsha!”</p>
+<p>Ulinde took his hand, and his face blossomed into a smile too. Erin had rarely seen the half-Giant so happy.</p>
+<p><em>Oh, right. They were dating, weren’t they?</em> That left only…Seborn. He had a sardonic look in his eyes as he turned to her.</p>
+<p><strong>“Everyone’s having fun.”</strong></p>
+<p>“Not you?”</p>
+<p><strong>“I try not to sleep within the team. Habits from being at sea. It’s okay, Erin. Things change, and I’m glad for them.”</strong></p>
+<p>“They’re good relationships. I should’ve gone with Jelaqua more when she invited me. And Moore and Ulinde—makes sense, right?”</p>
+<p>Seborn put his hands in his pockets and rolled his neck, making his crab-side <em>crack. </em>He was bare-chested, and the transition from man to crab ran straight down his chest, straight as an arrow.</p>
+<p><strong>“Yeah. Sure. Sorry, I guess it is close to home. But you make life fun and interesting.”</strong></p>
+<p>Erin patted him on the shoulder and thought for a long moment.</p>
+<p>“…Shrimp cocktail? Rufelt is making them.”</p>
+<p>Seborn frowned.</p>
+<p><strong>“Why would anyone mix shrimp with alc—this is a great idea. I’ll have one. Thanks, Erin.”</strong></p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>Only a few people weren’t here that could make it.</p>
+<p>Pelt, who really didn’t care about beaches and could literally work in blast heat.</p>
+<p>Tessa, who might be around, but was gloomy and withdrawn of late and snapped at Erin when she was invited.</p>
+<p>Magnolia Reinhart, who, despite being in the area, refused the invitation that Erin dithered over sending in the first place.</p>
+<p>And…the luckless pair of boys who stood outside the door to The Wandering Inn in Liscor and argued.</p>
+<p>“She’ll never let us in, Sammy.”</p>
+<p>“We <em>have</em> to go! Look inside! Ullim, do something!”</p>
+<p>“Lord Sammial…”</p>
+<p>For once, their guardian and nursemaid was helpless. Hethon himself wasn’t arguing for prudence much, either.</p>
+<p>He was gagging to get in there and see this ‘beach’ everyone was talking about. But you had to be a regular and on Erin’s good-list to enter, and he and Sammy?</p>
+<p><em>Definitely not on the list.</em> Their one hope, Ryoka Griffin, was also elsewhere, and so was their father, who was the guarantee they’d never get in. So it evened the odds, but both boys were scheming for ways to get in.</p>
+<p>“What if we said we’d recommend her or something because we’re Veltrases?”</p>
+<p>“I don’t think she cares, Sammy.”</p>
+<p>Hethon only had to glance at Ullim to confirm his suspicions. Erin was like the people that his father had mentioned—men and women who cared nothing for rank, who you had to impress on your own merits.</p>
+<p>The problem was, the boys didn’t have many merits, and they had a lot of <em>de</em>-merits going against them.</p>
+<p>They were jostling for a look with the crowd trying to bribe Liska for entry every time the door opened, and only their bodyguards let them hold the space. The [Majordomo] looked at their desperate expressions and coughed.</p>
+<p>“Lords, I think we have to wait for Miss Griffin to return. And I shan’t get your hopes up. Sometimes you can’t get your way. And that is a hard, but important lesson for a [Lord] to learn.”</p>
+<p>Both looked up at him wretchedly, and Sammial banged his fists on the door.</p>
+<p>“<em>That’s fine for everyone but me! And just this time! Let me in! Let me in!</em>”</p>
+<p>He hammered and hammered until the door opened, but before he could go through—</p>
+<p>“Aha, it’s you again! [Lesser Wall of Force]!”</p>
+<p>Liska threw up a hand, and Sammial <em>bounced</em> off a wall of red light. Even his [Lord] powers were no match for Liska.</p>
+<p>She kept getting new Skills. Between Tyrion, Sammial, and the traffic, Hethon wondered how fast she was counter-levelling. He tried a different tack.</p>
+<p>“Miss Liska, can you talk to Miss Erin for us? We’re Ryoka Griffin’s friends.”</p>
+<p>“Hmm. No. I’m off work in eight minutes. <em>Travel only! </em>If you pay to get through, you’re not getting into the inn, so save your coins!”</p>
+<p>Liska hollered at the crowd, and someone fought through the people.</p>
+<p>“<em>Wotcha, </em>Miss Liska! Me and the lads are going for the door, right?”</p>
+<p>Grev and an entire gang of boys appeared, and Liska sighed.</p>
+<p>“Wonderful. You’re on the list—but Erin has to approve that many midgets. Enter.”</p>
+<p>Grev flicked some coins into the pot and sauntered through. Liska was about to close the door when Sammial tried again.</p>
+<p>“I—I know Princess Oesca of Ailendamus!”</p>
+<p>“And I know Princess Mrsha of Calanfer. You’re not special.”</p>
+<p>Sammial turned red, but rather than throw a tantrum, he screwed up his face in novel concentration. Hethon was amazed. Either Sammial was growing—or Liska was on his level for childishness, so he engaged rather than threw a fit.</p>
+<p>“I know—the Waterbear <em>and</em> Hundredfriends Courier! And Ryoka!”</p>
+<p>“I know Salamani and Ci, Hawk the Hare, and Ryoka too. Plus, the Hundredfriends Courier is here, and he didn’t mention you.”</p>
+<p>Liska picked at her teeth, and Sammial’s head shot up.</p>
+<p>“He’s here? <em>Call him over! He’ll vouch for me!</em>”</p>
+<p>Liska groaned, but that had some weight. When an Antinium came by to check if she needed anything, she whispered to him, and he walked off. Never had Hethon and Sammial looked at an Antinium with such hope. When the Antinium, Silvermop, came back…</p>
+<p>“Sorry. He didn’t say anything. Well, actually, Silvermop couldn’t find Seve, so he asked the ape, Erek, and he <em>definitely</em> said no.”</p>
+<p>Out-aped. Sammial stood there like he’d been poleaxed. Hethon’s head fell—and then he saw someone hurrying towards the door.</p>
+<p>“Miss Liska! Can you put in a request for a [Seamstress] from that new shop in Invrisil to come over? Everyone wants swimsuits, and Erin says they should be waterproof.”</p>
+<p>“Ooh. Swimwear? Wait, are the half-naked Gnolls and Drakes gone?”</p>
+<p>Liska looked horrified, and Nanette, who was herself wearing a towel that was dripping wet, smiled.</p>
+<p>“Nope! They’re still bare-chested, but everyone wants beachwear. It’s even more revealing, apparently.”</p>
+<p>“I don’t care about the <em>guys.</em> Unless you mean everyone? I’ll send a City Runner right away! <em>Hey, City Runner!</em>”</p>
+<p>Liska looked intensely hopeful, and Hethon stared at Nanette and—wavered. He felt his tongue in his mouth, and she was heading back.</p>
+<p><em>But maybe—</em></p>
+<p>“N—Miss—<em>Nanette? </em>Wait a second!”</p>
+<p>Hethon stumbled over his words, but the witch turned at the last moment. She spotted him, then trotted back warily.</p>
+<p>“Oh, <em>Lord Hethon.</em>”</p>
+<p>“Um. Hello. How do you do this fine day?”</p>
+<p>Sammial had stomped off to be comforted by Ullim, so Hethon was without backup except for his bodyguards. Frankly, they should have helped, because a wince told Hethon that he had inherited his father’s social graces.</p>
+<p><em>He didn’t know how to talk to girls! </em>Hethon turned red, and Nanette gave him a cool look.</p>
+<p>“Fine, unless you’d like to lecture me again? Why are you standing here, anyways?”</p>
+<p>“I’m, uh…”</p>
+<p>The fight with her seemed to be long ago, and he couldn’t remember why he’d been so hopping furious. Now he felt stupid, and Nanette’s look of sudden, smug comprehension made him turn redder.</p>
+<p>“Liska won’t let you through, will she? You want to come through? Erin won’t like that. Is your father here?”</p>
+<p>“No. But we’d…<em>really</em> like to see this beach. We know beaches, you see.”</p>
+<p>“Oh, really? It was my first time having fun on one. I suppose it’s not that exciting for you.”</p>
+<p>“No, wait!”</p>
+<p>Nanette turned, and Hethon held a hand out. She waited, and he took a breath.</p>
+<p>“I—would greatly appreciate it if you asked Miss Solstice for us. Sammy and I would love to go. Please? Thank you.”</p>
+<p>He was bright red, hot, and Nanette looked him up and down. She tilted her chin up, looking very smug.</p>
+<p>“Maybe. I’ll think about it. <em>Perhaps</em> it’s the right thing to do, and it wouldn’t be wrong to have a [Lord] in the inn’s debt. Assuming he remembers to be grateful to more than one person.”</p>
+<p>Hethon turned redder and redder as Nanette rubbed in their last argument. She turned, gave him an arch look, and he felt sure she wasn’t going to say a word.</p>
+<p>But then an old man stepping into the common room of the inn, bare-chested and bravely so because he was more white chest hair than muscle, turned with amusement in his eyes.</p>
+<p>Typhenous the Plague Mage was escorting a sighing [Witch] Eloise to the beach. He saw Nanette and laughed.</p>
+<p>“Miss Nanette! Take pity on the lad! Forgive and be nicer, especially today.”</p>
+<p>Nanette whirled, stared at Eloise, and the older [Witch] gave her a longer look.</p>
+<p>“Gloating is a part of witchcraft, Nanette. How much of it depends on whether you’d rather be an Alevica or not.”</p>
+<p>Nanette turned into a beet, to Hethon’s slight satisfaction, but he still thought she’d walk off. Then—to his amazement, she turned to Liska.</p>
+<p>“Can you let him through? Just the brothers and two bodyguards, maybe? I’ll tell Erin.”</p>
+<p>“Wh—really? Thank you!”</p>
+<p>Hethon didn’t believe it until he actually stumbled into the inn, and Sammial came racing through and pointed at Liska.</p>
+<p>“Hah! I did get in!”</p>
+<p>“Oh yeah? You’d better be nice to me or I’ll kick you out.”</p>
+<p>Liska smirked at Sammial’s panicked face, and Hethon turned to Nannette.</p>
+<p>“Thank you.”</p>
+<p>He said it a third time, and she gave him a sudden smile.</p>
+<p>“So you can say it. Okay, then. I suppose I can be nice, too. Come on, Erin’s making a slide, and the first time it launched Ekirra into one of the walls. He flew twenty feet!”</p>
+<p>She pointed, and Hethon, who normally lagged behind Sammial, found himself running as fast as he could without knowing why. That smile dragged him into a run, and he and Sammial burst into the Garden of Sanctuary, looked around, and were happy in a moment.</p>
+<p>And that was good.</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>Lest you think they were forgotten—the Antinium and the Goblins had remembered themselves in case no one else did.</p>
+<p>But unlike last time, all the other times—they weren’t following around other people, like Mrsha, watching what they did and copying them. It was a small thing, but it mattered.</p>
+<p>The Antinium hated the water.</p>
+<p>Goblins, by and large, loved it, and took to swimming with amazing speed, even the ones who’d never swum in their lives. There were exceptions like Gothica, dressed all in black, pointedly sitting with a <em>trio</em> of [Goths] copying her every move.</p>
+<p>They were growing in number. And the aspiring Chieftain of Darkness—was still amidst her people.</p>
+<p>They sat around the first fire that was set up as Erek turned out to have picked up some guitar skills from the Jungeclads and he and Numbtongue began to show off. But after they were done competing, Orangutan and Hobgoblin began playing around a fire, riffing together. Garia Strongheart, to her dismay, found that Salkis and Octavia were both sitting there after she came back from a long swim.</p>
+<p>So it wasn’t perfect, but the Antinium were swaying to the music, and then someone brought out the Rxlvn, and Seve made the mistake of thinking that the flesh of A’ctelios Salash made him proof against <em>everything</em>.</p>
+<p>Somewhat to the dismay of Kevin, among the various beach-activities, the Antinium seemed to enjoy the conga-line more than anything else. Again—no swimming, but they made magnificent sand-castles. The bravest amongst them did cling to a float and do a circuit around the garden, whereupon it became a test of courage where, if you were unlucky, you drowned for a few seconds until someone fished you out. But the Antinium were definitely having fun.</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>Erin Solstice watched it all with her hands behind her back. She even noted Hethon and Nanette entering the inn, and she counted.</p>
+<p>“One. Two. Three. Four…what’s going on here?”</p>
+<p>Jelaqua and Maughin. Moore and Ulinde. Possibly Hethon and Nanette, though Erin was sure that she was just making up the sense in her head. Relc and Valeterisa?</p>
+<p>She rubbed at her eyes and got sand in them. It <em>did</em> get everywhere!</p>
+<p>Erin wasn’t blind. She just pretended to be, and she tried not to interfere in the one thing she wasn’t good at.</p>
+<p>“I guess Imani and Palt makes five. And are there more? Kevin and Ceria was weird. But good for them.”</p>
+<p>She stood, staring down into her beach-garden. Not at the slide where Sammial was climbing, ready to shoot down into the water. Not at Kevin, trying to boogie-board since a surfboard was too much work.</p>
+<p>It was good. Why, even Tesy had come out of his rooms, and he was drawing pictures of people, though Vetn was nowhere to be seen.</p>
+<p>Erin was probably wrong about her romance-sense. It wasn’t that strong, and—she glanced at Lism and Krshia, arguing in one corner.</p>
+<p>“…Nah. I bet it’s more like a ‘do I sort of get along with this person at this moment’ sense. Because otherwise—nah. Definitely wrong.”</p>
+<p>Same with Elirr and Hexel. Erin was running out of fingers as she frowned at them. But she didn’t think it was <em>bad</em>, oddities aside.</p>
+<p>Soon, it would be night, and Erin did intend to cater to the couples. Because that was what she thought she had missed.</p>
+<p>There was a lot that Erin Solstice could do for you. Talk to you. Hug you. Sing a song. Prepare a bed. Feed you. But somewhere in…she rested a hand on her chin and stared down into the beach.</p>
+<p>The little door that she had opened in the ceiling was invisible to almost everyone. She could make it any size, and while the ‘main’ door had to stay open—Erin had the Key of Reprieve.</p>
+<p>She had two doors. Thus far, she thought Saliss, Chaldion, Klbkch, and a few others had picked up on her watching. Lehra, the new Named-rank adventurer, was oblivious, but her Gazer companion had an eye on Erin.</p>
+<p>“…Enough spying.”</p>
+<p>Erin pushed herself back from the garden. She stretched and glanced down one last time at her real quarry. And she thought—well.</p>
+<p>It was a week’s work and potential sunburn to create a beach. Not bad, and she thought she’d keep the garden like this. But it was really for a moment.</p>
+<p>It had taken some doing to get him out of his armor. But even Normen had agreed to get it off. He looked—burnt, and he was still mostly bald, though his hair was growing. Her wounded knight. He couldn’t even sunbathe; he was wearing a big hood and soft clothing to keep his skin from the light.</p>
+<p>But Erin had seen enough, and Normen was awkwardly making a sandcastle in a competition with someone else.</p>
+<p>She guessed she had never noticed how he’d helped out another newbie to the inn get situated when even Erin had been rather mean. Jewel was trying to out-build Mrsha and Visma’s tower as Normen made up a mud foundation. Maybe it was nothing, but Erin smiled.</p>
+<p>“Good.”</p>
+<p>She closed the window and turned.</p>
+<p>“Calescent! The hour of those poor lobsters has come. The age of pilaf has begun! <em>Dinner time!</em>”</p>
+<p>He held out a huge thumb as Erin got back to work with a will. She took off her hat and exhaled as she waved it in the air.</p>
+<p>“Damn. Happy? I was going for wonder! Wonder! Oh well.”</p>
+<p>Her eyes flashed as she stepped out of the inn and into another garden. Erin Solstice put her hands on her hips and nodded.</p>
+<p>“The Winter Solstice is almost here. I’ll hit them with the other stuff later. Today—fun. As for you—”</p>
+<p>She saluted the dauntless defenders of her main garden. Few people had been in <em>her</em> garden for a while, and there was a reason for that. Even Mrsha had begun complaining, but Erin had played it off by pretending to build a beach.</p>
+<p>Which she had. But everyone knew that you distracted people from the real trick. Maybe she’d even gotten Chaldion.</p>
+<p>“Eh. Probably not. Well, we’re ready. I admit—I took you for granted. Harsh words were said. I regret it. I take it back. This time, I’m counting on all of you. We’ve worked hard.”</p>
+<p>Erin paced back and forth. Then she spun dramatically.</p>
+<p>“You are the first line. You will not be the last! But if things go well—it’ll be because you were here. I don’t want any loafing around. I need you to get down and rye. Pull yourself together. No dough, just true wheat.”</p>
+<p>She stopped and sighed.</p>
+<p>“<em>This is so stupid.</em>”</p>
+<p>Erin turned away from the fort in miniature sitting in one corner of the garden. It had worked. She told herself it had worked. But still—she looked over her shoulder.</p>
+<p>The fortress of Shadowbread loaves still looked sort of silly, even to her. There were so many of them she’d stacked them in rows.</p>
+<p><em>Forty loaves.</em> It wasn’t enough to make more than a primitive fort, a box of four walls where you could sit in the middle, but they had thick walls of raised dough. Buttresses of batter. Ramparts of rye—no, wait, she’d made that pun again and even she couldn’t take it seriously. The loaves hadn’t decayed despite being over a week on in some cases. Apista may have been nibbling on them, but nothing else.</p>
+<p>Erin sighed.</p>
+<p>“Well, that’s done. I wonder where Lyonette went?”</p>
+<p>She walked off as the first line of The Wandering Inn’s defenders, the ever-loyal loaves, cast the entire garden in gloom. Shadows. Darkness. And a single Frost Faerie slamming into the walls above.</p>
+<p>&nbsp;</p>
+<p><span style="color: #8ae8ff;">“</span><span style="color: #8ae8ff;"><em>Fucking shite! Who keeps putting all this damn stuff around? I can’t see a thing!</em></span><span style="color: #8ae8ff;">”</span></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><strong>Author’s Note: </strong>I have calculated my optimum speed per day is 10,000 words. I can generally output that per day, and if I’m on a roll it goes up to 14,000 or higher.</p>
+<p>My friends, dear readers, the one constant in this world is change. Like the children allegedly yearn for the coal mines (this is a meme), good writing is experimentation.</p>
+<p>So. I’m going to write some ‘short’ chapters. Not because I want to push too hard, but because I’m changing the pace.</p>
+<p>If I write more than 10k per day, that’s a failure. Frankly, I will try for lower. There will be less editing. This is to make things feel fresh.</p>
+<p>Like bread.</p>
+<p>Like a beach.</p>
+<p>I miss beaches. I used to go to them all the time, and I had such fun. What happened? I got old. I lost my beach-ways, but I can always go back again.</p>
+<p>I hope you enjoy—I have a bunch of themes for shorter chapters that I’d normally weave into a bigger chapter, but I’ll try this until I stop. No promises, no commitments. Heck, I even cut the entire Lyonette subplot because that’d make it too long.</p>
+<p>Back to writing. Back to bread. Back to the beach. The only bad thing about beaches is the sand-cicadas. Which are a thing. See you next chapter! Potentially tomorrow.</p>
+<p>&nbsp;</p>
+<p><strong>Speed Art of Lyonette by Darndestthings!</strong></p>
+<p><span class="embed-youtube" style="text-align:center; display: block;"><iframe class="youtube-player" width="640" height="360" src="https://www.youtube.com/embed/fUsZ7piE7t0?version=3&amp;rel=1&amp;showsearch=0&amp;showinfo=1&amp;iv_load_policy=1&amp;fs=1&amp;hl=en-US&amp;autohide=2&amp;wmode=transparent" allowfullscreen="true" style="border:0;" sandbox="allow-scripts allow-same-origin allow-popups allow-presentation allow-popups-to-escape-sandbox"></iframe></span></p>
+<p>&nbsp;</p>
+<p><strong>Klbkch’s Scarf, knitted by Kalmia! Also, the Shadowloaf!</strong></p>
+<p><strong>Ko-Fi:</strong> <a class="anchor-1X4H4q anchorUnderlineOnHover-wiZFZ_" tabindex="0" title="https://ko-fi.com/kalmiayarn" role="button" href="https://ko-fi.com/kalmiayarn" target="_blank" rel="noreferrer noopener">https://ko-fi.com/kalmiayarn</a></p>
+<p><strong>Etsy:</strong> <a class="anchor-1X4H4q anchorUnderlineOnHover-wiZFZ_" tabindex="0" title="https://www.etsy.com/shop/GoodLongYarn" role="button" href="https://www.etsy.com/shop/GoodLongYarn" target="_blank" rel="noreferrer noopener">https://www.etsy.com/shop/GoodLongYarn</a></p>
+<div class="tiled-gallery type-square" data-original-width="500" data-carousel-extra="{&quot;blog_id&quot;:1,&quot;permalink&quot;:&quot;https:\/\/wanderinginn.com\/2023\/06\/05\/9-42-e\/&quot;,&quot;likes_blog_id&quot;:233997562}" itemscope="" itemtype="http://schema.org/ImageGallery"> <div class="gallery-row" style="width: 500px; height: 250px;" data-original-width="500" data-original-height="250"> <div class="gallery-group" style="width: 250px; height: 250px;" data-original-width="250" data-original-height="250"> <div class="tiled-gallery-item " itemprop="associatedMedia" itemscope="" itemtype="http://schema.org/ImageObject"> <a href="https://wanderinginn.com/2023/05/01/may-2023-break/klbkch-scarf-by-kalmia/" border="0" itemprop="url"> <meta itemprop="width" content="246"> <meta itemprop="height" content="246"> <img decoding="async" class="" data-attachment-id="14968" data-orig-file="https://wanderinginn.com/wp-content/uploads/2023/04/Klbkch-Scarf-by-Kalmia.jpg" data-orig-size="1922,4080" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="Klbkch Scarf by Kalmia" data-image-description="" data-medium-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/04/Klbkch-Scarf-by-Kalmia.jpg?fit=141%2C300&amp;ssl=1" data-large-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/04/Klbkch-Scarf-by-Kalmia.jpg?fit=482%2C1024&amp;ssl=1" src="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/04/Klbkch-Scarf-by-Kalmia.jpg?w=246&amp;h=246&amp;crop=1&amp;ssl=1" srcset="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/04/Klbkch-Scarf-by-Kalmia.jpg?resize=150%2C150&amp;ssl=1 150w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/04/Klbkch-Scarf-by-Kalmia.jpg?resize=1200%2C1200&amp;ssl=1 1200w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/04/Klbkch-Scarf-by-Kalmia.jpg?resize=800%2C800&amp;ssl=1 800w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/04/Klbkch-Scarf-by-Kalmia.jpg?resize=400%2C400&amp;ssl=1 400w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/04/Klbkch-Scarf-by-Kalmia.jpg?resize=200%2C200&amp;ssl=1 200w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/04/Klbkch-Scarf-by-Kalmia.jpg?zoom=2&amp;resize=246%2C246&amp;ssl=1 492w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/04/Klbkch-Scarf-by-Kalmia.jpg?zoom=3&amp;resize=246%2C246&amp;ssl=1 738w" width="246" height="246" loading="lazy" data-original-width="246" data-original-height="246" itemprop="http://schema.org/image" title="Klbkch Scarf by Kalmia" alt="Klbkch Scarf by Kalmia" style="width: 246px; height: 246px;"> </a> </div> </div> <div class="gallery-group" style="width: 250px; height: 250px;" data-original-width="250" data-original-height="250"> <div class="tiled-gallery-item " itemprop="associatedMedia" itemscope="" itemtype="http://schema.org/ImageObject"> <a href="https://wanderinginn.com/2023/05/01/may-2023-break/klbkch-scarf2-by-kalmia/" border="0" itemprop="url"> <meta itemprop="width" content="246"> <meta itemprop="height" content="246"> <img decoding="async" class="" data-attachment-id="14969" data-orig-file="https://wanderinginn.com/wp-content/uploads/2023/04/Klbkch-Scarf2-by-Kalmia.jpg" data-orig-size="1888,3570" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="Klbkch Scarf2 by Kalmia" data-image-description="" data-medium-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/04/Klbkch-Scarf2-by-Kalmia.jpg?fit=159%2C300&amp;ssl=1" data-large-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/04/Klbkch-Scarf2-by-Kalmia.jpg?fit=542%2C1024&amp;ssl=1" src="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/04/Klbkch-Scarf2-by-Kalmia.jpg?w=246&amp;h=246&amp;crop=1&amp;ssl=1" srcset="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/04/Klbkch-Scarf2-by-Kalmia.jpg?resize=150%2C150&amp;ssl=1 150w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/04/Klbkch-Scarf2-by-Kalmia.jpg?resize=1200%2C1200&amp;ssl=1 1200w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/04/Klbkch-Scarf2-by-Kalmia.jpg?resize=800%2C800&amp;ssl=1 800w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/04/Klbkch-Scarf2-by-Kalmia.jpg?resize=400%2C400&amp;ssl=1 400w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/04/Klbkch-Scarf2-by-Kalmia.jpg?resize=200%2C200&amp;ssl=1 200w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/04/Klbkch-Scarf2-by-Kalmia.jpg?zoom=2&amp;resize=246%2C246&amp;ssl=1 492w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/04/Klbkch-Scarf2-by-Kalmia.jpg?zoom=3&amp;resize=246%2C246&amp;ssl=1 738w" width="246" height="246" loading="lazy" data-original-width="246" data-original-height="246" itemprop="http://schema.org/image" title="Klbkch Scarf2 by Kalmia" alt="Klbkch Scarf2 by Kalmia" style="width: 246px; height: 246px;"> </a> </div> </div> </div> <div class="gallery-row" style="width: 500px; height: 250px;" data-original-width="500" data-original-height="250"> <div class="gallery-group" style="width: 250px; height: 250px;" data-original-width="250" data-original-height="250"> <div class="tiled-gallery-item " itemprop="associatedMedia" itemscope="" itemtype="http://schema.org/ImageObject"> <a href="https://wanderinginn.com/2023/06/05/9-42-e/shadloaf1-by-kalmia/" border="0" itemprop="url"> <meta itemprop="width" content="246"> <meta itemprop="height" content="246"> <img decoding="async" class="" data-attachment-id="15233" data-orig-file="https://wanderinginn.com/wp-content/uploads/2023/06/Shadloaf1-by-Kalmia.jpg" data-orig-size="3072,4080" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="Shadloaf1 by Kalmia" data-image-description="" data-medium-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Shadloaf1-by-Kalmia.jpg?fit=226%2C300&amp;ssl=1" data-large-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Shadloaf1-by-Kalmia.jpg?fit=771%2C1024&amp;ssl=1" src="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Shadloaf1-by-Kalmia.jpg?w=246&amp;h=246&amp;crop=1&amp;ssl=1" srcset="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Shadloaf1-by-Kalmia.jpg?resize=150%2C150&amp;ssl=1 150w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Shadloaf1-by-Kalmia.jpg?zoom=2&amp;resize=246%2C246&amp;ssl=1 492w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Shadloaf1-by-Kalmia.jpg?zoom=3&amp;resize=246%2C246&amp;ssl=1 738w" width="246" height="246" loading="lazy" data-original-width="246" data-original-height="246" itemprop="http://schema.org/image" title="Shadloaf1 by Kalmia" alt="Shadloaf1 by Kalmia" style="width: 246px; height: 246px;"> </a> </div> </div> <div class="gallery-group" style="width: 250px; height: 250px;" data-original-width="250" data-original-height="250"> <div class="tiled-gallery-item " itemprop="associatedMedia" itemscope="" itemtype="http://schema.org/ImageObject"> <a href="https://wanderinginn.com/2023/06/05/9-42-e/shadloaf2-by-kalmia/" border="0" itemprop="url"> <meta itemprop="width" content="246"> <meta itemprop="height" content="246"> <img decoding="async" class="" data-attachment-id="15234" data-orig-file="https://wanderinginn.com/wp-content/uploads/2023/06/Shadloaf2-by-Kalmia.jpg" data-orig-size="3465,2582" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="Shadloaf2 by Kalmia" data-image-description="" data-medium-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Shadloaf2-by-Kalmia.jpg?fit=300%2C224&amp;ssl=1" data-large-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Shadloaf2-by-Kalmia.jpg?fit=1024%2C763&amp;ssl=1" src="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Shadloaf2-by-Kalmia.jpg?w=246&amp;h=246&amp;crop=1&amp;ssl=1" srcset="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Shadloaf2-by-Kalmia.jpg?resize=150%2C150&amp;ssl=1 150w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Shadloaf2-by-Kalmia.jpg?zoom=2&amp;resize=246%2C246&amp;ssl=1 492w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Shadloaf2-by-Kalmia.jpg?zoom=3&amp;resize=246%2C246&amp;ssl=1 738w" width="246" height="246" loading="lazy" data-original-width="246" data-original-height="246" itemprop="http://schema.org/image" title="Shadloaf2 by Kalmia" alt="Shadloaf2 by Kalmia" style="width: 246px; height: 246px;"> </a> </div> </div> </div> </div>
+<p>&nbsp;</p>
+<p><strong>Doctor Pisces and Innworld by LeChatDemon!</strong></p>
+<div class="message-2CShn3 cozyMessage-1DWF9U groupStart-3Mlgv1 wrapper-30-Nkg cozy-VmLDNB zalgo-26OfGz" tabindex="-1" role="article" data-list-item-id="chat-messages___chat-messages-706763723301322763-706878013480108072" aria-setsize="-1" aria-roledescription="Message" aria-labelledby="message-username-706878013480108072 uid_1 message-content-706878013480108072 uid_2 message-timestamp-706878013480108072" aria-describedby="uid_3 message-reactions-706878013480108072">
+<div class="contents-2MsGLg">
+<div id="message-content-706878013480108072" class="markup-eYLPri messageContent-2t3eCI"><strong>DeviantArt:</strong> <a class="anchor-1X4H4q anchorUnderlineOnHover-wiZFZ_" tabindex="0" title="https://www.deviantart.com/demoniccriminal" role="button" href="https://www.deviantart.com/demoniccriminal" target="_blank" rel="noreferrer noopener">https://www.deviantart.com/demoniccriminal</a></div>
+<div class="markup-eYLPri messageContent-2t3eCI"><strong>Ko-Fi:</strong> <a class="anchor-1X4H4q anchorUnderlineOnHover-wiZFZ_" tabindex="0" title="https://ko-fi.com/lechatdemon" role="button" href="https://ko-fi.com/lechatdemon" target="_blank" rel="noreferrer noopener">https://ko-fi.com/lechatdemon</a></div>
+<div class="markup-eYLPri messageContent-2t3eCI"><strong>Stash with all the TWI related art: </strong><a class="anchor-1X4H4q anchorUnderlineOnHover-wiZFZ_" tabindex="0" title="https://sta.sh/222s6jxhlt0" role="button" href="https://sta.sh/222s6jxhlt0" target="_blank" rel="noreferrer noopener">https://sta.sh/222s6jxhlt0</a></div>
+</div>
+<div id="message-accessories-706878013480108072" class="container-2sjPya">
+<div id="message-reactions-706878013480108072" class="reactions-3ryImn" role="group"></div>
+</div>
+</div>
+<p><a href="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/doctor_pisces-by-LeChat.jpg?ssl=1"><img fetchpriority="high" decoding="async" data-attachment-id="15235" data-permalink="https://wanderinginn.com/2023/06/05/9-42-e/doctor_pisces-by-lechat/" data-orig-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/doctor_pisces-by-LeChat.jpg?fit=1672%2C2181&amp;ssl=1" data-orig-size="1672,2181" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;1&quot;}" data-image-title="doctor_pisces by LeChat" data-image-description="" data-image-caption="" data-medium-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/doctor_pisces-by-LeChat.jpg?fit=230%2C300&amp;ssl=1" data-large-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/doctor_pisces-by-LeChat.jpg?fit=785%2C1024&amp;ssl=1" class="alignnone size-full wp-image-15235" src="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/doctor_pisces-by-LeChat.jpg?resize=1672%2C2181&amp;ssl=1" alt="" width="1672" height="2181" srcset="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/doctor_pisces-by-LeChat.jpg?w=1672&amp;ssl=1 1672w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/doctor_pisces-by-LeChat.jpg?resize=230%2C300&amp;ssl=1 230w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/doctor_pisces-by-LeChat.jpg?resize=785%2C1024&amp;ssl=1 785w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/doctor_pisces-by-LeChat.jpg?resize=768%2C1002&amp;ssl=1 768w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/doctor_pisces-by-LeChat.jpg?resize=1178%2C1536&amp;ssl=1 1178w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/doctor_pisces-by-LeChat.jpg?resize=1570%2C2048&amp;ssl=1 1570w" sizes="(max-width: 1000px) 100vw, 1000px" data-recalc-dims="1"></a> <a href="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Innworld-by-LeChat.jpg?ssl=1"><img decoding="async" data-attachment-id="15236" data-permalink="https://wanderinginn.com/2023/06/05/9-42-e/innworld-by-lechat/" data-orig-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Innworld-by-LeChat.jpg?fit=2998%2C2000&amp;ssl=1" data-orig-size="2998,2000" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;1&quot;}" data-image-title="Innworld by LeChat" data-image-description="" data-image-caption="" data-medium-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Innworld-by-LeChat.jpg?fit=300%2C200&amp;ssl=1" data-large-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Innworld-by-LeChat.jpg?fit=1024%2C683&amp;ssl=1" class="alignnone size-full wp-image-15236" src="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Innworld-by-LeChat.jpg?resize=2998%2C2000&amp;ssl=1" alt="" width="2998" height="2000" srcset="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Innworld-by-LeChat.jpg?w=2998&amp;ssl=1 2998w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Innworld-by-LeChat.jpg?resize=300%2C200&amp;ssl=1 300w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Innworld-by-LeChat.jpg?resize=1024%2C683&amp;ssl=1 1024w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Innworld-by-LeChat.jpg?resize=768%2C512&amp;ssl=1 768w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Innworld-by-LeChat.jpg?resize=1536%2C1025&amp;ssl=1 1536w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Innworld-by-LeChat.jpg?resize=2048%2C1366&amp;ssl=1 2048w" sizes="(max-width: 1000px) 100vw, 1000px" data-recalc-dims="1"></a></p>
+<p>&nbsp;</p>
+<p><strong>Statue b</strong><strong>y sidehammer!</strong></p>
+<p><a href="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Statue-by-sidehammer.png?ssl=1"><img loading="lazy" decoding="async" data-attachment-id="15237" data-permalink="https://wanderinginn.com/2023/06/05/9-42-e/statue-by-sidehammer/" data-orig-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Statue-by-sidehammer.png?fit=768%2C939&amp;ssl=1" data-orig-size="768,939" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="Statue by sidehammer" data-image-description="" data-image-caption="" data-medium-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Statue-by-sidehammer.png?fit=245%2C300&amp;ssl=1" data-large-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Statue-by-sidehammer.png?fit=768%2C939&amp;ssl=1" class="alignnone size-full wp-image-15237" src="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Statue-by-sidehammer.png?resize=768%2C939&amp;ssl=1" alt="" width="768" height="939" srcset="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Statue-by-sidehammer.png?w=768&amp;ssl=1 768w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Statue-by-sidehammer.png?resize=245%2C300&amp;ssl=1 245w" sizes="(max-width: 768px) 100vw, 768px" data-recalc-dims="1"></a></p>
+<p>&nbsp;</p>
+<hr>
+<p><a href="https://wanderinginn.com/2023/06/04/interlude-trade-and-travel/">Previous Chapter</a> <a href="https://wanderinginn.com/2023/06/06/9-43-l/"><span style="float: right;">Next Chapter</span></a></p>
+      </div>
+
+      <hr>
+          <span class="nav-previous">
+        <a href="https://wanderinginn.com/2023/06/04/interlude-trade-and-travel/" rel="prev"><span class="meta-nav">←</span> Previous Chapter</a>    </span>
+    <span class="nav-next" style="float: right" ;="">
+        <a href="https://wanderinginn.com/2023/06/07/9-43-l/" rel="next">Next Chapter <span class="meta-nav">→</span></a>    </span>
+    

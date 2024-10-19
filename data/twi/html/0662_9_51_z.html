@@ -1,0 +1,988 @@
+
+
+          <span class="nav-previous">
+        <a href="https://wanderinginn.com/2023/07/01/9-50/" rel="prev"><span class="meta-nav">←</span> Previous Chapter</a>    </span>
+    <span class="nav-next" style="float: right" ;="">
+        <a href="https://wanderinginn.com/2023/07/09/9-52/" rel="next">Next Chapter <span class="meta-nav">→</span></a>    </span>
+      <!-- <hr/> -->
+      <header class="entry-header">
+        <h1 class="entry-title">9.51 Z</h1>
+                <button class="show-settings-btn" onclick="document.querySelector('#reader-settings-wrapper').classList.toggle('is-hidden')">
+          <img class="show-settings-btn-img" src="https://wanderinginn.com/wp-content/themes/solstice/assets/images/ui/reader-settings-button.webp">
+        </button>
+      </header>
+
+      
+<!-- Reader Settings -->
+<div id="reader-settings-wrapper" class="is-hidden">
+    <div id="reader-settings">
+        <header id="reader-settings-header">
+            <h2>Reader Settings</h2>
+            <button onclick="closeModal()">
+                <svg width="100%" height="100%" viewBox="0 0 33 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M16.5 30.75C24.0939 30.75 30.25 24.5939 30.25 17C30.25 9.40608 24.0939 3.25 16.5 3.25C8.90608 3.25 2.75 9.40608 2.75 17C2.75 24.5939 8.90608 30.75 16.5 30.75Z" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M20.625 12.875L12.375 21.125" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M12.375 12.875L20.625 21.125" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+            </button>
+        </header>
+
+        <fieldset id="fieldset-font">
+            <legend>Font</legend>
+
+            <div>
+                <label for="font-size-select">Size</label>
+                <select id="font-size-select" class="reader-settings-select" data-setting="reader-font-size" onchange="updateSetting(this.getAttribute('data-setting'), this.value);">
+                    <option value="10pt" class="reader-settings-option">10</option>
+                    <option value="11pt" class="reader-settings-option">11</option>
+                    <option value="12pt" class="reader-settings-option" selected="">12</option>
+                    <option value="13pt" class="reader-settings-option">13</option>
+                    <option value="14pt" class="reader-settings-option">14</option>
+                    <option value="16pt" class="reader-settings-option">16</option>
+                    <option value="18pt" class="reader-settings-option">18</option>
+                    <option value="20pt" class="reader-settings-option">20</option>
+                    <option value="22pt" class="reader-settings-option">22</option>
+                    <option value="24pt" class="reader-settings-option">24</option>
+                    <option value="26pt" class="reader-settings-option">26</option>
+                    <option value="28pt" class="reader-settings-option">28</option>
+                    <option value="30pt" class="reader-settings-option">30</option>
+                    <option value="36pt" class="reader-settings-option">36</option>
+                    <option value="42pt" class="reader-settings-option">42</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="font-family-select">Family</label>
+                <select id="font-family-select" class="reader-settings-select" data-setting="reader-font-family" onchange="updateSetting(this.getAttribute('data-setting'), this.value);">
+                    <optgroup label="Sans Serif">
+                        <option class="reader-settings-option" value="OpenSans, sans-serif" selected="">Open Sans</option>
+                        <option class="reader-settings-option" value="Arial, Helvetica, sans-serif">Arial</option>
+                        <option class="reader-settings-option" value="Roboto, sans-serif">Roboto</option>
+                    </optgroup>
+                    <optgroup label="Serif">
+                        <option class="reader-settings-option" value="Playfair, serif">Playfair</option>
+                        <option class="reader-settings-option" value="EBGaramond, serif">Garamond</option>
+                        <option class="reader-settings-option" value="'Times New Roman', Times, serif">Times New Roman</option>
+                    </optgroup>
+                    <optgroup label="Other">
+                        <option class="reader-settings-option" value="OpenDyslexic">OpenDyslexic</option>
+                        <option class="reader-settings-option" value="HennyPenny">Henny Penny</option>
+                    </optgroup>
+                </select>
+            </div>
+            <div>
+                <label for="font-weight-select">Thickness</label>
+                <select id="font-weight-select" class="reader-settings-select" data-setting="reader-font-weight" onchange="updateSetting(this.getAttribute('data-setting'), this.value);">
+                    <option class="reader-settings-option" value="300" selected="">Thin</option>
+                    <option class="reader-settings-option" value="400">Regular</option>
+                    <option class="reader-settings-option" value="500">Thick</option>
+                </select>
+            </div>
+        </fieldset>
+
+        <fieldset id="fieldset-spacing">
+            <legend>Spacing</legend>
+            <div>
+                <label for="margins-select">Page Width</label>
+                <select id="margins-select" class="reader-settings-select" data-setting="reader-article-width" onchange="updateSetting(this.getAttribute('data-setting'), this.value);">
+                    <option value="320px" class="reader-settings-option">Extra Narrow</option>
+                    <option value="500px" class="reader-settings-option">Narrow</option>
+                    <option value="680px" class="reader-settings-option" selected="">Medium</option>
+                    <option value="1000px" class="reader-settings-option">Wide</option>
+                    <option value="1200px" class="reader-settings-option">Extra Wide</option>
+                    <option value="100%" class="reader-settings-option">Max</option>
+                </select>
+            </div>
+            <div>
+                <label for="line-spacing-select">Line</label>
+                <select id="line-spacing-select" class="reader-settings-select" data-setting="reader-line-height" onchange="updateSetting(this.getAttribute('data-setting'), this.value);">
+                    <option class="reader-settings-option" value="1.2">Small</option>
+                    <option class="reader-settings-option" value="1.625" selected="">Medium</option>
+                    <option class="reader-settings-option" value="2.2">Large</option>
+                    <option class="reader-settings-option" value="3.5">Extra Large</option>
+                </select>
+            </div>
+            <div>
+                <label for="paragraph-spacing-select">Paragraph</label>
+                <select id="paragraph-spacing-select" class="reader-settings-select" data-setting="reader-paragraph-spacing" onchange="updateSetting(this.getAttribute('data-setting'), this.value);">
+                    <option class="reader-settings-option" value="0.5em">Small</option>
+                    <option class="reader-settings-option" value="1.625em" selected="">Medium</option>
+                    <option class="reader-settings-option" value="2.75em">Large</option>
+                    <option class="reader-settings-option" value="4.25em">Extra Large</option>
+                </select>
+            </div>
+        </fieldset>
+        <div class="ml-5 mb-4">
+            <label for="theme-select">Theme</label>
+            <select id="theme-select" class="reader-settings-select" data-setting="reader-theme" onchange="updateSetting(this.getAttribute('data-setting'), this.value);">
+                <option class="reader-settings-option" value="reader-theme-grey" selected="">Dark Grey</option>
+                <option class="reader-settings-option" value="reader-theme-blue">Dark Blue</option>
+                <option class="reader-settings-option" value="reader-theme-black">Black</option>
+                <option class="reader-settings-option" value="reader-theme-white">White</option>
+                <option class="reader-settings-option" value="reader-theme-sepia">Sepia</option>
+            </select>
+        </div>
+        <button id="reset-settings-btn" onclick="resetSettings()">Reset To Default</button>
+        <!-- <div> -->
+        <!-- </div> -->
+
+
+    </div>
+</div>
+      <div class="entry-content">
+        <p>“<em>Ancestors, it was all ever for me. I did it all for none but I.&nbsp;</em></p>
+<p><em>Lift me not upon your wings. If you raise your tails, be it only to your back.&nbsp;</em></p>
+<p><em>My sins were always only mine. Ancestors, look down on all the grief I’ve ever brought, the fire I breathed.</em></p>
+<p><em>It was always mine, and come from none but I. My foes, lay your grudges down ere I die…</em>”</p>
+<p>&nbsp;</p>
+<p>The rest, he forgot. He had forgotten the words and perhaps the way you sang them. He forgot the name of the song.</p>
+<p>But Zail Gemscale could still remember singing those words as a young man across the bars and battlefields and cities of Izril.</p>
+<p>He remembered the song as he looked down at his son. And he realized he’d never known what the song meant until he was older.</p>
+<p>Wall Lord Zail Gemscale of Salazsar was old. Not as old as Chaldion, but he often envied the Grand Strategist’s boundless energy. Chaldion had never left his post. Zail? Zail had retired decades ago due to his injuries.</p>
+<p>He had a divot in his skull, scars down his back, and he’d lost enough blood to kill a dozen Drakes. He knew he looked worse than that. Sometimes he caught a view of himself in the mirror and wondered who the decrepit Drake was. That was, if he recalled who he met in the looking glass at all.</p>
+<p>He was not the face of the Gemscale family these years. If people remembered him at all, in his city, he was the old patriarch of his family, father of Ilvriss, the controversial, changed Wall Lord. And they would say, he knew—</p>
+<p><em>‘Zail? I thought he was dead. He’s still alive then?’</em></p>
+<p>Someday he would pass, and they would hold a minute of silence for him in some parts of the Walled Cities. [Miners] below would pause for a brief moment, then get back to work.</p>
+<p>He would be mourned by those who knew him. And the problem was, they were vanishingly few. Zail knew this because he had done it. He had sat down hard, put a claw to his chest as he heard a name of a friend or foe gone—then looked at his minders, at people around them, and realized they had no idea nor care who had left.</p>
+<p>Why did he think of this? Well, Zail was old, and he had thought of his end like any reasonable man would, especially in his condition. But he thought of it now, because the man of the hour, the Drake whose future lay bright and open and waiting for him, Wall Lord Ilvriss—</p>
+<p>Zail’s son was dying in front of him. The old Wall Lord looked down at the blood, and it ran from purple scales. Torn holes in Ilvriss’ flesh.</p>
+<p><em>Crossbow wounds. </em>Drake weapons. It was harder to hold a bow with claws, so they tended to crossbows. He counted seven wounds. Mana was burning the air, making his eyes water, and Ilvriss was lying on a shield.</p>
+<p>He had come back like a thousand thousand Drakes in Zail’s lifetime. Dragged in by Captain Asrira Shieldscale, on a shield, into a room with shouting Drakes.</p>
+<p>“<em>Move aside! Move!</em>”</p>
+<p>The Healer Merla, the finest [Healer] in Salazsar, was bending over Ilvriss. She was applying a healing potion carefully, cursing, as Ilvriss’ people shoved onlookers past. Zail staggered slightly as she worked.</p>
+<p>“They’re enchanted boltheads—”</p>
+<p>Asrira, the bright-blue scaled Drake, was trying to warn her. Merla just snapped back.</p>
+<p>“I know. Give me light and room. What spell struck him?”</p>
+<p>“[Valmira’s Comet].”</p>
+<p>The answer came out of Zail’s memories, flitting together like a dream as he listened to that song. He saw Merla’s head rise and glance at him. Captain Asrira hesitated—then nodded.</p>
+<p>“Yes, [Valmira’s Comet]. They hit our position with it.”</p>
+<p>“I understand. Someone cast [Dispel Magic]. It’s making even my [Enhanced Potions] fail. I need someone to clear the mana away. Now!”</p>
+<p>Someone called for a [Mage]. Zail could taste the mana in the air, hot and painful, the sting of it. It was familiar to him. As Merla worked, agitated Drakes talked in the background.</p>
+<p>“How did they overwhelm him? Damn Fissival—he’s a Wall Lord.”</p>
+<p>That was…Wall Lord Brilm, one of Ilvriss’ friends. He had been pacing around when Zail arrived. He was no warrior, but Ilvriss used to run with him.</p>
+<p>“It’s war, fool.”</p>
+<p>Merla herself snapped back. Zail almost nodded. Comet to flush out a command post, then a hail of crossbow bolts.</p>
+<p><em>He’d been too close to the fighting, then. </em>You stayed out of range of their Skills such that even if they hit you with a long-range spell and then used [Covering Fire] or [Long-Range Volley], you were safe.</p>
+<p>“Where are the rest of the forces?”</p>
+<p>Someone, Tasilt, that radical brat who’d married a Gnoll, was asking the only sensible questions in the room. Zail heard more horns sounding off—Salazsar was filled with alarms.</p>
+<p>“Full retreat. General Greex was unwilling to advance into their bombardments. Fissival’s advanced past Sserys’ Line, and they’re blockading the trade roads.”</p>
+<p>Sserys’ Line. The renamed pass where he’d once broken the Antinium armies. It connected Salazsar via the trade roads to the entire west and center of Izril. With it blocked, they’d only be able to move southwards.</p>
+<p>Fissival’d advanced far across the north, then. Zail didn’t understand. He must have lost track—he recalled talking with Ilvriss about the war, but he stood there, looking down at his son.</p>
+<p><em>Why are we fighting this time? I cannot remember.</em></p>
+<p>Logic told him that the war must have been going on a while if Fissival had pushed all the way across Salazsar’s left flank. He recalled Ilvriss sortieing, claiming he was needed. Then—today.</p>
+<p>The blood flow was slowly stopping. A good sign, not a bad one. Ilvriss’ wounds were mending; if they had refused to close and the blood flow had slowed, he would be dying. Even so—so many wounds would tax even a healthy body. You could die with a healing potion in your veins. And magic made it worse.</p>
+<p>“We must strike back at them!”</p>
+<p>Brilm was shouting, and Tasilt snapped back.</p>
+<p>“This is not the time, Brilm! Convene the Walled Families if you want to make a stand, but—”</p>
+<p>“…Has the City of Magic issued any demands?”</p>
+<p>Zail turned his head, voice low and quiet, and he saw the other Drakes in the room looking at him. He was oldest by far; this was a room full of young, busy people trying not to jostle him. And they gave him a look of such…</p>
+<p>“Wall Lord Zail? Ah—ah, they haven’t made any demands.”</p>
+<p>“Nothing? They’re not after the magicore? Or Adamantium?”</p>
+<p>They’d dug up a new vein recently. Fissival loved rare materials, and it always needed more magicore. Zail was <em>sure</em> that had happened. He grew worried—and saw Tasilt look at Brilm. And he felt it.</p>
+<p><em>I’ve forgotten something.&nbsp;</em></p>
+<p>“They—haven’t demanded any reparations, Sir Zail. Not yet. They may demand them now. But I think it’s mostly outrage keeping them advancing.”</p>
+<p>“Over what?”</p>
+<p>“The…the Meeting of Tribes, sir?”</p>
+<p>Zail stared blankly at Tasilt, and he <em>did not remember. </em>Something…stirred in the back of his head, and he put a claw up. He touched at his skull, and the place where he had once been struck, a dented portion of his mind, felt <em>missing</em>, even now. Tasilt’s eyes flickered, and Brilm smiled too hugely.</p>
+<p>“Your son attacked Fissival’s armies. We sent them packing and—that’s what happened, Sir Zail. Don’t you worry—Ilvriss will make it. He’s had worse falls in the city! Why don’t I get you a seat—”</p>
+<p>“I’m fine.”</p>
+<p>But Brilm was already calling for a chair, and Zail was being led away. He resisted a second, looking down.</p>
+<p><em>Ilvriss.</em></p>
+<p>The Drake’s eyes were closed, and his face was a grimace as he lay there, Merla tending to his wounds. Zail thought of the Meeting of Tribes, of the state of the Walled Cities. His company, House Gemscale.</p>
+<p>There lay a Wall Lord of Salazsar. Businessman, politician, and general combined.</p>
+<p>It had come crashing down on him, and his blood was running down the edge of the shield.</p>
+<p>It should have been Zail, in battle first. If he was capable…he realized he was humming as Brilm sat him down. No wonder they thought he was mad. But he wasn’t. He was just remembering a song.</p>
+<p>&nbsp;</p>
+<p><em>“Ancestors, it was all ever for me. I did it all for none but I.”</em></p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p><em>Two weeks prior.</em></p>
+<p>&nbsp;</p>
+<p>In the winter of the 14th month of the year, Mouring, Izril was changing. Moving fast despite the snow that fell everywhere.</p>
+<p>Old figures were on the move, like Klbkch the Slayer. Nations were engulfed in strife, internal and external.</p>
+<p>In distant Chandrar, the Strongest of Pomle was leading a war into the heart of Nerrhavia’s Fallen. And the former Strongest, Orjin, was training with the greatest [Warrior] of Chandrar, Torreb the Undefeated.</p>
+<p>But this wasn’t about Orjin. Someone more important was about his own great journey. Wall Lord Ilvriss had a calling. It came from far outside his City of Gems, which he had known so well.</p>
+<p>Once more, he was making plans to leave the City of Gems. In truth, he would have left earlier but for the difficulty of travelling in the snow, the New Lands—and the war.</p>
+<p>“<em>—asinine. </em>Completely, utterly. If you <em>want</em> to scold me, don’t do it while taking credit for being one of the Walled Cities that fought with the Gnolls! You don’t get both.”</p>
+<p>Wall Lord Zail had been napping when he heard his son’s voice. He sat up in the living room of the Gemscale family’s apartments. That was a multi-level suite on top of their tower, one of the many spires that rose from the City of Gems digging into the mountain beneath.</p>
+<p>In Salazsar, wealth was altitude. The smallest spaces, the tops of the towers, were held by the oldest families, while commonfolk lived closest to the mines, the ever-expanding lower floors of Salazsar that fed the city with magicore, gems, coal, metals, and more.</p>
+<p>These were ancestral suites, and while each generation added more, some of the paintings dated back thousands or tens of thousands of years. There was an old family sword hanging on the wall that had been wielded when Dragons still flew the world.</p>
+<p>It was broken, cracked at the hilt, and every generation of the Gemscale family would climb up over the enchanted fireplace and slyly try to remove it from where it hung on the plaque.</p>
+<p>Then the young Drake would <em>snap</em> the hilt of the ancient sword out of place, stare in horror at the Staregic metal blade they’d ‘broken’, and panic.</p>
+<p>Zail remembered doing that. He’d run to a [Blacksmith] and begged for help. His father had caught him and a sweating Drake trying to forge a new blade onto the back, and Zail’s father, Vekoal, had laughed so hard he’d told the story across half of Salazsar by nightfall.</p>
+<p>Ilvriss and Navine, his sister, had been different. Which one of the two had done it was unclear. But Zail distinctly recalled coming back and noticing the empty plaque on the wall that a [Thief] had, apparently, <em>stolen.</em></p>
+<p>The two Drake children had kept up the lie and even added a ‘stolen’ bracelet and cups to the count. Zail had not been amused and gone along with the charade by calling the Watch Captain till they confessed. Then he’d punished them for a month…</p>
+<p>He was less proud of that. Why had he shouted about duty and honesty at his son when his own father had laughed? One memory was good. The other…was of him staring at a scared boy’s face, trying not to cry.</p>
+<p>“Wall Lord?”</p>
+<p>Zail blinked. He realized he was standing, leaning on his cane, and his helpers, a Gnoll and Drake, were staring at him with slight worry.</p>
+<p>Familiarity, but worry. He’d paused, frozen in place, as his eyes lingered on the sword on the wall.</p>
+<p>“It’s nothing. My son is back.”</p>
+<p>“Yes, Wall Lord. Shall we guide you to him?”</p>
+<p>“I know where he is. Send for…send for something to eat.”</p>
+<p>It was late. He’d been napping. He should have been abed, but he wanted to know what the Walled Families had decided. Zail had almost gone himself, but Ilvriss had told him he’d sort it out.</p>
+<p>He knew every Drake over fifty who regularly attended. Most were peers, or he’d known <em>them</em> as children growing up. Zail had wanted to say, ‘I could pull support for you’, but Ilvriss was the leader of House Gemscale. And Zail had been tired.</p>
+<p>“—it’s classic Drakeism, Nephew. We want to look good, but not suffer for it. Of course we’ll brag about being on the Gnolls’ side. We always need new [Miners]. But the censuring vote on you is because you led us into a war. Now, if you’d both supported the tribes <em>and</em> kept us out of a war, they’d be mad you didn’t credit all of them. Chaldion did it right…in a twisted sense of the word. A hundred dead soldiers—and not all of them got minced—and he gets to claim Pallass put in an effort. We study him in school, that bastard.”</p>
+<p>“Nerul…please stop talking sense. We have an aversion to the consequences. I am the…heh.”</p>
+<p>Zail hesitated as he made his way to the parlor. That other voice was familiar and disliked. Nerul, the foremost [Diplomat] of Salazsar, was also a member of House Gemscale. But he didn’t reside with the main family, and Zail disliked him.</p>
+<p>Nerul’s tone was a good example of why he was so unpleasant for Zail. He had said the part about [Miners] with enough derision to make Zail’s scales prickle. He was insubordinate, a drunk, and not a warrior.</p>
+<p><em>No true son of the walls. </em>But Ilvriss had begun associating with his uncle more and more, and Zail didn’t understand why.</p>
+<p>It was after he had gone to Liscor and fought the Tidebreaker. After…he’d lost Periss.</p>
+<p>He’d changed. That happened to someone when they lost a friend in war. Zail just wondered if Ilvriss would snap out of it.</p>
+<p>“Well, Fissival doesn’t have the sense to back down. We’ll have to engage them after all if they’re really after Sserys’ Line. Ancestors. The <em>waste.</em>”</p>
+<p>“And just when you’re trying to head north, eh? It’s almost like they noticed you were making plans and decided to put a thumbclaw in your eye.”</p>
+<p>“They’re not going to blockade an entire trade route just to spite me, Nerul.”</p>
+<p>The doors opened, and a burly Drake was pouring Ilvriss and himself a drink. Nerul lifted his cup with a laugh as a [Soldier], Asrira Shieldscale, stood to brisk attention with the two. She noticed Zail and bowed, but Nerul was laughing.</p>
+<p>“You think they won’t? They blame <em>you</em> for ‘losing’ the Meeting of Tribes. As if Khelt, those damn Gnoll ghosts, and Sserys reborn, weren’t about to kick their teeth in! I—oh. Zail.”</p>
+<p>“Father.”</p>
+<p>Ilvriss turned instantly, and his annoyed look and lashing tail turned to chagrin.</p>
+<p>“You didn’t have to stay up. It’s past midnight.”</p>
+<p>“I was napping. What did the Walled Families decide? <em>Censuring</em> House Gemscale? Ridiculous.”</p>
+<p>“It’s just a slap on the wrists. Nothing actionable. They’ll charge us tripled fees for access to the mines. That’s nothing.”</p>
+<p>“Especially to someone who started a war between Walled Cities.”</p>
+<p>Nerul chimed in unhelpfully. Zail glanced at him, then eyed Asrira. Ilvriss’ new bodyguard and second-in-command. He had thought she was a replacement for Periss in more ways than one, but she seemed like she was just a soldier.</p>
+<p>“Did you have a word with…Calistoca? She’s a family friend.”</p>
+<p>“I talked with her. But it was fine. We’re mustering an army to repel their advance in the north, and a second force has to stop their raids along our allied cities. Fissival’s been bombarding the area with [Mage] squads, and they’ve got a proper one. An <em>army.</em> Now, of all times! We’ll have to engage them.”</p>
+<p>Zail’s mind lit up. He strode over, wishing he was faster of limb. He could still move fast…sometimes…but his days of holding a sword were behind him. His son was taller when Zail remembered being taller most of his life.</p>
+<p>It was often said that Ilvriss resembled a younger Zail, except in scale-color. Zail didn’t see it. Ilvriss had gotten a lot from his mother, Helessia, and Zail had used to be taller and thickerset. Ilvriss sometimes looked frankly thin, and he would sit in his office with Alrric, the <em>Gnoll</em> [Administrator], and work with only those weak lunches.</p>
+<p>The Gemscale Company had changed from the one Zail had inherited and kept up as a boy, filled with huge board meetings where you started in the conference room and ended in the bar, drinking and eating with all the administrators. It was ‘slim’ now, in both costs and direct administrators.</p>
+<p>Apparently it was more profitable, but Zail remembered all the old friends complaining to him about losing their positions or the new jobs. True, Ilvriss had rescued them when the books were in the red for three years straight by hiring Alrric and cleaning house, but it had been one of the things the two had warred on.</p>
+<p>“Regarding the war—did the families not vote for enough forces? They’ve been stingy before.”</p>
+<p>Zail could talk about that all day, but Ilvriss was disinterested in talking about the war with his father, it seemed. He tried to brush it off.</p>
+<p>“It’s just one actual army, Father. The south is just Fissival throwing spells and running off.”</p>
+<p>“How large is the northern army? What’s their composition?”</p>
+<p>Ilvriss sighed and glared at Asrira as she answered for him.</p>
+<p>“Forty thousand regulars, Wall Lord. We believe they’re carrying six Mage-Throwers and at least two elite [Mage]-divisions.”</p>
+<p>Zail was impressed. It wasn’t high in numbers, but you couldn’t march a huge force around like that. Besides, Fissival was most dangerous in quality over quantity.</p>
+<p>“They must be furious. That’s a blockading force. They want to hold the trade road. What kind of [General]’s leading them?”</p>
+<p>Asrira was trying to ignore Nerul and Ilvriss glaring at her, trying to get her to <em>shut up. </em>Zail noticed it, but she was addressing him and replied.</p>
+<p>“A…[General] Rodissc. I believe he’s a [Mage-General] like most. If I recall right, he’s normally stationed along the coast.”</p>
+<p>“Oh. Then he’s one of their coastal guards against [Pirates]. Defensive. What are we sending back at…?”</p>
+<p>“Father, it’s managed. General Greex is going to take charge, and if need be, I’ll join the offensive. If it ends this damn fighting…it’s just inter-city war. Don’t concern yourself with it. It’s late. Why don’t we all get some sleep?”</p>
+<p>By ‘we’, he meant ‘you’, and by inter-city war, he was referring to the style of war that Drakes practiced against each other. Like Terandria, they would surrender rather than fight to the death, so it was not uncommon to see entire battalions surrender and be ransomed rather than slaughter each other.</p>
+<p>War with Humans or Gnolls was bloodier and often had no quarter. Zail hesitated.</p>
+<p>“Greex is solid, but no genius. He needs you or another subcommander to function properly. You’re taking the Erchirite Spears? The Topaz Shields and some of the Rubirel Guard would be standard against that kind of thing…”</p>
+<p>Ilvriss’ pained expression grew more pronounced.</p>
+<p>“We have the Erchirite Spears on retainer, Father. And yes, the Rubirel Guard are with me. Sixteen…I don’t know if we’ll engage the Topaz Shields directly. General Greex has it well in hand.”</p>
+<p>And once more, the older Drake hesitated, but he had talked strategy before and he didn’t know the map, but…</p>
+<p>“Right. Of course. Nerul. Will you be staying here?”</p>
+<p>“I’ll head off to bed in a moment, sir. Thank you—I’m sorry for troubling you.”</p>
+<p>“Not at all.”</p>
+<p>Zail lied as Nerul gave him a fake smile. The two disliked each other. Ilvriss smiled as he glanced at Nerul and his father.</p>
+<p>“Why don’t we all get some sleep? I’ll tell Alrric to delay our plans. Again. Actually, he might be staying up. Asrira, can you…?”</p>
+<p>“I’ll send a Street Runner.”</p>
+<p>She strode off, and Ilvriss and Nerul nodded to Zail. The Wall Lord bade the two goodnight, then paused at the door as he pretended to walk slowly to his rooms.</p>
+<p>“Xesci will meet us in fifteen. Do you think one of us should go ahead…?”</p>
+<p>“I’m minded to send you, Uncle. But frankly, if anyone has to broker peace—”</p>
+<p>“They’ll just throw me in jail if I go now. Why don’t we…?”</p>
+<p>They were heading off. Clearly, <em>not</em> to sleep, but to meet with…Zail’s brows furrowed more. Xesci, the <em>[Prostitute] </em>that Ilvriss had added to his personal group of advisors.</p>
+<p>What was going on with him?</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>Wall Lord Zail had a routine. Every morning, he would rise and check on Helessia. She was his wife and lived her life in an enchanted, floating bed. She would greet him, and he’d nod if she was busy talking to Navine, their daughter, or exchange a few words.</p>
+<p>Often, these days, Zail would then retire to breakfast served to him and read one of the ‘new papers’ or check the scrying orb over breakfast. It was all new—he was used to written reports from [Spies] or [Informants] summarizing worldwide events, but the scrying orb was engaging.</p>
+<p>After that, Zail would see if Ilvriss was about and have a word. And after that…his day lost structure.</p>
+<p>The evenings were when Ilvriss would return, and Zail would greet him, Navine, say goodnight to Helessia if she wasn’t asleep, and sometimes stay up reading a book. He grew tired earlier, so he didn’t have a huge nightlife.</p>
+<p>But the middle of his day was when he wasn’t sure what to do. Not that Zail couldn’t do anything.</p>
+<p>Yes, he forgot things, and yes, he moved slower. He was well aware of that, but his minders, the care-giving staff, were often an inhibiting factor.</p>
+<p>They had orders not to let him wander Salazsar in case he got into accidents, and while they’d accompany him where he wanted to go, they were very mindful of his physical condition and would insist, politely, that he return if they noticed him flagging.</p>
+<p>Perhaps he needed it, but he resented their presence. Ilvriss <em>and</em> Navine had both insisted Zail keep them, and he could neither fire the helpers nor escape them that easily these days.</p>
+<p>So he abided. They were critical if he did get injured or…confused. He just wished their presence was also part and parcel to him doing something necessary.</p>
+<p>Like, say, leading the Gemscale Company. Which he did, these days. So he would make the trek along one of the high bridges to the office where Alrric worked and engage himself mindfully in noting events in the mines, issuing orders.</p>
+<p>The problem was that Ilvriss had returned to the office, and he was vocally unhappy when he found his father doing ‘his and Alrric’s jobs’.</p>
+<p>“<em>Father, you don’t need to handle it. Alrric is a fine [Administrator], and I can’t have you going behind his back.</em>”</p>
+<p><em>“We have an arrangement, Ilvriss—”</em></p>
+<p><em>“Yes, Alrric said, but how is it going to look if you give him an order that he has to either obey or challenge you on? It’s putting him in a tough position—I have a meeting in five. Why don’t we discuss this later?”</em></p>
+<p>So, Zail had less work with Ilvriss returned, and it annoyed him greatly because part of his time had been happily engaged in something productive while Ilvriss had been marching towards the Meeting of Tribes.</p>
+<p>The Gemscale Company was not an infallible ship. They’d actually struggled when they sold part of the Adamantium mine stake, and Ilvriss’ costly outlays to buy that Potion of Regeneration had affected their bottom line.</p>
+<p>Tens of thousands of [Miners] and all kinds of jobs rested on them. <em>Zail</em> had helped bring the company back around by telling Alrric about an old gem-shaft that they’d been able to revitalize. It was churning out rare materials, and they’d been doing fascinating things with mining teams.</p>
+<p>Newfangled ideas. Not just Gnolls taking charge. That had been another change in Ilvriss’ time. He’d hired a lot more high-ranking Gnolls under Alrric. Zail disagreed with the practice, and still partly did even with having the competent Alrric in charge. This was a Drake company. It employed Drakes. It wasn’t <em>hostility</em> towards Gnolls, but supporting the people that Salazsar belonged to.</p>
+<p>But since he’d had to work with Alrric, Zail had okayed a number of initiatives, including letting the mining teams compete. They had chosen six shafts and given each [Foreman] or [Forewoman] free rein. The most profitable team got bonuses, but—and this had been Alrric’s notion—any severe injury or death instantly got the team dissolved if it wasn’t a pure accident.</p>
+<p>Young Drakes and Gnolls racing against experienced, high-level [Miners] provoked healthy competition.</p>
+<p>Zail had been actually going down and inspecting the work and the techniques, which revolved around everything from old hand-carting of stone and ore out to net-spells that continuously dragged rubble out of the area; all the [Miners] had to do was excavate.</p>
+<p>Then Ilvriss had returned, and Zail was left aimless. Not just bored, but devoid of purpose. And that…</p>
+<p>That was the hard part. The other hard part was being treated as if you were old. Even if you were—Zail resented it.</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>His son had changed. All his old friends and hobbies seemed to have been replaced. These days, he wasn’t concerned with Gemscale profits and the safety and pride of Salazsar, but more with the New Lands.</p>
+<p>To be fair, everyone was. But Ilvriss was also looking north, speaking with Tasilt, the Drake who’d married a <em>Gnoll</em> and made her a Wall Lady, and he was keeping company with Nerul—another radical—Asrira Shieldscale, and Xesci.</p>
+<p>All objectionable choices. Nerul was Nerul, but Xesci was literally a Drake of the night. Why would Ilvriss sully Gemscale’s name? He refused to talk about it with Zail. And Asrira was respectful, a soldier…but she was also Pallassian.</p>
+<p>Not that Ilvriss required or sought Zail’s approval. Zail had thought Ilvriss was on the right path. Now, he worried, and he talked about it with the only people he could.</p>
+<p>“He’s not a traitor. Ilvriss would never be, but he’s…changed. His focus has shifted.”</p>
+<p>“Loyalty?”</p>
+<p>“No, <em>focus.</em> I’ve asked him on truth spells whether he still loves Salazsar and he’s not in Pallass’ bed. But he talks differently, Eschowar. He’s always talking about Liscor.”</p>
+<p>“That mudhole? Are you…sure…he didn’t marry that Human girl? The one everyone was talking about? He gave his ring to her. Lyonette du Marquin. If he marries a Terandrian [Princess]…”</p>
+<p>“It wasn’t to that one. And he said it was a gesture of esteem.”</p>
+<p>Eschowar Erchirite, one of the members of the famous Erchirite Walled Family that produced the spears used in one of the Gem-Battalions, stopped eating lunch and looked up. His eyes were rheumy, and his claws shook even when holding a spoon.</p>
+<p>But his <em>mind</em> was clear, as it ever had been when he was a Wall Lord at the same time as Zail. He was another former soldier—well, most Wall Lords and a good number of Wall Ladies had seen war.</p>
+<p>Unlike other Walled Cities, Salazsar had Walled Families who were like [Lords] and [Ladies]—able to do many things at once. Zail had always been good at war. He had fought for Salazsar until he took the blow that had ended his career.</p>
+<p>In Eschowar’s case, age had taken him out. The trembling, like Zail’s memory and like old age, was just not something modern magic and potions could undo. You could [Restore] the body…but if the body was at this state naturally, restoring it didn’t do much.</p>
+<p>Well, perhaps if everyone had Chaldion’s access to his grandson’s alchemy, they’d be in a bit better shape. But Eschowar was eighty-seven years old. He was sitting in a sanctuary of sorts, though he might have called it a jail.</p>
+<p>It was like…a nursery, but for age instead of youth. There were plenty of staff like Zail’s minders who helped members of the Walled Families get around, from bed to food to everything else.</p>
+<p>One of the towers near to the Gemscale Family’s had long been used in service of the oldest Drakes in the city. Zail was an exception in that he lived with his family, as did Helessia. Sometimes circumstances meant that Drakes like Eschowar ended up here, and even if he wasn’t a resident, Zail visited at least three times a week.</p>
+<p>The old Wall Lord understood Zail. He was trying to think, and water sloshed in a cup designed not to spill as he lifted it up and—with effort—drank.</p>
+<p>It bothered younger Drakes like Brilm, who saw the effort it took and felt bad or poorly for Zail and his elders. What Zail and Brilm’s elders didn’t say was that he could take his sympathies and shove them up his tail.</p>
+<p>No one liked it, but it wasn’t as if they felt…old. Zail felt like a young man still. He just happened to have an old body. He just happened to have more memories.</p>
+<p>In the same way, Eschowar’s eyes were keen.</p>
+<p>“If he’s smitten…you don’t think it’s a possibility?”</p>
+<p>Zail paused for a long time.</p>
+<p>“I can’t imagine this is all the product of infatuation, Eschowar. He just had Periss. They were as close to engagement as I could have bet. I don’t think my son would change this much for…love? He hasn’t even been in the company of that Human.”</p>
+<p><em>Erin Solstice.</em> But then, she’d been dead. Zail felt very uncertain, and Eschowar put down his cup.</p>
+<p>“Maybe it’s not love. But you change like a [Lightning Bolt], Zail. You know that.”</p>
+<p>“This much?”</p>
+<p>For answer, the other Drake looked at him.</p>
+<p>“S-spoken to Itreus recently, have you? He’s the talk of…well, everyone wanted a word with him. And Linvios.”</p>
+<p>Zail’s neck scales rose a second, and then he exhaled slowly. Eschowar had a point. Some things could change very fast indeed. A wedding had changed Zail’s life in marked ways.</p>
+<p>Itreus Torimine was in better condition than Zail, and he didn’t stay here, still running House Torimine instead. Well, jointly.</p>
+<p>Things were troubled, and Zail might envy Itreus’ work and purpose, but even his relationship with Helessia, cool and sometimes icy as it might be, was better than the giant rift that had formed between Itreus and his wife.</p>
+<p>It was…complicated. Life was. The two had divorced, but Calistoca and Itreus had both inherited their company, which they both made decisions on.</p>
+<p>Zail didn’t bring that up when he found Itreus. The older Drake was sitting and talking with another mutual acquaintance.</p>
+<p>“Zail. Good to see you.”</p>
+<p>One of Salazsar’s powerful Wall Lords sat there, looking grey, but fit. <em>Sharp.</em> For his age. Sharp as a razor. Calistoca was much the same. Maybe it was why they were together, but the two had split just as hard for reasons…well.</p>
+<p>Zail didn’t know all of it. He gave Itreus a very polite nod, as he’d done for four decades since the marriage.</p>
+<p>“Am I disturbing you?”</p>
+<p>Itreus was often at work, but he had come to visit another old friend, a Drake who was staring around and shading his eyes, despite sitting in the glass atrium as snow fell, illuminated by [Light] spells. It was pleasant—but the Drake was terrified.</p>
+<p>“I see it. I see it everywhere, Itreus. It’s on Zail’s shoulder and mine…”</p>
+<p>He tried to edge back in his seat and almost fell out of it. Itreus steadied him and waved a few helpers away. He indicated a seat.</p>
+<p>“Not at all. Khorpe, it’s just Zail.”</p>
+<p>“I know it’s him. But he’s bringing death with him. I see it on his shoulders. Don’t let it touch me.”</p>
+<p>Khorpe was no Wall Lord, but a former soldier who’d risen to a high rank. A [Reconnaissance Major]—well, that was his official class. His real one might have been higher, but even now he didn’t talk about it. Every Walled City had a spy-corps, and Khorpe was retired.</p>
+<p>He had…fears. He leaned away from something only he could see, and he avoided shadows and danger. He claimed he could see death.</p>
+<p>It was bad today. Zail didn’t try to touch Khorpe if death was clinging to him. But he did nod again, at Itreus, who gave him a tight smile.</p>
+<p>They were old enemies. Nemeses, really. There was a time when if Zail had spotted Itreus across the floor, he would have drawn his sword and gone for the other man’s head. But a single event had changed that.</p>
+<p>Itreus had invited Zail to his wedding. No, that wasn’t it. It was the fact that Zail had been invited, according to oldest Drake traditions, as the nemesis along with the best man to honor Itreus.</p>
+<p>It was often used just for formality or no longer employed, but Zail had taken the honor seriously, and he and Itreus had quashed every grudge between them. They might never be boon friends…but that peace had held for over forty years.</p>
+<p>Zail was just a bit proud of it. The two and their companies had never quarreled since then. They had come to moments where the two were bidding against each other or might get embroiled in a dispute, and Zail had thought of his pledge and gone to Itreus to have a quiet word, or Itreus had come to him. And they honored it.</p>
+<p>Despite the divorce.</p>
+<p>At any rate, Itreus could have probably taken Zail, Khorpe, and Eschowar down with one claw tied behind his back these days. He looked good.</p>
+<p>But tired. And but for his mutual respect for Zail—he looked bitter. His enduring power and authority hung about him like adornments on a deeply unhappy Drake. Every time he smiled, Zail got the impression he was having to remember more and more how it was done. He looked sharp, in his suit, and dressed to impress, but he was reclusive and visited this place because he had few boon companions and his wife and children were greatly estranged from him.</p>
+<p>As was his other…old friend.</p>
+<p>“How is Ilvriss?”</p>
+<p>Itreus sat with Zail, and the Drake shrugged.</p>
+<p>“I’ve been complaining about him nonstop. But if he leaves, I’ll complain more. He’s associating with…well, I told you.”</p>
+<p>“She’s the most high-level [Courtesan] in the city, if it helps.”</p>
+<p>Zail grunted.</p>
+<p>“I don’t understand what he sees in her. Or Nerul. I used to talk to him, and he’d listen. I was going to ask him about the war with Fissival, and he just didn’t want to hear it. Not that, nor business nor anything else, it seems.”</p>
+<p>Itreus paused and glanced sideways at Zail.</p>
+<p>“Uncharitable of him. You were the war-leader of Salazsar in more wars than he’s seen in his life. And better with a sword.”</p>
+<p>“He doesn’t need me to lecture him.”</p>
+<p>“Maybe talk with him another time. You could talk war, at least, if the mining’s no good. I can’t lecture my offspring about battle, and that’s the thing you <em>are</em> qualified to talk about. He’s not seen many wars between Walled Cities.”</p>
+<p>This was true, and Zail felt a bit hopeful this would be the case. He nodded at Itreus.</p>
+<p>“And how are…things in your business?”</p>
+<p>“Well.”</p>
+<p>Itreus’ lie was flat as his smile. Zail nodded and didn’t press. <em>What an unhappy man.&nbsp;</em></p>
+<p>If only…well, Zail was no good mediator, and the rift between Itreus and those closest to him was deep. Better people had tried to bridge it. Itreus seemed to sense Zail’s thoughts and muttered.</p>
+<p>“I’d retire, but I think Calistoca would just seize control. I’d let her if it meant an end to glaring at her—but not this. I don’t think I’d last, Zail.”</p>
+<p>“Eschowar claims it’s not the worst.”</p>
+<p>The two Drakes looked across the floor where the older Drakes, their peers, were going about their day, and Itreus’ face was bleak.</p>
+<p>“…I can’t stop working, Zail. If my son was about like yours, perhaps. I’ll die in my office.”</p>
+<p>It was a statement that was heavy, but Zail just nodded. He looked across the floor and thought…he would have rather done the same.</p>
+<p>Salazsar had a tradition for older Drakes to rest and retire. Not all Walled Cities did. Oteslia was far, far different, Zail understood, in that they had institutions like this where Drakes and Gnolls formed communes and tended to gardens or helped care for animals all day.</p>
+<p>That would be…nice. It was classic Oteslian softness, but the two cities were the only ones with any formal institutions at all. Salazsar had managed the accommodations for its most important clients; Zail couldn’t speak to ones lower down in the city. It had a [Chef] who made food that wasn’t hard and could be digested, custom drinking apparel, enchanted beds, but it was still unpleasant.</p>
+<p>Khorpe was staring out the window, looking for the death sneaking up on him as Zail and Itreus talked. Someone noticed, and a Drake woman came over with a big smile.</p>
+<p>“Major Khorpe, we have a gathering for everyone to play a game. Come on, let’s get you into it. You had such fun last time.”</p>
+<p>She pointed, and Zail and Itreus noticed a spirited Gnoll woman clapping her hands and getting a bunch of the residents to join in. Songs and limited games, like tossing [Lightball] spells around.</p>
+<p><em>Like we’re children after all. </em>Zail imagined what Ilvriss would say if Zail told him they were going to play with the glowing light orb and sing, rather than have him at a meeting. Khorpe just stared over and shuddered.</p>
+<p>He sometimes refused to talk, and the Drake woman sounded exasperated. Maybe she was tired, but Zail stiffened as she raised her voice.</p>
+<p>“Major, we’re going to have fun now. Are you going to participate in my event?”</p>
+<p>Khorpe stared at her, and Zail resisted the urge to tell the Drake woman to hop off the balcony of the tower. She spoke to the same [Soldier] who had given [Generals] orders and intelligence like she was speaking to a child.</p>
+<p>“I’ll—participate.”</p>
+<p>“Good! This way. The Major’s joining in, Torers!”</p>
+<p>He walked off, and Itreus muttered to Zail out of the corner of his mouth.</p>
+<p>“If someone said that to me in a meeting, in that tone, I would fire them.”</p>
+<p>“Mm.”</p>
+<p>Zail paused and, after a moment, brought up a name he had heard whispered in this place months back.</p>
+<p>“Have…you heard of Maviola El? The one who led House El?”</p>
+<p>“That firebrand? I heard she died.”</p>
+<p>Zail nodded slowly.</p>
+<p>“As a young woman. Riding across Izril. I heard Hectval killed her. You saw the part where the Assassin’s Guild…?”</p>
+<p>“Yes. Yes, I remember hearing Linvios giving commentary here while it was going on.”</p>
+<p>He’d actually mentioned the other Drake’s name. That showed you how pivotal the moment had been. Zail stared out the window at the sunlight cutting through snow, turning it golden for a second.</p>
+<p>“What an end. Even for an enemy. What a spectacular one.”</p>
+<p>The other Drake’s eyes were faraway with envy.</p>
+<p>“Yes.”</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>Presently, Wall Lord Itreus left, and Zail reckoned that his visit had taken up a good portion of his day. He still lacked the ability to fill the rest of it to his satisfaction and wondered if he should go for a walk to see the mines after all.</p>
+<p>Then again, Ilvriss would be wroth if he found out. Zail was just about to stand, with effort, when a second figure appeared, striding into the nursing home.</p>
+<p>Itreus had just reached the door, and when he came face-to-face with the tall, intensely <em>strong</em> Drake with sapphire grey scales and a suit befitting a conductor, a Maestro, he halted.</p>
+<p>“Itreus.”</p>
+<p>“<em>Linvios.</em>”</p>
+<p>Linvios Reiscale and Itreus exchanged a glance that had more between it than any inland sea, and Itreus’ voice had such intensity that you could have bottled it and turned it into a Tier 7 spell.</p>
+<p>Linvios stepped smartly to the side. His deep sapphire scales and silverine eyes flicked to Itreus, who walked past him stiffly without a word.</p>
+<p>Now here was someone else who would rather die at work than here. Linvios stepped into the home—and caught someone gently as she almost fell over.</p>
+<p>A Drake woman had tried to get to the door, but she couldn’t walk without help. She was trying to get out.</p>
+<p>“Let me out.”</p>
+<p>“Laudire, what’s wrong?”</p>
+<p>“I want to leave. I want to <em>leave.</em> Please, get me out of here.”</p>
+<p>She tried to get the door, but the Maestro knew she wasn’t allowed out, and Linvios carefully held the Drake upright. Instantly, some of the staff noticed the attempt to break out and strode over.</p>
+<p>“Lady Laudire, you know you’re not allowed out. Please, don’t make us escort you back to your rooms.”</p>
+<p>“<em>Let me out. I want to leave—</em>”</p>
+<p>She raised her voice as loudly as she could, trying to get out, but the door was too heavy and…</p>
+<p>No one else here even glanced up as Zail’s stomach tightened. Presently, the Drake woman was led back, but she was still crying and demanding to go.</p>
+<p><em>Could anyone blame her? What could you say? </em>She was unable to go out without help, and unlike Zail, she didn’t have dedicated carers. But she wanted to…</p>
+<p>Linvios gently walked with her, talking quietly until her voice subsided, and then he appeared back in the home. He looked tired, but so damn young Zail glowered despite himself.</p>
+<p>That was a high-level [Warrior]—well, [Assassin] for you. Linvios led Symphony, and like other Named-ranks, you were either still quick or you were dead. The Maestro glanced around, and he knew many people here. He stopped by Eschowar’s table, then said something to Khorpe, and then he saw Zail.</p>
+<p>“Good evening, Zail.”</p>
+<p>Like Itreus, their old rivalry was behind them. Zail nodded.</p>
+<p>“Were you intending to catch Itreus?”</p>
+<p>“Just to see if he’s well. But no, I thought he was gone. You’re looking well.”</p>
+<p>Zail grinned at the stupid remark. He was the same as ever. The two sat and made smalltalk, and Ilvriss came up again.</p>
+<p>“You’ve never had children like us. Did it ever occur to you?”</p>
+<p>The Maestro’s smile became a distant look. He stared at Zail and then shook his head.</p>
+<p>“Never. N—”</p>
+<p>He hesitated.</p>
+<p>“No.”</p>
+<p>Then he seemed tired, and Zail regretted asking, in part, but what was the point to not asking questions now? The old Wall Lord shrugged apologetically.</p>
+<p>“Perhaps life would have been easier. I just don’t know what to do for him.”</p>
+<p><em>Does he need help at all? </em>That wasn’t really the question. Zail sat there, frustrated, envying Itreus and Linvios, and the Maestro rubbed at his head slowly. He seemed recovered from the Trial of Blades.</p>
+<p>He had crossed swords with a legend. He had always been here, Zail knew. Symphony…doing what Salazsar needed, sometimes acting to further private goals, but often to defend Salazsar’s interests. He was as part of the City of Gems as Zail. If anyone deserved a place in this home—it was he, as well as Zail.</p>
+<p>“Symphony feels like children at times. They come to me, talented children who play and dance well, but don’t understand anything else.”</p>
+<p>“And you train them to be the best.”</p>
+<p>Linvios looked surprised by the comment.</p>
+<p>“In part. But I also train them to work together. And if they play with my Symphony…what do you think they do after they’re done? Part of my job is finding a future. Few reach it, and few want it. I do not. But without anyone to help, they would play and dance forever without any future. The Assassin’s Guild in the north…they run like that.”</p>
+<p>Huh. Zail had never known that Linvios even thought beyond the contracts. Then again, he had never asked. He had never respected Linvios’ profession for most of his life, even if he’d needed to make use of them.</p>
+<p>“What do you think I should do about Ilvriss, Linvios?”</p>
+<p>The Maestro gave it some thought as he sat there, and he glanced up at Zail, in the end, with a slight, bitter smile.</p>
+<p>“Talk to him. That’s all you can do. And if things don’t work out—at least you’ll have a memory.”</p>
+<p>Zail thought of Itreus and Linvios, the best of friends. Wall Lady Calistoca, dignified and cold as ice towards the duo. The gap between all three that had appeared for no reason he had seen.</p>
+<p>Well…he had never asked. Some things you let lie quiet. That was respect. Even now, Zail refused to ask.</p>
+<p>He wondered, suddenly, whether Linvios would have respected that or told Zail he would have liked to <em>tell</em>. But if so…no. Everyone had their faults.</p>
+<p>Zail let it lie, and presently he stood up. He could no longer hear Laudire crying. Perhaps they’d used a calming tonic or [Sleep] spell. Linvios sat there for a moment, then got up as well.</p>
+<p>“Cards, anyone?”</p>
+<p>It was a good stand-to that everyone could play, even if they couldn’t always hold the cards. In this case, even Eschowar did well enough if someone played him in.</p>
+<p>“Trade card four. Ante two more ‘silver’ in, and has anyone read the latest Lightning Thief book?”</p>
+<p>Zail obediently pushed a card in and held the replacement up to Eschowar. He grunted, and the card went face-down in front of him as Linvios upped the ante. Zail sneered.</p>
+<p>“That trash? I read the book Krsysl Wordsmith wrote out of solidarity, but it’s so predictable. Rising action, minor conflict usually with whatever paramour he meets, major conflict for the treasure of the day, end. It only got interesting when the Eyes of Baleros were involved.”</p>
+<p>Khorpe stared at his cards, muttering.</p>
+<p>“I remember that. I had to follow him about all over the sea one time. Miserable. It was like…”</p>
+<p>He flinched as he ducked away from a bird flying past the outdoor room where they sat, and he nudged into someone sitting at the table. Linvios, Zail, Eschowar, Khorpe, and Nmorie, who loved cards.</p>
+<p>Linvios patted Khorpe on the shoulder reassuringly. Khorpe trailed off, then brightened.</p>
+<p>“Do they talk about his ship? He had custom-rigging on his sails. Not just wind-powered, but two masts, and he placed the wind spells at odd angles. So you’d see them heading left, but you could never tell if they were <em>actually</em> heading left, whether he was tacking into the wind, or whether it was the wrong sail.”</p>
+<p>“One imagines you could just stare at the ship and see which way it was going, Khorpe.”</p>
+<p>The [Reconnaissance Major] happily upped the ante to six silver.</p>
+<p>“Then you’re following an illusion, Zail. That’s the beauty of it. Even the illusions looked like they were moving according to the wind. Three Archmages.”</p>
+<p>“You stole that.”</p>
+<p>Eschowar cracked one eye open, and Khorpe paused, about to sweep the pot.</p>
+<p>“No I didn’t.”</p>
+<p>Linvios suspiciously checked his card, but Nmorie glared at Khorpe.</p>
+<p>“Why are there six Archmages in our deck, then?”</p>
+<p>Both she and Eschowar began demanding the deck be counted, and it turned out, once Khorpe was disqualified, that Eschowar had the winning hand. He didn’t look at his cards as they were turned over. He just remembered them the moment you showed them to him and played blind. Zail cheered up as he saw a glint emerge into Nmorie’s eyes; she was a consummate [Gambler] in her side class.</p>
+<p>The former Mistress of Spellcraft in Salazsar’s academy scoffed.</p>
+<p>“I never liked Krsysl. He’s pretentious. There was a time when his writing was respected and sought-after. These days, he’s constantly writing <em>to</em> a goal, rather than for it.”</p>
+<p>Zail raised his brows as Eschowar muttered agreement.</p>
+<p>“…I have no idea what that means.”</p>
+<p>The Drake lady raised her claws to adjust spectacles she no longer wore as she recited.</p>
+<p>“Don’t you remember any of his lines? ‘Oh, sovereignless, twice-exiled kindred met in brief recompense under Qualvekkaras’ shade. There Harpy Queen and Wind Dragon folded wing, trading scale for feather as Chandrar’s final sun rose on the last pact of the skies. Forgotten, unreported to every nation; remembered in the twilight of both races. Would that the cities had given scarce credence to the subtlety of that moment, they would have steered a clearer course through the ichor of war thereafter and broken pacts when they called for aid and heard only the silence of lapsed promises and goodwill tarnished beyond repute.’”</p>
+<p>She wasn’t using a Skill. The table paused a long moment, then Khorpe muttered.</p>
+<p>“Too fancy for me.”</p>
+<p>“You cretin. It’s not <em>bad. </em>L-Linvios, throw something at him.”</p>
+<p>“I prefer Barelle’s work.”</p>
+<p>The Maestro muttered, and everyone glared at him. He sighed.</p>
+<p>“So no one’s even given a passing thought to the Singer of Terandria’s songs?”</p>
+<p>“Drivel.”</p>
+<p>Zail declared, and in response, Linvios hummed a bar that made the Wall Lord pause.</p>
+<p>“No, wait, what’s that?”</p>
+<p>The Maestro clicked his claws.</p>
+<p>“I can’t do it justice, and the song crystal wears out after ten thousand plays. I shall summon some of my people.”</p>
+<p>He tapped a hanging gemstone on his wrist and spoke into it.</p>
+<p>“First Violinist…no, just one voice. If you have a moment, I would appreciate the full strings. You know where I am. Viola, violin, cello at minimum. <em>I Stayed Too Long At The Fair</em>…yes. A discerning audience would like to hear it.”</p>
+<p>His audience sat up. And soon, a bunch of respectful young musicians were rushing up the stairs, setting up, and Zail blinked and listened to a song that wasn’t as garish or purely <em>loud</em> and fast as he had disliked. This one had nuance.</p>
+<p>It didn’t end with one song. So taken was she that even sad Laudire came out and began to sing, dueting with some of the younger Drakes, and then they played some classic songs, and Zail found time passing by in good stead and stopped counting it.</p>
+<p>He played a chess game with Eschowar, reminisced with Khorpe and Linvios about Fissivilian foibles, and everyone watched a broadcast on the scrying orb.</p>
+<p>And by the evening, Zail had a chat with his son.</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>Wall Lord Ilvriss did not not enjoy conversations with his father. And yes, that was perhaps the best way to word it.</p>
+<p>It was just that they were father and son. And also Wall Lords. And also sometimes it was <em>father and son</em>, and it made it hard to live together, much less talk about the direction of the company or anything else.</p>
+<p>When it worked, it worked. Ilvriss had just gotten something from a Courier, and he was inspecting it in a very good mood as he talked plans and Zail talked about his day.</p>
+<p>“I…well, I knew she had one, but I didn’t think I’d get one from her. ‘Made by Archmage Valeterisa in conjunction with the Ullsinoi Faction of Wistram’. Well, that fits.”</p>
+<p>He was holding…a chessboard as the two had a very fine steak dinner together. Ilvriss and Zail got on like Navine and Helessia—they were used to this kind of dining.</p>
+<p>“A chessboard. Enchanted, is it?”</p>
+<p>Zail gave Ilvriss a long look as he thought about his conversations regarding his son’s definitely-not-wedding ring gift with his friends and the Drake himself. Ilvriss glanced up.</p>
+<p>“…The Titan of Baleros has three with her, I think. And Earl Altestiel is getting one, according to the note. She doesn’t expect me to play much, it seems.”</p>
+<p>“You’re a good chess player. Why not?”</p>
+<p>Ilvriss coughed and chuckled around his drink.</p>
+<p>“Aha. Father, recall the broadcast? She’s the <em>best</em> player in the world bar none. I’ve made the error of trying to play her seriously. Well, it’s a gift that’s thoughtful, and apparently this Archmage is a guest of hers and making the product, so she sent me a copy. Frankly…I might see her soon enough, but I’ll thank her for the gift nonetheless. Oh—look. Someone’s already moving a piece.”</p>
+<p>A pawn moved up on the white side, and Zail raised his brows.</p>
+<p>“I’ve dabbled at chess. It’s more like, oh, old Rubrix Square puzzles. I was always good at them and gem-matching.”</p>
+<p>Ilvriss prodded a chess piece forwards and then glanced at his father.</p>
+<p>“Rubrix what? Oh—”</p>
+<p>Nothing would do but Zail get one of the old, <em>old</em>, beautiful cubes made of over a thousand little gemstones in multiple colors. They were tiny, and you’d move each facet, yellow topaz, green emerald, and more, to form patterns or form one color.</p>
+<p>“Pattern-matching. You used to play with it, but you never took to it.”</p>
+<p>Ilvriss was greatly distracted by the device.</p>
+<p>“Rubrix. You know, I never thought of—where does this come from?”</p>
+<p>“Our history. One of the Dragons invented it, you know. They’re an old toy we kept around. It’s good training for little Drakes—though as I recall, you mostly chewed on it.”</p>
+<p>Zail sighed as he clicked it around absently. Within moments, he’d turned part of the cube red, and Ilvriss raised his brows.</p>
+<p>“Dragons invented that?”</p>
+<p>“So they claim. Frankly, they probably stole it from someone else. Many things the Ancestors ‘invented’ later came from other species, or so I heard. I’ve heard rumors the Titan didn’t create chess. A [Historian] accused him of taking credit for it, but it was all hushed up. Or how else would a Dragon have known the game?”</p>
+<p>“That…is a very good point.”</p>
+<p>Ilvriss seemed to know more than he was letting on, which made Zail curious. But the other Wall Lord moved a few more chess pieces, then was checkmated within a dozen moves and closed his eyes. The white pieces began dancing around in triumph as Ilvriss covered his face.</p>
+<p>“I think I’ll avoid her [Message] spells for an hour. Erin Solstice never gloats that I’ve observed; she’s too professional. But I worry that I lost to Mrsha or someone else. Anyways, how was your day, Father?”</p>
+<p>“I tried to smuggle in a bottle of wine to my peers and was reprimanded.”</p>
+<p>They’d all still gotten a good drink in, and Zail was smug about it. Ilvriss gave him an exasperated look.</p>
+<p>“Really? <em>Father…</em>”</p>
+<p>“We are not children, Ilvriss. If we want to drink, we’ll do it. You’re lucky we don’t dig out our old rings and raid a distillery by force.”</p>
+<p>“Dead gods save me from the idea—you know, some of them are literally dangerous with their Skills and classes? Drinking makes it worse.”</p>
+<p>Zail scowled, and that was where the harmonious, good-natured talk broke down.</p>
+<p>“I know, but what are they supposed to do? Do without?”</p>
+<p><em>Yes.</em> That was what Ilvriss wisely did <em>not</em> say. Zail trailed off, and Ilvriss cleared his throat after a second.</p>
+<p>“—I’ll have to bring them something in return. Something…what’s a good gift from Salazsar, Father?”</p>
+<p>“You’re leaving? Already? What about the war?”</p>
+<p>Zail grew alarmed. And Ilvriss grew—defensive. He was normally open about ventures in the broad strokes, even if he refused to discuss how it should be done with Zail. But he was evasive.</p>
+<p><em>Ever since the Meeting of Tribes, he’d been making plans.</em></p>
+<p>“I—have a few mining projects I’ve dug up. It’s not in areas Salazsar controls, but the ventures are highly important, and I’m going to try negotiating my way into some work. There’s also the New Lands, but this is going to be—well, I’m passing through Liscor. The door is handy, and I will be back, but it’s essential.”</p>
+<p><em>Mining ventures? </em>Zail didn’t believe that for a second. It was true, sometimes you found Adamantium or valuable ore elsewhere, but Salazsar was literally a mountain of gems. More importantly, it had the industry and talent to perform mining operations.</p>
+<p>You didn’t just pack up and resettle somewhere without a lot of work. If Ilvriss was preparing an expedition, the costs would make it inherently risky.</p>
+<p>“And you’re taking Nerul, your other associates, with you?”</p>
+<p>And [Soldiers]. True, you did that on any expedition, but this was a lot of outlays when the New Lands were sapping everyone’s talent. Ilvriss avoided Zail’s gaze.</p>
+<p>“Well, it’s pressing, and I want to hurry.”</p>
+<p>“Who told you about the mining spots? Was it—the ghosts?”</p>
+<p>Ilvriss <em>twitched,</em> and Zail got an answer, though the conclusion he came to was slightly wrong. He sat back. Ilvriss avoided Zail’s gaze as he fiddled with his utensils.</p>
+<p>“Has—anyone else been visited by ghosts?”</p>
+<p>“No one wants to say anything if they have. You did. Why not just lead with that?”</p>
+<p>Ilvriss groaned.</p>
+<p>“Father—it’s highly secret. Please, swear you’ll say nothing to <em>anyone.</em>”</p>
+<p>“Of course not.”</p>
+<p>If Ilvriss had been <em>chosen—</em>Zail grew excited, then serious. He leaned over the table and remembered Itreus’ advice.</p>
+<p>“But this war with Fissival is coming at the wrong time, isn’t it? If they’re moving to blockade the trade road, you’ll need to break their advance before you can go.”</p>
+<p>Ilvriss gave him a long look.</p>
+<p>“You have my quandary in an uncracked geode, Father. Yes. I think the army can handle it, but they are hopping mad. At least I’ll be out of range of them…I feel worse that our cities have gone to war.”</p>
+<p>“Bah. It’s the local cities who have to worry. Neither city will come under direct siege. Fissival’s just looking for a victory after losing their Archmage. Those fools. But let’s talk about the army. If you go, bring the Gemstone Regiments. Fighting Fissival is inherently obnoxious.”</p>
+<p>On that, Ilvriss and Zail could agree. [Mages]. Salazsar had a fairly strong martial tradition. Not as much as Manus, but Ilvriss had a distaste for magical, ranged battles.</p>
+<p>“We beat their grand army once, Father.”</p>
+<p>“Yes…about that. Why did you charge them?”</p>
+<p>Zail had been curious this entire time, but aside from talking about the Meeting of Tribes’ fallout, they had never gone into the military action because that had been the least important part of the discussion. Ilvriss paused, cutting at his steak.</p>
+<p>“—Well, it was an impromptu thing. Spur of the moment. It worked.”</p>
+<p>The older Wall Lord rubbed at his head.</p>
+<p>“Salazsar isn’t known for charging, though. When you fight Fissival, charging the [Mages] is like charging into an exploding porcupine. Zeres is the sweeping advance. Manus charges. Even Oteslian strategy likes charges more. I remember thinking that it would have been more proper to rotate into a pincer maneuver and press them. Send your riders in, but not <em>yourself.</em>”</p>
+<p>Ilvriss sighed. His father was a good war leader, which meant that when he chose to, he could and did critique Ilvriss’ strategy in everything from the battle with Zel Shivertail to other engagements.</p>
+<p>“Father, there was no time, and it was a surprise attack.”</p>
+<p>“A crossbow to the head is a surprise attack. You gave them minutes to watch you charge at them. You did the same thing against the Tidebreaker, if I recall. You charged the <em>Tidebreaker,</em> the most defensive [General] of Izril.”</p>
+<p>Ilvriss turned red as the staff politely changed courses.</p>
+<p>“It almost worked. I separated him from his command, and I had him—”</p>
+<p>“Until you didn’t. You lured him into a forest, and since he survived, his army ate yours while you both were separated. Why are you charging all the time? That’s Sserys’ strategy, and he’s a [Mercenary]. We’re a Walled City, Ilvriss. Sserys organized his tactics around Liscorian class-stacking and the fact that he had to work with a bunch of irregulars and other armies. We have discipline.”</p>
+<p>“Well—how would <em>you</em> do it?”</p>
+<p>The younger Wall Lord made the mistake of challenging Zail to do better, and the Drake gave him a long stare.</p>
+<p>“You hit Fissival with Gemstone Regiments. When they bring Mage-Throwers, you bring ballistae. That’s easy. We have armaments, they have magic. Forty thousand regulars of Fissival might be tough, but they’re lacking in numbers. They should have that many <em>core</em> soldiers, but three times as many auxiliaries from the other cities. I would pin down one [Mage] division with the Rubirel Guards, and once they get minced a bit, [Mages] always surrender or run.”</p>
+<p>He was talking broad strategy, having no maps, but Zail began to describe the Scintillation Counter to his son, a Salazsarian strategy. The younger Drake put his head in his hands.</p>
+<p>“Father, Father. No one uses that anymore. There’s no Skill based around it.”</p>
+<p>“It’s just math.”</p>
+<p>“It’s math and timing, and one wrong move and you lose an entire battalion! New warfare is <em>fast.</em> Sitting formations are a dangerous idea. Just look at the Archmage of Memory. He could bombard your entire wing if they pause. The Titan? He’ll throw a hundred counters at you and hit you from every side. The King of Destruction—all peerless advances.”</p>
+<p>“The Titan is contemporaneous of me, Ilvriss. He designed gigantic towers to sit still and push areas. The King of Destruction only knows how to charge. At least, with his armies. Fissival’s forgotten their own tactics. Maybe losing that Wall Lord did it.”</p>
+<p>“And how would they do it?”</p>
+<p>Grumpily, Ilvriss tasted some of the strawberry gelato that he’d taught his [Chefs] how to make. Zail chewed down happily, thinking privately that he could tell Ilvriss in detail how to pull off the old Scintillation Counter and a dozen strategies. He did know them all…</p>
+<p>“In the old days, Fissival would run small core armies like that. But instead of <em>just</em> their [Mage]-troops, they had huge auxiliaries from the other cities. We’ve fought with them as many times as against. How you do it, you see, is that you run a screening force ahead of your magic troops. If they don’t have us or another Walled City to back them up, the front ranks aren’t Fissivilian. You screen with thousands of Gnolls on the front. And then…”</p>
+<p>Zail was so engaged with his memories he failed to see Ilvriss’ face change. His son looked up, and Zail only broke off after a second.</p>
+<p>“What?”</p>
+<p>“We didn’t do that, did we?”</p>
+<p>“Do what? Use auxiliaries?”</p>
+<p>“No, I mean—I heard the Hectval Alliance was employing those tactics, but <em>we</em> didn’t use Gnolls as our expendable frontline. Did we?”</p>
+<p>Zail paused, and he was thrown by the question, then tried to back up.</p>
+<p>“That’s just one example of a strategy, Ilvriss. It’s like throwing [Miners] into pockets to hack apart armored groups. Sometimes you need to supplement your forces—”</p>
+<p>Miners used to be more predominantly Gnoll-heavy back in the day. Ilvriss put down his spoon and glanced at Zail, then swiftly changed subject.</p>
+<p>“Oh, right. Speaking of miners…that Adamantium really is being bid on by everyone north of Liscor. Dwarves, Pallass…we had too few buyers because no one could really work the stuff; now everyone wants it. The Empire of Sands, the King of Destruction, Deríthal-Vel—the Dullahans, always. What do you think we should do regarding investments?”</p>
+<p>He tossed that one at Zail, and the old Drake saw it. He stared at Ilvriss, and his son avoided his gaze. Zail sat there a second. He hadn’t meant…</p>
+<p>He left the topic there, in silence, and that was his mistake. Sometimes, he and Ilvriss talked like this. Other times, Ilvriss told Zail not to worry about it. As if having a life ‘free from worries’ was one you wanted.</p>
+<p>That was all two weeks ago. In hindsight—Zail would have insisted Ilvriss listen if he could have seen the future. He should have crushed Fissival in prior wars.</p>
+<p>He should have left Ilvriss with more.</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p><em>Now.</em></p>
+<p>&nbsp;</p>
+<p>“I didn’t charge, Father. They just kept raining down magic on us. Damn…impossible advance.”</p>
+<p>Ilvriss was laid up in bed, and Salazsar was hushed, somber, the day thereafter. Zail sat by him, and he knew that their army had retreated and thousands of soldiers surrendered.</p>
+<p>It was hardly a critical defeat, but it always felt like this when you heard about a loss during a war. He was just glad Ilvriss was alive.</p>
+<p>“Don’t speak. You’re an idiot for going out there, and you’re going to rest. Let a [General] handle the fighting.”</p>
+<p>Navine was worried, upset, and taking it out on both of them. Zail glanced up as Ilvriss groaned.</p>
+<p>“They’ve got their own experts in the field, Navine. If it’s one [General] versus their [General] and several [Mage Lords]…we tried to encircle them, but they just blew everything into pieces. I don’t want to know how many mana potions they wasted.”</p>
+<p>“Don’t attack yourself. Just rest.”</p>
+<p>Zail patted Ilvriss’ claw, wanting him to be quiet for once. Ilvriss stared up, breathing slowly. Even with healing, he was weak as a feather. Magic was hard to heal, so he lay there with several tonics and poultices to rebuild his strength.</p>
+<p>“Can someone…check on Osthia? Don’t let her get hurt. Nerul will—”</p>
+<p>Navine was nodding, but she frowned and raised a finger for clarification.</p>
+<p>“I will. Who’s Osthia?”</p>
+<p>Ilvriss froze a second.</p>
+<p>“Asrira. That’s her other name.”</p>
+<p>Navine’s eyes flickered, and Zail paused a second, but Ilvriss’ head fell back and the two left him to the [Healers]. And Zail had a lot of thinking to do.</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>My son. Zail sat in the nursing home, frustrated, unable to sit still, but so tired that after pacing around the room three times he had to sit.</p>
+<p>His body was old. His wounds held him back, and he knew he forgot. He’d had to be reminded of the Meeting of Tribes war, and then it had come back to him…</p>
+<p><em>But I’m still in here. </em>Zail, the real Zail, felt like he was staring out of Wall Lord Zail’s face, and when he thought of himself, he didn’t have the dent in his forehead.</p>
+<p>He wanted to rage against the idiots who had harmed Ilvriss. Shake the foundations of his foes, drag the City of Gems up, and he had the will and emotion to do it. But there was lead in his bones. Lead in his soul, weighing him down.</p>
+<p><em>An exhaustion that was so unfair. </em>That was age. That was one part of age.</p>
+<p>Another part was looking at Ilvriss’ face and seeing the first grey scales on <em>him.</em> Realizing that Ilvriss was getting older…that was what made Zail truly feel it.</p>
+<p>Everyone was considerate of him and came to ask how Ilvriss was doing. From Eschowar to Khorpe—Itreus wasn’t present as he was figuring out how to respond to Fissival’s blockade.</p>
+<p><em>Did Salazsar want to try attacking them again, or was it better to try and isolate their army or wait out the siege and attack from another direction? </em>Zail could conceivably head out to the meeting and be heard.</p>
+<p>But he didn’t want to be heard. He had never felt more useless than when he stood with his son bleeding to death in front of him.</p>
+<p>“He made a mistake, Eschowar. He did. You don’t have to lie. Fissival saturating the air with spells. Classic. They’re holed up in the pass itself. Lobbing spells everywhere. The Mage Throwers were tossing [Valmira’s Comets], and he was trying to get around the pass and hit them from above.”</p>
+<p>The old Wall Lord, the [Fulminous Lord of Cabochon], was closing his eyes, and the shaking stopped. He cracked one lid open.</p>
+<p>“They ran into mine spells.”</p>
+<p>“Yes.”</p>
+<p>Trap spells, littered all over the advance. When Ilvriss had tried to head down the valley center, they had filled the air with magical firepower.</p>
+<p>Classic Fissivilian tactics. Khorpe muttered.</p>
+<p>“Should have…he should have seen it. Death in the mountains. They love fighting in mountains. More than <em>us.</em>”</p>
+<p>Nothing made a Fissival [General] happier than seeing someone climbing over rough terrain as he sat on his tail and ordered mage-strikes. Zail stared at Khorpe.</p>
+<p>When they talked about what they knew, everyone fell silent. Even the staff. When they talked about this…Khorpe stopped shuddering at shadows.</p>
+<p>Perhaps because he knew death was in war, he didn’t fear her searching for him. When Eschowar spoke about the same battles that had led to famous [Generals] apprenticing themselves under him—like Wall Lord Aldonss—it didn’t matter that he couldn’t lift a cup.</p>
+<p><em>We have lived so long. Too long? No. I don’t want to die. But the world is changing, and here I sit, unable to do the only thing I know how to do.</em></p>
+<p>That was the heart of Wall Lord Zail’s frustration. It was a burning feeling in him.</p>
+<p>Use me. Make use of me. Give me one…</p>
+<p>“…One last time. She was right, that damn [Lady] who burned us at the Bloodfields year after year. She was right.”</p>
+<p>They thought he was losing focus. One of his minders bent over.</p>
+<p>“Wall Lord Zail? Is everything alright? What’s my name? Where are you? Maybe we should get you back. It’s been a long day—”</p>
+<p>She reached for him, but halted and yelped as she snatched her claws back. The air around Zail was…prickly. It was charged.</p>
+<p>The old Wall Lord sat there as several people edged away—but Eschowar didn’t. Khorpe didn’t. And now, Zail was looking around the room, counting faces.</p>
+<p><em>There’s Illidrem. He’s barely able to get out of bed, but he’s looking up. There’s Ascadenia—I saw her use a spoon the other day to open the door they locked on her. Didn’t Nmorie teach magic until she forgot…?</em></p>
+<p>An idea was dawning on him like a second sun. It was so natural that he was surprised he hadn’t thought of it before. But then—there had never been a cause.</p>
+<p>Salazsar was so safe. But he had seen it during many wars himself. It was the foundation of the King of Destruction’s strength and why the world still trembled at his name.</p>
+<p>He looked up as Eschowar met his gaze, and then Zail stood up.</p>
+<p>“Eschowar…are you thinking what I’m thinking?”</p>
+<p>“Are you sure you’ve thought it out, Zail?”</p>
+<p>The old Wall Lord was cautioning him. But Zail turned, and he felt lighter. He looked around the room filled with old men and women, and one of the staff was bright enough to ring a bell for help.</p>
+<p>But it was too late. Zail turned to Eschowar.</p>
+<p>“If we were useless, I wouldn’t think it at all. Are we useless, Eschowar? Are you thinking what <em>I’m</em> thinking?”</p>
+<p>The old Wall Lord raised his brows. Khorpe was slowly, slowly pulling something out from under his chair. One of the staff tried to sneak up on Zail—then froze.</p>
+<p><em>Why did Khorpe have a hand-crossbow?</em> It was loaded with a Phoenixfire Bolt. Both Zail and Eschowar turned to Khorpe, and the Drake shrugged.</p>
+<p>“I was going to shoot death when she found me.”</p>
+<p><em>That would have been the end of this entire floor. Probably everything fifty feet above and below as well. </em>They were doing a service to general safety, clearly.</p>
+<p><em>Are you thinking what I’m thinking?</em> A final time, Zail met Eschowar’s eyes, and at last, the other Drake sighed.</p>
+<p>“Maybe, Zail. But how are we going to smuggle eight Gemstone Regiments out of the city without anyone noticing?”</p>
+<p>His eyes twinkled as Zail stared at him. Then Zail laughed, and he felt…he thought he felt lighter. He turned and called out.</p>
+<p>“Someone call Linvios. Tell him I have a job.”</p>
+<p>Then he was heading for the door, and they tried to stop him, of course. They really did. But they were kindly idiots who knew nothing of what was in his heart.</p>
+<p>Or what was on his fingers. Zail Gemscale was rather like Khorpe after all. Someone sealed the doors with a locking spell.</p>
+<p>Zail raised his ringed hand. One of the rings contained [Detect Truth]. He’d have to get rid of that one. His old armor…his old gear was right where he had left it, or so he hoped.</p>
+<p>Meanwhile, he twisted the middle ring on his claw, then pointed it at the door.</p>
+<p>“Ears. [Thunderglass Spray].”</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>“He did <em>what?”</em></p>
+<p>Wall Lord Ilvriss got word of what was going on too late. He tried to get out of bed, but he was too weak. And worse—</p>
+<p>“Stop him! Stop them!”</p>
+<p>Nerul was trying to do just that, but the problem was—Osthia Blackwing hissed at him as Navine tore at her neck-spines.</p>
+<p>“We’re trying! But they’re pulling rank on us!”</p>
+<p>“They can’t do that. They’re <em>retired.</em>”</p>
+<p>“<em>Tell them that! </em>They just shout they ‘outrank us’, and they’re <em>armed</em>. Plus, they have all their old classes, so their Skills actually <em>work. </em>Curse that blue-scaled idiot from Liscor!”</p>
+<p>Ilvriss tried to get out of bed, but he was immobilized. Even if he could—things were moving so fast that Zail only deigned to visit him once. When he did, Ilvriss shouted and tried to do something, but he couldn’t move and couldn’t change his father’s mind.</p>
+<p>That, as Zail pointed out, was ironic turnabout. And perhaps it made Ilvriss think. But he lay there and worried and demanded to be carried on a palanquin, and <em>no one would listen to him,</em> and they just humored him at best.</p>
+<p>All he could do was worry and watch. Ilvriss tried to come up with schemes, and he was so desperate that he actually called on a harried young woman, who appeared by his bed.</p>
+<p>“<em>I didn’t do it! I swear!&nbsp; Whatever it was, I…</em>whoa. Ilvriss, what happened to you?”</p>
+<p>“Erin? What did you do?”</p>
+<p>The young woman hesitated.</p>
+<p>“N-nothing. Ilvriss! I thought you were mad about me because you heard about something else. What—what happened?”</p>
+<p>He had to tell her about the war with Fissival, and her brows darkened with alarm the instant she realized what was going on.</p>
+<p>“A <em>war?</em> I haven’t been checking the news with the beach.”</p>
+<p>Ilvriss coughed painfully.</p>
+<p>“It wasn’t a big…engagement. I think Pallass plays down the war between cities when it can. But listen. My father…”</p>
+<p>“<em>Why didn’t you tell me you were hurt? </em>I could’ve baked something for you that might have helped! At least—you didn’t have to let me think you were well! Here I was, playing chess every night with you and thinking you were on your way!”</p>
+<p>She was outraged. Ilvriss raised one claw.</p>
+<p>“Erin. I didn’t want to worry you. I don’t even think they were trying to kill me. It’s damn Drake pettiness all the…wait a second, what games with you? I thought that was Mrsha. I haven’t been playing any games.”</p>
+<p>Erin gave Ilvriss a side-eye.</p>
+<p>“No, that was only Mrsha the first time. She only knows how to do the Fool’s Mate, and she keeps trying to humiliate everyone with it. Whaddya mean you haven’t been playing? Then who’s been playing <em>me?</em> They’re good games, too. Very good. I put you up against Niers—or so I thought—and he nearly lost.”</p>
+<p>Ilvriss stared at Erin. Then he demanded someone find where his chessboard was. He found it right where it had been left—next to Wall Lord Zail’s breakfast table where he would relax in the mornings and evenings and kill time, next to the Rubrix Square that made Erin’s eyes nearly pop out of her head.</p>
+<p>Three days later, the army of Fissival met Salazsar’s in battle.</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>They were coming. Fissival was entrenched in the mountain pass that was called Sserys’ Line, and they actually laughed when they saw Salazsar’s army coming back for a rematch.</p>
+<p>“I think they don’t have enough [Soldiers]. They came at us with 80,000, and now they’ve got barely 50,000. Maybe they’re afraid of taking as many casualties as last time!”</p>
+<p>Either way, they sneered at the City of Gems’ army. Salazsar was arraying far below the cliffs where Fissival had established magical fortifications.</p>
+<p>If they wanted to get at them, they’d have to cross trapped land up through a hail of magic. In fact, the Mage-Throwers were already calibrating, getting ready to fire.</p>
+<p>General Rodissc was reporting back to the City of Magic, and he was unconcerned with the opposition. The only person unhappy with the enemy force was Mage Lord Ascoden.</p>
+<p>“<em>I see a bunch of siege weapons down there. Make sure you have those Mage Throwers under heavy guard.</em>”</p>
+<p>“Barrier spells are engaged, Wall Lord. Don’t worry; if they want a shooting war, we have more magic than they can dream of. I’m not counting a huge [Mage] presence.”</p>
+<p>Salazsar knew better than to try to out-mage a city where every citizen was capable of casting Tier 1-2 magic. Ascoden acknowledged that Rodissc had prepared properly, but he scowled.</p>
+<p>He was a vocal detractor against the war, but he was still a son of Fissival. So he was watching Salazsar approach with great concern.</p>
+<p>“<em>I’m sensing a lot of magical signals for an army running without [Mages], General. What am I looking at? Gemstone Regiments?</em>”</p>
+<p>Rodissc glanced down at the colorful forces below. His eyes picked up the sparking spears carried by companies of Drakes, marching in their painted armor like a splash of yellow. He nodded, tuning his sight spell on a group of Drakes carrying oval, pale-white shields.</p>
+<p>“That’s the Erchirite Spears, the Topaz Shields…I’m counting a lot of magical regiments, but nothing more than what they brought last time. They’re dispersed through the army. Probably to avoid us blowing a group to pieces.”</p>
+<p>“<em>Watch the Rubirel Guard. They’ll advance through most magic.</em>”</p>
+<p>“We are prepared to intercept and surround them. Don’t worry, they fold without reinforcements, Mage Lord. If you’ll excuse me…”</p>
+<p>They were getting into range. The General of Fissival saw Salazsar arraying in an odd formation below as the Magic Throwers began to calibrate for shots on their lines.</p>
+<p>He didn’t see a command tent like last time, or an obvious [General]. Not that he was intending to murder a [General] or Wall Lord…there was punishing Salazsar until they capitulated, and then there was escalation.</p>
+<p>Wounding that damn Ilvriss that badly was actually the ideal outcome. But Rodissc had to own—he’d been surprised that Salazsar had come back for round two.</p>
+<p>Either their [General] was <em>very</em> confident they could win or they really needed the pass open. He was bothered because he hadn’t heard that their top [General] was coming out.</p>
+<p>In fact, Rodissc didn’t know who the hell was leading the army. He’d asked for information, but Salazsar was in chaos, and none of the clandestine agents had managed a report.</p>
+<p>Rodissc got his answer sooner than he’d thought. The army was deploying along the approach up to Fissival. But it looked like they were digging <em>in.</em> The huge slope leading up to Fissival had a few chokepoints, and Salazsar’d taken one with the fewest openings. There were three, leading past huge boulders that would stymie an advance.</p>
+<p><em>But why in the name of the Ancestors did it look like they expected Fissival to come to them? </em>They were out of range of all but siege-weapons, but Fissival was only too happy to come down a few hundred feet.</p>
+<p>They’d trapped the entire approach coming up, and Salazsar would literally be buried in spells and avalanches if they came running up the slope. The enemy commander clearly knew this, but…</p>
+<p>“General. Do we begin bombarding them? Their ballistae are landing establishing shots.”</p>
+<p>A few <em>thuds</em>—and collapsing earth and stone. The ballistae were ranging, establishing the right angle to hit the Magic Throwers.</p>
+<p><em>Well, we can’t have that. </em>General Rodissc lifted a hand, and his army lifted wands. [Mages] began linking.</p>
+<p>Fissival fought with spells, and they knew how to link and hurl a bolt of [Grand Lightning] down, or a [Siege Fireball]. They didn’t usually need more than that, but they were more than capable of casting [Acid Storm].</p>
+<p>Since that was against most codes of war because their enemies would retaliate in kind, it was Tier 4-5 spells at this range.</p>
+<p>Salazsar’s ballistae opened up first, though. The expensive, Drake-made armaments roared, and the General flinched as one hit the magical barrier over one of the Magic-Throwers near him.</p>
+<p>“<em>Impact! Barriers at 61%!</em>”</p>
+<p>“<em>They’re using magicore-tipped bolts!</em>”</p>
+<p>He swore. One shot had taken down the magic barriers way more than it should. Someone had armed the ballistae properly—but Salazsar didn’t have barrier spells. He counted <em>twelve</em> ballistae to his eight.</p>
+<p>But theirs would be rubble soon. He regretted wasting so many resources—but Salazsar was rich.</p>
+<p>“<em>Open casting! Give them a taste of Fissival’s revenge!</em>”</p>
+<p>Fissival’s army began to cast, and spells began raining down on the Drakes and Gnolls below. [Fireballs] grew and roared downhill while [Grand Lighting] flashed downwards. Slower than actual lightning, but so quick it was a flicker before it struck. And that was followed by [Valmira’s Comet], hurled by magic-throwers.</p>
+<p>Enchanted crossbows were ready to fire at anyone charging up. But for now, it was long-ranged magic, and Rodissc sat back. He expected to have to batter Salazsar before they found the nerve to come uphill, but he was sending [Scouts] left and right.</p>
+<p><em>He’d heard Symphony had left the City of Gems, and if they were gambling purely on the [Assassins]—a single ambush was not going to work.</em></p>
+<p>Rodissc was doing everything right for a [General] of Fissival. He had made no obvious mistakes, and he kept his advantageous spot without ceding any ground to the enemy.</p>
+<p>In qualitative terms, he was really pulling off a Thelican-quality battle. Which was all you needed, really.</p>
+<p>Only one thing bothered Rodissc. It was under the roar of spells and the howl of magic in the air…</p>
+<p><em>Why did it sound like they were singing?</em></p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>There were eight of them. Eight…old men.</p>
+<p>Well, they weren’t all men, but the point was not lost on the [Soldiers]. They had given orders, and they were in <em>charge</em>, so no one was deserting. If anything…they were beginning to tell old stories.</p>
+<p>If you feared being led by an old man who couldn’t hold a sword properly, what about the [Fulminous Lord] who could breathe lightning and had once blasted an army off the side of a mountain in a storm?</p>
+<p>And they were singing. A [Soldier]’s drinking song. Zail was humming as he stared up at the glowing spells coming down towards him. That terrified regular [Soldiers].</p>
+<p>“<em>Ancestors, it was all ever for me. I did it all for none but I.</em>”</p>
+<p>“Wall Lord! They’re—”</p>
+<p>“I see it. Gemstone Regiments, prepare for the Scintillation Counter. Mark.”</p>
+<p>Wall Lord Zail gently pulled something out and knew Eschowar was holding a copy of it. It looked like…a Rubrix Square.</p>
+<p>But less of a square. It was really more of a series of speaking stones glued together. And they didn’t speak so much as light up. When he pressed down on one—another lit up in the claw of the [Squad Leader] of the Erchirite Spears, Division 2, Company 1.</p>
+<p>They were arrayed neatly with the Topaz Shields, Rubirel Guard, and other Gemstone Regiments throughout the army. Each group was standing ready, and as the magic came down—the Erchirite Spears did what they had been ordered to do:</p>
+<p>They planted their spears in the ground, aiming them straight up. The Erchirite-tips <em>crackled</em> with enough lightning to throw their own magic in the enemy’s faces.</p>
+<p><em>Terrifying, though, to advance on [Mages] with the high ground. </em>What kind of idiot would charge up a slope at a bunch of [Longbow Archers] or Fissival’s forces?</p>
+<p>Not Zail. He kept humming as the Topaz Shields lifted their enchanted shields overhead. Each Gemstone Regiment had a special weapon, shield, or piece of armor mined from the magical crystals of the City of Gems.</p>
+<p>Each one had a different power. You could combine them and send a huge [Chain Lightning] attack if a bunch of Erchirite Spears used their spears in tandem.</p>
+<p>But that was such a basic version of their strength. Old Drakes knew how to use the spears. Zail had fought Fissival more times than he could count.</p>
+<p><em>His body hurt from riding and camping, even in the expensive tents they’d sequestered. </em>He was tired already, and his heart hurt from beating so fast.</p>
+<p>But he saw it. Zail feared he might lose track of himself, forget. But somehow, he didn’t think he would. Even if he was sleeping—his claws began to dance.</p>
+<p><em>[Grand Lightning] coming down. </em>His claws flicked a gemstone like someone else playing a musical instrument.</p>
+<p>It was just like a Rubrix Square, which was why [Enchanters] had designed the system like that.</p>
+<p>The stone lit up, and a [Squad Leader] saw it and shouted.</p>
+<p>“<em>Now! [Ground Electricity]!</em>”</p>
+<p>Forty Drakes drove the tips of their spears down hard. They shouted—and the [Grand Lightning] <em>twisted</em> as it arced down. The [Soldiers] screaming in fear looked up as the bolt twisted—and touched the spears.</p>
+<p><em>Lightning rod. </em>The flash illuminated Zail’s world. The killing magic turned, lured by the Erchirite Spears…and dispersed into the earth. Zail smiled as [Soldiers] gasped and above—the [Mages] paused.</p>
+<p><em>They hadn’t fought us for an age. </em>No—the Erchirite Spears had done that last time. But this time, it wasn’t one battalion warding off a few lightning spells. Zail glanced up, and his claws began to dance.</p>
+<p><em>[Siege Fireball], [Grand Lightning], [Ice Lances]—</em>his claws moved, touching different points on the command-stones. Each one was tuned to a squad nearest to the spell. When it lit up, they reacted, absorbing the spell. Or—deflecting it.</p>
+<p>“[Shield of Mana]!”</p>
+<p>The Topaz Shields lifted their glowing shields and <em>blocked</em> a [Siege Fireball]. Their shields drained of magic and began to recharge, and they fell back. The Rubirel Guard, four of them, strode into place.</p>
+<p>“[Spell Attractor]! Br—”</p>
+<p><em>Thwoom.</em> The sound of their armor meeting a shower of huge [Light Arrows] rang, but Zail was partly deaf. He was just staring up, and his claws were moving faster.</p>
+<p><em>He didn’t look at the army below. </em>He just trusted they were in position. And his mind was staring at…</p>
+<p><em>Colors.</em></p>
+<p>Yellow to yellow. Erchirite Spears were capturing lightning. Viridian Axes against light spells. Sacchite Maces, cold against cold.</p>
+<p><em>But there was more to it. </em>The spells began to shift, and he saw the [Mages] pause—then start throwing different magic.</p>
+<p>They were no fools. Here came…</p>
+<p>[Burning Lightning]. Zail’s fingers almost missed, but he skipped two stones at once.</p>
+<p>“<em>Now! [Flameguard]!</em>”</p>
+<p>“<em>[Ground Lightning]!</em>”</p>
+<p>The Rubirel Guard and Erchirite Spears combined powers. Burning electricity ran down the spears, threatening to cook the Drakes holding them alive—but the armored Drakes in their red armor were engulfing them in an aura of crimson, nullifying the heat.</p>
+<p>It was just colors and combinations. Like someone twisting a Rubrix Square and knowing how the patterns lined up. Like a [Lady] choosing flowers that matched. Like someone playing on an instrument.</p>
+<p>It was the music Zail knew. Even with the Scintillation Counter, he heard screams as not all of a spell was captured, as people were injured. But he looked up as a hundred spells shot down and only a single one passed by the glowing strength of Salazsar: a hundred thousand shining gems.</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>“How—how are they doing that?”</p>
+<p>General Rodissc knew, intellectually, what they were doing. It had taken him minutes to realize this was the Scintillation Counter of Salazsar.</p>
+<p>It was just—he’d never seen anyone crazy enough to <em>use</em> it on a battlefield. The nerves you had to have to trust your troops to <em>counter</em> a spell that fast?</p>
+<p>It was not a Skill. To pull the counter off, you had to be able to see each spell, guess which combination of your troops’ armaments would ward it off, then signal to your troops to activate their powers.</p>
+<p>True, there was some leeway—a [Mana Shield] could block a lot of spells, but it was like playing arrow-scroll-sword at high speed and with a hundred permutations.</p>
+<p>Someone was doing it. He finally heard who his opponent was.</p>
+<p>“Wall Lord <em>Zail?</em> Wall Lord Eschowar? They’re retired. They’re <em>dead,</em> I thought—is he trying to avenge his son?”</p>
+<p>He had a moment of panic that he’d kill some old Wall Lord and escalate the war. Then the General’s worries mounted.</p>
+<p>“<em>Magic Thrower down! General, they’re firing on us!</em>”</p>
+<p>A panicked voice—Rodissc turned in disbelief, just in time to see a <em>second</em> magic thrower implode.</p>
+<p>A bolt from a ballista <em>slammed</em> into the magical arms of the enchanted device, and flaming magicore spread across the device as [Enchanters] hurled themselves away. The magic warped—and it detonated in a shower of corrosive magic.</p>
+<p>“<em>Barriers!</em>”</p>
+<p>“We’re trying, but the ballistae—”</p>
+<p>They were cranking out shot after shot, and a catapult was hurling greedy magicore, which sucked up the barrier spells.</p>
+<p>Fissival had failed to destroy Salazsar’s ranged weapons, and now the City of Gems was wracking up a terrible bill.</p>
+<p>Worse—arrows were landing amidst the unshielded forces. They came uphill, at great range, but one of the Wall Lords was using a Skill.</p>
+<p>“<em>Shields up! Shields—</em>”</p>
+<p>One of the [Magic Captains] had to remind his troops to raise their shields. The barrier-spells had gone down, and physical arrows were showering [Soldiers]. Rodissc shouted.</p>
+<p>“[Battlemages]! Vary your spells!”</p>
+<p>“<em>We’re trying, General! They’re blocking tri-element spells! Do we have permission to use cloud spells?</em>”</p>
+<p>“No—get me a Tier 5 [Serpent of the Five Elements]!”</p>
+<p>The [Mages] stopped their onslaught and began preparing a <em>big</em> spell. But as they did, Salazsar began hurling bolts at the [Mages]. Trying to disrupt the linked casting, and the arrow fire got worse—</p>
+<p>“<em>[High Mage] Itelln down! Restore the link! Restore the—</em>”</p>
+<p>“Cast the spell! Cast the—”</p>
+<p>A hundred-foot serpent of magic came roaring out of Fissival’s army, a glowing body of light and huge maw made of ice, whiskers of lightning trailing behind scales of fire. Clouds of darkness smog trailed from it—had someone added <em>darkness </em>magic? Who had authorized that? Was Mage Lord Ascoden’s darkness-project gaining ground? Either way—the serpent howled as it descended.</p>
+<p><em>[Serpent of the Five Elements]. </em>General Rodissc saw it roar down, and even Salazsar’s army couldn’t stop it.</p>
+<p>It went ploughing into the Drakes’ ranks, biting, burning and freezing and shocking as the Gemstone Regiments tried to slow it.</p>
+<p>Erchirite Spears siphoning off lightning, Rubirel Guard—he saw a squad of Topaz Shields fall over and crowed.</p>
+<p>“<em>Got them! </em>Got—<em>damn.</em>”</p>
+<p>The spell vanished after half a minute of tearing into Salazsar’s forces as it was finally nullified. Hundreds of wounded Drakes and Gnolls retreated, unable to heal with potions so conveniently.</p>
+<p>“<em>That worked. </em>Get me another [Serpent]! <em>[Scouts], find me the Wall Lord.</em>”</p>
+<p>General Rodissc felt in control again. He turned, and a voice crackled through his [Communication] spell.</p>
+<p>“Again? <em>General—we’re being torn to pieces.</em>”</p>
+<p>Then he looked behind him and realized something that jarred with his understanding of the battlefield. General Rodissc stared at lines of Drakes screaming and taking cover behind any obstacle they could find as arrows landed around them. Ballista bolts were <em>hammering</em> the ground as three magic throwers desperately maneuvered, trying to dodge and return fire.</p>
+<p>Three out of eight. Five were splintered ruins, and all <em>twelve</em> of Salazsar’s siege weapons were still hammering the ground. Then Rodissc took a look down at Salazsar’s army.</p>
+<p><em>Of all their visible damage, only the Tier 5 spell had even left a big mark. </em>And they were already reforming, rotating Gemstone Regiments into place.</p>
+<p>“Wait…are we losing?”</p>
+<p>Impossible. Fissival was losing a ranged war? <em>Fissival was losing the—</em></p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>Major Khorpe stared up as Zail and Eschowar conducted the Scintillation Counter. Fissival was losing.</p>
+<p>How long was it since they were reminded no one got a superiority in anything? One of the [Strategists] in his command was agog.</p>
+<p>“Major! They’re going to be torn to pieces! I had no idea the Scintillation Counter was so effective!”</p>
+<p>“They’re coming. Fixed defenses become a trap. They’re coming. Get ready.”</p>
+<p>He was shaking, staring at the sky. But he made himself <em>hold.</em> Zail was right. This was what they knew. The old [Major] could barely lift a sword—but a wand would do.</p>
+<p>These young Drakes and Gnolls didn’t know how to fight.</p>
+<p>“Pallass can do the same thing. A thousand exploding potions versus a hundred spells. Oteslia just summons swarms of insects. Now they’re coming. Get ready.”</p>
+<p>He was in charge of one of the three passes. Zail held the center; Eschowar was on the right. The old Drake was waiting. <em>Waiting for the charge.</em></p>
+<p>“Fissival on the charge?”</p>
+<p>Someone laughed, and Khorpe looked at them for a moment.</p>
+<p>“Have you ever seen a charging [Battlemage], boy? Be silent.”</p>
+<p>There were few things more terrifying than someone with nothing to lose coming towards you. The Drakes fell silent, and they were listening to him. <em>Listening…</em>because they sensed what he said mattered.</p>
+<p>Zail. Eschowar. The others had to be sensing it. This…Khorpe looked up, and someone screamed.</p>
+<p>“<em>Incoming! Watch o—</em>”</p>
+<p>The Scintillation Counter didn’t block everything. A twisting bolt of black darkness magic got past Eschowar. It came down in a spiral, and Major Khorpe looked up and sighed.</p>
+<p><em>This was also what he had waited for. What he expected. Let it be us. </em>Khorpe saw the magic reaching out, a twisting hand. He stepped sideways, and it dug a gash in the earth three dozen feet deep, slicing into the earth and leaving black tar.</p>
+<p>Four Drakes around him had gone down, slashed by the unpredictable arc of the spell. Khorpe looked down, and a gash cut a ‘v’ around his feet. It had trimmed his boot heels.</p>
+<p>The [Strategist] who’d been talking so excitedly picked herself up, then felt at her tail. She stared up—and the black line was right where she’d been standing until Khorpe had pushed her forwards.</p>
+<p>“Major? How did you—?”</p>
+<p>The old [Reconnaissance Major] stared up at the sky. His eyes gazed up into the firestorm of spells meeting the Gem Regiment’s magic.</p>
+<p>“I saw death coming. <em>Form up.</em>”</p>
+<p><em>Yes, indeed. Let it be us. We learned how to dodge. </em>His head bent down as he heard the roar coming down the hills.</p>
+<p>Fissival was charging.</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>Now, Fissival knew what was down there, and they had received the orders to charge. There was only one good order that General Rodissc could make. Well, that and surrender.</p>
+<p>They were backed into a corner. The same terrain that had sheltered them from being flanked was now a trap. Fissival had to come down, and Salazsar had the choke points. They were ready.</p>
+<p><em>But the City of Magic was ready to take them like a storm. </em>Had you ever seen a charging [Battlemage]? General Rodissc had ordered a full onslaught.</p>
+<p>The younger [Soldiers] saw this as an opportunity to correct the insult at the Meeting of Tribes. They’d take down Salazsar like the City of Gems had done to them.</p>
+<p>But the regular infantry? The veterans? They listened to the word filtering up to them.</p>
+<p>“Wall Lord Zail? Wall Lord Eschowar?”</p>
+<p>And they had a moment of fear, the same fear that Nerrhavia’s Fallen had learned at Reim. The fear young men learned.</p>
+<p>Old men in war. Old men and women with levels and nothing left to lose.</p>
+<p>“The Rubirel Guard’s holding the right flank with Lord Eschowar. <em>Retired Rubirel Guard.</em>”</p>
+<p>“Ancestors.”</p>
+<p>One of the [Veteran Magic Soldiers] whispered. He was grateful they were heading down the center, now. He had seen the two dozen Drakes wearing heirloom armor. Regular Salazsar [Soldiers] would rout or surrender. They would not.</p>
+<p>“<em>Fifteen seconds!</em>”</p>
+<p>They were marching downhill as the [Mages] tried to soften the advance. Coming downhill on treacherous terrain—but they were staring at the three passes. <em>Like thunder. They just had to come down like thunder. The Drakes tensed—</em></p>
+<p>“<em>Five, four, three, two…for the City of Magic!</em>”</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>Zail had put aside the command stones. He was walking forwards, ignoring his bodyguards and the [Soldiers].</p>
+<p>He had to do it. They didn’t want to die, none of them.</p>
+<p>It was funny. Being in a war reminded him he <em>didn’t</em> want to die, even now. Yes, he was doing it so Ilvriss would be safe.</p>
+<p><em>But he didn’t want to die. </em>He just wanted to be alive. And this…</p>
+<p>Helessia had told him he was an idiot, but she had looked at him with that familiar exasperation and half sat up in her bed. The effort that took…they had walked back in time, and she had been the exasperated one seeing him off for another war.</p>
+<p>Once again, he went. Ever again, one more time with the same feeling in his veins. Now, the [Soldiers] were cheering his name as he passed, staring at him. Half in disbelief, as if they feared he might fall over. But in this moment, as the foe poured down, they followed his back as he passed and their voices rose.</p>
+<p>“<em>Wall Lord! Wall Lord Zail! Zail, Zail—</em>”</p>
+<p>As if he was the one hero of this battlefield. As if they hadn’t been here before.</p>
+<p>Well, maybe they hadn’t. Maybe they didn’t know how it was done. So he’d show them.</p>
+<p>He was not, like his son, confident enough to charge into battle and let his strength of arms and levels sort out the rest.</p>
+<p><em>But there was a way to do it.</em></p>
+<p>Fissival came down the slopes, into the passes, howling so loud that even the loudest braggart of Salazsar went silent. They thundered towards the Drakes, holding the line. It was so <em>easy</em> to charge. That was why Ilvriss and young [Generals] did it all the time.</p>
+<p>Your heart in your throat, screaming your soul out at the enemy—a boy could fall on them like a lion. How did you <em>hold the line</em> with the same spirit?</p>
+<p>Not with a speech. Nor with any glorious line of shields cutting down the savage hordes. You did it like this.</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p><em>A single Drake, scales grey with age, a purple helm of Orichalcum on his head, walked out of the line of [Soldiers] and spears. A thousand Drakes were pouring down at him, feet pounding the ground, blades raised.</em></p>
+<p><em>Their eyes fixed on him as he walked out in front of his troops. Just past the tips of the spears. Not far, but so they all saw him.&nbsp;</em></p>
+<p><em>There was no time for speeches. Arrows were landing, and spells lit up the world.&nbsp;</em></p>
+<p><em>The Wall Lord of Salazsar held something out. It was a sword in a scabbard. The horizontal hilt of the blade hung in the air, and his weary, clawed hand grasped the hilt of the sword.</em></p>
+<p><em>He drew a bright blade, glowing with lightning, and traced a salute of Salazsar into the air. Then he held the blade at his side.</em></p>
+<p><em>There he stood. A lone figure standing before his army, waiting for them to come to him. Across the breach, a line of warriors wearing crimson armor held their ground behind a Wall Lord, eyes sparking with lightning.&nbsp;</em></p>
+<p><em>Voice like thunder. Blades dancing in the air as an army cheered their backs.&nbsp;</em></p>
+<p>Come challenge me. I have been here before and triumphed.</p>
+<p><em>Zail looked at the Drakes charging at him, and youth quailed and their steps faltered. A Swordmaster of Salazsar held his ground as the Army of Gems roared—and then the two sides met.</em></p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>Like someone ringing the gong of war a thousand times out of screams, cries, the clash of arms. Magic thundered in the air, and Fissival tried to chant a spell of victory.</p>
+<p>But they were just the City of Magic. They poured into the gaps and…slowed…</p>
+<p><em>Stopped.</em></p>
+<p>The charge ran into the Drakes and Gnolls around the old Wall Lords and halted. The army of Fissival tried to fight forwards, [Mages] attempting to cast at point-blank range. <em>They just had to pierce Salazsar’s lines. Then—then—!</em></p>
+<p>The screaming General Rodissc, like Zail, was no idiot who committed himself into the center of the fray. He was at the rear, demanding his [Mages] attack. They were just about ready to begin casting support spells when the First Violin played the first note.</p>
+<p>Symphony stood to the rear of Fissival. It had taken them a long time to get in position, but they had strict orders not to intervene until the charge, anyways.</p>
+<p>Scaling a mountain was hard at the Maestro’s age. But Linvios Reiscale, love him or hate his group of [Assassins]? He was a function of Salazsar.</p>
+<p>“[Concerto: Glass Rain Upon Issrysil’s Plains]. Encore, encore. First Violinist, take the left. They’re faltering. The rest of you, to Wall Lord Zail’s aid. <em>Now. Fortissimo!</em>”</p>
+<p>He drew the spectral rapier out of the air as dozens of elegant musician-assassins drew blades. Fissival’s command and rear lines looked back and heard Symphony as they descended on their rear.</p>
+<p><em>That was what Salazsar had that Fissival did not. Gems, color, and music. </em>The Maestro dove towards the [General] of Fissival, sword drawn, golden bell chiming purely for the sweet sound of it. So they remembered it was there.</p>
+<p>Every battle needed a flanking force. Every hero needed the consummate villain to look good and play his part well.</p>
+<p>He laughed as he came down towards the Drake holding wand and sword, turning with the whites of his eyes showing. The Maestro spoke:</p>
+<p>“<em>[Sword Art: Mourning Dove’s Lament].</em>”</p>
+<p>Three minutes later, Fissival’s army began to surrender en-masse.</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>Wall Lord Zail oversaw the capture and ransoming of the City of Magic’s army. Like most inter-city battles, it was not as bloody as it could be.</p>
+<p>But it was still war. ‘Not as bloody’ just meant one army hadn’t been executed to the last. The Wall Lord felt…tired.</p>
+<p>Victorious? Perhaps. Perhaps, when he looked around and realized neither Khorpe nor Eschowar nor Linvios were dead.</p>
+<p>Khorpe had a new scar on his face, but aside from that and Eschowar losing a bit of his tail, they’d lived.</p>
+<p>None of them were upset about that. Next time, they’d see. They were not invincible; it was just that they were damn tough to kill, and they intended to keep that reputation up as long as they could.</p>
+<p>“<em>Next time?</em>”</p>
+<p>Nerul stood there, having been chosen to oversee the ransom negotiations. Zail was massaging his back.</p>
+<p>“Of course. If Ilvriss leaves—someone has to go to war, and the current generation does it wrong. Do you think our counterparts in Fissival will just sit there?”</p>
+<p>“Are you suggesting we <em>escalate?</em> They send their old men, we send ours?”</p>
+<p>Nerul looked mildly horrified at the suggestion. Zail just glared at him.</p>
+<p>“We don’t want to. We don’t need to kill each other. Not this…something else, Nerul.”</p>
+<p>He was trying to explain. It was like Zail could sense a combination in the Rubrix Square or smell thunder in the air. <em>Soon, he would be needed.</em></p>
+<p>He felt younger. And indeed, people were listening and taking note, including his son. Or perhaps it was because they had no choice.</p>
+<p>“The Last Defenders of the Wall. A fanciful title. Are you going to be giving orders?”</p>
+<p>Nerul eyed the coalition of Drakes who had certainly subsumed a lot of political power—in addition to the power they had reminded people they had. Zail just stood there and looked back towards his beloved City of Gems, rising from the mountain.</p>
+<p>“One last time. One last time, and again, Nerul. One last time until the end. Until I am no longer actually useful.”</p>
+<p>He stood there, and Nerul could not remember Zail looking younger or older. The Drake [Diplomat] threw up his claws.</p>
+<p>“When is it our turn to lead our cities and this world forwards if old men like you kick around?”</p>
+<p>“When you deserve it. When you wrest it from us. But we’ll hold on until you break our fingers.”</p>
+<p>Zail pointed his sword at Nerul, and the [Diplomat] didn’t dignify that with an answer. But the old Drake smiled—and listened to the world agreeing.</p>
+<p>&nbsp;</p>
+<p>[Wall Lord of a Thousand Exchanges, Coin and Sword Level 44!]</p>
+<p>[Skill – My Strength, Regained (Ten Minutes) obtained!]</p>
+<p>&nbsp;</p>
+<p><span style="color: #ff9900;">[Fame – Remember My Name obtained!]</span></p>
+<p>&nbsp;</p>
+<p>He awoke, groggy sometimes, not knowing where he was or what was going on. But the voice, at least, reminded him. Zail lay in bed and stared up, thinking.</p>
+<p>He had heard Lord Eschowar had gained a more powerful Skill reclaiming his sublimity or something. But this would do.</p>
+<p>Zail closed his eyes and felt young again for ten minutes.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><strong>Author’s Note:</strong></p>
+<p>This chapter was written in one day, and edited the day thereafter. I worked Sunday…for quite some time, actually, but on the business-end of things and I won’t get into details.</p>
+<p>But this is an example of how the writing may go in the future. It’s still probably longer than I would prefer to write in one day, but the chapter is also paced ‘faster’, and re-learning how to do that wouldn’t be the worst.</p>
+<p>Anyways, I hope you enjoy your poll chapter…or the first part of it. As I said, whatever wins is an arc, so I knew this was the first chapter going into Ilvriss’ point-of-view…ironically not from his point of view.</p>
+<p>Each character deserves their hour or longer, and sometimes it feels like you pencil in the world but hint and leave enough room for a character to get their development. Movies and shorter-form stories have to rely on what we call stereotypes and cliches because they don’t have the room to flesh out every character, and sometimes that’s okay, but the luxury of a web serial is also a necessity if you keep running into the same characters. They’d better have more depth than a thimble or the world is shallow.</p>
+<p>That’s my brief writing notes and analogy towards drawing. Which I am not good at. No more gaming news for you. I re-beat Cassette Beasts, which I was drawn to, again, because it’s just relaxing to play. Also, I may be concerned my old graphics card will explode if I try anything more high-quality on it. Nothing’s failed dramatically since then…things are good?</p>
+<p>What a boring author’s note. Despite the busyness, I am feeling like I’m starting to establish a workflow that doesn’t kill me. I’m getting tired and plotting the chem chapter and this Ilvriss arc, but nothing’s critical aside from the heat and me waking up with sunlight, an objectionable phenomena. Hope you enjoyed and see you next chapter!</p>
+<p>&nbsp;</p>
+<p><strong>Jar by Anito!</strong></p>
+<div class="message-2CShn3 cozyMessage-1DWF9U groupStart-3Mlgv1 wrapper-30-Nkg cozy-VmLDNB zalgo-26OfGz" tabindex="-1" role="article" data-list-item-id="chat-messages___chat-messages-706763723301322763-725539207275347978" aria-setsize="-1" aria-roledescription="Message" aria-labelledby="message-username-725539207275347978 uid_1 message-content-725539207275347978 uid_2 message-timestamp-725539207275347978" aria-describedby="uid_3 message-reactions-725539207275347978">
+<div class="contents-2MsGLg">
+<div id="message-content-725539207275347978" class="markup-eYLPri messageContent-2t3eCI"><strong>Ko-Fi:</strong> <a class="anchor-1X4H4q anchorUnderlineOnHover-wiZFZ_" tabindex="0" title="https://ko-fi.com/anito" role="button" href="https://ko-fi.com/anito" target="_blank" rel="noreferrer noopener">https://ko-fi.com/anito</a></div>
+</div>
+<div id="message-accessories-725539207275347978" class="container-2sjPya"></div>
+</div>
+<p><a href="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/07/Jar-by-Anito.png?ssl=1"><img fetchpriority="high" decoding="async" data-attachment-id="15535" data-permalink="https://wanderinginn.com/2023/07/04/9-51-z/jar-by-anito/" data-orig-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/07/Jar-by-Anito.png?fit=7000%2C5500&amp;ssl=1" data-orig-size="7000,5500" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="Jar by Anito" data-image-description="" data-image-caption="" data-medium-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/07/Jar-by-Anito.png?fit=300%2C236&amp;ssl=1" data-large-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/07/Jar-by-Anito.png?fit=1024%2C805&amp;ssl=1" class="alignnone size-full wp-image-15535" src="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/07/Jar-by-Anito.png?resize=7000%2C5500&amp;ssl=1" alt="" width="7000" height="5500" srcset="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/07/Jar-by-Anito.png?w=7000&amp;ssl=1 7000w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/07/Jar-by-Anito.png?resize=300%2C236&amp;ssl=1 300w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/07/Jar-by-Anito.png?resize=1024%2C805&amp;ssl=1 1024w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/07/Jar-by-Anito.png?resize=768%2C603&amp;ssl=1 768w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/07/Jar-by-Anito.png?resize=1536%2C1207&amp;ssl=1 1536w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/07/Jar-by-Anito.png?resize=2048%2C1609&amp;ssl=1 2048w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/07/Jar-by-Anito.png?w=3000&amp;ssl=1 3000w" sizes="(max-width: 1000px) 100vw, 1000px" data-recalc-dims="1"></a></p>
+<p>&nbsp;</p>
+<p><strong>Mrsha Note, Ivolethe, and Nanette Reading by Bobo Plushie!</strong></p>
+<p><strong>Twitter:</strong> <a href="https://twitter.com/Bobo_Snofo">https://twitter.com/Bobo_Snofo</a><br>
+<strong>Ko-Fi:</strong> <a href="https://ko-fi.com/boboplushie">https://ko-fi.com/boboplushie</a></p>
+<p><a href="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/07/MrshaNote-by-Plushie.png?ssl=1"><img decoding="async" data-attachment-id="15536" data-permalink="https://wanderinginn.com/2023/07/04/9-51-z/mrshanote-by-plushie/" data-orig-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/07/MrshaNote-by-Plushie.png?fit=413%2C388&amp;ssl=1" data-orig-size="413,388" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="MrshaNote by Plushie" data-image-description="" data-image-caption="" data-medium-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/07/MrshaNote-by-Plushie.png?fit=300%2C282&amp;ssl=1" data-large-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/07/MrshaNote-by-Plushie.png?fit=413%2C388&amp;ssl=1" class="alignnone size-full wp-image-15536" src="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/07/MrshaNote-by-Plushie.png?resize=413%2C388&amp;ssl=1" alt="" width="413" height="388" srcset="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/07/MrshaNote-by-Plushie.png?w=413&amp;ssl=1 413w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/07/MrshaNote-by-Plushie.png?resize=300%2C282&amp;ssl=1 300w" sizes="(max-width: 413px) 100vw, 413px" data-recalc-dims="1"></a> <a href="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/07/Ivolethe-by-Plushie.png?ssl=1"><img decoding="async" data-attachment-id="15537" data-permalink="https://wanderinginn.com/2023/07/04/9-51-z/ivolethe-by-plushie/" data-orig-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/07/Ivolethe-by-Plushie.png?fit=529%2C685&amp;ssl=1" data-orig-size="529,685" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="Ivolethe by Plushie" data-image-description="" data-image-caption="" data-medium-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/07/Ivolethe-by-Plushie.png?fit=232%2C300&amp;ssl=1" data-large-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/07/Ivolethe-by-Plushie.png?fit=529%2C685&amp;ssl=1" class="alignnone size-full wp-image-15537" src="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/07/Ivolethe-by-Plushie.png?resize=529%2C685&amp;ssl=1" alt="" width="529" height="685" srcset="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/07/Ivolethe-by-Plushie.png?w=529&amp;ssl=1 529w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/07/Ivolethe-by-Plushie.png?resize=232%2C300&amp;ssl=1 232w" sizes="(max-width: 529px) 100vw, 529px" data-recalc-dims="1"></a> <a href="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/07/NanetteRead-by-Plushie.png?ssl=1"><img loading="lazy" decoding="async" data-attachment-id="15538" data-permalink="https://wanderinginn.com/2023/07/04/9-51-z/nanetteread-by-plushie/" data-orig-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/07/NanetteRead-by-Plushie.png?fit=655%2C728&amp;ssl=1" data-orig-size="655,728" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="NanetteRead by Plushie" data-image-description="" data-image-caption="" data-medium-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/07/NanetteRead-by-Plushie.png?fit=270%2C300&amp;ssl=1" data-large-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/07/NanetteRead-by-Plushie.png?fit=655%2C728&amp;ssl=1" class="alignnone size-full wp-image-15538" src="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/07/NanetteRead-by-Plushie.png?resize=655%2C728&amp;ssl=1" alt="" width="655" height="728" srcset="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/07/NanetteRead-by-Plushie.png?w=655&amp;ssl=1 655w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/07/NanetteRead-by-Plushie.png?resize=270%2C300&amp;ssl=1 270w" sizes="(max-width: 655px) 100vw, 655px" data-recalc-dims="1"></a></p>
+<p>&nbsp;</p>
+<p><strong>Old men and Consent by Brack!</strong></p>
+<p><strong>DeviantArt:</strong> <a class="anchor-1X4H4q anchorUnderlineOnHover-wiZFZ_" tabindex="0" title="https://www.deviantart.com/shurkin/gallery/" role="button" href="https://www.deviantart.com/shurkin/gallery/" target="_blank" rel="noreferrer noopener">https://www.deviantart.com/shurkin/gallery/</a></p>
+<p><strong>Ko-Fi:</strong> <a class="anchor-1X4H4q anchorUnderlineOnHover-wiZFZ_" tabindex="0" title="https://ko-fi.com/brack" role="button" href="https://ko-fi.com/brack" target="_blank" rel="noreferrer noopener">https://ko-fi.com/brack</a></p>
+<p><strong>Twitter: </strong><a class="anchor-1X4H4q anchorUnderlineOnHover-wiZFZ_" tabindex="0" title="https://twitter.com/Brack_Giraffe" role="button" href="https://twitter.com/Brack_Giraffe" target="_blank" rel="noreferrer noopener">https://twitter.com/Brack_Giraffe</a></p>
+<p><a href="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/07/OldMen-by-Brack.png?ssl=1"><img loading="lazy" decoding="async" data-attachment-id="15539" data-permalink="https://wanderinginn.com/2023/07/04/9-51-z/oldmen-by-brack/" data-orig-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/07/OldMen-by-Brack.png?fit=2010%2C1538&amp;ssl=1" data-orig-size="2010,1538" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="OldMen by Brack" data-image-description="" data-image-caption="" data-medium-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/07/OldMen-by-Brack.png?fit=300%2C230&amp;ssl=1" data-large-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/07/OldMen-by-Brack.png?fit=1024%2C784&amp;ssl=1" class="alignnone size-full wp-image-15539" src="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/07/OldMen-by-Brack.png?resize=2010%2C1538&amp;ssl=1" alt="" width="2010" height="1538" srcset="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/07/OldMen-by-Brack.png?w=2010&amp;ssl=1 2010w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/07/OldMen-by-Brack.png?resize=300%2C230&amp;ssl=1 300w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/07/OldMen-by-Brack.png?resize=1024%2C784&amp;ssl=1 1024w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/07/OldMen-by-Brack.png?resize=768%2C588&amp;ssl=1 768w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/07/OldMen-by-Brack.png?resize=1536%2C1175&amp;ssl=1 1536w" sizes="(max-width: 1000px) 100vw, 1000px" data-recalc-dims="1"></a> <a href="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/07/Consensual-by-Brack.png?ssl=1"><img loading="lazy" decoding="async" data-attachment-id="15540" data-permalink="https://wanderinginn.com/2023/07/04/9-51-z/consensual-by-brack/" data-orig-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/07/Consensual-by-Brack.png?fit=3000%2C3000&amp;ssl=1" data-orig-size="3000,3000" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="Consensual by Brack" data-image-description="" data-image-caption="" data-medium-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/07/Consensual-by-Brack.png?fit=300%2C300&amp;ssl=1" data-large-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/07/Consensual-by-Brack.png?fit=1024%2C1024&amp;ssl=1" class="alignnone size-full wp-image-15540" src="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/07/Consensual-by-Brack.png?resize=3000%2C3000&amp;ssl=1" alt="" width="3000" height="3000" srcset="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/07/Consensual-by-Brack.png?w=3000&amp;ssl=1 3000w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/07/Consensual-by-Brack.png?resize=300%2C300&amp;ssl=1 300w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/07/Consensual-by-Brack.png?resize=1024%2C1024&amp;ssl=1 1024w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/07/Consensual-by-Brack.png?resize=150%2C150&amp;ssl=1 150w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/07/Consensual-by-Brack.png?resize=768%2C768&amp;ssl=1 768w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/07/Consensual-by-Brack.png?resize=1536%2C1536&amp;ssl=1 1536w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/07/Consensual-by-Brack.png?resize=2048%2C2048&amp;ssl=1 2048w" sizes="(max-width: 1000px) 100vw, 1000px" data-recalc-dims="1"></a></p>
+<p>&nbsp;</p>
+<p><strong>Silvenia by Maxwell and butts, commisioned by Linu! And yes, an artist is named ‘butts’ on Discord who does all this amazing art and yes, I vaguely respect their name even though it forces me to write ‘butts’ Twitter’ as a serious part of my job.<br>
+</strong></p>
+<p><strong>Maxwell’s site: </strong><a href="https://max-art.carrd.co/">https://max-art.carrd.co/</a></p>
+<p><strong>butts’ Twitter:</strong> <a class="anchor-1X4H4q anchorUnderlineOnHover-wiZFZ_" tabindex="0" title="https://twitter.com/buttscord" role="button" href="https://twitter.com/buttscord" target="_blank" rel="noreferrer noopener">https://twitter.com/buttscord</a></p>
+<p><strong>butts’ Ko-Fi:</strong> <a class="anchor-1X4H4q anchorUnderlineOnHover-wiZFZ_" tabindex="0" title="https://ko-fi.com/buttsarts" role="button" href="https://ko-fi.com/buttsarts" target="_blank" rel="noreferrer noopener">https://ko-fi.com/buttsarts</a></p>
+<p><a href="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/07/SilveniaRinu-by-Maxswell.png?ssl=1"><img loading="lazy" decoding="async" data-attachment-id="15532" data-permalink="https://wanderinginn.com/2023/07/04/9-51-z/silveniarinu-by-maxswell/" data-orig-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/07/SilveniaRinu-by-Maxswell.png?fit=1980%2C2335&amp;ssl=1" data-orig-size="1980,2335" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="SilveniaRinu by Maxswell" data-image-description="" data-image-caption="" data-medium-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/07/SilveniaRinu-by-Maxswell.png?fit=254%2C300&amp;ssl=1" data-large-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/07/SilveniaRinu-by-Maxswell.png?fit=868%2C1024&amp;ssl=1" class="alignnone size-full wp-image-15532" src="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/07/SilveniaRinu-by-Maxswell.png?resize=1980%2C2335&amp;ssl=1" alt="" width="1980" height="2335" srcset="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/07/SilveniaRinu-by-Maxswell.png?w=1980&amp;ssl=1 1980w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/07/SilveniaRinu-by-Maxswell.png?resize=254%2C300&amp;ssl=1 254w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/07/SilveniaRinu-by-Maxswell.png?resize=868%2C1024&amp;ssl=1 868w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/07/SilveniaRinu-by-Maxswell.png?resize=768%2C906&amp;ssl=1 768w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/07/SilveniaRinu-by-Maxswell.png?resize=1302%2C1536&amp;ssl=1 1302w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/07/SilveniaRinu-by-Maxswell.png?resize=1737%2C2048&amp;ssl=1 1737w" sizes="(max-width: 1000px) 100vw, 1000px" data-recalc-dims="1"></a> <a href="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/07/SilveniaSip-by-butts-commissioned-by-Linu.png?ssl=1"><img loading="lazy" decoding="async" data-attachment-id="15533" data-permalink="https://wanderinginn.com/2023/07/04/9-51-z/silveniasip-by-butts-commissioned-by-linu/" data-orig-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/07/SilveniaSip-by-butts-commissioned-by-Linu.png?fit=3000%2C3000&amp;ssl=1" data-orig-size="3000,3000" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="SilveniaSip by butts, commissioned by Linu" data-image-description="" data-image-caption="" data-medium-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/07/SilveniaSip-by-butts-commissioned-by-Linu.png?fit=300%2C300&amp;ssl=1" data-large-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/07/SilveniaSip-by-butts-commissioned-by-Linu.png?fit=1024%2C1024&amp;ssl=1" class="alignnone size-full wp-image-15533" src="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/07/SilveniaSip-by-butts-commissioned-by-Linu.png?resize=3000%2C3000&amp;ssl=1" alt="" width="3000" height="3000" srcset="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/07/SilveniaSip-by-butts-commissioned-by-Linu.png?w=3000&amp;ssl=1 3000w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/07/SilveniaSip-by-butts-commissioned-by-Linu.png?resize=300%2C300&amp;ssl=1 300w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/07/SilveniaSip-by-butts-commissioned-by-Linu.png?resize=1024%2C1024&amp;ssl=1 1024w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/07/SilveniaSip-by-butts-commissioned-by-Linu.png?resize=150%2C150&amp;ssl=1 150w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/07/SilveniaSip-by-butts-commissioned-by-Linu.png?resize=768%2C768&amp;ssl=1 768w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/07/SilveniaSip-by-butts-commissioned-by-Linu.png?resize=1536%2C1536&amp;ssl=1 1536w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/07/SilveniaSip-by-butts-commissioned-by-Linu.png?resize=2048%2C2048&amp;ssl=1 2048w" sizes="(max-width: 1000px) 100vw, 1000px" data-recalc-dims="1"></a></p>
+<p>&nbsp;</p>
+<hr>
+<p><a href="https://wanderinginn.com/2023/07/01/9-50/">Previous Chapter</a> <span style="float: right;">Next Chapter</span></p>
+      </div>
+
+      <hr>
+          <span class="nav-previous">
+        <a href="https://wanderinginn.com/2023/07/01/9-50/" rel="prev"><span class="meta-nav">←</span> Previous Chapter</a>    </span>
+    <span class="nav-next" style="float: right" ;="">
+        <a href="https://wanderinginn.com/2023/07/09/9-52/" rel="next">Next Chapter <span class="meta-nav">→</span></a>    </span>
+    

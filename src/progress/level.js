@@ -3,53 +3,50 @@ import { calculateTotalWordCount } from './total-word-count.js';
 async function calculateLevelInfo() {
   try {
     const totalWordCount = await calculateTotalWordCount();
-    const xp = totalWordCount; // XP is equal to the total number of words read
+    const totalXp = totalWordCount; // Total XP is equal to the total number of words read
 
     // Calculate current level
-    const currentLevel = Math.floor(Math.sqrt(xp / 1000));
-
-    // Calculate total XP gained
-    const totalXpGained = xp;
+    const currentLevel = Math.floor(Math.sqrt(totalXp / 1000));
 
     // Calculate XP needed for next level
     const nextLevel = currentLevel + 1;
-    const totalXpForNextLevel = nextLevel * nextLevel * 1000;
-    const xpForCurrentLevel = currentLevel * currentLevel * 1000;
-    const xpForNextLevel = totalXpForNextLevel - xpForCurrentLevel;
+    const xpNeededForNextLevel = nextLevel * nextLevel * 1000;
+    const xpNeededForCurrentLevel = currentLevel * currentLevel * 1000;
+    const xpRemainingForNextLevel = xpNeededForNextLevel - xpNeededForCurrentLevel;
 
     // Calculate progress towards next level
-    const xpGainedForNextLevel = xp - xpForCurrentLevel;
-    const percentProgress = (xpGainedForNextLevel / xpForNextLevel) * 100;
+    const xpGainedTowardsNextLevel = totalXp - xpNeededForCurrentLevel;
+    const percentProgressToNextLevel = (xpGainedTowardsNextLevel / xpRemainingForNextLevel) * 100;
 
     return {
       currentLevel,
-      totalXpGained,
-      xpForNextLevel,
-      xpGainedForNextLevel,
-      percentProgress: Math.round(percentProgress * 100) / 100, // Round to 2 decimal places
-      totalXpForNextLevel,
+      totalXp,
+      xpRemainingForNextLevel,
+      xpGainedTowardsNextLevel,
+      percentProgressToNextLevel: Math.round(percentProgressToNextLevel * 100) / 100, // Round to 2 decimal places
+      xpNeededForNextLevel,
     };
   } catch (error) {
     console.error('Error:', error.message);
     return {
       currentLevel: 0,
-      totalXpGained: 0,
-      xpForNextLevel: 1000,
-      xpGainedForNextLevel: 0,
-      percentProgress: 0,
-      totalXpForNextLevel: 1000,
+      totalXp: 0,
+      xpRemainingForNextLevel: 1000,
+      xpGainedTowardsNextLevel: 0,
+      percentProgressToNextLevel: 0,
+      xpNeededForNextLevel: 1000,
     };
   }
 }
 
 if (import.meta.url === `file://${process.argv[1]}`) {
-  calculateLevelInfo().then(({ currentLevel, totalXpGained, xpForNextLevel, xpGainedForNextLevel, percentProgress, totalXpForNextLevel }) => {
+  calculateLevelInfo().then(({ currentLevel, totalXp, xpRemainingForNextLevel, xpGainedTowardsNextLevel, percentProgressToNextLevel, xpNeededForNextLevel }) => {
     console.log(`Current level: ${currentLevel}`);
-    console.log(`Total XP gained: ${totalXpGained}`);
-    console.log(`XP needed for next level: ${xpForNextLevel}`);
-    console.log(`XP gained for next level: ${xpGainedForNextLevel}`);
-    console.log(`Percent progress towards next level: ${percentProgress}%`);
-    console.log(`Total XP needed for next level: ${totalXpForNextLevel}`);
+    console.log(`Total XP: ${totalXp}`);
+    console.log(`XP remaining for next level: ${xpRemainingForNextLevel}`);
+    console.log(`XP gained towards next level: ${xpGainedTowardsNextLevel}`);
+    console.log(`Progress towards next level: ${percentProgressToNextLevel}%`);
+    console.log(`Total XP required for next level: ${xpNeededForNextLevel}`);
   });
 }
 

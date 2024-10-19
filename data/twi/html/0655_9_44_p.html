@@ -1,0 +1,677 @@
+
+
+          <span class="nav-previous">
+        <a href="https://wanderinginn.com/2023/06/07/9-43-l/" rel="prev"><span class="meta-nav">←</span> Previous Chapter</a>    </span>
+    <span class="nav-next" style="float: right" ;="">
+        <a href="https://wanderinginn.com/2023/06/10/9-45-gt/" rel="next">Next Chapter <span class="meta-nav">→</span></a>    </span>
+      <!-- <hr/> -->
+      <header class="entry-header">
+        <h1 class="entry-title">9.44 P</h1>
+                <button class="show-settings-btn" onclick="document.querySelector('#reader-settings-wrapper').classList.toggle('is-hidden')">
+          <img class="show-settings-btn-img" src="https://wanderinginn.com/wp-content/themes/solstice/assets/images/ui/reader-settings-button.webp">
+        </button>
+      </header>
+
+      
+<!-- Reader Settings -->
+<div id="reader-settings-wrapper" class="is-hidden">
+    <div id="reader-settings">
+        <header id="reader-settings-header">
+            <h2>Reader Settings</h2>
+            <button onclick="closeModal()">
+                <svg width="100%" height="100%" viewBox="0 0 33 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M16.5 30.75C24.0939 30.75 30.25 24.5939 30.25 17C30.25 9.40608 24.0939 3.25 16.5 3.25C8.90608 3.25 2.75 9.40608 2.75 17C2.75 24.5939 8.90608 30.75 16.5 30.75Z" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M20.625 12.875L12.375 21.125" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M12.375 12.875L20.625 21.125" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+            </button>
+        </header>
+
+        <fieldset id="fieldset-font">
+            <legend>Font</legend>
+
+            <div>
+                <label for="font-size-select">Size</label>
+                <select id="font-size-select" class="reader-settings-select" data-setting="reader-font-size" onchange="updateSetting(this.getAttribute('data-setting'), this.value);">
+                    <option value="10pt" class="reader-settings-option">10</option>
+                    <option value="11pt" class="reader-settings-option">11</option>
+                    <option value="12pt" class="reader-settings-option" selected="">12</option>
+                    <option value="13pt" class="reader-settings-option">13</option>
+                    <option value="14pt" class="reader-settings-option">14</option>
+                    <option value="16pt" class="reader-settings-option">16</option>
+                    <option value="18pt" class="reader-settings-option">18</option>
+                    <option value="20pt" class="reader-settings-option">20</option>
+                    <option value="22pt" class="reader-settings-option">22</option>
+                    <option value="24pt" class="reader-settings-option">24</option>
+                    <option value="26pt" class="reader-settings-option">26</option>
+                    <option value="28pt" class="reader-settings-option">28</option>
+                    <option value="30pt" class="reader-settings-option">30</option>
+                    <option value="36pt" class="reader-settings-option">36</option>
+                    <option value="42pt" class="reader-settings-option">42</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="font-family-select">Family</label>
+                <select id="font-family-select" class="reader-settings-select" data-setting="reader-font-family" onchange="updateSetting(this.getAttribute('data-setting'), this.value);">
+                    <optgroup label="Sans Serif">
+                        <option class="reader-settings-option" value="OpenSans, sans-serif" selected="">Open Sans</option>
+                        <option class="reader-settings-option" value="Arial, Helvetica, sans-serif">Arial</option>
+                        <option class="reader-settings-option" value="Roboto, sans-serif">Roboto</option>
+                    </optgroup>
+                    <optgroup label="Serif">
+                        <option class="reader-settings-option" value="Playfair, serif">Playfair</option>
+                        <option class="reader-settings-option" value="EBGaramond, serif">Garamond</option>
+                        <option class="reader-settings-option" value="'Times New Roman', Times, serif">Times New Roman</option>
+                    </optgroup>
+                    <optgroup label="Other">
+                        <option class="reader-settings-option" value="OpenDyslexic">OpenDyslexic</option>
+                        <option class="reader-settings-option" value="HennyPenny">Henny Penny</option>
+                    </optgroup>
+                </select>
+            </div>
+            <div>
+                <label for="font-weight-select">Thickness</label>
+                <select id="font-weight-select" class="reader-settings-select" data-setting="reader-font-weight" onchange="updateSetting(this.getAttribute('data-setting'), this.value);">
+                    <option class="reader-settings-option" value="300" selected="">Thin</option>
+                    <option class="reader-settings-option" value="400">Regular</option>
+                    <option class="reader-settings-option" value="500">Thick</option>
+                </select>
+            </div>
+        </fieldset>
+
+        <fieldset id="fieldset-spacing">
+            <legend>Spacing</legend>
+            <div>
+                <label for="margins-select">Page Width</label>
+                <select id="margins-select" class="reader-settings-select" data-setting="reader-article-width" onchange="updateSetting(this.getAttribute('data-setting'), this.value);">
+                    <option value="320px" class="reader-settings-option">Extra Narrow</option>
+                    <option value="500px" class="reader-settings-option">Narrow</option>
+                    <option value="680px" class="reader-settings-option" selected="">Medium</option>
+                    <option value="1000px" class="reader-settings-option">Wide</option>
+                    <option value="1200px" class="reader-settings-option">Extra Wide</option>
+                    <option value="100%" class="reader-settings-option">Max</option>
+                </select>
+            </div>
+            <div>
+                <label for="line-spacing-select">Line</label>
+                <select id="line-spacing-select" class="reader-settings-select" data-setting="reader-line-height" onchange="updateSetting(this.getAttribute('data-setting'), this.value);">
+                    <option class="reader-settings-option" value="1.2">Small</option>
+                    <option class="reader-settings-option" value="1.625" selected="">Medium</option>
+                    <option class="reader-settings-option" value="2.2">Large</option>
+                    <option class="reader-settings-option" value="3.5">Extra Large</option>
+                </select>
+            </div>
+            <div>
+                <label for="paragraph-spacing-select">Paragraph</label>
+                <select id="paragraph-spacing-select" class="reader-settings-select" data-setting="reader-paragraph-spacing" onchange="updateSetting(this.getAttribute('data-setting'), this.value);">
+                    <option class="reader-settings-option" value="0.5em">Small</option>
+                    <option class="reader-settings-option" value="1.625em" selected="">Medium</option>
+                    <option class="reader-settings-option" value="2.75em">Large</option>
+                    <option class="reader-settings-option" value="4.25em">Extra Large</option>
+                </select>
+            </div>
+        </fieldset>
+        <div class="ml-5 mb-4">
+            <label for="theme-select">Theme</label>
+            <select id="theme-select" class="reader-settings-select" data-setting="reader-theme" onchange="updateSetting(this.getAttribute('data-setting'), this.value);">
+                <option class="reader-settings-option" value="reader-theme-grey" selected="">Dark Grey</option>
+                <option class="reader-settings-option" value="reader-theme-blue">Dark Blue</option>
+                <option class="reader-settings-option" value="reader-theme-black">Black</option>
+                <option class="reader-settings-option" value="reader-theme-white">White</option>
+                <option class="reader-settings-option" value="reader-theme-sepia">Sepia</option>
+            </select>
+        </div>
+        <button id="reset-settings-btn" onclick="resetSettings()">Reset To Default</button>
+        <!-- <div> -->
+        <!-- </div> -->
+
+
+    </div>
+</div>
+      <div class="entry-content">
+        <p><strong>(I am releasing a chapter a day rather than one every 3-4 days. Make sure you’re on the right one and you haven’t missed one! –pirateaba</strong><strong>)</strong></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>Persua Mavva finally reached Invrisil and hesitated at the door to The Wandering Inn. It was as cold as anything, and when she was able to transit through to the inn, it occurred to her that a warm drink inside would be really nice.</p>
+<p>But the fear of running into anyone who remembered her made her slightly glad the inn was blocked off.</p>
+<p>Then angry when the Gnoll told her that she couldn’t go to the beach.</p>
+<p>“Wait, what do you mean? Warm? <em>I’m almost a Courier—</em>”</p>
+<p>“<em>Next!</em> Where are you going? You can’t stay here.”</p>
+<p>“P-Pallass. I’m supposed to go to The Adventurer’s Haven. I was told I could get there by door—”</p>
+<p>And thus bypass an eight-hundred mile run, much to Persua’s relief. She was happy—until Liska gave her a sympathetic groan.</p>
+<p>“Ooh. Hard luck.”</p>
+<p>“Wait? Why hard?”</p>
+<p>Liska was consulting a map. She pointed to a dot as Persua stared at it blankly—she had never been south of the Bloodfields, and she’d only gotten that far once.</p>
+<p>“It <em>just</em> went out of range. So what you’ve gotta do is go to the Runner’s Guild in Pallass, <em>then</em> ask them where the Haven is now. It’s probably only a hundred miles past the City of Inventions, and it doesn’t move that fast.”</p>
+<p>“A <em>hundred—</em>”</p>
+<p>She shrieked, but Liska helpfully opened the door.</p>
+<p>“Good luck!”</p>
+<p>Only when Persua had dashed through, with a scream, did Liska snap her fingers.</p>
+<p>“Damn. Forgot to tell her about the passport or she’ll get arrested. Eh. She’s almost a Courier. I’m sure she knows.”</p>
+<p>Liska happily went back to reading her book. If Erin Solstice could have given Liska an employee review on the spot for her conduct, she probably would have offered Liska an immediate bonus.</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>The agony of random Runners aside, the second day of the beach was actually more hyped up than the first. Mrsha went racing into the beach with Nanette, and they realized it hadn’t been a dream.</p>
+<p>“Beach. <em>Beach! Beaaaach!</em>”</p>
+<p>In fact, day two had seen Erin change it up so now the entire garden was water—and there were ‘islands’ you could swim to. None were too far apart, but the girls dove into the water—and made it onto another island until someone picked up both girls and <em>tossed</em> them into the surf.</p>
+<p>“Hey! What are you doing?”</p>
+<p>“The Grand Strategist is resting on this island. Please occupy yourselves elsewhere.”</p>
+<p>A Drake [Major] retorted, claws folded behind his back. Chaldion was already here! Nanette and Mrsha stared at the VIP-island. They’d claimed everything.</p>
+<p>Chaldion looked up from his morning paperwork and a bowl of sliced mangos. He’d demanded even fresher fruits from Oteslia.</p>
+<p>“Major. You’re securing my working vacation, aren’t you?”</p>
+<p>The Drake was wary in the inn, because he had seen the Trials of Zeladona and even bled there. He saluted Chaldion smartly.</p>
+<p>“Yes, Grand Strategist! I will make sure you are not disturbed.”</p>
+<p>“Well, you’ve done a poor job of it so far. Consider the psychology of your opponents, fool.”</p>
+<p>“Sir?”</p>
+<p>That was when the first mudball hit the [Major] in the head. Chaldion sighed as the outraged Nanette and Mrsha ran back to the inn and got reinforcements. He lifted a claw as the Drakes around him shouted.</p>
+<p>“Incoming fire! Take cover, take—”</p>
+<p>“If you harm them, we’ll be ejected. [Projectile Shield].”</p>
+<p>Mudballs whizzed past him as he continued his breakfast. Chaldion did not deign to protect his crew. Nor did he react in an entertaining way, so the children left him alone. The Pallassians eventually tossed back some mud and low-tier water spells in the misguided assumption the kids would get tired. They were shown the error of their ways when, after a lull, the first naval craft—a floating table crewed by Dread Captain Ekirra—began assaulting them at range.</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>It just didn’t stop. And Erin’s beach was actually having an economic impact in how many people who had decided they were too good for work.</p>
+<p>One of them was Kevin. He had grown up in San Francisco along the beaches, and he had done it all. Surfing, skateboarding, working at a bicycle shop to fund, well—</p>
+<p><em>Having fun.</em> A youth where he thought about a permanent career and a future after he turned thirty or something.</p>
+<p>He had buckled down and gotten to work on something he found fun and rewarding, Solar Cycles, but this?</p>
+<p>Hedault got it. The two were working on a surfboard, or at least, a kind of ultra-stable board for the smaller garden’s water and waves, and Kevin was imagining trying out a <em>magical surfboard at sea.</em> In fact, Hedault was speculating that he could add in a native thruster spell to the board so it could self-propel.</p>
+<p>This was living. This was life. Kevin only stopped luxuriating in it all when someone knocked on his door as he was changing for the beach.</p>
+<p>Shirtless, he appeared, and Emessa nearly slapped him in the face.</p>
+<p>“<em>Are you naked?</em>”</p>
+<p>“No! It’s beach apparel! Sorry! Emessa?”</p>
+<p>Pelt’s apprentice, like many Drakes, was on the Lyonette side of nudity, unlike Gnolls. Kevin’s heart sank when he saw Emessa. The [Blacksmith’s Apprentice] folded her arms.</p>
+<p>“Pelt’s throwing a fit. He wants the latest specification for all the bicycles, and he’s sick of making the ball bearings. We’ve done over a <em>thousand,</em> and they’re annoying to check.”</p>
+<p>“Oh, shit. The ball bearings!”</p>
+<p>Kevin’s face fell. One of the functions of modern industry was the tiny machinery—and ball bearings were a very useful tool you could put in almost anything that rotated. Which was like…everything.</p>
+<p>The problem was no [Smith] wanted to make them, even if they could reliably make the tiny steel orbs. And yes—you could make them badly.</p>
+<p>“But the beach. Emessa, I sent a Runner to Pelt the moment I heard. The <em>beach</em> is out, and—haven’t you seen it?”</p>
+<p>“The what?”</p>
+<p>Emessa smelled like soot, she had on her apron, and the forges were already getting hot in Esthelm. She had no time for…for…</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>The Drake stood on the beach instead of in the biting cold and blast heat of a furnace. She wiggled her claws in the sand and saw a group of children shooting water spells at some Drakes in the distance. Someone passed her a milkshake.</p>
+<p>“This is a beach?”</p>
+<p>Kevin gave her a huge smile, and Emessa suddenly wondered when her next break was. Today, right? She didn’t always ask, but if it was just ball bearings, some of the other apprentices could handle her master, even in a mood. In fact, she’d twisted her arm, and she needed the next week off.</p>
+<p>Right now.</p>
+<p>It called to her, this sunny paradise, and then Emessa saw the Wishdrinks staff undressing for work, and she decided she’d broken her leg too.</p>
+<p>But the Drake’s sudden sway on the beach and Kevin’s enthusiasm were tempered, like a barrel of oil quenching hot steel, by one thought. Both looked at each other and thought of one person who respected neither beach nor Erin’s authority—at least in his smithy—nor the weather.</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>“A <em>what?</em> You want me to go to a Grandfathers-damned <em>beach? </em>We have work to do!”</p>
+<p>Pelt roared over the <em>clang</em> of hammers in his smithy. And he was Master of the Forge, [Hammer of a Hundred Metals], <em>Pelt.</em></p>
+<p>He looked so much better than when Kevin had first met him. Even then, it had been after Erin had befriended the cantankerous Dwarf, but the sorry drunkard had shaped up. He was still a fairly squat, burly man, as a Dwarf was, but he looked—fitter.</p>
+<p>He smelled of metal, not vomit. His eyes had a focus like the steel he was producing, and he had apprentices and—well, systems.</p>
+<p>“<em>Master Pelt! Quenching?</em>”</p>
+<p>Pelt turned and roared.</p>
+<p>“<em>Fifty-eight seconds!</em>”</p>
+<p>The blade went back in the fire to temper. Another apprentice was setting up the smelter for another puck of steel to be melted down, but they lifted a hand, and a [Smith] went to check it to make sure the ore was good enough.</p>
+<p>If it was bad when it got to Pelt, he’d just crack the entire crucible and chew out the [Smiths]. But he let them fail and sweat over the purity of steel, because they had to learn to make it right.</p>
+<p>Unlike the Dwarf who had flinched at any imperfection, he was once again teaching. He was not the Pelt who had once taken this world by the beard and shaken it for all the fame, glory, and gold for his creations.</p>
+<p>This one was still haunted by his failure, which Emessa only half-knew. But he was teaching again, and Esthelm was quickly becoming a city of smiths. Even the other, competing smithies had instead asked if they could learn from Pelt’s apprentices or journeymen.</p>
+<p>He had, as of yet, declared no one as an independent master he recognized as being capable of owning a smithy and stamping their own name on their work. But Emessa was one of the best, and she had graduated to a rank far beyond her Pallassian tenure.</p>
+<p>“You’re getting in the way of my work, Kevin. All of it, not just the damn bicycles <em>you</em> keep demanding parts for. Emessa’s meant to do the mithril-work, and now you want one of my two mithril-smiths to take a ‘vacation’?”</p>
+<p>Pelt was roaring at Kevin, and the young man was doing his best to placate and wheedle. He was good at appeasing personalities, usually.</p>
+<p>“Pelt, dude. I get that I’m being a pain, but it’s a <em>beach.</em> It’s warm and fun, and there’s free drinks everywhere.”</p>
+<p>“Free?”</p>
+<p>“For you? Erin’s best friends are all getting it. Solar Cycles would foot the bill even if she wouldn’t.”</p>
+<p>That made Pelt hesitate. Emessa tried to help.</p>
+<p>“And there are lots of people without—I mean, in states of undress, Master. Fresh water, no snow…and seafood! I mean, more than just fish! I saw a lobster being cooked up!”</p>
+<p>The other [Smiths] had slowed in their work, if they weren’t actually hammering hot metal, and were listening hard and picturing it. They worked insanely hard under Pelt, and they were proud of their advancing levels.</p>
+<p>Emessa herself had passed Level 30, and she was now a [Mithril Blacksmith’s Apprentice]. For some reason, she’d kept the last bit, and her master was both annoyed and amused by it. But she had to admit…</p>
+<p>Pelt was scratching at his huge beard. He ran a hand over his balding head, where his hair had vanished except for the back third, and muttered.</p>
+<p><span style="font-size: 72.7272727273%!important;;">“…so she’s making beaches now. How long until there’s a door to the outhouse for every part of her inn, that damn Antinium has a Minotaur ballista, and she builds a tower for a pet [Archmage]?”</span></p>
+<p>“Master Pelt?”</p>
+<p>The Dwarf glanced up, and the hopeful Kevin and Emessa looked at him. He gave them a long look, then folded his arms.</p>
+<p>“And?”</p>
+<p>“And what? You’ll come?”</p>
+<p>“<em>No!</em>”</p>
+<p>His roar was like a hammer coming down on the fingers of hope reaching for the cookie jar. Pelt pointed a finger at both Kevin and Emessa.</p>
+<p>“Do I look like I want to eat crustaceans when I have work? Do I look like I haven’t seen a metalrot-damned <em>beach</em> before? I’ve done all the ‘fun’ things on a beach.”</p>
+<p>He made huge air-quotes.</p>
+<p>“Dead gods, I’ve spent six months on them forging metal for fun with scrap washed up on shore. I’ve eaten so much seaweed from those Drathian kitchens I started shitting green.”</p>
+<p>“Y-you have?”</p>
+<p>Kevin’s face fell. Pelt gave him a sinister smile.</p>
+<p>“We spent an entire summer training in the Drathian Empire. Do you think good [Smiths] don’t pilgrimage to train with masters? I’ve been to every continent.”</p>
+<p>“You <em>have?</em>”</p>
+<p>“Yup. We stole the secrets of Naq-Alrama steel from those Tannousin bastards, and they chased us across half the desert. Baleros with the Dullahans—too formal by half. Drath was fine, except for the Forgemaster, who <em>hated</em> seafood. Hah!”</p>
+<p>Pelt brightened at the memory.</p>
+<p>“We were all having fun, but he was vomiting clams each night. Tax—”</p>
+<p>His face went flat suddenly, and Emessa flinched as she recognized the familiar signs of memory on her master. <em>His old team of smiths?</em></p>
+<p><em>He had to be referring to the legends of Deríthal-Vel, the best [Smiths] of the modern era. </em>The group that had earned him his title as Master Pelt. She knew some—like Demastel, the smith who had influenced Demas Metal and the entire tribe. Outcasts who’d fled after some great disgrace that Pelt had never told her the story of, not in full.</p>
+<p>But she knew enough, and the name that he had almost uttered was a name so famous that if you spoke about great smiths, he would come up.</p>
+<p>Forgemaster Taxus. The only Dwarf more senior than Pelt. Dead, she assumed, for decades. But then—Dwarves lived a long time.</p>
+<p>Yet Pelt did not break to pieces like last time. He stopped, his face went pale, but he forced the words out slowly, a hiss of sound.</p>
+<p>“…Taxus. He always hated island-food. I quite liked it. Does Erin Solstice have any…what’s the word? Sashi…mi? Sashimi stuff? Raw fish and rice.”</p>
+<p>“You mean sushi? The rolled up stuff with seaweed and fish?”</p>
+<p>Kevin guessed. Pelt nodded and licked his lips.</p>
+<p>“The good stuff, made by a [Sushi Chef].”</p>
+<p>“…I think Imani makes some, and Lasica. Oh, and Lyonette levelled up and got [Seafood Cooking]! So she’s helping make some of the seafood up.”</p>
+<p>Pelt raised his brows and folded his arms.</p>
+<p>“So <em>no</em> experts from Drath?”</p>
+<p>“No, but—”</p>
+<p>The Dwarf laughed in Kevin’s face.</p>
+<p>“Well, tell Erin Solstice that until she gets something <em>worth eating,</em> I’m not going. Get back to work!”</p>
+<p>“But the sun! The surf!”</p>
+<p>Pelt turned away and raised his fists over his head.</p>
+<p>“<em>Flames! Put more charcoal in the forge-fires! </em>You want to sit in the sand and stare at crabs, Apprentice? The smell of steel is the only thing you need! I want to hear those anvils <em>ring!</em>”</p>
+<p>A cackling Dwarf stood there, roaring at the smiths, who groaned and put their hammers to metal. He turned, grinning like a ruthless taskmaster at Emessa and Kevin. Then, the revitalized Pelt demonstrated a new part of his personality that even Emessa hadn’t seen before.</p>
+<p>His voice dropped, became gentle, and almost <em>purred.</em></p>
+<p>“You want to take a vacation? Go ahead, Apprentice. I don’t want to overwork a talented smith.”</p>
+<p>“R-really, Master? You mean it? You won’t fire me?”</p>
+<p>She hesitated, suspecting a trick. Which there obviously was, but Pelt sounded sweet and concerned.</p>
+<p>“Oh, <em>no</em>, Emessa. I would never fire you. You have half the forge running, and every smith deserves a break. Go on. Have your rest all week.”</p>
+<p><em>Run. Run now, and don’t look back. </em>Kevin was already heading down the street, and Emessa took a step back. She turned away as Pelt shooed her off. Then he dropped the hammer.</p>
+<p>“You there. Go find Raekea from Liscor. She’s wanted to back us up, hasn’t she? I’ll pay for whatever orders we delay. Oh, and get Lacchius and tell him he’s working in Emessa’s stead. No, wait. Tell both they can go to the beach but I could use their help. <em>If</em> they want. No rush.”</p>
+<p>An apprentice hesitated at the generous offer. Emessa slowed, and Kevin turned suspiciously as he got on his bike.</p>
+<p>“Master? What if both don’t want to come?”</p>
+<p>Pelt folded his hands and stared at his anvil, a monstrously big one he’d set up on reinforced ground with some as-yet unused functions of the forge. He hadn’t even smithed in a quarter of the techniques from Dwarfhome; Pelt claimed that there wasn’t even the right equipment here to perform some things like Vacuum Forging. But he was in talks with even Valeterisa to upgrade his forge and keep expanding.</p>
+<p>“We have to let them have their beach-time. If they can’t make it, they can’t. Who am I to tell them when the time to hammer is? Me? Just let them know, oh, that I’ll be forging Orichalcum today.”</p>
+<p>Emessa’s head snapped around, and the hammering at the anvils missed a beat. The apprentice wavered.</p>
+<p>“O-Orichalcum?”</p>
+<p>Pelt dusted his fingernails on his vest.</p>
+<p>“The art’s been lost. Demas Metal is closest to remembering it, but I’ll bet most smithies don’t even know how it’s done. Some <em>could</em> be made, and if Adamantium’s coming from Salazsar—oh, Apprentice, what are you doing here? Go on to your vacation.”</p>
+<p>Pelt turned theatrically and saw Emessa. He shooed her off, a look of concern on his face. Then he grinned like the devil of a forge.</p>
+<p><em>That monster.</em> Emessa had a vision of doing body-shots off a handsome someone at night. She hadn’t had fun, socially, in an age. But Orichalcum?</p>
+<p>“I—I—”</p>
+<p>“Apprentice, what are you doing? Go on. Have fun.”</p>
+<p>Pelt’s earnest expression returned, and he gave her a look of concern.</p>
+<p>“You look stressed. You need time off. Someone go get me my Chest of Holding. Did I mention that Orichalcum requires a secret mixture? It’s not a mined metal, like Mithril or Adamantium. That’s why I laughed my ass off at all the [Miners] who always ask me about it.”</p>
+<p><em>It was an alloy?</em> No wonder he’d nearly shat himself laughing whenever Emessa had asked him before. Pelt turned away, and when he heard Emessa’s defeated sigh—</p>
+<p><em>He started laughing.</em></p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>“So, we’re engaged, if you didn’t know. Maughin and I. I know, it’s fast, but we’ve hit it off. Really.”</p>
+<p>Jelaqua was talking to Erin and Numbtongue, and the Hobgoblin raised his brows as she caught them up over the central island.</p>
+<p>“Really? Getting married?”</p>
+<p>“Yep. Aw, I’m blushing. Don’t grin like that!”</p>
+<p>The Selphid turned orange. She was pale-skinned, and Erin doubted her dead, Human body could tan, but the Selphid put her hands to her cheeks, and she seemed to be enjoying the beach to no end.</p>
+<p>“It’s been a change. For one thing, I’m wearing just female bodies. You know how it is, you adapt. But the <em>real </em>change is being part of Pallassian society.”</p>
+<p>Her face fell a bit, and Numbtongue offered a perceptive comment. The [Bard] eyed the Dullahans that Maughin had brought, who were reserved, not wanting to show skin—but relaxing and putting their heads together on a beach as their bodies played in the surf.</p>
+<p>“Seems tough.”</p>
+<p>“It—is. A bit. But Maughin doesn’t care. And he’s so sweet. He proposed, actually.”</p>
+<p>Erin was amazed. Marriage? It was so soon, but Jelaqua seemed certain!</p>
+<p>“Really? That’s so—<em>huge</em>, Jelaqua!”</p>
+<p>In some senses literally. Maughin was the biggest Dullahan that Erin had met in person, and it seemed like an odd match. But hey. Grimalkin and Pryde? Jelaqua leaned over and whispered.</p>
+<p>“Well, to be honest, it’s hard for him to date around Dullahan society since he’s at the top, and it’s all power imbalance. Plus, he’s far from home. And he’s practically a War Walker in stature. So, physically, Selphids are the only workable match. I mean, <em>physically—</em>”</p>
+<p>Numbtongue grinned hugely.</p>
+<p>“Ooh.”</p>
+<p>“Stop. I get it.”</p>
+<p>Erin put her hands over her ears, and Jelaqua laughed, but she looked happy. The real question was—what happened to the Halfseekers? She sighed when Erin asked that.</p>
+<p>“Seborn’s probably going back to sea. Moore? He’s sort of moved back from wanting to adventure all the time, and Ulinde and he are a couple. Poor guy, he’s head-over-heels, and I think he’s never really fallen for someone seriously. It’s sweet, though, but…I can’t keep adventuring.”</p>
+<p>“You going to be a mother?”</p>
+<p>“Selphids don’t work like that. But hey, we <em>could</em> adopt a Dullahan or a cute Drake, Numbtongue.”</p>
+<p>“Want a cute Goblin? We have lots.”</p>
+<p>Jelaqua and Numbtongue laughed and nudged each other. Then Jelaqua grew serious.</p>
+<p>“Really, I don’t know what I’ll do. Maybe work as a kind of bodyguard in Pallass? I’m not exactly poor after the Village of the Dead raid, and Maughin’s now the top-smith in Pallass. We’re a great match! Aside from his mistress.”</p>
+<p>“His <em>what?</em>”</p>
+<p>Erin and Numbtongue focused on the Selphid, and Jelaqua’s dark look grew sinister.</p>
+<p>“I thought of throwing ‘her’ off the walls, but he’d sulk forever. He’s always working on her. And he claims it’s not romantic, but ever since Pelt gave her to Maughin…”</p>
+<p>“Wait. Waitwaitwait. You mean—the block of Adamantium?”</p>
+<p>Jelaqua took a huge swig of her drink and glowered around.</p>
+<p>“Yep! And his forge! If I’m a workaholic <em>sometimes</em>, I can’t drag him away from the anvil for anything when Maughin is into a project! He’ll work on that stupid Adamantium when he thinks I’m distracted, but I’m number one. That’s why we’re on the beach together. He gets that he needs breaks. Right, Maughin?”</p>
+<p>Jelaqua turned to her future husband, and her smile became concerned as she looked around and the huge, armored Dullahan was nowhere in sight.</p>
+<p>“Maughin?”</p>
+<p>“Maybe he went to the bathroom?”</p>
+<p>Numbtongue suggested. Jelaqua nodded, clearly unconvinced, and Erin spotted Kevin running up.</p>
+<p>“Erin! Erin, you have to help! Pelt’s holding everyone hostage! He’s forging Orichalcum to prevent Emessa from going to the beach, and Raekea, Maughin, and—”</p>
+<p>“<em>Deyaaah! You bastard! </em>Maughin!”</p>
+<p>Jelaqua grabbed Kevin and <em>tossed</em> him thirty feet into the water. Then she went storming out of the garden. Numbtongue sipped longer from his drink.</p>
+<p>“Hm. Marriage seems too soon. Too many mistresses.”</p>
+<p>Erin looked at Numbtongue. The oblivious Hobgoblin just stood there, tsking at Jelaqua, so Erin took matters into her own hand.</p>
+<p>“Garden—gigantic sand fist.”</p>
+<p>“<em>Wh—</em>bufegh.”</p>
+<p>That was the sound of a sand fist punching Numbtongue into the water where he landed on top of Kevin. Erin nodded at Garia and Octavia, who both gave her a thumbs-up.</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>Now, a best laugh ranking within Liscor. A certain [Spy of the Captured Moment] was working on a new report.</p>
+<p>Not one about actual, confidential information, but something stupid.</p>
+<p>Because stupid sold. They’d already made, amazingly, over a hundred and sixty gold pieces for selling that recording of the [Princess] and [Lady] trying to win a brawl against a fish.</p>
+<p>And gotten two levels and reached Level 30.</p>
+<p>It had definitely been worth taking the seemingly random contract and spying in Liscor. Oh, a few close calls had happened, but Nollesc, the half-Clam Drake, had found a calling. He had, with great effort, obtained recordings to substantiate his list.</p>
+<p>&nbsp;</p>
+<p><em>Number </em><span style="text-decoration-line: line-through;"><em>2</em></span><em> 3. Ryoka Griffin. Laughs like an evil villainess. Often finds amusement in children or people suffering minor accidents. See attached sound-crystal, tonality C3.</em></p>
+<p><em>Number 2. Pelt Dooristone. Takes great amusement when tormenting his fellow smiths. Laughs like the bellows of doom in the dark. See attached sound-crystal, tonality D3.</em></p>
+<p>&nbsp;</p>
+<p>He was finding an odd amount of inspiration for his descriptions. But Nollesc doubted he could beat the number one entry. In fact, no Riverfarm [Witch] had even broken into the top five, a huge blow to their pride if this leaked. But one of their number was…</p>
+<p>&nbsp;</p>
+<p><em>Number 1. Erin Solstice. Normal laughter sounds quite pleasant. Her ‘cackle’, a rare phenomenon, reminds me of the Deaths of Demons raining destruction across the walls. It sounds like the gloating of a murderer holding a knife over a bloody ballroom with only one person breathing in it. See attached sound-crystal, tonality E3.</em></p>
+<p>&nbsp;</p>
+<p>The laughter fit the person, even if it was a surprise. But amazingly, the number four ranking was just some [Beast Tamer] named Elirr. And number five would shock you!</p>
+<p>&nbsp;</p>
+<p>[Spy of the Captured Moment Level 31!]</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>Pelt didn’t stop laughing at the dismayed smiths, even the engagement he was throwing into question. He had an audience, and he was teasing them by <em>slowly</em> giving them hints on how Orichalcum was made. But right now, the Dwarf was slowly, agonizingly, <em>sweeping </em>his forge.</p>
+<p>“Keeping the forge clean is essential for more magical metals. For steel, but—hmm. Perhaps I need a soap wash. I knew a Drathian smith who spent three hours each day cleaning his forge. It’s not for everyone, but it matters.”</p>
+<p>He delicately soaked a cloth in soap water and brushed it over the floorboards. It was so cold the water was about to freeze but for the forge fires, but Pelt theatrically exhaled and swabbed again at a stain.</p>
+<p>“Master, <em>please.</em>”</p>
+<p>Emessa was begging him. Maughin and Jelaqua were having a subdued argument.</p>
+<p>“You <em>promised</em> that there’d be nothing. You and your mistresses! First her, now Pelt—”</p>
+<p>“Jelaqua, my love, please. People are getting the wrong impression. It’s <em>Orichalcum. </em>Most have forgotten how to even smith Mithril properly, and he’s the greatest living master—”</p>
+<p>Pelt was smirking as they fought. Raekea was here, ignoring her sons and daughters trying to <em>drag</em> her to the beach. Her husband had given up on his wife—plus, he was a [Smith] and taking notes himself.</p>
+<p>But Pelt decided he had to correct his audience on one thing. He stopped, scowled, and felt a familiar pang of ego, loss, sadness, and guilt. But he turned, ignoring Emessa’s pleas.</p>
+<p>No one had stopped Pelt from tormenting his smith audience, standing in the falling snow. Not Kevin or Erin Solstice herself. She’d tried, but he’d sent her packing with a secret weapon.</p>
+<p>The secret weapon being threatening to not make any of her [Knights] armor or weapons. And swearing on his hammer that if she bothered him, he wouldn’t take a request for the rest of the year.</p>
+<p>He saw their despair and cherished it. <em>If even Erin Solstice couldn’t stop Master Pelt, what hope did mere mortals have of beaches?</em></p>
+<p>None, that was what. Pelt did drop the rag in the bucket and turn and point.</p>
+<p>“Second, Maughin.”</p>
+<p>The [Smith] jumped. He’d been whispering, but his voice was loud.</p>
+<p>“Pelt?”</p>
+<p>“Second best practicing smith in this world. Second best.”</p>
+<p>Pelt hated saying it. Even though he knew it was true, he neglected to mention the ancients who were out there, who could put his work to shame.</p>
+<p>A Dragon smith, perhaps, if there were any left who practiced the art. If he was right and the Lord of Flames, Teriarch himself, the greedy Relic-Thief who had stolen more great treasures than Mrsha had stolen cookies, was actually a patron of the inn—</p>
+<p>Well, the Dragonlord of Flame was a shit smith if the legends were true. A famously bad one for a Brass Dragon gifted with metal and flame.</p>
+<p>Pelt noticed these things, you see. He had heard ‘Teriarch’ and nearly eaten his beard the first time he made the connection. But he was no stranger to great myths.</p>
+<p>Everyone else was. Even Chaldion would blink his gemstone eye at Erin Solstice’s chaos. Pelt?</p>
+<p>Pelt had seen better. But that was part of why he respected Erin, because she could shake their hands. Yet she had to grow, and Dwarves knew how to keep steady, to keep grounded, unlike half-Elves who lost time and got fat heads on their own egos.</p>
+<p>Dwarfhome, Deríthal-Vel, grounded you.</p>
+<p><em>Someday, I want to see her meet them.</em> Pelt thought of that as everyone stared at him. He cleared his throat.</p>
+<p>“Second. Best. Among mortality, second-best, Maughin. Perhaps best if he’s dead. Better than every single smith in Invictel. Better than every half-Elf I’ve ever met, even the ones in their ancient villages. I am better than them all. Better than the entire undersea smithies combined. <em>Better than Drath and their oh-so-ancient traditions! So much better that the Walled Cities begged for my craft, and so did the Five Families!</em>”</p>
+<p>He roared, and the Dullahans bristled. But it was true. Pelt hefted his hammer up and wished, for the first time, that it was the one he had made, a <em>Master’s </em>hammer. His Skills made this plain steel hammer better than any you could dream of—but his tools?</p>
+<p>Ah, well.</p>
+<p>“One better. Know your craft, you lot. Know how you rank. Don’t listen to the fools who say ‘art is art’ and subjective. The strength and quality of your metal is something you can measure. And if you lack the ability to discern it, your eyes are bad. I have met blind smiths who could tell the quality of steel better than any Gazer. I am the second-best of two mortal ages, and no one has even come close to upsetting he and I from our thrones. In fact, we likely never got any higher because there wasn’t enough competition. We grew fat and arrogant because we could hammer drunk better than an army of our ‘competitors’.”</p>
+<p>He sounded so arrogant, even in his own ears, that he saw Maughin’s brows darken and Emessa and Raekea grow askance. But it was true, and he said it so for a reason.</p>
+<p>“We were corrupt, and it ruined us. Ruined a generation, the finest one. Ruined my chances at getting to Level 60.”</p>
+<p>His talents might well actually exceed his level, still. Knowledge was one thing, Skills and the levels another. Pelt didn’t see a way higher, though. He was still…broken with shame. He wondered if Taxus were alive.</p>
+<p>Somehow, Pelt thought he’d know if the Forgemaster was dead. For now? He turned to face them.</p>
+<p>“The forge is all. It is merciless and requires your love, your free time, and sometimes even your health.”</p>
+<p>He looked at the three [Smiths], one by one, and Jelaqua looked worried as Emessa hung her head. Then Pelt kicked the bucket of soap water over. It spilled across his forge, and the smiths stared at the mess.</p>
+<p>“Go enjoy the damn beach.”</p>
+<p>“Master? You’re <em>not</em> forging Orichalcum? We can stay—”</p>
+<p>Emessa protested, and Pelt spat.</p>
+<p>“Do I look like I’m heartless? That Selphid will probably eat my brains if I take Maughin away. We’ll continue this in a week.”</p>
+<p>A look of delight spread across the [Smiths]’ faces. Pelt rolled his eyes as they looked at him in disbelief. He lifted a gnarled hand, remembering when he was a hell-for-leather [Line Smith] who worked himself to the bone then partied until someone hit him for almost falling asleep at the anvil.</p>
+<p><em>If I did it, they can.</em> Pelt was pleased with himself and just about to take off his apron, close the forge, and get all the free drinks from Erin Solstice herself in gratitude when he heard someone clapping.</p>
+<p>It was a sardonic, loud clap. The kind that was loud and came from powerful hands. Pelt paused with his apron over his head, and a deep, booming voice that came from huge lungs shouted.</p>
+<p>“By the Grandfathers! Two miracles, then. I thought I’d never see the Master of a Hundred Metals wield his hammer again. Let alone <em>Master Pelt</em> give anyone a day off. Deríthal-Vel would shake if it could see this!”</p>
+<p>Then emotion filled Pelt’s body like a shot of painful vitality. He tore the apron off his head and whirled. And his eyes were suddenly filled with fire and wrath.</p>
+<p>“<em>You!</em>”</p>
+<p>Fifteen Dwarves raised shields warily, but the Master Smith wearing the badge of the Guild of Smiths from Deríthal-Vel, a Dwarf that Pelt did <em>not</em> know, just applauded onwards. He had a huge, reddish-brown beard, and he looked young.</p>
+<p><em>Barely sixty.</em> Talented, perhaps; Pelt saw his bulging arm-muscles, and he noted the sense of some expertise around the [Smith]. But this was—</p>
+<p><em>He carried a rune hammer from home. </em>Pelt’s eyes bulged as he saw that—then Dwarf warriors from home. <em>How? </em>Emessa realized who they were and tried to rush forwards, babbling.</p>
+<p>“The Dwarfhalls Rest expedition. Master Dwarves—Master Pelt is—”</p>
+<p>Pelt blocked her with one arm, and his voice was low and dangerous.</p>
+<p>“I told you never to approach me again.”</p>
+<p>He lifted the hammer, and if he threw it, it might go <em>through</em> the Dwarves, despite their Dwarfsteel armor. But he was a smith, like Erin was an [Innkeeper], and they’d probably cut him down.</p>
+<p>He almost threw it. The Master Dwarf that Pelt didn’t know looked only barely concerned, but he was slightly tense as he smiled.</p>
+<p>“I had to come, Master Pelt. Put down your hammer, please. I’ve come to offer you a new forge. Not in Deríthal-Vel, but our new home. The forges are lit—we’ve been producing steel already. See?”</p>
+<p>He unveiled something, and Maughin groaned. A huge, gleaming set of Dwarfsteel plate armor shone in the smith’s hands.</p>
+<p>It was well-made, Pelt had to own. Not many impurities, and the Dwarfsteel felt, to him, <em>local.</em></p>
+<p><em>So they found veins of the right metal, and they’re producing enough to show off. That’s probably a gift for Erin Solstice or Tyrion Veltras. Dead gods, Pallass has competition.</em></p>
+<p>It was going to throw all of Izril’s metal economies into chaos. Dwarves in Izril after so long? Yet Pelt’s mind was filled with rage.</p>
+<p>“I am an outcast. How <em>dare</em> you offer me a position? You have no authority.”</p>
+<p>“On the contrary, Master Pelt. I am Forgemaster Amared. <em>Chief Forgemaster</em> of the Dwarfhalls Rest expedition. By the Guild of Smiths, I can offer you your title back and work—in Dwarfhalls Rest, as you are still exiled from Dwarfhome. But in time, you might earn access back home.”</p>
+<p>Maughin gasped, and Emessa looked at her master, worried. This was what she had long feared.</p>
+<p><em>Home.</em> Pelt blinked a second, and it called to him. They had all been exiled, the masters. The younger ones, those who hadn’t run off in shame, had either sworn off the steel or just…left. Even the good, solid [Line Hammer-Smiths] like Yoitha. He’d heard she was selling her ability to smith Mithril like a genius for coppers before he’d left Terandria.</p>
+<p>They’d ruined a generation, and now, barely two decades later, Deríthal-Vel wanted him back? Pelt stared at the new Forgemaster, and even his memory of the [Apprentices] didn’t turn up this Amared’s face. His reply, after a long pause, was curt.</p>
+<p>“The forges of home must be pathetic if they need me back. <em>Forgemaster? </em>You’re nothing more than a basic [Smith], brat. You’d never make even Line-Hammer under me.”</p>
+<p>Amared’s face tightened at the insult, and the two apprentices following him and holding the armor sample clenched their fists. But he was all smiles the next moment.</p>
+<p>“I thought you’d say that. The Master Pelt I remember was too proud to accept working under anyone. And too proud to let anyone advance! You haven’t even taught this lot how to make rune hammers, have you? You always said that ‘a smith shouldn’t have help until he no longer needs it’. Well, the Guild of Smiths is thrice as large as it was under you, Master Pelt. Large enough to send an expedition to Izril.”</p>
+<p>Ah. This felt too personal. Pelt wondered if he’d told Amared he was worthless. He’d probably said that to half the Dwarves he’d ever supervised who’d ever touched a hammer in Dwarfhome. The Dwarf was almost ready to begin murder—but he slowly lowered the hammer and hooked it into his belt.</p>
+<p>Last year, he probably would have gotten himself killed attacking Amared, or perhaps given in and taken the offer. Today? He spread his hands and smiled at the Dwarf, who lost his when he saw Pelt’s look.</p>
+<p>“You brag like a child, <em>Forgemaster Amared. </em>The metal you have there is mass-produced shit. Can you even forge Orichalcum?”</p>
+<p>“We know <em>all</em> the techniques, Master <em>Pelt.</em> Including Adamantium ore, which we can buy in bulk, unlike your little forge.”</p>
+<p>The Forgemaster took a step forwards, and Pelt picked at his teeth.</p>
+<p>“Oh, how frightened I am. Shall we play a game? I can forge Orichalcum to break your Adamantium apart. Bring me your best craft and I will let two warriors smash the blades into each other. Bring your best <em>two</em> blades.”</p>
+<p>He could do it, too. Amared turned pale with fury, but he mastered himself quickly. Then he gave a sardonic bow.</p>
+<p>“Well, Master Pelt, I hope you can, because the era of everyone running to your forge for everything is over. I have approached all your clients—and the smiths of Dwarfhalls Rest stand with me. We are not going to cling to old tales about the ‘greatest generation’. Your shame ruined our reputations for years. We are rebuilding it, link by link.”</p>
+<p>Pelt’s face reddened. Jelaqua, the younger smiths, everyone’s heads were turning back and forth as he and Amared shouted at each other. Pelt slapped his chest as he bellowed at the younger Dwarf.</p>
+<p>“<em>We know what we did!</em> Do you stand in front of me and claim you’re truly proud of your title?”</p>
+<p>Amared shot back quietly.</p>
+<p>“I am a Level 45 [Forgemaster]. Not at your level, but I have hit it before turning seventy. We replaced your talent in twenty years, Master Pelt. I wanted to offer you, sincerely, a position to help us recapture our mastery. But if you need me to, I will prove we can do without you.”</p>
+<p>Pelt just laughed in derision.</p>
+<p>“<em>There’s more to levels than just a number, Forgemaster.</em>”</p>
+<p>“Maybe. But there are <em>six</em> [Smiths] of my level in Dwarfhalls Rest.”</p>
+<p>Pelt stopped laughing abruptly. His eyes snapped up. Amared lifted a finger.</p>
+<p>“Before you ask—all of us were far lower-level when <em>you</em> were a master. Though, two were Line-Hammers.”</p>
+<p>“<em>You took them in?</em>”</p>
+<p>“Your failures weren’t theirs! That’s right, <em>Master Pelt. </em>If you want to see, Dwarfhalls Rest is open to you any day! But prepare yourself, because your dangling of Orichalcum over the heads of local smiths? We know exactly how it’s made. Pure copper is one ingredient, incidentally, and pure gemstones. The alloy is magical, and Master Pelt may know how to work it—but few have the resources in Izril. And ‘veins’ of it go unnoticed as mere purple quartz.”</p>
+<p>Emessa gasped. Wait, it was just a <em>quartzite</em> infused with magical alloys? It was Adamantium all over! Experienced [Smiths] might have been trading or securing deposits under their very noses all along! Pallass, doubtless, had private records about deposits. Same with Salazsar. But did anyone else know where purple quartz might be?</p>
+<p>Amared threw this one out there, and Maughin turned pale as the two locked eyes. The Dullahan was behind…and Amared turned to Pelt and met the Dwarf’s gaze. Both held the look for a long minute—then Amared spat on the ground, turned, and stomped away. He didn’t look twice at any of the smiths here, not Emessa, not Maughin, not Raekea.</p>
+<p>Dwarves had come to cover Izril in their mastery. And Pelt?</p>
+<p>Pelt stood there, then snatched his hammer up and drove it into the flagstones so hard he left a huge crack down the entire street. Then he wondered how many great hammers, how many magical forges, the Dwarves of Dwarfhalls Rest had brought. A hammer did not make a [Smith].</p>
+<p>But dead gods damn it…sometimes it helped. And soulless metal could still be sharp. Who’d begged forgiveness and gone back to the forge? Which Line-Hammers…</p>
+<p>Nevermind, they had just followed orders. Pelt stared down—then he looked up, and someone had reached out a hand to him.</p>
+<p>“Master Pelt? I don’t think we need to go to the beach after all. Would you mind resuming your lesson? Now?”</p>
+<p>Raekea, Maughin, and the other smiths had their pride. They were lined up, and the Gnoll had offered him a paw. Their eyes were blazing—and Pelt saw it, then.</p>
+<p><em>You want to play this game, Amared? Be careful, because the secrets of Dwarfhome are not all mine. But I’ll share them. Oh yes. Grandfathers laugh at us both.</em></p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>Thirty minutes later, Erin Solstice was scheming in her inn.</p>
+<p>“A super cookie? No, no. He’ll probably just smash it. Alcohol? But he’s sobering up—well, when he’s working. How about clothing? Mithril underwear? No, that’s cool but stupid.”</p>
+<p>She was trying to figure out how to get Pelt to be nice—when the door to Esthelm opened and the [Smiths] appeared.</p>
+<p><em>All </em>of them. Not just Pelt and Raekea and Maughin and Emessa, but the apprentices, even a lot of regular Esthelm smiths.</p>
+<p>“Uh. Hi? What’s up, guys?”</p>
+<p>“<em>Beach!</em>”</p>
+<p>Five dozen smiths barged past Erin and straight into her garden. They were mad as heck, but half of them were already shirtless. Erin opened and closed her mouth as Liska popped her head back in.</p>
+<p>“That wasn’t me. Honest. No, seriously. What made him change his mind?”</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>Erin had a hard time convincing anyone it wasn’t her, and she herself brought over a tray of sautéed beef and chicken and pork on a skewer to eavesdrop on the [Smiths].</p>
+<p>They had plonked themselves down on the main beach and effectively chased off everyone else. Even for Erin’s large garden…they were a crowd, and Jelaqua was there, just as mad at Maughin’s skill being impugned.</p>
+<p>However, their leader, the furious Dwarf with more hair than chest, was growling around as Emessa tried to put sunscreen on his head. He snatched a skewer as Erin offered the tray around.</p>
+<p>“Erin. Fifteen sushi trays. I’m paying for this lot. Nice beach. Now, shove off. Alright, you lot, we’re on break for today. No one touches a hammer to hot metal, not for a bit.”</p>
+<p>“You sure, Master Pelt? He’s making <em>Dwarfsteel</em> armor—”</p>
+<p>Raekea was gnashing her teeth along with her Drake husband, but Pelt held up a hand. And he was not just a Forgemaster, nor the Hammer of a Hundred Metals.</p>
+<p>He was…</p>
+<p>A competing smith, a strategist in a different kind of war, and even Chaldion stopped lying in the sun to peek over at Pelt as he chomped down on his first skewer.</p>
+<p>“Amared knows the work, or at least, he can probably remember seeing it. He wants us riled up and injuring each other and messing up the metal. So. We calm down and plan it out. First off. Kevin?”</p>
+<p>“Yes?”</p>
+<p>Kevin sat up in alarm. Pelt pointed at him.</p>
+<p>“We’re done making your bike parts. I want you to go to Amared behind my back. Tell him…tell him that you need to upscale Solar Cycles. I’ll do your magical, custom bikes, but you’re willing to <em>sell</em> him the contract.”</p>
+<p>“What? Master Pelt…”</p>
+<p>The Dwarf had an evil smile on his face.</p>
+<p>“Tell him that you need him to produce all your ball bearings, though, and let him know how many places will need high-quality steel gizmos. Pallass will be making parts too, and I bet for now, Dwarfhalls Rest can produce high-quality stuff. But you know what? They forge by <em>hand.</em> They have quality control. Whereas the Engineering Guild is working with molds and production themselves because we’re sick of it.”</p>
+<p>The other [Smiths], including Maughin, who’d had the displeasure of making the damn stuff for the Engineering Guild, suddenly developed smirks. There was a big difference between the ability to forge something and enjoying the work.</p>
+<p>And multiple nations with Earthers wanted the ball bearings and gears and the other, <em>oh-so-hard</em> to make things that required industry or a gifted smith who had to hand-grind a gear to exacting dimensions.</p>
+<p>Pelt started dirty, and then he went into the cesspool as he talked tactics. Smiths could cause havoc for one another just by denying the other access to essentials in smithing, like the right charcoal or quality ore.</p>
+<p>“If nothing comes from Pallass except overland or by sea…they have to get their <em>precious gems</em>. Yet if we can force them to pay tariffs on the magic door or worse, import it over <em>land, </em>they’ll need to seek the gems elsewhere or pay through the nose. And a lot of magical smithing is gemwork.”</p>
+<p>“Orichalcum?”</p>
+<p>They were taking notes as Pelt grunted.</p>
+<p>“Let’s not go into smithing recipes right now. I’ll teach the best of you, but Amared has magical forges. He can literally smith mithril without straining his forges whereas half of you would crack Pallass’ own foundries trying to heat it enough. Pallass can probably put out more steel, but it was <em>built</em> around mass-steel, not magical metals.”</p>
+<p>He scowled and admitted a hard truth. Even back in the old days, the masters like he were part of a team. And the team could have still beaten him and Taxus working together.</p>
+<p>Smithing was no solo act when you forged for armies. Pelt exhaled slowly.</p>
+<p>“The fact is—they can probably out-produce us if a third of the Guild of Smiths is there. We’ll need to work together, local smithies, to even put up a resistance to them flooding the market. You all can’t even make Dwarfsteel; it isn’t about how, it’s about the <em>heat.</em> Even my reinforced forge needs to be so hot to work it—Mithril’s at a cooler temp.”</p>
+<p>That sobered the growing alliance of [Smiths]. Emessa nodded importantly.</p>
+<p>“Plus, it’s mostly dust in other ore. Refining it takes specialist Skills or magic.”</p>
+<p>“Titanium’s shit.”</p>
+<p>Kevin agreed. Pelt had a plan, though. He tapped his finger importantly on the ground.</p>
+<p>“That’s why where they go quantity, we go <em>quality.</em> Originality.”</p>
+<p>“How? Art?”</p>
+<p>“No, do I look like I value fancy sword guards or engravings on your metal or <em>pattern-steel?</em>”</p>
+<p>Pelt spat to the side. He was someone who loved the quality of metal, and form over function made him want to puke. Someone complained.</p>
+<p>“Hey, that’s my sand! I—oop! Wait, wait! Go ahead and spit!”</p>
+<p>Pelt actually picked Erin up and put her in the center of the group of smiths. She instantly grew embarrassed.</p>
+<p>“Hey! Wait! Am <em>I</em> the secret weapon? Noice. But wait a sec—”</p>
+<p>“Her fire.”</p>
+<p>Maughin came to the realization first, and Pelt saw Erin look up half in alarm. He raised a finger.</p>
+<p>“Not. Quite. Shush yourself or whatever the phrase is.”</p>
+<p>He shooed Erin off to the side, and she frowned, just as confused. Pelt shook his head slowly.</p>
+<p>“No, and no. But Pallass has a lot of [Alchemists]. First thing tomorrow, we’re going to run on all the magical dust they’ve got. Crystals especially. <em>Magic crystals</em> doubly. Everfrozen Ice…that’s how you make cold flame. You grind it up and mix it with Sparkdust. That’s how we normally do it. Even things that don’t normally burn will flame up and imbue the fire with magic.”</p>
+<p>Everyone sat forwards. Wait. <em>What</em> did he just say?</p>
+<p>“We’re making our <em>own</em> magical flames?”</p>
+<p>“Of course we are! Do you think I’d trust <em>her</em> to light a fire? She’d produce a Griffin Egg and have me going on a quest to slay a Hydra every other day!”</p>
+<p>Pelt roared at Erin. She tried to object and felt like she was being bullied for half-reasonable reasons of late. Pelt stabbed his palm with a huge finger.</p>
+<p>“Magical fire! Each one of you will have to experiment. Choose your flame! And there’s a lot that Miss Emotions over there doesn’t have. <em>Spark-flame</em>. I hate it, and it’ll shock you numb. Everburning Flames. You’ll experiment, and the metal will react to each one. The Guild of Smiths knows how damn hard magical fire is to work, so even a Forgemaster like Amared probably never got to it. But it’ll imbue your metal with the power of the flame. If you master it.”</p>
+<p>“Why—we’re using <em>magical fire?</em> Master!”</p>
+<p>Emessa grew excited. He pushed her hugging arms aside.</p>
+<p>“Not so fast. There’s a reason why it’s hard. Which is why we’re <em>here. </em>Before we begin making magical flames, you have to get a feel for what fire might be yours.”</p>
+<p>Someone had to wave a hand and interject here.</p>
+<p>“Uh, Pelt? Magical fire’s sort of <em>my</em> thing. And Maviola’s. Why don’t I—”</p>
+<p>He threw sand at her legs.</p>
+<p>“Shut it! You think you <em>invented</em> magical fire? Don’t interrupt. Dead gods. The day I let an [Innkeeper] tell me how to use flame is the day I renounce every last title and my very name!”</p>
+<p>He pointed, and Erin was stunned as she stepped back and stood there. She waved a hand as someone jogged over.</p>
+<p>“Erin! What have you <em>done</em> while I was gone? This is am—”</p>
+<p>Ryoka Griffin was waving her arms, agog, and frothing at the mouth that she had once again missed an inn-exclusive because she had a life outside of Liscor. Erin put a finger to her lips, and both listened into Pelt’s talk. And Shaestrel slapped Ryoka’s ear.</p>
+<p>&nbsp;</p>
+<p><span style="color: #96be50;">“Hah! Even the Dwarf knows it! Listen in!”</span></p>
+<p>&nbsp;</p>
+<p>Pelt spoke slowly, from memory, trying to remember how it had been explained to him, once. His face softened with nostalgia, then grew bitter—then calm and even slightly annoyed.</p>
+<p>“The thing is, I was never the master of it. There were two great masters in our forge who led the others. One was I, and I was the master of form. He, Taxus, of heart. Flame…he knew magical flames. I could use them, but he could put more into the metal than was there. I do heat, pure and simple, tempering and finish. He knew the secrets of fire.”</p>
+<p>He had always felt like this was where smithing left the realms of reality and went into the damned esoteric, which was why he was no good at it. But like the art of swords…the smiths were listening intently, and Pelt saw Emessa taking notes.</p>
+<p>She had a penpal in Chandrar, some ‘Narwhal’ or something. Pelt snorted, imagining the gigantic dolphin-whale with a horn, which was how he pictured Emessa’s penpal. Let her tell them what he said. Tannousin knew good smithing, too. His voice grew calmer.</p>
+<p>“Did you think you could sprinkle some powder in flame and master it? No, no. To move <em>magic</em>, you must know the fire. That’s the key. When you put magic in steel, not just the exact temperature at which metal moves…we’re not spellcasters. So we have to strike with coldness in our hearts to make frozen flames move. It’s not one feeling. You can be the raging flame in the winter’s chill or the cold logic where lightning touches the ground. But you must <em>master</em> it, and part of it is—knowing yourself. A steady heart when you swing and an arm like thunder.”</p>
+<p>Erin and Ryoka looked at each other, and both of their mouths opened. Their teachers had <em>both</em> understood that, and Pelt—!</p>
+<p>“We should have just apprenticed under Pelt and not bothered with Shaestrel or Ivolethe or anyone!”</p>
+<p>Erin commented and got a kick in the head from the Spring Faerie. But Pelt was talking theory and magic, far beyond the world of smithing he had shown them before. Things even he had never understood.</p>
+<p>Taxus. Perhaps in the eyes of those around him was the seed of the next great smith of this world. For now, Pelt would be content to give Amared the surprise of his miserable life. Pettiness befit a smith.</p>
+<p>So did joy. So, soon, the [Smiths] were sitting around in a circle, some holding rocks, others with their hammers, eating from Erin’s rapidly diminishing sushi stocks.</p>
+<p>They were…rather a nuisance to the other beach-goers, honestly. Mostly because, at this moment, they were eating and Pelt was hammering on the ground in a fast rhythm, and they followed suit.</p>
+<p>Even on his far island, Chaldion’s drink <em>jumped,</em> and the <em>rumbling</em> made the other beach-goers complain to Erin. But Pelt kept showing them the rhythm.</p>
+<p>“Come on, come on—faster! You lead, Maughin.”</p>
+<p>It was a game where if you missed the beat, you got out. Emessa whispered to Pelt.</p>
+<p>“Master, is this some tradition or training from Dwarfhome?”</p>
+<p>He gave her a blank look.</p>
+<p>“What? No. This is a game we made up when we visited Drath. It’s fun as shit. You have to stop working all the time, Apprentice. Actually, go make sure I can play that game where you hit the ball over the net. Reserve a spot for after I beat everyone here.”</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>A visitor came by as Pelt was warming to this beach. It wasn’t as good as Drath, which he made a point of letting Erin know. But for something you could walk into after a five-minute stroll? He’d take the convenience.</p>
+<p>What those fools never realized was that Erin <em>was</em> a talented prodigy at her craft. He knew not the heft of [Innkeeping], nor the politics of it as opposed to the forge, nor even the metal she worked or how she did it.</p>
+<p>But—fools—they had to challenge her, never let her rest idle at her station. Or else she would stagnate without competition. Pelt knew these things. Plus, making fun of her was entertaining.</p>
+<p>However, someone interrupted Pelt from playing his hammer game after he lost to that damn [Farrier], Bealt. Pelt saw a little form trotting down the beach, skirting the waves. He made a face of disgust.</p>
+<p>“Eurgh. I forgot this thing is here. I should’ve known they’d turn up. Damn barnacles. Get lost.”</p>
+<p>He tossed some sand at Nerry, but the Sariant Lamb, staring up at him with huge, innocent eyes, dragged over her gift to him and spat it onto the ground. Pelt stared at…he uncorked the glass bottle and sniffed.</p>
+<p>Some <em>high-quality</em> drink from Rufelt’s bar had been poured into the bottle, and the lamb mewled. <em>Look at how nice she was! Didn’t he like her?</em></p>
+<p>“Huh. This lamb has good taste.”</p>
+<p>Pelt took a happy swig from the bottle. Nerry trotted him off to get him more things as Ryoka sighed.</p>
+<p>Erin Solstice eyed the oddly-nice lamb and saw Nerry paused and spit towards the Dwarf’s back while he wasn’t watching. Then trot off.</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>Numbtongue was surprisingly popular with the [Smiths], just like he was with [Miners] in general. And he was only too happy to consult with a patch of air as he lazily floated around on the currents, watching two ships sinking as Nanette and Mrsha rammed Relc and Klbkch’s ship.</p>
+<p>“We’re going down! <em>How can kids beat us?</em>”</p>
+<p>Relc screamed, and Klbkch stared down at the fairly deep, blue water below him. He sighed.</p>
+<p>“I hate water. If I drown, don’t tell Wrymvr how I died.”</p>
+<p>Numbtongue turned from snickering at them to the paddling Raekea, who was giving him a huge and slightly too-friendly smile.</p>
+<p>“What’s that? Purple quartz…?”</p>
+<p>He rubbed at his chin as Pyrite, pretending to float on his back, muttered.</p>
+<p>“Orichalcum. Never figured out how to forge it. Tell them huge vein is up in mountains. Tastes like grape poo.”</p>
+<p>Numbtongue obligingly gave the Gnoll an innocent smile.</p>
+<p>“Sure is. Purple quartz, all over the place. Up high. I found it ages ago. Tossed it into big crevasses for fun. Why, you want some?”</p>
+<p>He savored the expression on her face and then wondered how happy Rags would be to hear <em>this.</em></p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>Such was the changing nature of smiths. Beaches, fire, and of course…Erin Solstice watched Pelt and smiled. Even if he hogged the space, he was definitely welcome here.</p>
+<p>But she turned to Ryoka, who was looking around, agog with all the fun.</p>
+<p>“I can’t believe you let Hethon and Sammial in. They look so happy. Thanks, Erin.”</p>
+<p>“Oh, no problem, Ryoka. And hey! Someone’s selling swimsuits, and you can buy one and hang out. I know you probably wanna have fun here, right? Stay and have a blast! In fact, bring anyone you want. Except…”</p>
+<p>Erin put her hands to her cheeks.</p>
+<p>“Oh no. <em>Oooh noooo.</em> Poor Tyrion. That’s right, he’s still not invited. But his kids are because they’re kids. Oh, and his assistant Jericha and Ullim. Just not him. How sad. But be sure to tell him about the beach. Tell him ‘if he can get past Liska he can get in’. But he can’t. Which is sad.”</p>
+<p>Ryoka Griffin groaned as Nerry trotted down the beach, rolling her eyes.</p>
+<p>“Erin…seriously?”</p>
+<p>The [Innkeeper] put her hands on her hips.</p>
+<p>“Petty? Who’s being petty, Ryoka? I’m just being consistent.”</p>
+<p>“I never said ‘petty’. Sounds like someone’s projecting.”</p>
+<p>“Hey, I can change. In fact, why don’t I let Tyrion <em>into</em> the inn? That’s right. I’ve decided I was the jerk. Ryoka was right. He’s allowed in the common room, he can have all the food if he can stomach ordering from Calescent or Ishkr—but no beach. Actually, he can sit in a chair and watch everyone. <em>How about that?</em>”</p>
+<p>Ryoka massaged her temples, trying to sound reasonable and not start a fight with Erin. Even if she felt like Erin wanted a fight at this moment.</p>
+<p>“Erin, I wasn’t going to let him in anyways. Or even ask.”</p>
+<p>Ryoka was weary of another fight when she wanted to just go swimming and have fun here. But Erin turned to her. To the Courier’s pure astonishment, Erin gave Ryoka a long look, then exhaled.</p>
+<p>“He can come in. No tricks, no pranks. Even to the beach.”</p>
+<p>“Wh—<em>what?</em>”</p>
+<p>Even Badarrow, who had mysteriously appeared with Snapjaw when he heard ‘warm sand and lots of food’, turned around fast. But Erin just pulled something out of her belt pouch and handed it to Ryoka.</p>
+<p>“I mean it. But give him this first.”</p>
+<p>Ryoka Griffin stared down at something. It was…a neatly written piece of paper, one of Mrsha’s notecards that Erin had dozens upon dozens of. She walked off as Shaestrel whistled softly. Then Ryoka saw Erin stroll across the ground and hand something to Pelt.</p>
+<p>“So <em>that’s </em>why she did it?”</p>
+<p>&nbsp;</p>
+<p><span style="color: #96be50;">“Not bad. But she still can’t beat me at chess.”</span></p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>Chaldion of Pallass was lying on his back, snoozing and half-debating lodging a complaint about the damn hammering, when he heard a sound.</p>
+<p>“You can’t approach without confirmation. Wait a s—”</p>
+<p>Then the [Major] screamed, and Chaldion heard a <em>thump.</em> He sat up slowly as the Drake disappeared into a hole in the ground that had opened under his feet.</p>
+<p>He raised the towel over his eyes and blinked without surprise as Erin Solstice walked over. She had appeared out of the air, and she was holding her back.</p>
+<p>“I need to sit down. Ow, ow, ow…I can stand for longer, but I’m still tired too much. Mind if I sit?”</p>
+<p>“This is your garden. Is my [Major] alive?”</p>
+<p>“I just sent him to the main room. He’ll be back.”</p>
+<p>Indeed, the furious Drake had run back in and was swimming as fast as he could towards them. Chaldion lifted a claw.</p>
+<p>“Everyone else, give us room.”</p>
+<p>Two Eyes of Pallass hesitated, then left the fake palm tree that Palt had conjured for Erin. The [Innkeeper] raised her brows as several more of Chaldion’s staff headed off.</p>
+<p>“I just came to give you this. Sorry, doing the rounds now since Pelt actually showed up. Here you go! Please RSVP by the end of the week.”</p>
+<p>Chaldion sat up slowly as Erin handed him the same card she’d been passing around to various people in the inn. And his eyes sharpened as he saw her smile gently. He read the card—looked at her, and exhaled.</p>
+<p>“I suppose it would be too much to hope this is a joke?”</p>
+<p>The card was the same, but Erin, like a good hostess, or [Innkeeper], had addressed each one to each recipient directly, because she knew what she was asking. And she’d added a variation to each card. Chaldion’s read thusly:</p>
+<p>&nbsp;</p>
+<p><em>Dear Chaldion,</em></p>
+<p><em>This coming Winter Solstice, on the last day of the month of Mouring/first day of the month of Elfebelfast, I cordially invite you to: the fight of your life.</em></p>
+<p><em>Please either come ready for anything or stay far away from The Wandering Inn. Pallass’ armies are also invited to the party. All of them.</em></p>
+<p><em>—Erin Solstice</em></p>
+<p>&nbsp;</p>
+<p>The [Grand Strategist]’s heartbeat was increasing. He murmured, reading the short note, so sparing of details.</p>
+<p>“All of them? Pallass has eight armies, Erin Solstice. Combined, they would have outnumbered every Drake force at the Meeting of Tribes.”</p>
+<p>Did she know what she was asking? He, like Pelt, knew she was intelligent, but she was still no [Strategist]—</p>
+<p>“Look into my eyes, Chaldion.”</p>
+<p>He paused a second before he glanced up. Then—Chaldion’s one living eye and his blue gemstone gaze flashed under the sunlight as they rose, and he looked into the [Innkeeper]’s hazel gaze.</p>
+<p>Slowly, Chaldion sighed. She wasn’t awash with fear, but she was serious. Her gaze, if anything, was kind and watchful. Mirth and happiness flickered in this warm beach. And at the center was Erin Solstice. Waiting for the Winter Solstice.</p>
+<p>“—I see. I need details.”</p>
+<p>“Let me tell you what I’ve got. I think it might be war and death itself that come after us, Chaldion. Hopefully nothing else, for now.”</p>
+<p>“In what form?”</p>
+<p>Erin smiled gently, almost amused by the [Strategist]’s alert, confused gaze as he beckoned for his aides to come running.</p>
+<p>“War. And death.”</p>
+<p>Then he understood. And the other people holding Erin’s card, her warning, looked at each other and made the choice they had always made here. Only Jelaqua, standing there and holding the card, looked around and cleared her throat nervously.</p>
+<p>“U-um. So. We were going to have our wedding on the Winter Solstice because of the fancy eclipse and because it’s one of those auspicious dates. Do you think I should reschedule?”</p>
+<p>Numbtongue patted her on the shoulder.</p>
+<p>“Probably do it earlier or later by a day. One way, you’re married. The other, it’s all done.”</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>She’d even invited Tyrion. So. Fun, beaches, and a cordial invitation to a party. The Wandering Inn never changed.</p>
+<p>It would change. But for now, the best part about the beach wasn’t always the beach. It was the fun of the beach…because you knew sometime soon the beach would end.</p>
+<p>But until then, a [Smith], drunk, lying half-buried in the sand as the tide rolled in, lay on his back as smiths grew and changed, and he dreamt of a familiar time when Dwarves had laughed and played…and he wept for bygone days and the craft of it.</p>
+<p>But perhaps, even in his tears of now, he was happier.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><strong>Author’s Note: </strong>I have my break on Wednesday, but I edited this chapter which I wrote Tuesday and am publishing it.</p>
+<p>Never you mind my schedule. Just know you won’t get a chapter tomorrow. But I’m still on the short-chapter kick and it’s a unique challenge.</p>
+<p>…Strange. I wrote 40,000 and this is about 30,000…so I wrote 70,000 in one week, which was close to Gravesong’s pace, but it’s easier.</p>
+<p>Because I knew The Wandering Inn’s main story whereas new stuff is harder. But I have to analyze why things work and why they don’t. Well, this is probably still too intense, but I feel like I kicked off my funk and am having fun again.</p>
+<p>That’s important stuff. The Lyonette chapter was a pleasure to write. For now, enjoy this one. I’m only sad I didn’t interject more gravitas at Erin’s note at the end. Even now, I can’t do justice to the moments in my head…perhaps because they’re not always realized until I put them down.</p>
+<p>Better writing is a never-ending goal. But I’m happy, eating Indian food (don’t ask me to be more specific, it’s takeout. Paneer is great), and going to relax the rest of my day. Hope you’re doing well!</p>
+<p>&nbsp;</p>
+<p><strong>Sariant by Fluxsforest!</strong></p>
+<p><a href="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Sariant-by-Fluxsforest.png?ssl=1"><img fetchpriority="high" decoding="async" data-attachment-id="15304" data-permalink="https://wanderinginn.com/2023/06/08/9-44-p/sariant-by-fluxsforest/" data-orig-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Sariant-by-Fluxsforest.png?fit=502%2C500&amp;ssl=1" data-orig-size="502,500" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="Sariant by Fluxsforest" data-image-description="" data-image-caption="" data-medium-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Sariant-by-Fluxsforest.png?fit=300%2C300&amp;ssl=1" data-large-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Sariant-by-Fluxsforest.png?fit=502%2C500&amp;ssl=1" class="alignnone size-full wp-image-15304" src="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Sariant-by-Fluxsforest.png?resize=502%2C500&amp;ssl=1" alt="" width="502" height="500" srcset="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Sariant-by-Fluxsforest.png?w=502&amp;ssl=1 502w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Sariant-by-Fluxsforest.png?resize=300%2C300&amp;ssl=1 300w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Sariant-by-Fluxsforest.png?resize=150%2C150&amp;ssl=1 150w" sizes="(max-width: 502px) 100vw, 502px"></a></p>
+<p>&nbsp;</p>
+<p><strong>Lyonette, Mrsha, and Ice Cream Five by Wing!</strong></p>
+<p><a href="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Lyonette_Mrsha_01-by-Wing-RuneArtisan.jpg?ssl=1"><img decoding="async" data-attachment-id="15305" data-permalink="https://wanderinginn.com/2023/06/08/9-44-p/lyonette_mrsha_01-by-wing-runeartisan/" data-orig-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Lyonette_Mrsha_01-by-Wing-RuneArtisan.jpg?fit=1554%2C1776&amp;ssl=1" data-orig-size="1554,1776" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="Lyonette_Mrsha_01 by Wing [RuneArtisan]" data-image-description="" data-image-caption="" data-medium-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Lyonette_Mrsha_01-by-Wing-RuneArtisan.jpg?fit=263%2C300&amp;ssl=1" data-large-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Lyonette_Mrsha_01-by-Wing-RuneArtisan.jpg?fit=896%2C1024&amp;ssl=1" class="alignnone size-full wp-image-15305" src="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Lyonette_Mrsha_01-by-Wing-RuneArtisan.jpg?resize=1554%2C1776&amp;ssl=1" alt="" width="1554" height="1776" srcset="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Lyonette_Mrsha_01-by-Wing-RuneArtisan.jpg?w=1554&amp;ssl=1 1554w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Lyonette_Mrsha_01-by-Wing-RuneArtisan.jpg?resize=263%2C300&amp;ssl=1 263w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Lyonette_Mrsha_01-by-Wing-RuneArtisan.jpg?resize=896%2C1024&amp;ssl=1 896w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Lyonette_Mrsha_01-by-Wing-RuneArtisan.jpg?resize=768%2C878&amp;ssl=1 768w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Lyonette_Mrsha_01-by-Wing-RuneArtisan.jpg?resize=1344%2C1536&amp;ssl=1 1344w" sizes="(max-width: 1000px) 100vw, 1000px" data-recalc-dims="1"></a> <a href="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Eating_Icecream2-by-Wing.png?ssl=1"><img decoding="async" data-attachment-id="15306" data-permalink="https://wanderinginn.com/2023/06/08/9-44-p/eating_icecream2-by-wing/" data-orig-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Eating_Icecream2-by-Wing.png?fit=2700%2C1240&amp;ssl=1" data-orig-size="2700,1240" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="Eating_Icecream2 by Wing" data-image-description="" data-image-caption="" data-medium-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Eating_Icecream2-by-Wing.png?fit=300%2C138&amp;ssl=1" data-large-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Eating_Icecream2-by-Wing.png?fit=1024%2C470&amp;ssl=1" class="alignnone size-full wp-image-15306" src="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Eating_Icecream2-by-Wing.png?resize=2700%2C1240&amp;ssl=1" alt="" width="2700" height="1240" srcset="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Eating_Icecream2-by-Wing.png?w=2700&amp;ssl=1 2700w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Eating_Icecream2-by-Wing.png?resize=300%2C138&amp;ssl=1 300w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Eating_Icecream2-by-Wing.png?resize=1024%2C470&amp;ssl=1 1024w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Eating_Icecream2-by-Wing.png?resize=768%2C353&amp;ssl=1 768w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Eating_Icecream2-by-Wing.png?resize=1536%2C705&amp;ssl=1 1536w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Eating_Icecream2-by-Wing.png?resize=2048%2C941&amp;ssl=1 2048w" sizes="(max-width: 1000px) 100vw, 1000px" data-recalc-dims="1"></a></p>
+<p>&nbsp;</p>
+<p><strong>Dance by kcrab!</strong></p>
+<p><a href="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Dance-by-kcrab.jpg?ssl=1"><img loading="lazy" decoding="async" data-attachment-id="15307" data-permalink="https://wanderinginn.com/2023/06/08/9-44-p/dance-by-kcrab/" data-orig-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Dance-by-kcrab.jpg?fit=2891%2C1476&amp;ssl=1" data-orig-size="2891,1476" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="Dance by kcrab" data-image-description="" data-image-caption="" data-medium-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Dance-by-kcrab.jpg?fit=300%2C153&amp;ssl=1" data-large-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Dance-by-kcrab.jpg?fit=1024%2C523&amp;ssl=1" class="alignnone size-full wp-image-15307" src="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Dance-by-kcrab.jpg?resize=2891%2C1476&amp;ssl=1" alt="" width="2891" height="1476" srcset="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Dance-by-kcrab.jpg?w=2891&amp;ssl=1 2891w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Dance-by-kcrab.jpg?resize=300%2C153&amp;ssl=1 300w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Dance-by-kcrab.jpg?resize=1024%2C523&amp;ssl=1 1024w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Dance-by-kcrab.jpg?resize=768%2C392&amp;ssl=1 768w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Dance-by-kcrab.jpg?resize=1536%2C784&amp;ssl=1 1536w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Dance-by-kcrab.jpg?resize=2048%2C1046&amp;ssl=1 2048w" sizes="(max-width: 1000px) 100vw, 1000px" data-recalc-dims="1"></a></p>
+<p>&nbsp;</p>
+<p><strong>Leviathan by wowzabublord!</strong></p>
+<p><a href="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Leviathan-by-wowzabublord.png?ssl=1"><img loading="lazy" decoding="async" data-attachment-id="15308" data-permalink="https://wanderinginn.com/2023/06/08/9-44-p/leviathan-by-wowzabublord/" data-orig-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Leviathan-by-wowzabublord.png?fit=515%2C606&amp;ssl=1" data-orig-size="515,606" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="Leviathan by wowzabublord" data-image-description="" data-image-caption="" data-medium-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Leviathan-by-wowzabublord.png?fit=255%2C300&amp;ssl=1" data-large-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Leviathan-by-wowzabublord.png?fit=515%2C606&amp;ssl=1" class="alignnone size-full wp-image-15308" src="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Leviathan-by-wowzabublord.png?resize=515%2C606&amp;ssl=1" alt="" width="515" height="606" srcset="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Leviathan-by-wowzabublord.png?w=515&amp;ssl=1 515w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Leviathan-by-wowzabublord.png?resize=255%2C300&amp;ssl=1 255w" sizes="(max-width: 515px) 100vw, 515px" data-recalc-dims="1"></a></p>
+<p>&nbsp;</p>
+<p><strong>Erin by Grimalkin!</strong></p>
+<p><a href="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Erin-by-Grimalkin.png?ssl=1"><img loading="lazy" decoding="async" data-attachment-id="15309" data-permalink="https://wanderinginn.com/2023/06/08/9-44-p/erin-by-grimalkin/" data-orig-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Erin-by-Grimalkin.png?fit=3168%2C3168&amp;ssl=1" data-orig-size="3168,3168" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="Erin by Grimalkin" data-image-description="" data-image-caption="" data-medium-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Erin-by-Grimalkin.png?fit=300%2C300&amp;ssl=1" data-large-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Erin-by-Grimalkin.png?fit=1024%2C1024&amp;ssl=1" class="alignnone size-full wp-image-15309" src="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Erin-by-Grimalkin.png?resize=3168%2C3168&amp;ssl=1" alt="" width="3168" height="3168" srcset="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Erin-by-Grimalkin.png?w=3168&amp;ssl=1 3168w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Erin-by-Grimalkin.png?resize=300%2C300&amp;ssl=1 300w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Erin-by-Grimalkin.png?resize=1024%2C1024&amp;ssl=1 1024w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Erin-by-Grimalkin.png?resize=150%2C150&amp;ssl=1 150w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Erin-by-Grimalkin.png?resize=768%2C768&amp;ssl=1 768w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Erin-by-Grimalkin.png?resize=1536%2C1536&amp;ssl=1 1536w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Erin-by-Grimalkin.png?resize=2048%2C2048&amp;ssl=1 2048w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Erin-by-Grimalkin.png?w=3000&amp;ssl=1 3000w" sizes="(max-width: 1000px) 100vw, 1000px" data-recalc-dims="1"></a></p>
+<p>&nbsp;</p>
+<p><strong>404 Page and Give Gif by BoboPlushie!</strong></p>
+<div class="message-2CShn3 cozyMessage-1DWF9U groupStart-3Mlgv1 wrapper-30-Nkg cozy-VmLDNB zalgo-26OfGz" tabindex="-1" role="article" data-list-item-id="chat-messages___chat-messages-706763723301322763-753355538389008576" aria-setsize="-1" aria-roledescription="Message" aria-labelledby="message-username-753355538389008576 uid_1 message-content-753355538389008576 uid_2 message-timestamp-753355538389008576" aria-describedby="uid_3 message-reactions-753355538389008576">
+<div class="contents-2MsGLg">
+<div id="message-content-753355538389008576" class="markup-eYLPri messageContent-2t3eCI"><strong>Twitter:</strong> <a class="anchor-1X4H4q anchorUnderlineOnHover-wiZFZ_" tabindex="0" title="https://twitter.com/Bobo_Snofo" role="button" href="https://twitter.com/Bobo_Snofo" target="_blank" rel="noreferrer noopener">https://twitter.com/Bobo_Snofo</a></div>
+<div class="markup-eYLPri messageContent-2t3eCI"><strong>Ko-Fi:</strong> <a class="anchor-1X4H4q anchorUnderlineOnHover-wiZFZ_" tabindex="0" title="https://ko-fi.com/boboplushie" role="button" href="https://ko-fi.com/boboplushie" target="_blank" rel="noreferrer noopener">https://ko-fi.com/boboplushie</a></div>
+</div>
+</div>
+<p><a href="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/404-by-BoboPlushie.png?ssl=1"><img loading="lazy" decoding="async" data-attachment-id="15310" data-permalink="https://wanderinginn.com/2023/06/08/9-44-p/404-by-boboplushie/" data-orig-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/404-by-BoboPlushie.png?fit=1103%2C968&amp;ssl=1" data-orig-size="1103,968" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="404 by BoboPlushie" data-image-description="" data-image-caption="" data-medium-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/404-by-BoboPlushie.png?fit=300%2C263&amp;ssl=1" data-large-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/404-by-BoboPlushie.png?fit=1024%2C899&amp;ssl=1" class="alignnone size-full wp-image-15310" src="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/404-by-BoboPlushie.png?resize=1103%2C968&amp;ssl=1" alt="" width="1103" height="968" srcset="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/404-by-BoboPlushie.png?w=1103&amp;ssl=1 1103w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/404-by-BoboPlushie.png?resize=300%2C263&amp;ssl=1 300w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/404-by-BoboPlushie.png?resize=1024%2C899&amp;ssl=1 1024w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/404-by-BoboPlushie.png?resize=768%2C674&amp;ssl=1 768w" sizes="(max-width: 1000px) 100vw, 1000px" data-recalc-dims="1"></a> <a href="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Give-Me-by-BoboPlushie.gif?ssl=1"><img loading="lazy" decoding="async" data-attachment-id="15312" data-permalink="https://wanderinginn.com/2023/06/08/9-44-p/give-me-by-boboplushie/" data-orig-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Give-Me-by-BoboPlushie.gif?fit=386%2C389&amp;ssl=1" data-orig-size="386,389" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="Give Me by BoboPlushie" data-image-description="" data-image-caption="" data-medium-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Give-Me-by-BoboPlushie.gif?fit=298%2C300&amp;ssl=1" data-large-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Give-Me-by-BoboPlushie.gif?fit=386%2C389&amp;ssl=1" class="alignnone size-full wp-image-15312" src="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Give-Me-by-BoboPlushie.gif?resize=386%2C389&amp;ssl=1" alt="" width="386" height="389" data-recalc-dims="1"></a></p>
+<p>&nbsp;</p>
+<hr>
+<p><a>Previous Chapter</a> <a href="https://wanderinginn.com/2023/06/10/9-45-gt/"><span style="float: right;">Next Chapter</span></a></p>
+      </div>
+
+      <hr>
+          <span class="nav-previous">
+        <a href="https://wanderinginn.com/2023/06/07/9-43-l/" rel="prev"><span class="meta-nav">←</span> Previous Chapter</a>    </span>
+    <span class="nav-next" style="float: right" ;="">
+        <a href="https://wanderinginn.com/2023/06/10/9-45-gt/" rel="next">Next Chapter <span class="meta-nav">→</span></a>    </span>
+    

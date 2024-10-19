@@ -1,0 +1,1226 @@
+
+
+          <span class="nav-previous">
+        <a href="https://wanderinginn.com/2023/06/13/9-47-u/" rel="prev"><span class="meta-nav">←</span> Previous Chapter</a>    </span>
+    <span class="nav-next" style="float: right" ;="">
+        <a href="https://wanderinginn.com/2023/06/27/9-49/" rel="next">Next Chapter <span class="meta-nav">→</span></a>    </span>
+      <!-- <hr/> -->
+      <header class="entry-header">
+        <h1 class="entry-title">9.48 BTIPRLJMWVRV</h1>
+                <button class="show-settings-btn" onclick="document.querySelector('#reader-settings-wrapper').classList.toggle('is-hidden')">
+          <img class="show-settings-btn-img" src="https://wanderinginn.com/wp-content/themes/solstice/assets/images/ui/reader-settings-button.webp">
+        </button>
+      </header>
+
+      
+<!-- Reader Settings -->
+<div id="reader-settings-wrapper" class="is-hidden">
+    <div id="reader-settings">
+        <header id="reader-settings-header">
+            <h2>Reader Settings</h2>
+            <button onclick="closeModal()">
+                <svg width="100%" height="100%" viewBox="0 0 33 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M16.5 30.75C24.0939 30.75 30.25 24.5939 30.25 17C30.25 9.40608 24.0939 3.25 16.5 3.25C8.90608 3.25 2.75 9.40608 2.75 17C2.75 24.5939 8.90608 30.75 16.5 30.75Z" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M20.625 12.875L12.375 21.125" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M12.375 12.875L20.625 21.125" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+            </button>
+        </header>
+
+        <fieldset id="fieldset-font">
+            <legend>Font</legend>
+
+            <div>
+                <label for="font-size-select">Size</label>
+                <select id="font-size-select" class="reader-settings-select" data-setting="reader-font-size" onchange="updateSetting(this.getAttribute('data-setting'), this.value);">
+                    <option value="10pt" class="reader-settings-option">10</option>
+                    <option value="11pt" class="reader-settings-option">11</option>
+                    <option value="12pt" class="reader-settings-option" selected="">12</option>
+                    <option value="13pt" class="reader-settings-option">13</option>
+                    <option value="14pt" class="reader-settings-option">14</option>
+                    <option value="16pt" class="reader-settings-option">16</option>
+                    <option value="18pt" class="reader-settings-option">18</option>
+                    <option value="20pt" class="reader-settings-option">20</option>
+                    <option value="22pt" class="reader-settings-option">22</option>
+                    <option value="24pt" class="reader-settings-option">24</option>
+                    <option value="26pt" class="reader-settings-option">26</option>
+                    <option value="28pt" class="reader-settings-option">28</option>
+                    <option value="30pt" class="reader-settings-option">30</option>
+                    <option value="36pt" class="reader-settings-option">36</option>
+                    <option value="42pt" class="reader-settings-option">42</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="font-family-select">Family</label>
+                <select id="font-family-select" class="reader-settings-select" data-setting="reader-font-family" onchange="updateSetting(this.getAttribute('data-setting'), this.value);">
+                    <optgroup label="Sans Serif">
+                        <option class="reader-settings-option" value="OpenSans, sans-serif" selected="">Open Sans</option>
+                        <option class="reader-settings-option" value="Arial, Helvetica, sans-serif">Arial</option>
+                        <option class="reader-settings-option" value="Roboto, sans-serif">Roboto</option>
+                    </optgroup>
+                    <optgroup label="Serif">
+                        <option class="reader-settings-option" value="Playfair, serif">Playfair</option>
+                        <option class="reader-settings-option" value="EBGaramond, serif">Garamond</option>
+                        <option class="reader-settings-option" value="'Times New Roman', Times, serif">Times New Roman</option>
+                    </optgroup>
+                    <optgroup label="Other">
+                        <option class="reader-settings-option" value="OpenDyslexic">OpenDyslexic</option>
+                        <option class="reader-settings-option" value="HennyPenny">Henny Penny</option>
+                    </optgroup>
+                </select>
+            </div>
+            <div>
+                <label for="font-weight-select">Thickness</label>
+                <select id="font-weight-select" class="reader-settings-select" data-setting="reader-font-weight" onchange="updateSetting(this.getAttribute('data-setting'), this.value);">
+                    <option class="reader-settings-option" value="300" selected="">Thin</option>
+                    <option class="reader-settings-option" value="400">Regular</option>
+                    <option class="reader-settings-option" value="500">Thick</option>
+                </select>
+            </div>
+        </fieldset>
+
+        <fieldset id="fieldset-spacing">
+            <legend>Spacing</legend>
+            <div>
+                <label for="margins-select">Page Width</label>
+                <select id="margins-select" class="reader-settings-select" data-setting="reader-article-width" onchange="updateSetting(this.getAttribute('data-setting'), this.value);">
+                    <option value="320px" class="reader-settings-option">Extra Narrow</option>
+                    <option value="500px" class="reader-settings-option">Narrow</option>
+                    <option value="680px" class="reader-settings-option" selected="">Medium</option>
+                    <option value="1000px" class="reader-settings-option">Wide</option>
+                    <option value="1200px" class="reader-settings-option">Extra Wide</option>
+                    <option value="100%" class="reader-settings-option">Max</option>
+                </select>
+            </div>
+            <div>
+                <label for="line-spacing-select">Line</label>
+                <select id="line-spacing-select" class="reader-settings-select" data-setting="reader-line-height" onchange="updateSetting(this.getAttribute('data-setting'), this.value);">
+                    <option class="reader-settings-option" value="1.2">Small</option>
+                    <option class="reader-settings-option" value="1.625" selected="">Medium</option>
+                    <option class="reader-settings-option" value="2.2">Large</option>
+                    <option class="reader-settings-option" value="3.5">Extra Large</option>
+                </select>
+            </div>
+            <div>
+                <label for="paragraph-spacing-select">Paragraph</label>
+                <select id="paragraph-spacing-select" class="reader-settings-select" data-setting="reader-paragraph-spacing" onchange="updateSetting(this.getAttribute('data-setting'), this.value);">
+                    <option class="reader-settings-option" value="0.5em">Small</option>
+                    <option class="reader-settings-option" value="1.625em" selected="">Medium</option>
+                    <option class="reader-settings-option" value="2.75em">Large</option>
+                    <option class="reader-settings-option" value="4.25em">Extra Large</option>
+                </select>
+            </div>
+        </fieldset>
+        <div class="ml-5 mb-4">
+            <label for="theme-select">Theme</label>
+            <select id="theme-select" class="reader-settings-select" data-setting="reader-theme" onchange="updateSetting(this.getAttribute('data-setting'), this.value);">
+                <option class="reader-settings-option" value="reader-theme-grey" selected="">Dark Grey</option>
+                <option class="reader-settings-option" value="reader-theme-blue">Dark Blue</option>
+                <option class="reader-settings-option" value="reader-theme-black">Black</option>
+                <option class="reader-settings-option" value="reader-theme-white">White</option>
+                <option class="reader-settings-option" value="reader-theme-sepia">Sepia</option>
+            </select>
+        </div>
+        <button id="reset-settings-btn" onclick="resetSettings()">Reset To Default</button>
+        <!-- <div> -->
+        <!-- </div> -->
+
+
+    </div>
+</div>
+      <div class="entry-content">
+        <p><strong>[I am taking my monthly writing break until the 27th! I’ll be working on a special advance-chapter, and so this is the last chapter you’ll see until then. Thanks, and hope you enjoyed the daily-chapter event!]</strong></p>
+<p>&nbsp;</p>
+<p><strong>(Trevor Melanson has released a new series: </strong><em><strong>Sailor’s Rise</strong></em><strong>, on Royalroad! <a href="https://www.royalroad.com/fiction/68951/sailors-rise-progression-fantasy-in-a-merchant">Give it a look here!</a>)</strong></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>“I have the power of colors on my side. Heh. Heeheehee. <em>Ehehehahahaha—</em>”</p>
+<p>If you thought yesterday was bad, Erin Solstice was cackling today. This time, Lyonette just locked herself in her room until Erin stopped.</p>
+<p>When she came out, Erin was staring at something in the common room of The Wandering Inn. She hid it behind her back, or tried to.</p>
+<p>“Oh, <em>hey,</em> Lyonette. What are you doing up so early? Why don’t you go back to…um…”</p>
+<p>Lyonette stared at Erin, then at the table. One of Erin’s tables was a pastel white and black, devoid of colors—all the scratches, stains, and whatnot were still perfectly visible, but the colors were <em>gone.</em></p>
+<p>“Erin? What have you done?”</p>
+<p>“Levelled up? I can do this now.”</p>
+<p>Erin had just de-colorified a table. Mrsha was stopped, mouth open in awe, as Nanette put her hands to her mouth.</p>
+<p>“Miss Erin! You’ve found more of your craft! Color magic? Of course!”</p>
+<p>“Wh—yeah! Color magic! That’s me! I totally meant to do this, incidentally, and I can definitely put it back.”</p>
+<p>Erin had no idea how to [Infuse Colors] back into the table. She’d yanked the colors out, and she stared at a slightly brown ball of something in her hand.</p>
+<p>“What the heck is this? It’s not that good, and it’s not even pure. Why do I think it’s not pure?”</p>
+<p>The <em>color</em> of the brown table was in her hand. Mrsha tried to grab it, but her paw just passed through it. Lyonette was appalled by Erin’s new powers.</p>
+<p>“Erin, are you going to redesign the entire inn? You don’t have that good an eye for colors.”</p>
+<p>“Hey!”</p>
+<p>Erin looked outraged, but even Mrsha was nodding seriously, worried for the future of The Wandering Inn’s aesthetics. A shadow quietly slithered downstairs, trying not to be seen, as he always did, and Ulvama came out of the lounge where she’d fallen asleep with her clawed hand in the popcorn bowl.</p>
+<p>Both Tesy, going for his morning breakfast, which Calescent put out for him, and Ulvama stopped dead when they saw Erin’s new power. She was waving around the ball of colors, arguing with Lyonette.</p>
+<p>“I have great taste. Look at my cool hair! Hey, I wonder if I can drain the color out of my hair and dye it like Ulvama did—”</p>
+<p>“<em>No, don’t!</em>”</p>
+<p>Both screamed, and Tesy actually <em>tackled</em> Erin. Since he was lighter, he only made her stagger, but Ulvama executed a flying jump-kick.</p>
+<p>“<em>Gah!</em>”</p>
+<p>Erin went over, swearing. She actually <em>blocked</em> the [Shaman]’s kick, and Ulvama shook her as Erin tried to get up.</p>
+<p>“Ulvama, what are—”</p>
+<p>“<em>You idiot! What are you—we talked about your hair, stupid! Are you stupid?</em>”</p>
+<p>She shook Erin as the [Innkeeper] sat up. Erin scowled as Tesy, panting, wiped at his brows.</p>
+<p>“You nearly messed up your <em>head!</em> What—did you become a [Painter] too? <em>Never</em> remove color from your body! I don’t even think you can do it—what kind of Skill was that?”</p>
+<p>He stared at the table. Ulvama herself got up, and Erin, spluttering, had Mrsha and Nanette drag her up.</p>
+<p>“Guys. I just levelled as a [Witch]. I was just using my new Skills, [Drain Color] and [Infuse Color]. Guess who’s Level 20?”</p>
+<p>Mrsha gasped, and Lyonette clapped her hands together, then looked around sharply. Ser Dalimont <em>slammed</em> a window down, and someone screamed from outside—but it was too late. A [Spy] appeared and ran for the hills. Erin barely noticed; they were all over the place. Sometimes she felt bad and fed them.</p>
+<p>She expected more applause, and Lyonette turned back to Erin.</p>
+<p>“Congratulations, Erin! Aside from that just leaking—we should have a party!”</p>
+<p>However, she was shoved aside by Ulvama, who snapped at Erin as Tesy glared.</p>
+<p>“You think colors aren’t <em>dangerous? </em>You idiot! Can you even fix the table?”</p>
+<p>“No, but what’s wrong?”</p>
+<p>Erin suddenly realized the two were actually concerned. For answer, Tesy inspected the monochrome table, then kicked it.</p>
+<p>Nothing happened. Ulvama snorted, then <em>overturned </em>it suddenly. That more-forceful action sent one edge hitting the floor hard. Erin saw the edge hit the floorboards—then a third of the table <em>snapped</em> off.</p>
+<p>“What the—”</p>
+<p>Erin was astounded. Her furniture was meant to be stronger than usual! True, throwing a table over was aggressive, but her common room had seen every kind of fight, and any table that lasted here had seen everything from Crelers to Gold-ranks duking it out.</p>
+<p>In fact…Ulvama was strong, but she had turned the table over amazingly easily. Mrsha, prodding at the broken piece of wood, actually picked it up.</p>
+<p>“It’s…light. And fragile.”</p>
+<p>Nanette inspected it, and Ulvama turned slowly to Erin.</p>
+<p>“You want the power of unlimited split hairs and bad hair for a year? Go ahead. Colors <em>matter. </em>You want to be bald? Go on, take colors out. You can’t even put back right.”</p>
+<p>“I—oooh—but why can’t I put it back? I have the blob here. Let me just—”</p>
+<p>Erin tried to sort of splash it back on, then wipe it on the table, but all she got was a splinter. Tesy and Ulvama watched with amazingly pained expressions. Tesy produced a brush.</p>
+<p>“Can I see?”</p>
+<p>Erin held out the blob. The famous Sellme was often in his rooms, hiding, and this was a rare moment when he showed his face. Like Tessa…Erin wavered between trying to talk to him and leaving him alone. In Tesy’s case, Erin still held a grudge about the entire assassin affair.</p>
+<p>But he was concentrated here, and he dipped his brush into the ball of colors. Tesy grimaced at it.</p>
+<p>“Ew. It’s got stains in it. It’s not pure.”</p>
+<p>Ulvama nodded.</p>
+<p>“Erin’s tables are gross. I don’t eat off them.”</p>
+<p>Erin put her hands on her hips.</p>
+<p>“Hey! They’re fine!”</p>
+<p>“That Antinium with silver antennae did a better job. Inkpaper cleans tables, and he never does the underside. Lazy.”</p>
+<p>The Goblin staff shuffled, and a Hob tried to sneak off as Peggy slowly looked around with a huge glower. Tesy, meanwhile, was busy inspecting the table.</p>
+<p>“Can you fix this?”</p>
+<p>“Oh, sure. [Partial Reconstruction].”</p>
+<p>The table fixed itself, but the color didn’t come back. Erin was fascinated by her new Skill, but she was aware it was actually dangerous. Indeed, it seemed that this Skill required actual technique to use effectively. Because Tesy began <em>painting</em> the table again!</p>
+<p>He delicately brushed it back into existence using the ball of brown and even adding cosmetic stains to the wood in the right places. He still had to add an artistic flourish; he frowned, then made it change color from a bleached balsa wood look to a very deep brown near the bottom in a gradient effect.</p>
+<p>“It’s not that fancy, but that looks nicer, doesn’t it?”</p>
+<p>The table stood out after that, like an art-piece. Mrsha and Nanette <em>oohed</em>, and even Lyonette seemed impressed. It wasn’t like a…painted table. It was more uncanny than that. The very <em>wood</em> seemed changed.</p>
+<p>“See? Colors matter. Is good job, I guess.”</p>
+<p>Ulvama herself stamped it with her seal of ‘good enough’. Tesy sniffed, but he stowed his brush away with a flourish.</p>
+<p>“How come I can’t do that?”</p>
+<p>Erin demanded. Ulvama and Tesy looked at each other, and Ulvama answered for them.</p>
+<p>“Because you suck at painting.”</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>All the power in the world and not a whit of talent. By the time her guests came in, Erin Solstice was angrily showing off her artwork.</p>
+<p>“That’s not bad!”</p>
+<p>“Oh, is that a duck? Are we doing painting today? Hello, Miss Solstice, we had a very fun night on the beach! Absolutely quiet, and, er, did I hear breakfast was here?”</p>
+<p>Lady Bethal Walchaís beamed at an image of a green duck on paper, then turned to Mrsha.</p>
+<p>“It’s very lovely art, my dear.”</p>
+<p>She only then realized that Erin was looking redder and redder, and Bethal’s eyes flickered.</p>
+<p>“No. Did you…?”</p>
+<p>“It’s a Dinobird. A Razorbeak.”</p>
+<p>Erin pointed out the green bird on her blue background. Tesy had given her his brush, and he was sobbing as he stared at it.</p>
+<p>“<em>You dipped it in multiple paints without washing it first!</em>”</p>
+<p>“Sorry! I forgot; art class was a long time ago. I—it’s not that bad. See?”</p>
+<p>Erin showed another picture to Thomast. She chose her target with care. The [Chevalier] was the most polite and least brutally honest of Erin’s guests. She looked up at him pleadingly.</p>
+<p>“Is that…I think it’s…a spider?”</p>
+<p>“No. An Antinium. See? Two legs, four arms—”</p>
+<p>She had no perspective, no shading, and her drawings looked like literal watercolors, which was about the same skill level from the last art class she’d taken in elementary school. Erin was crestfallen by her audience’s reactions.</p>
+<p>“But it’s my new Skill! I’m a [Witch]!”</p>
+<p>“Witches have to be good at what they do, Miss Erin. Maybe you’re better at decorating? Other kinds of art? You got your Skill because you must be good at something related to colors.”</p>
+<p>Ulvama snorted.</p>
+<p>“She got her Skill because she makes magical flames. She can’t use it.”</p>
+<p>“Oh yeah? Well, if <em>you’re</em> so good at colors, why do <em>you</em> not dye your hair and why do you dress in boring robes with white scales?”</p>
+<p>Erin took out her hurt feelings on Ulvama and Tesy. She pointed at the [Shaman] with her coat and woolens and black, braided hair and Tesy, who had on his Sellme cloak over his white scales flecked with colors.</p>
+<p>Both artists stared at Erin, then turned and marched off. Erin raised her hands.</p>
+<p>“No, wait! I just meant—”</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>More guests appeared, both from the magical door that Liska was operating as well as the beach. Yet another day of beach.</p>
+<p>But today, it was all about…couples.</p>
+<p>And art.</p>
+<p>In fact, the two topics were co-mingling because Erin’s new beach had the surf, and the kids were already there. It hadn’t changed, but the hot, new section wasn’t the bar or games-area.</p>
+<p>It was the resort section.</p>
+<p>Wailant had brought in help today. He was marching around with a crew of [Farmhands] and even some [Builders] from Liscor, as well as Antinium, getting to work on his three plots of land. Erin had sold multiple plots off, and with the help of some clever sand walls, you could feel like you were isolated in a little beach-valley that led to the sea.</p>
+<p>She was not prepared, though, for someone bringing in fake trees. Erin pointed at a grove of trees as her door opened and she caught sight of her beach-garden.</p>
+<p>“What’s that?”</p>
+<p>“Oh, illusion spells. I hired Palt to do them, and he’s sampling the look. I’ll have a beach here—say, can I get a miniature waterfall right abouts here? Remember, you’re getting a third of my profits!”</p>
+<p>Wailant strode over, pointing at his resort-for-rent. Erin stared at a sign.</p>
+<p><em>The Pirate’s Booty.</em></p>
+<p>“No.”</p>
+<p>“No waterfall? Come on, Erin. Imagine it. A waterfall, pond, and I’ve even got some fish—and I’m even throwing in a portable stove. Say, you need to tell Liska to let me bring everything through—”</p>
+<p>“No. <em>The Pirate’s Booty?</em> Wailant? <em>Absolutely not!</em>”</p>
+<p>He gave her a ribald smile and roared with laughter as she glared at him.</p>
+<p>“You hafta have a good name, Erin! I reckon it’ll bring in the right clients. Besides, I <em>am</em> a [Pirate]. We know how to have a good time.”</p>
+<p>Erin covered her eyes and slowly shut the door as Wailant shouted.</p>
+<p>“Since we’re here working this morning, how about breakfas—”</p>
+<p>She turned back to her guests and counted with a sigh. Wailant may have been first, but Lady Bethal had been the one to actually demo the beach-experience. She was sitting, talking with Lady Pryde, who had appeared with Lyonette.</p>
+<p>Strangely, Erin barely held a grudge against Pryde despite their past. Bethal? Bethal was sitting there chattering away.</p>
+<p>“You know, I may have to build something a bit more <em>upscale </em>myself. I know we won’t be here long, but our magical tent, far better than that tattered one in the snow, is still not the <em>best.</em> I thought a few chairs instead of a sleeping bag would be the thing. Thomast and I could sit on the beach and watch the sunset—which is <em>lovely</em>, by the way, Miss Erin.”</p>
+<p>“Oh. Thank you.”</p>
+<p>Erin was surprised, but Ulvama had been right after all. It wasn’t just about canoodling. It was about—a fun experience. In fact, more than one person was interested in making a place to relax in.</p>
+<p>“Erin, Erin. I’m so glad I caught you!”</p>
+<p>Palt clattered into the inn from the beach and nearly trampled a shorter woman wandering around looking for her apprentice. Archmage Valeterisa recoiled as Palt halted.</p>
+<p>“Oh, I’m so sorry—<em>Archmage Valeterisa?</em>”</p>
+<p>“Don’t mind me. My barrier spells are working perfectly. You’d just break your legs. Has anyone seen Montressa?”</p>
+<p>She was like someone hunting for a cat. Erin saw Palt heading towards her and called out to Valeterisa.</p>
+<p>“Montressa? I think she’s upstairs calling for you.”</p>
+<p>“Oh. Thank you.”</p>
+<p>Palt caught up with Erin excitedly and danced in place.</p>
+<p>“Erin, I forgot to say this—I need a pristine spot for myself and Imani. I was thinking…a special inlet, maybe? With a pretty little island? And if you could cordon it off for the two of us, that’d be great. With sand walls so we can be private?”</p>
+<p>Erin rubbed at her forehead. Oh, here came the consequences of her new actions.</p>
+<p>“Palt, I don’t do special inlets.”</p>
+<p>“Not even for me, your favorite Centaur? Erin, please?”</p>
+<p>“No!”</p>
+<p>“I’ll pay you five extra gold.”</p>
+<p>Erin hesitated as Lyonette’s head snapped around. She held up a hand like someone trying to stop a tidal wave.</p>
+<p>“No! No extra features for money! I know where that leads! It’s not permanent, anyways, Palt. You might only use it for like, what, a week tops?”</p>
+<p>“A week’s all I want. <em>Come on, Erin.</em> Imani’s been working like mad, and if I can’t surprise her…I need to impress her. I can’t—I can’t do it with illusions. I need it to be real.”</p>
+<p>Palt gave Erin such an earnest look that the [Innkeeper] hung her head. She knew, before she even said it, what kind of door she was opening.</p>
+<p>“I’m not sectioning off parts of the beach for you. This isn’t like those stupid hotel-beach areas in Florida. But I <em>suppose</em> on your spot I could, like, make some longer privacy walls. <em>Only for you.</em>”</p>
+<p>“And me? I will pay for that!”</p>
+<p>Bethal turned excitedly, and Erin held up her hands.</p>
+<p>“Palt’s an old friend! Lady Bethal, no one else. I’m not made of time, and it’s not permanent! Seriously, I’d feel bad about taking your gold. Only for Palt because I’ve known him so long.”</p>
+<p>Bethal’s face fell, but Erin thought she’d gotten away with it. Until someone coughed loudly behind Erin.</p>
+<p>“And what about us, Erin? What about…”</p>
+<p>Erin closed her eyes, then turned as Rufelt and Lasica appeared. She gave them a weak smile as Lasica put her hands on her hips.</p>
+<p>“Lasica! I was just—”</p>
+<p>“I would like a hill.”</p>
+<p>“But the thing is—”</p>
+<p>“I’ve had a tough year. I would like a hill.”</p>
+<p>The Drake [Chef] stared at Erin, and the [Innkeeper] held her gaze as long as she could. But this was not the pressure she was used to, of sheer intimidation, but the far more insidious force of friendship being applied for little favors. Rufelt made it worse as he came up behind his wife.</p>
+<p>“Don’t pressure Erin, Lasica. It’s too much to ask. You making Mrsha special meals every time she comes over isn’t the same as her making a little hill for us.”</p>
+<p>Erin covered her face and tried.</p>
+<p>“I can’t open this box, guys. It’s not going to be ‘just the hill’. You know it, and I know it. I’m not doing it.”</p>
+<p>“Erin, I lost my child. Can’t you do me <em>one</em> favor?”</p>
+<p>Lasica went so low that even Lyonette winced. Erin stared at her, and the Drake’s eyes widened. She was going—?</p>
+<p><em>How badly do you want your hill?</em> But Lasica just gave Erin a steady smile.</p>
+<p>“I can joke about it. Come on, Erin. Do I get my hill or not?”</p>
+<p>“<em>Fine! </em>Just don’t do that again! Palt, get back to making your stinking illusions before I kick you in the butt for starting this. I’ll see you two after breakfast. And no one else!”</p>
+<p>“Miss Solstice. My entire family died in the Sacrifice of Roses.”</p>
+<p>Thomast actually choked as Bethal put a hand over her heart. Erin didn’t even dignify that one. When Wailant came charging through the door—</p>
+<p>“Erin! My mother, bless her heart, died at sea. Every time I stare at the waves, I think of—”</p>
+<p>“<em>Raaaaaaah!</em>”</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>She hated being bullied into things. Part of Erin wanted to close the beach <em>now</em>, and the other half got the fact that these couples wanted cool features only she could make.</p>
+<p>If she could delegate…but there was no one with her powers. Erin was grumpy because she disliked the arm twisting, even if Bethal and Wailant were mostly kidding.</p>
+<p>Worse, you knew how the inn was. Within the hour, it wasn’t just Bethal and Thomast, it was couple after couple, enterprising businessmen like Menolit and Wailant, and even people who weren’t allowed in the beach bidding <em>inordinate </em>amounts for the resorts.</p>
+<p>“Look, it’s not permanent. You can’t—”</p>
+<p>“Two hundred gold pieces. I’ll build my own hut. Two <em>hundred</em> for a week, and that includes breakfast, lunch, and dinner, right?”</p>
+<p>A [Merchant] in Invrisil made what he thought was a good play. Erin just closed the door on his face with Liska’s help. He grabbed it.</p>
+<p>“<em>Two hundred, Miss Solstice! </em>Can you walk away from that?”</p>
+<p>She gave him a long look.</p>
+<p>“Trust me, pal. You’re not even on the list for craziest offers I’ve gotten today.”</p>
+<p>Then she closed the door in his face as his mouth dropped open. Erin turned with a huge sigh to Liska.</p>
+<p>“Has the beach actually driven them crazy, Liska? I don’t get it. Even if you’re freezing in the winter—I get that part. But why are people offering <em>this</em> much money for it?”</p>
+<p>Liska scratched her head.</p>
+<p>“I think it’s because it was on the news.”</p>
+<p>“Oh, right. Drassi and her damn coverage. If you see her, tell her I’m gonna kick her next time I see her.”</p>
+<p>Erin punched a fist into her palm. Liska grinned.</p>
+<p>“Well, that and all the nobles in Invrisil want to come in because of the postcard.”</p>
+<p>“…The what?”</p>
+<p>Erin had not seen the printed mage-pictures that Lady Bethal had been liberally passing around. She stared at one that Liska had acquired and altered. Mostly by removing Thomast’s face so she could admire Bethal, Lyonette, and Pryde—</p>
+<p>Liska avoided Erin’s gaze as the [Innkeeper] stared. But that was it.</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>“The nobility <em>love</em> unique experiences. If someone can do something fantastic—and expensive—that the others can’t, they go insane for it. What did you <em>expect, </em>Erin?”</p>
+<p>Larracel the Haven was amused when she took Erin’s frantic call to her. The [Innkeeper] was in her [World’s Eye Theatre]; she could see the Haven passing across Izril as Larracel expanded her garden.</p>
+<p>She had so few guests now; ironically, Larra looked happier. She was reconfiguring her inn from a noble’s retreat into something closer to Erin’s inn.</p>
+<p><em>Actually, that watchtower looked like she’d stolen it wholesale.</em> But the former adventurer had taken time to talk to Erin as she watched her staff planting new crops; her heating spells kept her garden warm. Erin was asking what she should do about her own beach.</p>
+<p>“It’s getting crazy, Larra. Someone offered me a <em>thousand</em> gold pieces for a super-villa!”</p>
+<p>“And? Did you make it?”</p>
+<p>“No! This beach is <em>not</em> permanent. I can’t offer that, and it’ll start a bidding war.”</p>
+<p>Something broke on Larracel’s end; she may have actually tossed a gardening pot in vexation.</p>
+<p>“Erin! Accept the request, tell them it’s not permanent, and have them bid up the prices! Gouge them! What are you doing?”</p>
+<p>“I don’t want to! This is for my <em>friends!</em>”</p>
+<p>“Then tell them that and rub it in their faces. But don’t play coy. You and I both know it’s special. If I could make a beach…”</p>
+<p>Larracel sounded disgusted.</p>
+<p>“It’s absolutely wasted on you, that Skill.”</p>
+<p>“<em>Thanks.</em>”</p>
+<p>Erin glowered, but she realized she might have to open up a few spots for non-inn guests just for the sheer monetary value. And that meant she was taking requests to do custom landscaping.</p>
+<p>It wouldn’t be so bad, except that Lasica and Rufelt decided they didn’t want the hill ‘just there’, but they wanted a flatter one over next to their house. Oh, and could Erin do a sandbar out to sea? Also, Lasica fancied that this was a perfect spot to do some outdoor grilling, so if Erin could prepare some solid ground—and did they have firewood?</p>
+<p>Erin knew how ‘teensy’ requests like this worked, and every time someone hurried over, she almost summoned a tidal wave. Lyonette would have happily taken over the work, but unfortunately—only Erin could command her garden, and she couldn’t delegate.</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>If you thought that Erin was unhappy, her guests were earnestly desirous of making their private villas the things of dreams. They knew they were transitory—and they knew Erin was already sick of their little requests.</p>
+<p>But you had to dream.</p>
+<p>In fact, the ones who had gotten the premium, first-class waterfront spots were all people that Erin knew. They were—</p>
+<p>Lady Bethal and Thomast.</p>
+<p>Imani and Palt.</p>
+<p>Rufelt and Lasica.</p>
+<p>Jelaqua and Maughin.</p>
+<p>And Wailant and Viceria.</p>
+<p>There were more tentative couples, like Jewel and Normen, Pryde and Grimalkin, but they weren’t at the ‘let’s get a villa’ stage. Nor did Numbtongue actually count because he was securing a spot in the expectation of multiple guests.</p>
+<p>He was…not at the same stage in relationships to Erin. In fact, she had rented an entire villa to a [Merchant], who had put down eight hundred gold with the expectation that if he had a villa in the exclusive beach, he’d find <em>someone</em> to share it with.</p>
+<p>She wished him luck, because his attitude seemed like it was going to produce a certain set of results for him. Actually, Erin wished him no luck. But she’d taken his money.</p>
+<p>People were hard at work using everything from timber and nails to sand to try and make a cozy spot. But it was true that making even a temporary residence was, well…</p>
+<p><em>Really hard.</em> That was why Erin was needed; sand was not a good foundation, and the grumpy [Innkeeper] had to turn the ground to something solid, and she could put up a wall very easily.</p>
+<p>Anyways, it turned out all the couples were actually along the same stretch of land, so they waved at each other and actually introduced themselves.</p>
+<p>“Hello! Are you our neighbors?”</p>
+<p>Lady Bethal waved at Imani, who looked flustered to have a [Lady] and her pink [Knights] address her. Palt trotted over and bowed.</p>
+<p>“Lady Walchaís! Forgive us for not introducing ourselves earlier. This is Chef Imani, and I’m Illusionist Palt; we run Barehoof Kitchens in Liscor.”</p>
+<p>Thomast shook both hands, bowing slightly, and Bethal exclaimed.</p>
+<p>“Oh! Are you the ones at that restaurant? We tried to get a place, but we were told it was closed. <em>Invitation only</em>, and Thomast and I have only been here recently.”</p>
+<p>“That’s right, it is—but if we’d known a [Lady] wanted a spot—we could absolutely do an exclusive dinner, Lady Walchaís. In fact, I could reserve you any spot in the next month—”</p>
+<p>Palt hurriedly produced a notecard, and Thomast interjected.</p>
+<p>“We would not wish to take up your time with business now. Perhaps after this is done we’ll inquire?”</p>
+<p>“That’s right, Thomast. We are all ‘beach folk’ here, and I hope you will call me Bethal. Hello! Are those our neighbors on the other side? Oh. My.”</p>
+<p>The ‘my’ was because she’d seen Maughin coming down the beach, and the War Walker was only hidden by Erin’s privacy walls. Jelaqua was waving around, and that was how Wailant and Viceria appeared, followed closely by Rufelt and Lasica. The [Chef] nodded as she trotted over.</p>
+<p>“Well, at least we’re not neighbors to people we don’t know. Hello, Lady Walchaís.”</p>
+<p>Bethal was the most noble person here by a long shot. She waved the title away delicately.</p>
+<p>“Hello to everyone! Please, <em>Bethal</em> will do. Are you all constructing villas?”</p>
+<p>“I’m hiring Antinium. Rufelt is supervising, but they’re the best at moving sand and can apparently put up a house in half a day.”</p>
+<p>“Antinium!”</p>
+<p>Bethal was shocked, but Imani and Palt nodded.</p>
+<p>“That was our decision, too. It’s not going to be just a place for us—well, it will—but we’ll have guests over. Kevin and Joseph and Palt’s mage-friends from Wistram.”</p>
+<p>Palt coughed.</p>
+<p>“Even a few other guests. The beach is, um—popular—so we might invite a <em>few</em> people I know from Invrisil who’ve been dying to get in here. Erin’s said that if we’re responsible, anyone with a villa can have someone in.”</p>
+<p>Jelaqua winced, looking amused.</p>
+<p>“She must hate that. She’s already got that fed-up look, and I was nervous she’d rip my heart out when I begged her to let me and Maughin bring a bunch of Dullahans into the beach.”</p>
+<p>Wailant grinned, remembering the Dullahan crowd.</p>
+<p>“I saw that! Did they actually enjoy themselves? Stony-faced, the lot.”</p>
+<p>Viceria elbowed him sharply and smiled at Maughin.</p>
+<p>“My husband is indiscreet. I’m sure he didn’t mean to imply the Dullahans were objectionable.”</p>
+<p>Maughin had stiffened a bit at the [Pirate]-[Farmer]’s flippant comment, but he inclined his head, which he was holding lower to be part of the conversation.</p>
+<p>“My people are less expressive, but they communicated to me that they were taken with the beach. This—public socialization and nudity is not something that we are culturally used to.”</p>
+<p>Wailant pursed his lips, eying Maughin.</p>
+<p>“I didn’t mean it badly. I’ve been to the north of Baleros. Dullahans don’t like smiling. I never did manage to read their expressions right, even when I crewed with them.”</p>
+<p>Maughin blinked. It was rare to meet anyone who knew Dullahans outside of Pallass, but Bethal interjected as she whispered.</p>
+<p>“Actually, I was hoping you could all advise me about Miss Solstice. I would hate to be kicked out or offend her, but I truly <em>would</em> like some additions to our garden. If I hired some Antinium…do you think she’d be more well-disposed to me?”</p>
+<p>“You’d hire Antinium? Lady Walchaís?”</p>
+<p>Palt’s eyebrows shot up, and Bethal barely hesitated.</p>
+<p>“Oh, I know we’re at odds, and I was right there in the Antinium Wars, the first one, but that was then, and Magnolia’s the one who lead the charge. This is about having a fine spot with me and Thomast to share! Priorities.”</p>
+<p>The others speculated, and Lasica smiled crookedly.</p>
+<p>“If you want to get on Erin’s good side—hire some Goblins. She has a soft spot for anyone who treats them nicely.”</p>
+<p>Bethal’s face went blank a second, and Thomast shifted. Rufelt, who knew more of Bethal’s past as a [Bartender], interjected nervously.</p>
+<p>“My wife has all kinds of notions. She might not be the <em>best</em> person to ask when it comes to getting on Erin’s good side. I can’t believe you said that to her, Lasica.”</p>
+<p>“Someone has to make light of things, and I’m the one who went through it all. Besides, Erin is more stubborn than Grimalkin. What’s wrong with…oh.”</p>
+<p>Rufelt kicked Lasica in the ankles, but Bethal smiled after a second.</p>
+<p>“When in this inn…I shall consider it, thank you. Er, to change the subject, is <em>Emperor Godart </em>going to be staying here?”</p>
+<p>She was very curious about Laken. So were a number of guests, but it was Imani who raised a hand.</p>
+<p>“I don’t think so. He’s been here two days out of five, but I think he doesn’t care for the beach. Durene and his people do, but not him.”</p>
+<p><em>Why was that? </em>Of everyone, the [Emperor] was avoiding the beach for a simple reason: he couldn’t ‘see’ in Erin’s domain. Sitting on the beach without being able to swim or dodge people running about was less fun, so he had vetoed the villa life. Durene had almost dragged him into the beach anyways, and the grumpy half-Troll was building sandcastles in the play section of the beach.</p>
+<p>At any rate, the couples talked and socialized, and there were actually a few more slots open as Erin was debating selling off the remaining resort sections; her garden didn’t have unlimited space. The prospect of a quiet getaway with beach fun was making a lot of people think quite, quite carefully.</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>Lady Pryde Ulta died. Lyonette saw it happen in slow-motion. She had seen Pryde walk through a snowstorm without putting on a coat. The [Lady] had, apparently, taken a swing from an enchanted weapon wielded by an Ogre and not taken a step back.</p>
+<p>But this one was painful.</p>
+<p>“Ah, Magus Grimalkin? I heard Miss Solstice was offering a villa retreat. Would you care to join me in one? That is—it would not make sense for me to indulge in one myself, and Bethal and Thomast have their own space.”</p>
+<p>Magus Grimalkin looked up from writing a list of potential beach calisthenics for his apprentices. He brightened up.</p>
+<p>“A capital idea, Lady Ulta.”</p>
+<p>She smiled, and Lyonette gave her a huge, covert thumbs-up as she peeked at them. Grimalkin stood up.</p>
+<p>“I had been thinking—we could work from the mansion, but my students would benefit from a full experience. Pallass Hunting is too gentle, and Liscor Hunted is too harsh. Building a villa would be a good exercise in teamwork, and we could do morning runs along the beach and late night exercises.”</p>
+<p>Pryde’s face slowly drained of life.</p>
+<p>“The…students? Of course. A villa for the students.”</p>
+<p>“I’ll arrange it right away.”</p>
+<p>He strode over to Erin, and Pryde sat down. Then she stared at the ceiling. Lyonette had never seen her look more defeated. The [Princess] danced in place. Then she rushed over.</p>
+<p>“Go tell him—you want it to be with the two of you! Go tell him! Pryde!”</p>
+<p>“No.”</p>
+<p>Pryde stared at the ceiling. Lyonette glanced at Grimalkin, who was eagerly laying out his scheme to Erin, who rolled her eyes indulgently.</p>
+<p>“<em>Pryde! This is your chance! </em>He’ll never get it—remember what Thomast told us?”</p>
+<p>“I can’t.”</p>
+<p>Pryde stared up at the ceiling, avoiding Lyonette’s gaze and looking at Grimalkin. The [Princess] hissed.</p>
+<p>“<em>Whyever not?</em>”</p>
+<p>“I’m too—it’s too humiliating. I can’t say it.”</p>
+<p>Then she turned red, and Lyonette saw Pryde’s, well, <em>pride </em>on full display. Her face fell, and Lyonette got, in that moment, how Bethal had both the need to protect her friend—and simultaneously could contemplate murder. Mostly, though, Lyonette just felt <em>bad</em> for Pryde.</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>“Huh. Is my [Dangersense] tingling? Hey, Relc. Is your [Dangersense] tingling?”</p>
+<p>Someone looked around in the inn at that exact moment and rubbed at the back of his neck. His companion, eating a hearty breakfast and looking forwards to a swim in the ocean, paused in shoveling down food.</p>
+<p>Relc Grasstongue looked over at Menolit, then frowned.</p>
+<p>“Nope. Feels safe to me. Why?”</p>
+<p>“<em>Something’s</em> going off. Wait, maybe it’s my new class. [Wingman].”</p>
+<p>“I <em>forgot</em> you actually got that. Hah!”</p>
+<p>Relc chortled, nearly spraying food out of his mouth. Menolit looked around, frowning.</p>
+<p>“Well, I wonder why. Hey, it’s probably because of the <em>resorts.</em> You going to, uh, get a spot? I bought three spots for Liscor Beaching—Erin took my name—and I’m thinking of maybe getting another. One to rent, and maybe one, for, you know…company?”</p>
+<p>He waggled his brows, and Relc sat up slightly. He felt that twinge of expectation in his marrow, and he lowered his voice.</p>
+<p>“They’re really expensive, though. Do you have…someone to go with?”</p>
+<p>“Not for Erin’s friends. As for company—Relc. It’s Erin’s beach, and some idiot paid eight hundred gold for a <em>non-waterfront spot.</em> You or I could probably beg for one of the remaining spots in the premium area. Imagine it. Tons of people would be asking to come on over just to see it.”</p>
+<p>“That’s not company, though.”</p>
+<p>Menolit shrugged, twiddling his claws together.</p>
+<p>“True, but if there’s good food, good fun, and good company…you get your chance is all I’m saying. It’s just a chance, but once you have a breach in the enemy lines, you have a shot. This is like having covering fire. How about it?”</p>
+<p>“…I can’t build houses, Menolit.”</p>
+<p>The [Veteran] swung an arm around Relc’s shoulders. He and Relc hadn’t known each other that well before the inn, but they were friends—in both their personal histories and single status.</p>
+<p>“Relc, I’ll help you build a <em>nice</em> spot. Then we head over to <em>The Drunken Gnoll</em> and just talk—loudly—about our empty villas. If we play our cards right, we could have a great—<em>week.</em>”</p>
+<p>Relc perked up instantly as the idea took hold. He was certainly receptive to the idea, and only the pain of making a villa himself had held him back.</p>
+<p>“Menolit, you’re a genius.”</p>
+<p>“I know. And hey, let’s get Grimalkin in on it. Did you hear him asking about a villa for <em>training?</em> The three of us together have to land a fish. So to speak.”</p>
+<p>That was probably why Menolit’s sense was tingling. Relc, himself, and Grimalkin—three lost souls pining for companionship.</p>
+<p>In fact, the Drake was so open-minded he even decided he’d throw a proverbial bone at other people in need if he came across them, regardless of species. That was how he accidentally invited nearly thirty Goblins and Antinium to his first party mixer.</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>Live and let live. This beach was not where all feuds went to die. Rather, it was the effort of some people trying <em>very hard </em>not to bring things up.</p>
+<p>Don’t bring up the war. Which war? <em>Any of them.</em> Don’t bring up Drake saboteurs. Don’t bring up the Bloodfields. Don’t bring up Liscor, actually. On the safe side, don’t even talk.</p>
+<p>Tyrion Veltras stayed well away from almost everyone. And even when an attempt was made in good faith, it was…rough.</p>
+<p>“Um. Excuse me. Are you for hire in building a villa?”</p>
+<p>Lady Bethal approached someone lying in the shade of a parasol, sipping drinks, and using her favorite pillow for lumbar support. Rags slowly, <em>slowly</em> glanced up, and she and Bethal met again.</p>
+<p>“Oh.”</p>
+<p>Bethal stared at Rags. The Goblin Chieftain stared back silently.</p>
+<p><em>Of all the ways for them to meet again—</em>Bethal had been wandering around the beach for the last half hour, trying to secure ‘Goblin builders’ on the chance it’d make Erin disposed to like her.</p>
+<p>She had not known that they were the members of the Flooded Waters tribe who <em>definitely</em> remembered her, and they’d sent her from Goblin to Goblin up a fictitious chain of command until she got to Rags.</p>
+<p>“You…you’re that little Goblin Chieftain, aren’t you? I know you. You’re the one who didn’t kill me when you had the chance.”</p>
+<p>That surprised Rags. She was taller and looked different than she had after fleeing Tremborag’s tribe, but Bethal recognized her.</p>
+<p>“You’re more powerful. But your aura’s the same. You—hello. I—oh dear. This isn’t going to start a fight, is it?”</p>
+<p>Rags sat up slowly and noted Thomast, two <em>familiar</em> [Knights], and several of her warriors casually playing in the beach close by.</p>
+<p>“You tell me. Why are you hiring Goblins?”</p>
+<p>“To—I—er—Thomast!”</p>
+<p>Bethal’s husband stepped up and bowed.</p>
+<p>“I believe it was to get on Erin Solstice’s good side. We will withdraw now. We would not like to cause an incident.”</p>
+<p>He eyed Rags, and the Goblin nodded.</p>
+<p>“Sure.”</p>
+<p>First Magnolia, now Bethal. Rags thought of the Goblins who’d died and wished she had sunglasses to flash in Bethal’s face or do something cool like slide them over her eyes like that [Mathematician]. Anything to hide her own expression, which she feared was naked.</p>
+<p>Bethal retreated a few steps—then halted. She swung around and called out.</p>
+<p>“I didn’t hunt any more of your kind after that, you know. Not since then. I have never forgiven Velan the Kind, but I did <em>think.</em> The ones in the north rampage and slaughter.”</p>
+<p>“Kraken Eaters.”</p>
+<p>That was Redscar, who was grinning and eying Thomast, who calmly returned the look. Two experts in the blade looking each other over.</p>
+<p>Rags thought about it. Goblins had killed Bethal’s family. Bethal’s [Knights] had killed Goblins.</p>
+<p><em>Leave it there? Call it even?</em></p>
+<p>No, of course not. But she just put her head back down on the pillow.</p>
+<p>“My tribe is called Flooded Waters. Remember that. What my tribe does is not all Goblins.”</p>
+<p>“I’ll remember that. Flooded Waters. And is this the inn that—changed you?”</p>
+<p>Rags tilted her head up and glared at Bethal. Then sighed.</p>
+<p>“A bit. But I changed me most of all. Go away. This was my place first, not yours. Erin will kick you out before me.”</p>
+<p>She had the satisfaction of watching Bethal hesitate—then retreat. Rags put her head down on her pillow and stared up at the sky. After a second, Redscar flopped down on the beach. Rags muttered.</p>
+<p><strong>“Even if you killed all them and Erin let you get away, we’d be hunted down.”</strong></p>
+<p><strong>“Wasn’t what I wanted, Chieftain. Can I duel the husband?”</strong></p>
+<p><strong>“…No.”</strong></p>
+<p><strong>“Please?”</strong></p>
+<p><strong>“No. Now, go find the Gnoll with the cool things on his face and buy me a pair.”</strong></p>
+<p><strong>“Yes, Chieftain.”</strong></p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>It was history. Raw history. If Rags had words for Bethal, she and the Goblins pretended Tyrion Veltras didn’t exist, but deliberately parked themselves in the funnest part of the beach so he couldn’t wander over.</p>
+<p>It wasn’t like they were going to run off. If anything—they wanted to be here. Erin had been worried, but this time, they were not going to run. He could run off.</p>
+<p>This was not the day for reconciliation if there was any, or even much confrontation. In fact, the biggest fight was when Erin was sulking in her private [Garden of Sanctuary].</p>
+<p>The real one, amidst the Sage’s Grass, with pleasant, if cold, air blowing in through the center of the dome, her garden of many seasons, accept no substitutes.</p>
+<p>No one could follow her and ask for a viewing platform or special waves. But unfortunately, at least one person did have access to the garden.</p>
+<p>A door <em>slammed</em> open, and Erin growled without checking who it was.</p>
+<p>“Go. Away. If it’s about my beaches, I’ll put in a sinkhole beneath your villa.”</p>
+<p>“<em>Beaches? </em>You’re making their villas fancy? You couldn’t decorate an <em>egg.</em>”</p>
+<p>Them’s were fighting words. Erin turned around, and Ulvama <em>kicked</em> the door the rest of the way open. She folded her arms, and Erin’s mouth dropped as Tesy appeared behind her.</p>
+<p>The two color-experts in the inn had walked off, but not to sulk to themselves. They had taken Erin’s accusation like an insult, and Ulvama pulled down one eye while Tesy gave Erin double middle fingers.</p>
+<p>She stared at them.</p>
+<p>“Whubuh—<em>what did you do?</em>”</p>
+<p>They’d dressed up. That was what they’d done. Or rather, both had employed their own color-abilities, and the thing that Erin forgot was that neither one actually flexed hard that often. Ulvama had her magical skin-paints, and Tesy could draw, but neither had actually shown Erin the depth of their craft, so she’d thought it was literally that.</p>
+<p><em>Mrsha</em> had not forgotten Tesy’s trick at the hidden Turnscale bar. Now, he’d repeated it, but for himself and Ulvama. And she had done the same for him.</p>
+<p>Ulvama’s hair was semi-translucent, pale white, and the braids had been redone to look like scales, and the ends of each had been colored to look like a snake. She looked like a fashionable Medusa, and Tesy had <em>painted</em> a green-and-gold shawl and summer dress that looked fancy, but almost plain compared to her hair—until Erin realized that Ulvama had also added magical, glowing skin-paint underneath.</p>
+<p>She looked like one of the Nagas, especially in dim lighting. Whereas Tesy’s neck-spines were each a different color, and he’d put on fancy robes with little golden filigree scrolls. His painter’s palette looked glossy and shiny, like he was some kind of philosopher-painter from ancient Greece.</p>
+<p>The two posed as Erin stared at them. And the first thought that Erin had as Apista buzzed around the two was…</p>
+<p><em>This was their favorite style?</em></p>
+<p>It was impressive, and Erin had never seen someone do <em>translucent</em> hair, but Ulvama’s favorite style was glowing snakes, and Tesy was a multi-colored Grecian philosopher. Yet they looked so pleased with their look that Erin applauded.</p>
+<p>“Whoa. It’s been, like, an hour! Did you do that all this time?”</p>
+<p>Ulvama folded her arms triumphantly as Tesy painted a little top-hat for Apista. They did have style, and she nodded.</p>
+<p>“This is my best look. Fashionable <em>and</em> useful.”</p>
+<p>“Useful h—<em>yaaaah!</em>”</p>
+<p>One of Ulvama’s snake-braids <em>bit</em> at Erin! The [Innkeeper] leapt back as she came over, and she realized that Ulvama wasn’t just faking the snakes—<em>she’d made her hair into snakes!</em></p>
+<p>“Also, magical paint. See? Like the Courier does, but less permanent.”</p>
+<p>The [Shaman] happily reached for her arm—then <em>pulled</em> a glowing strand from the paint and tossed it at Erin.</p>
+<p>“<em>Gaaaaah! Stop it, stop it!</em>”</p>
+<p>A spectral <em>snake</em> went slithering after Erin, and the [Innkeeper] freaked out at the viper. It couldn’t attack her in the garden, but Ulvama’s snake outfit was apparently one she’d used in actual combat.</p>
+<p>“See? What dress have you made for yourself? All this clothing is mine, by the way.”</p>
+<p>Tesy flipped open his sketchbook, showing Erin a lot of designs, both male and female, he’d come up with. She stared as he flipped through it.</p>
+<p>“I’ve got good clothing?”</p>
+<p>“Like your shirt and pants for the beach? Pfft.”</p>
+<p>“I have great winter clothes! You’ve seen ‘em!”</p>
+<p>“Yah. Selys bought them for you. Say we have good taste! Say it!”</p>
+<p>They looked ready to trounce Erin, so she apologized, and the two calmed down. Tesy brushed his claws on his painted-clothing, admiring the silver tips.</p>
+<p>“Ulvama is actually a master of painting on skin and hair and stuff. She’s got actual dust for dyes, and they’re not watery but the <em>real stuff.</em> I thought I wouldn’t ever meet someone else with a high-level class relating to art.”</p>
+<p>“I can do skin paints, hair dyes, nails, and more. Even designs on shields and stuff, but that’s stupid.”</p>
+<p>“Like what?”</p>
+<p>Ulvama thought about it.</p>
+<p>“Cute skunk? You draw it on a shield, and then someone hits it and—Goblins don’t usually ask for it after the first time. Why are you here? Sulking again?”</p>
+<p>Erin scowled.</p>
+<p>“I wasn’t! I was just—look, it’s a lot of work to make things on the beach.”</p>
+<p>“For all the lovey couples? You wanted to be nice to them. Why are you here and not helping?”</p>
+<p>“They’re all over it!”</p>
+<p>Erin protested as Tesy drew a mustache on Apista’s face for fun. Ulvama rolled her eyes with exasperation.</p>
+<p>“No, stupid. Not for the ones already together. What about the ones who need <em>help?</em>”</p>
+<p>“Like who?”</p>
+<p>This time, the [Shaman] raised another snake in her hand, and Erin had to think. She closed her eyes…</p>
+<p>“Well, hold on. Now that you mention it, there were a few hints like Pryde and Grimalkin, which is sorta obvious to everyone but me. But there’s not that many!”</p>
+<p>“You only saw that one?”</p>
+<p>Ulvama challenged Erin, and the [Innkeeper] had to drop the act. She fidgeted and eyed Tesy, but the [Painter] was happily heading off with Apista to show off her new style to Lyonette.</p>
+<p>Erin whispered to Ulvama nonetheless.</p>
+<p>“Um. Keep it a secret?”</p>
+<p>“Yes, yes. Who <em>did</em> you see? I know all of them. You’re a smart [Innkeeper]—”</p>
+<p>Erin chuckled weakly. It was actually a relief to tell Ulvama; she had thought to mention it to Lyonette, but it’d get weird, and the [Princess] sometimes exaggerated things. Numbtongue wasn’t really a good pick, Bird and Mrsha were silly, and Nanette was too young. There was Ishkr, but she felt like he was an employee. So Ulvama really was one of the only picks aside from maybe Selys or someone.</p>
+<p>“Okay. But I have to be wrong about some. Because like—Krshia and Lism? Elirr and Hexel are really close, which I noticed, and, uh—uh—well, here’s an old one. Lyonette and Pawn were, like, <em>more than friends</em> I thought until I died. And there’s also Pryde and Grimalkin, at least, one way, but those have to be mistakes, right? Krshia, Lism?”</p>
+<p>“Yep. Lotsa sex.”</p>
+<p>Erin gave Ulvama a long stare. Then she smiled politely.</p>
+<p>“No. Ulvama, I just realized you didn’t know this, but Krshia and Lism <em>hate</em> each other. They’re on the Council, but they were both [Shopkeepers], and they nearly killed each other back in the day.”</p>
+<p>“So…? Sounds like it’s even more passionate. Lots of times things happen like that.”</p>
+<p>“No. That’s a mistake. You don’t <em>know</em> they’re—”</p>
+<p>Ulvama raised her brows.</p>
+<p>“I know. Same with Gnoll and Lamia. But they’re secret because otherwise some stupid Drakes stab them.”</p>
+<p>“Wait, what? Elirr’s gay?”</p>
+<p>“…Happy? Yah, probably.”</p>
+<p>Erin had to sit down for a second.</p>
+<p>“Wh—but no one told me!”</p>
+<p>Ulvama gave Erin a surprised look.</p>
+<p>“No one told Erin? Erin who doesn’t like people kissing? Big shock. I am shocked. See? Why would Erin, who is not supportive, know about Pawn and Lyonette? Probably first love with them. Heartbreak…ah, young people. Want to bet on who the [Princess] finds next? I can’t figure out Antinium.”</p>
+<p>Erin’s head was spinning. She put her head down, then raised it sharply.</p>
+<p>“Wh—but Elirr didn’t ask me about a villa at all! And he loves the beach! Hexel was sleeping on it last night! Wait a second. <em>So was Elirr. Were they—</em>”</p>
+<p>“Yeah. Because if someone finds out he and Hexel are sharing a hut—”</p>
+<p>Ulvama pulled a belt-knife out and made a stabbing motion with it. Erin’s heart sank.</p>
+<p>“That’s not right.”</p>
+<p>“That is Turnscales. Was it not like that where you were?”</p>
+<p>Ulvama turned too-bright eyes onto Erin, and the [Innkeeper] hesitated. She lowered her head.</p>
+<p>“I didn’t know. I wasn’t really aware of it. My parents knew more than me, but I just played chess all the time, and that’s a sport with a lot of guys in it.”</p>
+<p>She flushed, and Ulvama patted her on the shoulder.</p>
+<p>“Well, good thing you have me. Because chess is all about strategy, and boring [Strategists] and war-people love it. But <em>sex</em> is where people kill each other over things.”</p>
+<p>Erin stood there for a bit, then the light of resolve filled her eyes again. She turned to Ulvama, who did have fashion, albeit snake-related. Erin’s eyes lit up.</p>
+<p>“Hey, Ulvama, d’you think we could make a really snake-related place with cool motifs for Hexel? I bet he’d like that. Why don’t we make a villa for Elirr and Hexel and, like, invite them to stay as <em>good friends</em> with Mrsha or something? An ultra-secluded one. And one for Mirn and Onieva, each! They were asking, and I’ll just coincidentally have them in the corner with extra-maze-like walls.”</p>
+<p>Ulvama looked proud of Erin’s deviousness. She patted Erin on the shoulder.</p>
+<p>“Now do you feel better about doing beach stuff? You don’t have to do all of it, silly. Just half of it. Or less!”</p>
+<p>Erin sighed.</p>
+<p>“I know, I know. I just hate when people <em>make</em> me do things, y’know? Lasica bullies and prods to get her way, and I like her, but sheesh.”</p>
+<p>Ulvama’s patting became quizzical, and she eyed Erin.</p>
+<p>“No. I meant…why are you doing work at all if you don’t want to? Helping hidden lovers is funny. But you don’t have to do any work. I don’t do work if I don’t want to. Focus more on helping relationships you like. And ruining stupid ones. That is the way of [Shamans].”</p>
+<p>Now it was Erin’s turn to look puzzled as she pointed towards her beach-garden door.</p>
+<p>“Someone’s gotta terraform the place, Ulvama. I bet everyone’s waiting for me to get back.”</p>
+<p>Ulvama scratched her head.</p>
+<p>“No…I think they’re bothering the Archmage. You should help her, too. Otherwise, she’ll probably fail. I like her. She reminds me of my old [Chief Shaman].”</p>
+<p>“…Huh? Valeterisa?”</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>Archmage Valeterisa had been thinking of going back to her mansion. After all, her research materials, familiars, and most of her stuff was there.</p>
+<p>The long jaunt to Fissival had been for personal reasons, to reconcile her past. She’d slowed down around Liscor to scope it out and because of her teleportation network, but the fact remained that the isle she’d bought was her home.</p>
+<p>Why would she stay around Liscor? Well…she had sworn to make a place for [Mages], and the middle of the continent made sense.</p>
+<p>Moving her mansion would be such a <em>pain,</em> though. Valeterisa had suspected she’d teleport using her network and keep mobile. She should have been getting back to work, collecting supplies, and teaching her apprentice in her safe domain.</p>
+<p>She kept hanging around here, though. Larracel had already left, so why was she here?</p>
+<p>No reason. She should leave already. The beach was pleasant, but so were warming spells. The Archmage of Izril was a very busy woman.</p>
+<p>“…[Earthshape]. And to smooth the ground…[Transmutation: Flat Mudscape]. [Halt Spell]! Is this better?”</p>
+<p>“T-thank you, Archmage! That’s <em>perfect.</em>”</p>
+<p>Lasica stared as Valeterisa shaped a place for Rufelt and the Drake to sit just over the beach. Erin had been reluctant to, partly because working with sand was so hard.</p>
+<p>However, Valeterisa had raised a wall of stone, then shaped it into a gentle cliff. But she’d made it <em>smoother</em>, a pleasant thing to walk barefoot on, by using the [Mudscape] spell, which could turn a lot of surfaces into unpleasant mud.</p>
+<p>Yet she’d halted the spell before it actually mudified anything, so the result was rougher stone becoming as smooth as polished marble. Valeterisa added a few steps, then absently scratched at her head.</p>
+<p>“Why am I doing this?”</p>
+<p>She turned to Montressa, and her apprentice gave her a look as blank as Valeterisa’s.</p>
+<p>“I have no idea, Archmage. Why <em>are</em> you helping make villas?”</p>
+<p>“I…feel like it?”</p>
+<p>Part of Valeterisa’s mind twinged at her. If she had been using [Parallel Thoughts], at least one of them would have had the answer, but Valeterisa was trying to wean herself off using that dangerous ability.</p>
+<p>Unfortunately, that meant she sometimes obfuscated her own thinking. She lied to herself. Valeterisa casually floated over to Lasica and Rufelt.</p>
+<p>“I can put a heating rune in your hot bath. It will feed off the mana in the inn.”</p>
+<p>“T-thank you, Archmage. Again, you’re so kind…do you have a villa?”</p>
+<p>“No. But Montressa is going to stay at the one with Palt and Imani. I am just staying at the inn for a while, and I am very free. I should go home soon.”</p>
+<p>Valeterisa spoke loudly, and the Drake nodded respectfully.</p>
+<p>“Well—can we invite you for a potluck on the beach? Everyone will bring something—ah, but you’ve done enough! All the local waterfronts will be participating. In fact, I think Erin said she’ll sell or use up the last spots, there.”</p>
+<p>Valeterisa looked over at the remaining spots for villas and nodded. Then someone else waved at her.</p>
+<p>“Archmage! Archmage, I am <em>so sorry,</em> but I was just thinking of making a flat slip-n-slide with an ice spell? Bounded here? But I, uh, couldn’t figure it out.”</p>
+<p>Palt wanted to make a slide down to the sea, and Valeterisa floated over. She took one look at the cold water flowing down the sand and shook her head.</p>
+<p>“It’s not strong enough to maintain during this heat. Have you done any calculations? The rule is for every degree above freezing you put in 0.32 magirite. What was your calculation?”</p>
+<p>That was a rough formula using ‘magirite’, which was a standardized unit of measurement around a sample of raw magicore that you could calculate to find the intensity of spells. A lot of magical empires and schools had varied in their units of measurements, but this was the most constant unit that Valeterisa had found. In the past, it had gone magirite, erchirite, and then seith for progressive units of power…but while she knew <em>erchirite</em>, a powerful gemstone that was a benchmark for magical power in Salazsar for being constant, seith was lost to time.</p>
+<p>Palt gave Valeterisa a woebegone look as Bezale and Montressa both turned away and tried not to get Valeterisa’s attention, like naughty students in class.</p>
+<p>“I, er—I tend to eyeball most spells, Archmage.”</p>
+<p>“So you didn’t measure the temperature? What is your maximum intensity of [Icy Floor]? We can test whether it is even possible for you to maintain, let alone ground as a bounded enchantment.”</p>
+<p>Palt shuffled his hooves faster as Imani glanced over.</p>
+<p>“<em>Maximum intensity? </em>Well, well…”</p>
+<p>“You don’t know. Do you know any of your spells in magirite? Have you even taken Analytical Spellcraft?”</p>
+<p>“—I don’t think they still teach that course, Archmage!”</p>
+<p>Palt smiled desperately as he tried to evade Valeterisa’s look of disappointment. She held his gaze, mystified.</p>
+<p>“And you graduated?”</p>
+<p>Palt was sweating so hard he might have passed out from dehydration, but someone came to his aid.</p>
+<p>“Hey! Did I hear someone can make walls for us? We’re building a villa, and we need help! Turns out it’s not as easy as a tent! I—oh, hey. Archmage Valeterisa.”</p>
+<p>Relc came trotting along the beach in swimming trunks, looking tired and nursing a scratch from where a bit of falling timber had snagged him. Valeterisa turned around swiftly, and Palt made his escape in a flash.</p>
+<p>“Oh. Sergeant Relc. Hello. I didn’t realize you were on the beach. I meant, resorts. Are you making a villa?”</p>
+<p>Relc rubbed at the back of his neck.</p>
+<p>“Yeah, that’s right. Er, greetings, Valeterisa. I fixed that puzzle of yours that got broken.”</p>
+<p>Her eyes lit up.</p>
+<p>“You did? How?”</p>
+<p>He casually felt at his belt pouch, realized he’d left it, and cursed.</p>
+<p>“It was just a bit of wire. I unstuck one part, replaced it, glued it together, and the entire thing works! I had to learn to repair mine, but no wonder [Repair] didn’t work—it’s all in tiny parts, so the spell probably didn’t do the entire thing or something.”</p>
+<p>“It is highly specific. If it regarded the entire puzzle as being in pieces, I never got at it with the spell. I should have made a full bubble and then…did you solve it?”</p>
+<p>Relc grinned. He rubbed at his neck-spines, glancing at Valeterisa as her eyes lit up. Behind him, on the beach, the kids were shouting at him to come back and continue playing the ‘Kraken’. He waved at them, then glanced at the construction work—then Valeterisa. Relc indicated the puzzle.</p>
+<p>“I solved it twice! So—you’re making a villa? I bet you could do a giant sandcastle or something. That’s amazing. We’re trying to make some huts, and it’s a mess. Menolit can’t build, and we could <em>really</em> use some stone walls for the frame, but Erin’s apparently mad as a Rock Crab in boiling water, so when I heard someone was building things…”</p>
+<p>Valeterisa had on her robes for the beach, not really fancying the swimwear, and she brushed at them innocently.</p>
+<p>“I decided to volunteer my magic. I don’t have a villa, though. I don’t feel the need. My apprentice is staying with her friends, but I am not. But I’m staying in The Wandering Inn for a few days.”</p>
+<p>“Ooh. Nice! But no villa? I bet you could rent one and make a nice one. Why are you…”</p>
+<p>Relc frowned, and Valeterisa gave him an innocent shrug.</p>
+<p>“It never occurred to me. Do you need magical help, by any chance?”</p>
+<p>Valeterisa was just coincidentally doing some magic over here and suddenly here was Relc. The Drake stared at Valeterisa, then gave her a big smile. She blushed and was glad he turned his head to wave at Ekirra.</p>
+<p>Relc actually knew her, unlike the other guests of the inn, who treated her like a dangerous, unpredictable force of magic. Rather like an older Erin, actually. But Relc had gotten to talking with her about puzzles, and he really was an amazing puzzlehead.</p>
+<p>The Archmage floated after Relc as he pointed with sheer gratitude at their villas. She noticed that her apprentice had slowly, <em>slowly</em> turned her head, and Valeterisa felt a prickle down her back, but she kept her face straight.</p>
+<p>“Do you—it seems like there are a lot of couples on the beach. Are <em>you</em> bringing anyone?”</p>
+<p>Strange. She was having heart palpitations. Where was Larra when Valeterisa needed her? Relc shrugged self-consciously, and eyed Valeterisa before turning and laughing.</p>
+<p>“Me? I’m a dumb guy…nah. Menolit and me were inviting Grimalkin, actually, and we were going to, uh—throw a few parties. My kid might stay, actually. Which’d sort of defeat the purpose…if I even build a stupid hut. What about you?”</p>
+<p>He sighed hugely, contemplating a number of ways this could go wrong. Valeterisa floated a bit higher, then came down to earth.</p>
+<p>“Me? No…no. Not anyone. Why—why don’t I help you? With the hut. I could make something very nice, I think. It’s the only thing to do for someone who likes puzzles.”</p>
+<p>“Really? Thank you! You’re definitely the best Archmage of Wistram!”</p>
+<p>Relc beamed, and Valeterisa felt like she really needed to lie down. She floated after Relc and tried to say something.</p>
+<p>“I…I…”</p>
+<p>“Hm?”</p>
+<p>“Would you invite me to your party?”</p>
+<p>Montressa was holding on to Bezale, who looked amazed, and Palt was staring so hard that Imani had to punch him in the side. Relc was oblivious to Valeterisa’ comment. He just paused, looked her in the eyes, then grinned.</p>
+<p>“Sure! Maybe we’ll both get lucky—er—damn. Don’t mention that around Erin. She gets weird, but hey. Absolutely!”</p>
+<p><em>No!</em> Valeterisa’s face fell, and she wondered if someone were casting [Confounding Obliviousness] on people around here. This had worked when she was younger! Then she realized she might be old, and her face fell, and she wanted to leave again.</p>
+<p>Of course, she was too old, so it wasn’t even an option. Sadly, Valeterisa floated after Relc…and the senses of a certain Menolit began to tingle as he saw them approach. That was nothing compared to the bells going off in a certain [Innkeeper]’s head as she and Ulvama watched through her garden door.</p>
+<p>Relc paused only once to notice Valeterisa, the absent-minded [Archmage], was getting sunburned. So he went and got one of the parasols and held it over her as she asked what kind of a house he’d like her to build.</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>“Okay. We have to help. Wait. Relc and Valeterisa? Isn’t she like ten years older than him? Maybe more. Is that a good—<em>ow!</em>”</p>
+<p>Ulvama almost kicked Erin through the doorway they were using to survey the beach.</p>
+<p>“She’s trying hard. I like it! You don’t like it? I’ll drown you in the surf.”</p>
+<p>“No, I like it! I like it! Relc…I just can’t believe it! Relc’s a good guy, and Valeterisa <em>lifted a city!</em> Are you sure they’ll fit?”</p>
+<p>Ulvama considered the question seriously.</p>
+<p>“Dunno. But do you want to give them a chance?”</p>
+<p>Erin hesitated.</p>
+<p>“S-should we? Shouldn’t we just leave them—<em>don’t hit me!</em>”</p>
+<p>Ulvama had raised the fist of the [Great Shaman] in wrath. She eyed Erin and lowered her fist.</p>
+<p>“Sometimes you do nothing. But I am a [Shaman]. You can help. Not <em>push</em>—not unless it needs pushing. Or pull. Only when it’s <em>bad</em> do you do it. But you can be subtle.”</p>
+<p>“Subtle how?”</p>
+<p>“Like…two [Scouts] going on the same patrol. Someone runs out of good arrow glue, so has to go talk to another leader in other tribe. Invite both to party. Shy ones are bad. <em>Too confident </em>ones are the worst. Bleh.”</p>
+<p>Erin was super nervous as Ulvama spoke like a seasoned expert in the realms that only Pellmia had dared to attempt. Yet if the [Lord of Love and Wine] could have been here…he might have realized there was some skill here, too.</p>
+<p>“What do I do, oh wise Ulvama?”</p>
+<p>Erin sat there, and Ulvama gave her a suspicious look, then smiled.</p>
+<p>“Some of them only need nice, private places. Others have heads thicker than Rock Crab shells. You give those ones big chance.”</p>
+<p>“And if they fail?”</p>
+<p>Ulvama tapped the side of her nose.</p>
+<p>“Lots of drinks so they can cry into the surf. And make sure they don’t drown themselves.”</p>
+<p>“…You have done this a lot, huh?”</p>
+<p>“Yep.”</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>“Is this…for us?”</p>
+<p>The first thing Elirr thought when Mrsha took off the blindfold was that Erin had realized what was up with him and Hexel. He was worried, but he hoped Mrsha hadn’t told his secret. Perhaps Ysara or Qwera had, but he was glad, because he saw something in the private villa by the sea, twining with snake-like motifs and made of sandstone, painted like a coastal cottage. He saw care, not hostility, and it touched him.</p>
+<p>Okay—that was the second thing he thought. The first thing he thought was that he was glad Mrsha hadn’t led him into a trap where her friends would pelt him with mudballs.</p>
+<p>The rapscallious Mrsha looked inordinately proud, despite having done nothing more than help drag in some chairs and fetch Elirr. He turned, and Erin gave him a huge wink.</p>
+<p>“Hey, Elirr! I thought you and Mrsha and, I dunno, Hexel or someone could use this cottage for all your hard work! Just whatever you want!”</p>
+<p>Wink. Wink. Ulvama covered her face with a hand then slapped the back of Erin’s head. Elirr’s stomach twisted again at the thought of Erin being subtle, but he came over to her and took her hands.</p>
+<p>“For me? Thank you.”</p>
+<p>Erin grew serious and stared earnestly up at the [Beast Trainer].</p>
+<p>“I just wanted to—well, make something for you guys. Oh, and this is a private section of the beach with one entrance over there. You only have two neighbors. Two spots—for Mirn and Onieva. They might have guests, but I thought it’d be okay. Is that fine with you? I can block it off even more, but…”</p>
+<p>Elirr glanced over, and two Drakes looked back from exclaiming over their own cottages. The walls were actually stone, but Tesy had painted the interiors, and they’d furnished both with actual furniture and beds. He saw the Drake [Protector] give him a long look, and Elirr’s smile was genuine.</p>
+<p>“I think—I would rather like to have them as guests. I should introduce myself.”</p>
+<p>“You do that! I’ll leave you guys alone—”</p>
+<p>Erin was heading off when Elirr caught her hand. He looked her in the eye.</p>
+<p>“Erin. Thank you. Really. I don’t often look for kind people, but you are.”</p>
+<p>She gave him a wide-eyed look and then <em>sniffed.</em></p>
+<p>“Don’t say that or I’ll feel bad. It’s just—you have lots of fun, okay? Mrsha, he’s gonna make me cry!”</p>
+<p><span class="mrsha-write">How dare you! Make Erin cry? She’s only supposed to do that every other day! Let’s have a fun time, Elirr! Let’s show Hexel!</span></p>
+<p>Mrsha ran over, mock-punching at Elirr’s legs, and he swept her into a hug. She patted him on the shoulder, then held up a card.</p>
+<p><span class="mrsha-write">I am not staying here tonight. You couples are gross. Visma’s crazy because she says it’s all amazing.</span></p>
+<p>He laughed and kissed her on the brow, and she wiggled and scowled, then hugged him. When he let go, Erin had run off, and Ulvama, the Goblin, gave him a huge grin.</p>
+<p>“She’s shy. It’s very funny. Okay! Now let’s go save poor, stupid Drakes from themselves.”</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>If building a villa for Onieva was simply the task of working hard, it had simple, guaranteed rewards. When the Drake saw what Erin had made and Erin showed her how private it was—you had to literally walk right instead of join the main area that led to most resorts—the Drake gave her a long look.</p>
+<p>“So you arranged all this. Did you plan it from the start?”</p>
+<p>“Me? Nah…I’m not good with secret stuff. But once I had this—you should thank Ulvama. She helped convince me to rescind the ban on kissing and stuff, and then I wanted to make somewhere without…raids. Do you need anything else?”</p>
+<p>Ulvama waved innocently as Onieva looked at her, and the Drake [Alchemist] felt a mix of conflicting emotions in her chest. She turned to Erin and exhaled.</p>
+<p>“No. This is a wonderful little gift, Erin. A resort for us to…be natural? We might have to put up a few spells, but this is perfect.”</p>
+<p>At least, for a little getaway. Erin beamed proudly, and Elirr looked excited, but Onieva’s smile was banked, and Erin noticed.</p>
+<p>“Can I get you anything else? Do you not like sand?”</p>
+<p>“No…I was just thinking logistics. Mirn?”</p>
+<p>The Drake was just as excited by the beach-prospects as Onieva, much less to get a free spot given how much others paid for them. However, there was a bittersweet look in his eyes when he pointed to the painted villa.</p>
+<p>“It’s beautiful, really. That Tesy did it? I know…well, I’d invite Vetn as well if I could find him. And a bunch of our <em>good friends.</em> But—I don’t think we’ll manage more than two. Maybe we should just fill it with Onieva’s friends.”</p>
+<p>He put his claws in his pockets and stood there, sighing. Erin blinked at Mirn and didn’t see what Ulvama was talking about. He had slim Drake-style jeans that actually had a tailhole and a kind of cuf-off fabric that hugged his tail. Pale white, like the snow, and the yellow sleeveless jacket looked nice, and he was only wearing that. No undershirt for the beach, so he was showing off what Erin took to be like a Drake version of a six-pack. That was definitely some style, and she even noticed he had a tail-ring. So maybe he was a bit modern and trendy, but fashionable?</p>
+<p>It occurred to Erin that she didn’t know any fashion terms, so she couldn’t tell anyone what Mirn was wearing exactly, but okay, fine, it was a cut above most winter-going people. Trendy.</p>
+<p>So why was he so let down? By her architectural choices? Ulvama and Tesy had helped her make it! It even had furniture!</p>
+<p>“The problem, Erin, is that even if this place is cut-off and secluded—your inn is not. We were just talking about it. Let’s say we brought, um, a bunch of people who’re our real friends, here. Well, it’s all good if they have a fun time and no one notices them. But then we’re associated with them, see?”</p>
+<p>“…Why’s that bad if no one can tell you guys are, uh—uh—at odds with the Watch?”</p>
+<p>Erin didn’t see the problem, but that was because she had to wrap her mind around the Turnscale community’s struggles. Onieva spoke, overly patient.</p>
+<p>“It’s trouble because if a single one of them—through no fault of yours—gets in trouble, <em>all </em>of us might be tarred with the same brush. Even though we’re obviously upstanding citizens with nothing to hide.”</p>
+<p>“No sausages in my sheets. Just good old-fashioned tuna.”</p>
+<p>Mirn nodded. Erin almost snorted at the analogy, but he looked sad and…oh.</p>
+<p>“So that’s why. If you guys were a group and someone was taking notes…”</p>
+<p>“Trouble by association. Sorry, Erin. Even if we all came in separately, they know we’re coming to the inn, and we’re Pallasians. We can bring some people in, and I bet Elirr and Hexel have a better—reason—but us?”</p>
+<p>The Gnoll actually did look a bit worried as Onieva brought this up. Erin’s face fell. Of all the problems to have!</p>
+<p>“But there are tons of Pallassians coming through all the time! Can’t we just pretend they’re travellers?”</p>
+<p>“Your guests are a much more select clientele, Erin. I know it is quite tempting, but too dangerous, no. I’m sorry, but I see her point.”</p>
+<p>Elirr murmured, and Erin almost sat down as the excitement turned to a kind of frustration. Both Mirn and Onieva tried to cheer her up, seeing the gift go sideways, but Erin just sat there.</p>
+<p>“That’s so unfair. No. I’m…”</p>
+<p>She stared blankly at the houses she’d worked so hard on, then got mad at Pallass and their snoops. Spies everywhere. She was normally cool with them, but this?</p>
+<p><em>Walled Cities and their eyes. </em>Chaldion might be someone she needed the help of, but he liked to be in control.</p>
+<p>She’d never warred with him. Maybe he would’ve won…but Erin knew he wasn’t the greatest [Strategist] ever to live. She’d met them, from dirty Nerrhavia to cunning rulers like Khelta and even heard stories of places like Samal and their deviousness. Why…why…</p>
+<p>Erin paused a long moment. Then her eyes flickered. She looked up suddenly, and a truly Nerrhavia-level insight flickered in her mind. She might not know Turnscale covertcy well—but Erin knew her inn. And she knew dirty.</p>
+<p>“Actually…I think I might have a solution for that. Can I run an idea by you guys? It’d depend on one person and if you’re okay with a <em>teensy</em> bit of risk, but I have a good idea.”</p>
+<p>Onieva gave Erin a sharp look, and the [Innkeeper] suddenly straightened. She rubbed at her chin as Mirn folded his arms.</p>
+<p>“We’d have to okay this, Erin. Nothing flies with us unless it’s tested and good.”</p>
+<p>“Well, let me explain it! I think it’d work…it just really depends. Ooh, now I’m nervous.”</p>
+<p>Erin got worried again, because it all hinged on one person. She looked around.</p>
+<p>“I need to find Ishkr—and maybe you could trust him? But it really depends on whether or not…Liska is cool with Turnscales. I hope she is.”</p>
+<p>Erin frowned worriedly, and Onieva instantly raised her claws.</p>
+<p>“Erin. Erin. <em>This</em> is what we were afraid of. You can’t just tell people…not your most trusted [Server]. The cute one? Not even him, and certainly not someone we don’t know.”</p>
+<p>“Uh, Onieva?”</p>
+<p>Mirn hesitated, because Elirr had nearly choked on his spit. The Gnoll and Drake exchanged a wordless look, then Mirn turned to Erin.</p>
+<p>“Er—is that the kid at the door who sits back in her chair and snacks while insulting people? The sassy one?”</p>
+<p>“Y-yeah?”</p>
+<p>Mirn turned to Onieva and raised his brows.</p>
+<p>“I think…we should hear Erin out. She and her brother might be okay.”</p>
+<p>Onieva paused, then looked at Erin. Okay. But what was her plan…?</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>Doors and Gnolls. Later that day, a Drake from Pallass went for a visit to Invrisil. They could get on the day-listing since, these days, Pallass preferred to run everything via a passport system.</p>
+<p>If you had a passport and you weren’t a risk, they’d essentially let a Pallassian head in and out, even appear without advance notice.</p>
+<p><em>Visitors</em> were far more heavily regulated, and many realized they needed passports for large-scale business or travel to other cities. It was one of those protective things that made the City of Inventions so popular…</p>
+<p>At any rate, the Watch gave the Drake a second glance, because they were clearly a bit <em>nervous.</em> One of them double-checked the Drake with a manual magnifying glass enchanted with [Detect Magic], but when they came up clean, they were simply noted with a tiny note.</p>
+<p>It usually didn’t mean much. Of course, if a Watch Commander, Captain, or anyone else had reason to check their file, they could find more notes, and in this Drake’s case, a suspicion of unmoral conduct unsubstantiated—one neighbor, one via association.</p>
+<p>—Of course, proving it was hard, and to the annoyance of many, the budget for having the Eyes look into these open cases had been cut down to a tenth of what it was by Chaldion. If the Drake had gone in the company of other people with flags to Invrisil, well, that might get someone on their case.</p>
+<p>As it was, it was just data, and if they made a habit of going to Invrisil, perhaps whomever they were with would be correlated by an [Analyst]. But it wasn’t the <em>inn</em>, and the Drake wasn’t entering a group with, say, Onieva Oliwing or ‘Mirn’, both of whom had more flags—all unsubstantiated—than a consulate.</p>
+<p>The Drake lined up, making small-talk with a few other pedestrians bound for Celum, one to Esthelm—and they went slowly, one by one through the door.</p>
+<p>“Next! One by one! Sorry, it’s not <em>my</em> job—hey, don’t dawdle! Sorry, it’s Pallass.”</p>
+<p>The Gnoll on the other side was giving the Watch a hard time, and they glared at her. She did have to double-check destinations, and she got to eat bagels with hot chocolate with her feet up. The [Innkeeper] had been banned from bribing the gate-guards, and so they retreated to the warm checkpoint for tea while she worked.</p>
+<p>“To…Invrisil? Kendrei Kalsei?”</p>
+<p>“Uh, y-yes. For shopping, Miss. I’ll be back tomorrow.”</p>
+<p>The Drake nervously cleared her throat, and Liska glanced up. She had a list of her own, and she was more alert than normal. She gave the Drake a big smile as she waved her through.</p>
+<p>“Come on through. Hey, no pushing behind me! You lot, step back!”</p>
+<p>Owing to security concerns, the line in Pallass was behind a door that could be shut and reinforced in case someone or something came through. The same for Invrisil, Liscor, and Celum. Esthelm was building their own checkpoint too, so the sighing pedestrians waited and saw the Drake walk on through.</p>
+<p>Did the door…<em>flicker?</em> A Dullahan clutching the ticket that Maughin had given him glanced up, and Lorent the [Sharpener] thought he saw the door <em>flicker</em> for a second. But he had no good angle to see, and when two more came through, he saw them stride on through…then the familiar, open door to The Wandering Inn when Liska waved him through.</p>
+<p>Lorent appeared in the hallway and looked around. Not many people had been allowed into the beach, and Liska had congratulated him about having a pass. He hurried into the beach, so happy to be invited he didn’t think to notice there weren’t many people waiting for Liska to tune the door to Invrisil.</p>
+<p>He didn’t think about it much. The only thing the Dullahan thought, later on, was that it was funny that one of the Drakes playing on the beach and looking excited was the same Drake he’d seen in line. But he just assumed she’d come back from Invrisil. Or that Drakes looked alike. He wouldn’t want to get in trouble, and what did it matter?</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>After the sixth person passed through the door and came out into the beach, Onieva was sold.</p>
+<p>“Dead gods, I didn’t know your door worked like that!”</p>
+<p>She turned to Erin, and the [Innkeeper] was hugely smug.</p>
+<p>“It doesn’t. Liska’s using my [Portal Door] as <em>well</em> as my Garden of Sanctuary’s door.”</p>
+<p>“But how? It’s still open in the middle of the beach, isn’t it?”</p>
+<p>For a reply, Erin twirled something in her fingers, and a key <em>shone</em> as it spun into reality. She showed it to Onieva as Mirn welcomed the nervous Turnscales in.</p>
+<p>“I’ve got two doors. What’s actually happening is that they step through the portal door—and Liska’s chaining it to one in the basement. But that one’s connected to the <em>second</em> door, so they actually teleport twice with no one the wiser. I betcha we could even fake a ‘checkpoint’ so if someone stares over their shoulders, it just looks like they’re walking through like normal. They won’t appear on the other end, but I bet Pallass doesn’t spy on Invrisil’s checkpoint, huh?”</p>
+<p>“You clever—”</p>
+<p>Onieva laughed. Of course! She sombered quickly, realizing it wasn’t perfect. Of course, people might notice that the others weren’t where they should be.</p>
+<p>But that was only a problem if the others very clearly showed their faces in the inn’s common room. If they were in a private room, for instance, so they never had to wander…</p>
+<p><em>Wait. What about a room with no doors? </em>One only accessible by…</p>
+<p>Erin Solstice had gotten where Onieva was headed long ago, but she had never employed her methods in service of anything but Earth’s secrets. Now—something was dawning on Onieva.</p>
+<p>Yet this moment was for the beach, and it was that which moved Elirr to tears. Just a tiny bit. Ishkr was there, hovering around and offering people tours, but the Gnoll looked at Erin and shook his head.</p>
+<p>“That—this is more than anyone I know has had. Perhaps it was never needed in Liscor, but look. She did it for us. Just like she’s done for everyone else.”</p>
+<p><em>Done…?</em> Mirn looked over, and then Onieva glanced at Erin and saw it was true. The [Innkeeper] had a twinkle in her eyes, and she was plotting. She had pulled out a secret, her magical door, and conspired with Liska.</p>
+<p>True, the [Doorgnoll] had been over the moon when she was asked to do the work. She’d been sulking since the beach was open and she had to work, but when she’d been asked to clandestinely transport a few people on <em>her</em> list into the beach? Even the procrastinating, lazy, reluctant worker in Liska had smiled.</p>
+<p>Tricking the law and spiting Lord Tyrion Veltras were Liska’s great passions in life. Erin just patted Elirr on the shoulder.</p>
+<p>“Don’t cry! Elirr, it’s not much—”</p>
+<p>Even Onieva didn’t get the tears, not at first. The villas had been a kind gift. The door…that struck Onieva in her heart, a tiny bit. But Elirr was crying because the Gnoll wiped at his eyes on his arm and turned to Erin.</p>
+<p>“It is if you’re doing it. Because, Erin, you never <em>stop.</em> At least, so I hope…this is the first gift, and I will thank you again for things I cannot think of.”</p>
+<p>She gave him a mystified glance as the [Innkeeper] waved at Mrsha to bring over a bracing drink of something sweet.</p>
+<p>“Why would I stop? I like you, Elirr, and if it helps thwart some jerks—come on, it’s just a door.”</p>
+<p>She was so embarrassed, and Onieva was staring at Ulvama, who looked even smugger than Liska, and her mixed feelings grew. <em>Why was it so easy? Why was she suspicious of things going well? Why did a Goblin have more empathy than the entire Assembly of Crafts put together?&nbsp;</em></p>
+<p>But her feelings towards Erin were far easier to resolve. Erin blinked—then squeaked as Onieva picked her up in a huge hug.</p>
+<p>Onieva was <em>strong. </em>Her pink and blue scales flashed under the beach’s sunlight, and she squeezed fiercely.</p>
+<p>“You. I had my doubts, but Saliss was right. You’re a good person, Erin Solstice. Thank you.”</p>
+<p>“No, no, it’s just a bit of work! Really, it’s just—”</p>
+<p>Onieva put Erin down and gave her much the same look Elirr had. One that was too genuine, even for Erin.</p>
+<p>“No. It’s not a little thing. It matters. Thank you.”</p>
+<p>Then she smiled.</p>
+<p>“If you want, you could find someone and join us.”</p>
+<p>“I, uh—I have to go help out other people! See ya!”</p>
+<p>Erin ran off, but she waved at Mirn, and Onieva stepped back as Hexel was brought over in a blindfold.</p>
+<p>“We have to make contact with Liscor’s people. Mirn, stop crying.”</p>
+<p>“I’m not crying. It’s sand. It gets everywhere. Especially in my eyes. Onieva, if this is a stupid dream, don’t wake me up from it for a bit, okay?”</p>
+<p>She punched him in the side. Not hard, but enough for Mirn to swear and believe he wasn’t dreaming. Then Onieva stared up at the cottage that Erin had built.</p>
+<p><em>If she could do this…even if this was paint and sandstone and a magical garden…I wonder if she can make a bar after all? Or something else?</em></p>
+<p>Onieva had never, ever thought to leave Pallass. But for the first time—she eyed Elirr, who was on Liscor’s Council, and wondered how many homes were for sale in Liscor. Perhaps…she smiled.</p>
+<p>She just smiled.</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>That wasn’t easy in the sense of emotions. But it was easy in the sense of the stakes. Ulvama told Erin that the next part was tough.</p>
+<p>You could make a huge mistake. Like Numbtongue could hurt feelings by inviting people to his villa. Or how Jewel and Normen were up to making a sandcastle together, but not yet ready for a push.</p>
+<p>Pushing was bad. Pushing meant you were, by definition, moving someone ahead of where they wanted to be. Sometimes, you could push, but you had to be very good at your job.</p>
+<p>A [Shaman] could throw a tribe into chaos if they sucked. Ulvama had experience both in good pushes and bad—as befit someone who had kept her power in Tremborag’s backstabbing Mountain City tribe.</p>
+<p>“This is very tough. <em>That</em> one is like…a huge mountain.”</p>
+<p>“Of pride. Sorta fits her name. Do you think she changed her name or was it the name choosing her?”</p>
+<p>Erin stared at Lady Pryde, and Ulvama sighed.</p>
+<p>“Doesn’t matter. She’s like a mountain but…glass. Get it?”</p>
+<p>“Hm? Oh, yeah, that totally makes sense. So she’s not willing to say anything?”</p>
+<p>“Nope. And <em>he’s</em> strange. I think <em>he</em> thinks no one likes him. Because too many muscles. Bleh. Not my type. Sort of like Tremborag’s war form. Fomirelin. All muscle.”</p>
+<p>“It’s…Grimalkin’s got more muscles than anyone else, that’s true. But he’s a pretty composed, confident guy. He beat up Wyverns when they attacked, and he shouts ‘testicles’ all the time! You think he’s self-conscious?”</p>
+<p>Erin had never pictured the Drake arguing with Menolit as shy in any regard. But Ulvama gave Erin a piercing stare.</p>
+<p>“What does all that have to do with confidence in other ways? Sounds like no confidence to me. Have you ever seen him flirt?”</p>
+<p>“No.”</p>
+<p>“Do you think he <em>likes</em> other people?”</p>
+<p>Erin had to think.</p>
+<p>“…Y’know, I can’t tell. He’s really never expressed an opinion. But then, I’ve never seen anyone flirting with him, either.”</p>
+<p>Ulvama sighed. They were sitting on a hill, so they had a good view of the resort villas. Erin had raised it for a better view.</p>
+<p>“Yup. Is tough. He <em>could</em> be like Garen. Very tricky. Doesn’t really like anyone. Or Pyrite. Stupid Goblin. But he could also be like a…lonely, shy person.”</p>
+<p>“Hmm. So what do we do?”</p>
+<p>Ulvama scratched her head.</p>
+<p>“Dunno. It’s harder without Goblins. In my tribe, I’d have Goblins poke them and keep hinting. Even if he’s stupid, if fifty Goblins say it, he’ll think. Does he have fifty friends?”</p>
+<p>Erin held up her fingers.</p>
+<p>“Uh…he’s got a lot of acquaintances, but I think it’s mostly Chaldion he hangs out with? He really is a private guy. Who <em>is</em> his friend outside of hanging at the inn?”</p>
+<p>“Interesting.”</p>
+<p>Ulvama was formulating a plan, but she made binoculars with her hands and stared at their next target. Relc and Valeterisa. Then she and Erin stared at Relc’s ‘villa’.</p>
+<p>“Um. Y’know, it occurs to me I should have put a height limit on that thing.”</p>
+<p>Erin had seen castles. She had seen sandcastles. But this was a <em>castle</em> made out of sand. Not a stupid one, either, but a literal mansion that Valeterisa was blasting to turn the sand into hardened glass. She was even using color-spray spells, and Relc was staring up at the castle in awe.</p>
+<p>Erin put her chin in her hand.</p>
+<p>“I think it’s Relc. I think he just didn’t realize she’s into him. Which I get. He’s a self-conscious dude. He has an ugly tail, apparently.”</p>
+<p>“Mhm. Too short.”</p>
+<p>“Oh, come on! I can’t tell. And he’s never been in a long relationship since I’ve known him. He’s sort of a goofball…but he’s changed a bunch. How do you want to help?”</p>
+<p>Ulvama had her chin in one clawed hand.</p>
+<p>“Is tough. If you act stupid, like ordinary Erin, you’ll make them self-conscious and ruin everything. If you push them together deliberately, they’ll bounce apart. Don’t do anything stupid.”</p>
+<p>“I won’t! I’m super nervous, Ulvama! Come on, give me some wisdom!”</p>
+<p>The [Shaman] was watching, and she smiled slightly as she saw Valeterisa floating down, panting from her magical efforts. She turned to Erin, eyes lighting up.</p>
+<p>“Sometimes you wait. Then strike! Like a snake!”</p>
+<p>One of her hair-braids struck and hit Erin in the forehead. Ulvama laughed as Erin swatted at it. Then she pointed.</p>
+<p>“Sometimes you wait and watch. Sometimes…they don’t need much help. Sometimes you’re honest. I think now is the time.”</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>When she was making the second-floor balconies, Valeterisa began to feel stupid. Even for her, she was burning mana.</p>
+<p><em>What was she doing?</em> She was casting illusion spells, and there was a huge entryway, a connection to the sea, and even the other neighbors were exclaiming.</p>
+<p>“This will be some party! Menolit, you keep your guests away from our spot. We’re having quieter couples’ nights, got it? No sneaking into my barbecue.”</p>
+<p>“I would never, Lasica!”</p>
+<p>Menolit was protesting, looking slightly guilty as she anticipated him coming over for [Chef]-level food. Grimalkin was trying to also get away.</p>
+<p>“I have my students’ training villa, Menolit. How would it look if I were flirting instead of work?”</p>
+<p>“Grimalkin, you have to relax sometime! Let them work, and just have a private life! Tell me you’re not interested! Relc, help me out!”</p>
+<p>“In a sec!”</p>
+<p>Relc was watching Valeterisa work, and she felt like she was making a fool of herself. The Archmage heard Grimalkin reply, voice low.</p>
+<p>“I’m not looking to get into romance, Menolit. I am married to my work, and frankly—I just don’t believe I’m that appealing to most people.”</p>
+<p>“Grimalkin—”</p>
+<p>Menolit looked exasperatedly at him. The [Sinew Magus] folded his arms defensively.</p>
+<p>“I’m simply stating facts. I am at peace with it.”</p>
+<p>“You don’t think someone’s interested in you? Listen, I’m a [Wingman], and my instincts say there’s a chance.”</p>
+<p>“—I would say that’s unlikely, and even if that were the case, who would I appreciate? Few people could tolerate my lifestyle. The issue cuts both ways, Menolit. There are few people I could even consider romantically, and—I am frankly uncomfortable with this line of conversation. Just count me out, would you? Relc! How much longer are you going to ask the Archmage to design your villa? She’s used more mana than I have in my body!”</p>
+<p>Grimalkin called out, and Valeterisa nearly collapsed the balcony as she jumped. Relc called back.</p>
+<p>“I didn’t! Archmage, this is incredible. You…thanks for doing all this, but I think this is good. I don’t even know how we’d furnish it all.”</p>
+<p>Valeterisa floated down, embarrassed, and regarded the sand-mansion as Relc waved at her. She shuffled her feet in the sand.</p>
+<p>“I just wished to help. I hope you like it. For your vacation.”</p>
+<p>“I will. I…all the villas appreciate your help.”</p>
+<p>He grinned at her, and her heart flipped—then flopped as Relc waved at Menolit.</p>
+<p>“Hey, Menolit, don’t bother Grimalkin too much! He’s his own guy.”</p>
+<p>“But Relc! I just feel like—”</p>
+<p>Menolit was trying to sort out his own instincts as Relc turned back to Valeterisa. The [Trusted Sergeant of the Watch] put his claws in his pants pockets. He had taken off his shirt for the beach, and Valeterisa tried not to stare at his tail.</p>
+<p>“Y’know, this really was more than I should have asked for, Valeterisa. I didn’t stop you, and you went all out.”</p>
+<p>“Oh…it’s for a fellow puzzle-head. It’s nothing.”</p>
+<p>She muttered, staring at her feet. Relc eyed Valeterisa, then coughed into one claw.</p>
+<p>“I think—I should give you this mansion, Archmage.”</p>
+<p>“Me?”</p>
+<p>“Yeah, well, you built it. And you made it so nice—you’re the one who seems to be looking forwards to the beach. Me, I just went along with Menolit since it sounded fun, but look at this place.”</p>
+<p>Relc craned his neck back and stared up at the entire façade. Valeterisa’s heart beat faster.</p>
+<p>“I—made it for you.”</p>
+<p>“I can’t accept it. And I’d feel bad if we just used it for Menolit’s party. Don’t you want to stay on the beach?”</p>
+<p>Now he was eying her, and Valeterisa had to admit that it did sound nice. Books and puzzles on the beach…but her heart sank as Relc jerked a thumb at the other two Drakes, still arguing, as Mrsha padded over with a note.</p>
+<p>“I’ll go room with them. Your apprentice could probably use the rooms here; Imani and Palt’s is sort of a couples’ retreat. Sorry to put you to all the effort, but I just can’t make you do this work and do nothing.”</p>
+<p>Now, her heart was sinking, because this made sense. Valeterisa hesitated…and sighed and nodded.</p>
+<p>“Of course. But I could offer it for the, um, the party?”</p>
+<p>She was feeling worse, and Relc actually paused before glancing at Valeterisa. Then he dropped the final Tier 8 spell on her.</p>
+<p>“Actually—I’m not feeling the party. I think Menolit’s the one who’s the most interested in it, you know. Grimalkin? He’s not in the mood, and the couples with Lasica’s barbeque are more my thing. I realized when I saw all the people coming over like the Wishdrinks staff, who’re off-duty, and even my kid. I’m sorta too old for that.”</p>
+<p>He sighed and kicked at the sand as Valeterisa’s mind went to a stop. Then Relc raised his claws over his head.</p>
+<p>“<em>Raaah! I’m only in my thirties! That’s not old! I’m not old!</em>”</p>
+<p>The pain. Valeterisa was—she deliberately forgot how old she was. She drooped as Relc nodded at her.</p>
+<p>“So—the villa’s yours, Valeterisa. Sound good? Hopefully you can find some people to stay with. Or someone. That’s sort of what this entire resort area is. Couples…or groups looking for love. Wow, Erin must be furious.”</p>
+<p>He scratched at the back of his head, embarrassed. Valeterisa tried to give him a smile through bloodless lips.</p>
+<p>“Yes. That was my conclusion as well.”</p>
+<p>Menolit’s head kept swinging over, but Mrsha was getting in the way with the note and distracted the [Wingman]. Relc glanced at them, then found his spear, which he kept even on the beach to do tricks with, springboard off of, and perhaps, like a soldier’s version of a security-blanket to stab people with.</p>
+<p>“Is that all fine by you?”</p>
+<p>“Mm. Thank you for considering my feelings, Relc.”</p>
+<p>She lied. Relc paused a moment.</p>
+<p>“You know, that sand-mansion’s pretty nice, and Erin’s said everyone has like a week or two in the beach. Do you think you’ll be here that long?”</p>
+<p>She gave him a watery smile.</p>
+<p>“I think I may return to my mansion soon. Even tomorrow. You can use it if I vacate it, or my apprentice might.”</p>
+<p>“Oh. That’s too bad. Because it really is a nice place.”</p>
+<p>Relc faced the as-yet undecorated mansion, and Valeterisa hung her head. Menolit turned—and for some reason, a magical snake bit him on the ankle. He went hopping away, cursing. The Drake stared at the mansion, then spoke again.</p>
+<p>“It’s a great resort Erin made up. Even if she doesn’t have a, y’know, person, there are people that like her, but Erin’s sunk them all, even this fancy [Earl] who came by.”</p>
+<p>“Really? I didn’t know that. It must be nice to be young.”</p>
+<p>The [Spearmaster] rolled his shoulders as he put the spear across them, hanging his arms off it.</p>
+<p>“Eh. No one’s ever old. But sometimes it feels harder. Back in the army, it was more—casual. These days, it’s a drink at a bar or even the Haven…it’s hard to meet new people.”</p>
+<p><em>Larra.</em> Valeterisa was considering doing a teleport out of here, then just [Invisibility]. But she couldn’t leave her apprentice. Once he left.</p>
+<p>“Wistram was very social for me as well.”</p>
+<p>Relc glanced at Valeterisa’s hung head.</p>
+<p>“Right, right. That’s why I was glad when this happened. Because it’s that sort of chance, you know? I just wish I knew someone. And again—your villa’s too nice for me to take. I’m not some [King]. I hope you find someone cool…if you were looking for anyone. I mean, you’re an Archmage. Maybe you’re busy.”</p>
+<p>“I wasn’t.”</p>
+<p>Valeterisa felt like someone was casting [Reduce Size] on her. Or at least, her voice. Relc hesitated for one long moment, then coughed.</p>
+<p>“Well, if you <em>did</em> have anyone in mind, I bet you they’d say ‘yes’. If you asked. I dunno.”</p>
+<p>Here, at this point, even the Archmage of Izril’s single, non-parallel mind realized that Relc was not obliviously rubbing something in, but perhaps, perhaps, employing that most rare of tactics.</p>
+<p>Subtlety. Her head rose, and she adjusted her sandy spectacles slowly. Valeterisa saw Relc stare straight ahead, but he was peeking out of the corner of his eye.</p>
+<p><em>Wait a second.</em> Menolit had kicked the damn snake into the surf, and he turned—and halted as his instincts suddenly said, ‘stay the heck away’. Relc glanced at Valeterisa again. Stared straight ahead.</p>
+<p><em>And hope bloomed like a Faerie Flower in the darkness.</em></p>
+<p>“I wouldn’t want to, y’know, presume. I’m bad at stuff like that. But hey, I’m single, and I don’t want to go flirting if Embria and her squad’s around. That’s a bad look, doing it in front of the kid. What if I romanced one of her soldiers from my old army? Under her command?”</p>
+<p>He shuddered. Valeterisa spoke breathlessly.</p>
+<p>“That would be—uncomfortable. And this is my villa.”</p>
+<p>She double-checked. Relc nodded.</p>
+<p>“Got anyone in mind?”</p>
+<p>“I—I—perhaps. But I do not know how to do it. Asking. It’s been a long time, and perhaps I’m old.”</p>
+<p>She self-sabotaged. Someone screamed very quietly, and Valeterisa and Relc turned. A ‘bush’ that had been planted in the illusory resort’s scenery suddenly shook—and Montressa, Palt, and Bezale appeared as Valeterisa pointed a wand.</p>
+<p>“<em>Aaah! </em>Montressa, you idiot!”</p>
+<p>They ran for it. Valeterisa met her apprentice’s gaze—</p>
+<p>“[Siege Fireball]—”</p>
+<p>Her wand <em>sparked,</em> and her apprentice screamed and ran into the surf, but Valeterisa canceled the spell and stood there, looking away now. She was afraid to even glance to her right at the Drake. After a second, she realized he was chuckling.</p>
+<p>Then silence.</p>
+<p>Then…Relc spoke, and Menolit, the [Mages], a snooping Mrsha, Visma, and even Erin, Ulvama, Rufelt, Lasica, and countless other people craned their necks and perked up their ears to listen. One was wavering, and the other?</p>
+<p>Relc gave Valeterisa his most serious look as Embria came marching towards the villa with 4th Company on break. She stopped as her father hit Valeterisa with the final blow.</p>
+<p>“Old? I dunno about that, Archmage Valeterisa. Because I’m either blind or stupid, but you look like a pretty fine [Immortal Moment] to me.”</p>
+<p>It was his greatest line yet. He’d been working on that one for months. Mrsha’s jaw dropped. Valeterisa stared at Relc.</p>
+<p><em>Wham.</em></p>
+<p>That was the sound of Erek falling out of a tree in the beach-house he and Seve were working on. Relc held his toothy grin as Lasica turned and walked away. But Valeterisa? She turned red, then stuttered.</p>
+<p>“I—I—thank you, Sergeant Relc. And I think you’re—insert a joke here—um. Ah. <em>Would you care to stay in my villa instead?</em>”</p>
+<p>Slowly, the Drake met her eyes as Embria goggled in ignorance and horror, and 4th Company jumped her before she could say anything. They might have parted ways with Relc and had a difference of opinion, but as Squad Captain Wikir would later volunteer, you never left a fellow [Soldier] in the lurch when they were charging the breach.</p>
+<p>And Relc grinned and nodded.</p>
+<p>“I think that might be great. Why don’t we try it?”</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>That night, a bunch of couples sat next to a fire in the private beaches, talking about their new villas, drinking and socializing next to a grill that Imani and Lasica were womaning.</p>
+<p>“So, how did you and Palt meet, Imani?”</p>
+<p>Rufelt and Palt were there, hovering around, talking drinks, and the topic came up. Imani looked up.</p>
+<p>“Actually, Palt met me after he fought Pisces’ team…”</p>
+<p>Palt looked shamefaced, but Imani patted his side.</p>
+<p>“He made up for it, and he noticed I had panic attacks at, well—everything. I survived a Creler attack when I first came to Izril. All my friends…even after most of a year, I was terrified, and he gave me tonics to help with it and taught me to deal with it.”</p>
+<p>“Dead gods. You poor girl. Crelers? I forget, in Pallass, how terrifying it is.”</p>
+<p>Lasica stared at Imani, and the [Chef] nodded. Then smiled at Palt.</p>
+<p>“He was there to help, and I think that’s when I started to like him. <em>He</em> liked a certain [Innkeeper], but I eventually managed to get him to stop trotting off.”</p>
+<p>Palt coughed, red-cheeked.</p>
+<p>“I made a lot of mistakes. But Imani truly did make me, well, appreciate her love of a lot of things. Including cooking! And my various specialties, like my rollups.”</p>
+<p>Lasica snorted as Palt offered her one and twirled it around her claws.</p>
+<p>“Oh? Erin throws a fit about them. I guess that’s another reason you two worked.”</p>
+<p>Imani sighed.</p>
+<p>“I don’t smoke like Palt does, but it’s part of his charm—at times.”</p>
+<p>“And my darling, unshod love is focused. I was wandering around after Wistram, and then I met her and thought, ‘I want to see her in a kitchen’. She rekindled my love of cooking, and so we stuck together.”</p>
+<p>“Sounds familiar, doesn’t it, Lasica?”</p>
+<p>Rufelt grinned, and she put her claws on her hips as she checked on some meat. The other couples were here, and one very upset and bewildered Klbkch.</p>
+<p>“What do you mean, they are a <em>couple? </em>When did this happen? I was not informed. I thought we were partners. Even if he and I are not on active duty—”</p>
+<p>“I don’t know. <em>I don’t know, but I can’t get near the castle! </em>4th Company is holding me off!”</p>
+<p>Embria was shriek-whispering to him. Klbkch looked over towards the castle.</p>
+<p>“I see. Then we must conduct a siege. Do you have any forces at your disposal? My Antinium are insubordinate.”</p>
+<p>“Uh—uh—Mrsha?”</p>
+<p>“…Let us go and rally support.”</p>
+<p>They headed off as Lasica rolled her eyes. Children, the lot of them. Somehow, the Slayer of the Centenium had less emotional maturity than the young Earther and Centaur standing together. She turned back to Rufelt.</p>
+<p>“As I recall, you and I fought over customers back in the day, then decided to work together.”</p>
+<p>“What a strange story.”</p>
+<p>Krshia murmured, and Lism nodded innocently. The Councilmembers were sitting at the fire, and Imani and Palt gave them a long, long look. But there weren’t actually any other Liscorians here, so the two looked innocent as could be.</p>
+<p>The older couples and Imani and Palt laughed, and Palt looked around seriously as he offered cigars about.</p>
+<p>“That was definitely the start of it. The rest was just a matter of making everything fit. Which was hard for me, because they say I’m hung like a—”</p>
+<p>Imani <em>punched</em> him in the side as Lism began choking on his drink. Krshia nearly spat out her drink.</p>
+<p>“Dead gods, Palt. I knew there were rumors, but I wasn’t going to ask, yes?”</p>
+<p>“Love overcomes all obstacles. My darling Imani is—<em>ow, ow! Don’t burn me!</em>”</p>
+<p>She had one of the grilling tongs and was threatening to burn him. But in truth, Imani wasn’t that violent, and Rufelt began laughing.</p>
+<p>“I had no idea you told jokes, Palt!”</p>
+<p>The Centaur was smug as he looked around.</p>
+<p>“I’m Ullsinoi. We love that kind of humor. I just can’t ever make jokes around Erin because she <em>will</em> stab me, if she even gets the joke. And Lyonette would geld me for saying it in front of Mrsha.”</p>
+<p>Imani rolled her eyes, slightly red-cheeked, but she whispered to Lasica.</p>
+<p>“Don’t mind Palt. It’s true, he’s a prankster—you should hear the things he does to go after our competitors. But there’s a potion for everything. Not that he needs it. He’s less a stallion, more like a pony.”</p>
+<p>“<em>Dear!</em>”</p>
+<p>Palt was stricken, and Imani shot him a huge smile as he trotted around in agitation, trying to defend himself, and nearly walked into the fire. That was also something you didn’t get to joke about, especially in Erin’s inn.</p>
+<p>Bethal appeared as she heard the ribald humor, whereas Thomast was happy enough to sit with Maughin and have a serious discussion about—well—decorum.</p>
+<p>“I am called Chevalier Thomast, not ‘Lord Walchaís’. Bethal is determined to let her family end with her, not to foist that legacy onto a child. Moreover, I am a [Chevalier] from Terandria. My entry into the ranks of the nobility is somewhat contested, so this is the best solution for us.”</p>
+<p>“Really. That is…tragic. Commendable, but tragic. Myself, I feel as though half my people are unsupportive of my marriage. They would rather, they tell me, <em>to my face</em>, have me marry a Dullahan. And I ask ‘who’? And they present me with people who understand nothing about smithing. Who have never known Invictel. Is it wrong for me to not want to marry for my station, so far from home?”</p>
+<p>Maughin rumbled a reply as he drank, more open and more honest away from his people. Thomast offered him his cup, and the Dullahan gently <em>chinked</em> glasses.</p>
+<p>“But you are marrying her.”</p>
+<p>Maughin’s scowl darkened further, then he smiled.</p>
+<p>“Yes. And we might not have rushed it if they had not hinted at me to break up. Once we are married, they will have to respect her, and that will settle that.”</p>
+<p>He looked over at Jelaqua, who was laughing and talking with Wailant, Viceria, and Lady Pryde about the places they’d been, and the two smiled.</p>
+<p>Oh, yes. Lady Pryde was there. She sat, somewhat stiffly, but she too had visited other countries, and she was respectful of the [Pirate] and Jelaqua. In fact, this gathering even had Lyonette popping by, but it was mostly for couples.</p>
+<p>Couples…and Pryde. Relc and Valeterisa had showed up for a bit, but they had begun to talk about puzzles and walked off to find a shop in Invrisil that sold them, of all inane things. That had occupied the conversation for an hour, and Embria and Klbkch were currently heading off to destroy the castle before the two returned.</p>
+<p>However, there was one more guest who sat stiffly by the fire, eating his fourth hamburger without the regular wheat-buns, but some gigantic seared mushrooms because he deemed it healthier.</p>
+<p>Magus Grimalkin kept up a pleasant demeanor—well, his face was stiff—but he would glance every now and then at Pryde. And she would chance a look at him when she thought he was not looking.</p>
+<p>Bethal had tried to get Pryde to go over three times and had failed. And the Sinew Magus was not at Menolit’s party, which had turned more into Goblins and Antinium throwing a rave…but the [Wingman] had a feeling he might level tonight anyways.</p>
+<p>He’d done his best, but the wall of Grimalkin’s stubbornness had defeated him. Still, there were easier people to help, and sometimes the [Wingman] had to look out for himself.</p>
+<p>Yet Grimalkin was putting in an appearance. He sat there thinking, observing, gathering data, and making a wild inference based on what he was observing.</p>
+<p>He might not have. He would have ignored most anyone, like Himilt and Colfa, who were both eying him as they ate extra-rare burgers and smiled as Himilt joined in on the conversation with Wailant.</p>
+<p>“I have been to Terandria. I toured Noelictus.”</p>
+<p>“That gloomy place? Phsaw! Himilt! I like you more and more every time we talk! Join in with more stories! What did you do there?”</p>
+<p>“Oh, toured some places that belonged to my ancestors. I did see a number of undead. Ghouls, even.”</p>
+<p>“Dead gods. And people live…?”</p>
+<p>Normally, Grimalkin would have gone over as a student of the world or eaten his fill and gone to his students, who were, he suspected, having their own party in his absence.</p>
+<p>Perhaps the body needed fun. He just…he wouldn’t have believed it.</p>
+<p>Lady Pryde showing affection for him, that was.</p>
+<p>He hadn’t noticed it before. He had thought Himilt, Menolit, and Thomast were respectfully stupid and/or out of their minds. He’d completely ignored Saliss when the [Alchemist] had just broken down and told him.</p>
+<p>What had changed? Well. Sometimes to move a mountain, you had to divert a river with a single pebble in some kind of metaphor about applied force and gradual change.</p>
+<p>Other times, you blew the mountain up with a Tier 8 spell. A little Gnoll had come over and handed him a note. It read:</p>
+<p>&nbsp;</p>
+<p><em>Hey, Grimalkin, this is Erin. I am telling you in a sorta non-pushy way something you need to hear. Lady Pryde Ulta likes you. Trust me, this is not a joke, and you can ask me yourself. If Mrsha alters this or leaks this info, I will ban her from desserts for the rest of her entire life.&nbsp;</em></p>
+<p><em>I am a Level 40+ [Innkeeper]. Look at the facts. Why would she sit in a freezing tent with you if she didn’t like you? It is illogical to think she’s just a good business associate.&nbsp;</em></p>
+<p><em>…She’s not gonna say anything, you know. Think on it, good luck.</em></p>
+<p><em>—Erin</em></p>
+<p>&nbsp;</p>
+<p><span class="mrsha-write">PS. Good luck from me as well! I did not alter the note! Mrsha!</span></p>
+<p>&nbsp;</p>
+<p>Inconceivable. Impossible? Highly unlikely! What would this mean? The implications—was it serious? Did Lady Ulta have a complete reckoning of the political fallout of even a casual…</p>
+<p>Was she serious?</p>
+<p>Erin Solstice said it. She could be silly, thoughtless, reckless…but she was not often wrong. Grimalkin could ask her for clarification.</p>
+<p>He was afraid to. Because he wondered if she might look at him like a storm lay behind her eyes and speak with such clarity and truth that he would be unable to doubt it.</p>
+<p>Now, the Sinew Magus wondered.</p>
+<p><em>What about him?</em> He sat there and sat there…and eventually he looked up, and Lady Pryde had just glanced up as well.</p>
+<p>They held each other’s gazes, and Grimalkin felt his heart palpitate for no physical reason, but a purely mental one. And then?</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>Erin Solstice sat in her [World’s Eye Theatre] and did not sense anything in her beach garden. Nope. Not a thing.</p>
+<p>She had sent Ishkr skating across the beach with refreshments, and somewhere, she was sure, a Hobgoblin was playing on his guitar.</p>
+<p>Of the two, she had invited Ishkr and Bird to be here, but they had their own ways of keeping happy this night.</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>Bird was sitting in his tower, covered in blankets and staring at the falling snow. He loved just staring at the weather, and even the allure of the theatre wasn’t enough to tear him away from the High Passes.</p>
+<p>“Bird? You sure you don’t wanna come down and watch? The Lion King has birds in it. I’m pretty sure. A talking parrot, at least.”</p>
+<p>Bird stirred slightly and glanced at Erin as she did a double-check, shivering as cold air rushed through. That was tempting, but he stared up at the mountains.</p>
+<p>“No, thank you, Miss Erin. I am waiting for my special surprise.”</p>
+<p>“Your what?”</p>
+<p>“Lady Reinhart has said that she may surprise me soon. The last time she visited—”</p>
+<p>“Oh, dead gods, Bird. Did you bother her about the ballista so much she left?”</p>
+<p>“…Maybe. I am waiting because she said she ‘may give me something if only to spare her ears’. That means a gift. I am waiting to see it. Also, I like the cold and being warm in my Fortress of Fluff. Also, also—I must sit out here because it is more fun than even movie-night.”</p>
+<p>“…How?”</p>
+<p>Erin stared at the distant, snowy, landscape, and Bird smiled.</p>
+<p>“Because there are still birds! I have seen them. See?”</p>
+<p>He pointed towards the distant mountains looming in the dark, and Erin stared at them.</p>
+<p>“I see a big hecking dark mountain, Bird.”</p>
+<p>“Yes. But there are a bunch of goats there, see?”</p>
+<p>“…What?”</p>
+<p>Bird pointed, and Erin gave him an odd look before trying to see. He clapped his hands together.</p>
+<p>“Oh, you must not have my Skill. I have [Eagle Eyes]. <em>And</em> [Owl’s Vision].”</p>
+<p>“Bird! Lead with that! Wait—can you actually see Eater Goats?”</p>
+<p>Erin was quite impressed, and Bird nodded judiciously.</p>
+<p>“Yes, so I am always entertained even if there are not many birds in the winter. I will sit out here, please, Erin. But may I have more popped corn? As snackies.”</p>
+<p>“Go ahead, Bird. Actually—I’ll get you a bucket.”</p>
+<p>By the time Erin came back, Bird was humming happily.</p>
+<p>“<em>Yellow bird, yellow bird, why do you cry? Because you got Eater Goat poop in your eye? Go to sleep, go to sleep—but watch out for the black goat. Because it is trying to eat you. I cannot make that one rhyme but it is true.</em>”</p>
+<p>Erin laughed as she hugged him and gave him a huge bowl of hot popcorn. Bird dipped his head into the bucket, and Erin stared out into the darkness.</p>
+<p>“Is there actually a yellow bird, or was that a new song? It’s pretty good, Bird.”</p>
+<p>“Thank you, Erin. I am a singing hunter after all, and I must level my class. And yes, there is a yellow bird. It is my new best friend. I can see it. It keeps wandering all over the High Passes. It is a silly bird who gets into trouble. I feel bad for it, but I have been watching it all month.”</p>
+<p>Erin snorted.</p>
+<p>“Poor bird. Don’t get sad if it gets eaten though, Bird. I mean…it’s sad, but it’s life, y’know?”</p>
+<p>He tilted his head.</p>
+<p>“I would be very sad, Erin. It is the shiniest bird I’ve seen. I should help it out with my bow if it is in trouble. I just cannot shoot far enough. Maybe I should learn [Covering Fire].”</p>
+<p>“Great. Another Lord Xitegen.”</p>
+<p>“He is a very stylish [Lord] with the arrows. I like him.”</p>
+<p>Erin just rubbed at Bird’s head and antennae affectionately.</p>
+<p>“I think you need more time watching good parental figures, Bird. Sesame Street! I’ll put on a few episodes for you and Mrsha. There’s even a big, yellow bird for you to love.”</p>
+<p>“Oho. Then I will watch it. Later. Have a good movie thing.”</p>
+<p>Erin vanished, and Bird went back to staring at the mountain.</p>
+<p>“<em>Pretty bird, pretty bird. Why do you cry? Don’t be sad. You ate tonight, which is pretty rad—a thing Kevin says. Someday you will be big and tough. But the avalanche was rough.</em>”</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>As for Ishkr, the Gnoll might well come over to catch the movie, but he was busy delivering little gift-baskets for the new beach-goers.</p>
+<p>Most, he just gave some fruits or drinks he’d prepared, and if he didn’t like them, the gifts were accordingly basic. But if the [Head Server of Tales and Fables] liked you…he would <em>skate</em> over the sand, carrying a full bottle of wine and precious snacks.</p>
+<p>“Ishkr! Did this come from Erin? What’s she done this time?”</p>
+<p>Lasica was exasperated, but pleased because Ishkr hadn’t insulted her or Rufelt with drinks or food—which they had—but a complimentary bunch of toothbrushes and other toiletries.</p>
+<p>Outhouses were a concern, and Erin had reluctantly had several dug on the beach, so the toilet paper was a gift. And if you didn’t get any, Ishkr <em>really</em> didn’t like you.</p>
+<p>He smiled as he handed over the toothpaste tin and all the things that you might forget on vacation.</p>
+<p>“This is just from the inn, via me.”</p>
+<p>“Well, you’ve earned yourself a seat at our bar any time. Thank you. I didn’t even think about…Rufelt! Look what we’ve been brought!”</p>
+<p>The gratitude of people saved from using sand to wipe—or more dire instruments of cleansing—was deep. Ishkr smiled, but he didn’t linger.</p>
+<p>In a way, he was happiest intruding without <em>pressing</em> to be made part of the couple’s night. It was this that the Gnoll wanted.</p>
+<p>Like gingerly approaching the secluded part of the beach, waving a paw, and seeing Onieva appear and offering her the gift-basket and getting a smile.</p>
+<p>His heart flip-flopped when the [Alchemist] thanked him.</p>
+<p>“Ishkr, right? You’re a lifesaver. <em>Mirn! </em>Toilet paper!”</p>
+<p>“<em>Ancestors praise that Gnoll!</em>”</p>
+<p>Other people cheered, but Onieva paused a second, and Ishkr thought she might remember him. And that…even more than her attractiveness, that called to him.</p>
+<p>He was still puzzling out who she was, though he had a suspicion. But Ishkr recognized a talented person, and he couldn’t wait to see what happened next.</p>
+<p>These stories and legends in his inn. Why would he have ever gone with Barnethei? Of course, he was just the server. The one in the background—for now, that was enough. Onieva’s eyes lingered on Ishkr as if she recognized his level, and he, embarrassed, retreated.</p>
+<p>“I hope you enjoy your stay, Miss Oliwing.”</p>
+<p>“Oh, I will. Thank you, again. Do you want a drink or something…?”</p>
+<p>“I have to get back to work. But if you need anything—”</p>
+<p>Ishkr beat a retreat and skated down the beach as a gaggle of kids ran after him.</p>
+<p>“Ishkr! Ishkr, can we get a little drink of Velrusk Claw?”</p>
+<p>Ekirra ran over, wanting to be an adult with the other kids. Ishkr turned.</p>
+<p>“Sure. If you can catch me.”</p>
+<p>He kicked off faster, and the kids <em>chased</em> him down the beach as he slid forwards. They were eternally envious of his great Skill, and why not? Silly adults said things like, ‘well, he could have a <em>better</em> Skill instead’.</p>
+<p>As if they weren’t jealous of someone who could treat the world like a skating rink. Ishkr left the kids behind, raised a foot, and dodged the loop of grass that Mrsha had conjured. The Gnoll pointed a paw at his back, and he took something out of his bag of holding. Ishkr tossed the pre-prepared mudball to the side, straight into Nanette’s face as she lunged out of the water.</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>He was smiling when he entered the inn, proper, and found a sulking Gnoll at her station. Ishkr jerked a thumb.</p>
+<p>“Liska, you’re off-duty.”</p>
+<p>“What? But I have to work for <em>hours.</em> Nightshift. Even if all the fun is happening and I get to…”</p>
+<p>Liska avoided mentioning the door’s new feature, but her ears perked up. Ishkr just nodded.</p>
+<p>“I know. Go have fun. I’ll take over.”</p>
+<p>“Wh—<em>really? </em>Did I blackmail you? Is something crazy happening in the garden? Is the sky falling or what?”</p>
+<p>Her older brother gave Liska a patient look as she bounded to her feet.</p>
+<p>“I’m letting you have fun. Maybe even go check out the <em>special</em> guests—but don’t bother them! Erin will get mad if you cause a fuss.”</p>
+<p>“I’m totally invited. Mirn dropped me a note when we set it up. Ishkr, you’re the best!”</p>
+<p>She hugged him briefly, then dashed off. Ishkr sat down, and Liska poked her head into the portal room with narrowed eyes a second later.</p>
+<p>“Hey. What about you?”</p>
+<p>“Someone’s got to do <em>your</em> work. Besides, I’m on duty all night.”</p>
+<p><em>“Lame.</em> You know, that ultra-spicy Drake was winking at you yesterday. What about her?<em>”</em></p>
+<p>Ishkr avoided Liska’s gaze as he sighed patiently.</p>
+<p>“Don’t flirt with the guests, Liska. And leave me alone! Or do you want to work after all?”</p>
+<p>“Nope! See you—”</p>
+<p>Liska ran before Ishkr could change his mind. She dashed into the beach, and her first destination was the laughing group in their secluded spot. They fell silent, but then one of them raised a claw.</p>
+<p>“I recognize our doorkeeper! Come on! Everyone, relax. Elirr, do you know…?”</p>
+<p>The Gnoll gave Liska a patient look, and she bounded over, only growing slightly chagrinned as Elirr murmured.</p>
+<p>“We’re not organized, but I have had to bail Liska out of trouble with the Watch a few times.”</p>
+<p>“U-uh, hello, Honored Elirr. Master Hexel. I just got off work, so…can I join in?”</p>
+<p>Her answer was being handed an empty mug and directed towards the generous kegs set up on a table. Liska dashed over, but paused as she saw a familiar Drake chatting with Hexel.</p>
+<p>“Oh, hey. Um…are you Onieva?”</p>
+<p>The Drake turned, casually, and Liska waved.</p>
+<p>“Oh, the [Doorgnoll]. I was hoping you’d show up. I was interested in your class. It sounds stupid and weird—”</p>
+<p>Liska blushed and hung her head. She had never had a high-level class or good job. But Onieva smiled approvingly.</p>
+<p>“—so it must be good. Onieva Oliwing. Don’t spread it around.”</p>
+<p>The Gnoll’s head rose, and she brightened up. She took Onieva’s claw.</p>
+<p>“I’m Liska! Your scales are <em>amazing</em>, by the way.”</p>
+<p>“Oh, well. Thanks.”</p>
+<p>Liska hesitated as she admired Onieva. Water, water, and she suddenly had an empty mug ready to fill. That was probably why that [Lady] Ieka and Fierre had been doing work on the beach all day and watching guests. They had good taste, too.</p>
+<p>But Liska sighed as she looked at Onieva’s casual smile, and she cursed herself—but she sighed, leaned over, and whispered.</p>
+<p>“Hey, Onieva, this is out of nowhere, but—I think my brother, Ishkr, sort of likes you. But he’ll never say it, just work. Do you know him?”</p>
+<p>Onieva paused—then her eyes lit up, and Liska grumbled as she reflected that Onieva was too good for Ishkr. And yet, no one was good enough for her stupid, shy brother. It was a good thing he had his sister to make up for his copious failings.</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>“You’re not going there?”</p>
+<p>“Me? Snuggling on a beach? I’m not getting in their way. Nope. They’re all happy, and I’ll see them tomorrow.”</p>
+<p>Erin sighed, as she sat back in a padded chair, and someone else nodded and put her legs up.</p>
+<p>“Good. All my Goblins are there, and I refuse to listen to whatever they do. I’m staying in your rooms.”</p>
+<p>“Smart.”</p>
+<p>Rags nodded and glanced over to Erin’s right. She muttered.</p>
+<p>“…Does she get on your nerves? I told her to behave—”</p>
+<p>“Actually, she’s been a huge help.”</p>
+<p>Erin smiled and waved as the third person not in the beach tromped over. Ulvama had so many snacks that it looked like a Skill was enabling her to balance them all. She put them down and then scowled at Rags.</p>
+<p>“These snacks are for me. These are for Erin.”</p>
+<p>“What about that third?”</p>
+<p>“Apista.”</p>
+<p>The Ashfire Bee flew over and perched on top of a bowl of popcorn. Erin Solstice stopped the two Goblins from fighting as she excitedly waved up at the screen.</p>
+<p>“Guys. Guys. Calm down. You know, Kevin and Joseph and Imani and all the kiddos have been hogging this thing every single night? This is the first time I get it to myself. So…let’s watch.”</p>
+<p>The screen turned dark, and Rags sat back as Ulvama put up her legs and brought out a blanket. She hesitated, then tossed it over Erin and threw another one at Rags. The theatre was cold, and it was winter.</p>
+<p>“What are we watching?”</p>
+<p>“<em>Lion King,</em> maybe? I know it’s for kids, but we have all night. Plus, there’s this great song that fits tonight. I was gonna sing it outside the resort area, but they’d probably throw stuff at me.”</p>
+<p>The movie began to play as Erin beamed up at the ceiling. Rags slowly reached for a drink as she layered the blanket over herself, and Apista snuggled into it. After a second, a cat and Sariant Lamb appeared, and a chorus of faeries flew into the room.</p>
+<p>&nbsp;</p>
+<p><span style="color: #96be50;">“Ah, is it movies? </span><span style="color: #96be50;"><em>Excellent! </em></span><span style="color: #96be50;">Yon mortals are fucking.”</span></p>
+<p><span style="color: #8ae8ff;">“Which isn’t bad! We just can’t watch because they get mad when we give them tips.”</span></p>
+<p><span style="color: #8ae8ff;">“Or encouragement! ‘Tisn’t fair!”</span></p>
+<p>&nbsp;</p>
+<p>They landed on the chairs, and Erin groaned. But then she grinned and waved them all over. She sat back and sighed.</p>
+<p>“This is my kinda night.”</p>
+<p>Then she stared up, and the movie began to play.</p>
+<p>&nbsp;</p>
+<p>[Doorgnoll Level 24!]</p>
+<p>[Skill — Hidden Door obtained!]</p>
+<p>[Skill — Greater Illusion (Door) obtained!]</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><strong>Author’s Note:</strong></p>
+<p>This may be the last chapter you read until the 27th. I’m taking my 2-update break off, but also I’ll try to write my chemistry-chapter in advance and begin the process of proofreading.</p>
+<p>No promises. I had intended on writing one more day-chapter, but it seems I’ve been given a sign from above…or below…or somewhere to stop. It was fun, but yesterday was one of the most unpleasant in a while. Back pain, computer (almost) failing to start and system files corrupting, and so on. Now I feel nauseous, and if I’m sick, I want you to burn down, uh…the virus’ home. With lemons.</p>
+<p>It’s weird. The day was going so well until it went to poo. I guess it happens, but at least I have this chapter I can post for you. Hopefully you enjoyed the chapter-a-day style. I did. It’s even led us back to rare elements of The Wandering Inn’s story…relationships.</p>
+<p>Romance is not my speciality. Nor have I, in 11 million words, practiced much of it, which means I’m a weak writer in this field. It’s sort of an eternal cycle. I don’t write in what I’m not good at, so I don’t get better.</p>
+<p>Well, experimenting matters. Taking it easy matters. I often refer back to the Buffy the Vampire Slayer guide for stories—it’s a famous story people loved, but it was all action, all the time, without giving characters a break. Especially if you watch episodes back-to-back, it gets less fun because it’s all drama. Whereas The Wandering Inn has always been drama and quiet moments.</p>
+<p>Perspective. It’s good to remember, and I’ll continue it as long as I feel is appropriate. Balance, rest when I need it, and varying my own writing. That’s why I may take today off to feel less like someone kicked me into the surf and hit me with hammers. But I did enjoy the work…why was I punished for it?</p>
+<p>Last thoughts. I think that this Reddit strike (which is not universal and have you even heard of it?) is funny. I ragged on it last chapter, because it was two days, but if it lasts, and if it actually punishes a company, that’s actual internet power. All history has not favored individuals over a company, especially online, but it would be a good time to, say, tank Reddit’s stocks and shut them down for a month. Individuals don’t get Reddit. Reddit loses money.</p>
+<p>It’s an interesting thing to observe, so I like seeing how it plays out even if it turns out it was the same story. Just updating you on that. pirateaba out.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><strong>Steam Art: Pryde and Grimalkin, and Kiss by BoboPlushie!</strong></p>
+<p><strong>Twitter:</strong> <a class="anchor-1X4H4q anchorUnderlineOnHover-wiZFZ_" tabindex="0" title="https://twitter.com/Bobo_Snofo" role="button" href="https://twitter.com/Bobo_Snofo" target="_blank" rel="noreferrer noopener">https://twitter.com/Bobo_Snofo</a></p>
+<p><strong>Ko-Fi:</strong> <a class="anchor-1X4H4q anchorUnderlineOnHover-wiZFZ_" tabindex="0" title="https://ko-fi.com/boboplushie" role="button" href="https://ko-fi.com/boboplushie" target="_blank" rel="noreferrer noopener">https://ko-fi.com/boboplushie</a></p>
+<p><a href="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Kiss-by-Plushie.gif?ssl=1"><img fetchpriority="high" decoding="async" data-attachment-id="15421" data-permalink="https://wanderinginn.com/2023/06/16/9-48-btiprljmwvrv/kiss-by-plushie/" data-orig-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Kiss-by-Plushie.gif?fit=354%2C353&amp;ssl=1" data-orig-size="354,353" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="Kiss by Plushie" data-image-description="" data-image-caption="" data-medium-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Kiss-by-Plushie.gif?fit=300%2C300&amp;ssl=1" data-large-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Kiss-by-Plushie.gif?fit=354%2C353&amp;ssl=1" class="alignnone size-full wp-image-15421" src="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Kiss-by-Plushie.gif?resize=354%2C353&amp;ssl=1" alt="" width="354" height="353"></a> <a href="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Pryde-and-Grimalkin-by-Plushie.png?ssl=1"><img decoding="async" data-attachment-id="15422" data-permalink="https://wanderinginn.com/2023/06/16/9-48-btiprljmwvrv/pryde-and-grimalkin-by-plushie/" data-orig-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Pryde-and-Grimalkin-by-Plushie.png?fit=863%2C705&amp;ssl=1" data-orig-size="863,705" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="Pryde and Grimalkin by Plushie" data-image-description="" data-image-caption="" data-medium-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Pryde-and-Grimalkin-by-Plushie.png?fit=300%2C245&amp;ssl=1" data-large-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Pryde-and-Grimalkin-by-Plushie.png?fit=863%2C705&amp;ssl=1" class="alignnone size-full wp-image-15422" src="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Pryde-and-Grimalkin-by-Plushie.png?resize=863%2C705&amp;ssl=1" alt="" width="863" height="705" srcset="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Pryde-and-Grimalkin-by-Plushie.png?w=863&amp;ssl=1 863w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Pryde-and-Grimalkin-by-Plushie.png?resize=300%2C245&amp;ssl=1 300w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Pryde-and-Grimalkin-by-Plushie.png?resize=768%2C627&amp;ssl=1 768w" sizes="(max-width: 863px) 100vw, 863px" data-recalc-dims="1"></a></p>
+<p>&nbsp;</p>
+<p><strong>Stream Art: Scrubtime by Artsynada!</strong></p>
+<p><strong>Instagram:</strong> <a class="anchor-1X4H4q anchorUnderlineOnHover-wiZFZ_" tabindex="0" title="https://www.instagram.com/illudanajohns/" role="button" href="https://www.instagram.com/illudanajohns/" target="_blank" rel="noreferrer noopener">https://www.instagram.com/illudanajohns/</a></p>
+<p><strong>Ko-fi:</strong> <a class="anchor-1X4H4q anchorUnderlineOnHover-wiZFZ_" tabindex="0" title="https://ko-fi.com/illudanajohns" role="button" href="https://ko-fi.com/illudanajohns" target="_blank" rel="noreferrer noopener">https://ko-fi.com/illudanajohns</a></p>
+<p><a href="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/ScrubScrub_9.47-by-Artsynada.jpg?ssl=1"><img decoding="async" data-attachment-id="15423" data-permalink="https://wanderinginn.com/2023/06/16/9-48-btiprljmwvrv/scrubscrub_9-47-by-artsynada/" data-orig-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/ScrubScrub_9.47-by-Artsynada.jpg?fit=1356%2C1488&amp;ssl=1" data-orig-size="1356,1488" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="ScrubScrub_9.47 by Artsynada" data-image-description="" data-image-caption="" data-medium-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/ScrubScrub_9.47-by-Artsynada.jpg?fit=273%2C300&amp;ssl=1" data-large-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/ScrubScrub_9.47-by-Artsynada.jpg?fit=933%2C1024&amp;ssl=1" class="alignnone size-full wp-image-15423" src="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/ScrubScrub_9.47-by-Artsynada.jpg?resize=1356%2C1488&amp;ssl=1" alt="" width="1356" height="1488" srcset="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/ScrubScrub_9.47-by-Artsynada.jpg?w=1356&amp;ssl=1 1356w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/ScrubScrub_9.47-by-Artsynada.jpg?resize=273%2C300&amp;ssl=1 273w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/ScrubScrub_9.47-by-Artsynada.jpg?resize=933%2C1024&amp;ssl=1 933w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/ScrubScrub_9.47-by-Artsynada.jpg?resize=768%2C843&amp;ssl=1 768w" sizes="(max-width: 1000px) 100vw, 1000px" data-recalc-dims="1"></a></p>
+<p>&nbsp;</p>
+<p><strong>Manus, Normen, Antinum, and more by Sidehammer!</strong></p>
+<div class="tiled-gallery type-square" data-original-width="500" data-carousel-extra="{&quot;blog_id&quot;:1,&quot;permalink&quot;:&quot;https:\/\/wanderinginn.com\/2023\/06\/16\/9-48-btiprljmwvrv\/&quot;,&quot;likes_blog_id&quot;:233997562}" itemscope="" itemtype="http://schema.org/ImageGallery"> <div class="gallery-row" style="width: 500px; height: 250px;" data-original-width="500" data-original-height="250"> <div class="gallery-group" style="width: 250px; height: 250px;" data-original-width="250" data-original-height="250"> <div class="tiled-gallery-item " itemprop="associatedMedia" itemscope="" itemtype="http://schema.org/ImageObject"> <a href="https://wanderinginn.com/2023/06/16/9-48-btiprljmwvrv/manus-by-sidehammer/" border="0" itemprop="url"> <meta itemprop="width" content="246"> <meta itemprop="height" content="246"> <img decoding="async" class="" data-attachment-id="15424" data-orig-file="https://wanderinginn.com/wp-content/uploads/2023/06/Manus-by-Sidehammer.png" data-orig-size="617,751" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="Manus by Sidehammer" data-image-description="" data-medium-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Manus-by-Sidehammer.png?fit=246%2C300&amp;ssl=1" data-large-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Manus-by-Sidehammer.png?fit=617%2C751&amp;ssl=1" src="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Manus-by-Sidehammer.png?w=246&amp;h=246&amp;crop=1&amp;ssl=1" srcset="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Manus-by-Sidehammer.png?resize=150%2C150&amp;ssl=1 150w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Manus-by-Sidehammer.png?zoom=2&amp;resize=246%2C246&amp;ssl=1 492w" width="246" height="246" loading="lazy" data-original-width="246" data-original-height="246" itemprop="http://schema.org/image" title="Manus by Sidehammer" alt="Manus by Sidehammer" style="width: 246px; height: 246px;"> </a> </div> </div> <div class="gallery-group" style="width: 250px; height: 250px;" data-original-width="250" data-original-height="250"> <div class="tiled-gallery-item " itemprop="associatedMedia" itemscope="" itemtype="http://schema.org/ImageObject"> <a href="https://wanderinginn.com/2023/06/16/9-48-btiprljmwvrv/norman5_no_fire-by-sidehammer/" border="0" itemprop="url"> <meta itemprop="width" content="246"> <meta itemprop="height" content="246"> <img decoding="async" class="" data-attachment-id="15425" data-orig-file="https://wanderinginn.com/wp-content/uploads/2023/06/norman5_no_fire-by-Sidehammer.png" data-orig-size="1006,1861" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="norman5_no_fire by Sidehammer" data-image-description="" data-medium-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/norman5_no_fire-by-Sidehammer.png?fit=162%2C300&amp;ssl=1" data-large-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/norman5_no_fire-by-Sidehammer.png?fit=554%2C1024&amp;ssl=1" src="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/norman5_no_fire-by-Sidehammer.png?w=246&amp;h=246&amp;crop=1&amp;ssl=1" srcset="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/norman5_no_fire-by-Sidehammer.png?resize=150%2C150&amp;ssl=1 150w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/norman5_no_fire-by-Sidehammer.png?zoom=2&amp;resize=246%2C246&amp;ssl=1 492w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/norman5_no_fire-by-Sidehammer.png?zoom=3&amp;resize=246%2C246&amp;ssl=1 738w" width="246" height="246" loading="lazy" data-original-width="246" data-original-height="246" itemprop="http://schema.org/image" title="norman5_no_fire by Sidehammer" alt="norman5_no_fire by Sidehammer" style="width: 246px; height: 246px;"> </a> </div> </div> </div> <div class="gallery-row" style="width: 500px; height: 250px;" data-original-width="500" data-original-height="250"> <div class="gallery-group" style="width: 250px; height: 250px;" data-original-width="250" data-original-height="250"> <div class="tiled-gallery-item " itemprop="associatedMedia" itemscope="" itemtype="http://schema.org/ImageObject"> <a href="https://wanderinginn.com/2023/06/16/9-48-btiprljmwvrv/antinium-by-sidehammer-portal-cannoneer/" border="0" itemprop="url"> <meta itemprop="width" content="246"> <meta itemprop="height" content="246"> <img decoding="async" class="" data-attachment-id="15426" data-orig-file="https://wanderinginn.com/wp-content/uploads/2023/06/Antinium-by-sidehammer-Portal-Cannoneer.png" data-orig-size="781,906" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="Antinium by sidehammer [Portal Cannoneer]" data-image-description="" data-medium-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Antinium-by-sidehammer-Portal-Cannoneer.png?fit=259%2C300&amp;ssl=1" data-large-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Antinium-by-sidehammer-Portal-Cannoneer.png?fit=781%2C906&amp;ssl=1" src="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Antinium-by-sidehammer-Portal-Cannoneer.png?w=246&amp;h=246&amp;crop=1&amp;ssl=1" srcset="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Antinium-by-sidehammer-Portal-Cannoneer.png?resize=150%2C150&amp;ssl=1 150w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Antinium-by-sidehammer-Portal-Cannoneer.png?zoom=2&amp;resize=246%2C246&amp;ssl=1 492w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Antinium-by-sidehammer-Portal-Cannoneer.png?zoom=3&amp;resize=246%2C246&amp;ssl=1 738w" width="246" height="246" loading="lazy" data-original-width="246" data-original-height="246" itemprop="http://schema.org/image" title="Antinium by sidehammer [Portal Cannoneer]" alt="Antinium by sidehammer [Portal Cannoneer]" style="width: 246px; height: 246px;"> </a> </div> </div> <div class="gallery-group" style="width: 250px; height: 250px;" data-original-width="250" data-original-height="250"> <div class="tiled-gallery-item " itemprop="associatedMedia" itemscope="" itemtype="http://schema.org/ImageObject"> <a href="https://wanderinginn.com/2023/06/16/9-48-btiprljmwvrv/normen-by-sidehammer/" border="0" itemprop="url"> <meta itemprop="width" content="246"> <meta itemprop="height" content="246"> <img decoding="async" class="" data-attachment-id="15427" data-orig-file="https://wanderinginn.com/wp-content/uploads/2023/06/Normen-by-Sidehammer.png" data-orig-size="1920,1080" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="Normen by Sidehammer" data-image-description="" data-medium-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Normen-by-Sidehammer.png?fit=300%2C169&amp;ssl=1" data-large-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Normen-by-Sidehammer.png?fit=1024%2C576&amp;ssl=1" src="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Normen-by-Sidehammer.png?w=246&amp;h=246&amp;crop=1&amp;ssl=1" srcset="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Normen-by-Sidehammer.png?resize=150%2C150&amp;ssl=1 150w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Normen-by-Sidehammer.png?zoom=2&amp;resize=246%2C246&amp;ssl=1 492w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Normen-by-Sidehammer.png?zoom=3&amp;resize=246%2C246&amp;ssl=1 738w" width="246" height="246" loading="lazy" data-original-width="246" data-original-height="246" itemprop="http://schema.org/image" title="Normen by Sidehammer" alt="Normen by Sidehammer" style="width: 246px; height: 246px;"> </a> </div> </div> </div> <div class="gallery-row" style="width: 500px; height: 250px;" data-original-width="500" data-original-height="250"> <div class="gallery-group" style="width: 250px; height: 250px;" data-original-width="250" data-original-height="250"> <div class="tiled-gallery-item " itemprop="associatedMedia" itemscope="" itemtype="http://schema.org/ImageObject"> <a href="https://wanderinginn.com/2023/06/16/9-48-btiprljmwvrv/erinfish-by-sidehammer-portal-cannoneer/" border="0" itemprop="url"> <meta itemprop="width" content="246"> <meta itemprop="height" content="246"> <img decoding="async" class="" data-attachment-id="15428" data-orig-file="https://wanderinginn.com/wp-content/uploads/2023/06/ErinFish-by-sidehammer-Portal-Cannoneer.png" data-orig-size="1920,1080" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="ErinFish by sidehammer [Portal Cannoneer]" data-image-description="" data-medium-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/ErinFish-by-sidehammer-Portal-Cannoneer.png?fit=300%2C169&amp;ssl=1" data-large-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/ErinFish-by-sidehammer-Portal-Cannoneer.png?fit=1024%2C576&amp;ssl=1" src="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/ErinFish-by-sidehammer-Portal-Cannoneer.png?w=246&amp;h=246&amp;crop=1&amp;ssl=1" srcset="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/ErinFish-by-sidehammer-Portal-Cannoneer.png?resize=150%2C150&amp;ssl=1 150w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/ErinFish-by-sidehammer-Portal-Cannoneer.png?zoom=2&amp;resize=246%2C246&amp;ssl=1 492w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/ErinFish-by-sidehammer-Portal-Cannoneer.png?zoom=3&amp;resize=246%2C246&amp;ssl=1 738w" width="246" height="246" loading="lazy" data-original-width="246" data-original-height="246" itemprop="http://schema.org/image" title="ErinFish by sidehammer [Portal Cannoneer]" alt="ErinFish by sidehammer [Portal Cannoneer]" style="width: 246px; height: 246px;"> </a> </div> </div> <div class="gallery-group" style="width: 250px; height: 250px;" data-original-width="250" data-original-height="250"> <div class="tiled-gallery-item " itemprop="associatedMedia" itemscope="" itemtype="http://schema.org/ImageObject"> <a href="https://wanderinginn.com/2023/06/16/9-48-btiprljmwvrv/norman5-by-sidehammer/" border="0" itemprop="url"> <meta itemprop="width" content="246"> <meta itemprop="height" content="246"> <img decoding="async" class="" data-attachment-id="15429" data-orig-file="https://wanderinginn.com/wp-content/uploads/2023/06/norman5-by-Sidehammer.png" data-orig-size="1006,1861" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="norman5 by Sidehammer" data-image-description="" data-medium-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/norman5-by-Sidehammer.png?fit=162%2C300&amp;ssl=1" data-large-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/norman5-by-Sidehammer.png?fit=554%2C1024&amp;ssl=1" src="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/norman5-by-Sidehammer.png?w=246&amp;h=246&amp;crop=1&amp;ssl=1" srcset="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/norman5-by-Sidehammer.png?resize=150%2C150&amp;ssl=1 150w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/norman5-by-Sidehammer.png?zoom=2&amp;resize=246%2C246&amp;ssl=1 492w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/norman5-by-Sidehammer.png?zoom=3&amp;resize=246%2C246&amp;ssl=1 738w" width="246" height="246" loading="lazy" data-original-width="246" data-original-height="246" itemprop="http://schema.org/image" title="norman5 by Sidehammer" alt="norman5 by Sidehammer" style="width: 246px; height: 246px;"> </a> </div> </div> </div> </div>
+<p>&nbsp;</p>
+<p><strong>Volume 1 Erin by Maxi25554’s friend!</strong></p>
+<p><a href="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/V1-Erin-by-Maxi25554s-friend.png?ssl=1"><img loading="lazy" decoding="async" data-attachment-id="15430" data-permalink="https://wanderinginn.com/2023/06/16/9-48-btiprljmwvrv/v1-erin-by-maxi25554s-friend/" data-orig-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/V1-Erin-by-Maxi25554s-friend.png?fit=2460%2C1376&amp;ssl=1" data-orig-size="2460,1376" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="V1 Erin by Maxi25554’s friend!" data-image-description="" data-image-caption="" data-medium-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/V1-Erin-by-Maxi25554s-friend.png?fit=300%2C168&amp;ssl=1" data-large-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/V1-Erin-by-Maxi25554s-friend.png?fit=1024%2C573&amp;ssl=1" class="alignnone size-full wp-image-15430" src="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/V1-Erin-by-Maxi25554s-friend.png?resize=2460%2C1376&amp;ssl=1" alt="" width="2460" height="1376" srcset="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/V1-Erin-by-Maxi25554s-friend.png?w=2460&amp;ssl=1 2460w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/V1-Erin-by-Maxi25554s-friend.png?resize=300%2C168&amp;ssl=1 300w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/V1-Erin-by-Maxi25554s-friend.png?resize=1024%2C573&amp;ssl=1 1024w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/V1-Erin-by-Maxi25554s-friend.png?resize=768%2C430&amp;ssl=1 768w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/V1-Erin-by-Maxi25554s-friend.png?resize=1536%2C859&amp;ssl=1 1536w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/V1-Erin-by-Maxi25554s-friend.png?resize=2048%2C1146&amp;ssl=1 2048w" sizes="(max-width: 1000px) 100vw, 1000px" data-recalc-dims="1"></a></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<hr>
+<p><a href="https://wanderinginn.com/2023/06/13/9-47-u/">Previous Chapter</a> <span style="float: right;">Next Chapter</span></p>
+      </div>
+
+      <hr>
+          <span class="nav-previous">
+        <a href="https://wanderinginn.com/2023/06/13/9-47-u/" rel="prev"><span class="meta-nav">←</span> Previous Chapter</a>    </span>
+    <span class="nav-next" style="float: right" ;="">
+        <a href="https://wanderinginn.com/2023/06/27/9-49/" rel="next">Next Chapter <span class="meta-nav">→</span></a>    </span>
+    

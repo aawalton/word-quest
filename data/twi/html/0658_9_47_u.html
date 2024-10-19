@@ -1,0 +1,727 @@
+
+
+          <span class="nav-previous">
+        <a href="https://wanderinginn.com/2023/06/10/9-46-s/" rel="prev"><span class="meta-nav">←</span> Previous Chapter</a>    </span>
+    <span class="nav-next" style="float: right" ;="">
+        <a href="https://wanderinginn.com/2023/06/16/9-48-btiprljmwvrv/" rel="next">Next Chapter <span class="meta-nav">→</span></a>    </span>
+      <!-- <hr/> -->
+      <header class="entry-header">
+        <h1 class="entry-title">9.47 U</h1>
+                <button class="show-settings-btn" onclick="document.querySelector('#reader-settings-wrapper').classList.toggle('is-hidden')">
+          <img class="show-settings-btn-img" src="https://wanderinginn.com/wp-content/themes/solstice/assets/images/ui/reader-settings-button.webp">
+        </button>
+      </header>
+
+      
+<!-- Reader Settings -->
+<div id="reader-settings-wrapper" class="is-hidden">
+    <div id="reader-settings">
+        <header id="reader-settings-header">
+            <h2>Reader Settings</h2>
+            <button onclick="closeModal()">
+                <svg width="100%" height="100%" viewBox="0 0 33 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M16.5 30.75C24.0939 30.75 30.25 24.5939 30.25 17C30.25 9.40608 24.0939 3.25 16.5 3.25C8.90608 3.25 2.75 9.40608 2.75 17C2.75 24.5939 8.90608 30.75 16.5 30.75Z" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M20.625 12.875L12.375 21.125" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M12.375 12.875L20.625 21.125" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+            </button>
+        </header>
+
+        <fieldset id="fieldset-font">
+            <legend>Font</legend>
+
+            <div>
+                <label for="font-size-select">Size</label>
+                <select id="font-size-select" class="reader-settings-select" data-setting="reader-font-size" onchange="updateSetting(this.getAttribute('data-setting'), this.value);">
+                    <option value="10pt" class="reader-settings-option">10</option>
+                    <option value="11pt" class="reader-settings-option">11</option>
+                    <option value="12pt" class="reader-settings-option" selected="">12</option>
+                    <option value="13pt" class="reader-settings-option">13</option>
+                    <option value="14pt" class="reader-settings-option">14</option>
+                    <option value="16pt" class="reader-settings-option">16</option>
+                    <option value="18pt" class="reader-settings-option">18</option>
+                    <option value="20pt" class="reader-settings-option">20</option>
+                    <option value="22pt" class="reader-settings-option">22</option>
+                    <option value="24pt" class="reader-settings-option">24</option>
+                    <option value="26pt" class="reader-settings-option">26</option>
+                    <option value="28pt" class="reader-settings-option">28</option>
+                    <option value="30pt" class="reader-settings-option">30</option>
+                    <option value="36pt" class="reader-settings-option">36</option>
+                    <option value="42pt" class="reader-settings-option">42</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="font-family-select">Family</label>
+                <select id="font-family-select" class="reader-settings-select" data-setting="reader-font-family" onchange="updateSetting(this.getAttribute('data-setting'), this.value);">
+                    <optgroup label="Sans Serif">
+                        <option class="reader-settings-option" value="OpenSans, sans-serif" selected="">Open Sans</option>
+                        <option class="reader-settings-option" value="Arial, Helvetica, sans-serif">Arial</option>
+                        <option class="reader-settings-option" value="Roboto, sans-serif">Roboto</option>
+                    </optgroup>
+                    <optgroup label="Serif">
+                        <option class="reader-settings-option" value="Playfair, serif">Playfair</option>
+                        <option class="reader-settings-option" value="EBGaramond, serif">Garamond</option>
+                        <option class="reader-settings-option" value="'Times New Roman', Times, serif">Times New Roman</option>
+                    </optgroup>
+                    <optgroup label="Other">
+                        <option class="reader-settings-option" value="OpenDyslexic">OpenDyslexic</option>
+                        <option class="reader-settings-option" value="HennyPenny">Henny Penny</option>
+                    </optgroup>
+                </select>
+            </div>
+            <div>
+                <label for="font-weight-select">Thickness</label>
+                <select id="font-weight-select" class="reader-settings-select" data-setting="reader-font-weight" onchange="updateSetting(this.getAttribute('data-setting'), this.value);">
+                    <option class="reader-settings-option" value="300" selected="">Thin</option>
+                    <option class="reader-settings-option" value="400">Regular</option>
+                    <option class="reader-settings-option" value="500">Thick</option>
+                </select>
+            </div>
+        </fieldset>
+
+        <fieldset id="fieldset-spacing">
+            <legend>Spacing</legend>
+            <div>
+                <label for="margins-select">Page Width</label>
+                <select id="margins-select" class="reader-settings-select" data-setting="reader-article-width" onchange="updateSetting(this.getAttribute('data-setting'), this.value);">
+                    <option value="320px" class="reader-settings-option">Extra Narrow</option>
+                    <option value="500px" class="reader-settings-option">Narrow</option>
+                    <option value="680px" class="reader-settings-option" selected="">Medium</option>
+                    <option value="1000px" class="reader-settings-option">Wide</option>
+                    <option value="1200px" class="reader-settings-option">Extra Wide</option>
+                    <option value="100%" class="reader-settings-option">Max</option>
+                </select>
+            </div>
+            <div>
+                <label for="line-spacing-select">Line</label>
+                <select id="line-spacing-select" class="reader-settings-select" data-setting="reader-line-height" onchange="updateSetting(this.getAttribute('data-setting'), this.value);">
+                    <option class="reader-settings-option" value="1.2">Small</option>
+                    <option class="reader-settings-option" value="1.625" selected="">Medium</option>
+                    <option class="reader-settings-option" value="2.2">Large</option>
+                    <option class="reader-settings-option" value="3.5">Extra Large</option>
+                </select>
+            </div>
+            <div>
+                <label for="paragraph-spacing-select">Paragraph</label>
+                <select id="paragraph-spacing-select" class="reader-settings-select" data-setting="reader-paragraph-spacing" onchange="updateSetting(this.getAttribute('data-setting'), this.value);">
+                    <option class="reader-settings-option" value="0.5em">Small</option>
+                    <option class="reader-settings-option" value="1.625em" selected="">Medium</option>
+                    <option class="reader-settings-option" value="2.75em">Large</option>
+                    <option class="reader-settings-option" value="4.25em">Extra Large</option>
+                </select>
+            </div>
+        </fieldset>
+        <div class="ml-5 mb-4">
+            <label for="theme-select">Theme</label>
+            <select id="theme-select" class="reader-settings-select" data-setting="reader-theme" onchange="updateSetting(this.getAttribute('data-setting'), this.value);">
+                <option class="reader-settings-option" value="reader-theme-grey" selected="">Dark Grey</option>
+                <option class="reader-settings-option" value="reader-theme-blue">Dark Blue</option>
+                <option class="reader-settings-option" value="reader-theme-black">Black</option>
+                <option class="reader-settings-option" value="reader-theme-white">White</option>
+                <option class="reader-settings-option" value="reader-theme-sepia">Sepia</option>
+            </select>
+        </div>
+        <button id="reset-settings-btn" onclick="resetSettings()">Reset To Default</button>
+        <!-- <div> -->
+        <!-- </div> -->
+
+
+    </div>
+</div>
+      <div class="entry-content">
+        <p><strong>(I am releasing a chapter a day rather than one every 3-4 days. Make sure you’re on the right one and you haven’t missed one! –pirateaba</strong><strong>)</strong></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>“Beach. Beach. Beaaaaaaaaach…”</p>
+<p>At this point, it was growing concerning. Nanette and Mrsha came down with two new tools for their ongoing fun. They’d made—with Kevin’s help—two long wooden tubes they reckoned they could use to swim around underwater. Extra-long scuba tubes, Joseph had called them.</p>
+<p>The sight of Erin Solstice lying face-down on the floor of her inn, muttering one word over and over in the pre-dawn darkness, wasn’t scary. It was so not-scary, in fact, that the girls woke up Lyonette.</p>
+<p>The [Princess], Ser Sest, and the girls stared at Erin.</p>
+<p>“She’s fine. I think she’s just stressed out, you two. From cleaning the beach, the tiff with Garry yesterday, not murdering Lord Veltras, and him <em>befriending</em> Garry of all things…why don’t you say good morning?”</p>
+<p>“Why don’t you, Miss Lyonette?”</p>
+<p>Nanette whispered back as Mrsha shook her head vigorously. Lyonette turned to Ser Sest.</p>
+<p>“Sest, take her a morning cup of coffee.”</p>
+<p>The [Knight] hesitated so long she raised her brows.</p>
+<p>“That is a [Princess]’ order, Ser Sest. Or are you invoking your right to refuse?”</p>
+<p>The [Knight] gave her a covert bow as he whispered.</p>
+<p>“With respect, Your Highness, all my honed instincts tell me this would be the moment when Miss Solstice sacrifices me to the beach…or turns me into a watermelon. She is a [Witch]. I am a [Knight]. I rather feel that I’m disadvantaged when it comes to this encounter. Which is why I vouchsafe Calanfer’s [Princess], who surely stands above an [Innkeeper] <em>and</em> [Witch].”</p>
+<p>Lyonette looked incredulous as he stepped back behind cover. She was so incredulous that she had to wake up Numbtongue…and coincidentally, Lady Salkis. Mrsha gave them a long stare as the two crouched with the others.</p>
+<p>“Why are we scared of Erin, again?”</p>
+<p>Salkis hissed at them. Numbtongue peered at Erin, wearing only his trousers.</p>
+<p>“Because she’s muttering scarily. And because she’s very stressed?”</p>
+<p>“Psh. This is a joke, right?”</p>
+<p>Numbtongue gave the Drake a skeptical look.</p>
+<p>“She turned into Sserys, remember? <em>You</em> go poke her. I’ll watch.”</p>
+<p>The Drake almost did just that. She’d been nervous for no particular reason and avoiding people in The Wandering Inn—again, for no particular reason—until recently. She almost stepped out there and then, but thought about it.</p>
+<p>“What’s the worst that could happen?”</p>
+<p>The rest of the people peeking at Erin conferred. Sest raised a hand.</p>
+<p>“Turned into a watermelon?”</p>
+<p>Lyonette eyed Erin.</p>
+<p>“Roundly insulted and humiliated like Jewel?”</p>
+<p><span class="mrsha-write">Erin opens a garden door into some horrific place where you fight for your life against whatever monsters are in there?</span></p>
+<p>Nanette had the most reasonable take.</p>
+<p>“I don’t know, but go ahead and touch her. She’s clearly waiting for someone to bother her. I rather think Miss Erin’s in a bad mood, and we need someone to suffer.”</p>
+<p>She and Mrsha pushed at Salkis, and the Drake suddenly decided she <em>wasn’t</em> in the mood to go out there. This did feel like a trap. Especially because someone pointed something out.</p>
+<p>“Uh. Guys.”</p>
+<p>Ryoka Griffin. Everyone <em>jumped</em> and shushed her as the newest sacrifice came downstairs. But Ryoka just stood there, peering at Erin.</p>
+<p>She knew stress. She’d had an embarrassing cry in front of Xitegen, Tyrion, and all their guards yesterday. If Ryoka had that…she had seen Erin’s letter.</p>
+<p>Her friend had to be feeling the same. This was her way of dealing with it. It was rather…Saliss-like, actually. Lyonette whispered urgently.</p>
+<p>“Ryoka! You go!”</p>
+<p>“Nah. Nerry? Shaestrel?”</p>
+<p>The Spring Faerie and the lamb hadn’t even come downstairs. They were both watching Ryoka with sinister amusement. Both knew how to avoid the death-radius of incoming fire.</p>
+<p>“Ryoka, keep your voice down!”</p>
+<p>More people were waking up, but they were clustered on the stairs, and Ryoka shook her head.</p>
+<p>“What’s the point? She’s clearly going to get one of us.”</p>
+<p>“<em>Right, so let’s not make it me!</em>”</p>
+<p>Everyone chorused, but Ryoka pointed out something they’d clearly forgotten. She glanced upstairs as more people noisily banged downstairs.</p>
+<p>“She knows we’re here, you know. Remember? She senses <em>everything</em> in the inn.”</p>
+<p>The group huddled by the stairwell paused. Then someone shouted.</p>
+<p>“<em>Hey, sheep, outta the way! I’m starving!</em> Morning, everyone! What’s going on?”</p>
+<p>Relc Grasstongue came stomping downstairs in good humor. Everyone stared at him in horror and perked up. Perfect!</p>
+<p>“Oh, Relc, why don’t you say hello to Erin?”</p>
+<p>Lyonette whispered. Relc stared past Lyonette’s right shoulder.</p>
+<p>“Hi, Erin?”</p>
+<p>Lyonette felt all the hairs on her neck standing up. Like a horror movie that Mrsha and Nanette had watched…the two girls turned slowly, and Erin Solstice had gotten up. She threw up her arms and screamed as everyone shrieked in surprise.</p>
+<p>“<em>Beach!</em>”</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>Erin Solstice was tired. She was glad she hadn’t actually done something mean to her friends today.</p>
+<p>She’d nearly unleashed something on them…but it was a surprise, and she’d caught herself just in time. Why was she attacking her friends?</p>
+<p>Well, if it made Chaldion or Laken or Lord Tyrion <em>take things seriously,</em> she’d give them an object-lesson. But she thought they were serious, thanks to Ryoka in part.</p>
+<p>Erin realized she might be stressed and said as much to Ulvama.</p>
+<p>“I think I’m stressed.”</p>
+<p>The [Shaman] stopped in their morning dance routines and turned to face Erin. She was sweating in the koi-pond garden that the two had essentially turned into the dance-garden. Ulvama was one of the few people who were allowed in at all times, and she had even brought some of her supplies here.</p>
+<p>The paints she liked to mix up, a pillow, books…Erin sometimes caught her napping here when she didn’t want to share space with anyone.</p>
+<p>“Yeah, I’m worried. Do I look stressed to you?”</p>
+<p>The Hobgoblin eyed Erin.</p>
+<p>“Today, you lay on the floor muttering ‘beach’, then scared everyone. Yah. Sounds stressed to me. You need more dancing. Or restful, non-stress things. Or sex…”</p>
+<p>She peered at Erin, then waved a hand.</p>
+<p>“…Nah. Not for you. You need Erin-beach made for Erin. An [Innkeeper] for [Innkeepers].”</p>
+<p>“That sounds sorta nice.”</p>
+<p>Erin thought Ulvama had a point. She raked a hand through her hair, and the Hobgoblin noticed Erin’s rather frazzled look.</p>
+<p>“You look bad.”</p>
+<p>“I <em>know.</em> It’s just that I was up all night working on the new configuration of the garden. It’s training, plus I wanted to keep it going, and I am worried. Ryoka said she actually had a meltdown, so we’re both—”</p>
+<p>Ulvama went over to her things and came back with a wooden comb.</p>
+<p>“No, you look <em>bad.</em> Hair’s bad. Bleh.”</p>
+<p>Ulvama had dreadlocks when she cared to, or her own braids with beads or stones at other times. Erin felt at her hair.</p>
+<p>“It’s not bad. Is it?”</p>
+<p>Ulvama, for reply, inserted the comb into Erin’s hair, then took her hand away. Erin didn’t have long hair; she liked it shorter.</p>
+<p>The comb stayed where it was without help. Dried sand and sweat, among other things, were calcifying Erin’s hair in place.</p>
+<p>“Okay, maybe that’s bad. I’ll wash it later.”</p>
+<p>“You don’t take care of your hair. Also, like the weird Courier-girl.”</p>
+<p>“Ryoka.”</p>
+<p>“Yes, her. You two don’t take care of hair or skin like the [Princess]. Hold still. I have nice hair-gel here.”</p>
+<p>Erin protested.</p>
+<p>“Aw, Ulvama. Come on! I wash my hair!”</p>
+<p>“Yes…just that. You need to do more.”</p>
+<p>“Ryoka gets away with just the minimum, and she’s pretty good!”</p>
+<p>“Yeah. She also has bare feet. Some people like it. Some people, like Redfangs, can run around stupid and sweaty and look good. Not us.”</p>
+<p>Ulvama, surprisingly, lumped herself on Erin’s side of things, glowering at the imagined Ryokas of the world. Nothing would do but that she found some fresh, non-koi water, her homemade hair gel and soaps, and began washing Erin’s hair.</p>
+<p>She had the oddest priorities. Erin squirmed and protested.</p>
+<p>“What are you, a [Barber]?”</p>
+<p>“Nope. Just better than you. Hold still.”</p>
+<p>“How long is this gonna take? I’ve gotta—”</p>
+<p>Ulvama <em>swatted</em> the back of Erin’s head when she tried to get away. Erin yelped and punched at Ulvama.</p>
+<p>“Ow.”</p>
+<p>“Sorry! But don’t do that! I’ve gotta—”</p>
+<p>“Hair first.”</p>
+<p>Erin could either try to walk off or sit still. If she opened the door under her butt, she could fall into another place. But Ulvama had her fingers in her hair, and either the Goblin would break her fingers or rip out Erin’s hair by the roots.</p>
+<p>She was oddly…stubborn about Erin’s hair. Few people could bully Erin these days, and Ulvama, who was now in charge of Erin’s physical conditioning, was someone most people didn’t even think about.</p>
+<p>If they saw the lazy [Shaman], they hardly expected her and Erin to be talking every day. But Erin’s life was filled with the [Innkeeper] of chaos she presented to the world and quieter moments like this.</p>
+<p>Erin supposed she was weird from the outside. So…that was how she ended up sitting in a garden where no one but Apista could see them as a Goblin washed her hair.</p>
+<p>She needed days like these. No, she needed <em>routines</em> like these.</p>
+<p>If Erin was just the Erin who stomped around acting as a beach lifeguard, she would go insane. Or, if she was the one preparing for the Winter Solstice with wrath and fire…she would not be an [Innkeeper], but a [General].</p>
+<p>“…So? What’s the beach look like today?”</p>
+<p>After a few minutes of fussing around, Ulvama got Erin to lay back so she could dunk her hair in a bowl of water. She began massaging Erin’s scalp, and the [Innkeeper], tired after the morning dances, lay there and tried not to be uncomfortable.</p>
+<p>She’d been to barbers, and it was a surprisingly analogous experience. Even comfortable, but Erin didn’t like having people attend to her.</p>
+<p>“I can wash my hair with your stuff, Ulvama. I won’t run off—”</p>
+<p>“Hah. Shut up. Why is it so hard to let someone take care of you if you take care of everyone? What’s the beach like?”</p>
+<p>The [Shaman] blithely ignored Erin’s comment, and the [Innkeeper] gave up. She lay there, staring up at the blue ‘sky’ of the garden’s dome.</p>
+<p>“Well…there’s a huge frickin’ cliff.”</p>
+<p>“You made a cliff?”</p>
+<p>“Yup. It must be, like, forty feet high. You climb up it and go diving into this big pool. But the pool’s actually more like a whirlpool.”</p>
+<p>“Wat.”</p>
+<p>Ulvama gave Erin an incredulous look. The [Innkeeper] tried to explain.</p>
+<p>“I’m saying it wrong. Okay, so imagine this huge pillar in the center of the garden. It goes to the <em>top</em> of the garden.”</p>
+<p>“I didn’t know it was that big.”</p>
+<p>“Eh, each garden’s like a hundred feet at least. Probably more. Mine has the smaller hill and then the one with mists on it, remember? So you start there, and if you climb up—it’s got a ramp on one end—you can jump into this big, beautiful pool in the center. There’s also a whirlpool sloooowly draining into this hole in the center.”</p>
+<p>“Okay. Where does the hole go?”</p>
+<p>Erin beamed happily.</p>
+<p>“Down! To the water below. Y’see, this entire pillar and the ‘beach’ is actually a plateau on four huge pillars of water. And everything <em>below</em> it is water, moving about. Tons of swimming water. It’s got to be twenty feet deep.”</p>
+<p>At this point, Ulvama gave Erin such a look of skepticism that Erin had to open the door, and Ulvama heard screams.</p>
+<p>“<em>Mrsha, don’t you dare! Don’t you—Mrshaaaaa!</em>”</p>
+<p>She and Erin saw a plummeting little Gnoll go diving down off a cliff into a swirling vortex of water. A horrified [Princess] stopped at the top of the too-high cliff, and Nanette pushed her. She went screaming, head-over-heels, and Erin hesitated.</p>
+<p>“…Maybe I should make it shorter. And add protective cushions so you can’t die. No, wait, a <em>diving</em> board. And guardrails everywhere else.”</p>
+<p>She twiddled her fingers, and the sandstone rock began morphing as Lyonette and Mrsha appeared in the pool…and began getting sucked down to the water-level below.</p>
+<p>“You made that?”</p>
+<p>Ulvama stared at Erin. No wonder Erin was tired. The [Innkeeper] gave her an exhausted smile.</p>
+<p>“I wanted a more action-packed beach today. Plus—it was an experiment in figuring out how to make structures and get the water to do weird stuff.”</p>
+<p>“You worked hard. Good job.”</p>
+<p>Ulvama continued washing Erin’s hair, and the [Innkeeper] peered at the garden, already filling with people.</p>
+<p>“I should go greet people—”</p>
+<p>“<em>Lie there.</em> Your hair screams for mercy.”</p>
+<p>Nothing would do but for Erin to lie back, and the door vanished. Apista buzzed down and landed on Erin’s stomach.</p>
+<p>“Hey, Apista, whatchu doing?”</p>
+<p>The bee waggled her repaired wings at Erin, and Ulvama swatted at her.</p>
+<p>“Shoo, shoo.”</p>
+<p>“Don’t bully Apista!”</p>
+<p>Erin protested, and Ulvama snorted as Apista buzzed around her angrily.</p>
+<p>“Silly bee. She eats nectar all day and doesn’t give any honey. I checked.”</p>
+<p>“She’s one bee, Ulvama.”</p>
+<p>“I am one Goblin, and I poo and eat. Give honey and I’ll be nicer. Otherwise, what good is a silly bee?”</p>
+<p>Apista smugly perched on a nearby tree branch and rubbed her legs together. <em>Oh, if only you knew, you stupid [Shaman]. My honey’s too strong for you. You could not handle my honey.</em></p>
+<p>She gave Ulvama an innocent antenna-wave as the Goblin glared suspiciously at her. Ulvama had a sweet tooth, and she’d followed Apista around an entire day one time, hoping to come across a honey store.</p>
+<p>“Ulvama, do you have fun in my inn?”</p>
+<p>Erin, observing the interaction, felt the [Shaman]’s clawed fingers halt a second in massaging her hair and scalp.</p>
+<p>“Me? Do you have fun?”</p>
+<p>“Aha. See, you’re doing the thing <em>I</em> do. You eat and sleep and stuff, but you were a bigshot [Shaman] in your old tribe. Is Rags actually refusing to work with you or would you go if she asked?”</p>
+<p>Ulvama sat there a long moment, then began to scrub Erin’s hair more vigorously. Erin winced, but the [Shaman] did speak after a few moments.</p>
+<p>“Rags is silly, prideful, smart…and I was mad. But she was also right and wrong. I was the Mountain City tribe’s [Shaman]. I was them—and their ways. Now, Rags is building a new tribe, and I do not fit.”</p>
+<p>“But she didn’t like you. I know you’re powerful, and if—”</p>
+<p>Ulvama flicked some sudds to the side.</p>
+<p>“No, you aren’t listening. I don’t…fit. A [Shaman] and [Chieftain] are like you and Lyonette. They have to be right. Even if I try and she tries…we are different. You understand?”</p>
+<p>“Did you—get along with Tremborag?”</p>
+<p>Erin had heard tales of the Great Chieftain, and she had never brought it up with Ulvama. By any metric, Tremborag had not been a good person. But Ulvama just shrugged, face blank.</p>
+<p>“Sure. Not like Rags and Taganchiel. They have…what’s the word? <em>Mutual respect.</em> Psh. Tremborag was different. He was worried about having power. I kept trying to steal it. His lieutenants tried to steal it. He grabbed it back, lost it—you mess up, you get punished or killed. I understood that.”</p>
+<p>“So you…were a better fit for him?”</p>
+<p>Erin was troubled and wished she could see more than Ulvama’s stomach as the Hobgoblin kept working. Ulvama’s voice was level.</p>
+<p>“Oh, sure, sure. Taganchiel was never a good [Shaman] in Tremborag’s tribe. Like Rags couldn’t be. Me? I know Tremborags. We had sex. I made his lieutenants like me. He couldn’t get rid of them. But I also helped him. Like…two people holding knives at each other’s throats while stabbing a third person together.”</p>
+<p>That sounded terrible. Erin stared upwards.</p>
+<p>“Did you like him?”</p>
+<p>“Me? Not really. He was strong, and the tribe was rich. Why?”</p>
+<p>“—You said you had sex with…?”</p>
+<p>Ulvama waved that off as she poured more shampoo-stuff into the bowl.</p>
+<p>“Oh, that. Mountain City tribe isn’t like—<em>wasn’t like—</em>Redfangs. Some tribes are like that. Garen was a strange [Chieftain]. So is Rags. They have different roots.”</p>
+<p>“I don’t get it.”</p>
+<p>Ulvama tapped her chest with a sigh.</p>
+<p>“My tribe was more…purer…than Rags’. Or Garen’s. Or even Pyrite’s. You know Molten Stone tribe?”</p>
+<p>“Rags said there’s a [Witch] in it.”</p>
+<p>“Yep. All of those tribes are different because Garen was an adventurer. Pyrite learned from an old, stupid Goblin who never talked to me or Tremborag. Rags talked to you. The Goblins from Molten Stone come from further off. <em>Respectable Goblins.</em> Mine was always just…Goblins. Hungry Goblins. Dying Goblins. No one ever gave us blue fruits and spaghetti. We were hunted, not hunters. That’s how I grew up. Like that.”</p>
+<p>She didn’t look happy when she said it, but there was a kind of pride in her tone. Erin looked up bleakly.</p>
+<p>“How hard was it?”</p>
+<p>Ulvama paused and seemed to weigh her words. She stopped, then poured something into Erin’s hair-washing bowl and spoke.</p>
+<p>“Almost done. Few last washes. I need more water. Open door to water?”</p>
+<p>Erin had a store of water in big kegs now, as well as the well. Ulvama drew more water and began washing Erin’s hair to clean it out before she spoke.</p>
+<p>“Before the Mountain City tribe was strong…Tremborag was not always the one Goblin. Before, it was factions. They killed us after Velan died, we rebuilt. I am older than Velan, like Tremborag. Not <em>six.</em> I am twenty-nine years old! One of the oldest except Tremborag!”</p>
+<p>She puffed out her chest. Erin gave her a surprised look.</p>
+<p>“You look as young as Numbtongue!”</p>
+<p>Ulvama splashed her with some water.</p>
+<p>“Goblins don’t age like you silly people. You focused on the wrong thing. Twenty-nine! <em>Twenty-nine!</em> Few Goblins, even before Velan, got that old.”</p>
+<p>“Oh. Congrats?”</p>
+<p>Ulvama looked incredibly disappointed and added more of her tonic into Erin’s final washes.</p>
+<p>“Yeah. Thanks. Mountain City Goblins have always been…nasty. To women they capture. To men. You know what they did.”</p>
+<p>Erin stared up at Ulvama.</p>
+<p>“I know. I’m glad that tribe’s gone. Even if I don’t think they should have been slaughtered. Do you feel bad?”</p>
+<p>For a reply, Ulvama just sighed.</p>
+<p>“Bad…bad? I didn’t think of it until Rags and Pyrite complained and screamed and rebelled. You say ‘good’ and ‘bad’. I say it was how it always was. We did these things to Humans and everyone else. Tell me, Erin. What do you think they did to Goblins who got captured that they didn’t kill right away?”</p>
+<p>Erin stared up at Ulvama as something ran through her, cold and unpleasant.</p>
+<p>“…They didn’t do that to Goblins?”</p>
+<p>The crimson light in Ulvama’s eyes was harsh and, suddenly, intense. But her claws were very gentle.</p>
+<p>“Why. Not? All the things you can’t do to people, you can do to monsters. Especially if they die afterwards. See? My tribe is pure. Rags is the one who thinks of a kind [Innkeeper], of good people, and wants to come to the inn. She and I don’t fit. Do you understand now?”</p>
+<p>In a way, Ulvama did fit with Erin’s moods because this was not the restful hair treatment either had planned. But it was honest and real, and Erin lay there. She didn’t ask Ulvama if she had seen anything like that firsthand.</p>
+<p>She thought she knew. But after a lot of searching, Erin said the thing she felt she had to and hoped was right to say.</p>
+<p>“I don’t know about your past, Ulvama, but you took care of Numbtongue and Mrsha when I was dead, and you helped save Mrsha, and you’ve done nothing here but, like, steal food. Which is fine. I don’t want you to leave. I was just asking. You’re a big help, and you can stay here forever, like I said.”</p>
+<p>Ulvama gave Erin a long, searching look. Then she patted Erin on the head with sudsy, oddly pale hands and began to wash them in some soap.</p>
+<p>“Hah. Is easy to stay here and be nice to an [Innkeeper]. Free food for life. Why would I go with Rags and work hard?”</p>
+<p>She scoffed and began putting away her supplies. Erin wasn’t fooled, and neither was Apista. The bee latched onto Ulvama’s arm and tried to hug her until Ulvama swatted at her.</p>
+<p>“Gah! Get off, stupid bee!”</p>
+<p>It was an odd friendship, but when Erin glanced at Ulvama, she had another sense. Ulvama had done a lot of what Lyonette and Numbtongue and others had observed to be calculated flirting—at the start. But now she seemed ready to loaf around, tease Mrsha, and do her own thing.</p>
+<p>Maybe that was a sign she felt like she didn’t need to buy security. And her kind of transaction was one Erin was uncomfortable with. She liked Erin’s gardens. It was safe here. No one could get in.</p>
+<p>“Y’know, I haven’t had that background, but I once had a similar—I mean, it was—”</p>
+<p>Erin began as Ulvama packed up her supplies. Then she trailed off. The [Shaman] looked at Erin, then flapped a hand after Erin hesitated a good minute.</p>
+<p>“This good. Too much deep talk makes heads hurt. Tell me later when it pops out. Show off nice head to people. We’ll do face and skin and clothing later.”</p>
+<p>Erin was a bit relieved, and she nodded. There was more to life than the beach, which this proved. She and Ulvama went to the new beach of today, and Erin showed off her new hair of today.</p>
+<p>…It took her a few minutes of people staring at her to realize that Ulvama hadn’t just stopped with washing, conditioning it to be glossy, and drying and combing it out.</p>
+<p>She’d also dyed Erin’s hair.</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>When Olesm Swifttail, [Strategos] of Liscor’s army, came by to visit the beach and consult with Erin about moving his people back towards Liscor for the Winter Solstice, he was walking down the beach garden and wondering how far Erin’s powers stretched.</p>
+<p><em>She’d created an actual plateau over the miniature sea below where people were swimming. </em>True, she’d had help getting the quality sand and water and such, but how much power did she have?</p>
+<p>Not to mention her acquaintances. In fact, Olesm had arrived just in time to see some Wyverns landing in the distance, and Rags had come striding into the inn moments before him. They’d nodded, and Olesm had wondered if he’d have to fight her.</p>
+<p>When he saw Erin, the [Strategos]’ head turned, and he kept walking—then tripped over the edge of the plateau and went tumbling into the water. Lyonette had her hands over her mouth as Erin chased Ulvama around; the [Shaman] was cackling.</p>
+<p>“You’re just mad because it looks good!”</p>
+<p>“It’s very—I don’t think she’s wrong, Erin! Your hair looks wonderfully glossy, and you’re so—<em>regal.</em>”</p>
+<p>Erin turned, red-faced, but nowhere near as red as the <em>crimson,</em> fiery hair on her head. She and Lyonette looked related, and the mark of Terandrian royalty…</p>
+<p>Olesm had to climb up to the plateau, using one of several rope ladders, and he was glad someone else said it first.</p>
+<p>“She’s like a younger Maviola El. She needs more black and just a bit of the red and orange…but she’s got the Skill and temperament.”</p>
+<p>Erin’s head swung around, and Lady Pryde refused to retreat as Erin turned redder.</p>
+<p>“I’m not Maviola!<em> Ulvama! Undo this right now!</em>”</p>
+<p>“What, you want blue? Green? Purple? White? I can do those. How about rainbows? It only last until you use the right soap.”</p>
+<p>The [Shaman] poked her head out from behind a rock and smirked. Erin calmed down a bit.</p>
+<p>“Oh. I thought this was gonna be like this for <em>weeks. </em>Well, if that’s the case—do I look like Lyonette, Mrsha?”</p>
+<p>The Gnoll girl had come out of the water to look at Erin, and she eyed Lyonette and Erin and shook her head. Erin scowled.</p>
+<p>“Darn. I thought we could fake people out or something. ”</p>
+<p>Then she noted Olesm standing there and turned towards him.</p>
+<p>“Olesm! And Rags? You made it!”</p>
+<p>“I got your invitation.”</p>
+<p>Rags was steady. Olesm—still looking at Erin. He started, then nodded as Erin’s beaming smile became less pronounced. Their invitation was…well, a reminder. She halted, and Ulvama glanced at Erin as the [Innkeeper] stood there seriously a moment.</p>
+<p>“Come on in, guys. Relax—do you have anyone else? If you need anything, just ask.”</p>
+<p>Olesm hadn’t brought more than Belgrade, but a bevy of Goblins had come with Rags. Erin looked around for a huge Minotaur, but Olesm shook his head.</p>
+<p>“He thought he wouldn’t be welcome in Liscor. Besides, someone has to coordinate the army moving.”</p>
+<p>“Army moving? Are you bringing them back to Liscor? What about the war?”</p>
+<p>Olesm hesitated and felt at his belt pouch.</p>
+<p>“We’re—repositioning. Hectval’s silent, but I’m bringing back as much as I can for Liscor as well. I need to balance carefully.”</p>
+<p>Rags nodded, taking off her boots and wiggling her toes in the sand with happiness.</p>
+<p>“Me too. Lots of Humans and Drakes moving about. Like some idiots camping in the mountains just past the Bloodfields. We have to stay away from them.”</p>
+<p>Somewhere in the distance, General Shirka slapped a claw over her eyes, and Chaldion sat up slowly. He snapped his fingers, and someone was getting demoted if <em>Goblins</em> had seen them from the air.</p>
+<p>All this serious talk had Erin nodding and asking what, exactly, they planned on. Which was interesting because for once, she wanted to know how many…and where.</p>
+<p>It was Ulvama who noted how hard Erin was working, and despite the [Innkeeper] having outlets and actually liking her beach bonanza—she had limits.</p>
+<p>If Ryoka was the pot with the covered lid, which just exploded after pressure built up—Erin was more like a tea kettle who knew how to vent steam and often did. But even a tea kettle could run out of water or just melt under enough heat.</p>
+<p>Still, as Ulvama had observed, Erin did not relax when someone pampered her or took away things to do. She got <em>more</em> stressed by people taking care of her, sometimes.</p>
+<p>“Silly [Innkeeper].”</p>
+<p>However, the solution lay in the problem. Ulvama glanced around, stared down the whirlpool funnel where Ekirra was being swept away to the water level, and then up at the huge diving platform. And she came to a simple conclusion.</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>Erin Solstice didn’t keep tabs on <em>everyone</em> in her inn. Laken was better at it because he was blind and had more attention to give to his [Emperor]-sense, but he was also a leader and had practice.</p>
+<p>If she didn’t focus, she didn’t notice Tessa, for instance, creeping around in the basement and throwing things at a wall, or so Erin guessed. Since they were only potatoes, Erin let her vent. Tessa was a whirlwind of emotions, and every time Erin tried to talk to her, she just ran away.</p>
+<p><em>Something </em>was wrong, but Erin was unable to actually get close to her. When someone high-level didn’t want people to be around them, it was almost impossible to d—</p>
+<p>“No, wait a second. Someone <em>is</em> talking to her. What’s that about? Sorry, Rags. I’ll be back in a second.”</p>
+<p>Erin had just set up Rags with a beach umbrella and a drink when she frowned. Then—a door opened under her feet, and she fell through it. Olesm nearly spat out his drink at the amazing mobility.</p>
+<p>“When did she learn that trick?”</p>
+<p>“Handy. Maybe this time she’ll get out of danger. Or into it faster.”</p>
+<p>Rags observed as some of her Goblins raced about, complaining they weren’t getting the beachshore experience. When Poisonbite, who’d found Kevin at once, saw the surfboard, she instantly demanded it.</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>“Tessa?”</p>
+<p>Shriekblade instantly tried to vanish the moment Erin appeared. Her face, already twisted into a scowl, turned into such an aggressive snarl that Erin stopped. Shriekblade tried to go—but someone had a claw on her arm, and the one person in The Wandering Inn who could stop Tessa, who thought of Tessa or even noticed her, had a grip on her.</p>
+<p>Onieva Oliwing was inspecting Tessa’s condition, and her claws skated over the ground as Tessa tried to move. But Onieva was stronger.</p>
+<p>“Tessa, in the name of the Ancestors, <em>stop it.</em> You haven’t eaten, and you’re spiraling.”</p>
+<p>“I’m fine. <em>Let go of me. I’m cured. I have the flowers.</em>”</p>
+<p>“Oh, yes? Then why did I find you throwing potatoes at a wall? When was the last time you ate or drank?”</p>
+<p>They <em>blurred</em>—and Erin saw hands flying so fast that the twisting figures only resolved into Onieva, with Tessa in a headlock, as the Drake clawed at Onieva’s side. Tessa grabbed a dagger, and Onieva spoke.</p>
+<p>“Don’t, Tessa.”</p>
+<p>“You’re just Saliss’ cousin. I’ll kill you.”</p>
+<p>Tessa was hissing. Onieva slowly let go of her, but she kept a claw on Tessa’s arm.</p>
+<p>“How about you have a drink of something? Water or milk, and a bite of something? Then I’ll let you go. Deal?”</p>
+<p>Tessa’s face was waxy, but she hesitated, then pushed Onieva aside hard and went upstairs. The Drake exhaled as Erin followed.</p>
+<p>“Calescent! Bring something simple out for Tessa, please! And a drink of milk?”</p>
+<p>To her astonishment, Onieva intervened again.</p>
+<p>“I’ve got this. Tessa, what do you want to eat?”</p>
+<p>“I don’t fucking care.”</p>
+<p>The Drake had curled up at a table. But Onieva brought over a menu.</p>
+<p>“Anything?”</p>
+<p>The [Rogue] refused to speak, so Onieva patiently pointed at the top.</p>
+<p>“How about a pizza?”</p>
+<p>“No.”</p>
+<p>“Well, me neither. How about…a bagel sandwich?”</p>
+<p>“No.”</p>
+<p>“A Yellat salad?”</p>
+<p>“No.”</p>
+<p>“Pancakes?”</p>
+<p>“No.”</p>
+<p>“Cracklefish fry? Spicy?”</p>
+<p>“No.”</p>
+<p>It was fairly incredible how patient Onieva was. She read off fifty-eight items until Tessa finally said ‘yes’ to a double-toasted-mushroom-instead-of-bun Corusdeer burger, so rare the meat would run off the plate, on top of a stir-fry of scallions and carrots.</p>
+<p>And a glass of goat’s milk.</p>
+<p>It was amazing to Erin, but she saw something in Onieva’s patient way with Tessa that said at least one knew the other fairly well. When Onieva was done, she patted Tessa on the arm as the other Drake began eating and came over to Erin.</p>
+<p>“She’s not doing well. Has she been…trying substances?”</p>
+<p>“No! Thank you for coming, Onieva. Did Saliss tell you about this place?”</p>
+<p>Onieva laughed. Erin had been hoping to see more of Saliss, actually. There was a lot she hadn’t discussed with him about…well. His being a Turnscale.</p>
+<p>Onieva? She didn’t quite know Onieva, but she saw Mirn hanging around, and she had to assume Onieva was Saliss’ talented cousin who hung in his shadow. Especially if she could catch Tessa.</p>
+<p>“Saliss is sleeping. He’s been getting ready for your thing at the Solstice. <em>I</em> came to have fun. With Mirn! Mirn, don’t be scared. She’s not going to bite your head off. Nice hair, by the way.”</p>
+<p>Onieva ruffled Erin’s hair, and the [Innkeeper] waved at Mirn. He looked slightly tense, but Erin gestured to her beach.</p>
+<p>“Well, come on in! Saliss told you about that? I guess it makes sense. You’re a welcome guest!”</p>
+<p>Onieva smiled gratefully and went to tug Tessa into the beach with her as Mirn gave Erin a mixed smile.</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>It was hard to have Onieva present and both know she had no idea that she was Saliss—and he couldn’t tell Erin because Erin didn’t know Saliss was Onieva!</p>
+<p>Mirn had a stomachache. But that was what came of this life, and he was more intent on seeing whether or not Erin was the right stuff.</p>
+<p>In that she was supposed to be one of the few people Saliss trusted with the knowledge he was Turnscale. Even if Erin didn’t know in what form…she knew Mirn as well, and she was very blasé about it.</p>
+<p>“You guys are always welcome in my inn. You haven’t come by. Are things, y’know, well?”</p>
+<p><em>Five raids since they’d talked to her. Two arrests…</em>but that was normal in a Walled City, and they weren’t on his bar, just the ones he knew about.</p>
+<p>“It’s up and down. I think we’ve been cautious about pushing too far.”</p>
+<p>Especially because not many people in Pallass wanted to go to a Human’s inn and risk it all there, even if they could fool the door guards into thinking they were just visiting the inn or travelling.</p>
+<p>Pallass loved lists, and they would be noted at regular gatherings. Erin <em>hmmed</em> as Onieva looked around.</p>
+<p>“Well, just say the word. I dunno what I can do to help, but I want to. If that makes sense. What do you need aside from someone to kick half of the senators’ butts?”</p>
+<p>Mirn smiled at that.</p>
+<p>“Oh, safe places are always important. The Watch often raids my bar, so I’m always wondering when I have to get people out the back door. If they get arrested, there’s not always <em>proof</em>, but being detained or having a finger pointed can ruin someone’s life.”</p>
+<p>Erin was nodding and waving at Rags when she stopped.</p>
+<p>“You what now? Raids? They <em>raid </em>you?”</p>
+<p>It shouldn’t surprise Mirn, but it did, sometimes, that regular people never knew how aggressive the Watch could be. He put his claws in his pockets, trying to sound casual.</p>
+<p>“It’s not with swords. They’ll haul you off with bruises and broken bones…usually. Unless you fight back. There was a time when they were a lot worse—until they found out that anyone who beat a kid until they passed out wouldn’t come back from a raid. There’s a high-level somebody who fights back. Mutually assured violence.”</p>
+<p>Erin would take it as ‘Saliss’, but Mirn meant Onieva. The [Innkeeper] just stood there a second.</p>
+<p>“But they did that. They actually do that? Like…like…”</p>
+<p>She snapped her fingers and put her hand to her head. It fascinated Mirn, and Onieva, who looked up from Tessa. The Named-rank was burying herself in the sand like a grumpy clam, but she was still eating her burger.</p>
+<p>“[Perfect Recall]. Darn, it doesn’t work on anything but art! I swore I remembered…there was, like, something in history class about it? Speak…speakeasies?”</p>
+<p>Erin was demonstrating a lack of knowledge that came from her background. She vaguely recalled something about this in cities, but she didn’t know.</p>
+<p>It made Mirn wish that the interesting kid, <em>Rose</em>, were here. Of all of them, she had seemed the most aware of things. Even so, Erin focused on the important part.</p>
+<p>“They do all that? Then come here! If they come after you—”</p>
+<p>“You’ll kick them out, and then they’ll just arrest everyone when they get to Pallass. Or burn down their shop, throw paint at the door, and bully the poor people until they leave Pallass or worse. Hello—Mirn, are you sure Saliss trusts her?”</p>
+<p>Onieva appeared, and Mirn developed a headache. Because now Onieva was aware that Saliss had revealed his secret—but she thought Saliss wasn’t her, and she was giving Erin a very intense stare.</p>
+<p>“I’m trustworthy! I don’t want anyone getting hurt for something like that.”</p>
+<p>Erin held up her hands, and Onieva raised her brows.</p>
+<p>“I almost believe you. But your inn’s about as safe as a cat’s litter box. We don’t want protection—we have protection, at least in Pallass. Secrecy matters more. How secret are you?”</p>
+<p>Erin opened her mouth and had the good grace to hesitate a long second. She looked around the beach and realized Mirn and Onieva had deployed silencing spells while she hadn’t thought about it. She kicked at the sand.</p>
+<p>“…I’d like to help. Maybe tell me how? I—ew!”</p>
+<p>A piece of poop had appeared in the sand. Speaking of litter boxes…Erin saw an orange cat staring at her and began shouting.</p>
+<p>“<em>Numbtongue! The beach is not Reagen’s poo-spot! Clean this up!</em>”</p>
+<p>“Aw.”</p>
+<p>The [Bard] looked over from where he and Salkis were hanging out. He chased after his cat, who leapt away—and then went tumbling over the edge of the plateau into the sea. Numbtongue dove after him.</p>
+<p>“Now there’s a Goblin I wouldn’t mind seeing naked.”</p>
+<p>Onieva stared at Numbtongue, and Mirn elbowed her.</p>
+<p>“He’s a <em>Goblin.</em>”</p>
+<p>“You’re telling me you’re blind, Mirn? Ignore him, Erin. He’s a former [Soldier], and he can’t put it aside for one second to notice…”</p>
+<p>“I’m <em>exceptionally</em> happy about the scenery, Onieva. You’re the one getting stuck on one green frond and missing the trees! Have you seen the [Hosts]?”</p>
+<p>They began joking around and then noticed Erin’s uncomfortable smile. Instantly, Mirn and Onieva exchanged a look. <em>Maybe she wasn’t the best friend to have after all? </em>If she was just all talk…</p>
+<p>Before they could come to the wrong conclusion, someone entered their bubble of privacy, and Onieva whirled too casually. She eyed Ulvama, and the [Shaman] waved.</p>
+<p>“Hi. Is the [Alchemist] and Drake who has good taste in clothing. Is this all about Drakes and Turnscales? Me, me.”</p>
+<p>She was the one who’d noticed Saliss. The only other person to do that had been Eldavin, before her. Onieva looked twice as wary, as did Mirn, but a Goblin was a more trustworthy person to know than, say, Chaldion, who was a known problem.</p>
+<p>“You can trust Ulvama, guys. She’s a good person. Ulvama, this is Mirn and Onieva.”</p>
+<p>Mirn elbowed Onieva as the [Alchemist] bared her teeth.</p>
+<p>“Hackles down, ‘Nieva. She’s one of us.”</p>
+<p>The [Protector]’s eyes gleamed as he realized what was up. Ulvama rolled her eyes as Onieva did a double-take, then smiled.</p>
+<p>“Oh, so that’s how it is?”</p>
+<p>The [Shaman] just laughed at the two.</p>
+<p>“For <em>you. </em>Goblins don’t care. One of us, not one of us…doesn’t matter to me. But Goblins have long memories. I remember the same problem.”</p>
+<p>She tapped her forehead knowingly, and Mirn felt tired as he wondered how long that damn well meant. Had this been in the Walled Cities for thousands of years without change? However, Ulvama patted Erin on the shoulder.</p>
+<p>“You be nice to Erin. She is silly—”</p>
+<p>“Hey! I’m totally on their side!”</p>
+<p>Ulvama gave the protesting Erin a look.</p>
+<p>“Except for even people kissing. You banned it on the beach.”</p>
+<p><em>She did what? </em>Now, Mirn and Onieva realized that Erin’s objections might be more personality-driven than they thought. Erin turned red.</p>
+<p>“I just thought—think of the kids!”</p>
+<p>“Kids can see people kissing and not die. What about Mrsha kissing Lyonette on cheek?”</p>
+<p>“Well, <em>obviously</em> that’s okay. But look at them!”</p>
+<p>Erin didn’t even have to look around to point, red-faced, at Lady Bethal and Thomast. The [Lady] of House Walchaís was the kind of woman who would both break the rules and bend them.</p>
+<p>“Oh, Thomast, you musn’t kiss me! Remember the rules? But here, I’m about to <em>burn </em>in this weather. Why don’t you apply this sunscreen?”</p>
+<p>Off went her top as she lay in the sand. Onieva whistled.</p>
+<p>“She’s got charm and style. I like her. And you banned her from kissing?”</p>
+<p>She gave Erin a look like the [Innkeeper] was a monster. Erin held out her hands.</p>
+<p>“Guys. This is a beach. I just thought…are we a nude beach or a fun beach?”</p>
+<p>“Why not both?”</p>
+<p>Erin was losing her audience rapidly, but Onieva just nodded.</p>
+<p>“I think the beach is great, even if there’s a law against kissing. We were scoping it out—can we bring a few people over? <em>Casually.</em> Mix them up, Mirn? I’ll pretend I’m having a party.”</p>
+<p>“They’d like that. Can we do it, Erin?”</p>
+<p>They turned to her, and she agreed instantly. Onieva smiled in relief and took Erin’s hand, squeezing gently. She was <em>strong,</em> and Erin’s hands tingled—she wondered what about Onieva was making her mind ping. She couldn’t place it, not entirely.</p>
+<p>“Slow steps, Miss Erin. We’ll trust each other in time.”</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>Turnscales, Goblins, and more guests. Erin Solstice was a genius of her craft. She had, after all, created a beach such that Lord Tyrion, Chaldion, [Ladies], and all kinds of people were flocking here in the dead of winter.</p>
+<p>Like Wailant, who was currently building a more-permanent ship. Viceria was slightly askance, because he’d gone out and bought gold’s worth of lumber and tar and he was making a literal ship.</p>
+<p>Erin was top-tier for what she did, which was wonder and fun.</p>
+<p>But here was the thing. Ulvama pointed this out after Erin had seen Mirn off. She looked around Erin’s latest beach-incarnation and whispered in Erin’s ear.</p>
+<p>“Psst. Erin. Question.”</p>
+<p>“Huh? Whatsamatter, Ulvama? You not getting enough sun? Want more coconuts? I think we actually got some shipped from Oteslia, and I <em>sorta</em> want to try and crack one open and just sip from it. Do you think Mirn and Onieva like it here? They said they got raided in…that’s crazy. Does Chaldion know about it, you think?”</p>
+<p>Ulvama gave Erin a long look as the [Innkeeper] babbled.</p>
+<p>“He’s a scary Drake with magic eyes. What do you think?”</p>
+<p>“But Saliss is…”</p>
+<p>“Yah. <em>What do you think?</em>”</p>
+<p>Sometimes, Erin didn’t engage with her brain, and Ulvama suspected it was on purpose. She was here to make up for Erin’s many flaws. If she was going to stay at this inn rather than Rags’ tribe, as Erin had said…and it might be for the best…</p>
+<p><em>She was going to show Rags how great she was. </em>The [Great Chieftain] was giving her a suspicious look, and Ulvama waved as she kept whispering to Erin.</p>
+<p>“Onieva likes hot guys. So does Mirn.”</p>
+<p>Erin twisted her Ring of Silence hurriedly as they observed the two Drakes.</p>
+<p>“Both of them? But I thought they were Turnscale. Mirn makes sense, but…then what’s Onieva? Guys and girls? Maybe she’s just a good person?”</p>
+<p>Ulvama decided not to get into it right now. She rubbed at her forehead, then spoke.</p>
+<p>“You want to make this beach nice for her?”</p>
+<p>“Oh, of course.”</p>
+<p>“Okay. Good! Then don’t make this beach so <em>lame.</em>”</p>
+<p>Erin stared off at Onieva and Mirn for a good ten seconds before her head slowly turned.</p>
+<p>“Excuse me? My beach is <em>amazing.</em> Do you not see the whirlpool diving board over the <em>sea?</em>”</p>
+<p>She pointed in outrage at her entire beach, and Ulvama patted Erin on the head patronizingly. Much like she had once done to Rags.</p>
+<p>“Oh, it is a very <em>fun</em> beach, Erin. Such fun for kiddies. Almost as if a child designed it. But this beach bans <em>kisses?</em> Where are the spots for Onieva and Mirn to have fun? For Lady Bethal…well, she makes her own fun.”</p>
+<p>Erin turned red.</p>
+<p>“That’s not fun you need to see! We don’t need nudit—<em>ow!</em>”</p>
+<p>This time, Ulvama actually smacked her on the head, and her scowl was bigger than Erin’s.</p>
+<p>“Not everything is just sex, stupid! Where is the spot for people to have a moment together? To smile? Look!”</p>
+<p>She pointed at Jelaqua and Maughin, who were socializing somewhat awkwardly with some Dullahans and people they knew. Jelaqua seemed to be the odd-one-out, and Erin remembered her saying that a Selphid marrying a Dullahan wasn’t the most accepted thing by the Pallassian-Dullahan communities.</p>
+<p>“Oh. Jelaqua?”</p>
+<p>“She and the small War Walker are here. Talking. Sitting. Playing volleyball.”</p>
+<p>Ulvama made a retching sound and stuck a finger towards her mouth to show Erin what she thought of that. Then she poked Erin a few times.</p>
+<p>“Where. Is. Their. Happy. Moment? You can make it for Mrsha, but not for them? Is it because you’re a bad [Innkeeper], so you’re only Level 40 or something? Larracel is better. Even other [Innkeepers] are better. Give them a happy moment, especially for those two.”</p>
+<p>She pointed to Mirn and Onieva. Erin turned red as she tried to slap Ulvama’s hands down. She was getting mad—because Ulvama had hit a nerve.</p>
+<p>“I’m not—you don’t <em>need—</em>how would you even do it, anyways? Without making a kissing beach or something?”</p>
+<p>She folded her arms, displaying an obstinate <em>lack</em> of imagination. Ulvama sighed. The things she had to do here. She whispered in Erin’s ear as the [Innkeeper] frowned.</p>
+<p>“Wait, just…uh huh. And just that?”</p>
+<p>This time, Ulvama gave Erin a look almost as surprised as Mirn and Onieva. Because even she…</p>
+<p>“Have you never enjoyed something like that? Even a hug?”</p>
+<p>Erin hesitated and turned red, and Ulvama stared at her a long moment before patting her arm.</p>
+<p>“Oh.”</p>
+<p>“I’m not—I’ve had—”</p>
+<p>The [Shaman] patted her more, since people were around, even with the [Silence] spell.</p>
+<p>“Nevermind. Let’s talk later of it. But trust me. Okay?”</p>
+<p>Erin took a deep breath—and then thought of Larracel. She closed her eyes, folded her arms, then stared at…Jelaqua and Maughin. Erin’s eyes swung to Onieva, to Rufelt and Lasica, and she exhaled.</p>
+<p>“Aw, heck. I guess I could try something new. Alright—”</p>
+<p>She clapped her hands together, and half the plateau collapsed. Ulvama and Erin turned as people playing volleyball screamed and the entire third of the beach collapsed into the sea below. Erin hesitated as everyone stared at her.</p>
+<p>“…That was a mistake. <em>Everybody out! I need an hour!</em>”</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>The world’s greatest beach was not a theme-park. Oh, elements of it should be.</p>
+<p>There should be tremendous waves, at times. Places to surf, even, yes, a whirlpool. But Erin had to confess that she might have been a bit overambitious and missed the forest for the trees.</p>
+<p>After all, her latest design had made it so the beach was just this plateau you could fall off into the sea below.</p>
+<p>She had separated the two when part of what made a beach the <em>beach</em> was walking in the surf.</p>
+<p>She brought it back. Her grumbling guests didn’t see Erin terraforming the garden. They sat, shivering in the cold inn where Ishkr had to stoke the fireplace to warm it back up. She had told them an hour, and it was closer to an hour and a half as she worked fast.</p>
+<p>The only two people allowed in the garden were Ulvama and Apista. The [Shaman] paced around, giving Erin advice, critiquing her placement of objects, and Apista buzzed about happily as the entire place shifted.</p>
+<p>It truly was a powerful room, even if the original owner had left it blank. Most gardens didn’t have this ability to manipulate elements. This time…Erin took advantage of it in ways she hadn’t thought of before.</p>
+<p>“Is this…good…?”</p>
+<p>She was sweating by the time she got the ‘sky’ looking right. Ulvama clapped her hands together, and then she did hug Erin, much to the [Innkeeper]’s embarrassment. She ran up and down the beach.</p>
+<p>“Yes, yes! You do get it! But do more!”</p>
+<p>“Oh, is this all it is? I just thought it’d be nice for everyone to do. Not just two people.”</p>
+<p>Ulvama gave Erin a pained look.</p>
+<p>“If it’s fun for everyone, it can be fun for two people, right? That’s all it is.”</p>
+<p>Erin wavered a long while as water began to run downhill.</p>
+<p>“But there’s not something more to romance? To love? What about…a special connection? What about the rest?”</p>
+<p>“That’s just liking someone a lot. Sometimes because you want to have sex. Hm. Make water warmer. Make ocean stupid and stormy more over there, okay?”</p>
+<p>Apista listened to Ulvama’s wise words on relationships as Erin, sighing, adjusted her garden. Then she was done. She threw the door back open and shouted.</p>
+<p>“Okay, everyone! Sorry! Beach 3.5 is ready to go! I had to do it. Come back in—and we’ll change our menus a bit.”</p>
+<p>Lyonette stomped through the door first, glowering and shivering from being wet in the cold winter air.</p>
+<p>“Honestly, Erin. You needn’t have changed it after half a day! What could possibly be better ab—oh. That <em>is</em> better.”</p>
+<p>The other guests came into the beach fast, ready to be unimpressed. But rather to their surprise…this new beach wasn’t as dramatic as the last one. In fact, Mrsha began to complain, loudly, until she stopped and stared twice.</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>The ideal beach should have a shore. It should have the wild parts, the ten-foot waves, the surfing, but the beach was more than just a day swimming around.</p>
+<p>What was a beach? Erin remembered playing on Michigan’s lakes as a girl. But she forgot—some people lived on beaches. And what about rivers?</p>
+<p>An estuary was where a river meets a sea. It was a fast current sweeping down the long beachfront on a gradient. It was so strong that when Nanette jumped in, she was halfway down the beach, and it was a struggle to even fight the brisk current and resist being swept to the ocean below.</p>
+<p>“The water’s warmer! Did you do that, Miss Erin?”</p>
+<p>It was warmer, and the sun was less harsh. In fact…today, everyone turned, and Bethal gasped.</p>
+<p>“Oh my, it’s beautiful.”</p>
+<p>Erin did smile at that. The blue skies had changed. The illusion of light in the garden had become an evening sunset, red and orange and even purple and hints of green lit up the fading sky. She’d even fixed a fake sun in the back, as if it were setting against the sky.</p>
+<p><em>Completely different in mood. </em>The air still felt like salt, but there was a brisk wind moving around, and most crucially of all—the guests did a double-take as they saw what Ulvama had insisted on.</p>
+<p>“Erin, what is that?”</p>
+<p>“A bar.”</p>
+<p>Rufelt and Lasica had set up a kind of primitive bar in the garden, but now there was an actual one with beach-chairs set up in the shade. And more than that—there were a bunch of sand walls dividing parts of the beach up. Erin pointed to a wall that was essentially a privacy screen on one half of the river.</p>
+<p>“Okay, here’s how it is. The bar area is where people get to eat and socialize. But <em>that’s</em> the private relaxation area. In fact, if you want to put down a hut, go ahead.”</p>
+<p>“Say what?”</p>
+<p>Erin waved her hands as Bethal’s head snapped around.</p>
+<p>“A hut. Like a resort. I didn’t have enough time, but people can spend the night on the beach if they want. I’ll call it <em>Liscor Beaching!</em>”</p>
+<p>“That’s copying my thing!”</p>
+<p>Menolit roared, but in delight. Erin’s eyes twinkled.</p>
+<p>“Oh yeah? Well, I offer beachside walks, and I’ll let people <em>rent</em> a villa. Though again, they’ll have to make it first. I made that one.”</p>
+<p>She pointed at a sandcastle ‘villa’ that was basically just a house made out of sand, minus furnishings. But it was catching people’s attention, and Bethal walked over fast.</p>
+<p>“Miss Solstice, do you mean that if I had, say, a very lovely tent, I could set it up and pay you to sleep here overnight? I assure you, Thomast and I would be the best of guests.”</p>
+<p>“Plus, the tent has silence spells.”</p>
+<p>Pryde muttered, and Lyonette clapped her hands over her mouth. Bethal shot Pryde a warning look of ‘don’t mess this up for me’, and she gave Erin a huge smile.</p>
+<p>“We would assuredly keep to your beach rules, Miss Solstice! I swear on House Walchaís’ name!”</p>
+<p>Bethal lied like she breathed. But Erin just heaved a huge sigh and, after glancing at Ulvama, spoke loudly.</p>
+<p>“That won’t be necessary, Lady Bethal. I am <em>not</em> saying it’s open season, especially if people don’t wanna be kissed, but I’ve been told that banning kisses is stupid.”</p>
+<p><em>Gasp.</em> Lyonette almost fell over in shock. Had someone replaced Erin? The [Innkeeper] spoke quickly.</p>
+<p>“I’m just easing the restriction! That’s why we’re having the living area there. Then we’ll have <em>sports</em> here, and maybe even a spa or massages here. Wishdrinks’ staff says some of them know how to do it. The actual swimming part is nice over here—and over there is the whirlpool and storms and ten-foot high waves.”</p>
+<p>She grew visibly happier when she pointed to the chaotic part of the beach, where, yes, she’d kept the diving board. But this…</p>
+<p>This was a beach that combined the elements of the last beaches and improved them. In fact, it was even more profitable, because Bethal immediately put down a deposit for a spot, and people began asking Erin if they could haul in lumber and how much for a night. In fact—Wailant looked at his ship, which had been taking longer to build than he thought, and at Erin and came to a quick decision.</p>
+<p>“<em>Erin!</em>”</p>
+<p>She jumped as he strode over, arms spread wide. Wailant pointed.</p>
+<p>“Sell me three spots. Here’s the deal: you let me set up an inn…<em>inside</em> your inn. Something plush. Blankets, pillows—we’ve got loads of the older stuff in the farm. Dead gods, we’ll throw in the guest bed!”</p>
+<p>“And why do you get three spots, Wailant? Viceria, you, and Garia all get a house? What about the others?”</p>
+<p>The [Pirate] looked askance at Erin.</p>
+<p>“What, I only need one! But then I rent out all three each night. You get…one-fifth of the profits? I’m doing all the labor.”</p>
+<p>Erin folded her arms, impressed at how fast he’d come to his new business model. Timeshares? Someone should stop this man from bringing them into the world, but in truth, Wailant was more like a resort owner.</p>
+<p>“Don’t you have a farm to run?”</p>
+<p>“Bah, it’s all snowy, and it’s just animals. In fact, I’ll sell you my spitting sour melons! There’s no wildlife here—let’s have a few animals roaming around! Fish in the water? I reckon there has to be some bastards for fishing. Imagine it.”</p>
+<p>He took her by the shoulder and held his arm out, envisioning the gold pouring in. Erin had to laugh.</p>
+<p>“Oh, alright. But just make it a nice place for people to stay. Okay? Somewhere to get away from it all.”</p>
+<p>She was eying Jelaqua and Maughin, who were looking at the very polite Dullahans and others and eying Erin. The [Innkeeper] had, in fact, set up that part of the garden like a maze, and you could walk along that section of beach without being seen.</p>
+<p>Privacy, Ulvama had claimed. Not romantic petals floating in dubious bathwater or candlelight dinners like Erin pictured. You could have that, but what she really meant was…a beautiful sunset. Warm, pleasant air, and the ability to do what you wanted in peace.</p>
+<p>Erin could get behind that. Wailant was getting nervous because more people, Menolit included, were pushing forwards and trying to copy his idea.</p>
+<p>“How about it, Erin? Let’s shake on it. One…fourth?”</p>
+<p>Erin held out her hand, and he grabbed for it—only for her to raise it.</p>
+<p>“Gotcha! <em>Lyonette, Yelroan!</em> You’re in charge of dealmaking.”</p>
+<p>The [Pirate]’s face fell. Erin backed away, beaming, and then turned just in time to see someone celebrating the raising of her kiss-ban.</p>
+<p>“Yay! We don’t have to not-kiss? It was a stupid rule, anyways!”</p>
+<p>Visma hugged Mrsha, and Mrsha kissed her on the forehead. Even the kids had been mocking Erin. The [Innkeeper] shook a fist at them as they laughed and pointed at her.</p>
+<p>“I did it for you! For public—aw, nevermind. <em>Enjoy.</em>”</p>
+<p>It was like Erin had opened a dam, because now they saw the private area, there were a lot of people suddenly asking if there was room for a group and keen to introduce themselves to members of the opposite sex.</p>
+<p>That was only the visible flirting. Liska stared about and decided she had to build a nice spot—and then make some introductions when there were fewer listeners. Onieva was laughing as she waved at Erin in thanks—and Visma, who was also laughing, planted a kiss on Ekirra’s cheek.</p>
+<p>The Gnoll boy went scarlet under his fur, then ran into the surf, shouting. Mrsha laughed at him until she saw Visma’s smug smile and frowned, confused.</p>
+<p>“<em>Oh, what have I done?</em>”</p>
+<p>Erin rubbed at her forehead, but Ulvama just patted her on the shoulder.</p>
+<p>“Good things. See? Look how they smile.”</p>
+<p>Erin turned…and Jewel and Normen were in line to buy a spot, laughing. Her face softened, and Erin remembered why she’d made this damn beach to begin with.</p>
+<p>She’d lost sight of it along the way of trying to perfect her beach-making Skills, fishing underwear out of the water, kicking jerks and people trying to buy tickets out of the beach, and enduring Lord Tyrion’s presence.</p>
+<p>“Oh. That is nice.”</p>
+<p>She kicked at the sand again, and this time no cat poo emerged. So Erin turned to Ulvama and whispered, a bit embarrassed.</p>
+<p>“I didn’t mean to ban kissing as in…people having fun. I just—it wasn’t just for the kids. Mrsha doesn’t care. I guess I just thought it was weird for us to see.”</p>
+<p>“People kissing?”</p>
+<p>“Yeah. I mean, it’s awkward. I guess it was stupid to ban it explicitly, huh?”</p>
+<p>“Yep.”</p>
+<p>“But—you’ve never seen how some of them kiss!”</p>
+<p>Erin turned redder, and Ulvama sort of wanted to ask what kind of professional-grade kisses Erin had seen. But she <em>hmmed</em>, because it made more sense. Erin never looked more lost than when someone confronted her with romance. And few people even thought to do that, these days.</p>
+<p>Poor [Innkeeper]. She <em>was</em> just like Tremborag, though Ulvama would never tell her that. He’d had lots of sex, but he had pretended he had no actual heart. At least in Erin’s case, she was trying to change. After a while, Erin glanced about.</p>
+<p>“Whatchu gonna do, Ulvama? Are you going to find—fun people?”</p>
+<p>Erin scowled a bit at the thought, but the [Shaman] just patted her on the head.</p>
+<p>“Nah. Something more fun.”</p>
+<p>“Like wh—oh no.”</p>
+<p>Erin got pulled over and almost resisted, but the [Shaman] was grinning.</p>
+<p>“This time, you <em>choose</em> your hair. I can even do only tips or striped-patterns…you want rainbows? I can do that. Mrsha! Come over and we dye your fur crazy! You want a black skull on your back?”</p>
+<p>Mrsha came racing over—and so did Lyonette to <em>demand</em> Ulvama not do that. But Ulvama just waved a claw at her.</p>
+<p>“You don’t speak. You can barely dye your hair another color when you’re ‘hiding’. I am a professional. I do amazing hair. I’ll do yours.”</p>
+<p>“Me? Well…”</p>
+<p>Lyonette eyed Erin’s rather impressive dye-job in, what, less than an hour? If Ulvama could do that—</p>
+<p>“I suppose I could patronize your work, Ulvama. If you and I go through the available colors. I’m not opposed to new looks.”</p>
+<p>The Goblin snorted as she put out her dyes.</p>
+<p>“Yeah, sure. Bring money.”</p>
+<p>“M-money?”</p>
+<p>Lyonette’s face fell again, and Ulvama grinned.</p>
+<p>“Sure. I do hair <em>and</em> neck-spines and fur.”</p>
+<p>Even the Drakes looked around as the Hobgoblin rubbed her claws together. And she had a rare thing too. Erin Solstice lay down on the beach and stared at the sunset, a clone of the ones she’d seen before.</p>
+<p>“It is nice. Alright, Ulvama. I guess I could do my old hair…but with, like, some cool strands of color. Can you give me green and blue? So it sorta looks magical, like Garia’s hair but a bit more pronounced?”</p>
+<p>“Mhm. You want white?”</p>
+<p>“…That sounds cool. Is that too many colors?”</p>
+<p>Ulvama rolled her eyes, but she grinned as Mrsha held up her image—a crudely drawn skull on her back with flames coming out the mouth. Nanette wanted golden highlights, and there was already a line.</p>
+<p>But the real magic was Erin lying there and relaxing. She murmured, counting down the days.</p>
+<p>“We’ve still got plenty of time. But not enough. If only it could last.”</p>
+<p>Day after day…Ulvama patted her on the forehead as someone came down to lie next to Erin.</p>
+<p>Rags had no interest in canoodling, but she pointed at her hair.</p>
+<p>“Give me something good, [Shaman].”</p>
+<p>“You got money, random [Chieftain]?”</p>
+<p>Rags threw some gold coins at Ulvama, and the [Shaman] prepared their dyes, sketching with a claw on a bit of paper as she decided to enlist a curious Nanette, Visma, and Kenva, much to Watch Captain Venim’s horror, as helpers. Erin smiled at Rags, and for once—</p>
+<p>Relaxed.</p>
+<p>The surf rose and fell, and Onieva looked back at Erin as she leaned on the new bar that Rufelt was already demanding upgrades for, and Antinium were clattering around with boards and nails and furniture.</p>
+<p><em>This beach would get even better, and she had a feeling this one might be here to stay.</em></p>
+<p>“Well, well, well. Do you think it was the [Shaman] or Erin? They can’t have done this for us, right?”</p>
+<p>Mirn just eyed the ‘private villas’ and thought about all his friends who would definitely come here because it was a popular beach. So all the male Drakes could kiss all the female Drakes just like the Ancestors intended, and definitely not anything else in the <em>private</em> villas. Nosiree.</p>
+<p>He smiled.</p>
+<p>“I think…we could rely on her a bit more, Onieva. I’ll go and spread the word. You have fun.”</p>
+<p>She smiled and winked at someone who was watching her across the bar and got a blush.</p>
+<p>“Oh, I think I will.”</p>
+<p>&nbsp;</p>
+<p>[Witch of Second Chances Level 20!]</p>
+<p>[Skill – Spell School: Color Magic Proficiency obtained!]</p>
+<p>[Skill – Drain Color obtained!]</p>
+<p>[Skill – Infuse Color obtained!]</p>
+<p>[Skill – Basic Painting obtained!]</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><strong>Author’s Note:</strong></p>
+<p>Another beach chapter. Again, I haven’t heard any revolts. What would you even do to overthrow me? Quit posting on Reddit for two days?</p>
+<p>We are moving at a chapter-a-day pace. It’s fun, though I am feeling major blasting from last week in terms of mental energy.</p>
+<p>…I also realized I had miscalculated and was getting 7 hours of sleep per day, rather than aiming for 9, which is something I actually tend to need when writing. So I’m behind on multiple fronts!</p>
+<p>However! I will take it easy if I must! I just hate not writing on a day if I haven’t announced it in advance. Well, and well…I also just like typing. Shocking, I know, but I’m back at it, and I did take off Sunday and Saturday…ish…for other work.</p>
+<p>Editing typos for 4 hours on the e-book/audiobook of Book 11. Whew, that’s not restful. But you know what <em>is</em> restful? Finishing this author’s note, which I just did. See you on the next one.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><strong>Jewel and Embraim by Lanrae!</strong></p>
+<p><a href="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Jewel-by-Lanrae.png?ssl=1"><img fetchpriority="high" decoding="async" data-attachment-id="15402" data-permalink="https://wanderinginn.com/2023/06/13/9-47-u/jewel-by-lanrae/" data-orig-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Jewel-by-Lanrae.png?fit=1754%2C2481&amp;ssl=1" data-orig-size="1754,2481" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="Jewel by Lanrae" data-image-description="" data-image-caption="" data-medium-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Jewel-by-Lanrae.png?fit=212%2C300&amp;ssl=1" data-large-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Jewel-by-Lanrae.png?fit=724%2C1024&amp;ssl=1" class="alignnone size-full wp-image-15402" src="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Jewel-by-Lanrae.png?resize=1754%2C2481&amp;ssl=1" alt="" width="1754" height="2481" srcset="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Jewel-by-Lanrae.png?w=1754&amp;ssl=1 1754w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Jewel-by-Lanrae.png?resize=212%2C300&amp;ssl=1 212w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Jewel-by-Lanrae.png?resize=724%2C1024&amp;ssl=1 724w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Jewel-by-Lanrae.png?resize=768%2C1086&amp;ssl=1 768w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Jewel-by-Lanrae.png?resize=1086%2C1536&amp;ssl=1 1086w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Jewel-by-Lanrae.png?resize=1448%2C2048&amp;ssl=1 1448w" sizes="(max-width: 1000px) 100vw, 1000px" data-recalc-dims="1"></a> <a href="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Embraim-by-Lanrae.png?ssl=1"><img decoding="async" data-attachment-id="15403" data-permalink="https://wanderinginn.com/2023/06/13/9-47-u/embraim-by-lanrae/" data-orig-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Embraim-by-Lanrae.png?fit=1754%2C2481&amp;ssl=1" data-orig-size="1754,2481" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="Embraim by Lanrae" data-image-description="" data-image-caption="" data-medium-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Embraim-by-Lanrae.png?fit=212%2C300&amp;ssl=1" data-large-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Embraim-by-Lanrae.png?fit=724%2C1024&amp;ssl=1" class="alignnone size-full wp-image-15403" src="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Embraim-by-Lanrae.png?resize=1754%2C2481&amp;ssl=1" alt="" width="1754" height="2481" srcset="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Embraim-by-Lanrae.png?w=1754&amp;ssl=1 1754w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Embraim-by-Lanrae.png?resize=212%2C300&amp;ssl=1 212w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Embraim-by-Lanrae.png?resize=724%2C1024&amp;ssl=1 724w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Embraim-by-Lanrae.png?resize=768%2C1086&amp;ssl=1 768w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Embraim-by-Lanrae.png?resize=1086%2C1536&amp;ssl=1 1086w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Embraim-by-Lanrae.png?resize=1448%2C2048&amp;ssl=1 1448w" sizes="(max-width: 1000px) 100vw, 1000px" data-recalc-dims="1"></a></p>
+<p>&nbsp;</p>
+<p><strong>Erek, Potions, HiddenTrees, and more by Brack!</strong></p>
+<p><strong>DeviantArt:</strong> <a class="anchor-1X4H4q anchorUnderlineOnHover-wiZFZ_" tabindex="0" title="https://www.deviantart.com/shurkin/gallery/" role="button" href="https://www.deviantart.com/shurkin/gallery/" target="_blank" rel="noreferrer noopener">https://www.deviantart.com/shurkin/gallery/</a></p>
+<p><strong>Ko-Fi:</strong> <a class="anchor-1X4H4q anchorUnderlineOnHover-wiZFZ_" tabindex="0" title="https://ko-fi.com/brack" role="button" href="https://ko-fi.com/brack" target="_blank" rel="noreferrer noopener">https://ko-fi.com/brack</a></p>
+<p><strong>Twitter: </strong><a class="anchor-1X4H4q anchorUnderlineOnHover-wiZFZ_" tabindex="0" title="https://twitter.com/Brack_Giraffe" role="button" href="https://twitter.com/Brack_Giraffe" target="_blank" rel="noreferrer noopener">https://twitter.com/Brack_Giraffe</a></p>
+<p><a href="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Erek-by-Brack.png?ssl=1"><img decoding="async" data-attachment-id="15407" data-permalink="https://wanderinginn.com/2023/06/13/9-47-u/erek-by-brack/" data-orig-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Erek-by-Brack.png?fit=350%2C350&amp;ssl=1" data-orig-size="350,350" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="Erek by Brack" data-image-description="" data-image-caption="" data-medium-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Erek-by-Brack.png?fit=300%2C300&amp;ssl=1" data-large-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Erek-by-Brack.png?fit=350%2C350&amp;ssl=1" class="alignnone size-full wp-image-15407" src="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Erek-by-Brack.png?resize=350%2C350&amp;ssl=1" alt="" width="350" height="350" srcset="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Erek-by-Brack.png?w=350&amp;ssl=1 350w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Erek-by-Brack.png?resize=300%2C300&amp;ssl=1 300w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Erek-by-Brack.png?resize=150%2C150&amp;ssl=1 150w" sizes="(max-width: 350px) 100vw, 350px" data-recalc-dims="1"></a> <a href="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Potions-by-Brack.jpg?ssl=1"><img loading="lazy" decoding="async" data-attachment-id="15408" data-permalink="https://wanderinginn.com/2023/06/13/9-47-u/potions-by-brack/" data-orig-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Potions-by-Brack.jpg?fit=1159%2C846&amp;ssl=1" data-orig-size="1159,846" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="Potions by Brack" data-image-description="" data-image-caption="" data-medium-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Potions-by-Brack.jpg?fit=300%2C219&amp;ssl=1" data-large-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Potions-by-Brack.jpg?fit=1024%2C747&amp;ssl=1" class="alignnone size-full wp-image-15408" src="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Potions-by-Brack.jpg?resize=1159%2C846&amp;ssl=1" alt="" width="1159" height="846" srcset="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Potions-by-Brack.jpg?w=1159&amp;ssl=1 1159w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Potions-by-Brack.jpg?resize=300%2C219&amp;ssl=1 300w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Potions-by-Brack.jpg?resize=1024%2C747&amp;ssl=1 1024w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Potions-by-Brack.jpg?resize=768%2C561&amp;ssl=1 768w" sizes="(max-width: 1000px) 100vw, 1000px" data-recalc-dims="1"></a> <a href="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/HiddenTrees-by-Brack.png?ssl=1"><img loading="lazy" decoding="async" data-attachment-id="15409" data-permalink="https://wanderinginn.com/2023/06/13/9-47-u/hiddentrees-by-brack/" data-orig-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/HiddenTrees-by-Brack.png?fit=1933%2C1458&amp;ssl=1" data-orig-size="1933,1458" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="HiddenTrees by Brack" data-image-description="" data-image-caption="" data-medium-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/HiddenTrees-by-Brack.png?fit=300%2C226&amp;ssl=1" data-large-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/HiddenTrees-by-Brack.png?fit=1024%2C772&amp;ssl=1" class="alignnone size-full wp-image-15409" src="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/HiddenTrees-by-Brack.png?resize=1933%2C1458&amp;ssl=1" alt="" width="1933" height="1458" srcset="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/HiddenTrees-by-Brack.png?w=1933&amp;ssl=1 1933w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/HiddenTrees-by-Brack.png?resize=300%2C226&amp;ssl=1 300w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/HiddenTrees-by-Brack.png?resize=1024%2C772&amp;ssl=1 1024w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/HiddenTrees-by-Brack.png?resize=768%2C579&amp;ssl=1 768w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/HiddenTrees-by-Brack.png?resize=1536%2C1159&amp;ssl=1 1536w" sizes="(max-width: 1000px) 100vw, 1000px" data-recalc-dims="1"></a> <a href="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Bonfire-by-Brack.jpg?ssl=1"><img loading="lazy" decoding="async" data-attachment-id="15410" data-permalink="https://wanderinginn.com/2023/06/13/9-47-u/bonfire-by-brack/" data-orig-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Bonfire-by-Brack.jpg?fit=1543%2C1788&amp;ssl=1" data-orig-size="1543,1788" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="Bonfire by Brack" data-image-description="" data-image-caption="" data-medium-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Bonfire-by-Brack.jpg?fit=259%2C300&amp;ssl=1" data-large-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Bonfire-by-Brack.jpg?fit=884%2C1024&amp;ssl=1" class="alignnone size-full wp-image-15410" src="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Bonfire-by-Brack.jpg?resize=1543%2C1788&amp;ssl=1" alt="" width="1543" height="1788" srcset="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Bonfire-by-Brack.jpg?w=1543&amp;ssl=1 1543w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Bonfire-by-Brack.jpg?resize=259%2C300&amp;ssl=1 259w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Bonfire-by-Brack.jpg?resize=884%2C1024&amp;ssl=1 884w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Bonfire-by-Brack.jpg?resize=768%2C890&amp;ssl=1 768w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Bonfire-by-Brack.jpg?resize=1326%2C1536&amp;ssl=1 1326w" sizes="(max-width: 1000px) 100vw, 1000px" data-recalc-dims="1"></a> <a href="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Rinu-by-Brack.jpg?ssl=1"><img loading="lazy" decoding="async" data-attachment-id="15411" data-permalink="https://wanderinginn.com/2023/06/13/9-47-u/rinu-by-brack/" data-orig-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Rinu-by-Brack.jpg?fit=2170%2C2645&amp;ssl=1" data-orig-size="2170,2645" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="Rinu by Brack" data-image-description="" data-image-caption="" data-medium-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Rinu-by-Brack.jpg?fit=246%2C300&amp;ssl=1" data-large-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Rinu-by-Brack.jpg?fit=840%2C1024&amp;ssl=1" class="alignnone size-full wp-image-15411" src="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Rinu-by-Brack.jpg?resize=2170%2C2645&amp;ssl=1" alt="" width="2170" height="2645" srcset="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Rinu-by-Brack.jpg?w=2170&amp;ssl=1 2170w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Rinu-by-Brack.jpg?resize=246%2C300&amp;ssl=1 246w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Rinu-by-Brack.jpg?resize=840%2C1024&amp;ssl=1 840w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Rinu-by-Brack.jpg?resize=768%2C936&amp;ssl=1 768w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Rinu-by-Brack.jpg?resize=1260%2C1536&amp;ssl=1 1260w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Rinu-by-Brack.jpg?resize=1680%2C2048&amp;ssl=1 1680w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Rinu-by-Brack.jpg?w=2000&amp;ssl=1 2000w" sizes="(max-width: 1000px) 100vw, 1000px" data-recalc-dims="1"></a></p>
+<p>&nbsp;</p>
+<p><strong>Ook by onionlittle!</strong></p>
+<p><strong>Ko-fi:</strong> <a class="anchor-1X4H4q anchorUnderlineOnHover-wiZFZ_" tabindex="0" title="https://ko-fi.com/littleonion" role="button" href="https://ko-fi.com/littleonion" target="_blank" rel="noreferrer noopener">https://ko-fi.com/littleonion</a></p>
+<p><strong>Twitter:</strong> <a class="anchor-1X4H4q anchorUnderlineOnHover-wiZFZ_" tabindex="0" title="https://twitter.com/littleonion_art" role="button" href="https://twitter.com/littleonion_art" target="_blank" rel="noreferrer noopener">https://twitter.com/littleonion_art</a></p>
+<p><a href="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Ook-by-onionlittle.png?ssl=1"><img loading="lazy" decoding="async" data-attachment-id="15406" data-permalink="https://wanderinginn.com/2023/06/13/9-47-u/ook-by-onionlittle/" data-orig-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Ook-by-onionlittle.png?fit=1620%2C2160&amp;ssl=1" data-orig-size="1620,2160" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="Ook by onionlittle" data-image-description="" data-image-caption="" data-medium-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Ook-by-onionlittle.png?fit=225%2C300&amp;ssl=1" data-large-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Ook-by-onionlittle.png?fit=768%2C1024&amp;ssl=1" class="alignnone size-full wp-image-15406" src="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Ook-by-onionlittle.png?resize=1620%2C2160&amp;ssl=1" alt="" width="1620" height="2160" srcset="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Ook-by-onionlittle.png?w=1620&amp;ssl=1 1620w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Ook-by-onionlittle.png?resize=225%2C300&amp;ssl=1 225w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Ook-by-onionlittle.png?resize=768%2C1024&amp;ssl=1 768w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Ook-by-onionlittle.png?resize=1152%2C1536&amp;ssl=1 1152w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Ook-by-onionlittle.png?resize=1536%2C2048&amp;ssl=1 1536w" sizes="(max-width: 1000px) 100vw, 1000px" data-recalc-dims="1"></a></p>
+<p>&nbsp;</p>
+<p><strong>Erin by MarcelTec3D’s…brother!</strong></p>
+<p><a href="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Erin-by-MarcelTech3Ds-Brother.png?ssl=1"><img loading="lazy" decoding="async" data-attachment-id="15404" data-permalink="https://wanderinginn.com/2023/06/13/9-47-u/erin-by-marceltech3ds-brother/" data-orig-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Erin-by-MarcelTech3Ds-Brother.png?fit=2160%2C4800&amp;ssl=1" data-orig-size="2160,4800" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="Erin by MarcelTech3D’s Brother" data-image-description="" data-image-caption="" data-medium-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Erin-by-MarcelTech3Ds-Brother.png?fit=135%2C300&amp;ssl=1" data-large-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Erin-by-MarcelTech3Ds-Brother.png?fit=461%2C1024&amp;ssl=1" class="alignnone size-full wp-image-15404" src="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Erin-by-MarcelTech3Ds-Brother.png?resize=2160%2C4800&amp;ssl=1" alt="" width="2160" height="4800" srcset="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Erin-by-MarcelTech3Ds-Brother.png?w=2160&amp;ssl=1 2160w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Erin-by-MarcelTech3Ds-Brother.png?resize=135%2C300&amp;ssl=1 135w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Erin-by-MarcelTech3Ds-Brother.png?resize=461%2C1024&amp;ssl=1 461w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Erin-by-MarcelTech3Ds-Brother.png?resize=768%2C1707&amp;ssl=1 768w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Erin-by-MarcelTech3Ds-Brother.png?resize=691%2C1536&amp;ssl=1 691w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Erin-by-MarcelTech3Ds-Brother.png?resize=922%2C2048&amp;ssl=1 922w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Erin-by-MarcelTech3Ds-Brother.png?w=2000&amp;ssl=1 2000w" sizes="(max-width: 1000px) 100vw, 1000px" data-recalc-dims="1"></a></p>
+<p>&nbsp;</p>
+<hr>
+<p><a href="https://wanderinginn.com/2023/06/10/9-46-s/">Previous Chapter</a> <a href="https://wanderinginn.com/2023/06/16/9-48-btiprljmwvrv/"><span style="float: right;">Next Chapter</span></a></p>
+      </div>
+
+      <hr>
+          <span class="nav-previous">
+        <a href="https://wanderinginn.com/2023/06/10/9-46-s/" rel="prev"><span class="meta-nav">←</span> Previous Chapter</a>    </span>
+    <span class="nav-next" style="float: right" ;="">
+        <a href="https://wanderinginn.com/2023/06/16/9-48-btiprljmwvrv/" rel="next">Next Chapter <span class="meta-nav">→</span></a>    </span>
+    

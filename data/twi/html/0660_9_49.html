@@ -1,0 +1,1096 @@
+
+
+          <span class="nav-previous">
+        <a href="https://wanderinginn.com/2023/06/16/9-48-btiprljmwvrv/" rel="prev"><span class="meta-nav">←</span> Previous Chapter</a>    </span>
+    <span class="nav-next" style="float: right" ;="">
+        <a href="https://wanderinginn.com/2023/07/01/9-50/" rel="next">Next Chapter <span class="meta-nav">→</span></a>    </span>
+      <!-- <hr/> -->
+      <header class="entry-header">
+        <h1 class="entry-title">9.49</h1>
+                <button class="show-settings-btn" onclick="document.querySelector('#reader-settings-wrapper').classList.toggle('is-hidden')">
+          <img class="show-settings-btn-img" src="https://wanderinginn.com/wp-content/themes/solstice/assets/images/ui/reader-settings-button.webp">
+        </button>
+      </header>
+
+      
+<!-- Reader Settings -->
+<div id="reader-settings-wrapper" class="is-hidden">
+    <div id="reader-settings">
+        <header id="reader-settings-header">
+            <h2>Reader Settings</h2>
+            <button onclick="closeModal()">
+                <svg width="100%" height="100%" viewBox="0 0 33 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M16.5 30.75C24.0939 30.75 30.25 24.5939 30.25 17C30.25 9.40608 24.0939 3.25 16.5 3.25C8.90608 3.25 2.75 9.40608 2.75 17C2.75 24.5939 8.90608 30.75 16.5 30.75Z" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M20.625 12.875L12.375 21.125" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M12.375 12.875L20.625 21.125" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+            </button>
+        </header>
+
+        <fieldset id="fieldset-font">
+            <legend>Font</legend>
+
+            <div>
+                <label for="font-size-select">Size</label>
+                <select id="font-size-select" class="reader-settings-select" data-setting="reader-font-size" onchange="updateSetting(this.getAttribute('data-setting'), this.value);">
+                    <option value="10pt" class="reader-settings-option">10</option>
+                    <option value="11pt" class="reader-settings-option">11</option>
+                    <option value="12pt" class="reader-settings-option" selected="">12</option>
+                    <option value="13pt" class="reader-settings-option">13</option>
+                    <option value="14pt" class="reader-settings-option">14</option>
+                    <option value="16pt" class="reader-settings-option">16</option>
+                    <option value="18pt" class="reader-settings-option">18</option>
+                    <option value="20pt" class="reader-settings-option">20</option>
+                    <option value="22pt" class="reader-settings-option">22</option>
+                    <option value="24pt" class="reader-settings-option">24</option>
+                    <option value="26pt" class="reader-settings-option">26</option>
+                    <option value="28pt" class="reader-settings-option">28</option>
+                    <option value="30pt" class="reader-settings-option">30</option>
+                    <option value="36pt" class="reader-settings-option">36</option>
+                    <option value="42pt" class="reader-settings-option">42</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="font-family-select">Family</label>
+                <select id="font-family-select" class="reader-settings-select" data-setting="reader-font-family" onchange="updateSetting(this.getAttribute('data-setting'), this.value);">
+                    <optgroup label="Sans Serif">
+                        <option class="reader-settings-option" value="OpenSans, sans-serif" selected="">Open Sans</option>
+                        <option class="reader-settings-option" value="Arial, Helvetica, sans-serif">Arial</option>
+                        <option class="reader-settings-option" value="Roboto, sans-serif">Roboto</option>
+                    </optgroup>
+                    <optgroup label="Serif">
+                        <option class="reader-settings-option" value="Playfair, serif">Playfair</option>
+                        <option class="reader-settings-option" value="EBGaramond, serif">Garamond</option>
+                        <option class="reader-settings-option" value="'Times New Roman', Times, serif">Times New Roman</option>
+                    </optgroup>
+                    <optgroup label="Other">
+                        <option class="reader-settings-option" value="OpenDyslexic">OpenDyslexic</option>
+                        <option class="reader-settings-option" value="HennyPenny">Henny Penny</option>
+                    </optgroup>
+                </select>
+            </div>
+            <div>
+                <label for="font-weight-select">Thickness</label>
+                <select id="font-weight-select" class="reader-settings-select" data-setting="reader-font-weight" onchange="updateSetting(this.getAttribute('data-setting'), this.value);">
+                    <option class="reader-settings-option" value="300" selected="">Thin</option>
+                    <option class="reader-settings-option" value="400">Regular</option>
+                    <option class="reader-settings-option" value="500">Thick</option>
+                </select>
+            </div>
+        </fieldset>
+
+        <fieldset id="fieldset-spacing">
+            <legend>Spacing</legend>
+            <div>
+                <label for="margins-select">Page Width</label>
+                <select id="margins-select" class="reader-settings-select" data-setting="reader-article-width" onchange="updateSetting(this.getAttribute('data-setting'), this.value);">
+                    <option value="320px" class="reader-settings-option">Extra Narrow</option>
+                    <option value="500px" class="reader-settings-option">Narrow</option>
+                    <option value="680px" class="reader-settings-option" selected="">Medium</option>
+                    <option value="1000px" class="reader-settings-option">Wide</option>
+                    <option value="1200px" class="reader-settings-option">Extra Wide</option>
+                    <option value="100%" class="reader-settings-option">Max</option>
+                </select>
+            </div>
+            <div>
+                <label for="line-spacing-select">Line</label>
+                <select id="line-spacing-select" class="reader-settings-select" data-setting="reader-line-height" onchange="updateSetting(this.getAttribute('data-setting'), this.value);">
+                    <option class="reader-settings-option" value="1.2">Small</option>
+                    <option class="reader-settings-option" value="1.625" selected="">Medium</option>
+                    <option class="reader-settings-option" value="2.2">Large</option>
+                    <option class="reader-settings-option" value="3.5">Extra Large</option>
+                </select>
+            </div>
+            <div>
+                <label for="paragraph-spacing-select">Paragraph</label>
+                <select id="paragraph-spacing-select" class="reader-settings-select" data-setting="reader-paragraph-spacing" onchange="updateSetting(this.getAttribute('data-setting'), this.value);">
+                    <option class="reader-settings-option" value="0.5em">Small</option>
+                    <option class="reader-settings-option" value="1.625em" selected="">Medium</option>
+                    <option class="reader-settings-option" value="2.75em">Large</option>
+                    <option class="reader-settings-option" value="4.25em">Extra Large</option>
+                </select>
+            </div>
+        </fieldset>
+        <div class="ml-5 mb-4">
+            <label for="theme-select">Theme</label>
+            <select id="theme-select" class="reader-settings-select" data-setting="reader-theme" onchange="updateSetting(this.getAttribute('data-setting'), this.value);">
+                <option class="reader-settings-option" value="reader-theme-grey" selected="">Dark Grey</option>
+                <option class="reader-settings-option" value="reader-theme-blue">Dark Blue</option>
+                <option class="reader-settings-option" value="reader-theme-black">Black</option>
+                <option class="reader-settings-option" value="reader-theme-white">White</option>
+                <option class="reader-settings-option" value="reader-theme-sepia">Sepia</option>
+            </select>
+        </div>
+        <button id="reset-settings-btn" onclick="resetSettings()">Reset To Default</button>
+        <!-- <div> -->
+        <!-- </div> -->
+
+
+    </div>
+</div>
+      <div class="entry-content">
+        <p>“I hear that The Wandering Inn has a beach. We should go there.”</p>
+<p>A half-Elf sitting on a rock, watching the snow fall, said that. It kept falling, even now, turning the world into a second sea. It seemed like nothing and no one could live here, yet improbably, a bunch of furry folk had created light in that oblivion.</p>
+<p>Tents, rounded, with little stacks of smoke rising ever higher. From afar, it looked like a small gathering, despite being home to nearly a hundred thousand souls.</p>
+<p>The Meeting of Tribes was no Walled City with their millions, but that was because the tribes of Izril were no longer gathered. Someday, they would return, but many had left for the New Lands, for other parts of Izril to defend their homes, or to other continents altogether.</p>
+<p>As for the half-Elf, she had a skeletal hand, and she was dressed just in robes despite the weather that had even the Antinium sitting next to her wearing a huge, poofy fur coat. It was oversized, adjusted so it could cover his shell, and a giant hood had two holes for his antennae to poke through. Since even chitin could freeze, someone had knitted two woolen coverings, and they hugged the antennae like socks.</p>
+<p>The knitter was not Yvlon Byres. Yvlon was wearing a less-warm travel ensemble from her adventuring days before Skinner, and shivering. She just had wool and three layers, and the wind chilled her to the core especially with her metal arms, which, despite having reduced sensation, were <em>freezing </em>since metal was a bad insulator.</p>
+<p>Pisces was just dead. He sat, trying to cast a [Frostskin] spell, shivering uncontrollably with a blanket wrapped around him. This was despite the sweater and jacket over his white robes—which made him look ridiculous—and the shirt underneath.</p>
+<p>So Ceria Springwalker was already not the most popular member of her team because she looked like she was enjoying the cold weather. At her comment, the Horns of Hammerad looked up. They regarded their captain, and Yvlon made a snowball and threw it.</p>
+<p>It clocked Ceria in the head, and she went tumbling down the hill, swearing.</p>
+<p>“Oops. Sorry, Ceria.”</p>
+<p>“<em>Sorry? You hit me!</em>”</p>
+<p>“I thought I’d miss. Are you insane? Is that circlet eating your mind yet? We just <em>left.</em>”</p>
+<p>Ceria crawled back up the hill, rubbing at her head. The invisible circlet appeared for a second as she re-seated it.</p>
+<p>“I’m just saying. It’s a beach. It sounds hilarious. Plus, Jelaqua’s getting married. I already miss Erin’s unpredictability. And the Winter Solstice is coming. You know something’s going down.”</p>
+<p>“We do? Comrade Pisces, what is going down on the Winter Solstice? Have I missed critical information?”</p>
+<p>Pisces stopped shivering to death and looked up at Ceria with a huge frown.</p>
+<p>“W-w-we don’t k-know anything. B-but Erin did say—”</p>
+<p>“Oh, for the love of trees. [Frostskin]. <em>There.</em>”</p>
+<p>Ceria groaned and performed the spell. Pisces stopped shivering at once, and Yvlon, also shudderingly cold, felt her skin ‘warm’ slightly, or at least, stop feeling the cold.</p>
+<p>“I nearly had it, Ceria!”</p>
+<p>He glared. Ceria rolled her eyes.</p>
+<p>“Sure you did. You just can’t admit that, for once, I learned a spell faster than you. It’s stronger than the [Lesser Resistance] spells by far, isn’t it?”</p>
+<p>Neither she <em>nor</em> Pisces had known [Frostskin] before heading south. Ceria had never really needed it as a [Cryomancer] since cold-resistance was a staple of her class. But it seemed her intelligence-boosting circlet had more power than Yvlon had thought. Well, it was also a spell from her specialty.</p>
+<p>Pisces scowled and folded his arms.</p>
+<p>“I’ve been studying <em>other</em> magic, I’ll have you know, Springwalker. As to Ksmvr’s question—we know something is happening on the Solstice. But we could hardly wait around for months. We’d turn into Lehra.”</p>
+<p>“Plus, we had an engagement at the Meeting of Tribes. If we head back, we’d just have done a bit here, and…aren’t we headed to the New Lands, oh intelligent Captain of mine?”</p>
+<p>Yvlon was spicy, even in the chill, but she and Ceria had mostly made up their quarrel over the past month. Indeed, Yvlon’s pointed remarks weren’t followed by a dangerously annoyed glare. She just looked regularly piqued.</p>
+<p>Venting your feelings honestly was a key to managing your temper. Better to let off some steam than hold it in according to Honored Berr. After a month of his tutelage, Yvlon felt like she had mastered some of his lessons. The levels hadn’t reflected that for her [Armsmistress] class, but she <em>was</em> Level 40. Expecting to level from a month’s training was ridiculous.</p>
+<p>Then again…she had leveled a bit in her other new class. But Yvlon was keeping that to herself since it was just a side-class like Ksmvr’s tree-collecting habit, and it was silly.</p>
+<p>Ceria, for her part, seemed equanimous and even thoughtful as she rested her chin in her bony hand. She nodded.</p>
+<p>“Yeah. It’s true we’d waste time—aside from getting our armor and meeting the Gnolls here. But we could bring back a bunch of stuff for Krshia’s Silverfangs, even escort Rose north if she’s going. She’s said she wants to leave.”</p>
+<p>Yvlon frowned.</p>
+<p>“What about the Steelfur Chieftain? Aren’t they together?”</p>
+<p>The half-Elf’s brows rose.</p>
+<p>“Adetr? I don’t think so. And even if they are, Rose still has business at the inn. It’s not like she’s Inkar, who likes this life. She’s a city-person.”</p>
+<p>“Huh. But still, why would we go back?”</p>
+<p>Ceria glanced north, towards the High Passes, so far away that they weren’t even visible on the horizon. It would be a long journey. But—</p>
+<p>“Well, if we’re needed. Erin has her [Knights], now, and the other Gold-rank teams and even Saliss. But something’s coming on the Winter Solstice. Erin died once. Do you think she’ll get a third chance? If we miss it—do you want to live with that?”</p>
+<p>Her eyes were calm and cold. That was from her class. But the circlet’s intelligence shone through that gaze. A cold understanding of what might come. Yvlon looked up, and her shiver this time had nothing to do with the cold. In silence, Pisces glanced up, and his eyes spoke volumes as his hand reached for his rapier.</p>
+<p>“I, for one, will vote to return if it means helping Miss Solstice. But if it is so dire, will we be enough?”</p>
+<p>“A Gold-rank in the right spot’s worth more than a company, especially against something like Facestealer. But I was sort of thinking we’d get backup if we’re certain. After all—we could bring back <em>more</em> help on a level even the Drakes respect. Not just our cheerful friend. What about Berr, Gadiekh, Colth, <em>and</em> Theikha? And, uh, Adetr? He’s probably as good as a Gold-rank, at least.”</p>
+<p>Ceria Springwalker really was scheming hard. Even Pisces’ brows rose, but Yvlon had to admit—if you were going to bring in the cavalry, you might as well bring the [Elephant Riders]. And that would be a <em>force.</em></p>
+<p>“Think we can?”</p>
+<p>“We could ask. I’m mulling it over, mulling it over. Want to visit the Earth Tent and get something to eat? Then pitch it to Theikha?”</p>
+<p>The other Horns agreed. They got up from the snowy hill, and Yvlon Byres, Ksmvr, and Pisces stretched. They’d been out here in the snowy wasteland to do more than just talk in private. Ceria raised a hand and shouted.</p>
+<p>“<em>Hey! Colth! We’re heading back! You done yet?</em>”</p>
+<p>“<em>Almost! Give me thirteen more minutes! Is Gire done yet?</em>”</p>
+<p>Ceria shaded her eyes and sighed.</p>
+<p>“Thirty minutes?”</p>
+<p>“<em>Perfect!</em>”</p>
+<p>He blew her a kiss. Ceria went to sit back down, and Pisces, groaning, opened his spellbook. For a Gold-rank team, they did a lot of sitting around. He glanced up, but he couldn’t tell what Colth was doing in the distance. Yvlon squinted at the figure sitting in the snow below the hill, unmoving as the snow poured down.</p>
+<p>“Is he really divining or something?”</p>
+<p>Ceria nodded.</p>
+<p>“Looks like it. He’s been staring at that contraption and the sky. I think it lets him see the stars at night.”</p>
+<p>Ksmvr chirped in happily.</p>
+<p>“Suspicious.”</p>
+<p>Ceria snorted.</p>
+<p>“Are you listening to someone else, Ksmvr? It’s perfectly normal. I’ve never heard of any [Diviner] consulting the stars. That’s [Seer] territory. But he’s <em>fine.</em> He just gets secret [Messages] from all over Izril. I think he gets sixteen a week.”</p>
+<p>Yvlon twisted around, impressed.</p>
+<p>“You can tell?”</p>
+<p>Once more, Ceria tapped the circlet on her head.</p>
+<p>“I can’t intercept, but this thing detects them. Colth also knows eleven Gnolls who give him tips, each in a different tribe. I think he’s looking into something southwards—I heard him asking about roads.”</p>
+<p>“Huh. Think he’s got business around Zeres?”</p>
+<p>“Could be, could be. But that’s not suspicious at all, Ksmvr.”</p>
+<p>“Ah, I see. I will be more naive and guileless in the future, Captain Ceria. That was a joke. Ha. Ha. Ha? Was that a funny joke?”</p>
+<p>“Hilarious.”</p>
+<p>Pisces muttered, glancing at Ceria. She returned the stare, and after a second, Pisces murmured.</p>
+<p>“—We might not need to go back to the inn in a month. I cannot imagine we can do better than the current protections. Isn’t Lord Tyrion Veltras staying at the inn? With Lady Reinhart and whatnot…it would be a waste of time, I think.”</p>
+<p>He waved a hand, and Ceria eyed Pisces. She said nothing, and neither did Yvlon, but if both considered Colth ‘sort of suspicious’, Pisces’ statement had just put him way above Colth.</p>
+<p><em>He would be the first person to go back to Erin’s defense, whether he’d admit it or not.</em> What did he know?</p>
+<p>Well, the [Necromancer] was thinking of a promise that had been made to him by a certain <em>other</em> Necromancer. And he sincerely doubted he could do more than the Archmage of Death could.</p>
+<p>Then again? Did he trust that? Then again again? Could even four Named-ranks stop Az’kerash? Pisces sat, reading the spellbook, and that was where the Horns were.</p>
+<p>At another waypoint on their long journey. But soon—Ceria sighed as she turned, watching a huge, red-furred Gnoll running around in the distance.</p>
+<p>“Dead gods, she doesn’t get tired. Hey, Yvlon, you’re a muscly warrior-type. You want to…?”</p>
+<p>Yvlon turned, and the person they were supposed to mind along with Colth, Chieftain Gireulashia, was still running in the distance. She was exercising. Training, rather.</p>
+<p>A very unhappy giant Gnoll was racing through the snow so fast that she was leaving a shower of snow behind her. Yvlon thought she might be able to outrun some people on dry ground she was going so fast. And yet she had no less than fifteen Ekhtouch tribe members and two snow-specialists egging her on and chasing her around.</p>
+<p>Two literal bears, too, and a bunch of hounds. They were playing the most serious game of tag possible.</p>
+<p>“…I’d rather let Berr toss me half a mile for fun. That looks exhausting.”</p>
+<p>“That’s how you learn a Skill. I think she’ll punch the bears if they keep making her do it, though.”</p>
+<p>Gireulashia’s howling complaints were audible even from here. The Horns were just here as minders for her in case monsters attacked. After all, she’d been running around for the last hour, and she was exhausted, even for a [Paragon Chieftain].</p>
+<p>“You could learn a Skill, Yvlon.”</p>
+<p>“I would throw up everything in my stomach <em>and </em>my stomach trying to run that hard. I can’t even figure out how she’s moving that fast in the snow. I don’t need terrain Skills, anyways.”</p>
+<p>“Slacker.”</p>
+<p>Yvlon made another snowball with her hands and took careful aim.</p>
+<p>“I don’t want to hear that from <em>you—</em>”</p>
+<p>Ceria pointed a finger, and a snowball half as large as Yvlon sent her tumbling down the hill. The [Armsmistress] came back up, shouting, and the Horns of Hammerad merrily ran around pelting each other with snow.</p>
+<p>What a carefree lot. Below them, sitting cross-legged as he consulted his ‘divination’, Colth the Supporter sighed.</p>
+<p>“Dead gods. They have no focus.”</p>
+<p>And yet—they did get places. Slowly, unpredictably, but forward momentum was happening. Colth packed up his things as he brushed snow off his winter gear.</p>
+<p><em>Yep. Almost time.</em></p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>When they got back to the Meeting of Tribes, the first thing that the Horns checked on was the Soliest Yerr Tribe. It might have been odd, given their affiliations were with Gaarh Marsh, Weatherfur, and Silverfang,</p>
+<p>The three tribes who had taken the Doombearers’ side and come to define that side of the schism within Gnolls were effectively the major forces in the Meeting of Tribes. They had both political and physical presence and were at the center of a new network of tribal alliances.</p>
+<p>Strong allies like Longstalker’s Fang and Ekhtouch meant that tribes who disagreed with them—or who had taken the opposite side—were moving away or in disgrace.</p>
+<p>Az’muzarre was ruined. Plain’s Eye had become a splinter heading to the New Lands under Merish. Some tribes like Steelfur were trying to rebuild, but they had lost their Chieftain and thus their powerful armored fur.</p>
+<p>And some tribes, like Soliest Yerr, were just considering a future where they no longer endured. Soliest Yerr was a famous—<em>the</em> famous tribe for armors and hides. But their Chieftain was dead. They had taken Plain’s Eye’s side, and a third of their warriors had perished fighting Zeres’ army.</p>
+<p>A third of their warriors. The damage to the tribe meant that they had little prospects of returning to their normal hunting grounds. They normally operated on the coast, but the tensions with Zeres would have had them wary even if they could defend themselves.</p>
+<p>It might be that this was their end—so the tribe was in active negotiations to stay at the Meeting of Tribes or be subsumed into another tribe.</p>
+<p>It was no easy thing. Even if they were allowed to keep their customs, imagine becoming a Weatherfur Gnoll? Would both tribes be able to merge and forget old wounds?</p>
+<p>…The one thing Soliest Yerr had was their Honored Gnoll, Shedrkh the Hidemaster. He was old, seventy-eight years old, and now it seemed like the weight of his tribe rested on his shoulders.</p>
+<p>He did not bear it well. He looked—hunted. As if sleep had left him, leaving dark traces under his eyes, and his grey fur was tangled. Despite the impressive clothing he wore, hand-tanned, and his many apprentices, sons, daughters, grandchildren, and more—it seemed like the realization that the Doombearers had not been evil had broken something in him.</p>
+<p>However, he knew his craft and threw himself into that.</p>
+<p>“Honored Shedrkh. How goes it?”</p>
+<p>The Horns had initially come all this way to meet him. Nearly a month back they’d been introduced, and the old Gnoll just raised a paw as Yvlon called out. He’d been working for a month in the winter to tan Stalker’s hide. A month…and he was almost done, which was a lightning fast pace for the job.</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p><em><strong>One month ago.</strong></em></p>
+<p>&nbsp;</p>
+<p>“What a magnificent hide. You were right to take it to me.”</p>
+<p>When the Horns first met Shedrkh, it became clear why Shaman Theikha and Chieftain Feshi were so happy to introduce them to him. They had feared his skills might be in such high demand—and that they were asking so much—that they’d have to haggle hard to even get an audience.</p>
+<p>The reverse was actually true. The Gnoll had been sitting in his hut, the smelly camp of Soliest Yerr, which stank to high heaven, wrapped in blankets and looking sick. He hadn’t responded to much of anything, even one of his sons trying to get him to eat.</p>
+<p>He’d only roused at the name ‘Colth the Supporter’, and when he’d been told he had a job, he’d gotten up with alacrity.</p>
+<p>He tore at a piece of jerky as his helpers, his extended family, gathered around in relief. They’d been tanning Wyvern hide and an impressive amount of Corusdeer leather and other local animals, but none of it interested The Keeper of Hides.</p>
+<p>Stalker’s hide did. He handled the huge, thick hide with great care as Gnolls sniffed and recoiled and Colth recounted finding it.</p>
+<p>“A monster’s hide that hasn’t rotted in…decades? Hundreds of years? This is clearly a mythical monster. Better than anything I’ve worked on in the last decade. Only that Wyvern Lord would be as nice. And this…someone bring me our [Shaman]. Have we worked this before? You want armor, of course.”</p>
+<p>“Of course. Can we talk payment? And, er—are you available for the job?”</p>
+<p>The person negotiating was Yvlon. Ceria had tried, but the half-Elf had exposed a significant weakness despite being Captain of the Horns of Hammerad: she didn’t know armor.</p>
+<p>Or rather, Ceria knew ‘armor’, but she’d never messed with it that much, and Shedrkh only liked people who knew how valuable he was. Pisces sniffed too much, and because Soliest Yerr stank, he was holding his nose.</p>
+<p><em>Tanners. Hidemakers. Leatherworkers. </em>The chemical stink actually reminded Yvlon of Xif and how the [Alchemist] had taken a job working with pungent chemicals despite his sense of smell. Certainly, this tribe stayed far away from the others.</p>
+<p>“Of course I can work on it. But it will take time. Time—and negotiations are a delicate matter. I must inspect this first. [Detect Impurities]…no mites, no parasites. Poison?”</p>
+<p>One of the Gnolls sniffing the hide glanced up.</p>
+<p>“I am sure Honored Colth would have noticed, but I detect none, Honored Shedrkh.”</p>
+<p>The old Gnoll had grey, grey fur, watery brown eyes, and looked frail compared to other Gnolls his age. But his paws were delicate and stained at the tips with dark dyes, and his eyes lit up like a second sun, even in winter.</p>
+<p>“Pity. It <em>feels</em> like this beast was made to hide. Strange. It’s stronger than steel by far. Mithril-grade? Better? But so strange. Did…”</p>
+<p>He glanced up suspiciously.</p>
+<p>“Has someone worked this before me?”</p>
+<p>“Not at all, Honored Shedrkh, and may the ground open me if I lie.”</p>
+<p>Colth was squatting there, watching him work, and he clearly knew the old Gnoll. Shedrkh frowned.</p>
+<p>“Then…what a strange hide. I wonder who attached it to this beast?”</p>
+<p>The Horns paused, and Colth’s eyes sharpened. Yvlon hesitated.</p>
+<p>“Hmm? What do you mean by that, Honored Shedrkh?”</p>
+<p>Shedrkh slowly ran his paws down the soft, dark hide.</p>
+<p>“It’s just a feeling. But this hide feels like it’s been worked already. I’ve heard of madness like this. It almost <em>feels</em> like this was attached to the beast and it grew from there. As if I can sense an older hand on it.”</p>
+<p>That was the intuition of the greatest [Tanner] and [Leatherworker] living. Yvlon felt a chill roll down her arms, and Shedrkh pointed to the hide.</p>
+<p>“Did someone make this beast?”</p>
+<p><em>Facestealer had been hiding within its own flesh. </em>Skinner had been a Flesh Worm encased in skin. It only made sense that the third guardian of the dungeon would be similar.</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>Regardless of his intuition, Shedrkh required three days before making a judgment. He summoned Yvlon and showed her his calculations, which were precisely in how much material he thought he’d get.</p>
+<p>There were little notes and a huge sketch—even if they were mostly an oral-traditions people, Soliest Yerr had precise measurements and had sketched the hide out to point out how they’d cut it for the most materials, and they had accounted even for scraps.</p>
+<p>Yvlon respectfully sat cross-legged as he and she consumed <em>silkap,</em> and the negotiations were brisk. When either side didn’t like what was offered, a subtle way of showing it would be to ask for another kind of snack.</p>
+<p>There were fifteen dishes, from sweet date fruits from Chandrar to pickled eggs to hot, spicy bread-bites filled with meat by the time they were done.</p>
+<p>“I must have one set’s worth. Gold? We need it not, no. But one set of armor will sell for far more than any fee I could charge you.”</p>
+<p>The [Shaman] acting as the temporary [Chieftain] seemed to think gold would be fine, but Shedrkh wanted a cut of the hide. Since Stalker had been huge, Yvlon anticipated it was no problem, but it seemed the Horns wouldn’t all get geared out.</p>
+<p>“The hide…will shrink in the process of tanning it properly. I cannot help it. It is magical hide; to keep the power, it will require treatments that dry and shrink it. So there will be less. Enough! But not enough for six sets of armor. Half that.”</p>
+<p>Yvlon groaned.</p>
+<p>“Really? But the hide’s stayed together so far. What if we just cut it up—”</p>
+<p>Colth elbowed her hard, and Shedrkh <em>glared.</em></p>
+<p>“If you did that, why come to me? Just hack it up and stitch it together! I take hide and make it <em>better.</em> I can improve the power within—but only if I do my work!”</p>
+<p>“I apologize, Honored Shedrkh. I meant no offense.”</p>
+<p>He furiously ate and drank his way through an entire bowl of the meat-filled dough, and Shaman Theikha, who was observing so she could witness the deal, raised her voice.</p>
+<p>“I mean all the offense. Keep eating, Shedrkh. You are skin and bones.”</p>
+<p>He glared, but his appetite was raised. He pointed to his notes.</p>
+<p>“I will have one set of half top-grain, half split leather for my tribe. Which leaves…enough to manufacture leggings and armguards for Honored Colth out of top-grain. If that is what he wants?”</p>
+<p>Yvlon eyed Colth, and the [Supporter] grinned.</p>
+<p>“Leggings and armguards will do. <em>And</em> a helmet?”</p>
+<p>“Are you sure, Colth?”</p>
+<p>He indicated his armor, shrugging.</p>
+<p>“I’ve got enchanted chainmail; the other parts are where my armor’s just artifact-quality. I can do interesting things with even a bit of armor thanks to my Skills. That’s handsome enough.”</p>
+<p>His unique class and skillset meant this was true, and Yvlon nodded. Shedrkh made notes.</p>
+<p>“In that case…we have enough for about one set of split and top-grain for the rest of the Horns. How shall we divide it? If your Antinium wants armor, it will require more of both. He is too bulky.”</p>
+<p>He looked at Ksmvr, who had never been called ‘fat’ before and seemed rather offended. In truth, it was just that there was more of him to cover, especially his back-shell.</p>
+<p>“Psst. Yvlon. What the hell is ‘top-grain’?”</p>
+<p>Ceria had to interject as more food was brought in. Yvlon whispered back as even Pisces leaned in, trying to pretend he knew.</p>
+<p>“It’s how leather gets worked. You slice it up horizontally. Top-grain is the tough outer stuff. Split leather is the inside.”</p>
+<p>“Both of which will be tough—but only one will have the magical camouflage. The inside is ‘merely’ superior leather. Do you have a preference for who will wear it?”</p>
+<p>Everyone looked at each other, and Yvlon raised a hand.</p>
+<p>“I wear metal armor, Honored Shedrkh. And I have a plate set. Honestly…I think we know who should get it.”</p>
+<p>Ksmvr stared around politely until he realized they meant him. Then he raised his hands.</p>
+<p>“But I am the lowest—”</p>
+<p>Pisces <em>flicked</em> one of his antennae, Ceria elbowed him, and Ksmvr sighed.</p>
+<p>“I am being bullied by affection.”</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>Ksmvr <em>was</em> the most logical choice for leather armor. As a [Skirmisher], it behooved him to have a lightweight armor, and the camouflage would be invaluable.</p>
+<p>He did have the Ring of Barkskin, but he’d taken too many wounds in battle before. However, there was a problem.</p>
+<p>Soliest Yerr actually <em>made</em> a bunch of leather armor for Colth and Ksmvr to wear. The magical hide was so valuable they were willing to work up prototypes to ensure everything would fit and function perfectly.</p>
+<p>This was important because as it turned out—Ksmvr could not wear armor.</p>
+<p>“I don’t like it. <em>I don’t like it.</em> Is this what skin is like? Get it off. <em>Get it off.</em>”</p>
+<p>He freaked out when he was put in the armor adapted for his shell. At first, Yvlon thought Ksmvr was just unused to the feeling, but she realized his panic was more than just instinctual.</p>
+<p>“I feel sick. I don’t want it.”</p>
+<p><em>Something was wrong.</em> Colth inspected Ksmvr as the form-fitting leather was put on, and then he walked off as Ceria told Ksmvr not to be a baby. He actually snapped his mandibles at her, and after that, they realized he really wasn’t having a reaction like his fear of water.</p>
+<p>“I think he can’t breathe. He might have air-holes in his chitin, or he’s heating up. The coat’s all very well since it’s more breathable—leather isn’t.”</p>
+<p>Colth came back with five beetles he’d dug up from the ground, having inspected them closely. Yvlon stared as he pointed at one that had expired when he’d coated it in a gel.</p>
+<p>“I met someone who studied insects, once. Some of them don’t breathe through the mouth. I’m afraid to say that unless we know where Ksmvr breathes from—and it could be all over—the armor’s not a good idea.”</p>
+<p>Ceria rubbed at her hair as Ksmvr shed the armor in relief.</p>
+<p>“Good to know before we commissioned it. Damn. Then who gets the armor?”</p>
+<p>Yvlon thought about it for a while. Then her eyes slid left towards Pisces. Ceria glanced left, too. Pisces looked horribly offended.</p>
+<p>“<em>Me? </em>What do you take me for? Some armor-wearing luddite?”</p>
+<p>Yvlon stared pointedly at the rapier on Pisces’ hip, and he protectively covered it.</p>
+<p>“I am a sword-capable [Mage]. And low-level [Fencer], I admit, but I am <em>not</em> a [Warrior]!”</p>
+<p>Colth threw an arm around Pisces’ shoulders.</p>
+<p>“Ah, yes. And no [Duelist] would ever wear armor. Ever. And you stay out of combat and don’t ever use that rapier except in self-defense. Completely understandable.”</p>
+<p>Pisces turned red.</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>It made sense to give Pisces armor. Ceria was debated—but the half-Elf claimed that she could use her [Ice Armor] spells.</p>
+<p>“Can you use magic with armor on?”</p>
+<p>“It…blocks you a bit, but Pisces <em>should</em> be able to do it. He can cast magic without a wand. Armor’s not that much worse. Can we give him a full set?”</p>
+<p>Shedrkh was performing calculations.</p>
+<p>“Hrr. Split-grain. The weaker material. I will use as much of it and the remaining top-grain for Yvlon Byres as well. A flexible underarmor.”</p>
+<p>He had an idea for both. Pisces would get a full set of armor he could wear under his robes if he so chose, thin and light. But Yvlon was also going to get armor.</p>
+<p>Shedrkh had a design that protected your armpits, knees—all the places where traditional plate armor tended to have gaps. The two bodysuit-type armors would be lightweight and powerful, but not have the camouflage effect that Soliest Yerr and Colth would get.</p>
+<p>This wasn’t ideal, which was why all the split-grain leather was going to the Horns. And they had insisted on <em>some</em> of the magical top-grain for themselves. Which was why part of the sketch allocated a very handsome cloak for Ksmvr.</p>
+<p>“I would like to have the Horns’ sigil on it, please. And my name on it because people keep stealing my personal possessions, like the Empress of Beasts.”</p>
+<p>Ksmvr was talking to one of Shedrkh’s assistants, who was showing him stitching he could get. A <em>cloak</em> was the perfect answer to his armor problem. It’d cover his back, let him breathe—and the magical cloaking effect would be a huge upgrade to his previous cloak, which had been destroyed in Illivere anyways.</p>
+<p>“I think we have our armor distributed. What happens to the scraps?”</p>
+<p>There would be a lot of shavings, and Shedrkh assured the Horns they would go to good use.</p>
+<p>“We will use them for tying the armor together—or straps and other fittings if need be. Not a single part will be wasted. But this will take a month at least. If it were not winter…we will need wood. Wood to dry, and more magicore! And—!”</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>The process of tanning was long. Once Stalker’s hide had been portioned, well, even in negotiations, Soliest Yerr had gotten to work with a will.</p>
+<p>Mostly because the Gnolls knew how long it would take. Here was the process that Yvlon observed day after day:</p>
+<p>First, the hide of Stalker was put in quick-acting lime to help remove excess parts. Normally, the lime swelled leather up a bit, but in Stalker’s case, it was mostly to disinfect it. Next, the leather had to be fleshed—which was literally scraping any fat or other material off. A difficult task that had Gnolls with mithril blades whetting them again and again and taking minute parts off the leather.</p>
+<p>After that, you trimmed the leather before splitting it into the top-grain and split leather. Yvlon had heard that tanneries would use huge bladed contraptions in big cities—or Golems in the north—but in this case, Shedrkh did it all by hand.</p>
+<p>The Gnoll alone had to cut the <em>huge</em> hide with a single knife, and it took him days of work almost without rest. But he was obsessively checking to make sure his cut was straight—and he had decades of practice.</p>
+<p>“How can he cut it so easily?”</p>
+<p>Soliest Yerr had broken out old mithril blades passed down in their tribe to even flesh Stalker’s hide, but as far as Yvlon could tell, Shedrkh used a steel blade. Colth just grinned.</p>
+<p>“[My Knife Cuts All]. Probably only works on leather and hides, but imagine someone coming at you with that in a battle and slicing your fancy artifact-armor to bits?”</p>
+<p>“Can he…do that?”</p>
+<p>Colth winked.</p>
+<p>“That’s how you apply your Skills creatively. Mind you, you’d have to be good with a blade to want to risk it, but he can definitely do the cutting.”</p>
+<p>Indeed, Shedrkh’s unique abilities were actually most evident in the next process—the tanning.</p>
+<p>Tanning was a long and complicated process where dyes, alchemical stuff, and more liquids would turn the raw fibers in hide into what leather was. After soaking, the hide had to be spun, heated, and dried, hence the famous stench of tanneries and their exhaust.</p>
+<p>It was also, frankly, a <em>pain</em> to do, and Yvlon saw Gnolls wringing the leather out, re-tanning it again, drying it—<em>and drying was so damn hard in the snow.</em> They had special tents set up, and it smelled so bad that apparently most Gnolls in their tribe lost a large portion of their ability to smell at a young age.</p>
+<p>Well, they made up for it with the ability to keep the magic in the hide when it was turned to leather. It was a trade secret, but Shedrkh was only too willing to brag about it.</p>
+<p>“Most Wyvern leather is just ‘tough leather’. Not a shred of magic left in it. That Frost Wyvern hide? <em>Wasted.</em> The Drakes of Pallass were smart enough to send much of the hides to us. Our armor will have [Lesser Frost Resistance]; the stuff made by their low-level [Tanners] will lack it. But Stalker’s armor will be more powerful still.”</p>
+<p>At least one component of his unique tanning was magicore, which either kept the magic in or did something to it. But at any rate, that was the rest of the month.</p>
+<p>They stretched Stalker’s hide out on a huge rack, heated it to dry it with fires that were constantly stoked, then flexed the leather, adding a paste to repair any cracking or imperfections as well as bringing out more luster and making it soft before buffing and sanding the leather. Then they had to spray and treat it again with more chemicals before it began to look like actual leather to Yvlon.</p>
+<p>And then—and <em>then</em> they could finally cut the stuff up and begin turning it into armor.</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p><strong>Now.</strong></p>
+<p>&nbsp;</p>
+<p>“We have just begun fashioning Honored Colth’s helmet. Would he care to have it fitted?”</p>
+<p>“He’d care immensely. Thank you!”</p>
+<p>Colth brightened up, despite still looking cold from the hours he’d spent outside. Yvlon herself found Shedrkh proudly embossing the leather with a stamp, and it looked—</p>
+<p><em>Interesting.</em></p>
+<p>Stalker’s hide was grey when it came out, which you could think of as disappointing—until you noticed the shadowy grey color seemed to adjust depending on how much light there was. Inside the huts with less light, it turned almost black, like shadows. Outside in sunlight when it shone through the wintery skies? It was a pale cloud-grey.</p>
+<p>“What can it do? Turn invisible?”</p>
+<p>“Not just invisible. <em>Camouflage. </em>Invisible implies you would see through it. As it so happens—this can do both.”</p>
+<p>Shedrkh indicated the helmet, and it vanished as Colth tried it on, much to Yvlon’s shock. It looked like he was bare-headed!</p>
+<p>Colth’s smile grew wide and only <em>slightly</em> sinister as he took the helmet off and it reappeared.</p>
+<p>“Now <em>that’s</em> a good way of keeping your foes off-guard. It feels slippery, too. I doubt it’d show up if someone cast [Detect Magic].”</p>
+<p>“It will not. Any [Rogue] will pay a fortune for it. Which, perhaps, will be the client for the set of armor my tribe makes. I am considering an auction…I must place my tribe in a good position now. But I will finish your armor first. Come, Yvlon Byres. Let me make sure yours will fit too.”</p>
+<p>Shedrkh looked tired as Colth requested his helmet be adjusted <em>ever</em> so slightly, and Yvlon found her new underarmor was exceptionally comfy and flexible.</p>
+<p>“Good luck to anyone thinking they’ll stab you through your plate armor. Frankly, the enchanted steel is now the weaker part of your armor. You should upgrade that once you get the chance. Not that I think you can buy the right gear on the open market.”</p>
+<p>Colth commented as Yvlon checked her armor. She glared because she thought he was making a crack about their finances.</p>
+<p>“We are rich, now, as you keep pointing out, Colth.”</p>
+<p>“Oh, I know <em>that.</em> But no one sells Relics, and when they do, they go for millions like the Helm of Fire. You’ve got to kill the beast for armor yourself. Which is why <em>this</em> is going to be nice.”</p>
+<p>Colth really had done all this just to upgrade his armor. Any edge at their level meant life or death, and Yvlon nodded.</p>
+<p>It really was about upgrades. She just worried that because she, Ksmvr, and Pisces were getting substantial upgrades in their armor, a certain half-Elf would feel left out.</p>
+<p>As it so happened, Ceria’s ‘upgrade’ had already been in progress. And so was Pisces’.</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>“You have to stop. I know they said we’re honored guests, but they’re starting to look at us every time we come in.”</p>
+<p>“Shut up, Pisces. You could study your damn spellbook outside.”</p>
+<p>“I’m just here for the ambiance.”</p>
+<p>Ceria lowered her sunglasses as she sat at the restaurant in the Earth simulation. She eyed Pisces, who avoided her gaze as he raised a hand.</p>
+<p>“I’ll have a second plate with more truffles. Oh, and…this wine. A sauvignon. The entire bottle.”</p>
+<p>He actually said it properly, as if he had ever drunk the damn stuff before. The waiter was only too happy to fetch the bottle—because this was a <em>very</em> expensive, top-floor restaurant with a huge view through the windows.</p>
+<p>Ceria just bet that it’d cost—well, she knew the cost, and it was thousands of dollars, which wasn’t gold coins, but it still would have made her wince.</p>
+<p>If she and Pisces were going to pay for any of this, of course. The beauty of Earth was that anything you did in the simulation was temporary. Food didn’t stick to your bones. Injuries didn’t kill you.</p>
+<p><em>And you could eat anywhere you pleased, even if you didn’t have any money.</em> When the bill came? Just leave the Skill.</p>
+<p>Ceria did have to admit the Gnolls were giving her resigned looks because she came by every day to eat and shop and experience this world’s delights. But then, so did Pisces, and he rubbed his hands as the truffled whatever came over.</p>
+<p>“You know, they’re just big mushrooms? I think this world makes a lot out of some dishes. Like caviar. That’s fish eggs. Actual <em>fish</em> fresh-caught? That’s the real stuff.”</p>
+<p>“Springwalker, part of savoring a dish is knowing the cost and effort that goes into making it.”</p>
+<p>“Oh, you mean posing.”</p>
+<p>Pisces’ scowl said that Ceria had landed a point, but both went back to studying shortly after that, which was slightly annoying the maître d’. But they were ‘well paying guests’, so he pretended not to notice Pisces was reading from his spellbook.</p>
+<p>“Learning anything good, are we?”</p>
+<p>“An endless amount. Ah—this isn’t the necromancy book. This is the other one.”</p>
+<p>Ceria eyed the Djinni’s spellbook that Pisces had kept from the Village of the Dead raid. He’d been alternating between the two, and it was interesting because he clearly had come by a very powerful necromancy spellbook—but the one that they’d stolen from the Putrid One seemed to fascinate Pisces more.</p>
+<p>“What’s so fascinating, if I might ask?”</p>
+<p>Pisces kept eating his fancy spaghetti, which he was definitely going to tell Erin about and harass her about her lack of truffles upon his return to The Wandering Inn.</p>
+<p>“I have a conclusion I have been coming to and a <em>fascinating</em> one about the nature of magic as we practice it. But, ah—tell me. What have you learned?”</p>
+<p>Pisces had two spellbooks. He was also getting a suit of armor. Ceria had gotten squat. The circlet was on her head, of course, but you could argue she had every right to be annoyed about her lack of recent progress.</p>
+<p>…Except for one thing. She did have a new piece of instruction material, and it had come from the most unlikely of sources. It had taken her two days to find it, and she’d given up until someone had reported spotting it.</p>
+<p>“What I’ve learned is that the Death of Magic could have literally murdered us <em>in</em> this simulation. She’s scary as shit. This thing didn’t vanish—it’s not melting now—and one of the Gnolls found it lodged in a telephone pole despite [The World of You and Me] literally resetting.”</p>
+<p>Pisces blinked and glanced up as he poured himself a glass of wine.</p>
+<p>“You mean…?”</p>
+<p>Ceria Springwalker held up the shard of ice that Silvenia had fired at her when the Deaths had appeared out of nowhere.</p>
+<p>“It didn’t vanish. Most magical ice vanishes after an hour at most, but this? Scary. As. Shit.”</p>
+<p>It was a soft blue color, harder than steel, and when she tapped it on the table, even the other guests turned and stared at the beautiful, thin sliver of ice. Pisces could feel the cold from where he sat, and it was shaped like a dangerous, jagged needle.</p>
+<p>“It’s quite thin compared to your [Ice Spike] spell.”</p>
+<p>Ceria normally fired projectiles as thick around as a hand, in a vague teardrop shape. This was a thin razor, and Ceria nodded.</p>
+<p>“I’m copying the design. It might be more aerodynamic, and it’s certainly probably better at piercing things. But I doubt I can even figure out what makes the ice—better. Do you think it’s poisoned?”</p>
+<p>She waved it at Pisces, and he leaned back slowly.</p>
+<p>“…Did that occur to you just now or are you still holding it with your bare hands despite thinking it?”</p>
+<p>Ceria tapped her head.</p>
+<p>“No. I’m logicing it out, Pisces. Think about it. Silvenia, Czautha, and the third one with wings, that giant Harpy, were <em>here. </em>They could have murdered us in a second. Dead gods, they could have wiped the entire Meeting of Tribes out.”</p>
+<p>“…They wouldn’t have done that.”</p>
+<p>He murmured softly, thinking of Czautha’s look. Ceria nodded.</p>
+<p>“No, they didn’t. And Silvenia clearly missed me on purpose. So she’s probably not poisoned this. Actually—I think it’s like a lesson. ‘Learn from this ice’. And I almost feel like there’s something <em>else</em> about it. I’ve been trying to crack it open, actually. But it’s even made differently on a tiny level. Lots of triangles.”</p>
+<p>“Triangles?”</p>
+<p>“In the ice. It’s so small…well, it’s like the grain of metal. Do triangles make things stronger?”</p>
+<p>Pisces had no idea. But since it was his turn to share, he steepled his fingers together.</p>
+<p>“Perhaps they do, but I doubt you will copy that [Ice Spike] with your spell, Ceria. Rather—everything about Silvenia’s magic appears to be her own type of spellcasting. Which…I am beginning to believe is superior to modern magic.”</p>
+<p>“Oho. That’s treasonous talk. Where’s your Wistram pride?”</p>
+<p>Ceria’s eyes glinted as she smiled. Pisces lifted his spellbook and flashed it at her.</p>
+<p>“Dead and reanimated, thank you. <em>This</em> is a book that every Archmage would die for, and it belongs above Zelkyr’s final test. Would you like to hear my theories?”</p>
+<p>“Go on.”</p>
+<p>Pisces had been wrapping his mind around the magic within this book, and Ceria’s own magic seemed to be a perfect vector to theorize on. He began to write on a napkin with a pen. The staff looked askance—so the two [Mages] just ordered dessert.</p>
+<p>“Let me ask you a question, Ceria. <em>Why </em>do you think Silvenia’s [Ice Spike] is superior to yours? Or rather, if you were going to copy her magic, how would you do it?”</p>
+<p>Ceria <em>hmmed.</em></p>
+<p>“Without Skills or advancing in levels or sheer mana? Or learning a higher-level spell like ‘[Silvenia’s Scary Ice Spike]’?”</p>
+<p>“Yes.”</p>
+<p>Ceria twirled the ice spike in her fingers, frowning hard.</p>
+<p>“Hmm. I’d equate this with…well, I could copy the design, but I’d change the ice to be acid-ice or something. Put in a piercing effect if I could. Turn the ice invisible?”</p>
+<p>“Ah, but you can’t match the destructive force?”</p>
+<p>The half-Elf glowered mildly at Pisces.</p>
+<p>“If you’re asking whether I can shoot it hard enough to put it through fifteen walls of steel and metal, no. I could definitely shoot someone through this window, though.”</p>
+<p>She jerked a thumb at the restaurant window, and at this point, some of the people listening in got a bit nervous. Pisces suspected they might be flagging themselves on some kind of watchlist—every time someone did too much magic or demonstrated a Skill, out the phones would come to record and law enforcement would show up. Ah well, they had at least a few minutes before someone came over.</p>
+<p>“Aha. And why can’t you do better? You’re a [Cryomancer], Ceria. The Death of Magic is a fallen Archmage, but she is <em>not</em> an ice-magic specialist. Conceivably, you should at least be able to come close to a tenth of her power with [Ice Spike]. Why can’t you do that?”</p>
+<p>Ceria eyed Pisces.</p>
+<p>“You’re smirking, and I’m feeling the urge to kick you. Out with it.”</p>
+<p>Pisces held up his hands, enjoying this.</p>
+<p>“Come now, Ceria. What fun would it be if I told you the answer? <em>Why</em> can’t your [Ice Spikes] measure up? If you make that spell more powerful, what do you do, and why does that reveal the fundamental flaw in the magic we practice?”</p>
+<p>She drew back a foot, but then decided to humor him. Ceria closed her eyes and thought, then her ice-blue eyes opened a fraction, and she smiled.</p>
+<p>“Ah. If I were going to upgrade [Ice Spike] in pure power, the <em>logical</em> next step is [Ice Lance]. Because you fire a huge chunk of ice instead of a hand-sized one. If I were just going to scale up, the next would be hurling a block of ice the size of a house. Not that you tend to go that way.”</p>
+<p>“Mm. And, pray tell, does anything about that strike you as odd?”</p>
+<p>Ceria nodded. She waved at the [Waiter] as they put down the desserts, and she handed them a card—and all the cash she had in her wallet.</p>
+<p>“This is the tip and this is the card. Thanks!”</p>
+<p>She got a smile, and Pisces eyed the desserts as they tucked in. Ceria spoke around a mouthful of ice cream.</p>
+<p>“You’re right. Something is odd. If I wanted to make [Ice Spike] better…I could just ‘throw’ the ice faster. But I can’t.”</p>
+<p>“Exactly. [Ice Spike] always fires off the ice at the same…<em>velocity.</em> Yes. I almost wonder if Rose and Adetr would care to measure it along with all their other calculations. You can, with effort, lift more. But never throw it faster. Why?”</p>
+<p>Ceria tilted her head left and right, thinking it over.</p>
+<p>“Why…why…it’s a great question. Why can’t we use [Light Arrow] and hit someone so fast they can’t see it? Why is [Lightning Bolt] not as fast as an actual bolt of lightning? <em>[Grand Lightning]</em> is almost as good…[Fast Fireball] is literally faster than the average [Fireball]’s speed, but unless we have a Skill or spell, we can’t manually make it faster.”</p>
+<p>“Isn’t that odd?”</p>
+<p>The [Necromancer] had never stopped to think of it, since he wasn’t a projectile-expert, but it seemed very odd. Especially because his book was teaching him magic from the ground up. He showed Ceria the entry he was working on.</p>
+<p>“Springwalker—I am learning Lighted Arrow in this spellbook, and it is <em>insanely</em> complex. I’ve spent months on it now, and I think I might be able to cast it in another month.”</p>
+<p>Her brows shot up.</p>
+<p>“You’re joking.”</p>
+<p>“No, no. I can apply the magic, but everything from how you form the light magic to casting it…is all devilishly complex. You have to maintain <em>everything.</em>”</p>
+<p>“But [Light Arrow]…is so simple. Wait a second. Binding light into an arrow is simple? Oh.”</p>
+<p>Ceria was catching on. When you said it like that, it sounded stupid. Pisces nodded seriously.</p>
+<p>“How do you ‘move’ a [Light Arrow], Ceria? Telekinesis? What momentum is being generated? You can barely throw something across the room hard with our basic levitation magic. How are you lifting an [Ice Lance] spell? It seems to me that something in the spell itself is doing all this for us. Whereas learning how to cast the spell from the ground up…”</p>
+<p>“…Is far more complex. Are you suggesting we’re using crutches?”</p>
+<p>“I’m suggesting we don’t know what we’re casting.”</p>
+<p>Pisces’ heart was beating fast with excitement. He lifted the [Ice Spike], talking faster.</p>
+<p>“And Ceria—that means we’re playing by other rules. Consider it. You can’t make [Ice Spike] faster with ‘normal’ magic because you’re not allowed to. But I? I <em>can. </em>Why bother learning [Bone…Lance] or whatever the higher-tier spell is? I could make [Bone Dart] infinitely faster and faster. In theory. I suspect it’s harder than that, but…”</p>
+<p>“Pisces, you genius. You’ve figured it all out. I have to see that myself. Give me the spellbook.”</p>
+<p>Ceria put out her hand with a huge, beaming smile. Pisces beamed back.</p>
+<p>“No.”</p>
+<p>“Give me the spellbook. I want to read it now.”</p>
+<p>“No, I’m studying it.”</p>
+<p>“<em>Give me the—</em>”</p>
+<p>The staff of the restaurant had been eying the odd shard of ice and Ceria and Pisces’ antics. The talk of ‘shooting’ had everyone on edge, but they hadn’t asked the two to leave because they had paid and were about to leave.</p>
+<p>But when one tried to grab the other’s book and they began swearing and kicking over the table, the staff hurried over and tried to get them to stop. That was—until one <em>vanished</em> and the other pointed and a table and all the dishes <em>flew through the air</em> and hit them.</p>
+<p>Was this a movie? Was this reality? Everyone took cover as Pisces pulled out a wand and began shooting spells at Ceria. She put an [Ice Lance] through a window, breaching it, then tackled Pisces. They went tumbling from the top of the skyscraper, screaming and grabbing for the book as the horrified staff backed away. They sounded far, far too casual, like siblings bickering as they plunged towards their deaths far below.</p>
+<p>“Give me the book.”</p>
+<p>“Get off!”</p>
+<p>“<em>Give me the—</em>”</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>Ceria and Pisces emerged from [The World of You and Me], clothes bedraggled, and kept arguing. The Skill had kicked them out.</p>
+<p>“I had, in fact, already mastered the velocity portion of the spellcasting when I noticed the potential.”</p>
+<p>“And you didn’t give me the book because?”</p>
+<p>Ceria was holding onto it, and Pisces was glowering as he stomped outside into the snow. Colth waved and trotted over as Yvlon and Ksmvr appeared. The [Armsmistress] was muttering to Ksmvr.</p>
+<p>“I’ve been having these really weird dreams, Ksmvr. I think it’s my class…Ceria, Pisces. I thought we were going on a roller coaster?”</p>
+<p>“We got kicked out. Sorry. <em>Someone</em> wouldn’t share his new magic.”</p>
+<p>“New magic? Pisces, my friend! What’s going on? I was just about to catch you two up on some gossip, anyways.”</p>
+<p>Colth appeared, and Pisces hesitated, but then explained his theories on magic. After all, Colth was a nominal ally.</p>
+<p><em>Even if no one was sure how far to trust him. </em>Ceria was still fiddling with the [Ice Spike] Silvenia had made. She began chewing on it like a toothpick and promptly cut her tongue as Colth’s eyes lit up.</p>
+<p>“Oh, that’s a great theory. And it’s entirely accurate, too.”</p>
+<p>“…It is?”</p>
+<p>Pisces looked frankly disappointed, and Colth caught himself.</p>
+<p>“—I mean, it only makes sense. Not that you could get a regular [Mage] to admit it, but I’ve been to Wistram, and they cast magic like that. I talk to other Gold-rank [Mages], but none of them get it. A few Named-ranks know what you’re talking about. So, can you alter the velocity of a spell?”</p>
+<p>Pisces looked around.</p>
+<p>“Are there training targets set up anywhere? I rather fancy using [Bone Dart] to make a point.”</p>
+<p>He led them all over to an archery training range and lifted his fingers, aiming them at a target. Ceria promptly bulls-eyed a target from fifty paces, and Pisces, sniffing, fired a regular [Bone Dart] spell.</p>
+<p>He hit the outermost edge of the target ring, and Ceria cackled as Pisces turned red.</p>
+<p>“Well—I don’t utilize long-range magic like you all the time, Springwalker. But if I <em>did</em> practice—allow me to show you a stronger spell, though!”</p>
+<p>It took him two minutes to ‘configure’ his [Bone Dart] spell properly as he muttered. Yvlon and Ksmvr saw nothing but Pisces squinting at his finger, but Colth and Ceria noticed how intricate the spell was getting.</p>
+<p>Pisces was sweating over altering a simple Tier 1 [Bone Dart] spell even this much, and Ceria realized he’d probably have to ‘reteach’ himself a superior spell if he wanted to cast it all the time.</p>
+<p><em>This new magic of his had limits.</em> But Colth was smiling, and Ceria saw him glance at her out of the corner of his eyes.</p>
+<p>“Think he’ll manage it? This is so exciting! And new!”</p>
+<p>“Yep. You look so impressed by the novelty.”</p>
+<p>He nudged her with a wink.</p>
+<p>“Hey, I don’t question the circlet, you don’t question the smile.”</p>
+<p>“Fair point. Pisces, you done yet?”</p>
+<p>The [Necromancer] looked up, sweating a bit despite the cold as several Gnolls wielding bows stepped back. He took aim at the target in the distance.</p>
+<p>“Yes…it’s a bit hard keeping it all in my head, but observe!”</p>
+<p>He pointed his fingers, closed one eye, and then cast [Bone Dart]. This time—Yvlon did not see a flash and a [Bone Dart] slightly slower than an arrow flash across the ground.</p>
+<p>She saw a <em>flicker</em>, heard a <em>snap—</em>and the cloth target made a <em>brwrap</em> sound like the air tearing. Everyone in earshot jumped, and Yvlon saw a huge tear appear in the cloth.</p>
+<p>“<em>Amazing! Pisces!</em>”</p>
+<p>Colth shouted in glee and pumped one fist up as he jumped in the air. Ksmvr raised both arms.</p>
+<p>“He has done it! That is my comrade, Pisces, everyone!”</p>
+<p>Yvlon blinked. <em>That was fast!</em> Could she block that, even with a shield? She felt a tinge of unease, but it was certainly faster! She turned—and Ceria had Pisces’ arm. The half-Elf wasn’t looking at the target. She was fishing something out of her belt and yanking the cork out of the vial of glowing red liquid, but she was speaking.</p>
+<p>“I can’t use this until—”</p>
+<p>“I’ll—I’ll—”</p>
+<p>The Horns turned and then realized something was wrong. Pisces’ arm was lowered, and he was clasping at the hand he’d used to fire the [Bone Dart] spell with his other hand. He was holding two <em>snapped</em> fingers with one hand, sweat streaming down his face as blood ran down his hand. Colth’s jumping stopped, and Pisces’ bones <em>cracked</em> as he tried to move them back into place. They were hanging from his fingers by a stump…</p>
+<p><em>The spell had nearly blown his fingers off his hand.</em></p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>“So it turns out one of the reasons you don’t alter spells is because there’s a lot of variables you don’t consider. Like recoil. Apparently that’s built into [Ice Spike] and other dart-spells too.”</p>
+<p>Ceria Springwalker summed up today’s lessons in a cheerful tone of voice, but she was considerate enough of Pisces’ bandaged hand.</p>
+<p>“You’re lucky you’re a [Necromancer]. Anyone else might have lost those fingers. I wouldn’t want to try to fix them, and I’ve studied with [Bone Healers]. Do you think the flexibility’s come back?”</p>
+<p>Colth was eying Pisces’ hand. The [Necromancer] moved his fingers and winced.</p>
+<p>“They are—tender. But I feel they’re still dextrous. Even though I have been humbled. Thank you, Ceria.”</p>
+<p>“I’m not rubbing it in. I should have thought of it.”</p>
+<p>They were talking around an indoor fire where everyone was eating. Rather than a banquet hall, they ate in a dinner tent with some Gnolls, including Honored Gire, Akrisa Silverfang, Adetr, and Rose.</p>
+<p>“So you blew your fingers off?”</p>
+<p>Rose was horrified. Pisces and Ceria corrected her.</p>
+<p>“<em>Almost.</em>”</p>
+<p>“So magic obeys the laws of physics if you cast it right. Every motion has a reaction. It <em>does</em> match Earth laws!”</p>
+<p>Gireulashia seemed happy that someone was obeying physics. Adetr nodded as he wrote this down.</p>
+<p>“That’s important information. All this issue of backlash…that must be why [Mages] use wands. If something goes wrong, your wand takes it rather than your fingers. Tolerances are such a pain. And there’s all kinds of annoying forces at play. Did you know those skyscrapers have these weird devices in them to keep them from swaying around?”</p>
+<p>“Wh—really?”</p>
+<p>Adetr nodded. He was preoccupied with <em>science,</em> or rather, the understanding of his world, and the huge, metal Gnoll had a notepad and reading glasses.</p>
+<p>“They call it a…where’s my notes? I accidentally wrote it all down on Earth-paper, and it vanished. A mass damper. A counterweight. Apparently, you need to account for that kind of thing. Bridges, too. The right wind can create a resonance and shake a huge bridge apart.”</p>
+<p>“Weird. Could one have saved Pisces’ fingers?”</p>
+<p>Rose laughed, but Adetr took the question seriously.</p>
+<p>“It’d be impractical, and it’d have to move so fast it could neutralize the effects of the movement in the other direction, but perhaps? Functionally, it just means we have to be very, very careful when we dig for Chieftain Feshi’s projects—oh, and when making other devices. There’s even weird rules about engine cylinders. They can’t all fire in synchronization or the thing explodes.”</p>
+<p>Yvlon leaned over as Gireulashia began to ask more questions.</p>
+<p>“What’s he talking about?”</p>
+<p>“I have no clue. Earth stuff. I think it’s the cars? I doubt you can make that thing. I opened the lid on one, and it was beyond me.”</p>
+<p>Ceria whispered back. Pisces just eyed Adetr with a strange look.</p>
+<p><em>How fast things were moving these days. </em>Then again, the Gnolls were racing towards Earth’s knowledge much like Soliest Yerr. It was so complex, and there were so many challenges that they had to move fast because things would take so long.</p>
+<p>Even so.</p>
+<p>“You all like going to Earth a lot, huh? I enjoy it, but honestly, seeing Gnolls practicing magic here is still more fun.”</p>
+<p>Rose commented as the Gnolls talked, and they looked at her incredulously. One of the Earth-researchers leaned over with a huge smile, eyes lighting up.</p>
+<p>“The Meeting of Tribes? With respect, Miss Rose—not at all. Earth, especially as a Skill, is the most fun I ever have had in my life. I can do anything there. There’s no Drakes, and even if the Watch comes after me—I don’t die. There’s good food, delights—I want to visit Earth some day. In reality. It is the greatest gift of the Meeting of Tribes, and truly, Silverfang exceeded everyone.”</p>
+<p>“You mean, Gaarh Marsh, Silverfang, and everyone else did.”</p>
+<p>One of the [Shamans] from Gaarh Marsh commented. Honored Deskie bounced a bun off the [Shaman]’s head.</p>
+<p>“And Longstalker’s Fang.”</p>
+<p>The Gnolls all began arguing, but they agreed that Earth was a wonder. It made Rose happy, but she looked at them almost…bemusedly.</p>
+<p>The way their eyes shone, the excitement they had from crossing the street or going for a walk in the park of another world—that was the stuff she had never felt on Earth, even as a child. That was what she felt of <em>this</em> world.</p>
+<p>Then she realized it.</p>
+<p>“Oh. It’s another world to you guys, isn’t it? A new world.”</p>
+<p>Everyone turned to the lone Earther in the room, and several people laughed at her. But Ceria just grinned, and her pointed ears waggled.</p>
+<p>“Yes. Of course! You guys get our world—we get to taste yours! It’s the most fun…I could do it all my life.”</p>
+<p>Everyone laughed as Rose looked around and protested.</p>
+<p>“But it’s not that safe, guys. In real life, the Watch isn’t that fun—”</p>
+<p>But that was why the Skill mattered so much. More than one Gnoll went in every single day without fail, like Ceria and the Horns did. In fact, the only person not allowed in regularly, who sat there, sighing louder and louder—</p>
+<p>—Was Colth.</p>
+<p>He had found out about the Earther Tent. It was hard to keep it from a Named-rank adventurer, but only after begging for <em>weeks</em> had Theikha given him one look in. He sighed again, and this time, Deskie threw a roll at him. He caught it, cut it open, and buttered it before dipping it into the soup.</p>
+<p>“I wouldn’t mind another look, you know.”</p>
+<p>“You’re not trustworthy. With respect, Honored Colth, that is Shaman Theikha’s will, and only for an Honored Named-rank adventurer did we even give you one look. The Horns fought for us at the Meeting of Tribes.”</p>
+<p>“Plus, we know a lot.”</p>
+<p>Ceria teased Colth, and he gave her a morose look. But that did prompt the question.</p>
+<p>“How’d you even get named as ‘Honored’, Colth?”</p>
+<p>Yvlon broke in, and all the Gnolls’ ears rose—then they pretended to be interested in their food. The [Armsmistress] wondered if she’d said something wrong, but Colth just grinned.</p>
+<p>“I saved some Gnolls. They were in trouble, and I bailed them out.”</p>
+<p>“Really? From monsters?”</p>
+<p>“Oh, no. Well, yes. Monsters.”</p>
+<p>Colth’s face was very bland, and Pisces elbowed Yvlon in the side. The woman elbowed him back, hard, and he winced, but Ceria got Yvlon from the other side. Why? What was…?</p>
+<p>“<em>Slavers, probably.</em>”</p>
+<p>Ceria muttered softly, and Yvlon went ‘oh’. Then fell silent. She had a feeling that whatever Colth had done might not be legal in all parts of the world.</p>
+<p>It was clear that some people knew more about Colth than others. Pisces glanced at Colth, and the [Supporter] gave him a huge, friendly smile before changing the subject.</p>
+<p>“On the subject of discoveries, I have tidings from the New Lands. It seems like the half-Elves and Drowned Folk are having a tad bit of trouble setting up their colonies, so the western coast won’t be <em>that</em> far ahead of the settlers just arriving on the eastern side.”</p>
+<p>Everyone glanced up. Now that was interesting. Ceria hadn’t heard much word, but Colth was connected, so they all began to pester him for details.</p>
+<p>“What’s the issue? That [Alchemist] raiding the half-Elves’ ships? Trading trouble?”</p>
+<p>“Irurx hasn’t been seen, but the lack of trading <em>is</em> an issue.”</p>
+<p>Colth acknowledged as Ceria calmly sipped from a cup. The [Supporter] shook his head as he fished out a map.</p>
+<p>“No, the problem is that the half-Elves are trying to irrigate and plant like mad, and not all the soil’s good enough for it. They are working with former seabed, and even if the plants have grown, it’s salty from being underwater. I’d wager it’s not as much a problem if you have Yellats, but they have trees. So they’re mostly just having growing problems—plus you have a bunch of old-fashioned half-Elves and new ones.”</p>
+<p>Ceria groaned and slapped a hand over her face.</p>
+<p>“Tree rot. <em>Imagine</em> how obnoxious they’d be. I bet some of them are mad they don’t get the exact same cereal for breakfast in the exact same bowl in the exact same room at the <em>exact same time </em>every day. Tell me none of them are trying to be architects?”</p>
+<p>The [Supporter] was grinning hugely.</p>
+<p>“I have a story that one of them was in charge of building a wall. So far, he’s managed about four feet of smooth, polished stone with hand-chiseled reliefs he intends to put all the names of the colonists on, and where they came from—”</p>
+<p>Everyone was laughing at silly half-Elves when Colth sombered.</p>
+<p>“The Drowned Folk are a bit more practical and numerous. But they’re having issues on land because, well, they’re not experts. But speaking of actual challenges, not ones you brought with you—there’s word that their entire colony is having trouble finding farmland and expanding. They’ve run into some tough monsters.”</p>
+<p>“…Tough enough to stop an entire Drowned City?”</p>
+<p>Yvlon stopped with a spoonful of soup raised, and Ksmvr sat up with great interest. Colth nodded seriously.</p>
+<p>“My contact said they ran into Sword Crabs.”</p>
+<p>“Ooh. Dead gods!”</p>
+<p>That came from Chieftain Feshi, who came in looking hungry and dirty from excavating the ground. It was hard to do in the winter, but apparently she was having Gnolls dig already. The others, even the Horns, just gave Colth a long stare.</p>
+<p>“Sword Crabs? What? Like we have Shield Spiders?”</p>
+<p>“Yep. They’re tough. Ever met any?”</p>
+<p>Ceria looked at Pisces, who shook his head, and Yvlon had never heard of them. Ksmvr had only read of them in a monster manual.</p>
+<p>“Nope.”</p>
+<p>“Landlubbers.”</p>
+<p>Colth heaved a dramatic sigh and left it at that. Everyone else in the eating tent promptly threw bread rolls at him.</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>That night, Ceria was borrowing hammers to hit the ice spike that Silvenia had left. She was almost certain the way to find out what was ‘inside’ was actually via magic, but the hammers felt fun.</p>
+<p>Yvlon had gone off to train with Berr, and Ksmvr was practicing his new sword-school. The Horns were improving, even if their destination was uncertain.</p>
+<p>They were like that. Amiable travellers, in their way as happy-go-lucky as the Silver Swords. But perhaps that was just an illusion.</p>
+<p>At least one of them had a calling. At least one was marked by multiple fates. And only he knew how many.</p>
+<p>The Necromancer was one. The other? The other continent was an ocean away, and he could not ask the Horns to follow him.</p>
+<p>Not now.</p>
+<p>All Pisces knew was that Ivery was alive. So he was trying to ‘upgrade’ the Skeleton Lord as his mentor had taught him. Az’kerash had said every full moon was an opportunity, and the two gave Pisces at least one chance per month, often as many as three.</p>
+<p>“Enchantments. [High Jump]? [Burst of Speed]…that’s very handy. [Iron Bones]. Is this what I’m capable of?”</p>
+<p>They were so…<em>weak.</em> Pisces had wanted to give Ivery the ability to emit a cloud of acid or shoot [Fireballs], but apparently he was far too weak to think of it without a dedicated Skill.</p>
+<p>[Burst of Speed] felt like the best option, but Pisces just wished he could send more than Ivery and Bearbones to his friends.</p>
+<p><em>Were they alright? </em>Merr had sworn to protect the others, but even a [Bandit Lady] was up against…</p>
+<p>Roshal.</p>
+<p>Pisces’ hand clenched, and his fingers twinged as he sat in his guest hut. He tried not to think of it as much. But the meeting with Czautha had brought it back.</p>
+<p>He had wanted to thank her properly. But it hadn’t been possible for him to just go up and openly greet a Death.</p>
+<p><em>There she’d been. </em>Like a fever dream. For all Ceria joked, he knew that even she was shaken by the meeting. The Gnolls certainly were, and Theikha had sworn them all to silence. Collaboration with Demons would be a dangerous label. Worse than even being a [Necromancer].</p>
+<p>No one could figure out what the Deaths’ goals had been. Stealing knowledge of Earth? That was likely, but surely they had a more devious game in mind. Pisces had heard that Silvenia had approached the King of Destruction the same day he’d seen her.</p>
+<p><em>Madness.</em></p>
+<p>He was sitting in his tent, preparing a spell circle for a few days from now and thinking of the Winter Solstice, when someone tapped at his tent. Pisces stiffened, but relaxed when he saw the familiar pair of boots.</p>
+<p>“Pisces. Am I bothering you?”</p>
+<p>“Enter.”</p>
+<p>And there he came. Smile on his face as ever. Colth the [Supporter] stepped lightly, and his enchanted chainmail made a soft sound as he adjusted his snowy garments.</p>
+<p>“It just keeps coming down. You’d think all these Weatherfur Gnolls would send the snow elsewhere, but they don’t believe in doing that unless they have to.”</p>
+<p>“Sensible to avoid a magical hurricane.”</p>
+<p>“Yes…but you can still displace snow. Ah, well, it’s just wet, and I’m a Named-rank. How are you doing? Fingers alright?”</p>
+<p>Colth stepped into the tent, and the cold air made Pisces shiver; you could light a fire, but it was generally seen as a waste of time. He blew up some hot air with a little flame spell, and the air re-warmed.</p>
+<p>“I am quite alright, Colth. Thank you. Is Ceria still banging on that ice spike with a hammer?”</p>
+<p>Colth chuckled.</p>
+<p>“Not anymore. The [Smiths] chased her off after she nicked their steel hammers with it. I could have told her the Death of Magic’s spells won’t be undone that easy, but she’s having fun.”</p>
+<p>“Hah. True. I think she copies Erin, to be honest. She often does something silly, then reveals she’s had the real solution in her back pocket. Before this, Ceria was quite serious.”</p>
+<p>“So I heard. Maybe she’s being silly to cheer your team up. You lot are a bunch of downers. Yvlon’s a berserker, you’re a depressed [Necromancer], and Ksmvr has the self-esteem of my right boot.”</p>
+<p>Pisces frowned up at Colth as he tidied up some magical gemstone he’d have to melt later. He had the urge to toss another roll of bread at Colth, and he was hunting around for an object. But that was Colth for you.</p>
+<p>He was friendlier and more sociable around people he didn’t know. The Ultimate Supporter was able to be charming and silly himself.</p>
+<p>The thorns appeared with people he knew. But, perhaps, that was because of the sense that the Gnolls and the Horns had around him. It came from Theikha and Pisces’ own understanding of Colth—if he had been less perceptive, Colth would have been an easier friend.</p>
+<p>But there was just something about Colth that stood out as—<em>uncertain.</em> It came from his smile, the things he didn’t say. That broken brand from Roshal.</p>
+<p>And…Pisces’ fingers slowly halted on a jar of magical gemstone. He sat there for a second and thought.</p>
+<p><em>Wait. Did we ever tell Colth—or anyone else in the entire Meeting of Tribes—where that [Ice Spike] came from?</em></p>
+<p>They had not. Definitely not. Pisces glanced up, keeping his face straight as his heart rate picked up—and Colth was looking at him.</p>
+<p><em>Right at him.</em></p>
+<p>His pale violet eyes were framed by his brown-green hair, like the roots of some forest, and he was smiling. He looked young, almost as young as Pisces, and he gestured to the door.</p>
+<p>“Do you have time, Pisces? I thought we could go for a ride.”</p>
+<p>“Now? It’s midnight.”</p>
+<p>That was an exaggeration; it was probably only nine or ten at most. But it was late. Colth just nodded to the door.</p>
+<p>“Just a little ride. It’ll barely be an hour.”</p>
+<p>“An hour? I don’t have time for—”</p>
+<p>“Come on, you’ll enjoy it. Well, we’ll see if you do.”</p>
+<p>Colth caught Pisces’ elbow and linked arms. Then he dragged Pisces towards the door, and Pisces felt that impossible strength in his grip. He stiffened and saw Colth grin and wink. It only occurred to Pisces later that Colth hadn’t mentioned his team, and if there had been a moment for Pisces to insist on calling for them or refusing—</p>
+<p>The camp would have been a smart place to do so.</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>They left the Meeting of Tribes on horseback, and Pisces realized after five minutes that he might be in danger.</p>
+<p>What were his hints? Well, aside from the fact that his team didn’t know where he was going, Colth was using movement Skills.</p>
+<p>The ground <em>skipped</em> under the horses’ hooves, and Pisces shouted.</p>
+<p>“Colth! How far are we going?”</p>
+<p>“I’m just using [Longstrider’s Gallop]! And [Destination: Fast Travel]. And maybe [Quick Hooves] and [Expedited Errand].”</p>
+<p>“<em>How many Skills? </em>How can you—?”</p>
+<p>Colth laughed as he sat up in his saddle. He counted on his fingers.</p>
+<p>“[Rider]. [Traveller]. [Beast Tamer]—though a lot of classes get [Quick Hooves]—and [Servant]. Most Skills can be layered. Oh, and I’m also a [Teammate] like Ksmvr, so you get [Team Benefits].”</p>
+<p><em>What a frightening man. </em>Even if they were all ‘low-level’ Skills, the way he synergized them made Pisces feel like they were travelling far, far further than he had intended.</p>
+<p>Nor was Colth exaggerating about an hour’s ride. They cut through the snow fast and hard, and Pisces had to focus on riding just to keep up. He tried several times.</p>
+<p>“Why not the rest of the Horns?”</p>
+<p>Colth called back over his shoulder, reading a map.</p>
+<p>“I thought about Ceria, but I don’t trust her.”</p>
+<p>“You don’t trust <em>her?</em>”</p>
+<p>“She’s intelligent, but unpredictable. The worst kind. Pisces, relax. I know Azam.”</p>
+<p>Pisces looked around, but there was nobody about in the freezing cold. Colth glanced over his shoulder as well.</p>
+<p>“Relax. If we’re being tracked, it’s only by Gnolls. And Shaman Theikha is in charge, more or less, and she trusts me. I’m not leading you to your death.”</p>
+<p>“Shaman Theikha does <em>not</em> trust you.”</p>
+<p>Pisces shivered, wishing he’d learned [Frostskin] after all. Colth bared his teeth and laughed.</p>
+<p>“Yes she does! Or she’d have not let me in the camp at all. She’s just aware that I’m not <em>her</em> people, which is fair. And you know who I’m working with.”</p>
+<p>This time, the [Necromancer] was silent because he did know. He thought he knew, but even saying it felt…incredible.</p>
+<p>“Demons.”</p>
+<p>There was only one logical answer. When Colth had assured Pisces that he was <em>not</em> a [Slaver] of Roshal, it only led to one answer that made sense. If he knew Azam—then Azam had found safety, and how could he not in Czautha’s care?</p>
+<p><em>But that was impossible. </em>Demons had no allies! But then…was Colth…?</p>
+<p>Colthei was his full name. Pisces recalled that. Despite this, with all the facts on his side, he could not bring himself to just trust Colth, which he felt was fair. He had not seen the man’s character.</p>
+<p>Tonight might be his chance, because Colth just pointed ahead.</p>
+<p>“We’re in luck. It’s not outside the Great Plains after all. The trade-roads do technically go through it at points. Follow my lead, Pisces. Oh—and try to keep levelheaded. Don’t go Yvlon on me now, but do whatever and I’ll back your move.”</p>
+<p>“Do what?”</p>
+<p>For an answer, Colth winked. This time, Pisces growled.</p>
+<p>“Now, see here. I have enough of your prevarication, Colth. I demand substantive answers, and I will have them bef—”</p>
+<p>He grabbed for Colth, but the [Supporter] leapt from his saddle, plunging into the snow, and shouted.</p>
+<p>“<em>Hey! Anyone working the stables? Two for the inn!</em>”</p>
+<p>The inn? Pisces looked up, and it materialized out of the snow like a mirage. An inn, or perhaps more accurately, a waystation along the trade roads. He blinked as he saw the light shining through the windows and then looked around.</p>
+<p><em>He could barely see the damn road. </em>Colth must have used a Skill to even locate this inn. But as Pisces leapt down, the [Supporter] was already shouting again.</p>
+<p>“<em>Hey! Who’s running this place?</em>”</p>
+<p>“I hear you. <em>I hear you!</em>”</p>
+<p>Someone eventually came out, swearing and growling. Pisces saw a Drake pause in the doorway and shine a lantern suspiciously at the two of them.</p>
+<p>“Who’s there at this hour? I have [Guards], you know!”</p>
+<p>“Adventurers. I’m Colth the Supporter. Named-rank. Got a spot for us by the fire, [Innkeeper]?”</p>
+<p>The Drake stared.</p>
+<p>“A Named-rank—er—yes! Let me just get—<em>hey, someone get the horses! We’ve got guests!</em>”</p>
+<p>He turned, flustered, and Pisces glanced at Colth, who was beaming and ostensibly shivering in the cold. The Drake’s attitude changed the moment he confirmed Colth was wearing mithril—he glanced at Pisces with a look of faint recognition, but he was focused on Colth.</p>
+<p>“I’m sorry, sir. Are you headed to Zeres or up north?”</p>
+<p>“Down to Zeres, if anywhere. We got caught out in the weather—do you have a place at your tables?”</p>
+<p><em>Hmm.</em> He wasn’t lying. The way Colth clarified ‘if anywhere’ would pass a truth stone even without a Skill, and they had certainly gotten caught out in the weather. Pisces’ own instincts for subterfuge were kicking in, but the Drake seemed genuinely flustered. He glanced out the window as another Drake stomped out, cursing.</p>
+<p>It was clearly a Drake waystation—Pisces imagined Gnolls would be safer in the center of the Great Plains. This was probably as close as you got if you weren’t a friend to Gnoll-kind.</p>
+<p>“I do have room at the tables, but we’re full to the rafters with guests, sir. You’re not the only people on the road. I could evict a few and put them in the stables or attic—”</p>
+<p>“We could sleep by the fire if we have to. Let’s settle that once we’re inside, shall we? I’ve got a tent, and I’m willing to sleep in the cold, but I would <em>love</em> a hot meal and something to drink.”</p>
+<p>“Of course, Adventurer Colth. And is your friend—?”</p>
+<p>“He’s with me.”</p>
+<p>That hadn’t been the question, but Colth produced a gold coin, and the Drake hurried them inside, realizing it was freezing. The instant Pisces entered the common room, the conversation stopped a second, then resumed.</p>
+<p>But the instant he entered, Pisces felt a crawl down his back, and he couldn’t have said why. Not at first. The why became more clear as soon as they sat—not at the fire since everyone was crowded around it, but back in the warm room.</p>
+<p>“What can I get you?”</p>
+<p>“Er…uh…I’ll have whatever’s special, but a Firebreath Whiskey mixed with whatever ale you have.”</p>
+<p>That was a <em>stiff</em> drink, and Pisces’ brows rose. He just wanted water, and the Drake hurried off. Pisces sniffed the air.</p>
+<p>It was warm, lively, and it seemed like the Drake was running the entire waystation with only a handful of people. Well, Pisces counted five Drakes total, a small staff. But there were a lot of other people helping serve tables.</p>
+<p>It was just that none of them were Drakes, which told Pisces they weren’t locals. It was Drakes and Gnolls almost predominantly around here, but the guests? It took Pisces only a second to realize why he’d been so unnerved the moment he entered.</p>
+<p>The men and women in this inn had looked normal, even familiar to Pisces, a native Terandrian and used to Izril’s north. But he’d realized their skin was different. They’d changed to a lighter tint to match Izril’s folk in most cases, but the telltale marks around their visible necks, an ungloved hand, an ear, finally clued him in.</p>
+<p><em>They were Stitch-folk.</em></p>
+<p>Dozens of Stitch-folk. And then Pisces noticed one of the serving girls had a pair of metal wristbands as she brought them food. His skin began to crawl, and Colth nudged him as Pisces almost got up.</p>
+<p>“Sure you don’t want a drink?”</p>
+<p>“What are you—<em>where is—</em>”</p>
+<p>Colth took a deep drink of his ale and laughed.</p>
+<p>“Pisces! My friend! <em>Relax. </em>We’re just here for the night. Don’t worry about lodging. Enchanted tent, remember? And at worst we can sleep under a table. These Drake waystations are generally safe.”</p>
+<p>His voice was loud, carried far, and when he said that name—the conversation went out like a snuffed candle. Heads turned, and Pisces saw more than one drinker at a table suddenly look up.</p>
+<p>Pisces turned to Colth—and the [Supporter] gave him a blank look.</p>
+<p>“Alright, we can try for a room. But we’ll toss a coin for the bed. I’m not pulling rank to toss <em>two</em> people out of their rooms, and this lot probably won’t be happy even if we evict one person. Sorry, everyone.”</p>
+<p>He waved a hand around, and eyes focused on Colth, who grinned, and now they were identified.</p>
+<p>Colth the Supporter and Pisces Jealnet, the [Necromancer]. There was a moment of silence—then someone lifted a cup.</p>
+<p>“Not at all, Named Adventurer. These things are expected. To your health.”</p>
+<p>Pisces turned, and the scar on his chest began to itch. He locked eyes with a [Slaver] of Roshal, and this entire inn began to develop a new air. The guards and caravan—they were <em>filling</em> this inn—went back to their food, but they were watching Pisces now. Staring at him out of the corner of their eyes, and so were the [Slaves].</p>
+<p>They had just walked into an entire caravan of Roshal on the move. Heading north from Zeres.</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>The meeting between the [Necromancer] and Roshal’s own was unpredicted and—dangerous. As soon as the lead [Slaver] saw Pisces, he sent a swift [Message] to Lailight Scintillation for the Naga and his superiors to see.</p>
+<p>Colth the Supporter he only knew as a local Izrilian Named-rank, but Pisces…every [Slave] and [Slaver] had heard of the [Necromancer] who had been sold for a million gold coins—and the Death of Chains who had slain three [Slavers]. And Emir Riqre’s destruction.</p>
+<p>However, his orders were <em>not</em> to cause trouble. In fact, he was given a [Message] back almost instantly to avoid conflict with the [Necromancer] if possible. Which annoyed the [Slaver], because he had an inn full of [Guards] and this was a prime opportunity.</p>
+<p>But then he read the bottom of the [Message] and noted how tense his [Veteran Chainguard] looked and felt a chill of his own on his flesh.</p>
+<p>&nbsp;</p>
+<p><em>Beware Colth the Supporter. Give him absolutely no cause for offense.</em></p>
+<p>&nbsp;</p>
+<p>“Spread the word to all present.”</p>
+<p>The [Slaver] gave swift orders and didn’t mention the part about Colth. Frankly, this entire journey was unprofitable—he had done zero trading from Zeres. True, the City of Waves didn’t allow it outside of the docks, but Roshal had free passage.</p>
+<p>They had other goals. The [Slaver] sat back further at his table until two more things happened. The first was that he received word someone <em>else</em> was approaching the inn.</p>
+<p>His people were nearly sixty strong, not including the slaves, and filled up this inn. All had disembarked the <em>Requisitory Domain</em>, and they had feared little on this trip aside from boredom. But even they stirred when the <em>second</em> Named-rank entered the inn.</p>
+<p>“I come in peace. For a drink.”</p>
+<p>Gamur the Axe, the Named-rank Gnoll [Warrior] who carried a gigantic axe that had cleaved through hundreds of monsters, slowly stepped into the inn as the Drake stared at him and Colth. But the Gnoll didn’t approach Colth’s table. He just sat near the fire as room was made for him, and he pointedly sat facing Colth.</p>
+<p>“Ah, it seems as though those two are being watched by the Gnolls after all.”</p>
+<p>How else would you explain the coincidental arrival of Gamur? It seemed that the [Necromancer], Pisces, was certainly caught off-guard by the meeting. Gamur just glowered, clearly cold and wet, and began eating links of hot, grilled sausage the moment it was set in front of him.</p>
+<p>But the one person at ease was Colth himself. He was, in fact, already drunk, and it was no act.</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>Firebreath Whiskey was potent stuff. Colth had asked for half in his mug, half ale, and the first one had already sent him nodding a bit. He was on his second, and Pisces was hissing at him after half an hour of eating.</p>
+<p>Pisces was not hungry, and he’d barely touched the roasted potatoes and meat, having eaten a satisfactory dinner.</p>
+<p>“Colth! Why are we here? Colth?”</p>
+<p>“Relax, Pisces. I’m tired, you’re cold. And grumpy. And just relax. Sit there if you don’t want to be…be…”</p>
+<p>Pisces had hoped it was a trick, but Colth actually seemed to forget the next words and snapped his fingers together.</p>
+<p>“Dead gods, I’m drunk. Fuck. I <em>must</em> be getting old as Deniusth—<em>who dyes his hair—</em>if two can take me down. Then again, Mihaela can drink this down like water thanks to her constitution. You want to know how <em>Named-ranks</em> do things? Information-gathering, Pisces. Friendliness. Observe!”</p>
+<p>He stood up unsteadily, went to tap his nose, and missed. Then Colth took his drink and plate over and sat down at a table with some of the guards.</p>
+<p>“Hoi there! Are you lot from Chandrar? I’m Colth, Named-rank adventurer. How was the sea voyage? Mind if I buy you all a drink?”</p>
+<p>The [Guards] were a mercenary lot, but the instant Colth sat down, a few stiffened. The rest, though, younger ones, cheered up at ‘free drink’, and Colth instantly raised a hand.</p>
+<p>The [Slaves] were running around like the [Barmaids], and they brought everyone drinks as Pisces watched darkly. He had eyes on him, but Colth was speaking loudly, energetically, and he was definitely drunk.</p>
+<p>“What’s the word from Khelt? No—the King of Destruction?”</p>
+<p>“We…have not passed through Khelt or Reim, Adventurer Colth. We set sail from Roshal.”</p>
+<p>One of the younger [Guards] willing to talk spoke politely, inclining his head. He had a faint accent that made Pisces tense, but Colth just laughed.</p>
+<p>“Ah,<em> Roshal. </em>I’ve been to Lailight Scintillation. How is the Harbor of Sighs?”</p>
+<p>“You’ve been there?”</p>
+<p>Instantly, the denizens of Roshal grew more interested, and Gamur’s head rose a second from his table. Colth waved a hand.</p>
+<p>“I have been to every continent, friends. Is that bastard who makes the bread that gives people explosive diarrhea still selling from the harbor mouth? I meant to buy some—it feels like it’d work on monsters too.”</p>
+<p>“He’s dead. Some fool killed him, and the Naga killed <em>them</em> over it.”</p>
+<p>Apparently, Colth had just proven he knew the city, because the entire group got to gossiping at once. Pisces’ mistrust grew and grew…especially when he noticed Gamur glaring at Colth. When the Gnoll met Pisces’ eyes, he gave Pisces a glower that clearly meant something threatening.</p>
+<p>Pisces didn’t know what to make of the sudden appearance of Gamur the Axe. He was searching his mind for any knowledge of the Named-rank other than his name.</p>
+<p>Gamur, Gamur…a southern Named-rank famous for fighting monsters. That was literally it. But the Gnoll <em>looked</em> like an adventurer out of stories. He had scarred grey-brown fur, and he was like a gigantic, hunched boulder.</p>
+<p>It would not be a favorable comparison, but the only brawnier Gnolls that Pisces had ever seen were Raskghar. Gamur’s huge battleaxe had runework on the edge, and it was a massive, two-handed weapon that you could use to cut open a Wyvern.</p>
+<p>His warning stare, though. What did it mean? Pisces widened his eyes as the two locked gazes, searching for a subtle sign.</p>
+<p>Gamur’s glare widened, and then he flicked his eyes to Colth. Pisces jerked his head right at Colth and then towards the door.</p>
+<p><em>Are we to leave? </em>He shifted, touching his fingers to his mug. He tapped two fingers, then one, glancing at Gamur. <em>There are two of us, one of you—reinforcements? </em>Are we in trouble?</p>
+<p>The Gnoll [Warrior] stared at the door, then Pisces’ fingers, and looked patently confused. He hesitated, then shook his head. He glared and folded his arms. Pisces raised his brows. Gamur thought about it—then turned around slowly in his seat.</p>
+<p><em>Wonderful. </em>Pisces had no idea if he’d misread the signs or if Gamur just had Yvlon-levels of subterfuge. He feared the latter, but then, why was the Gnoll <em>here?</em></p>
+<p><em>Perhaps they shouldn’t be here? </em>Pisces would have liked to leave, but Colth was on his third drink and telling everyone to mix Firebreath Whiskey with the ale.</p>
+<p><em>It had to be at least four shots of whiskey per mug plus half of it ale! </em>The [Guards] instantly grew more intoxicated, and more came over to have drinks, but the ones Pisces marked as probably being veterans moved back towards that [Slaver].</p>
+<p>“So you’re all top-guards, eh? What about the [Slavers]? If one of the big [Slave Lords] got killed by the Naga—”</p>
+<p>“No fear on that, Adventurer. There are multiple new [Slave Lords]. They appeared overnight. And their hands stretch far. I saw two of them in the marketplace, and they were a match for the Naga’s presence, or you can have my eyes.”</p>
+<p>One of the Stitch-folk made a plucking gesture, and Colth leaned forwards.</p>
+<p>“New [Slave Lords] like the Naga? You jest, sir.”</p>
+<p>“I do not. One had a set of scales, with which he measured every little thing. The other had what seemed like a thousand staring eyes, and a daring [Thief] tried to steal from him—he knew in the moment it occurred and even which way they ran.”</p>
+<p>“What’re their names? Perhaps I know them…”</p>
+<p>Colth leaned forwards, but someone cleared their throat loudly, and the over-eager young [Guard] fell silent. Instantly, the others clammed up, and Colth looked up.</p>
+<p>“Supporter Colth. As much as I enjoy your company, and it gives my men levity, I must ask you do not pry into Roshal’s affairs. We are upon the business of our city, and my men talk overloud.”</p>
+<p>The [Slaver] lifted a ringed hand, and Colth lifted an unsteady one in reply. Gamur snorted as Colth tried to stand and got up unsteadily.</p>
+<p>“Not to fear, Master…?”</p>
+<p>“Toriernd. We travel humbly upon the Drakes’ trade-roads, north. Without incident or quarrel. We would not wish any here.”</p>
+<p>“Nor I. Nor I. Drakes love their damn investigations, and no one messes with the law unless they want every city from here to Liscor coming down on them. The law is safety, after all.”</p>
+<p>“Exactly.”</p>
+<p>The deep rumble came from Gamur, and the glare he shot Colth made the [Supporter] raise his hands and roll his eyes.</p>
+<p>“Oh, and here comes a minder from who, Theikha? I’m not doing anything. Witness it to the tribes!”</p>
+<p>“I am.”</p>
+<p>The Named-rank shot back, and the [Slaver] relaxed as Pisces cursed under his breath. So they had been followed, and this was a huge waste of time!</p>
+<p><em>Well, the news about new, high-level [Slave Lords] was deeply unpleasant.</em> But perhaps Colth was showing him what he was doing? The unsteady [Supporter] was genuinely drunk, and Gamur’s presence clearly made the [Slaver] feel at home. So he smiled and approached with two of his [Guards].</p>
+<p>“I must confess, I had not realized you were so knowledgeable about Roshal. We have ‘Named-ranks’ of our own, Colth the Supporter, but almost none are native-born. When did you come to our city?”</p>
+<p>Colth turned and stood there, mug in hand. Then he found it was empty and pulled the Firebreath Whiskey bottle up, filling the mug with it raw. Pisces wondered if he’d have to roll the man back to the camp.</p>
+<p>“Oh, a lifetime ago and under a different name. I learned a lot.”</p>
+<p>“Indeed?”</p>
+<p>The [Supporter] nodded as he raised his mug.</p>
+<p>“It wasn’t always a pleasant lesson, but you learn it well. Roshal is a fountain of knowledge most parts of the world have lost.”</p>
+<p>“This is very true. I am glad you say it; few nations respect our knowledge.”</p>
+<p>Toriernd seemed very pleased by this, and he glanced at Pisces and smiled. The [Necromancer] bristled, and the [Slaver] lifted a hand.</p>
+<p>“Peace. I say it now, to be open. I know you have had—issues with our great nation, Necromancer Pisces, but at this time, we are all friends.”</p>
+<p>Everyone turned back to Pisces, and the [Innkeeper] looked over, clearly not knowing their history. Pisces stared at Colth, but the [Supporter] gave him an encouraging smile.</p>
+<p>Whatever he was playing—Pisces felt a flash of rage.</p>
+<p>“I am not your friend, [Slaver]. Nor will I be. Do not bandy words with me here or I will remind you of what happened to every [Slaver] I have ever met. I wish the same on you.”</p>
+<p>The cheerful smile on the [Guards]’ faces went out, and they slowly reached for their blades. But Colth threw up a hand.</p>
+<p>“Pisces—forgive him, Toriernd.”</p>
+<p>“That would be hard. That is quite an insult—but I expected nothing less. I hope you know, Necromancer Pisces, that we are protected under Drake law. You insult us, threaten us, and would attack us and make the Walled Cities your enemy.”</p>
+<p>“And?”</p>
+<p>Pisces slowly got up, feeling drunk on hatred despite not having touched a drop. The words came out the instant he had to trade words with the [Slaver], and he had not realized how enraged he was.</p>
+<p>“Human. <em>Sit.</em>”</p>
+<p>A paw clapped Pisces on the shoulder, and he went down so hard he nearly broke the chair in two. Gamur the Axe warningly leaned his huge battleaxe on the table. He leaned on Pisces, and the [Necromancer] turned, but he was so <em>heavy—</em></p>
+<p>The [Slaver] was all smiles. He turned back to Colth, clearly relishing Pisces’ glare of impotent hatred.</p>
+<p>“Once again, Adventurer Colth, you have odd companions. You were saying about learning? Roshal’s knowledge?”</p>
+<p>“Oh, yes. Roshal’s knowledge. Where was I? I learned a lot. Your people know every written language and even have your own. Did you know that?”</p>
+<p>“I do indeed. Though True Roshalian is spoken only as a kind of mark of prestige. It has little use as a spoken language if it ever did.”</p>
+<p>Toriernd was greatly impressed now, and Colth tapped his nose as he took a sip, then a longer draft of his drink. The two [Guards] were watching him, and Pisces saw neither were as calm as the [Slaver]. But they kept their hands well away from the blades they had—two long daggers and a scimitar, respectively.</p>
+<p><em>Enchanted armor. </em>Most of the [Guards] had some, even the young ones. The youngest might still be Level 20+.</p>
+<p><em>What were they here for? </em>Colth had asked that very question, but none had answered. Now, the [Supporter] exhaled, fumes on his breath.</p>
+<p>“You’re right, Toriernd. True Roshalian is just command-words and such. The language of masters. Why, you’d say <em>‘talac et Sitivnia’ </em>or some such thing and—”</p>
+<p>He took a huge drink from his mug, and Pisces saw the two [Guards] next to the [Slave Master] jerk. The [Slaver]’s eyes went round, and he made a gasping sound.</p>
+<p>“What did—st—”</p>
+<p>Then the first [Guard] drew his scimitar and tried to cut Colth from head to groin in a vicious blow. Pisces swore he saw a glowing <em>red</em> crest of light on the man’s face—</p>
+<p>The Drake [Innkeeper] had just come out with another bottle of Firebreath Whiskey when the sword fell. Gamur cursed as he let go of Pisces’ shoulder. Colth looked up, eyes widening—then tried to dodge left.</p>
+<p>The blow <em>slashed</em> down his mithril chainmail armor, but cut along his shoulder, arm, through the old leather armor, and red blood splattered the floor. The [Supporter] leapt back as a Drake adding logs to the fire choked.</p>
+<p>“Stop! <em>Eske drek! Drek!</em>”</p>
+<p>The [Slaver] shouted, face pale, and the [Guard]’s frenzied look turned to confusion, and the second [Guard] halted, blades drawn. Colth was stumbling back, blood running down his face, and the [Innkeeper] shouted.</p>
+<p>“What is going—”</p>
+<p>Then Pisces saw Colth’s look of pain and alarm and confusion turn to fury. He turned—and in one second, caught Pisces’ eye. There, at last, Pisces saw it.</p>
+<p>A grinning man.</p>
+<p>A smiling Demon staring straight out of those pupils. Colth, mouth still full of Firebreath Whiskey, reached for his side without a sword as the [Guards] froze. Then he put the first dagger through the [Guard]’s throat and twisted.</p>
+<p>A spray of blood spattered Colth’s face as the tip of the shining blade went through the man’s neck and came out the other side. The [Slaver] froze as Colth withdrew the blade.</p>
+<p>“Crelerspawn—”</p>
+<p>The second [Guard] lifted his blades, and Colth’s second hand blurred. Pisces flinched as a head landed on the ground. The body slowly collapsed, and Pisces saw the wide, bulging eyes of the second [Chainguard].</p>
+<p><em>The Stitch-man was still alive. </em>The mouth was moving in rage—then confusion—then pain and fear. Then it began to scream, but there were no lungs.</p>
+<p><em>The Stitch-folk lived for a little while after losing their heads. </em>The face screamed as blood ran down.</p>
+<p>“You—”</p>
+<p>The [Supporter] stood there as two bloody bodies fell and smiled. The [Slaver] was stepping back as the other [Guards] reached for their blades unconsciously, unable, even for them, to believe what was going on.</p>
+<p>But Colth reacted as Pisces shoved his chair back. Colth’s arms slashed in an ‘x’, and Toriernd looked down at his opened chest. He stumbled backwards, slipped on the blood, and then fell over. He stared at the blood rushing from his chest, and then he began to scream.</p>
+<p>“Stop. <em>Stop!</em>”</p>
+<p>The [Innkeeper] was shouting. He rushed forwards—then reversed as he saw the blood. Colth turned as the first [Guards] threw their table over. They rose in a roar, and he <em>spat.</em></p>
+<p>His mouth was full of Firebreath Whiskey. But what came out wasn’t alcohol but <em>fire.</em> It caught four [Guards], and they caught flame in an instant. The screaming Stitch-men tried to put out the flame, but Colth just knocked one aside.</p>
+<p>“<em>They’re trying to kill us! To arms! Pisces!</em>”</p>
+<p>He roared and then leapt at another [Guard] on his feet. The drunk [Slaver] was trying to pull out a shield. He never had a chance.</p>
+<p>Colth skewered him with both blades, then dragged them out of the body effortlessly. He turned, dodged left, and rammed his blade through a chest.</p>
+<p>“[Drunken Strength]. [Animate Corpse].”</p>
+<p><em>He was too strong to parry. </em>Colth whirled on another [Guard], but they had Skills. One <em>backflipped</em> out of the way, landed, dodging two slashes—</p>
+<p>“[Weapon Switch].”</p>
+<p>The long dagger in his right hand vanished. Colth pointed a crossbow left and fired it point-blank through the [Guard]’s head. The dagger reappeared in his hand, and he leaned out of the way.</p>
+<p>“[Mighty Swing]. [Blade Flare]. [Flurry of Cuts]. <em>Get him!</em>”</p>
+<p>A <em>flash</em>, and a combo of slashes coming at Colth. The [Supporter] just leapt back, and the [Slaver] slipped on—a vial of oil? The dangerous combo of Skills turned into a scream as Colth landed on the attacker and buried his blades in their stomach and wrenched them apart. Then he was backing up, grinning.</p>
+<p>“[Deflect Arrows].”</p>
+<p>He whirled his daggers up, slashing two out of the air as the [Slavers] tried to find cover—then uncorked a vial, hurled it, and the <em>boom</em> shook the rafters as the vial exploded.</p>
+<p><em>Colth was slaughtering them. </em>Pisces just stood there. Even as a Gold-rank adventurer, he hadn’t seen someone kill so fast. The [Slavers] were finally on their feet. One ran at Colth, and he sidestepped them.</p>
+<p>“[Hefty Push].”</p>
+<p>He kicked them across the room and towards Pisces. The [Necromancer] stepped aside, drawing his rapier. His blood was turning to fire. He met Colth’s eyes, and the [Supporter] gestured to the door.</p>
+<p><em>You could always leave.</em> <em>But look what I’m doing. Do you want in?</em></p>
+<p><em>Crunch. </em>Pisces turned, and Gamur swore. The Named-rank adventurer had been as stunned by the violence as Pisces. But his axe—he had a hand on his battleaxe, and Colth had kicked the [Slaver] straight onto the head.</p>
+<p><em>Blood. It was dripping down, and one of the dead [Slavers] was rising as an undead. </em>The [Innkeeper] was screaming. The [Slaves] were running, and more people were thundering downstairs. The rest of the caravan. One raised a crossbow of their own. Pisces saw Colth switching back to both blades, and his head turned. He was smiling—preparing to dodge—</p>
+<p>Pisces flicked his wrist, and the [Shatterbolt] hit the crossbow woman in the arm. He heard the <em>cracking</em> like fireworks, and she collapsed—wrongly. Without bones to hold the body up.</p>
+<p>“<em>Kill them! Kill—</em>”</p>
+<p>The [Necromancer]’s rapier ran through a second [Guard], and he felt the shock run through his arm.</p>
+<p><em>Bad strike, boy. It should feel like air. </em>He thought he could hear his father’s voice. Pisces didn’t care. He stared at those wide eyes and felt like he could see Igheriz staring out the other side. He yanked his rapier back and then whispered.</p>
+<p>“[Deathbolt].”</p>
+<p>The death magic hit the [Slaver] in the chest. They stumbled and dropped the healing potion they’d yanked out. They might have used it, despite being run through. Pisces looked around, and now Colth was laughing.</p>
+<p>“<em>Defend yourself, Pisces.</em>”</p>
+<p>Defend yourself? Gamur was swearing at Colth, but the [Slavers] attacked in a roar. And they just saw three adventurers.</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>Pisces had only seen Colth smile like this when fighting Facestealer. But now, he was doing it again.</p>
+<p>He and Colth were cutting around them in the center of the inn, and Colth was tracing blade-forms with his long daggers, cutting and slashing limbs off. Pisces was raising the undead as he fired [Deathbolts] with one hand and cut and slashed with his flaming rapier.</p>
+<p>One of his new skeletons was laying about it with a scimitar. A second leapt, ignoring the swords slashing its arms, and dug its fingers into a screaming Stitch-man’s eyes.</p>
+<p><em>Fire was coating parts of the floor. </em>Colth’s flame-breath attack wasn’t the only thing he was using. He kicked another bottle of Firebreath Whiskey at a cluster of [Slavers].</p>
+<p>“[Volatile Mix]. [Instantaneous Reload].”</p>
+<p>He flipped the crossbow up again, fired it left, and took out another archer. Then the bottle of potent liquor exploded.</p>
+<p>He had a thousand and one Skills. Pisces? He had fury and death. The Skeleton Champions charged, slicing their opponents with their own blades, and Gamur the Axe was howling.</p>
+<p>The huge Gnoll was swinging his axe left and right, cleaving through everything he touched. Someone shot him point-blank with a wand, and his fur caught fire. He ignored the flames, swung through the spellcaster, and then lunged at Colth.</p>
+<p>The [Supporter] <em>parried</em> the axe, went to kick Gamur in the chest, and the Gnoll swung an arm. Colth hit a wall and went <em>through</em> it. He came back in as snow poured through the opening. Both Named-ranks stared at each other, Colth tensing—then Gamur whirled left.</p>
+<p>“[Hill Cleaver].”</p>
+<p>“[Emergency Evacuation]. <em>Watch the innocents, idiot!</em>”</p>
+<p>Colth pointed, and a [Slave] and one of the staff screamed and vanished. Pisces saw a glowing axe cut through the entire bar and wall behind it. Wood showered down as a beam splintered in half, and a dozen bodies fell, cut to bits. Gamur roared—turned to Colth, and someone leapt on his back, trying to stab. The Gnoll rammed himself backwards, smashing into a wall, and Pisces slashed through a throat. The [Slaver] closed it with a potion—then drank it.</p>
+<p>Pisces stabbed three times, and a hole opened up in the Stitch-man’s chest—then the third blow was deflected by a rib. The [Slaver] kept coming, slashing back, laying Pisces’ arm open, catching him once below the ribs with a shortsword.</p>
+<p><em>Searing pain. </em>Pisces pointed a finger, and the [Deathbolt] made the [Guard] stagger. But he was literally drinking the healing potion in his mouth—a high-grade one. Pisces flash-stepped back, and Colth turned as the [Slaver] came at him.</p>
+<p>“[Doubled Healing: Potions]? Nice trick.”</p>
+<p>Pisces slumped over, feeling hot and sick, leaning on a table, and Colth backed up. <em>The shortsword was poisoned. </em>Colth dodged backwards as the [Slaver] attacked, clearly ready to be cut—</p>
+<p>Colth waited for his opening, then <em>slashed.</em> He didn’t get a killing blow in, but he managed to hack straight through the man’s groin. A red stain filled the cloth as the liquid came out the Stitch-man’s mouth, and he tried to scream. Then Colth planted his blade through the Stitch-man’s brain.</p>
+<p>“Idiot.”</p>
+<p>It wasn’t clear who he meant as he yanked something out and grabbed Pisces. He applied a salve, and Pisces’ spinning head cleared. Colth glanced over his shoulder as three Skeleton Champions emerged, bones coated in blood. Then he yanked Pisces up.</p>
+<p>“<em>Come on. Let’s get them.</em>”</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>They had Skills. It was not like fighting monsters at all. Pisces had fought entire battles where he had come out uninjured, but he took another arrow to the leg within moments. The arrow had <em>ricocheted</em> into him!</p>
+<p>“Watch the Skills! Don’t let them attack! Use the undead, you idiot!”</p>
+<p>Colth shouted, and Pisces screened himself with the fearless Skeletal Champions. He felt like an amateur in a fight against opponents with Skills, but even Colth was attacking carefully. He murdered anyone he got into close-range with, but he would throw a vial or attack in an unpredictable way rather than charge into a four-on-one combat.</p>
+<p>He was impossible to predict. That was the terror of Colth. A [Slaver] rushed at him, and he murmured.</p>
+<p>“[Remove Stitches].”</p>
+<p>The woman’s boot came off. Surely, if Colth could have, he would have removed the Stitch-woman’s limbs, but it must have been impossible.</p>
+<p>As it was—he shot a crossbow straight through her foot, nailing her to the ground, then finished her off.</p>
+<p>It was still an entire caravan’s worth of guards. Pisces thought they might have been in trouble, despite his and Colth’s level difference—but for one figure.</p>
+<p><em>Gamur the Axe. </em>He hadn’t been prepared for Colth’s sudden violence, which had taken even him off-guard. But once the fight started, Pisces realized he <em>was </em>a Named-rank as he cleared the floor.</p>
+<p>“[Gallows Swing]!”</p>
+<p>A fool with a greatsword tried to match Gamur blow for blow. Rather than dodge, the Gnoll swung back, and their weapons collided.</p>
+<p>The enchanted greatsword <em>tore</em> out of the Stitch-man’s grip, and Pisces heard a bone <em>snap.</em> The man screamed, and Gamur buried his axe in their chest, kicked the [Slaver] off the blade—</p>
+<p><em>And he hadn’t used a Skill.</em> He had beaten the Skill with pure strength. He kept moving, throwing a punch that flipped someone over a table, turned, and brought his axe up.</p>
+<p>“[Slash the Sky]! <em>[Howl of the Plains].</em>”</p>
+<p>Then Pisces went deaf, despite holding his hands over his ears. The wave of sound blasted plates and utensils off tables. Gamur took two steps forwards, and a crossbow bolt <em>thunked</em> into his chest. He glanced down at it, ripped the bolt out, and a hole was visible in his fur.</p>
+<p><em>Where was his armor? </em>The Gnoll took another two steps, buried his axe in a head with a roar, and then swept it around, clearing a pocket of [Slavers]. When he straightened, turning his head—the hole was gone.</p>
+<p><em>Impossible! </em>Pisces stared and nearly got hit by a spell himself. When he next saw Gamur, the Gnoll was striding out of more of the fire Colth had started, swatting at the flames. But his burnt hair was <em>regrowing.</em></p>
+<p>No defense. No ability to dodge. But his offensive abilities—he checked a wound on his arm, <em>threw</em> a hatchet from his belt through a fleeing [Slaver]’s back, and the cut closed.</p>
+<p><em>He was healing every time he wounded a foe!</em> That was—</p>
+<p>That was a Named-rank power. No wonder he was one of the Gnolls’ champions! Gamur also had some kind of battlesense that eclipsed even Colth’s and Pisces’. Five [Guards] tried to rush him, getting in under the range of his battleaxe. He took three down, but two went at him with knives. Gamur dropped his axe, raised his paws, and after Pisces saw him again, he was kicking over two dead [Slavers].</p>
+<p><em>Yvlon should take lessons from him! I should—</em>then Pisces saw Colth <em>throw</em> a blade across the room, into the eye of a [Slaver].</p>
+<p>“[Explosive Flesh]. [Recall Blade]. [Climber’s Hold].”</p>
+<p>The head exploded, showering the other enemies with bone and blood. Colth caught the blade, leapt <em>up,</em> and clung to a rafter one-handed. Then he dropped onto the group who’d tried to rush him.</p>
+<p>Two kinds of Named-rank adventurer. And Pisces.</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>The fight took fourteen minutes. It felt like an hour, but when it was done, the inn was half on fire. Colth stood on the bloody floor, wind blowing in broken windows, smoke rising around him. He turned, smiling, and looked around.</p>
+<p>Pisces was panting for air. Gamur was covered in blood, and he stared at Colth. Gamur raised his axe, and again, they sized each other up. In silence—Colth lifted his crossbow. Then he glanced around and found the restroom. He paused a second, stared at something, then shot through the door.</p>
+<p>He reloaded—shot again. Then he looked around as blood ran from the crack by the door and nodded.</p>
+<p>“Got them. Have I missed anyone, Pisces?”</p>
+<p>The [Necromancer] looked around, eyes glowing as he cast [Detect Life] and [Detect Death]. No one was playing dead that he could tell. But…</p>
+<p>“The [Slaves]. There are sixteen.”</p>
+<p>“I saw them. Let’s get out of here.”</p>
+<p>Colth walked out of the inn, into the snow. The Drake [Innkeeper] had been screaming, but one look at the three adventurers and he fled, silently, from the three bloody figures.</p>
+<p>“You fool. The Walled Cities will investigate this.”</p>
+<p>“They swung first. I can swear on a truth stone. Did Theikha tell you to stop me? She’s not that stupid.”</p>
+<p>Gamur the Axe folded his arms and <em>growled.</em></p>
+<p>“The Shaman told me you might get into trouble. I followed you. Did you think about the trouble you’d bring on Gnolls?”</p>
+<p>He growled—but the [Supporter]’s smile was filled with teeth as he lowered his voice.</p>
+<p>“And do <em>you</em> want Roshal’s [Slavers] wandering your Great Plains? This was my fight. You just involved yourself. That’s not on me. Think harder next time you stick your nose in.”</p>
+<p>“Peh. You’d have gotten your friend hurt without me.”</p>
+<p>Gamur retorted, and Colth rolled his eyes, showing the whites.</p>
+<p>“You think I haven’t seen someone dance better with blades? Don’t lecture me on how to hunt, Gamur. You hunt monsters. I hunt vermin. Those rats will swarm you before they get to me. I saw how much blood you lost. How many scratches do you see on me?”</p>
+<p>He raised his arm, and Pisces realized that but for the first cut—Colth was virtually unharmed. Gamur did not appreciate the challenge and snarled, but Colth just glared him down.</p>
+<p>Colth was not the pleasant, friendly figure that Gamur and Pisces were used to. He seemed to glitter like a dangerous dagger, eyes and bared teeth. Gamur’s fur rose, and he eyed Colth—but the [Supporter] was walking into the snow after the [Slaves].</p>
+<p>They stared at him, and he halted, blades wet with blood. He pointed, and they flinched. But Pisces just saw him point right.</p>
+<p>“That way. Stay here if you want to go back. But if you go that way—perhaps something will happen. You have nothing left to lose. Make your choice.”</p>
+<p><em>All Pisces saw in the distance was whirling snow. </em>Even his spells didn’t tell him what was there. The [Slaves] looked at Colth, and he whirled.</p>
+<p>“Come on. They won’t decide with us here. If we’re unlucky, the Drakes will have a damn patrol on the road. I doubt it, though. Anyone see the horses?”</p>
+<p>“You’re just leaving them there?”</p>
+<p>“Absolutely. They’ve got slave collars on. It would be suicide to grab them. They’ll just die or be tracked.”</p>
+<p>“Then what were you pointing…”</p>
+<p>Pisces trailed off. Colth gave him a long look and grinned.</p>
+<p>“Who knows? Maybe someone’s waiting that way. But on the off chance some decide to be ‘loyal’ and stay…Roshal has to prove things. You can’t prove I said anything. It’s all truth-stone logic, Pisces.”</p>
+<p>The [Necromancer] stared at him, then back at the ruined inn. He didn’t quite understand how fast it had gone to blood himself. But he was starting to…</p>
+<p>“You start a lot of these fights?”</p>
+<p>Gamur was washing his burnt and bloody fur in the snow. Colth grabbed the reins of his horse.</p>
+<p>“Me? <em>Never. </em>Roshal starts fights all the time, though. They used to be all over the north, back in the day. How many do you see up there these days? Mind you, I’m the nice one. The Reinharts have their own way of greeting guests.”</p>
+<p><em>Magnolia Reinhart? </em>Pisces was panting as he got into his saddle. Gamur just stood there, staring at the inn, and Colth kicked his horse.</p>
+<p>“I’ll see you back at the camp, Gamur. I’ll buy you a drink to make up for it.”</p>
+<p>The Named-rank turned, and Gamur the Axe growled as he met Colth’s eyes.</p>
+<p>“Forget it. I’m not drinking with you. Ever.”</p>
+<p>The Ultimate Supporter laughed and took off. Pisces followed as the Gnoll began to search for his own horse. They were riding back through the snow when Pisces shouted.</p>
+<p>“So who told you?”</p>
+<p>“A flying magic bird. And if you want more than that, I’d have to trust you. But I don’t.”</p>
+<p>Colth turned his head and gave Pisces a sardonic look. The [Necromancer] was so astounded his mouth opened and closed.</p>
+<p>“<em>Me? Trust me?</em>”</p>
+<p>“Yep. You Horns are fairly untrustworthy and, frankly, suspicious. You’re lucky I’m so trusting in general, but why would I trust <em>you?</em> Let’s leave it at that. Sometimes I get a little bird in my ear. At other times, it’s a pink [Lady] who gives me a little tip. But I wish I’d gotten more, frankly. I thought they’d be riled up by you…well, we did all we could. The rest will avoid us, and it’s not always that easy.”</p>
+<p>“Easy.”</p>
+<p>Pisces couldn’t imagine walking into a room and taking out sixty foes. He realized Colth must have been using [Drunkard] Skills, but even so. Colth shook his head.</p>
+<p>“We just hit one group. There are at least a dozen more. I don’t know what they want, but…I don’t like it. The word is that some high-level members of Roshal are also in Izril. The Naga’s own hound. Gamur, you, and I would all have to think twice before we went at him without a plan. But come on. Let’s get back before your team notices. Did you enjoy it?”</p>
+<p>Pisces didn’t know how to answer that, so he did the only thing a good [Mage] would do.</p>
+<p>“Did you?”</p>
+<p>Colth’s smile stretched ear-to-ear.</p>
+<p><em>“Guess.”</em></p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>“I take it back. He’s not suspicious. He’s just scary.”</p>
+<p>Ceria Springwalker heard a version of Pisces’ report that night after he got back. The [Necromancer] still smelled of blood, and Yvlon was angry. Ksmvr was furious.</p>
+<p>“Comrade Pisces, Comrade Pisces. Are we teammates?”</p>
+<p>“Yes, Ksmvr.”</p>
+<p>“Then why did you not take me? Especially if you were in danger!”</p>
+<p>“Leave it, Ksmvr. At least we know what Colth does for fun. I doubt that was an act. Something tells me even Roshal wouldn’t throw away their people like that. Hmm. Darn, darn, darn.”</p>
+<p>Ceria tapped the shard of ice on the ground and scrubbed a hand through her hair. Yvlon was just shaking her own head.</p>
+<p>“He’s a liability. Even if he claims self-defense—the Walled Cities aren’t stupid!”</p>
+<p>“No, but they’re also not all friends with Roshal. And what do you want to bet that Magnolia Reinhart never cared what Colth did? Rhir’s Hells, he seemed to imply she hired him if she didn’t do it herself! He’s never done us wrong, but now we know what we get into if Colth’s on our side.”</p>
+<p>“Given that they are trying to enslave Pisces, I think Colth is a fine ally. He has done nothing wrong.”</p>
+<p>Everyone turned to Ksmvr as the Antinium folded his arms. Yvlon’s mouth opened as she tried to parse how incorrect that was, but Pisces just sat there. Then he raised his eyes.</p>
+<p>“Well, Colth seems to think there’s a danger in Roshal’s actions. I won’t go off without telling you, but it was good…to see what he did. Ceria, what do you think?”</p>
+<p>The half-Elf sighed loudly.</p>
+<p>“I think…we just got entangled in more politics. And this time, we had better step carefully, Horns, because we’ll have big allies—and even bigger enemies.”</p>
+<p>“We can always deny we knew Colth was on the side of—I mean, are we just overlooking he might be in cahoots with <em>Demons?</em>”</p>
+<p>Yvlon’s voice squeaked a bit as she struggled to get over that part. Ceria just shrugged. She was thinking hard about what she had presumed to be reality. Ksmvr didn’t really have any view of Rhir other than ‘it used to be home’, and Pisces clearly had more good feelings towards Czautha than anyone else on Rhir, so Yvlon was the one digging her heels in.</p>
+<p>Even so. Ceria tapped the shard of ice again and again—and then raised it to the light.</p>
+<p>“Nothing ventured, nothing gained, Yvlon. Colth got us Stalker’s armor. And do you want to live forever?”</p>
+<p>“No, but I’d like to live another year!”</p>
+<p>The half-Elf laughed as Ksmvr finished bandaging a cut on Pisces’ arm.</p>
+<p>“Well then, should I pretend I can’t see this?”</p>
+<p>Then the other Horns looked at Ceria, and she held up the crystal of ice to the light. She hadn’t managed to break it open after all, even with a hammer and her own ice magic. Ceria had a feeling it’d vanish after another day or two, and she had feared she’d fail to uncover whatever the Death of Magic had challenged her with.</p>
+<p>Then it had occurred to Ceria she might still be stupid. And she’d thought of the entire matter like a [Trickster], rather than a [Mage]. Slowly, she lifted up the [Ice Spike] and spoke dreamily.</p>
+<p>“Anyone got a piece of paper? Even with vision spells, it’s <em>tiny.</em> But I think I found the start.”</p>
+<p>She eyed the <em>tip</em> of the translucent, blue piece of ice, and Yvlon squinted at the ice. Pisces leaned forwards, and when he magnified his own vision, and the light caught the ice just right, he finally saw it.</p>
+<p><em>Tiny, tiny little words inscribed on the inside of the ice, caught like bubbles in water. </em>If you stared at it just right…it looked like a message.</p>
+<p>&nbsp;</p>
+<p><em>I am Silvenia, the Death of Magic, and I remember the Crossroads of Izril…</em></p>
+<p>&nbsp;</p>
+<p>The Death of Magic’s words and letter to the Horns of Hammerad would kick off a gathering storm as snow fell and fell. The half-Elf was laughing, somewhere, and Ceria grinned as Colth the Supporter strolled on over to their tent. He was laughing, good-natured—</p>
+<p>—Right until Shaman Theikha grabbed his ear.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><strong>Author’s Note: </strong>I have a bunch of notes from my break after this. But I’ll just say that this chapter is short, and I’m still down to write day-chapters, but I’ll also write traditional chapters of a longer length.</p>
+<p>It’s just whatever fits. I’m a bit less rested coming off this break, as the notes below will explain. Also, I really am a night-person. I keep trying to wake up with y’know, daylight, and I feel tired and groggy. Well, if I need to write like Batman in the night, I will. For now, I hope you enjoy this small offering—I think it’s one more Horns chapter and then the poll and chem-chapter if it’s ready to go.</p>
+<p>But don’t hold me to it. Life is a mystery. Anyways, glad to be back to work. Now for my other copious notes.</p>
+<p>&nbsp;</p>
+<p><strong>Week Off Recap: </strong>So. Do you recall me writing about catastrophic computer failure which forced me, once again, to get a new PC? That was five months ago, I think.</p>
+<p>…The new, expensive one I bought is also dead. And the one I sent into repair came back and it wouldn’t boot up. So I had TWO new desktops, both of which had incredible technical issues.</p>
+<p>Anyways, the first four days of my break were without a working PC and it took me four days of trying to debug, then literally switching computer parts around to luckily diagnose the problem. I have…something wrong with one PC that I’ll have to send in for full repair, and the one that was repaired has a dead GPU which I could replace.</p>
+<p>I am not a computer person. I know enough to do basic diagnosis and I have built one PC ever, so that was not a fun time. I don’t feel as rested mentally as I’d like, but life decided to be difficult for me for a bit and that’s that. My life is so hard. Harder than someone in a war…or in a sub about to implode…</p>
+<p>I’m always mindful of my job and life being the product of good fortune. I guess the irony is that it is hard to write to the level I want and these things get in the way. However! I have stepped back and stopped trying to write a novel in a month. With that said, the deadline is coming up again, but I will try not to collapse a second time. I am definitely going to need to take off time, and will probably work half this month, then write the rest of Gravesong 2 into August and finish it, no matter how hard it is. I’ll post whatever I’m happy with, but if I burn too hard on multiple ends, I burn out.</p>
+<p>&nbsp;</p>
+<p><strong>Writing Thoughts:</strong> I’ve been reflecting on the matter of upcoming arcs and I have to say, the biggest thing on my mind is the Winter Solstice, which as you might guess, is probably the end of Volume 9. What it will be is something only I know, and yet, we’ve been in beach-mode, short-chapter mode, and that…is a very good thing.</p>
+<p>Some people may be impatient for the Solstice. Or have other critiques. I don’t often discuss writing in the sense of looking for help. I often tell beta-readers I just want feelings and whether they liked it, more than trying to articulate things or trying to tell me what to write. ‘If there’s a problem, point in the general direction and I should see it.’ It’s interesting, because the only people I’ve met who have given me advice that is consistently reliable in a technical writing sense have been the editors I like. It really is a dedicated skillset.</p>
+<p>However, writing is an endless world of analogies. I’ve done ships. I’ve done sludge-searching. How about candy?</p>
+<p>Have you ever seen someone making a taffy or candy that you can twist or pull at high temperatures? Firstly? Skin burns. Secondly? It’s an art. The experience it takes to move that candy, or know instinctively when it’s about to break when it’s thin as string—that’s like writing. That’s like the beach chapters.</p>
+<p>Sometimes the story needs time to breathe. Sometimes I need time to plan ahead and I have been thinking of the upcoming arcs and storylines and I’ve come up with some good stuff. If I had rushed into the Winter Solstice, it would have been both premature, too much of Volume 8 still leaking through, and frankly, I would have been exhausted and might have burnt out again in the midst of it. This story…is a process and I have to figure out when things are dragging or going too fast. So the beach chapter I like and we will see how long this should last.</p>
+<p>That is the eternal advantage of web serial writing. Other published books like the never-coming-out third book of Name of the Winds by Rothfuss have to be contained stories. GRR Martin has to know how many miles his characters travel and touch countless plotlines in each novel and I suspect that the medium is one of the reasons those two can’t put out another book. Then again, it seems like Martin will get to a book before Rothfuss.</p>
+<p>Motivation’s hard. But writing is more than motivation—I think I mentioned that hydration, exercise, good rest, and many more things all annoyingly make up good writing. Imagine my personal health being necessary to write. Bleh. Anyways, I’ve felt good about the beach writing. Finishing that novel is still going to be a bloodbath.</p>
+<p>&nbsp;</p>
+<p><strong>Reading Thoughts:</strong> Because I was bored and my gaming computer was dead, I consumed stories over my break. And I had consumed parts before, but I don’t always talk reading so here’s my reading list.</p>
+<p>&nbsp;</p>
+<p>1. Level 999 Villager.</p>
+<p>2. I Reincarnated as a Slime.</p>
+<p>3. Kimetsu no Yaiba (Demon Slayer)</p>
+<p>4. Bard Loen the People’s Knight</p>
+<p>5. MY S-RANK PARTY FIRED ME FOR BEING A CURSIFICER ~ I CAN ONLY MAKE “CURSED ITEMS”, BUT THEY’RE ARTIFACT CLASS!</p>
+<p>&nbsp;</p>
+<p>…And more. But I really want you to look at that list. Especially 5. I knew what I was getting into. Here are my notes.</p>
+<p>They are all. Trash. Stories. Except for Bard Loen. And I know Kimetsu no Yaiba is popular and the art is amazing. The story’s bad.</p>
+<p>I complain about bad stories. I refused to play the new Star Wars: Fallen Order game. I complain about movies. I complain about games. I know I’m picky, but I don’t think I’m wrong when I say Kimetsu no Yaiba is generic shounen stuff. The characters struggle, and it has depth…for the first few chapters. But then they pull a new secret move out of their butts or ‘try harder’ and win. It has one great defeat in it, pyrrhic victories, but ultimately it’s a younger story. If it’s your first time, it’s probably a good story but to me it wasn’t great. Still amazing art, but it reminds me of Bleach. I hated Bleach and of Naruto and One Piece, Bleach was the worst of the golden three stories of the era.</p>
+<p>Tensei shitara Slime Datta Ken—I Reincarnated as a Slime—is bad, but it’s still better than most isekais. The bar is currently under the ground, so that’s not much, but I actually liked reading it because it’s one of the more ‘classic’ isekais. If Sword Art Online was one of the examples of the first wave, along with perhaps…Overlord being wave 1 or wave 2, then ‘Slime manga’ is probably wave three.</p>
+<p>The Wandering Inn, for reference, I might place as a wave 2 web serial story. I define ‘waves’ as the first stories to come out in a genre or sphere, so Worm by Wildbow is a wave 1, classic web serial that launched the genre.</p>
+<p>That earns you some points for being first, but the slime manga is still an example of everything isekais are bad about. Overpowered protagonists, bad events being resolved easily, attractive protagonistss with convenient abilties, harems..</p>
+<p>But it’s not as bad as the other isekais which take all these attributes and run with them. The slime manga treats its protagonist like the manager of a Japanese company…and it works a bit. It’s still a bad story, but I feel the need to explain the fact that I see the effort in construction even if I disagree with the premise and see the lazy shortcuts at times and feel less engaged than I could be. Because otherwise, how would I be able to tell you what trash looks like?</p>
+<p>‘MY S-RANK PARTY FIRED ME FOR BEING A CURSIFICER’…is better than Level 999 Villager. I actually read all of the chapters available to me, about 20. Level 999 Villager I dropped like a bag of crelers once I got past the intro and saw what it was made of. And even then—it can get worse.</p>
+<p>If there is a bottom, these are still one or two ranks below the absolute level of trash isekais can get to. I am not kidding, and if you have picked up the dime-a-dozen stories infesting manga right now, you can find even worse. I won’t rant about isekais and all the pitfalls of the genre—or the cultural differences that sometimes appear—just know that reading these two stories was like eating fast food.</p>
+<p>Regardless of whether I enjoyed a bit of it, I don’t feel good afterwards. Or I feel neutral at best, not satisfied. So, after all these stories, I re-read Bard Loen, a manga a reader of TWI recommended to me.</p>
+<p>And it felt good. It felt satisfying. Bard Loen has a lot of traits of manga—it’s not an isekai, but it has a powerful protagonist. It’s not the most dramatic of stories. It’s ‘slice-of-life OP Protagonist good things will happen’—and that’s a genre in manga. But this one feels good to read because the story is there. It’s not perfect, but it feels…satisyfing.</p>
+<p>I complain about bad games constantly. Even my family asks me if I enjoy things and the answer is yes. I should mention that more. Bramble, Cassette Beasts, Roguetech, System Shock remastered, are all games I played recently that I liked. If I had the courage to actually play Amnesia: The Bunker, I think it’d also&nbsp; meet that list.</p>
+<p>Bad stories annoy me more than most people, I suspect, so I can’t turn off my brain and enjoy the gameplay or visuals if the story is so bad it distracts me. But in the same way, I dislike bad manga. I like Bard Loen. I’m catching up on Marblegate, a web comic and going to re-read The Property of Hate. These are good stories, and if I hate other stories, especially a lot of AAA-games or productions, it’s because I think they can do better, especially given their budgets. They’re ‘safe’, and it may sell but I don’t respect it.</p>
+<p>Anyways, I’ll try watching something too, but I like reading more, and I can read a manga series in a day whereas movies and TV shows take more of my time. This has been my indulgence of writing my thoughts out. See you next chapter.</p>
+<p>&nbsp;</p>
+<p>—pirateaba</p>
+<p>&nbsp;</p>
+<p><strong>Silvenia by Maxswell, commisioned by Linu!</strong></p>
+<p><strong>Site:</strong> <a href="https://max-art.carrd.co/">https://max-art.carrd.co/</a></p>
+<p><a href="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Silvenia-by-Maxswell-commissioned-by-Linu.jpg?ssl=1"><img fetchpriority="high" decoding="async" data-attachment-id="15463" data-permalink="https://wanderinginn.com/2023/06/27/9-49/silvenia-by-maxswell-commissioned-by-linu/" data-orig-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Silvenia-by-Maxswell-commissioned-by-Linu.jpg?fit=3000%2C4271&amp;ssl=1" data-orig-size="3000,4271" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;1&quot;}" data-image-title="Silvenia by Maxswell, commissioned by Linu!" data-image-description="" data-image-caption="" data-medium-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Silvenia-by-Maxswell-commissioned-by-Linu.jpg?fit=211%2C300&amp;ssl=1" data-large-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Silvenia-by-Maxswell-commissioned-by-Linu.jpg?fit=719%2C1024&amp;ssl=1" class="alignnone size-full wp-image-15463" src="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Silvenia-by-Maxswell-commissioned-by-Linu.jpg?resize=3000%2C4271&amp;ssl=1" alt="" width="3000" height="4271" srcset="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Silvenia-by-Maxswell-commissioned-by-Linu.jpg?w=3000&amp;ssl=1 3000w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Silvenia-by-Maxswell-commissioned-by-Linu.jpg?resize=211%2C300&amp;ssl=1 211w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Silvenia-by-Maxswell-commissioned-by-Linu.jpg?resize=719%2C1024&amp;ssl=1 719w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Silvenia-by-Maxswell-commissioned-by-Linu.jpg?resize=768%2C1093&amp;ssl=1 768w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Silvenia-by-Maxswell-commissioned-by-Linu.jpg?resize=1079%2C1536&amp;ssl=1 1079w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Silvenia-by-Maxswell-commissioned-by-Linu.jpg?resize=1439%2C2048&amp;ssl=1 1439w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Silvenia-by-Maxswell-commissioned-by-Linu.jpg?w=2000&amp;ssl=1 2000w" sizes="(max-width: 1000px) 100vw, 1000px" data-recalc-dims="1"></a></p>
+<p>&nbsp;</p>
+<p><strong>Hundredfriends Courier by Miguel!</strong></p>
+<div class="message-2CShn3 cozyMessage-1DWF9U groupStart-3Mlgv1 wrapper-30-Nkg cozy-VmLDNB zalgo-26OfGz" tabindex="-1" role="article" data-list-item-id="chat-messages___chat-messages-706763723301322763-746949025873526904" aria-setsize="-1" aria-roledescription="Message" aria-labelledby="message-username-746949025873526904 uid_1 message-content-746949025873526904 uid_2 message-timestamp-746949025873526904" aria-describedby="uid_3 message-reactions-746949025873526904">
+<div class="contents-2MsGLg">
+<div id="message-content-746949025873526904" class="markup-eYLPri messageContent-2t3eCI"><strong>Ko-Fi:</strong> <a class="anchor-1X4H4q anchorUnderlineOnHover-wiZFZ_" tabindex="0" title="https://ko-fi.com/cmarguel" role="button" href="https://ko-fi.com/cmarguel" target="_blank" rel="noreferrer noopener">https://ko-fi.com/cmarguel</a></div>
+<div class="markup-eYLPri messageContent-2t3eCI"><strong>Twitter:</strong> <a class="anchor-1X4H4q anchorUnderlineOnHover-wiZFZ_" tabindex="0" title="https://twitter.com/cmarguel" role="button" href="https://twitter.com/cmarguel" target="_blank" rel="noreferrer noopener">https://twitter.com/cmarguel</a></div>
+</div>
+<div id="message-accessories-746949025873526904" class="container-2sjPya"></div>
+</div>
+<p><a href="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Hundredfriend-Courier-by-Miguel.png?ssl=1"><img decoding="async" data-attachment-id="15462" data-permalink="https://wanderinginn.com/2023/06/27/9-49/hundredfriend-courier-by-miguel/" data-orig-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Hundredfriend-Courier-by-Miguel.png?fit=1500%2C1062&amp;ssl=1" data-orig-size="1500,1062" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="Hundredfriend Courier by Miguel" data-image-description="" data-image-caption="" data-medium-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Hundredfriend-Courier-by-Miguel.png?fit=300%2C212&amp;ssl=1" data-large-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Hundredfriend-Courier-by-Miguel.png?fit=1024%2C725&amp;ssl=1" class="alignnone size-full wp-image-15462" src="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Hundredfriend-Courier-by-Miguel.png?resize=1500%2C1062&amp;ssl=1" alt="" width="1500" height="1062" srcset="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Hundredfriend-Courier-by-Miguel.png?w=1500&amp;ssl=1 1500w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Hundredfriend-Courier-by-Miguel.png?resize=300%2C212&amp;ssl=1 300w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Hundredfriend-Courier-by-Miguel.png?resize=1024%2C725&amp;ssl=1 1024w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Hundredfriend-Courier-by-Miguel.png?resize=768%2C544&amp;ssl=1 768w" sizes="(max-width: 1000px) 100vw, 1000px" data-recalc-dims="1"></a></p>
+<p>&nbsp;</p>
+<p><strong>No Gods, No Masters (a redone version) by u/Joxonart, commisioned by dado!</strong></p>
+<p><a href="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/No-Gods-No-Masters-New-by-uJoxonart-commisioned-by-dado.jpg?ssl=1"><img decoding="async" data-attachment-id="15461" data-permalink="https://wanderinginn.com/2023/06/27/9-49/no-gods-no-masters-new-by-ujoxonart-commisioned-by-dado/" data-orig-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/No-Gods-No-Masters-New-by-uJoxonart-commisioned-by-dado.jpg?fit=1868%2C1754&amp;ssl=1" data-orig-size="1868,1754" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;1&quot;}" data-image-title="[No Gods, No Masters] (New) by uJoxonart, commisioned by dado" data-image-description="" data-image-caption="" data-medium-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/No-Gods-No-Masters-New-by-uJoxonart-commisioned-by-dado.jpg?fit=300%2C282&amp;ssl=1" data-large-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/No-Gods-No-Masters-New-by-uJoxonart-commisioned-by-dado.jpg?fit=1024%2C962&amp;ssl=1" class="alignnone size-full wp-image-15461" src="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/No-Gods-No-Masters-New-by-uJoxonart-commisioned-by-dado.jpg?resize=1868%2C1754&amp;ssl=1" alt="" width="1868" height="1754" srcset="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/No-Gods-No-Masters-New-by-uJoxonart-commisioned-by-dado.jpg?w=1868&amp;ssl=1 1868w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/No-Gods-No-Masters-New-by-uJoxonart-commisioned-by-dado.jpg?resize=300%2C282&amp;ssl=1 300w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/No-Gods-No-Masters-New-by-uJoxonart-commisioned-by-dado.jpg?resize=1024%2C962&amp;ssl=1 1024w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/No-Gods-No-Masters-New-by-uJoxonart-commisioned-by-dado.jpg?resize=768%2C721&amp;ssl=1 768w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/No-Gods-No-Masters-New-by-uJoxonart-commisioned-by-dado.jpg?resize=1536%2C1442&amp;ssl=1 1536w" sizes="(max-width: 1000px) 100vw, 1000px" data-recalc-dims="1"></a></p>
+<p>&nbsp;</p>
+<p><strong>Pisces by Pizzabel!</strong></p>
+<div class="tiled-gallery type-square" data-original-width="500" data-carousel-extra="{&quot;blog_id&quot;:1,&quot;permalink&quot;:&quot;https:\/\/wanderinginn.com\/2023\/06\/27\/9-49\/&quot;,&quot;likes_blog_id&quot;:233997562}" itemscope="" itemtype="http://schema.org/ImageGallery"> <div class="gallery-row" style="width: 500px; height: 250px;" data-original-width="500" data-original-height="250"> <div class="gallery-group" style="width: 250px; height: 250px;" data-original-width="250" data-original-height="250"> <div class="tiled-gallery-item " itemprop="associatedMedia" itemscope="" itemtype="http://schema.org/ImageObject"> <a href="https://wanderinginn.com/2023/06/27/9-49/pisces6-by-pizzabel/" border="0" itemprop="url"> <meta itemprop="width" content="246"> <meta itemprop="height" content="246"> <img decoding="async" class="" data-attachment-id="15455" data-orig-file="https://wanderinginn.com/wp-content/uploads/2023/06/Pisces6-by-Pizzabel.jpg" data-orig-size="1536,2048" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="Pisces6 by Pizzabel" data-image-description="" data-medium-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Pisces6-by-Pizzabel.jpg?fit=225%2C300&amp;ssl=1" data-large-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Pisces6-by-Pizzabel.jpg?fit=768%2C1024&amp;ssl=1" src="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Pisces6-by-Pizzabel.jpg?w=246&amp;h=246&amp;crop=1&amp;ssl=1" srcset="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Pisces6-by-Pizzabel.jpg?resize=150%2C150&amp;ssl=1 150w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Pisces6-by-Pizzabel.jpg?zoom=2&amp;resize=246%2C246&amp;ssl=1 492w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Pisces6-by-Pizzabel.jpg?zoom=3&amp;resize=246%2C246&amp;ssl=1 738w" width="246" height="246" loading="lazy" data-original-width="246" data-original-height="246" itemprop="http://schema.org/image" title="Pisces6 by Pizzabel" alt="Pisces6 by Pizzabel" style="width: 246px; height: 246px;"> </a> </div> </div> <div class="gallery-group" style="width: 250px; height: 250px;" data-original-width="250" data-original-height="250"> <div class="tiled-gallery-item " itemprop="associatedMedia" itemscope="" itemtype="http://schema.org/ImageObject"> <a href="https://wanderinginn.com/2023/06/27/9-49/pisces3-by-pizzabel/" border="0" itemprop="url"> <meta itemprop="width" content="246"> <meta itemprop="height" content="246"> <img decoding="async" class="" data-attachment-id="15456" data-orig-file="https://wanderinginn.com/wp-content/uploads/2023/06/Pisces3-by-Pizzabel.jpg" data-orig-size="1536,2048" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="Pisces3 by Pizzabel" data-image-description="" data-medium-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Pisces3-by-Pizzabel.jpg?fit=225%2C300&amp;ssl=1" data-large-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Pisces3-by-Pizzabel.jpg?fit=768%2C1024&amp;ssl=1" src="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Pisces3-by-Pizzabel.jpg?w=246&amp;h=246&amp;crop=1&amp;ssl=1" srcset="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Pisces3-by-Pizzabel.jpg?resize=150%2C150&amp;ssl=1 150w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Pisces3-by-Pizzabel.jpg?zoom=2&amp;resize=246%2C246&amp;ssl=1 492w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Pisces3-by-Pizzabel.jpg?zoom=3&amp;resize=246%2C246&amp;ssl=1 738w" width="246" height="246" loading="lazy" data-original-width="246" data-original-height="246" itemprop="http://schema.org/image" title="Pisces3 by Pizzabel" alt="Pisces3 by Pizzabel" style="width: 246px; height: 246px;"> </a> </div> </div> </div> <div class="gallery-row" style="width: 500px; height: 250px;" data-original-width="500" data-original-height="250"> <div class="gallery-group" style="width: 250px; height: 250px;" data-original-width="250" data-original-height="250"> <div class="tiled-gallery-item " itemprop="associatedMedia" itemscope="" itemtype="http://schema.org/ImageObject"> <a href="https://wanderinginn.com/2023/06/27/9-49/pisces-by-pizzabel/" border="0" itemprop="url"> <meta itemprop="width" content="246"> <meta itemprop="height" content="246"> <img decoding="async" class="" data-attachment-id="15457" data-orig-file="https://wanderinginn.com/wp-content/uploads/2023/06/Pisces-by-Pizzabel.jpg" data-orig-size="992,1277" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="Pisces by Pizzabel" data-image-description="" data-medium-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Pisces-by-Pizzabel.jpg?fit=233%2C300&amp;ssl=1" data-large-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Pisces-by-Pizzabel.jpg?fit=795%2C1024&amp;ssl=1" src="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Pisces-by-Pizzabel.jpg?w=246&amp;h=246&amp;crop=1&amp;ssl=1" srcset="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Pisces-by-Pizzabel.jpg?resize=150%2C150&amp;ssl=1 150w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Pisces-by-Pizzabel.jpg?zoom=2&amp;resize=246%2C246&amp;ssl=1 492w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Pisces-by-Pizzabel.jpg?zoom=3&amp;resize=246%2C246&amp;ssl=1 738w" width="246" height="246" loading="lazy" data-original-width="246" data-original-height="246" itemprop="http://schema.org/image" title="Pisces by Pizzabel" alt="Pisces by Pizzabel" style="width: 246px; height: 246px;"> </a> </div> </div> <div class="gallery-group" style="width: 250px; height: 250px;" data-original-width="250" data-original-height="250"> <div class="tiled-gallery-item " itemprop="associatedMedia" itemscope="" itemtype="http://schema.org/ImageObject"> <a href="https://wanderinginn.com/2023/06/27/9-49/pisces2-by-pizzabel/" border="0" itemprop="url"> <meta itemprop="width" content="246"> <meta itemprop="height" content="246"> <img decoding="async" class="" data-attachment-id="15458" data-orig-file="https://wanderinginn.com/wp-content/uploads/2023/06/Pisces2-by-Pizzabel.jpg" data-orig-size="1536,2048" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="Pisces2 by Pizzabel" data-image-description="" data-medium-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Pisces2-by-Pizzabel.jpg?fit=225%2C300&amp;ssl=1" data-large-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Pisces2-by-Pizzabel.jpg?fit=768%2C1024&amp;ssl=1" src="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Pisces2-by-Pizzabel.jpg?w=246&amp;h=246&amp;crop=1&amp;ssl=1" srcset="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Pisces2-by-Pizzabel.jpg?resize=150%2C150&amp;ssl=1 150w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Pisces2-by-Pizzabel.jpg?zoom=2&amp;resize=246%2C246&amp;ssl=1 492w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Pisces2-by-Pizzabel.jpg?zoom=3&amp;resize=246%2C246&amp;ssl=1 738w" width="246" height="246" loading="lazy" data-original-width="246" data-original-height="246" itemprop="http://schema.org/image" title="Pisces2 by Pizzabel" alt="Pisces2 by Pizzabel" style="width: 246px; height: 246px;"> </a> </div> </div> </div> <div class="gallery-row" style="width: 500px; height: 250px;" data-original-width="500" data-original-height="250"> <div class="gallery-group" style="width: 250px; height: 250px;" data-original-width="250" data-original-height="250"> <div class="tiled-gallery-item " itemprop="associatedMedia" itemscope="" itemtype="http://schema.org/ImageObject"> <a href="https://wanderinginn.com/2023/06/27/9-49/pisces4-by-pizzabel/" border="0" itemprop="url"> <meta itemprop="width" content="246"> <meta itemprop="height" content="246"> <img decoding="async" class="" data-attachment-id="15459" data-orig-file="https://wanderinginn.com/wp-content/uploads/2023/06/Pisces4-by-Pizzabel.jpg" data-orig-size="1536,2048" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="Pisces4 by Pizzabel" data-image-description="" data-medium-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Pisces4-by-Pizzabel.jpg?fit=225%2C300&amp;ssl=1" data-large-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Pisces4-by-Pizzabel.jpg?fit=768%2C1024&amp;ssl=1" src="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Pisces4-by-Pizzabel.jpg?w=246&amp;h=246&amp;crop=1&amp;ssl=1" srcset="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Pisces4-by-Pizzabel.jpg?resize=150%2C150&amp;ssl=1 150w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Pisces4-by-Pizzabel.jpg?zoom=2&amp;resize=246%2C246&amp;ssl=1 492w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Pisces4-by-Pizzabel.jpg?zoom=3&amp;resize=246%2C246&amp;ssl=1 738w" width="246" height="246" loading="lazy" data-original-width="246" data-original-height="246" itemprop="http://schema.org/image" title="Pisces4 by Pizzabel" alt="Pisces4 by Pizzabel" style="width: 246px; height: 246px;"> </a> </div> </div> <div class="gallery-group" style="width: 250px; height: 250px;" data-original-width="250" data-original-height="250"> <div class="tiled-gallery-item " itemprop="associatedMedia" itemscope="" itemtype="http://schema.org/ImageObject"> <a href="https://wanderinginn.com/2023/06/27/9-49/pisces5-by-pizzabel/" border="0" itemprop="url"> <meta itemprop="width" content="246"> <meta itemprop="height" content="246"> <img decoding="async" class="" data-attachment-id="15460" data-orig-file="https://wanderinginn.com/wp-content/uploads/2023/06/Pisces5-by-Pizzabel.jpg" data-orig-size="1536,2048" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="Pisces5 by Pizzabel" data-image-description="" data-medium-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Pisces5-by-Pizzabel.jpg?fit=225%2C300&amp;ssl=1" data-large-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Pisces5-by-Pizzabel.jpg?fit=768%2C1024&amp;ssl=1" src="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Pisces5-by-Pizzabel.jpg?w=246&amp;h=246&amp;crop=1&amp;ssl=1" srcset="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Pisces5-by-Pizzabel.jpg?resize=150%2C150&amp;ssl=1 150w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Pisces5-by-Pizzabel.jpg?zoom=2&amp;resize=246%2C246&amp;ssl=1 492w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/06/Pisces5-by-Pizzabel.jpg?zoom=3&amp;resize=246%2C246&amp;ssl=1 738w" width="246" height="246" loading="lazy" data-original-width="246" data-original-height="246" itemprop="http://schema.org/image" title="Pisces5 by Pizzabel" alt="Pisces5 by Pizzabel" style="width: 246px; height: 246px;"> </a> </div> </div> </div> </div>
+<p>&nbsp;</p>
+<hr>
+<p><a href="https://wanderinginn.com/2023/06/16/9-48-btiprljmwvrv/">Previous Chapter</a> <a href="https://wanderinginn.com/2023/07/01/9-50/"><span style="float: right;">Next Chapter</span></a></p>
+      </div>
+
+      <hr>
+          <span class="nav-previous">
+        <a href="https://wanderinginn.com/2023/06/16/9-48-btiprljmwvrv/" rel="prev"><span class="meta-nav">←</span> Previous Chapter</a>    </span>
+    <span class="nav-next" style="float: right" ;="">
+        <a href="https://wanderinginn.com/2023/07/01/9-50/" rel="next">Next Chapter <span class="meta-nav">→</span></a>    </span>
+    

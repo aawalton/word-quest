@@ -1,0 +1,257 @@
+
+
+          <span class="nav-previous">
+        <a href="https://wanderinginn.com/2023/09/17/9-59-o/" rel="prev"><span class="meta-nav">←</span> Previous Chapter</a>    </span>
+    <span class="nav-next" style="float: right" ;="">
+        <a href="https://wanderinginn.com/2023/10/15/9-60/" rel="next">Next Chapter <span class="meta-nav">→</span></a>    </span>
+      <!-- <hr/> -->
+      <header class="entry-header">
+        <h1 class="entry-title">Interlude – The Library</h1>
+                <button class="show-settings-btn" onclick="document.querySelector('#reader-settings-wrapper').classList.toggle('is-hidden')">
+          <img class="show-settings-btn-img" src="https://wanderinginn.com/wp-content/themes/solstice/assets/images/ui/reader-settings-button.webp">
+        </button>
+      </header>
+
+      
+<!-- Reader Settings -->
+<div id="reader-settings-wrapper" class="is-hidden">
+    <div id="reader-settings">
+        <header id="reader-settings-header">
+            <h2>Reader Settings</h2>
+            <button onclick="closeModal()">
+                <svg width="100%" height="100%" viewBox="0 0 33 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M16.5 30.75C24.0939 30.75 30.25 24.5939 30.25 17C30.25 9.40608 24.0939 3.25 16.5 3.25C8.90608 3.25 2.75 9.40608 2.75 17C2.75 24.5939 8.90608 30.75 16.5 30.75Z" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M20.625 12.875L12.375 21.125" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M12.375 12.875L20.625 21.125" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+            </button>
+        </header>
+
+        <fieldset id="fieldset-font">
+            <legend>Font</legend>
+
+            <div>
+                <label for="font-size-select">Size</label>
+                <select id="font-size-select" class="reader-settings-select" data-setting="reader-font-size" onchange="updateSetting(this.getAttribute('data-setting'), this.value);">
+                    <option value="10pt" class="reader-settings-option">10</option>
+                    <option value="11pt" class="reader-settings-option">11</option>
+                    <option value="12pt" class="reader-settings-option" selected="">12</option>
+                    <option value="13pt" class="reader-settings-option">13</option>
+                    <option value="14pt" class="reader-settings-option">14</option>
+                    <option value="16pt" class="reader-settings-option">16</option>
+                    <option value="18pt" class="reader-settings-option">18</option>
+                    <option value="20pt" class="reader-settings-option">20</option>
+                    <option value="22pt" class="reader-settings-option">22</option>
+                    <option value="24pt" class="reader-settings-option">24</option>
+                    <option value="26pt" class="reader-settings-option">26</option>
+                    <option value="28pt" class="reader-settings-option">28</option>
+                    <option value="30pt" class="reader-settings-option">30</option>
+                    <option value="36pt" class="reader-settings-option">36</option>
+                    <option value="42pt" class="reader-settings-option">42</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="font-family-select">Family</label>
+                <select id="font-family-select" class="reader-settings-select" data-setting="reader-font-family" onchange="updateSetting(this.getAttribute('data-setting'), this.value);">
+                    <optgroup label="Sans Serif">
+                        <option class="reader-settings-option" value="OpenSans, sans-serif" selected="">Open Sans</option>
+                        <option class="reader-settings-option" value="Arial, Helvetica, sans-serif">Arial</option>
+                        <option class="reader-settings-option" value="Roboto, sans-serif">Roboto</option>
+                    </optgroup>
+                    <optgroup label="Serif">
+                        <option class="reader-settings-option" value="Playfair, serif">Playfair</option>
+                        <option class="reader-settings-option" value="EBGaramond, serif">Garamond</option>
+                        <option class="reader-settings-option" value="'Times New Roman', Times, serif">Times New Roman</option>
+                    </optgroup>
+                    <optgroup label="Other">
+                        <option class="reader-settings-option" value="OpenDyslexic">OpenDyslexic</option>
+                        <option class="reader-settings-option" value="HennyPenny">Henny Penny</option>
+                    </optgroup>
+                </select>
+            </div>
+            <div>
+                <label for="font-weight-select">Thickness</label>
+                <select id="font-weight-select" class="reader-settings-select" data-setting="reader-font-weight" onchange="updateSetting(this.getAttribute('data-setting'), this.value);">
+                    <option class="reader-settings-option" value="300" selected="">Thin</option>
+                    <option class="reader-settings-option" value="400">Regular</option>
+                    <option class="reader-settings-option" value="500">Thick</option>
+                </select>
+            </div>
+        </fieldset>
+
+        <fieldset id="fieldset-spacing">
+            <legend>Spacing</legend>
+            <div>
+                <label for="margins-select">Page Width</label>
+                <select id="margins-select" class="reader-settings-select" data-setting="reader-article-width" onchange="updateSetting(this.getAttribute('data-setting'), this.value);">
+                    <option value="320px" class="reader-settings-option">Extra Narrow</option>
+                    <option value="500px" class="reader-settings-option">Narrow</option>
+                    <option value="680px" class="reader-settings-option" selected="">Medium</option>
+                    <option value="1000px" class="reader-settings-option">Wide</option>
+                    <option value="1200px" class="reader-settings-option">Extra Wide</option>
+                    <option value="100%" class="reader-settings-option">Max</option>
+                </select>
+            </div>
+            <div>
+                <label for="line-spacing-select">Line</label>
+                <select id="line-spacing-select" class="reader-settings-select" data-setting="reader-line-height" onchange="updateSetting(this.getAttribute('data-setting'), this.value);">
+                    <option class="reader-settings-option" value="1.2">Small</option>
+                    <option class="reader-settings-option" value="1.625" selected="">Medium</option>
+                    <option class="reader-settings-option" value="2.2">Large</option>
+                    <option class="reader-settings-option" value="3.5">Extra Large</option>
+                </select>
+            </div>
+            <div>
+                <label for="paragraph-spacing-select">Paragraph</label>
+                <select id="paragraph-spacing-select" class="reader-settings-select" data-setting="reader-paragraph-spacing" onchange="updateSetting(this.getAttribute('data-setting'), this.value);">
+                    <option class="reader-settings-option" value="0.5em">Small</option>
+                    <option class="reader-settings-option" value="1.625em" selected="">Medium</option>
+                    <option class="reader-settings-option" value="2.75em">Large</option>
+                    <option class="reader-settings-option" value="4.25em">Extra Large</option>
+                </select>
+            </div>
+        </fieldset>
+        <div class="ml-5 mb-4">
+            <label for="theme-select">Theme</label>
+            <select id="theme-select" class="reader-settings-select" data-setting="reader-theme" onchange="updateSetting(this.getAttribute('data-setting'), this.value);">
+                <option class="reader-settings-option" value="reader-theme-grey" selected="">Dark Grey</option>
+                <option class="reader-settings-option" value="reader-theme-blue">Dark Blue</option>
+                <option class="reader-settings-option" value="reader-theme-black">Black</option>
+                <option class="reader-settings-option" value="reader-theme-white">White</option>
+                <option class="reader-settings-option" value="reader-theme-sepia">Sepia</option>
+            </select>
+        </div>
+        <button id="reset-settings-btn" onclick="resetSettings()">Reset To Default</button>
+        <!-- <div> -->
+        <!-- </div> -->
+
+
+    </div>
+</div>
+      <div class="entry-content">
+        <p>It might not look like much, a two-story mansion in Liscor. But that was because space was at a premium in a city like Liscor.</p>
+<p>Even with the new district, richness wasn’t just in having crystal-glass windows shining with magic like the Mage’s Guild. Richness was, as any city goer could tell you—space.</p>
+<p>The Watch House was actually one of the richest buildings in the city by some metrics, having been the former army’s headquarters that the Watch had taken over. And while they had access to Invrisil, Selys’ mansion had always felt <em>rich</em> to Mrsha for reasons she couldn’t explain until Ryoka and Kevin, both city-enjoyers, explained it.</p>
+<p>It had surprised Erin too, though she had understood the concept; she came from a place with space to grow. Space had, therefore, a variable value that increased the less you had.</p>
+<p>Such concepts made Mrsha’s head hurt, which was probably why she was rioting in Selys’ huge waiting room with the beaver security dam in the center of the lovely water feature that led onto wood flooring.</p>
+<p>Well, it used to be elegant, rich, paneled wood carefully varnished to show off the expense; wood was another sign of wealth in Liscor, which had to import it.</p>
+<p>These days, the wood had been scratched by beaver paws, and they’d ripped off floorboards. Selys had replaced them with cheaper materials and given the Fortress Beavers all the lumber they wanted to build a dam. Even the Fortress Beavers had changed; they weren’t the ragtag survivors of the Defenders of the Cave.</p>
+<p><span class="mrsha-write">You’ve changed, sirs and madams.</span></p>
+<p>Mrsha held up a disapproving notecard in front of the beavers. These bourgeois beavers had a two-story <em>dam,</em> and some of the growing kits were sliding down into the water from a ramp. The beavers, of course, pretended that they hadn’t changed.</p>
+<p>But everyone knew the truth.</p>
+<p>Selys had changed, but at least she sometimes put her money to good use. Right now, she was fretting over the Heartflame Breastplate, but she’d set aside time for the <em>super important project.</em></p>
+<p>“It’s totally fine. Grandma uses my guest room or has her friends stay here. I hate it. This is perfect; it gives me an out, and it’s great. I’ll get you all magic keys, okay? The beavers are perfect security.”</p>
+<p>She was watching a crew of Antinium—the go-to labor force if you could stand to work with them—remodel her room. Into what? Well, Selys’ mansion might still not be massive, but one big room would do for the library.</p>
+<p><em>Library.</em> Oh yes. Mrsha raced over as Nanette, bouncing up and down, kept beaming. It was her idea. Well, Selys had suggested using her mansion. Firstly, because she had space. Secondly, because books were expensive, and a library in the inn might have people walking off with books. Thirdly, because Erin had suggested her inn had a non-negligible chance of being destroyed soon.</p>
+<p>They only had sixty books so far. On the other hand…that was a <em>lot</em> of books. A city might have one library, and it wasn’t always public. Everyone had donated a few on the understanding it’d be open for all.</p>
+<p><span class="mrsha-write">Pshaw! Who needs reading?</span></p>
+<p>Mrsha was scoffing as she watched the Antinium installing some beautiful library shelving. Her comment earned her an instant headlock from Nanette.</p>
+<p>“What was that, Mrsha?”</p>
+<p><span class="mrsha-write">No, wait, don’t bully me! I was just making fun of books to sound cool!</span></p>
+<p>Mrsha wrote-wailed to her audience. Krshia, Bezale, Montressa, Palt, Lyonette, Numbtongue—book lovers all were here and gave Mrsha dark looks.</p>
+<p>Even Archmage Valeterisa had come to oversee the library; she had given the Antinium detailed notes on the optimum shelving that Fissival used and had <em>opinions</em> on how books should be organized.</p>
+<p>There were more book lovers coming in with a book and request for a key, and Selys realized she might have taken on too much responsibility.</p>
+<p>“Why <em>did</em> you want to start a library, Selys? Because I asked?”</p>
+<p>Erin turned to her friend, and Selys scratched her neck-spines idly.</p>
+<p>“I don’t know. Well, I do love a good story, and it’d be nice to have a library. But it came to me in a dream. It was…really important for some reason.”</p>
+<p>She shrugged, and a pair of rats, one white, one grey, scampered excitedly across the ratways Selys had had built for them. Haldagaz, who also enjoyed books, was staring at the bounty.</p>
+<p>Not just a bounty from this world. One of the first books to be placed in the shelves made Kevin sigh and instantly pick it up.</p>
+<p>“Dead gods. How is this possible? Did Inkar…Rose…?”</p>
+<p>He looked around, and Seve-Alrelious waved an embarrassed hand as Erek produced some reading spectacles and opened one of the Lightning Thief books. There was fantasy, the Book of Levels, real adventuring stories, eight different issues of <em>Tales of Adventure and Woe</em>—Selys thought she needed a thousand books. To start with.</p>
+<p>“That was me. I went down to the Great Plains. It took me a while; I’m slower than a regular Courier.”</p>
+<p>He pulled a face as if ‘nipping down to the Great Plains’ and back was embarrassing if it took you longer than three days. Kevin stared at him, then it clicked.</p>
+<p>“<em>Satar.</em>”</p>
+<p>Satar Silverfang had sent Seve back with a great gift. It was something Gnolls were learning: to copy things from another world. In her case, she had copied something only someone like Satar would think to steal. Not schematics. Not blueprints.</p>
+<p><em>The Hobbit, by J.R.R Tolkien. </em>Kevin felt like a kid again when he held it. Erin stood on her tiptoes to read over Kevin’s shoulder, and her eyes lit up.</p>
+<p>“Oh…this changes so much. You understand that, don’t you?”</p>
+<p>Lyonette sighed to Grimalkin, and he facepalmed.</p>
+<p>“This entire time and I didn’t even—I’m an idiot.”</p>
+<p>“We should read a few books together. Are there more, Courier Seve?”</p>
+<p>The brown-skinned Courier winked and slyly handed Satar’s [Message] details and an odd catalog.</p>
+<p>“There are, to friends of Gnolls only. It takes Satar a long time; she has to hand-copy them. She has help, but here’s a list of <em>special</em> titles that—”</p>
+<p>Lady Pryde was envisioning reading with a certain Drake, and she calmly took the catalogue, glanced at the prices, and wrote ‘6’ in every box before handing it back. Erin sighed.</p>
+<p>“I need a copy of that too, Seve!”</p>
+<p>Now <em>this</em> was how Couriers got contracts. Seve saw Erek give him a wink. He privately wondered if he and Hawk the Hare were going to have to fight to the death. Ryoka was, thankfully, too engrossed in memory and delight to be ready to fight. Rookie.</p>
+<p>In fact, Ryoka had to say something.</p>
+<p>“You know, Lord of the Rings is so much better than this. He wrote this for kids. We should get—<em>ow!</em>”</p>
+<p>Kevin stepped on her foot to shut her up. And Nanette, looking around the room and seeing more people crowding into the library, thought she would be back here again and again.</p>
+<p>It was a small thing—no. It was no small thing if it mattered. A half-Giant stooped to step into the library as he smiled and saw Nanette pointing out books she knew to Mrsha and the gaggle of kids.</p>
+<p>“I don’t like reading.”</p>
+<p>Ekirra whined as he, Visma, Kenva, and even Sammial and Hethon tumbled into the library. Nanette raised the fist of witchcraft, and Erin sighed.</p>
+<p>“We really should get everyone reading more. I should read more. Look at all these great b—<em>wait, is that the smut the Antinium wrote?</em>”</p>
+<p>She pointed in horror, and one of the Antinium guiltily hid the treasure behind his back as he tried to insert it into the room of knowledge. Erin threw up her hands.</p>
+<p>“Give that to Laken instead! He’s copying us. Again. That’s like his thing.”</p>
+<p>“Oh, yes. Copying making a library. Such an original idea, Erin.”</p>
+<p>“Shush, Lyonette. You know what I mean! Back me up more!”</p>
+<p>They were laughing, and the children ignored the silly adults. Nanette was opening a book, and Ekirra was whining.</p>
+<p>“I don’t wanna read. Who wants to play baseball?”</p>
+<p>“Me!”</p>
+<p>Sammial and Kenva volunteered, but the kids were split. Nanette was trying to show them the joys of the texts.</p>
+<p>“This is a great book, you two. It’s about one of the last Giants! It’s—come on, sit. Sit.”</p>
+<p>“Read for me, Nanette.”</p>
+<p>Ekirra begged, and Nanette hesitated. She grew shy, unexpectedly, and wondered if she could even read out loud without stumbling or pausing. But then a huge hand reached out, and she glanced up, then smiled.</p>
+<p>There sat Moore, a huge cloak around his shoulders frosted with snow. Faeries paused in flying about the windows, grumbling about iron nails, and some of the adults looked up as Moore sat on a huge carpet. The kids sat down, and Selys blinked.</p>
+<p>“I need a reading nook. Lots of them.”</p>
+<p>Kevin nodded.</p>
+<p>“Bean bag chairs.”</p>
+<p>Imani snapped her fingers.</p>
+<p>“Snacks!”</p>
+<p>Palt nodded.</p>
+<p>“And a nice cigar to smoke while—”</p>
+<p>Three feet kicked him. But a pair of rats rode some beavers who sat down, and they saw Moore gently tracing a finger down the text. The cover was of a giant reaching for the sky, holding a tiny figure with a glowing object aloft.</p>
+<p><em>The Last Giant of Terandria. </em>Moore knew this story, and his eyes were sad. But the [Green Mage] carefully read ahead for a second as Ekirra began to fidget.</p>
+<p>But the first word filled the room. A baritone rumble that seemed to pop into Mrsha’s head, as if she could see the word, and it drew her attention to him.</p>
+<p>&nbsp;</p>
+<p>“‘<em>Fie’, said the Giant as he descended. ‘Fie, mortals. For I have come to protect the unworthy and judge those who can bear the weight of it.’&nbsp;</em></p>
+<p><em>He carried no wrath in his eyes, even though they trailed vapor, as he was made of the very clouds. His skin was rugged stone itself, and when he walked, the mountains shook and thousands of birds fled the forest. To the astonished folk of Kaaz, it seemed as if one of their mountains had begun to move. Yet the last Giant of Terandria had come in their hour of need, and he carried a mace made from the bones of his foes.</em></p>
+<p><em>Three Treants were tearing the city of Alazmet down. The fires and harvesting of wood had enraged the forest. Ah, but this is when the last Mountain Giant awoke. Let me first tell you of the last great forest. For this is a tale of last things.&nbsp;</em></p>
+<p><em>The last Giant of Terandria. The end of Treants. Sorrowful days—and the bravery of the Named Adventurer, Dominel, who was at this time a Bronze-rank novice…</em>”</p>
+<p>&nbsp;</p>
+<p>Moore’s voice transported his listeners far away. He had the tone for it, that grandiosity, but also, surprisingly, he could do other voices very well. He sat as Mrsha leaned on one leg and Nanette read along, too excited to just listen.</p>
+<p>Small things. Large things. A gentle voice whispered a new class once more. Always something new and exciting.</p>
+<p>&nbsp;</p>
+<p>[Reader Level 1!]</p>
+<p>[Skill – Magical Bookmark obtained!]</p>
+<p>[Skill – Reader’s Temporary Copy (Mundane) obtained!]</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><strong>(These are only a few of the amazing Inktober art pieces coming out of the Discord! I’ll be featuring more when the regular chapters resume.)</strong></p>
+<p>&nbsp;</p>
+<p><strong>Animated Mrsha Magic by Pontastic!</strong></p>
+<p><a href="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/10/MrshaAnimation-by-Pontastic.gif?ssl=1"><img fetchpriority="high" decoding="async" data-attachment-id="16028" data-permalink="https://wanderinginn.com/2023/10/03/interlude-the-library/mrshaanimation-by-pontastic/" data-orig-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/10/MrshaAnimation-by-Pontastic.gif?fit=560%2C315&amp;ssl=1" data-orig-size="560,315" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="MrshaAnimation by Pontastic" data-image-description="" data-image-caption="" data-medium-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/10/MrshaAnimation-by-Pontastic.gif?fit=300%2C169&amp;ssl=1" data-large-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/10/MrshaAnimation-by-Pontastic.gif?fit=560%2C315&amp;ssl=1" class="alignnone size-full wp-image-16028" src="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/10/MrshaAnimation-by-Pontastic.gif?resize=560%2C315&amp;ssl=1" alt="" width="560" height="315" data-recalc-dims="1"></a></p>
+<p>&nbsp;</p>
+<p><strong>Purple Mrsha by Brack</strong><strong>!</strong></p>
+<p><strong>DeviantArt: </strong><a class="anchor-1X4H4q anchorUnderlineOnHover-wiZFZ_" tabindex="0" title="https://www.deviantart.com/shurkin/gallery/" role="button" href="https://www.deviantart.com/shurkin/gallery/" target="_blank" rel="noreferrer noopener">https://www.deviantart.com/shurkin/gallery/</a></p>
+<p><strong>Ko-Fi:</strong> <a class="anchor-1X4H4q anchorUnderlineOnHover-wiZFZ_" tabindex="0" title="https://ko-fi.com/brack" role="button" href="https://ko-fi.com/brack" target="_blank" rel="noreferrer noopener">https://ko-fi.com/brack</a></p>
+<p><strong>Twitter:</strong> <a class="anchor-1X4H4q anchorUnderlineOnHover-wiZFZ_" tabindex="0" title="https://twitter.com/Brack_Giraffe" role="button" href="https://twitter.com/Brack_Giraffe" target="_blank" rel="noreferrer noopener">https://twitter.com/Brack_Giraffe</a></p>
+<p><a href="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/10/PurpleMrsha-by-Brack.jpg?ssl=1"><img decoding="async" data-attachment-id="16027" data-permalink="https://wanderinginn.com/2023/10/03/interlude-the-library/purplemrsha-by-brack/" data-orig-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/10/PurpleMrsha-by-Brack.jpg?fit=1352%2C932&amp;ssl=1" data-orig-size="1352,932" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="PurpleMrsha by Brack" data-image-description="" data-image-caption="" data-medium-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/10/PurpleMrsha-by-Brack.jpg?fit=300%2C207&amp;ssl=1" data-large-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/10/PurpleMrsha-by-Brack.jpg?fit=1024%2C706&amp;ssl=1" class="alignnone size-full wp-image-16027" src="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/10/PurpleMrsha-by-Brack.jpg?resize=1352%2C932&amp;ssl=1" alt="" width="1352" height="932" srcset="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/10/PurpleMrsha-by-Brack.jpg?w=1352&amp;ssl=1 1352w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/10/PurpleMrsha-by-Brack.jpg?resize=300%2C207&amp;ssl=1 300w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/10/PurpleMrsha-by-Brack.jpg?resize=1024%2C706&amp;ssl=1 1024w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/10/PurpleMrsha-by-Brack.jpg?resize=768%2C529&amp;ssl=1 768w" sizes="(max-width: 1000px) 100vw, 1000px" data-recalc-dims="1"></a></p>
+<p>&nbsp;</p>
+<p><strong>Adventurer Kids by LeChatDemon!</strong></p>
+<p><strong>DeviantArt:</strong> <a class="anchor-1X4H4q anchorUnderlineOnHover-wiZFZ_" tabindex="0" title="https://www.deviantart.com/demoniccriminal" role="button" href="https://www.deviantart.com/demoniccriminal" target="_blank" rel="noreferrer noopener">https://www.deviantart.com/demoniccriminal</a></p>
+<p><strong>Ko-Fi: </strong><a class="anchor-1X4H4q anchorUnderlineOnHover-wiZFZ_" tabindex="0" title="https://ko-fi.com/lechatdemon" role="button" href="https://ko-fi.com/lechatdemon" target="_blank" rel="noreferrer noopener">https://ko-fi.com/lechatdemon</a></p>
+<p><strong>Stash with all the TWI related art:</strong> <a class="anchor-1X4H4q anchorUnderlineOnHover-wiZFZ_" tabindex="0" title="https://sta.sh/222s6jxhlt0" role="button" href="https://sta.sh/222s6jxhlt0" target="_blank" rel="noreferrer noopener">https://sta.sh/222s6jxhlt</a></p>
+<p><a href="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/10/adventurers_2-by-LeChat.jpg?ssl=1"><img decoding="async" data-attachment-id="16029" data-permalink="https://wanderinginn.com/2023/10/03/interlude-the-library/adventurers_2-by-lechat/" data-orig-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/10/adventurers_2-by-LeChat.jpg?fit=4765%2C3570&amp;ssl=1" data-orig-size="4765,3570" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;1&quot;}" data-image-title="adventurers_2 by LeChat" data-image-description="" data-image-caption="" data-medium-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/10/adventurers_2-by-LeChat.jpg?fit=300%2C225&amp;ssl=1" data-large-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/10/adventurers_2-by-LeChat.jpg?fit=1024%2C767&amp;ssl=1" class="alignnone size-full wp-image-16029" src="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/10/adventurers_2-by-LeChat.jpg?resize=4765%2C3570&amp;ssl=1" alt="" width="680" height="509" srcset="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/10/adventurers_2-by-LeChat.jpg?w=4765&amp;ssl=1 4765w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/10/adventurers_2-by-LeChat.jpg?resize=300%2C225&amp;ssl=1 300w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/10/adventurers_2-by-LeChat.jpg?resize=1024%2C767&amp;ssl=1 1024w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/10/adventurers_2-by-LeChat.jpg?resize=768%2C575&amp;ssl=1 768w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/10/adventurers_2-by-LeChat.jpg?resize=1536%2C1151&amp;ssl=1 1536w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/10/adventurers_2-by-LeChat.jpg?resize=2048%2C1534&amp;ssl=1 2048w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/10/adventurers_2-by-LeChat.jpg?w=3000&amp;ssl=1 3000w" sizes="(max-width: 1000px) 100vw, 1000px"></a></p>
+<p>&nbsp;</p>
+<p><strong>Larracel Mugshot by Amiel!</strong></p>
+<p><a href="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/10/LarracelMugshot-by-Amiel.png?ssl=1"><img loading="lazy" decoding="async" data-attachment-id="16030" data-permalink="https://wanderinginn.com/2023/10/03/interlude-the-library/larracelmugshot-by-amiel/" data-orig-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/10/LarracelMugshot-by-Amiel.png?fit=1376%2C2034&amp;ssl=1" data-orig-size="1376,2034" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="LarracelMugshot by Amiel" data-image-description="" data-image-caption="" data-medium-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/10/LarracelMugshot-by-Amiel.png?fit=203%2C300&amp;ssl=1" data-large-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/10/LarracelMugshot-by-Amiel.png?fit=693%2C1024&amp;ssl=1" class="alignnone size-full wp-image-16030" src="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/10/LarracelMugshot-by-Amiel.png?resize=1376%2C2034&amp;ssl=1" alt="" width="1376" height="2034" srcset="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/10/LarracelMugshot-by-Amiel.png?w=1376&amp;ssl=1 1376w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/10/LarracelMugshot-by-Amiel.png?resize=203%2C300&amp;ssl=1 203w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/10/LarracelMugshot-by-Amiel.png?resize=693%2C1024&amp;ssl=1 693w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/10/LarracelMugshot-by-Amiel.png?resize=768%2C1135&amp;ssl=1 768w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/10/LarracelMugshot-by-Amiel.png?resize=1039%2C1536&amp;ssl=1 1039w" sizes="(max-width: 1000px) 100vw, 1000px" data-recalc-dims="1"></a></p>
+<p>&nbsp;</p>
+<p><strong>Two Erins by Lei Tencie!</strong></p>
+<p><a href="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/10/Inktober-1-Innkeeper-erin-when-you-show-up-vs-erin-when-you-fuck-up-uwu-by-Lei-Tencie.png?ssl=1"><img loading="lazy" decoding="async" data-attachment-id="16031" data-permalink="https://wanderinginn.com/2023/10/03/interlude-the-library/inktober-1-innkeeper-erin-when-you-show-up-vs-erin-when-you-fuck-up-uwu-by-lei-tencie/" data-orig-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/10/Inktober-1-Innkeeper-erin-when-you-show-up-vs-erin-when-you-fuck-up-uwu-by-Lei-Tencie.png?fit=3496%2C6000&amp;ssl=1" data-orig-size="3496,6000" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="Inktober 1, Innkeeper erin when you show up vs erin when you fuck up uwu by Lei Tencie" data-image-description="" data-image-caption="" data-medium-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/10/Inktober-1-Innkeeper-erin-when-you-show-up-vs-erin-when-you-fuck-up-uwu-by-Lei-Tencie.png?fit=175%2C300&amp;ssl=1" data-large-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/10/Inktober-1-Innkeeper-erin-when-you-show-up-vs-erin-when-you-fuck-up-uwu-by-Lei-Tencie.png?fit=597%2C1024&amp;ssl=1" class="alignnone size-full wp-image-16031" src="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/10/Inktober-1-Innkeeper-erin-when-you-show-up-vs-erin-when-you-fuck-up-uwu-by-Lei-Tencie.png?resize=3496%2C6000&amp;ssl=1" alt="" width="3496" height="6000" srcset="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/10/Inktober-1-Innkeeper-erin-when-you-show-up-vs-erin-when-you-fuck-up-uwu-by-Lei-Tencie.png?w=3496&amp;ssl=1 3496w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/10/Inktober-1-Innkeeper-erin-when-you-show-up-vs-erin-when-you-fuck-up-uwu-by-Lei-Tencie.png?resize=175%2C300&amp;ssl=1 175w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/10/Inktober-1-Innkeeper-erin-when-you-show-up-vs-erin-when-you-fuck-up-uwu-by-Lei-Tencie.png?resize=597%2C1024&amp;ssl=1 597w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/10/Inktober-1-Innkeeper-erin-when-you-show-up-vs-erin-when-you-fuck-up-uwu-by-Lei-Tencie.png?resize=768%2C1318&amp;ssl=1 768w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/10/Inktober-1-Innkeeper-erin-when-you-show-up-vs-erin-when-you-fuck-up-uwu-by-Lei-Tencie.png?resize=895%2C1536&amp;ssl=1 895w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/10/Inktober-1-Innkeeper-erin-when-you-show-up-vs-erin-when-you-fuck-up-uwu-by-Lei-Tencie.png?resize=1193%2C2048&amp;ssl=1 1193w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/10/Inktober-1-Innkeeper-erin-when-you-show-up-vs-erin-when-you-fuck-up-uwu-by-Lei-Tencie.png?w=2000&amp;ssl=1 2000w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/10/Inktober-1-Innkeeper-erin-when-you-show-up-vs-erin-when-you-fuck-up-uwu-by-Lei-Tencie.png?w=3000&amp;ssl=1 3000w" sizes="(max-width: 1000px) 100vw, 1000px" data-recalc-dims="1"></a></p>
+<p>&nbsp;</p>
+<p><strong>Erin Dreaming by onionlittle!</strong></p>
+<p><strong>Ko-fi:</strong> <a class="anchor-1X4H4q anchorUnderlineOnHover-wiZFZ_" tabindex="0" title="https://ko-fi.com/littleonion" role="button" href="https://ko-fi.com/littleonion" target="_blank" rel="noreferrer noopener">https://ko-fi.com/littleonion</a></p>
+<p><strong>Twitter:</strong> <a class="anchor-1X4H4q anchorUnderlineOnHover-wiZFZ_" tabindex="0" title="https://twitter.com/littleonion_art" role="button" href="https://twitter.com/littleonion_art" target="_blank" rel="noreferrer noopener">https://twitter.com/littleonion_art</a></p>
+<p><strong>Instagram:</strong> <a class="anchor-1X4H4q anchorUnderlineOnHover-wiZFZ_" tabindex="0" title="https://www.instagram.com/littleonion.art/" role="button" href="https://www.instagram.com/littleonion.art/" target="_blank" rel="noreferrer noopener">https://www.instagram.com/littleonion.art/</a></p>
+<p><a href="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/10/ExcaliburErin-by-onionlittle.jpg?ssl=1"><img loading="lazy" decoding="async" data-attachment-id="16032" data-permalink="https://wanderinginn.com/2023/10/03/interlude-the-library/excaliburerin-by-onionlittle/" data-orig-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/10/ExcaliburErin-by-onionlittle.jpg?fit=900%2C1200&amp;ssl=1" data-orig-size="900,1200" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="ExcaliburErin by onionlittle" data-image-description="" data-image-caption="" data-medium-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/10/ExcaliburErin-by-onionlittle.jpg?fit=225%2C300&amp;ssl=1" data-large-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/10/ExcaliburErin-by-onionlittle.jpg?fit=768%2C1024&amp;ssl=1" class="alignnone size-full wp-image-16032" src="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/10/ExcaliburErin-by-onionlittle.jpg?resize=900%2C1200&amp;ssl=1" alt="" width="900" height="1200" srcset="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/10/ExcaliburErin-by-onionlittle.jpg?w=900&amp;ssl=1 900w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/10/ExcaliburErin-by-onionlittle.jpg?resize=225%2C300&amp;ssl=1 225w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2023/10/ExcaliburErin-by-onionlittle.jpg?resize=768%2C1024&amp;ssl=1 768w" sizes="(max-width: 900px) 100vw, 900px" data-recalc-dims="1"></a></p>
+<p>&nbsp;</p>
+<hr>
+<p><a href="https://wanderinginn.com/2023/09/17/9-59-o/">Previous Chapter</a> <a href="https://wanderinginn.com/2023/10/15/9-60/"><span style="float: right;">Next Chapter</span></a></p>
+      </div>
+
+      <hr>
+          <span class="nav-previous">
+        <a href="https://wanderinginn.com/2023/09/17/9-59-o/" rel="prev"><span class="meta-nav">←</span> Previous Chapter</a>    </span>
+    <span class="nav-next" style="float: right" ;="">
+        <a href="https://wanderinginn.com/2023/10/15/9-60/" rel="next">Next Chapter <span class="meta-nav">→</span></a>    </span>
+    
