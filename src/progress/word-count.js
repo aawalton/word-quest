@@ -10,7 +10,16 @@ export async function countWordsInJsonFiles(baseDirectoryPath) {
       .map(dirent => path.join(baseDirectoryPath, dirent.name, 'json'));
 
     let allResults = [];
-    let stopMarking = false;
+    let existingData = [];
+
+    // Read existing data from the output file
+    const outputPath = path.join(baseDirectoryPath, '..', 'progress', 'word-counts.json');
+    try {
+      const existingContent = await fs.readFile(outputPath, 'utf-8');
+      existingData = JSON.parse(existingContent);
+    } catch (error) {
+      // If the file doesn't exist or can't be read, we'll start with an empty array
+    }
 
     // Process each JSON directory
     for (const directoryPath of jsonDirectories) {
@@ -23,26 +32,27 @@ export async function countWordsInJsonFiles(baseDirectoryPath) {
         
         // Process each JSON file
         const results = await Promise.all(jsonFiles.map(async (file) => {
+          const chapterName = path.join(path.basename(path.dirname(directoryPath)), file);
+          
+          // Check if the file is already in existingData
+          const existingEntry = existingData.find(entry => entry.file === chapterName);
+          if (existingEntry) {
+            return existingEntry;
+          }
+          
+          // If not in existingData, calculate word count
           const filePath = path.join(directoryPath, file);
           const content = await fs.readFile(filePath, 'utf-8');
           const jsonData = JSON.parse(content);
           
-          // Count words in chapterText array
           const wordCount = jsonData.chapterText.reduce((count, text) => {
             return count + text.split(/\s+/).filter(word => word.length > 0).length;
           }, 0);
           
-          const chapterName = path.join(path.basename(path.dirname(directoryPath)), file);
-          
-          // Check if we should stop marking chapters as completed
-          if (chapterName.includes('10_16')) {
-            stopMarking = true;
-          }
-          
           return { 
             file: chapterName, 
             wordCount,
-            completed: !stopMarking
+            completed: false
           };
         }));
         
@@ -55,7 +65,6 @@ export async function countWordsInJsonFiles(baseDirectoryPath) {
     allResults.sort((a, b) => a.file.localeCompare(b.file));
     
     // Write results to JSON file
-    const outputPath = path.join(baseDirectoryPath, '..', 'progress', 'word-counts.json');
     await fs.mkdir(path.dirname(outputPath), { recursive: true });
     await fs.writeFile(outputPath, JSON.stringify(allResults, null, 2));
     
