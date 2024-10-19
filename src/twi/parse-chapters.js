@@ -18,7 +18,24 @@ async function extractChapterText(filePath) {
     
     // Extract text from paragraphs
     const paragraphs = content.querySelectorAll('p');
-    return Array.from(paragraphs).map(p => p.textContent.trim()).filter(Boolean);
+    const textArray = Array.from(paragraphs)
+      .map(p => {
+        // Check if the paragraph contains an image
+        const img = p.querySelector('img');
+        if (img) {
+          // If it contains an image, don't include this paragraph
+          return null;
+        }
+        return p.textContent.trim();
+      })
+      .filter(Boolean); // This will remove any null entries
+    
+    // Remove the last paragraph if it contains "Next Chapter"
+    if (textArray[textArray.length - 1] && textArray[textArray.length - 1].includes("Next Chapter")) {
+      textArray.pop();
+    }
+    
+    return textArray;
   });
 
   await browser.close();
@@ -57,4 +74,3 @@ async function processChapters() {
 }
 
 processChapters();
-

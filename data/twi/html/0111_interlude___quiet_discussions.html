@@ -1,0 +1,539 @@
+
+
+          <span class="nav-previous">
+        <a href="https://wanderinginn.com/2017/06/21/2-31/" rel="prev"><span class="meta-nav">←</span> Previous Chapter</a>    </span>
+    <span class="nav-next" style="float: right" ;="">
+        <a href="https://wanderinginn.com/2017/06/25/s02-the-antinium-wars-pt-1/" rel="next">Next Chapter <span class="meta-nav">→</span></a>    </span>
+      <!-- <hr/> -->
+      <header class="entry-header">
+        <h1 class="entry-title">Interlude – Quiet Discussions</h1>
+                <button class="show-settings-btn" onclick="document.querySelector('#reader-settings-wrapper').classList.toggle('is-hidden')">
+          <img class="show-settings-btn-img" src="https://wanderinginn.com/wp-content/themes/solstice/assets/images/ui/reader-settings-button.webp">
+        </button>
+      </header>
+
+      
+<!-- Reader Settings -->
+<div id="reader-settings-wrapper" class="is-hidden">
+    <div id="reader-settings">
+        <header id="reader-settings-header">
+            <h2>Reader Settings</h2>
+            <button onclick="closeModal()">
+                <svg width="100%" height="100%" viewBox="0 0 33 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M16.5 30.75C24.0939 30.75 30.25 24.5939 30.25 17C30.25 9.40608 24.0939 3.25 16.5 3.25C8.90608 3.25 2.75 9.40608 2.75 17C2.75 24.5939 8.90608 30.75 16.5 30.75Z" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M20.625 12.875L12.375 21.125" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M12.375 12.875L20.625 21.125" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+            </button>
+        </header>
+
+        <fieldset id="fieldset-font">
+            <legend>Font</legend>
+
+            <div>
+                <label for="font-size-select">Size</label>
+                <select id="font-size-select" class="reader-settings-select" data-setting="reader-font-size" onchange="updateSetting(this.getAttribute('data-setting'), this.value);">
+                    <option value="10pt" class="reader-settings-option">10</option>
+                    <option value="11pt" class="reader-settings-option">11</option>
+                    <option value="12pt" class="reader-settings-option" selected="">12</option>
+                    <option value="13pt" class="reader-settings-option">13</option>
+                    <option value="14pt" class="reader-settings-option">14</option>
+                    <option value="16pt" class="reader-settings-option">16</option>
+                    <option value="18pt" class="reader-settings-option">18</option>
+                    <option value="20pt" class="reader-settings-option">20</option>
+                    <option value="22pt" class="reader-settings-option">22</option>
+                    <option value="24pt" class="reader-settings-option">24</option>
+                    <option value="26pt" class="reader-settings-option">26</option>
+                    <option value="28pt" class="reader-settings-option">28</option>
+                    <option value="30pt" class="reader-settings-option">30</option>
+                    <option value="36pt" class="reader-settings-option">36</option>
+                    <option value="42pt" class="reader-settings-option">42</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="font-family-select">Family</label>
+                <select id="font-family-select" class="reader-settings-select" data-setting="reader-font-family" onchange="updateSetting(this.getAttribute('data-setting'), this.value);">
+                    <optgroup label="Sans Serif">
+                        <option class="reader-settings-option" value="OpenSans, sans-serif" selected="">Open Sans</option>
+                        <option class="reader-settings-option" value="Arial, Helvetica, sans-serif">Arial</option>
+                        <option class="reader-settings-option" value="Roboto, sans-serif">Roboto</option>
+                    </optgroup>
+                    <optgroup label="Serif">
+                        <option class="reader-settings-option" value="Playfair, serif">Playfair</option>
+                        <option class="reader-settings-option" value="EBGaramond, serif">Garamond</option>
+                        <option class="reader-settings-option" value="'Times New Roman', Times, serif">Times New Roman</option>
+                    </optgroup>
+                    <optgroup label="Other">
+                        <option class="reader-settings-option" value="OpenDyslexic">OpenDyslexic</option>
+                        <option class="reader-settings-option" value="HennyPenny">Henny Penny</option>
+                    </optgroup>
+                </select>
+            </div>
+            <div>
+                <label for="font-weight-select">Thickness</label>
+                <select id="font-weight-select" class="reader-settings-select" data-setting="reader-font-weight" onchange="updateSetting(this.getAttribute('data-setting'), this.value);">
+                    <option class="reader-settings-option" value="300" selected="">Thin</option>
+                    <option class="reader-settings-option" value="400">Regular</option>
+                    <option class="reader-settings-option" value="500">Thick</option>
+                </select>
+            </div>
+        </fieldset>
+
+        <fieldset id="fieldset-spacing">
+            <legend>Spacing</legend>
+            <div>
+                <label for="margins-select">Page Width</label>
+                <select id="margins-select" class="reader-settings-select" data-setting="reader-article-width" onchange="updateSetting(this.getAttribute('data-setting'), this.value);">
+                    <option value="320px" class="reader-settings-option">Extra Narrow</option>
+                    <option value="500px" class="reader-settings-option">Narrow</option>
+                    <option value="680px" class="reader-settings-option" selected="">Medium</option>
+                    <option value="1000px" class="reader-settings-option">Wide</option>
+                    <option value="1200px" class="reader-settings-option">Extra Wide</option>
+                    <option value="100%" class="reader-settings-option">Max</option>
+                </select>
+            </div>
+            <div>
+                <label for="line-spacing-select">Line</label>
+                <select id="line-spacing-select" class="reader-settings-select" data-setting="reader-line-height" onchange="updateSetting(this.getAttribute('data-setting'), this.value);">
+                    <option class="reader-settings-option" value="1.2">Small</option>
+                    <option class="reader-settings-option" value="1.625" selected="">Medium</option>
+                    <option class="reader-settings-option" value="2.2">Large</option>
+                    <option class="reader-settings-option" value="3.5">Extra Large</option>
+                </select>
+            </div>
+            <div>
+                <label for="paragraph-spacing-select">Paragraph</label>
+                <select id="paragraph-spacing-select" class="reader-settings-select" data-setting="reader-paragraph-spacing" onchange="updateSetting(this.getAttribute('data-setting'), this.value);">
+                    <option class="reader-settings-option" value="0.5em">Small</option>
+                    <option class="reader-settings-option" value="1.625em" selected="">Medium</option>
+                    <option class="reader-settings-option" value="2.75em">Large</option>
+                    <option class="reader-settings-option" value="4.25em">Extra Large</option>
+                </select>
+            </div>
+        </fieldset>
+        <div class="ml-5 mb-4">
+            <label for="theme-select">Theme</label>
+            <select id="theme-select" class="reader-settings-select" data-setting="reader-theme" onchange="updateSetting(this.getAttribute('data-setting'), this.value);">
+                <option class="reader-settings-option" value="reader-theme-grey" selected="">Dark Grey</option>
+                <option class="reader-settings-option" value="reader-theme-blue">Dark Blue</option>
+                <option class="reader-settings-option" value="reader-theme-black">Black</option>
+                <option class="reader-settings-option" value="reader-theme-white">White</option>
+                <option class="reader-settings-option" value="reader-theme-sepia">Sepia</option>
+            </select>
+        </div>
+        <button id="reset-settings-btn" onclick="resetSettings()">Reset To Default</button>
+        <!-- <div> -->
+        <!-- </div> -->
+
+
+    </div>
+</div>
+      <div class="entry-content">
+        <p>Lady Magnolia and Ressa retired to a personal sitting room after Erin had gone. It was a mark of Lady Magnolia’s abilities as a [Lady] that she did not seem to notice the shouting young men and women who were trying to attract her attention. Her servants and a glare from Ressa allowed Magnolia to make her way up the stairs unimpeded.</p>
+<p>The truth of the matter was that no matter how upset Joseph and Rose and the others were, they didn’t quite dare <em>shout</em> in Magnolia’s presence. And neither were they able to force themselves to push past the polite maids and manservants to accost her physically. They were held back by Lady Magnolia’s sheer presence.</p>
+<p>It was a skill as well as a Skill, and Lady Magnolia had mastered both. She let Ressa close the door and muffle the last indignant protests echoing through her home and sighed.</p>
+<p>Even that was graceful. Lady Magnolia was known throughout the continent—well, by Humans at least. Any Drakes and Gnolls who paid attention to Humans knew of her, but Humans were by and large identical to the majority of Drakes and Gnolls. Still, those who knew anything of Lady Magnolia knew that she was a [Lady]. At all times she was graceful and polite.</p>
+<p>And in her own room, away from the eyes of the world, Magnolia was no less composed. Her diction did not slip even in private. She was elegant, thoughtful, deliberate, never offered an unkind word—</p>
+<p>“Ah. I am <em>exhausted</em>, Ressa. Do you think we were quite so impudent and annoying when we were children?”</p>
+<p>—Is what people expected. The truth was rather different. Lady Magnolia very nearly flopped back into her couch. She picked up the tea cup, drained it, filled it, and drained it again in quick succession.</p>
+<p>Ressa eyed her mistress and childhood friend disapprovingly. Like a good maid, she had said nothing in Erin’s presence, but she had made her feelings about the tea Magnolia drank quite explicit numerous times before.</p>
+<p>Raspberry tea. It was a delicious and even healthy beverage as enjoyed by most people, but in this case, it had been sweetened with so much sugar to make the drink practically poisonous in and of itself. Magnolia drank it like water, as much for the caffeine as the sugar high.</p>
+<p>“She was quite spirited.”</p>
+<p>“Spirited? Hah! I’ve met Minotaurs with less gall. Still, I think it turned out for the best, don’t you?”</p>
+<p>Ressa shrugged. She deftly whisked the pot full of sugary tea away from Lady Magnolia. The other woman scowled, but made no attempt to retrieve it.</p>
+<p>“I believe Erin Solstice will return to her inn safely.”</p>
+<p>“Oh, I think so as well. There were no reports of bandits on the road, no monster sightings, Reynold is there, and if worse comes to worst, she is quite a resourceful young lady. I did mention the combat skills she had to you, didn’t I? She had [Unerring Throw] as well. Quite a powerful skill, if used right.”</p>
+<p>“Indeed, milady.”</p>
+<p>“Stop that.”</p>
+<p>Lady Magnolia mock-glared at Ressa as the maid began inspecting the room for any signs of dirt, dust, or failure on the part of the maids who had cleaned it. Magnolia sat back in her couch and stared up at the ceiling.</p>
+<p>“Only the gods may decide what is right and wrong, eh? Such strong conviction. It reminds me of our youth, doesn’t it?”</p>
+<p>Ressa shrugged slightly. When she was out of the presence of others she acted far less formally with her employer, but she was still quite diligent in her duties. She lifted up a pot and regarded the spotless underside.</p>
+<p>“As I recall, you were even wilder than Erin Solstice as a young lady, Magnolia.”</p>
+<p>“And so were you. Do I need to recall the incident with the granary to you?”</p>
+<p>Ressa made no reply. Magnolia sighed, louder. It was hard to poke fun at Ressa. Either the woman took it, or she hit you. Either way, you lost.</p>
+<p>“Do you think I was too harsh on the girl? I placed a tremendous burden on her shoulders.”</p>
+<p>“I believe she will be equal to the task.”</p>
+<p>Ressa said that thoughtfully as she paused in opening a drawer. She looked at Lady Magnolia.</p>
+<p>“Do you know, I found myself talking to her quite naturally after only a few minutes. And she was able to befriend Reynold over the course of their trip.”</p>
+<p>“I noticed. That is a valuable talent, and no doubt one of the reasons she survived by herself.”</p>
+<p>Magnolia nodded and stretched out on her sofa like a cat. She put her feet up, which made Ressa stare pointedly at them. They did not come off the couch.</p>
+<p>“It simply proves what I said earlier. Wild cards are far more useful to play with when the deck is stacked against oneself. I anticipate her causing <em>quite</em> a lot of trouble for the Queen in Liscor, and the Antinium delegation who are so stealthily making their way towards the city.”</p>
+<p>“Indeed.”</p>
+<p>Ressa casually pushed Magnolia’s feet off the couch. The [Lady] of the manor stared at her maid.</p>
+<p>“I do own this couch, you know.”</p>
+<p>“It’s unenchanted and you have a tendency to kick things. Use the other couch if you want to lie down. I won’t have you causing hundreds of gold worth of damages.”</p>
+<p>Lady Magnolia grumbled, but she sat up.</p>
+<p>“What happened to the other one that’s normally here?”</p>
+<p>“You spilled food all over it. It’s being cleaned.”</p>
+<p>“Ah. I suppose we should have hired the enchanter to prevent stains as well.”</p>
+<p>“It <em>is</em> enchanted against stains. The maids are trying to wipe all the food off.”</p>
+<p>“Oh.”</p>
+<p>After a moment’s silence, the convivial, chatty atmosphere passed. Lady Magnolia sighed and sat up, and Ressa knew she was back to work. She never took long breaks.</p>
+<p>“Now that our guest is gone, tell me about that Goblin Lord. No one has gotten close enough to give me a description, but those reports of dead Goblins being part of his army are disturbing. He must certainly be strong if he managed to defeat Zel Shivertail.”</p>
+<p>Ressa nodded. She closed her eyes, and then spoke from memory.</p>
+<p>“The [Scouts] put his army at something close to the equivalent of a Walled City’s standing army. He has over a hundred Hobgoblins and at least ten [Mages] or [Shamans] in his army.”</p>
+<p>“He is that powerful already?”</p>
+<p>Lady Magnolia made a disgruntled face. Ressa nodded.</p>
+<p>“Other details are still coming in and we will know more after Shivertail returns to one of the cities and makes his report.”</p>
+<p>“But none of the mages have found out anything else? The [Scouts]?”</p>
+<p>“They cannot get close and the mages do not have a good fix on his location. The few that can [Scry] do not know his name.”</p>
+<p>“What about Teriarch? He could find anyone he wanted if he weren’t so lazy.”</p>
+<p>“He has…ignored our messages to him.”</p>
+<p>“He’s probably sulking. I gave him quite an earful after he gave Ryoka that ridiculous delivery.”</p>
+<p>Lady Magnolia scowled and sighed.</p>
+<p>“Very well. The Drake cities will take this seriously once they hear Ilvriss’ testimony along with Shivertail’s. But what about the northern Goblin tribes? They have a leader, but do the other families know of it?”</p>
+<p>Ressa hesitated.</p>
+<p>“Many of the aristocracy are aware of trouble with the Goblins in the south, but no more than that. Only Lord Tyrion’s spies have realized the northern tribes are moving, and they have only said that they suppose the Goblins may be organizing.”</p>
+<p>Magnolia’s face spoke volumes.</p>
+<p>“They ‘suppose’ the Goblins may be organizing? Ressa, the next time you meet Lord Tyrion, do endeavor to smack him on the head a few times, would you? His scouts are nearly worthless if that is all they can report.”</p>
+<p>“I shall do so if possible.”</p>
+<p>It would be Ressa’s pleasure, although the odds of her actually laying hands on Lord Tyrion were low. Magnolia sighed as she put her fingers together.</p>
+<p>“No one pays any attention to Goblins until it is too late.”</p>
+<p>“Except for you.”</p>
+<p>Lady Magnolia laughed.</p>
+<p>“Yes, well, Teriarch did convince me rather thoroughly of that point. It is hard to ignore them when you know the truth, is it not?”</p>
+<p>“It is.”</p>
+<p>“Well, we shall let things play out. The Goblin Lord is not an immediate threat unless all the northern tribes join him at once, and I very much doubt that Garen Red Fang will bow so easily. But this does present us with an opportunity.”</p>
+<p>Magnolia stood up and walked over to a window. Ressa joined her, noticing a smudge on the glass and frowning hard at it. Lady Magnolia spoke to the window as Ressa produced a cloth and began to clean.</p>
+<p>“Zel Shivertail is too important to ignore, but his defeat – even though it came after an incredible victory over Wall Lord Ilvriss – will no doubt lead to a period of disgrace as fools seek to belittle him. A shame some of those Drakes are so close minded, but it is exactly what we have been waiting for.”</p>
+<p>“It would appear so.”</p>
+<p>Slowly, Magnolia nodded. She stared out the window at the setting sun.</p>
+<p>“Now that he is in disgrace—or rather, will be—it is the opportune time to persuade him to come north. I only wish it were as simple as offering him riches or power.”</p>
+<p>“Shall I send a message by [Courier]?”</p>
+<p>“No—I believe I may send a [Message] spell instead. This is too important to be subtle about. We need a general of Zel Shivertail’s caliber.”</p>
+<p>Ressa nodded in agreement. Magnolia sighed.</p>
+<p>“And what of Ryoka? Is she still alive, or should I have told young Erin not to wait?”</p>
+<p>“She is alive.”</p>
+<p>“Good. And she will return in…?”</p>
+<p>“Two days. Theofore has located her.”</p>
+<p>“Really? I would have thought the other [Assassins] and [Scouts] would have had more luck. Then again, perhaps he understands Miss Griffin better than they do.”</p>
+<p>“Or it could just be chance.”</p>
+<p>Lady Magnolia glanced over. Ressa’s face was completely straight.</p>
+<p>“Pragmatic kill-joy.”</p>
+<p>“As you say, milady.”</p>
+<p>“Make sure she arrives at the inn safely. Until I have a chance to speak with her, she must not die, is that clear?”</p>
+<p>Ressa hesitated. She looked at Magnolia for a moment, wondering if she should add this detail.</p>
+<p>“She is injured.”</p>
+<p>“What?”</p>
+<p>Magnolia had been thinking of something else, but now she focused on Ressa.</p>
+<p>“How badly?”</p>
+<p>“Theofore reported that two of Ryoka’s fingers are missing, and she appears to be moving far slower than normal. She is not alone, either.”</p>
+<p>The calm expression on Magnolia’s face disappeared. Her brows shot together.</p>
+<p>“Who else is with her? A survivor of the Goblin Lord’s attack? The Winter Sprites? Teriarch did say they were attracted to her, but I thought it was just because they enjoyed tormenting the girl.”</p>
+<p>“A young Gnoll cub. Theofore believes Ryoka may have rescued her.”</p>
+<p>Lady Magnolia closed her eyes, and pressed her fingers to her temples tiredly.</p>
+<p>“Of course she did. And lost her fingers and got hurt in the doing, no doubt. She is ill-suited to be a Runner in temperament. She is far too sympathetic.”</p>
+<p>For a second the two women stood and stared out the window in silence. Magnolia put a finger to her lips.</p>
+<p>“But a cub…? There must have been a Gnoll tribe caught in the mountains.”</p>
+<p>Ressa nodded.</p>
+<p>“The Stone Spears tribe was wintering in that region. It is likely that Ryoka Griffin’s paths would have crossed with theirs.”</p>
+<p>“Are there any survivors?”</p>
+<p>“Possibly. Half the tribe was camped out while the warriors and miners travelled higher, searching for ores and gems. The [Scouts] and [Assassins] reported a higher number of Gnolls travelling with Zel’s army—they may have been saved.”</p>
+<p>Again, Lady Magnolia closed her eyes.</p>
+<p>“And the mining group?”</p>
+<p>Ressa would have liked to pretend she didn’t know, but no one could lie to Magnolia Reinhart. She spoke quietly.</p>
+<p>“One of the highest-level [Assassins] sent with the scouting group slipped past the Goblin Lord’s army and located the mining site. She found no survivors. It appears the Gnolls were ambushed and slew over a hundred Goblins before being overwhelmed.”</p>
+<p>“I see.”</p>
+<p>More silence. Ressa spoke into it.</p>
+<p>“The Gnoll cub seems to be unusual.”</p>
+<p>“How so? Is the child injured? If so, have Theofore—”</p>
+<p>“No. She has white fur.”</p>
+<p>Now Magnolia looked at Ressa. Her eyes were serious.</p>
+<p>“A Gnoll with white fur. That is no coincidence, Ressa. But what does it mean?”</p>
+<p>“It is a portent of some kind?”</p>
+<p>“I would have to ask a Gnoll [Shaman] or Teriarch. My memory is fuzzy. But yes, it is.”</p>
+<p>Lady Magnolia thought for a few more moments and then sighed. She let her hands drop to her side.</p>
+<p>“We must hurry. Things are happening too quickly now. If we had another year—but of course we do not. Very well. The Goblins will keep for a while longer. Now, onto armies. I know Lord Tyrion’s army just smashed two other armies in that little spat of his. Do you have numbers on how many of his soldiers perished?”</p>
+<p>“Very few, or so the rumors state. Eyewitnesses saw only a few bodies in his livery after the battle, so it is safe to assume he completely routed his enemies.”</p>
+<p>“Only naturally. His soldiers are splendidly well equipped and trained. They are peerless among the armies of the north. A bright and shining jewel that needs only the correct setting to become perfection. It is a shame the same cannot be said of their lord and leader.”</p>
+<p>Magnolia sighed. But then she smiled.</p>
+<p>“And what of our little project, Ressa? Where do we stand at the moment?”</p>
+<p>Ressa nodded.</p>
+<p>“Discounting the city-states and their private armies as well as the personal retainers and forces available to other lords and ladies—”</p>
+<p>“Of course.”</p>
+<p>“—Then, at the moment we will be able to call upon two thousand individuals with combat-classes above Level 20. Over six hundred of that number possess levels above 30. Six Named Adventurers and eight Gold-rank teams are available, and we have at our disposal at least three hundred and fifty irregular units.”</p>
+<p>Lady Magnolia smiled wider. She looked at Ressa, but the woman was done. Gently, Magnolia prompted the maid.</p>
+<p>“And…?”</p>
+<p>Ressa sighed.</p>
+<p>“…And one unicorn.”</p>
+<p>“Most excellent. Now then, I believe we should send another letter to a certain [Strategist]. If we do manage to obtain Zel Shivertail’s services, then we will have a peerless army with a general to match. But to make them public and start training them in earnest, I would need a second hand for Zel of equal ability.”</p>
+<p>Ressa sighed. She knew who Lady Magnolia was hinting at, but here at least she believed her mistress was wasting her time.</p>
+<p>“Thus far all missives to him have been ignored.”</p>
+<p>Lady Magnolia waved that fact away like an annoying fly.</p>
+<p>“He can’t keep ignoring me forever. Send fifteen more letters off this instant. If we keep bothering him eventually he will have to talk with me.”</p>
+<p>“Keep telling yourself that, milady.”</p>
+<p>Ressa muttered the words, but Magnolia wasn’t listening. She was quite good at that—she had been since they were children. The [Lady] began asking more questions, and Ressa continued to answer.</p>
+<p>Back to work. Erin Solstice’s visit, however notable, was only a small part of the many things Magnolia Reinhart had to deal with each day. Ressa was just as busy. She had to organize the maids, clean up whatever mess the people from Erin’s world had left, speak to spies and [Assassins] and find someone to blame for that smudge on the window. She had plotting to do with the most powerful woman on the continent, people to organize, tea pots to refill, dinner to serve—</p>
+<p>And of course, letters to send.</p>
+<p>&nbsp;</p>
+<p>—-</p>
+<p>&nbsp;</p>
+<p>It was a hot and muggy day, but the [Strategist] standing on his war room table staring down at the map of tomorrow’s battlefield felt none of the heat. His tent was cool thanks to the magic woven into the fabric—a source of much relief to the other people gathered in the tent.</p>
+<p>They were all [Strategists]. Well, a few were still [Tacticians] by virtue of lower levels, but they were all focused in the same area.</p>
+<p>And that was odd, because the tent contained all the high-ranking officers in the army. Normally the room would be filled with [Officers] and [Lieutenants] and [Leaders] rather than just [Strategists]. But this odd quirk was probably due to the army’s leader. The man leading this army was a [Strategist] without one level as a [General] or any other class. He was infamous for this, in fact, and he led his army without any other skills. He was known as the Titan, which was clearly an ironic name to anyone who actually knew what he looked like.</p>
+<p>And at the moment he was planning a battle. The [Strategist] was speaking to a tall man dressed in armor save for his head. There was something off about this armored man’s neck. But as he nodded and his head wobbled, the [Strategist] held up a hand and everyone in his tent paused. Two seconds later someone knocked on the tent flap.</p>
+<p>“Enter.”</p>
+<p>A [Soldier] poked his head through, one of the ones on guard duty.</p>
+<p>“A Courier is here to see you, sir.”</p>
+<p>Niers Astoragon, the Titan and [Strategist] leading this army, sighed as he looked up from the map and waved the Courier into his tent. He already knew—or suspected—who the letter was from.</p>
+<p>The Courier immediately strode into the tent as one of his lieutenants held the flap open. The stiflingly hot, moist heat tried to rush in, but the cooling enchantment on the tent quickly stabilized the temperature.</p>
+<p>The young female Courier who handed Niers three letters wasn’t even sweating. It had to be a Skill, or a magical item of some sort. Niers eyed her belt idly as he accepted the first letter and pulled the envelope open. He was quite tempted to buy an artifact like that for himself on days like this, but it would be needlessly expensive to order, given how many other enchanted items he carried. If only the magics didn’t clash so—</p>
+<p>Niers grunted as he kicked the sealed envelope’s lid off and noticed the delicate, gold-edged card. Of course. It had to be from her. What a waste of time.</p>
+<p>Any message sent by a Courier was almost always opened within seconds of receiving it. That was because no one would send pointless letters at such expense. That damned Magnolia Reinhart <em>knew</em> that, and so she sent Niers letters constantly, forcing him to open them on the off chance he was receiving vital information.</p>
+<p>How he hated and admired that woman’s twisted mind. But Niers knew what he would see the instant he pulled the delicately scented card out of the envelope, and he tossed it on the table after only a few second’s cursory study.</p>
+<p>“Pick that up and dispose of it, would you, Umina? And if the others smell of lavender, rosemary, raspberries, or any other floral scent, discard them too.”</p>
+<p>The lizard girl standing closest to the entrance nodded and began sorting through the letters. Niers sighed as he turned back to the map, conscious of the eyes on him. He stepped to one side casually, allowing Umina to pick up the letter he’d opened. She moved very carefully, as if afraid one mistake from her would crush him.</p>
+<p>He hated being treated like that. But Umina was new to his group of students and so she wasn’t quite used to his stature. Either she would learn or she would not. Niers concentrated on the battle and put petty distractions aside.</p>
+<p>Yes, that was the irony of the nickname his enemies had given him. Niers had embraced the name, but it did cause confusion, which was why he sensed the Courier’s eyes on his back as he turned back to the map.</p>
+<p>To hear talk of the second-in-command of one of the Four Great Companies of Baleros, Niers was a giant in every sense. He led his armies to victory after victory, using his mind as a weapon where most [Generals] led with their swords. He could outmaneuver any foe, defeat any force, even those three times as large as his. With his Skills he could turn his soldiers into horrific monsters, yet if he needed to retreat his army would become ghosts on the battlefield.</p>
+<p>He was a monster, the highest-level [Strategist] on the continent—perhaps the world. Quite sensibly, Niers kept his exact level hidden, but his prowess was unmatched. So they called him the Titan, and only some got the joke. And that was that Niers was tiny. He was only six inches tall.</p>
+<p>Aside from that one detail, Niers looked like any middle-aged man. His hair was dark black, slightly grey, and he had a powerful, if minuscule, build. He wore armor as expensive as any [Lord]’s—more expensive in truth, given that [Blacksmiths] had a terrible time forging anything so small. And he looked Human again, apart from the issue of his height.</p>
+<p>Niers was actually quite tall for an individual of his race, but of course that meant very little when the average height of his people was about as tall as a Human’s hand. The Fraerlings, or the Small Folk as they were more commonly known, were a reclusive people on Baleros, who seldom took part in continental or worldly events, preferring to stay within their small communities and only travel to villages, towns, and cities on the occasional trip to sell goods or request aid from adventurers.</p>
+<p>Except that of course, there were exceptions. And it could easily be claimed that Niers was the most famous Fraerling in the world. It wasn’t a position he particularly relished; he would have liked to be known for his strategic prowess rather than his origins, but fame was fame, and he knew he was a hero to the children of his kind.</p>
+<p>Umina hesitated as she held the bunch of letters the Courier had brought. Niers knew she was capable of magic, but burning a set of missives that came from a Courier must have gone against all her instincts.</p>
+<p>“I should just—?”</p>
+<p>“A flame. Here.”</p>
+<p>One of Niers’ older students intervened before Umina could interrupt their teacher. He took the letters from Umina in gauntleted hands and let her conjure a small flame between her hands. The letters curled and burnt away as he held them to the last, calmly, without fear of fire.</p>
+<p>Cameral dusted his hands, letting the ashes fall to the earthen ground of the tent. Niers nodded and grunted irritably.</p>
+<p>“The message was not to your liking, lord?”</p>
+<p>“It was pointless. They were more letters from Lady Magnolia.”</p>
+<p>“Ah.”</p>
+<p>The mood in the tent changed. Niers had countless students, although only twelve or so were present in this large tent. Each of them he had accepted on the basis of their incredible minds and ability in battle. But any [Strategist] of worth would know the political realm as well as the battlefield, and Lady Magnolia was on a short list of names one memorized no matter where you were in the world.</p>
+<p>One could argue that Niers’ burning of her letters was an affront; a dangerous one given the influence and power of the Reinharts. But he was powerful enough in his own right that he could do such things. The nature of his correspondence with Magnolia Reinhart was a mystery to his students, but Niers already knew they would be discussing the issue or sending their own spies and informants out after this meeting. It was commendable of them, if predictable.</p>
+<p>Still, Niers had to admit he was growing equally parts curious and annoyed from Magnolia’s incessant attempts to contact him. She sent letters via Courier in waves, to the extent that Niers found himself hounded by her.</p>
+<p>They were always the same letters, too. A gentle invitation to speak with her via mage spell, or even in person should he have the opportunity. Thus far Niers had done neither such thing, nor had he replied to her via letter. Again, it was an act of rudeness, but one he thought she would expect and the only sensible course of action he felt he should take.</p>
+<p>He had no desire to be ensnared in the woman’s schemes, much less to talk with her at the moment. Niers had met her only twice in his life, but he had learned to be exceptionally wary of her.</p>
+<p>Moreover, he feared that if he ever did talk to her, she would offer him a prize he couldn’t refuse. And he was loyal to his Company and his commander to a fault; far better not to be tempted in the first place.</p>
+<p>“Try not to agonize over the woman too much, would you? Magnolia Reinhart’s mind would put most [Strategists] and [Generals] to shame and we have a battle to win.”</p>
+<p>Cameral nodded gravely and the others shifted, as if they were children being caught in a mischief. It always seemed to amaze them that Niers knew what they were thinking, but of course that was just their imaginations. He simply knew what they would do because he had been like them, once.</p>
+<p>The armored man’s head wobbled as he nodded and Cameral put one hand up to steady it.</p>
+<p>“Take it off if it’s loose. I’ve told you, I don’t need you to look like a Human all day long and I have no desire to be squashed by your head.”</p>
+<p>That remark went to Cameral. He was a Dullahan, hence his loose connection between head and body. When he apologetically took his head off the suit of armor, dark orange light could be seen flickering within the armor’s opening.</p>
+<p>It wasn’t empty armor, Niers knew. There was some kind of flesh and blood in there, hence the Dullahan’s need to cover it with protection. Cameral’s armor was quite good steel—Niers had seen other Dullahans with wood armor or inferior scrap metal, but his subordinates wore high-quality gear.</p>
+<p>Gently, Cameral cradled his head in his hands, turning it so he could see the table and Niers better. It was how Dullahans like to see things—either that, or have their heads float by their side, but this was apparently rude and so the man thought he needed to put his head on his shoulders every time he was in Niers’ presence. It was a sign of respect, but it grated on Niers’ nerves.</p>
+<p>All distractions aside, Niers could finally focus on the battle. He stared down at the open, grassy plains his opponent had chosen for the battlefield. It was gently sloping, giving a height advantage to the defending army that was camped at the crest of the incline. A solid choice of location in other words, but Niers had already encircled the army with his own.</p>
+<p>Their opponent for the day was a [General] with defensive skills named Grimvol. Niers had forgotten what spat had caused their Company to be called in, but he had led an army out to defeat this foe with as few losses as possible. After that would come pay, relaxation, and rest—until the next contract.</p>
+<p>They were a mercenary group, one of the finest. Niers had been fighting for over fifty years in Baleros’s endless plains and deep jungles and yet he knew each battle could be his last.</p>
+<p>Probably not this one, though.</p>
+<p>The small pieces on the table were quite obvious to anyone familiar with this type of planning. Niers and Grimvol had nearly equally large armies, perhaps with a few more numbers on Grimvol’s side, and their warriors were nearly of the same level. The banners floating over each piece’s head denoted their relative level and Niers had other pieces to mark warriors in his and Grimvol’s army with high levels or unique classes.</p>
+<p>This battle looked straightforward. Niers’ army would surround and consume Grimvol’s force, denying any attempts the man made to push his way out. Niers had left a heavy presence of his soldiers to the north and south while he was personally leading his heaviest vanguard to the west.</p>
+<p>It made sense. Niers was the commander of his army and he needed the protection of his soldiers, not to mention his abilities would be most useful with more soldiers. The east of Grimvol’s army had the weakest part of Niers’ army, because that was where a forest met the plains. It would be hard to fight in that terrain, and if Grimvol tried to retreat into the dense jungle of Baleros he would risk becoming lost or surrounded in that hostile environment.</p>
+<p>“I will let you spearhead the assault, Cameral. Take it slow and make it seem like we’re ready for a pitched battle so he has plenty of time to launch his surprise attack.”</p>
+<p>The Dullahan nodded as the others looked to the eastern section of the map. Yes, Grimvol had predicted Niers would do exactly this, and he had capitalized on the [Strategist]’s plans. This entire battle was a deadly trap designed to kill Niers Astoragon and rout his army.</p>
+<p>Niers sighed. It was almost sad, really. Grimvol wasn’t nearly confident enough to take him on by himself. That was obvious, so anyone with half a brain would check for a trap or some secret to the location the other [General] had chosen. And Niers had found the trap Grimvol had set with depressing ease.</p>
+<p>He was expecting to receive reinforcements from a much larger army hidden in the jungle to the east. Unfortunately for him, Niers had already destroyed that army and replaced that force with his own yesterday, and it would be two of his subordinates that appeared with his army instead.</p>
+<p>“Wil and Yerranola are already in position. They will arrive within minutes. Conserve your soldiers until then, and move in.”</p>
+<p>The others nodded. Niers had sent two of his more senior students to take command of his second force and they were already waiting for the battle to begin. Grimvol didn’t know it, but he was facing fifteen [Strategists] and [Tacticians] not including Niers himself. It was overkill, but there were no other battles Niers’ Company was engaged with at the moment and everyone could use the practice.</p>
+<p>Ordinarily, in the face of such overwhelming odds most [Generals] and [Lords] would take the day off to celebrate and relax, confident in their complete victory.</p>
+<p>However, Niers was still planning out the next days’ battle with excruciating care. He disliked overconfidence as a rule, and, moreover, it was in his nature to be detailed to the extreme. A few minutes of work could save hundreds of lives, and as long as that was the case he would not rest.</p>
+<p>Niers pointed to the map and looked at Umina, the young woman he’d entrusted with his division of cavalry for the battle. She was a lizard girl, which was to say, a member of the Lizardfolk, who were <em>not</em> the same as Drakes. There was a lot of bad blood between the species, and despite their superficial similarities, they were quite separate races.</p>
+<p>“Sweep in from the left and hit his cavalry before they can start moving. Once he’s pinned from all sides he should surrender fairly quickly.”</p>
+<p>She nodded with a trace of uncertainty. This would be the first time Niers had put Umina in a command position, and with his swift-moving cavalry elites, no less. He believed she would rise to the challenge, but it seemed the girl herself didn’t believe that.</p>
+<p>Perhaps he should advise Marian to talk with her? No, that was best left for her to do herself. As touchy as the Centaur could be, he knew that she and Umina were friends.</p>
+<p>It might have been easier for Marian, the largest of his students in the tent, to lead Niers’ cavalry. She was a centaur and more naturally suited to the rapid attacks and deployment that her species used in battle. That was why Niers had her coordinating the stationary mage unit that would be intercepting spells and bombarding the enemy army.</p>
+<p>No one in his group of students would be fighting in their strongest field, which was how he’d intended it. Overspecialization in any one area just meant you had a bigger weak spot to hit, and so Niers took care to push his subordinates to improve themselves.</p>
+<p>Without risking his army, of course.</p>
+<p>“I would like for there to be less than forty casualties tomorrow. Try to achieve that, although a bloodless victory on our side would be even more welcome if it were possible.”</p>
+<p>That meant no heroic charges. Niers was speaking to all of his students, but his eyes lingered upon one of his newest recruits, a tall Minotaur who stood with his arms crossed, frowning intensely down at the map. He nodded silently. Venaz was in charge of his left flank, and he was no doubt keen to impress him. He had been sent from the Isles of Minos after much competition to become his student, he gathered, and the Minotaur was always attempting to outshine his other students.</p>
+<p>When had he stopped becoming a leader of soldiers and started becoming a teacher? Niers scratched at his head and frowned. It was tiresome, he had to admit. But the world needed more [Strategists] and his students had a way of being persistent.</p>
+<p>“Very well, I believe we are finished. Oh, one last thing. Have…yes, Venaz, have your drummer beat a signal when the battle is about to begin.”</p>
+<p>The Minotaur looked at Niers curiously.</p>
+<p>“What should I have him transmit?”</p>
+<p>“Anything. Just make it complex, would you?”</p>
+<p>“Is there a purpose to this?”</p>
+<p>That showed how new he was. Venaz blushed a bit as his more senior students chuckled and pawed at the ground but made no comment. Touchy. Niers sighed.</p>
+<p>“Stop that. The exercise of the drum signals, Venaz, is to confuse the enemy. The complex signals mean nothing to my soldiers. It will be meaningless to everyone but Grimvol. He will wonder about what the signal means and whether or not his trap has been discovered. It will slow his reactions and make him more hesitant than he already is.”</p>
+<p>And his nerves would already be shot because he was going up against the legendary Astoragon, who saw through traps and deception in an instant. But Niers did not say that out loud, because while true, it was pointless ego-stroking. His students understood what he meant, and if they did not, there was no place for them here.</p>
+<p>“You have your positions. Try not to get hit by a spell or arrow, would you? You have the rest of the night to yourselves. If you will excuse me, I have a game to return to.”</p>
+<p>Almost as one, his student’s gazes flicked to the side of the tent. Niers was so small that he actually slept in his command tent, on top of one of the tables in a smaller cot. That was just for convenience’s sake; Niers had no desire to be stepped on by a sleepy soldier in the night or find himself under attack by the local wildlife. Or bugs.</p>
+<p>But pride of place sitting next to his personal lodgings was a chess board. That was hardly unique in this camp; as the inventor of the game of Chess, Niers’ students played his game almost religiously, as did much of Baleros for that matter.</p>
+<p>Yet this board was different. For one thing, it was magical. The ghostly chess pieces shimmered in the cool air, as light as a feather but as firm as steel. The pieces stood here, but also somewhere else in the world, mirroring each move exactly.</p>
+<p>Another item that cost a fortune. But this one was indisputably worth it. With it, Niers could play a game with anyone else in the world. Or rather, one person.</p>
+<p>It sat next to Nier’s tent, a message anyone could understand. Here was an opponent Niers considered worthy of his time, a worthy match for the Titan himself. No wonder his students looked at it curiously each time they came in.</p>
+<p>“Sir. May I ask what the score is this week?”</p>
+<p>Niers nodded at one of his students, a Human.</p>
+<p>“This is the seventh game. As it stands, I have won two games and lost four.”</p>
+<p>Silence.</p>
+<p>He understood, he really did. How many people on this continent—no, in the world could beat Niers Astoragon in a game of chess?</p>
+<p>It wasn’t just a small thing like losing a game. Niers had invented chess, mastered it. Between his levels as a [Strategist] and his own long hours of study and passion for it, it was fairly safe to say that Niers could win most games while he was still asleep.</p>
+<p>When the game had first begun to spread, Niers had travelled around, playing people. He had enjoyed many games, but he had only lost twice. And later, after people had come to challenge him by the thousands, he had only lost a handful of times after that.</p>
+<p>And never consistently. Until a few weeks ago, Niers had not a single rival on the continent. His best students could win one game out of ten at best. Other [Generals] and [Strategists] could win two games in ten, or three in ten, but that was all.</p>
+<p>And none of them pushed Niers. He had been alone, a lonely king sitting high above the world and watching other people trying to climb the tower he had built. None could approach him. It had been terrible.</p>
+<p>And then—it had just been a whim. A few hundred gold pieces spent to entertain himself. Niers had sent a challenge across the world, a test that would separate the good chess players from the mediocre. He hadn’t expected many responses, but one had come back to him almost instantly.</p>
+<p>Niers smiled as he remembered. A clumsy drawing of a chess board and a curious system of notation that was superior to the one he had come up with. And then—!</p>
+<p>He’d spent hours, <em>days</em> on the puzzle. In between battles he’d struggled to come up with the answer, delighting in the challenge. It had come to him almost too soon, but he’d been obsessed. He’d ordered a chess board made, sparing no expense and paying almost triple for the speed of its construction and delivery.</p>
+<p>The wait had been almost as sweet as the knowledge that there was someone out there with skills rivaling his own in the game. Niers had wondered and speculated who the mysterious puzzle-maker was, worrying that their skill might only be in the creation of puzzles, not the game.</p>
+<p>He’d almost, <em>almost</em> missed the little trick the other player had played. After that first game, he’d been so angry, so frustrated! How could his opponent be so weak at playing the game when they had created such a masterful puzzle? But then the pieces had moved, and he had seen it.</p>
+<p>High above on his tower, the lonely king had looked up and seen the vast fish swimming through the sky. He stood up and saw it swim past him, a beast unimaginably beautiful and mysterious, a thing that defied words. A terrible, wonderful, lonely creature waiting for someone to join it.</p>
+<p>And so the king had leapt from the tower built of his conceit and tried to learn to fly. And he had felt, for the first time in decades, the sense of inferiority, of challenge, that he had lacked.</p>
+<p>It was wonderful. And as Niers had played he had known it in his bones.</p>
+<p>He was not good enough to match this mysterious player. Not good enough. But he was close enough that neither was alone any longer.</p>
+<p>A wonderful thing.</p>
+<p>The small man leapt from his map table over to the other table with the chess board, ignoring his students. He stood over the chess board, eying the pieces that still stood in the middle of a game.</p>
+<p>Two wins. And four losses. That was unimaginable to Niers’ students, but it was a source of delight to Niers himself. He couldn’t explain it to them—how could he? They were young and still grappling for any measure of success, fame, or fortune. But to lose a game and experience defeat after defeat—</p>
+<p>It nearly brought tears to his eyes just thinking of it. Niers shook his head. It would really not do to weep in front of his students.</p>
+<p>“Have you discovered the identity of your opponent, sir?”</p>
+<p>Niers looked over with a frown. That was Venaz for you, or rather, Minotaurs. They disliked secrets and they preferred to do everything out in the open. It was a flaw he’d resolved in his strategic thinking, but it still bled into the way he handled everything else.</p>
+<p>“I prefer to savor the mystery. I have my suspicions of course—”</p>
+<p>He knew where the Courier had gone. It had taken him quite a lot of gold but he’d backtracked the location of the letter to Izril. And he knew that after leaving the boat, the letter had travelled to Liscor. Liscor. Who knew a city that had produced a genius like General Sserys would have another hidden gem in it? Unless that was just where the Courier had tracked down the mysterious chess player.</p>
+<p>“—But I have not looked into the matter any further. In truth, I am not sure I would like to.”</p>
+<p>That made Venaz frown, but Cameral and Umina nodded. Their species understood privacy a bit more, even if that wasn’t the entire reason why Niers was so hesitant.</p>
+<p>The [Strategist] smiled. He stroked his beard.</p>
+<p>“Well, if you are so interested, why not present me with your theories? I trust you have some suspicions as to who my opponent might be?”</p>
+<p>His students shifted. Some of them obviously feared to speak up, but Niers didn’t have a lot of time for hesitation on the battlefield. So it was only seconds before Marian raised one hand.</p>
+<p>“Sir, I believe your opponent may be a Dragon.”</p>
+<p>“Indeed? What leads you to that conclusion?”</p>
+<p>Marian shifted. Niers knew she had to be uncomfortable in this tent; Centaurs didn’t like being in small places any more than horses did, and there were too many people for her to move about freely.</p>
+<p>“It is simply an observation based on your opponent’s unusual skill. Only someone with a truly brilliant mind could defeat you repeatedly in a game of chess.”</p>
+<p>“Hmm. So you believe a Dragon is my opponent? I would disagree for one main reason.”</p>
+<p>Marian looked crestfallen, but Niers waved a hand.</p>
+<p>“It’s nothing you could have known. But I observed that after my first victory, my opponent immediately changed tactics. They switched into a highly risky style of play, abandoning their previous style.”</p>
+<p>It was almost like his opponent had been trying to provoke Niers. They had completely switched their playing style around, and Niers could almost hear a voice coming from the board. ‘<em>There now. What do you think of that? What will you do next?’</em></p>
+<p>Some of Niers’ students looked confused. He smiled and explained.</p>
+<p>“Curiosity. The other player took a risk that they might lose another game to test me. Dragons are not like that. They are, by and large, very touchy beings. They dislike losing intensely and I believe a Dragon would have attempted to crush me several times in a row so I understood my place.”</p>
+<p>Niers also doubted whether chess would have spread to the point where the reclusive Dragons would have learned of this game. He shook his head, but kindly, at Marian.</p>
+<p>“A good guess. Does anyone else have one?”</p>
+<p>“One of the Archmages?”</p>
+<p>“A [Lord] or [Lady], perhaps? A high level one?”</p>
+<p>“Surely not. For someone of this level it has to be a [King]. Perhaps the King of Destruction—”</p>
+<p>Niers had to laugh at that.</p>
+<p>“I don’t believe Flos is very interested in such things at the moment, Venaz. And I have played him once before and he was not at this level.”</p>
+<p>The room went silent. Niers realized he had spoken more than he probably should and made a face.</p>
+<p>“Don’t look like that. Yes, when he was still slumbering I travelled to his kingdom to meet him. This was before I had revealed the game of chess in its entirety, but I convinced him to play me a single game.”</p>
+<p>“And?”</p>
+<p>How their eyes sparkled. Niers smiled and stroked his tiny beard.</p>
+<p>“I won.”</p>
+<p>They sighed, but hardly looked surprised. Niers shrugged.</p>
+<p>“His spirit wasn’t in the game. In truth, I believe that he would now be a far better player, but even then I would win more games than I lost. His steward on the other hand—Orthenon, I believe his name was?—he was a far more difficult opponent.”</p>
+<p>“But if it is not the King of Destruction, then who—?”</p>
+<p>“A question to ponder over some drinks, perhaps. But I will find out in my own way.”</p>
+<p>Niers cut the rest of the speculation short. His students bowed their heads to him and filed out of his tent. The strategy meeting had ended.</p>
+<p>It was a sign of how confident they all were that this was the type of conversation they had on the eve of battle. Niers sighed. It was making some of them overconfident. After tomorrow he would start splitting them up, giving them harder assignments.</p>
+<p>He wandered over to the chess board and looked at the pieces. It had been two days since they had last moved. That was fine; he was often busy and he respected that his opponent had their own life to lead. But still, it was the moments when he played that he lived for.</p>
+<p>A genius at chess. Someone who could defeat a Level 64 [Strategist]. Not even a [Strategist], in truth, a [Grandmaster Strategist], an odd subclass he had obtained shortly after learning to play chess.</p>
+<p>His exact level and his class change were secrets, of course. Niers studied the chess board again, plotting ahead his next moves, but his mind was racing.</p>
+<p>“Who are you?”</p>
+<p>It was a question that had plagued him, despite what he told his students. He was so <em>curious </em>it hurt. Someone was out there who played chess better than he did.</p>
+<p>It <em>could</em> just be a higher-level [Strategist] or someone with a similar class and Skills. Niers knew a few people whom he suspected of having levels close to or higher than his. But…</p>
+<p>No. His gut told him that couldn’t be the case. He had invented chess; how could anyone reach that level so quickly?</p>
+<p>That was the secret, though, wasn’t it? Already an entire continent had hailed the game Niers had created as a masterpiece, not only a wonderful pastime and source of entertainment for people, but an aid and means to become stronger for [Tacticians] and [Strategists].</p>
+<p>But he hadn’t invented it. That was the grand lie, the little trap he’d set out in hopes of catching a far larger truth. And Niers had felt the first pull on the string with this opponent.</p>
+<p>“A Dragon might remember…”</p>
+<p>Or was it some other kind of immortal? Niers had no idea, but for some reason he couldn’t imagine an immortal playing the fresh and vibrant games he’d enjoyed. Yet who else could have known the game of chess before he’d claimed to have invented it? And why had they not disputed his claim as he’d hoped?</p>
+<p>To not reveal themselves? Possibly. But this was almost as blatant. Perhaps they were trying to tell him something?</p>
+<p>Niers buzzed with curiosity. It was this he lived for. These last few wars his Company had participated in were dull to him by comparison. He was already rich and he had trained his armies to be one of the strongest on the continent. He had no ambitions but chess and finding the truth. The truth of the past that he had discovered along with the game long ago…</p>
+<p>“Who are you?”</p>
+<p>He could always find out, of course. It might take a week, but assuming no idiot started a war after this…he could be in Liscor even sooner if he made some arrangements. A [Teleportation] spell might cost him dearly, but he was more than able to buy however many he wanted. In that case, he could leave and be back in a day—</p>
+<p>No. Niers shook his head. He didn’t want to spoil the surprise. And there was one more reason, after all. He had barely leveled up this last long decade. He’d leveled up once, and that was it. He had stagnated in his class, but after only eight games—</p>
+<p>He’d leveled. And Niers had the suspicion that he would continue to level so long as he was pushed to his very limits by his opponent. If he could hit Level 70, what miracles might occur?</p>
+<p>Wait. Be patient. Niers sat in front of the chess board and grimaced. His students’ departure had let quite a lot of muggy heat into the room.</p>
+<p>It was so <em>hot</em> outside. Niers hated the heat, even though Baleros was almost always like this. The only thing he hated more was deserts. Sandstorms were even more unpleasant when the individual particles were capable of ripping out chunks of your skin.</p>
+<p>What he wouldn’t give for a sword made of ice, or a cool drink right now. He could always request one, but what kind of example would he set?</p>
+<p>Niers Astoragon sighed as he sat in his tent, waiting for the night to end so he could win another battle. The world was moving, yet for so long he’d found himself stagnating. Perhaps it was time to quit the Company. Read one of Magnolia’s damn letters. Could he abandon his Commander, his long-time friend and the leader of his Company so easily?</p>
+<p>But he ached to know. And…Niers felt it. It was in his bones, a sense, a premonition of battle. It came from his class, but it was far larger than anything Niers had felt before. It seemed to engulf the world, a strange tugging that came from the sky. Larger battles would await him soon, battles Niers had never dreamed of. That was what his instincts told him.</p>
+<p>All he had to do was wait. Niers studied the chess board.</p>
+<p>“Come back soon, will you? It grows terribly lonely without you.”</p>
+<p>He stretched. Time for sleep. He couldn’t be caught yawning in front of his troops, could he? And at least his tent was starting to cool again. Still, a cool drink right now would be very welcome. Perhaps after the battle. As celebration.</p>
+<p>He wondered when the damn Winter Sprites would get here, or whether they’d forgotten to bring winter.</p>
+<p>Again.</p>
+<p>&nbsp;</p>
+<p>—-</p>
+<p>&nbsp;</p>
+<p><strong>[Loran Grimnar]</strong> – Anyways, it’s hot as hell over here. How is it winter where you are?</p>
+<p>[<strong>Humble Actor</strong>] – Search me. I think it’s because the Winter Sprites haven’t arrived on your continent yet. Apparently they bring the winter.</p>
+<p><strong>[Loran Grimnar]</strong> – Seriously?</p>
+<p>[<strong>Humble Actor</strong>] – Yeah. And it’s weird. I saw them a few times. Got hit in the face with snow as well, but I swear they’re actual faeries. No one else seems to see them, but I can.</p>
+<p><strong>[strider_479]</strong> – I can confirm that. I’ve seen the Winter Sprites too. They’re horrible. If you bother them they start avalanches. Stay away.</p>
+<p>[<strong>Humble Actor</strong>] – Words to the wise.</p>
+<p><strong>[BlackMage]</strong> – I still can’t raise [batman]. I guess we’ve got to do this by ourselves, guys.</p>
+<p>[<strong>Humble Actor</strong>] – Oh? Is that the last person you wanted to call?</p>
+<p><strong>[BlackMage]</strong> – Yeah. But they’re not picking up.</p>
+<p><strong>[Loran Grimnar]</strong> – Why do we want BATMAN of all people in the chat?</p>
+<p><strong>[strider_479]</strong> – It was pretty clear looking back that [batman] was a lot smarter than we thought. They figured out there was a spy in the group and warned us in secret.</p>
+<p><strong>[Loran Grimnar]</strong> – what? Gtfo.</p>
+<p><strong>[BlackMage]</strong> – No, really, it’s true. But I’ve called them five times and they’re not answering.</p>
+<p><strong>[strider_479]</strong> – What about [America Group]? Why not invite them?</p>
+<p><strong>[BlackMage]</strong> – Too dangerous. There are a lot of them, right? I want to keep this to as few people as possible to avoid possible leaks.</p>
+<p><strong>[Loran Grimnar]</strong> – Okay, let’s get this started! We’re going to share more info, right?</p>
+<p><strong>[strider_479]</strong> – Hopefully without anyone spying on our conversation and less noisy voices.</p>
+<p><strong>[BlackMage]</strong> – Exactly. Let me also introduce [Humble Actor]. She somehow managed to get in contact with me at Wistram and I showed her the previous conversation.</p>
+<p>[<strong>Humble Actor</strong>] – Hey everyone.</p>
+<p><strong>[strider_479]</strong> – Pleased to meet you.</p>
+<p><strong>[Loran Grimnar]</strong> – Why is strider here?</p>
+<p><strong>[strider_479]</strong> – What?</p>
+<p><strong>[Loran Grimnar]</strong> – I just remembered. You gave away your name! You could be tracked or an imposter!</p>
+<p><strong>[strider_479]</strong> – First off, I’m not. Second, I was adopted. My birth name’s a mystery even to me.</p>
+<p><strong>[Loran Grimnar]</strong> – oh</p>
+<p>[<strong>Humble Actor</strong>] – Lucky break.</p>
+<p><strong>[BlackMage]</strong> – Exactly. I can confirm this – mages tried to scry strider and couldn’t, so she’s safe.</p>
+<p><strong>[strider_479]</strong> – And the others?</p>
+<p><strong>[BlackMage]</strong> – We’ve lost contact. We can’t see anything.</p>
+<p>[<strong>Humble Actor</strong>] – Fuck.</p>
+<p><strong>[Loran Grimnar]</strong> – omg</p>
+<p><strong>[BlackMage]</strong> – This is why it has to be secret. I wanted [batman]’s opinion, but we can always show him/her the log.</p>
+<p><strong>[strider_479]</strong> – Fine. Where should we start?</p>
+<p><strong>[BlackMage]</strong> – Let’s do this properly. The [Mages] with me are nearly sure we won’t be hacked so tell us your class, general location, and situation.</p>
+<p><strong>[strider_479]</strong> – Sounds dicey.</p>
+<p><strong>[BlackMage]</strong> – We want to help. I’m at Wistram. They can come get you guys.</p>
+<p><strong>[strider_479]</strong> – Still risky. How about just classes and continents until we can be sure everything is on the up and up?</p>
+<p>[<strong>Humble Actor</strong>] – I’m for that.</p>
+<p><strong>[BlackMage]</strong> – I guess…sorry, I know this is risky.</p>
+<p><strong>[strider_479]</strong> – No worries. I’ll start. [Ranger], like I said. I’m in Terandria.</p>
+<p><strong>[Loran Grimnar]</strong> – [Warrior]. Baleros.</p>
+<p><strong>[BlackMage]</strong> – I’m a [Mage] on Wistram.</p>
+<p><strong>[strider_479]</strong> – Humble?</p>
+<p>[<strong>Humble Actor</strong>] – [Pop Star]. Terandria.</p>
+<p><strong>[Loran Grimnar]</strong> – WHAT</p>
+<p>[<strong>Humble Actor</strong>] – Shut up. I’m also an [Actor].</p>
+<p><strong>[BlackMage]</strong> – Can you explain how you got that class?</p>
+<p><strong>[strider_479]</strong> – And what it does?</p>
+<p>[<strong>Humble Actor</strong>] – It’s a variation of [Singer]. It’s complicated how I got it, alright?</p>
+<p><strong>[BlackMage]</strong> – Let’s just start from the beginning.</p>
+<p><strong>[Loran Grimnar]</strong> – This is so weird. How is that a class?</p>
+<p>[<strong>Humble Actor</strong>] – Go to hell.</p>
+<p><strong>[BlackMage]</strong> – Please calm down.</p>
+<p><strong>[strider_479]</strong> – Why are we doing this, by the way [BlackMage]? What’s the end goal for us?</p>
+<p><strong>[Loran Grimnar]</strong> – Aren’t we just sharing information?</p>
+<p>[<strong>Humble Actor</strong>] – No, Strider’s right. [BlackMage], you told me you had a plan.</p>
+<p><strong>[BlackMage]</strong> – I did.</p>
+<p><strong>[BlackMage]</strong> – Our first goal is to exchange information. Anything unusual we can tell each other, any hints or unique classes like [Humble Actor]’s [Pop Star] class could be vital. But after that we need to work together. And that means we meet up or find some way to help each other. Big things are happening. The King of Destruction is moving, and there’s a few wars going on in Terandria right now.</p>
+<p><strong>[strider_479]</strong> – You’re telling me.</p>
+<p><strong>[Loran Grimnar]</strong> – Seriously?</p>
+<p>[<strong>Humble Actor</strong>] – I’ve noticed. Pain in the ass.</p>
+<p><strong>[BlackMage]</strong> – Right, and it’s getting more dangerous. We need to work together. If we can meet up and collect other people…</p>
+<p><strong>[strider_479]</strong> – We’ve got an army.</p>
+<p><strong>[Loran Grimnar]</strong> – Is there a war? I mean, other than the one in Terandria? Are we going to fight the King of Destruction cause…not me.</p>
+<p>[<strong>Humble Actor</strong>] – Si vis pacem, para bellum.</p>
+<p><strong>[Loran Grimnar]</strong> – What?</p>
+<p><strong>[BlackMage]</strong> – I don’t know if we’re going to war. But the mages in Wistram say they’re not going to sit on the sidelines. We just need to work together. Strength in numbers.</p>
+<p><strong>[strider_479]</strong> – Better than being alone. We can find that Kyle imposter or at least protect ourselves from him.</p>
+<p>[<strong>Humble Actor</strong>] – Count me in. Where do we start?</p>
+<p><strong>[BlackMage]</strong> – Details on your arrival would be great. What it was like when you arrived, if you noticed anything odd, where you ended up…it might help us identify if you were the subject of a spell.</p>
+<p><strong>[Loran Grimnar]</strong> – So it WAS a spell?</p>
+<p><strong>[BlackMage]</strong> – Not for everyone. They’re not sure. But they’re working on it. We’ve got people here who want to help.</p>
+<p><strong>[strider_479]</strong> – Can they send us back?</p>
+<p><strong>[BlackMage]</strong> – Maybe. But reversing the spell is harder than bringing people over, apparently.</p>
+<p>[<strong>Humble Actor</strong>] – Wonderful.</p>
+<p><strong>[BlackMage]</strong> – Don’t give up, guys. We know we’re not alone.</p>
+<p><strong>[Loran Grimnar]</strong> – Right, and we can link up! Strider and Humble are on the same continent. If we work together we can win!</p>
+<p>[<strong>Humble Actor</strong>] – What is this, a support group? We’re not in a game.</p>
+<p><strong>[BlackMage]</strong> – No, but we are unique. We were chosen for a reason, I think.</p>
+<p><strong>[Loran Grimnar]</strong> – We can do things the people in this world can’t. We could be heroes.</p>
+<p>[<strong>Humble Actor</strong>] – Maybe.</p>
+<p><strong>[strider_479]</strong> – Let’s start. Do you think [batman] will be on board with us?</p>
+<p>[<strong>Humble Actor</strong>] – Who knows?</p>
+<p><strong>[BlackMage]</strong> – We’re all on the same side here.</p>
+<p><strong>[Loran Grimnar]</strong> – Yeah. We can save the world.</p>
+<p>[<strong>Humble Actor</strong>] – Good joke.</p>
+<p>&nbsp;</p>
+<hr>
+<p><a href="https://wanderinginn.com/2017/06/21/2-31/">Previous Chapter</a> <span style="float:right"><a href="https://wanderinginn.com/2017/05/28/s02-the-antinium-wars-pt-1/">Next Chapter</a></span></p>
+      </div>
+
+      <hr>
+          <span class="nav-previous">
+        <a href="https://wanderinginn.com/2017/06/21/2-31/" rel="prev"><span class="meta-nav">←</span> Previous Chapter</a>    </span>
+    <span class="nav-next" style="float: right" ;="">
+        <a href="https://wanderinginn.com/2017/06/25/s02-the-antinium-wars-pt-1/" rel="next">Next Chapter <span class="meta-nav">→</span></a>    </span>
+    
