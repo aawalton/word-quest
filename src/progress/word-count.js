@@ -48,7 +48,6 @@ export async function countWordsInJsonFiles(baseDirectoryPath) {
         
         allResults = allResults.concat(results);
       } catch (dirError) {
-        console.warn(`Skipping directory ${directoryPath}: ${dirError.message}`);
       }
     }
     

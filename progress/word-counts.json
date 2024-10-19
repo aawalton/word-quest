@@ -2863,5 +2863,575 @@
     "file": "twi/0573_8_74_dr.json",
     "wordCount": 14901,
     "completed": true
+  },
+  {
+    "file": "twi/0574_8_75.json",
+    "wordCount": 15916,
+    "completed": true
+  },
+  {
+    "file": "twi/0575_8_76_b.json",
+    "wordCount": 33380,
+    "completed": true
+  },
+  {
+    "file": "twi/0576_8_77_b.json",
+    "wordCount": 32072,
+    "completed": true
+  },
+  {
+    "file": "twi/0577_8_78_f.json",
+    "wordCount": 42601,
+    "completed": true
+  },
+  {
+    "file": "twi/0578_8_79.json",
+    "wordCount": 37785,
+    "completed": true
+  },
+  {
+    "file": "twi/0579_8_80.json",
+    "wordCount": 39547,
+    "completed": true
+  },
+  {
+    "file": "twi/0580_8_81.json",
+    "wordCount": 41725,
+    "completed": true
+  },
+  {
+    "file": "twi/0581_8_82__pt__1_.json",
+    "wordCount": 16634,
+    "completed": true
+  },
+  {
+    "file": "twi/0582_8_82__pt__2_.json",
+    "wordCount": 22731,
+    "completed": true
+  },
+  {
+    "file": "twi/0583_8_82__pt__3_.json",
+    "wordCount": 19823,
+    "completed": true
+  },
+  {
+    "file": "twi/0584_8_83.json",
+    "wordCount": 18128,
+    "completed": true
+  },
+  {
+    "file": "twi/0585_8_84.json",
+    "wordCount": 17305,
+    "completed": true
+  },
+  {
+    "file": "twi/0586_8_85.json",
+    "wordCount": 26993,
+    "completed": true
+  },
+  {
+    "file": "twi/0587_epilogue.json",
+    "wordCount": 5962,
+    "completed": true
+  },
+  {
+    "file": "twi/0588_9_00.json",
+    "wordCount": 28619,
+    "completed": true
+  },
+  {
+    "file": "twi/0589_9_01.json",
+    "wordCount": 34245,
+    "completed": true
+  },
+  {
+    "file": "twi/0590_9_02.json",
+    "wordCount": 27137,
+    "completed": true
+  },
+  {
+    "file": "twi/0591_interlude___singing_ships.json",
+    "wordCount": 16147,
+    "completed": true
+  },
+  {
+    "file": "twi/0592_9_03.json",
+    "wordCount": 26082,
+    "completed": true
+  },
+  {
+    "file": "twi/0593_9_04.json",
+    "wordCount": 22226,
+    "completed": true
+  },
+  {
+    "file": "twi/0594_interlude___the_isles_of_goblin_and_minos.json",
+    "wordCount": 29583,
+    "completed": true
+  },
+  {
+    "file": "twi/0595_9_05_npr.json",
+    "wordCount": 40212,
+    "completed": true
+  },
+  {
+    "file": "twi/0596_9_06.json",
+    "wordCount": 20612,
+    "completed": true
+  },
+  {
+    "file": "twi/0597_9_07.json",
+    "wordCount": 34721,
+    "completed": true
+  },
+  {
+    "file": "twi/0598_9_08.json",
+    "wordCount": 26161,
+    "completed": true
+  },
+  {
+    "file": "twi/0599_interlude___mundanity_and_memorials.json",
+    "wordCount": 28904,
+    "completed": true
+  },
+  {
+    "file": "twi/0600_interlude___the_competition.json",
+    "wordCount": 20952,
+    "completed": true
+  },
+  {
+    "file": "twi/0601_9_09_p.json",
+    "wordCount": 29466,
+    "completed": true
+  },
+  {
+    "file": "twi/0602_9_10_w.json",
+    "wordCount": 23793,
+    "completed": true
+  },
+  {
+    "file": "twi/0603_9_11_w.json",
+    "wordCount": 28142,
+    "completed": true
+  },
+  {
+    "file": "twi/0604_9_12.json",
+    "wordCount": 29417,
+    "completed": true
+  },
+  {
+    "file": "twi/0605_9_13.json",
+    "wordCount": 30219,
+    "completed": true
+  },
+  {
+    "file": "twi/0606_9_14_vm.json",
+    "wordCount": 24007,
+    "completed": true
+  },
+  {
+    "file": "twi/0607_9_15_vm.json",
+    "wordCount": 33174,
+    "completed": true
+  },
+  {
+    "file": "twi/0608_9_16_r.json",
+    "wordCount": 31310,
+    "completed": true
+  },
+  {
+    "file": "twi/0609_9_17_r.json",
+    "wordCount": 38108,
+    "completed": true
+  },
+  {
+    "file": "twi/0610_interlude___the_great_race.json",
+    "wordCount": 19935,
+    "completed": true
+  },
+  {
+    "file": "twi/0611_9_18_e.json",
+    "wordCount": 39104,
+    "completed": true
+  },
+  {
+    "file": "twi/0612_interlude___relationships.json",
+    "wordCount": 24084,
+    "completed": true
+  },
+  {
+    "file": "twi/0613_9_19.json",
+    "wordCount": 30859,
+    "completed": true
+  },
+  {
+    "file": "twi/0614_9_20.json",
+    "wordCount": 38202,
+    "completed": true
+  },
+  {
+    "file": "twi/0615_interlude___death_and_stitches.json",
+    "wordCount": 15998,
+    "completed": true
+  },
+  {
+    "file": "twi/0616_9_21.json",
+    "wordCount": 33929,
+    "completed": true
+  },
+  {
+    "file": "twi/0617_9_22_gn.json",
+    "wordCount": 19459,
+    "completed": true
+  },
+  {
+    "file": "twi/0618_9_23_ggggggggg.json",
+    "wordCount": 32492,
+    "completed": true
+  },
+  {
+    "file": "twi/0619_9_24.json",
+    "wordCount": 20912,
+    "completed": true
+  },
+  {
+    "file": "twi/0620_interlude___adventurers__pt__1_.json",
+    "wordCount": 23744,
+    "completed": true
+  },
+  {
+    "file": "twi/0621_interlude___adventurers__pt__2_.json",
+    "wordCount": 32465,
+    "completed": true
+  },
+  {
+    "file": "twi/0622_interlude___adventurers__pt__3_.json",
+    "wordCount": 43706,
+    "completed": true
+  },
+  {
+    "file": "twi/0623_9_25.json",
+    "wordCount": 33485,
+    "completed": true
+  },
+  {
+    "file": "twi/0624_9_26_f.json",
+    "wordCount": 30396,
+    "completed": true
+  },
+  {
+    "file": "twi/0625_9_27_rc.json",
+    "wordCount": 21459,
+    "completed": true
+  },
+  {
+    "file": "twi/0626_interlude___age_and_tales.json",
+    "wordCount": 22398,
+    "completed": true
+  },
+  {
+    "file": "twi/0627_interlude___the_first_and_last_of_us.json",
+    "wordCount": 26621,
+    "completed": true
+  },
+  {
+    "file": "twi/0628_9_28.json",
+    "wordCount": 21675,
+    "completed": true
+  },
+  {
+    "file": "twi/0629_9_29.json",
+    "wordCount": 45621,
+    "completed": true
+  },
+  {
+    "file": "twi/0630_9_30.json",
+    "wordCount": 45235,
+    "completed": true
+  },
+  {
+    "file": "twi/0631_9_31.json",
+    "wordCount": 32840,
+    "completed": true
+  },
+  {
+    "file": "twi/0632_9_32.json",
+    "wordCount": 38964,
+    "completed": true
+  },
+  {
+    "file": "twi/0633_9_33.json",
+    "wordCount": 32723,
+    "completed": true
+  },
+  {
+    "file": "twi/0634_interlude___foody_discussions.json",
+    "wordCount": 24959,
+    "completed": true
+  },
+  {
+    "file": "twi/0635_9_34.json",
+    "wordCount": 26553,
+    "completed": true
+  },
+  {
+    "file": "twi/0636_9_35_o.json",
+    "wordCount": 26637,
+    "completed": true
+  },
+  {
+    "file": "twi/0637_9_36_ho.json",
+    "wordCount": 33927,
+    "completed": true
+  },
+  {
+    "file": "twi/0638_9_37_ho.json",
+    "wordCount": 29304,
+    "completed": true
+  },
+  {
+    "file": "twi/0639_9_38_tv__pt__1_.json",
+    "wordCount": 37958,
+    "completed": true
+  },
+  {
+    "file": "twi/0640_9_38_tv__pt__2_.json",
+    "wordCount": 37195,
+    "completed": true
+  },
+  {
+    "file": "twi/0641_interlude___beginnings.json",
+    "wordCount": 9374,
+    "completed": true
+  },
+  {
+    "file": "twi/0642_9_39.json",
+    "wordCount": 30371,
+    "completed": true
+  },
+  {
+    "file": "twi/0643_9_40_gg.json",
+    "wordCount": 36686,
+    "completed": true
+  },
+  {
+    "file": "twi/0644_interlude___innovation_and_invention.json",
+    "wordCount": 36784,
+    "completed": true
+  },
+  {
+    "file": "twi/0645_interlude___brewing_sariants.json",
+    "wordCount": 17205,
+    "completed": true
+  },
+  {
+    "file": "twi/0646_interlude___the_spitoon.json",
+    "wordCount": 23127,
+    "completed": true
+  },
+  {
+    "file": "twi/0647_interlude___stories.json",
+    "wordCount": 26222,
+    "completed": true
+  },
+  {
+    "file": "twi/0648_9_41__pt__1_.json",
+    "wordCount": 37834,
+    "completed": true
+  },
+  {
+    "file": "twi/0649_9_41__pt__2_.json",
+    "wordCount": 35383,
+    "completed": true
+  },
+  {
+    "file": "twi/0650_interlude___levels.json",
+    "wordCount": 23558,
+    "completed": true
+  },
+  {
+    "file": "twi/0651_9_41__pt__3_.json",
+    "wordCount": 56105,
+    "completed": true
+  },
+  {
+    "file": "twi/0652_interlude___trade_and_travel.json",
+    "wordCount": 39931,
+    "completed": true
+  },
+  {
+    "file": "twi/0653_9_42_e.json",
+    "wordCount": 11284,
+    "completed": true
+  },
+  {
+    "file": "twi/0654_9_43_l.json",
+    "wordCount": 14894,
+    "completed": true
+  },
+  {
+    "file": "twi/0655_9_44_p.json",
+    "wordCount": 10591,
+    "completed": true
+  },
+  {
+    "file": "twi/0656_9_45_gt.json",
+    "wordCount": 14876,
+    "completed": true
+  },
+  {
+    "file": "twi/0657_9_46_s.json",
+    "wordCount": 21955,
+    "completed": true
+  },
+  {
+    "file": "twi/0658_9_47_u.json",
+    "wordCount": 10416,
+    "completed": true
+  },
+  {
+    "file": "twi/0659_9_48_btiprljmwvrv.json",
+    "wordCount": 20651,
+    "completed": true
+  },
+  {
+    "file": "twi/0660_9_49.json",
+    "wordCount": 21193,
+    "completed": true
+  },
+  {
+    "file": "twi/0661_9_50.json",
+    "wordCount": 35314,
+    "completed": true
+  },
+  {
+    "file": "twi/0662_9_51_z.json",
+    "wordCount": 17850,
+    "completed": true
+  },
+  {
+    "file": "twi/0663_9_52.json",
+    "wordCount": 29154,
+    "completed": true
+  },
+  {
+    "file": "twi/0664_9_53.json",
+    "wordCount": 37732,
+    "completed": true
+  },
+  {
+    "file": "twi/0665_9_54_c.json",
+    "wordCount": 53385,
+    "completed": true
+  },
+  {
+    "file": "twi/0666_9_55__pt__1_.json",
+    "wordCount": 38484,
+    "completed": true
+  },
+  {
+    "file": "twi/0667_9_55__pt__2_.json",
+    "wordCount": 39785,
+    "completed": true
+  },
+  {
+    "file": "twi/0668_9_56.json",
+    "wordCount": 21139,
+    "completed": true
+  },
+  {
+    "file": "twi/0669_9_57_b.json",
+    "wordCount": 38184,
+    "completed": true
+  },
+  {
+    "file": "twi/0670_9_58_o.json",
+    "wordCount": 28575,
+    "completed": true
+  },
+  {
+    "file": "twi/0671_9_59_o.json",
+    "wordCount": 43965,
+    "completed": true
+  },
+  {
+    "file": "twi/0672_interlude___the_library.json",
+    "wordCount": 1943,
+    "completed": true
+  },
+  {
+    "file": "twi/0673_9_60.json",
+    "wordCount": 30485,
+    "completed": true
+  },
+  {
+    "file": "twi/0674_9_61_g.json",
+    "wordCount": 22345,
+    "completed": true
+  },
+  {
+    "file": "twi/0675_9_62.json",
+    "wordCount": 19036,
+    "completed": true
+  },
+  {
+    "file": "twi/0676_9_63.json",
+    "wordCount": 21616,
+    "completed": true
+  },
+  {
+    "file": "twi/0677_9_64_bh.json",
+    "wordCount": 38412,
+    "completed": true
+  },
+  {
+    "file": "twi/0678_9_65.json",
+    "wordCount": 37767,
+    "completed": true
+  },
+  {
+    "file": "twi/0679_9_66.json",
+    "wordCount": 37608,
+    "completed": true
+  },
+  {
+    "file": "twi/0680_9_67__pt__1_.json",
+    "wordCount": 25519,
+    "completed": true
+  },
+  {
+    "file": "twi/0681_9_67__pt__2_.json",
+    "wordCount": 22575,
+    "completed": true
+  },
+  {
+    "file": "twi/0682_9_68.json",
+    "wordCount": 26340,
+    "completed": true
+  },
+  {
+    "file": "twi/0683_9_69_h__pt__1_.json",
+    "wordCount": 35645,
+    "completed": true
+  },
+  {
+    "file": "twi/0684_9_69_h__pt__2_.json",
+    "wordCount": 26683,
+    "completed": true
+  },
+  {
+    "file": "twi/0685_9_70__pt__1_.json",
+    "wordCount": 25596,
+    "completed": true
+  },
+  {
+    "file": "twi/0686_9_70__pt__2_.json",
+    "wordCount": 39413,
+    "completed": true
+  },
+  {
+    "file": "twi/0687_9_70__pt__3_.json",
+    "wordCount": 21448,
+    "completed": true
   }
 ]
