@@ -16,13 +16,15 @@ async function calculateTotalWordCount() {
       return total;
     }, 0);
 
-    console.log(`Total word count for completed entries: ${totalWordCount}`);
+    return totalWordCount;
   } catch (error) {
     console.error('Error:', error.message);
+    return 0; // Return 0 in case of an error
   }
 }
 
 if (import.meta.url === `file://${process.argv[1]}`) {
-  calculateTotalWordCount();
+  calculateTotalWordCount().then(totalWordCount => {
+    console.log(`Total word count for completed entries: ${totalWordCount}`);
+  });
 }
-
