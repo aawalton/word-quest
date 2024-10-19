@@ -39,7 +39,23 @@ export async function downloadChapters() {
 
       // Create a new page for each chapter
       const page = await browser.newPage();
-      await page.goto(url, { waitUntil: 'networkidle0', timeout: 60000 });
+      
+      // Add retry mechanism
+      let retries = 3;
+      while (retries > 0) {
+        try {
+          await page.goto(url, { waitUntil: 'networkidle0', timeout: 60000 });
+          break; // If successful, exit the retry loop
+        } catch (error) {
+          if (error.name === 'TimeoutError' && retries > 1) {
+            console.log(`Timeout error for ${title}. Retrying in 60 seconds...`);
+            await setTimeout(60000); // Wait for 60 seconds before retrying
+            retries--;
+          } else {
+            throw error; // Rethrow the error if it's not a timeout or we've run out of retries
+          }
+        }
+      }
 
       // Extract the main content of the chapter
       const content = await page.evaluate(() => {
