@@ -1,0 +1,860 @@
+
+
+          <span class="nav-previous">
+        <a href="https://wanderinginn.com/2024/08/14/the-roots-pt-3/" rel="prev"><span class="meta-nav">←</span> Previous Chapter</a>    </span>
+    <span class="nav-next" style="float: right" ;="">
+        <a href="https://wanderinginn.com/2024/08/18/the-roots-pt-5/" rel="next">Next Chapter <span class="meta-nav">→</span></a>    </span>
+      <!-- <hr/> -->
+      <header class="entry-header">
+        <h1 class="entry-title">The Roots (Pt. 4)</h1>
+                <button class="show-settings-btn" onclick="document.querySelector('#reader-settings-wrapper').classList.toggle('is-hidden')">
+          <img class="show-settings-btn-img" src="https://wanderinginn.com/wp-content/themes/solstice/assets/images/ui/reader-settings-button.webp">
+        </button>
+      </header>
+
+      
+<!-- Reader Settings -->
+<div id="reader-settings-wrapper" class="is-hidden">
+    <div id="reader-settings">
+        <header id="reader-settings-header">
+            <h2>Reader Settings</h2>
+            <button onclick="closeModal()">
+                <svg width="100%" height="100%" viewBox="0 0 33 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M16.5 30.75C24.0939 30.75 30.25 24.5939 30.25 17C30.25 9.40608 24.0939 3.25 16.5 3.25C8.90608 3.25 2.75 9.40608 2.75 17C2.75 24.5939 8.90608 30.75 16.5 30.75Z" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M20.625 12.875L12.375 21.125" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M12.375 12.875L20.625 21.125" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+            </button>
+        </header>
+
+        <fieldset id="fieldset-font">
+            <legend>Font</legend>
+
+            <div>
+                <label for="font-size-select">Size</label>
+                <select id="font-size-select" class="reader-settings-select" data-setting="reader-font-size" onchange="updateSetting(this.getAttribute('data-setting'), this.value);">
+                    <option value="10pt" class="reader-settings-option">10</option>
+                    <option value="11pt" class="reader-settings-option">11</option>
+                    <option value="12pt" class="reader-settings-option" selected="">12</option>
+                    <option value="13pt" class="reader-settings-option">13</option>
+                    <option value="14pt" class="reader-settings-option">14</option>
+                    <option value="16pt" class="reader-settings-option">16</option>
+                    <option value="18pt" class="reader-settings-option">18</option>
+                    <option value="20pt" class="reader-settings-option">20</option>
+                    <option value="22pt" class="reader-settings-option">22</option>
+                    <option value="24pt" class="reader-settings-option">24</option>
+                    <option value="26pt" class="reader-settings-option">26</option>
+                    <option value="28pt" class="reader-settings-option">28</option>
+                    <option value="30pt" class="reader-settings-option">30</option>
+                    <option value="36pt" class="reader-settings-option">36</option>
+                    <option value="42pt" class="reader-settings-option">42</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="font-family-select">Family</label>
+                <select id="font-family-select" class="reader-settings-select" data-setting="reader-font-family" onchange="updateSetting(this.getAttribute('data-setting'), this.value);">
+                    <optgroup label="Sans Serif">
+                        <option class="reader-settings-option" value="OpenSans, sans-serif" selected="">Open Sans</option>
+                        <option class="reader-settings-option" value="Arial, Helvetica, sans-serif">Arial</option>
+                        <option class="reader-settings-option" value="Roboto, sans-serif">Roboto</option>
+                    </optgroup>
+                    <optgroup label="Serif">
+                        <option class="reader-settings-option" value="Playfair, serif">Playfair</option>
+                        <option class="reader-settings-option" value="EBGaramond, serif">Garamond</option>
+                        <option class="reader-settings-option" value="'Times New Roman', Times, serif">Times New Roman</option>
+                    </optgroup>
+                    <optgroup label="Other">
+                        <option class="reader-settings-option" value="OpenDyslexic">OpenDyslexic</option>
+                        <option class="reader-settings-option" value="HennyPenny">Henny Penny</option>
+                    </optgroup>
+                </select>
+            </div>
+            <div>
+                <label for="font-weight-select">Thickness</label>
+                <select id="font-weight-select" class="reader-settings-select" data-setting="reader-font-weight" onchange="updateSetting(this.getAttribute('data-setting'), this.value);">
+                    <option class="reader-settings-option" value="300" selected="">Thin</option>
+                    <option class="reader-settings-option" value="400">Regular</option>
+                    <option class="reader-settings-option" value="500">Thick</option>
+                </select>
+            </div>
+        </fieldset>
+
+        <fieldset id="fieldset-spacing">
+            <legend>Spacing</legend>
+            <div>
+                <label for="margins-select">Page Width</label>
+                <select id="margins-select" class="reader-settings-select" data-setting="reader-article-width" onchange="updateSetting(this.getAttribute('data-setting'), this.value);">
+                    <option value="320px" class="reader-settings-option">Extra Narrow</option>
+                    <option value="500px" class="reader-settings-option">Narrow</option>
+                    <option value="680px" class="reader-settings-option" selected="">Medium</option>
+                    <option value="1000px" class="reader-settings-option">Wide</option>
+                    <option value="1200px" class="reader-settings-option">Extra Wide</option>
+                    <option value="100%" class="reader-settings-option">Max</option>
+                </select>
+            </div>
+            <div>
+                <label for="line-spacing-select">Line</label>
+                <select id="line-spacing-select" class="reader-settings-select" data-setting="reader-line-height" onchange="updateSetting(this.getAttribute('data-setting'), this.value);">
+                    <option class="reader-settings-option" value="1.2">Small</option>
+                    <option class="reader-settings-option" value="1.625" selected="">Medium</option>
+                    <option class="reader-settings-option" value="2.2">Large</option>
+                    <option class="reader-settings-option" value="3.5">Extra Large</option>
+                </select>
+            </div>
+            <div>
+                <label for="paragraph-spacing-select">Paragraph</label>
+                <select id="paragraph-spacing-select" class="reader-settings-select" data-setting="reader-paragraph-spacing" onchange="updateSetting(this.getAttribute('data-setting'), this.value);">
+                    <option class="reader-settings-option" value="0.5em">Small</option>
+                    <option class="reader-settings-option" value="1.625em" selected="">Medium</option>
+                    <option class="reader-settings-option" value="2.75em">Large</option>
+                    <option class="reader-settings-option" value="4.25em">Extra Large</option>
+                </select>
+            </div>
+        </fieldset>
+        <div class="ml-5 mb-4">
+            <label for="theme-select">Theme</label>
+            <select id="theme-select" class="reader-settings-select" data-setting="reader-theme" onchange="updateSetting(this.getAttribute('data-setting'), this.value);">
+                <option class="reader-settings-option" value="reader-theme-grey" selected="">Dark Grey</option>
+                <option class="reader-settings-option" value="reader-theme-blue">Dark Blue</option>
+                <option class="reader-settings-option" value="reader-theme-black">Black</option>
+                <option class="reader-settings-option" value="reader-theme-white">White</option>
+                <option class="reader-settings-option" value="reader-theme-sepia">Sepia</option>
+            </select>
+        </div>
+        <button id="reset-settings-btn" onclick="resetSettings()">Reset To Default</button>
+        <!-- <div> -->
+        <!-- </div> -->
+
+
+    </div>
+</div>
+      <div class="entry-content">
+        <p>For a Goblin, Rags realized that she possessed a fatal flaw: she was afraid of running away. Ever since she had become the leader of the Flooded Waters tribe, she could count the number of times she and her Goblins had quit a fight.</p>
+<p>Oh, escaped, survived overwhelming odds like Tyrion Veltras’ forced march to Liscor, liberated Tremborag’s captives, or delayed Naumel and left—sure. That was strategy. That was a victory where killing the other side was never the goal.</p>
+<p>But Rags did not personally run from her foes, despite her lack of size and relative weakness, even as a [Great Chieftain].</p>
+<p>It was trauma. It was always, probably, trauma. Whenever Rags felt the instinct to back out of a fight, be it Naumel or Garen or anything…she had a vision.</p>
+<p>It was always the same. A frightened little Goblin crouching in the tall grass watching as two older Goblins went running in opposite directions, trying to lure the Drake [Spearmaster] away.</p>
+<p>They knew they’d never outrun him, but maybe, if they ran fast enough, he’d not find the little Goblin hiding there, seeing it all. Rags could feel the breath in her lungs was constrained; she could never gulp enough air, and she would see it again and again.</p>
+<p>If the little Goblin had stood up, she would have died there. Rags knew it. She knew it, but that’s what it <em>felt</em> like.</p>
+<p>It left her sick, taking huge, deep breaths that strained her lungs until they hurt, but were never enough, a Goblin straining her lungs breathing the anxiety she exhaled until it was a suffocating cloud around her.</p>
+<p>The moment she saw the home of the Trolls, Rags felt like fleeing and going back to Goblinhome. But she couldn’t. She’d promised. It was just—very unpleasant for Rags to realize that she was a bit claustrophobic.</p>
+<p>It hadn’t been that bad in Liscor’s dungeon, but the dungeon was constructed, for all it was underground. This?</p>
+<p>Rags stood at the first entrance to the caves that the two Trolls had taken her to, looking back up the sloping tunnel. At first, it had been just a cave that stretched down unnaturally far. Then the passageway had narrowed until the Trolls had to sidle sideways to get through, holding their breaths. Rags had still been able to walk more or less normally, but now, she had come to what they called the ‘highways’.</p>
+<p>Once, perhaps, the wide tunnel had been a highway, vast enough to let multiple lanes of traffic flow through. It was hundreds of feet across and had been just as high.</p>
+<p>Once. Right now, Rags was staring at a mountain of rubble; the Trolls were beckoning her forwards, ducking to squeeze into a smaller passage. The Goblins, led by Taganchiel and Shineshield, her top [Shaman] and [Shield Maid] in the party, looked back as they warily stepped forwards.</p>
+<p>Roof of stone. Rags could see two blocks of granite or stone holding up a vaguely flat ‘roof’ that the Trolls were moving under. They travelled casually, but the Goblins around the paralyzed Rags saw what the ‘roof’ was supporting.</p>
+<p>A hundred thousand tons of rocks overhead. They had crashed downwards until the tall, beautiful tunnels collapsed. Burying this entire highway until the sheer weight of rubble and gigantic boulders had held up a second roof. Then everything had collapsed again, forming layers of compacted rubble with just enough space for Trolls and Goblins to squeeze through.</p>
+<p>That was the ‘highway’, a honeycomb of debris that the Troll guides were beckoning Rags to enter. She could <em>see</em> where stones had collapsed repeatedly, and she didn’t want to calculate how much weight the rocks at the bottom were supporting.</p>
+<p><em>This is insane.</em> Rags was frozen, but she knew she had to see what was down there plaguing the Trolls.</p>
+<p>She had promised—but the sight of that mountain of rubble transfixed her with horror. And that was <em>before</em> she sensed the earth shift.</p>
+<p>“<em>Watch out!</em>”</p>
+<p>Somo, the Ogre, shouted, and everyone <em>froze. </em>The two Trolls, picking their way further across the highway, raised their hands, ears flicking, and they looked nervous.</p>
+<p>The Goblins were terrified; Shineshield ran back as rubble cascaded down from the mountain, and Rags waited for the entire thing to shift and bury them all…</p>
+<p>It didn’t. After a moment, one of the Trolls called to Somo, and she pointed.</p>
+<p>“Chieftain, they want us to follow.”</p>
+<p>“Is it <em>safe?</em>”</p>
+<p>Rags’ voice cracked, and Somo rumbled a question. One of the two shadowed Trolls raised two arms in a very common gesture.</p>
+<p>“No one died this year, Chieftain.”</p>
+<p><em>I should go. This is madness.</em></p>
+<p>Rags blinked, and her breathing grew worse—but she forced herself to take a step forwards. The air was dead down here, suffocating. She could not panic. She gritted her teeth.</p>
+<p>“Shineshield. Light the way.”</p>
+<p>The [Shield Maid] nodded. Her armor and shield were bright and pristine as she lit up her shield. The Redfang warrior was very grumpy; the warriors under her command moved ahead as Rags walked under the roof, panting, Taganchiel helping her walk. Shineshield had been mad ever since <em>someone</em> had changed her class. She was still a vicious fighter, though, so Rags had taken her.</p>
+<p>She would have given anything for Redscar to be here, but Fightipilota was still flying back. And Rags had no idea when the attack on Goblinhome was coming. For all she knew, <em>this</em> was what was coming.</p>
+<p>“[Memo]. Rags to Poisonbite. We’re passing through their highway. All clear in Goblinhome?”</p>
+<p>Rags distracted herself as best she could. She heard a reply, oddly imprecise, in her mind.</p>
+<p>“<em>Poisonbite…all clear here. Good luck, Chieftain.</em>”</p>
+<p>Rags didn’t respond back. As she and her tribe marched into the heart of the mountain, the rising panic in her chest grew worse. So did the sounds in her head.</p>
+<p>[Dangersense] had gone beyond bells. It was a <em>thrum,</em> like the beating of blood in her veins, so huge it nearly overwhelmed her with terror.</p>
+<p><em>This is a mistake. Go back, go back—</em>she felt unwell, and Taganchiel sensed the same thing.</p>
+<p>“Chieftain. Something’s wrong. My [Shaman] class says something strange is ahead.”</p>
+<p>“I know. Keep…an eye out.”</p>
+<p>Sweat ran down Rags’ body, making her armor uncomfortable, and yet she continued onwards. Because she had to. The only thing that cut the darkness was the sound that the two Trolls guided her to, the one sign of anything worth finding down here.</p>
+<p>The drumbeats.</p>
+<p>It came from below. Rhythmic, cutting through Rags’ panic, giving her something to think about. It was a song played by the Queen of the Trolls.</p>
+<p>“Dulat.”</p>
+<p>That was her name or title. Rags listened. It echoed through the highways, past collapsed stone, through this ruin of a mountain. For once, Rags was sure, there had been more here. A civilization; she could not have said how she knew, only that she knew it had been, just as she sensed something terrible in the depths below her.</p>
+<p>Yet the Troll played on.</p>
+<p>Her rhythm did not waver. Her dignity was the song, and her voice was a thunder that could run through the High Passes. Her people, the Folk of Deep and Song, waited for the will of Goblins.</p>
+<p><em>Allies? Enemies?</em></p>
+<p>The Trolls waited in the darkness, locked in battle with a foe they had not chosen.</p>
+<p>The gates were breached.</p>
+<p>The old Tyrants were moving.</p>
+<p><em>Time, </em>sang the drums. <em>Time to open the ways above and flee or to sing one last time in the great deeps.</em></p>
+<p>The Goblin Chieftain listened to the Troll Queen’s song and wished that proud dignity were never needed for her tribe.</p>
+<p>She didn’t know what to do. So down she went.</p>
+<p>Seeking answers.</p>
+<p>She found too many. And always, always more damn questions.</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>Descending into the realm of the Trolls was like an entry into a truly foreign world. Rags had thought she knew the underground. But the moment Rags had entered one of the hidden tunnel mouths and gone down for twenty straight minutes in pitch-black darkness, she had realized the disorientation of the Trolls’ habitat was on another level.</p>
+<p>Goblins could live in the darkness. Cave Goblins were proof of that. However, even the Cave Goblins in her retinue were visibly out of their depth.</p>
+<p>Trolls didn’t need light. Even Goblins needed <em>some</em> illumination, but her two guides, Eike and Rorodousen—at least, that was what she thought they were named—navigated by means obscure to Rags.</p>
+<p>They clearly saw just as well when Rags lit a flame spell, but one rumbled something, and Somo, the female Ogre, made Rags douse it.</p>
+<p>“Bad, Chieftain. They no like.”</p>
+<p>“Why? Monsters?”</p>
+<p>Somo rumbled a question to the Trolls. Their reply was long and had no hand gestures. It sounded like stones grinding together.</p>
+<p>“Bad…something, Chieftain. Bad air. Fire grows?”</p>
+<p>Rags thought about it as the Goblins continued, following the Trolls and linking hands or holding onto each other so they wouldn’t get lost.</p>
+<p>“<em>Flammable air?</em>”</p>
+<p>She’d heard that was something that could occur from Pyrite. Strike a flint and the very air would explode. He’d said you could usually smell it, but that there were odorless toxic gases in the mountains as well.</p>
+<p>Frankly, the mountains and underground seemed like one of the most dangerous places in the world. Not only was Rags now blind, but her nose was no longer working. The world smelled like lichen, stone, and stale air that had forgotten the world above existed.</p>
+<p>It was hard to breathe. She found herself taking deeper gulps of air; perhaps it was the oppressive stone ceiling, which became literal collapsed parts of the tunnel now and then. The Trolls knew most of them; they just picked their way over the rocks, shifting some out of the way, but that was another sense down. It was all just stone. Wet stone, at times; there was water down here, but sight vanished. Smell became indistinguishable.</p>
+<p>When Rags heard the first drumbeats echoing through the tunnels, the sound that had routed the pursuers from Tenbault, the drumming of the Trolls in the deeps—she truly lost touch with the world.</p>
+<p><em>It rolled over the Goblins, hypnotizing them, filling the air with the sound of someone playing.&nbsp;</em></p>
+<p><strong>Thum. Thum.</strong></p>
+<p>Overwhelming. It only grew louder as Rags pressed downwards, even <em>with</em> the earplugs she’d ordered her entire group to equip. Earplugs? Hah! Even a [Silence] spell would be torn to ribbons; this was a vibration in your <em>blood. </em>Your entire body responded to each drumbeat.</p>
+<p>No wonder it was normally impossible to fight the Trolls in their terrain. That sound would deafen communication, throw warriors off their rhythms. It empowered the Trolls and Rags’ team; they found themselves marching to the beat, drinking water, breathing, moving to that rhythm guiding their lives.</p>
+<p>And it drove Rags’ neat mind of analytical reason and rational thinking—</p>
+<p style="padding-left: 40px;">—to</p>
+<p style="padding-left: 80px;">—pieces</p>
+<p style="padding-left: 120px;">—as</p>
+<p style="padding-left: 160px;">—they</p>
+<p style="padding-left: 200px;">—went</p>
+<p style="padding-left: 240px;">—down.</p>
+<p>Something was waiting for her down here. Rags was stumbling down the highway as Goblins watched her, concerned for her visibly deteriorating state. The Trolls were glancing back and asking Somo if she was sick when Rags’ eyes rolled up in her head, and she collapsed.</p>
+<p><em>Someone was waiting for her down here, in her head.</em></p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>Rags couldn’t breathe. She awoke in the darkness, lit only by a single, glowing lantern held by a Goblin’s claw. The packs and picks and shovels of the Goblins around her <em>clinked</em> terribly; they were out of their depth on this expedition.</p>
+<p>However, they’d come from six dozen tribes, and they were prepared to die for the truth. Fighting and negotiating their way through the darkness for the last six months had left them near-blinded by the lantern light. They were thin, tired—pushed to their limits, despite being the best of each tribe.</p>
+<p>They had fought horrors down here and come up empty-handed. They clustered around the too-bright lantern. They did not need the light, but Rags…no…<em>he</em> had insisted on lighting it.</p>
+<p>Her? Him?</p>
+<p>Rags realized what was going on as the lantern and the hand holding it—her clawed hand—shifted.</p>
+<p>A memory. She was looking through a Goblin’s eyes. She was another Goblin. Only, unlike other dreams, this one was all-encompassing. Her body felt oddly vigorous. Not strong in the way of a [Warrior]; rather, empowered. Deep down, she was the same frail Goblin who’d eaten roots and made medicines to make himself stronger.</p>
+<p>He was no warrior, but an [Alchemist], a [Healer] who had learned to fight. So many had called him the weakest of Chieftains until he had bested companies of Lizardfolk, Dullahan legions, and Centaur herds in battle. The Goblin stared into a bright steel buckler, polished into a mirror, and Rags saw who she/he was.</p>
+<p>Velan the Kind. Goblin King.</p>
+<p>No—not yet.</p>
+<p>Velan, the Goblin Lord of the Goblin’s Lament company of Baleros. Not a Goblin King. Not yet, not for over a decade. He had scabbed-over wounds on his arms and legs, the marks of fighting on him, and he was covered in sweat and dust, wearing light mithril mail.</p>
+<p>Rags, the real Rags, was frozen as Velan, who was piloting his own body and taking her with him, peered closer into the mirror shield a Goblin held up.</p>
+<p>“Like that. See through my eyes. [Shaman]?”</p>
+<p>There was a haze of incense in the air; a Goblin [Shaman] with tattoos running down his arms was striking his staff to the ground in a hypnotic pattern, echoed by great drums in the distance. They were in synchronization; the Troll King had been gracious.</p>
+<p>Tallis the Stormbreaker, one of the Great Chieftains of Izril, was panting with the effort of fixing this memory in place for future generations.</p>
+<p>Rags…knew that. She was Velan. She was also herself.</p>
+<p><em>She had never felt like this before. </em>When Velan looked up, she saw his crimson gaze as he stared into the mirror and realized he was looking at <em>her.</em> Through his own reflection. He knew she would see this and spoke to her…to the future.</p>
+<p>“I am Goblin Lord Velan. You, who follow my footsteps in search of the truth, I warn you. To all Goblins who come after: it is not here.”</p>
+<p><em>What? What was going on? </em>Velan pointed down to where the drumbeats were sounding.</p>
+<p>“Go back further to see their old kingdom and know where we are buried. This is the Kingdom of Deep and Song. It is built in the High Passes, which are the grave of the Empire of Harpies. If you look back <em>far</em> enough, you will understand all of this. We have gone down, deep, to the very gates. But they were sealed; the old foes from Death’s Lands were trapped down there. The wretched ones who tried to slaughter the Trolls and their allies during the last great war for the underground. <em>The Walled City of Graves, Liskaldreth.</em>”</p>
+<p>He knew it all and delivered the last name with bitter disgust. The Goblins around him shivered, and Velan stared unblinkingly into the mirror. He was so…tired. Rags felt it, but there was a hunger in his chest. A desperation she understood.</p>
+<p>“It is not <em>here.</em> There is little worth recovering. Do not open the doors. Leave the Folk of Deep and Song to their homes. The answers to what we are, to Goblin Kings…they lie somewhere else. Somewhere even deeper. These are not the ‘fortresses of stone’ that Trolls held; those sank off Izril’s coast. What we search for predates their kingdom, even the Kingdom of Gnolls.”</p>
+<p>His eyes burned, and he approached the mirror.</p>
+<p>“I will find it. If I do not, you must. Older than Harpies. Older than <em>Dragons. </em>Look for the Elves. And the Gnomes. If it is not here…”</p>
+<p>He stopped, as if struck by a sudden thought, and Rags had the same one.</p>
+<p><em>I wonder if Niers knows?</em></p>
+<p>Velan turned abruptly and covered the lantern, dousing the flames with his fingers.</p>
+<p>“It is still there. Beware the older Goblin Lords. I am one of the new ones. The old ones are testing us. If you’ve come this far, don’t give up. But beware. There are too many damned things that should have died with time…”</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>“Chieftain? Chieftain?”</p>
+<p>Someone was shaking Rags. She opened her eyes and realized she was lying on a litter. Rags sat up fast and nearly headbutted one of her [Witches].</p>
+<p>“Wh—Velan?”</p>
+<p>Everyone around her jumped, except Somo and the two Trolls. Rags glanced around. She was in a circular, domed room. Some kind of…</p>
+<p>Waystation? She couldn’t have said how she knew it, only that she recognized the circular domed room with little openings you could stare through. Trolls used them as places to rest while navigating the darkness.</p>
+<p>“What that, Chieftain? You okay?”</p>
+<p>A pointed hat and a hand on her head; it was a [Witch]. A Goblin [Witch] from Anazurhe’s tribe. Rags batted away the hand.</p>
+<p>“I’m fine. I…I saw a memory. From Velan. He left it for me.”</p>
+<p>“What?”</p>
+<p>The other Goblins stirred. They looked at Rags as if she were crazy, but she swung herself out of the litter.</p>
+<p>She felt better—a bit. The claustrophobia had died down, and she realized part of the anxiety attack had come from Velan. The memory had been so overpowering it had caused a physical response.</p>
+<p><em>How had he done that? </em>She had never imagined you could speak to the future, but of course, he’d known about their power. So intelligent. And yet…</p>
+<p>“Chieftain, Taganchiel passed out too. He woke up before you. He said he saw Tallis Stormbreaker. You saw <em>Velan?</em>”</p>
+<p>Rags looked about and saw Taganchiel, visibly disoriented, sitting and gulping water. She nodded at him, and he croaked.</p>
+<p>“Tallis the Stormbreaker. [Shaman] for [Shaman]. Velan for a [Chieftain]. Strongest vision I ever had, Chieftain Rags. What was Velan like?”</p>
+<p>Every Goblin looked at Rags, and she rubbed at her face.</p>
+<p>“…Strange. Very powerful, but not like a [Warrior]. He was searching for answers. He and a bunch of Goblins fought their way down here, searching for the truth. Didn’t find it. What was Tallis like?”</p>
+<p>“<em>Scary,</em> Chieftain. He could speak and turn you to ash. Very angry. But he loved Velan. Thought Velan was the best.”</p>
+<p>Taganchiel shuddered, feeling at his chest. Rags reorientated herself.</p>
+<p>“The truth does not lie below. He warned us not to open the gates. This place…is the Kingdom of Trolls. It lies in ruins. The High Passes are the Empire of Harpies’ <em>graves?</em> And he said something about the City of Graves…”</p>
+<p>The other Goblins were getting weirded out by all this. Shineshield grinned nervously.</p>
+<p>“You okay, Chieftain? Maybe we go back if you feeling bad?”</p>
+<p>Rags gazed at Shineshield, then shook her head.</p>
+<p>“No. This has nothing to do with Trolls’ problems. We’ll go down. Somo, tell our guides…<em><strong>(we were delayed by Goblin matters. We will visit the Stone that Sings Loudest soon.)</strong></em>”</p>
+<p>She heard the words coming out of her mouth, but she didn’t understand them until the two Trolls jerked upright. Somo blinked at Rags, then her eyes lit up.</p>
+<p>“Chieftain learned Trollish? So fast!”</p>
+<p>The two Trolls were open-mouthed at Rags. She felt at her own tongue.</p>
+<p><em>What the hell was that?</em> Somehow, she’d picked up Trolls’ language in a second. No…not picked up. <em>Remembered.</em></p>
+<p>Velan the Kind. Another gift from the canny Goblin King. Rags shook her head and got up.</p>
+<p><strong>“(Take me to your Dulat, please. This is the Kingdom of Deep and Song, isn’t it?)”</strong></p>
+<p><strong>“(It is. You…remember? Then you are a great Goblin. The People of Kings come to help with their Skills.)”</strong></p>
+<p>The Trolls looked hopeful, and the female one who’d offered Rags the horn spoke. People of Kings? That was their name for Goblins. Rags realized that Trolls used ‘folk’ for species without levels. ‘People’ for Humans, Goblins, Gnolls…</p>
+<p><em>So many things to unravel, but her [Dangersense] was still in her head. And the drums had picked up intensity. </em>They were thunderous now, like a march to war.</p>
+<p><strong>“(Tell me, now we can talk. What is the foe? Where did it come from and why do you need our help?)”</strong></p>
+<p>The female Troll answered briefly, and Rags’ heart skipped a beat.</p>
+<p><strong>“(Five. Or one. Five wanting to become one. They came from beyond the Old Doors.)”</strong></p>
+<p><em>Don’t open the doors. </em>Rags swallowed hard and raised a finger to her brows.</p>
+<p>“[Memo]. Rags to Poisonbite. I need reinforcements. We’ll send a guide up. The Trolls might be fighting something very old and deadly.”</p>
+<p>She waited, but something felt—off. Rags frowned. Touched her head again and tried to use her Skill.</p>
+<p>“Poisonbite?”</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>Poisonbite wasn’t dead. Rags confirmed that after Shineshield had marched for thirty minutes back the way she’d come and then sprinted back.</p>
+<p>“Chieftain! Poisonbite memoed me! She thinks you died!”</p>
+<p>“Neither of us is dead, Shineshield. Send a runner back. The mountain is blocking the [Memo] Skill. Or something else is. [Messages] are also not working.”</p>
+<p>Rags had never heard of that happening. She knew you could block [Messages], but could you suppress a [Memo] as well? Then again…if you used an entire damn mountain, she bet that would stop magic or Skills if anything could.</p>
+<p><em>Just another complication down here. </em>Rags had to play telephone with Poisonbite as she gave swift orders.</p>
+<p>“I am going to keep heading down. I’ve come too far to turn back, and I can communicate with the Trolls. I will be back or send a messenger within a day’s time. Redscar is in command when he arrives.”</p>
+<p>Poisonbite really didn’t like that, but she couldn’t bug Rags, and the Goblin had already wasted enough time with her fainting episode. The Trolls’ lair was <em>deep</em> inside the mountain, and even marching fast, they had a long way to go.</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>Now that she understood where she was, the entire passage through the collapsed highways and side-tunnels took on another look to Rags. Yes, places had completely been buried and left only small passages to move through, but several chunks of the old highways were completely intact and eerily wide and empty.</p>
+<p>Not that this place was deserted, oh no. Rags’ tribe ran into combat twice on their descent, both times swiftly dispatched.</p>
+<p>“Dropbats.”</p>
+<p>Shineshield caught one on her glowing shield, and it flashed, blinding the creature before she had it on the ground and skewered it with her sword. Rags’ Hobgoblins opened up on their Thunderbows, cursing as the darkness made them miss the swooping targets. But every time they winged a bat, it died.</p>
+<p>The two Trolls were surprised by the Dropbats <em>and</em> the Armored Crawler, which came surging out of the darkness. The two of them and Somo beat it back, roaring, as the monstrosity recoiled from a [Fireball] Rags hurled at it and a jolt of Taganchiel’s lightning.</p>
+<p>Apparently, those two monsters didn’t attack Trolls, who were too tough. Rags’ Goblins easily repelled both offensives, but Rags was highly aware of other creatures moving through the dark.</p>
+<p>Most were smaller; rockmites, the insects that ate holes in the mountain, Stone Slimes, various bug types, even sentient mushrooms. Magic allowed for a good deal of life, even in pitch-blackness.</p>
+<p>…Once, the Trolls flattened themselves against a wall and made signals for the Goblins to crouch and go quiet. Rags had gazed up and heard a <em>crunching</em> sound as something walked over an entire stream of rockmites. Something big enough to make the ground tremble as it moved.</p>
+<p>Yet none of these threats made Rags think it was beyond the capacity of Trolls to fight. They avoided big threats, fought back against predators, and, as Rags neared what seemed to be their primary camp, she saw more and more of them.</p>
+<p>Trolls could look like stone itself if they held still. Rags, with her [See Heat] Skill, picked them out of the darkness.</p>
+<p>They lived in stone camps. That was the only way to describe them. The Trolls had stone in plenty and so everything was made of it; it was just the grade and quality of it that differed.</p>
+<p>A huge stone ‘fence’ barricaded off a series of caves in the first Troll settlement that Rags’ group passed. Trolls called down at their guides from the ledges, and Rags noted their equipment.</p>
+<p>They had steel! But it was all rusted, clearly plundered from adventurers or [Soldiers] who’d come down here. Some Trolls had resized plate armor and enchanted weapons; the lowest-grade of warrior had stone-age weapons.</p>
+<p>To make up for this, Trolls had a defensive weapon that made Rags think they could have fought any Goblin tribe: slings. Slings and stones they could literally hurl with their incredible strength.</p>
+<p>Cloth and hide were precious here. So was oil, hence the disrepair of the metal, if the Trolls even understood how to keep the blades. The only thing down here that they had was stone; no fire for forging, no agriculture. They did have mushroom and lichen farms, and they loved potatoes for some reason.</p>
+<p>Thus, Rags saw caves of Trolls with mats of bare lichen or old hide for living spaces—and for light, they had magical quartz that they had cut, polished, and placed high up, like streetlights.</p>
+<p>Some Trolls had made houses out of beautiful strata of stone infused with glittering minerals or created patterns of stones or even statues out of gemstones. They had few cutting tools, but they <em>had</em> a wealth that would have had Gold-rank adventurers coming after them nonstop.</p>
+<p>Their protection was the sheer depth at which they lived, the tunnels, and of course—the drums.</p>
+<p>The drums that Kevin and the other Goblins had heard were the ultimate weapon and defense of the Trolls. How it worked had been a mystery to Rags until the Trolls had shown her a very cunning system embedded along the highways and other passages.</p>
+<p>There were stone tubes dug through the rock, which let the sound echo through the entire mountain range. Close one, and the drumming would be far less audible. Open a bunch or put your ear to the sound tube and you’d be deaf. It let the drummer disorientate enemies, marshal her people, and, it seemed, distract her foes.</p>
+<p>Despite their proximity to the central Troll camp, Rags heard the drumbeats from far away, as if it were miles and miles to the west. She realized it was either a call to arms in that location or a distraction. You’d never find where the playing was coming from as long as the Trolls didn’t want you to.</p>
+<p>The central camp was one Rags was more familiar with: it was a war camp. The moment Rags passed into the huge space, she recognized fortifications. Walls of stone that had been rebuilt, Trolls wandering about, but most of all…</p>
+<p>The smell.</p>
+<p>It was sour sweat, the odd, loamy scent of the deep mountain, but also fear and something else. Something rotten. Not the Trolls; they smelled like mushrooms if anything. Rags saw lines of Trolls lying on the ground as others tended to them. Plucking at small, writhing objects or pouring water over…</p>
+<p>She stopped as something scuttled towards her, then <em>stomped.</em> Rags heard a crunch, and her boot revealed an insect with way too much black fuzz and legs growing all over its body. Higgledy-piggledy. Legs sprouting out of the back, from the sides—</p>
+<p><em>It made no sense.</em> Some of the legs wouldn’t even touch the ground, and they were all flailing as Rags scraped her boot on the ground with a grimace. The Troll warriors were groaning; they made little sound, but their pain was apparent.</p>
+<p>They were wounded, and it looked like they were <em>infested</em> with bugs. Covered in them. Trolls were peeling them off fast as they could, smashing them, as grossed out as the wounded warriors.</p>
+<p>The hairs on the back of Rags’ neck rose. Then—without warning, she came to an opening in the stone, a towering, tall room filled with openings and that a single figure sat in. There were no guards, no introduction. Yet when the drums fell silent a moment, Rags looked up, stepped forwards, and bowed slightly.</p>
+<p>The Troll Queen was waiting for Rags.</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>When she reached the Troll Queen, Rags realized her prepared speech was useless. The Troll Queen sat there playing on her drums. A faint light illuminated her that Rags was curious about until she realized it was luminescent mold of various colors smeared on the inside of the drum chamber. It gave the Troll Queen a faint, multicolored glow as she sat there.</p>
+<p>She wasn’t the largest of the Trolls; she was more of middling height. But she sat in front of the ancient, metal drums in that central chamber and did not stop playing, even when Rags stood before her.</p>
+<p>“Dulat.”</p>
+<p>She nodded at Rags, and the timbre of the drumming changed. The marching, busy sound lowered until it was like someone breathing and trying to keep it hidden. Breathless; Rags had never heard a drummer play that sound so well.</p>
+<p>Respectfully, the Trolls stepped back, and Rags nodded back to the Troll Queen, and entered the chamber for her audience.</p>
+<p><strong>“(Your people are mighty and well-guarded, Stone That Sings Loudest of the Folk of Deep and Song.)”</strong></p>
+<p>If she was surprised that Rags could speak her language so fluently, the female Troll gave no sign of it. Instead, the Troll Queen’s grave face broke into a smile, and she played <em>dolcissimo,</em> a patter of high, playful notes, then switched, the drumbeats going lower, straining, until they sounded rasping.</p>
+<p><em>Affannato; </em>anguish running through the sound. She said—nothing.</p>
+<p>The reply was clear. Rags had seen the encampments of other Trolls, and she understood their organization and technology, such as it was, set them above other creatures down here.</p>
+<p>Trolls were exceptionally tough. They seemed to subsist on mushrooms, prey, like the giant Dropbats that Rags was all-too-familiar with, and underground streams. They were the apex group around here.</p>
+<p>If there were monsters, they had better be immune to the power of the drums, as well as the might of thick-skinned Troll warriors, who could swing a club hard enough to crush any ordinary man’s skull in a single blow, helmet or not—</p>
+<p><em>And</em> be more numerous than the Trolls, who could fill the tunnels in battle. And yet…Rags knew this was the Kingdom of Trolls. Or had been.</p>
+<p>Hence the Troll Queen’s amusement. She raised a hand as she kept up a simple beat with one hand, like a Mountain Giant tapping one finger.</p>
+<p><em>Enter my domain, honored guest. Be welcome. But do not mock me. Does this look like glory to you? We have crumbled away.</em></p>
+<p>Her gaze was pointed.</p>
+<p><em>Just like you.</em></p>
+<p>Rags wondered if her [Aura of the Emissary] was doing some of the translating or if her reading was off. She spoke.</p>
+<p><strong>“(I did not mean to offend. Your tribe </strong><em><strong>is</strong></em><strong> mighty. You fought Humans pursuing my people and routed them with ease. Your people seem safe and plentiful enough. I salute that, as a Chieftain.)”</strong></p>
+<p>She had noticed warriors tending to their wounds, but the fact there were enough to replace those wounded and rotated out was proof they were numerous. Was the tribe above a thousand, spread out as it was?</p>
+<p>A flicker in the drumming. Then a <em>booming</em> as a hand slapped the instrument, <em>colossale, </em>spontaneous and huge.</p>
+<p>The Troll Queen was laughing, slapping her drum with one hand as her entire body rippled with mirth. Then she gave the Goblin Chieftain a pitying look.</p>
+<p><em>This?&nbsp;</em></p>
+<p>Her playing grew quick and brisk, triumphant, an <em>omaggio</em>, but twisted with irony, as if she were celebrating some grand event. Again, she pointed down.</p>
+<p>Bare stone. Trolls standing and surviving in the darkness, not a palace. Rags kept her cool.</p>
+<p><strong>“(It is something. It is safety.)”</strong></p>
+<p>Rags didn’t understand her counterpart, but she learned more with each exchange. The Goblin Chieftain hadn’t realized how badly she was offending her host until the drumbeats <em>stopped.</em></p>
+<p>The Goblins warily offering gifts and poking around the Troll camp whirled; every Troll got to their feet. Children woke up; they had been sleeping and began to wail in an unsettlingly high pitched way.</p>
+<p>The Troll Queen, Dulat of the Folk of Deep and Song, leaned over her drums. And she spoke.</p>
+<p>“<em>No.</em>”</p>
+<p>It was the common tongue! So some of them <em>could</em> speak it! Rags blinked—but as the eerie silence pressed in where she had grown so used to sound, rushing against her eardrums like suffocating cotton, the Troll Queen raised one hand.</p>
+<p>“You are the People of Kings. You <em>remember.</em> Do not insult us. Once, we were like this.”</p>
+<p>Then she brought down her hand, and Rags didn’t hear the note she played; it rang and reverberated through the entire mountain range as she stumbled, clutching her head. When she could move and the world had stopped rocking, the Troll Queen sat there.</p>
+<p>“Now, see death. It came from the old gates. Go. Then come back and tell us if we fight together, Goblin and Troll. Or we die alone.”</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>In Goblinhome, high, high above where Rags was uncovering the foe of Trolls, the fortress home was tense.</p>
+<p>Goblins were on the lookout for anything coming their way, be it the Kraken Eaters, monsters from above, below, or anything else. To say they were <em>not having a good time</em> would be putting it lightly.</p>
+<p>When war came, ‘regular’ Goblins tended to make way for grumpy, important warriors who had no time for manners or normal occupations. In these moments, you did what you could, tried to cheer people up, and generally kept out of the way.</p>
+<p>That was Dyeda’s understanding, and Rianchi concurred with an addendum of ‘try and be helpful’. If a Hob had a busted shoe? See if yours fit. If someone needed oil polish? Go and get it.</p>
+<p>Redfangs were very utilitarian in that regard. So Rianchi had been trying to be useful around Goblinhome, tightening bolts on devices, re-checking traps—and getting a sense for what was going on.</p>
+<p>Dyeda and everyone else wanted to know. Rags knew everything, of course, but no one told regular Goblins anything, so Rianchi kept reporting back.</p>
+<p>“So Chieftain is down below, fighting alongside Trolls. Poisonbite’s very unhappy. Fighti and Redscar not back yet. Apparently, they have some nice things.”</p>
+<p>“Not nice enough if we get attacked before they get here.”</p>
+<p>One of Dyeda’s friends groused, and several Mountain City Goblins nodded. Rianchi bared his teeth at them. He didn’t like <em>all</em> of Dyeda’s Mountain City Goblin friends, but they got along okay most of the time.</p>
+<p>“No one’s seen anything.”</p>
+<p>That was the conclusion, so the Goblins sitting together and assembling arrows muttered and groaned and waited. They weren’t [Cooks] working overtime for the warriors to eat and making preserved food—just in case. They weren’t making armor or providing an essential service. They were just…</p>
+<p>Civilians. Rianchi was restless. He was a Redfang, but he’d sort of been kicked out of the tribe. As a [Tinkerer], he had a decent job, but everyone had double-checked all the devices five times, and at this point, you’d do more harm than good by taking something apart to re-certify it.</p>
+<p>“Maybe I’ll go around one more time. See if anyone needs something.”</p>
+<p>Dyeda waved a claw at him. She had work; Redfangs loved getting tattoos before a fight. She went back to inking a young Redfang’s arm, and Rianchi kicked around Goblinhome.</p>
+<p>He wished he could ride his bike. He loved his bicycle. But it was dangerous around Goblinhome at the best of times, and if he took it out now, a scout would curse him out. He tried riding down the corridors of Goblinhome, but that got him a tongue-lashing from the first Hob he saw for the potential to run over someone.</p>
+<p>Rianchi was apologizing as he heard someone <em>else</em> getting cursed out in much the same fashion. The surly female Hob manning a Thunderbow pointed, and Rianchi got out of the way as another Goblin appeared—well, two Goblins being held up by the scruffs of the neck.</p>
+<p>The Goblin holding them was Venasteel. She was a newer Hob, but a really good fighter who was pretty high up in terms of leadership. She was one of Poisonbite’s warriors; Rianchi recognized her because he had it on good authority from Dyeda that Venasteel was Poisonbite’s newest lover.</p>
+<p>Poisonbite had flings with Goblins all the time. She, like Redscar and Rags, had moved up to being a Hob, but that hadn’t given her the ability to hold a relationship for more than three months. Shineshield was one of Poisonbite’s former lovers who’d entered Redfang society, so Rianchi had heard all the gossip.</p>
+<p>There hadn’t been a Goblin that was good for Poisonbite yet…or rather, the reverse. The only lasting relationship she had was with her skateboard and, arguably, with Kevin, though they’d never been in bed.</p>
+<p>Anyways, Venasteel was overly keen as Poisonbite’s newest second-in-command, and she had both Goblins scruffs of their necks; Rianchi winced. They were both regular-sized and were kicking and shouting.</p>
+<p><strong>“</strong><em><strong>Poisonbite busy. Chieftain busy. Don’t bother with stupid things.</strong></em><strong>”</strong></p>
+<p>The Hob rumbled ominously as she dropped the two. Rianchi recognized Gothica instantly; the black-and-white Goblin glared, but the other Goblin he didn’t know until she spoke.</p>
+<p>“Not stupid! I was told to bring this to Rags <em>now!</em> From the inn!”</p>
+<p><strong>“Inn doesn’t matter. You are not Hob </strong><em><strong>or</strong></em><strong> lieutenant.”</strong></p>
+<p>Venasteel was impassive as Asgra waved a mangled letter in her face. Asgra stomped up to her, unafraid despite the difference between them.</p>
+<p>“I am staff of The Wandering Inn! Mrsha <em>said</em> this was important.”</p>
+<p>“The Wandering Inn is always important, dumbass. Tell Poisonbite to get off her high horse and listen or Rags kicks her butt when she gets back!”</p>
+<p>Gothica and Asgra were perhaps the two least-diplomatic Goblins ever, but were equally matched with Venasteel, who was not being very open-minded. She grabbed for the two’s ears and got both, eliciting a shriek of pain from Asgra, but Gothica didn’t flinch.</p>
+<p>“Shut up and behave.”</p>
+<p>“Make me, bitch.”</p>
+<p>Venasteel’s eyes narrowed. She lifted Gothica <em>off the ground</em> by her ear, and Rianchi winced in horror. But nothing tore, and Gothica didn’t even move; she folded her arms, and he realized the shadows were wrapping around her like a shield.</p>
+<p>In disgust, Venasteel dropped Gothica, then turned. She saw Rianchi and pointed.</p>
+<p>“You. Get rid of this.”</p>
+<p>She shoved Asgra at him, and Rianchi caught the Goblin. Asgra hid behind him as she shouted insults, but Rianchi dragged them back and ended the fighting.</p>
+<p>“You shouldn’t try to talk to Venasteel. She doesn’t listen. What do you have, Asgra? Chieftain Rags is below.”</p>
+<p>The Cave Goblin was uncertain when she calmed down. She held out a letter, and Rianchi saw it was stamped and addressed to ‘Chieftain Rags’.</p>
+<p>“Mrsha told me to deliver it. Fast. She said it was important.”</p>
+<p>Mrsha? Rianchi knew a bit of the inn from gossip, and Kevin, and wrinkled his nose. That was the little Gnoll girl, right? He couldn’t imagine it was that important, but he took the letter from Asgra.</p>
+<p>“Maybe it is? How important are things from Mrsha?”</p>
+<p>Gothica and Asgra hesitated. Gothica rubbed at her dyed black hair.</p>
+<p>“Eh. Not that important usually?”</p>
+<p>Asgra added hurriedly.</p>
+<p>“But she looked serious this time!”</p>
+<p>Rianchi frowned. Then he shrugged and opened the letter. Asgra gasped and grabbed for it, but he was taller and ignored her jumping and kicking his shin.</p>
+<p>Goblins had a lax attitude towards private possessions anyways. Plus, Rianchi had a good idea of the chances of Asgra making it to Poisonbite. He read the letter, frowning at some of the words since he wasn’t a good reader, even after Kevin had taught him. Gears were so much easier. But Gothica was staring over his shoulder, and then she stiffened. Rianchi’s eyes went wide.</p>
+<p>“What? What it say? I thought it was just an invitation to cabbage beef dinner. Which is in four hours. Rags should visit.”</p>
+<p>Asgra looked from face to face. She hesitated. Hazarded a guess.</p>
+<p>“…Is it not cabbage beef rolls for dinner?”</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>Poisonbite was nervous, so she was mad. She got mad when nervous, and she was not in the mood for visitors. She sat in Rags’ war room, demanding updates from various scouts and outposts. When she heard a scuffle at the entrance, she snapped.</p>
+<p>“Venasteel. No visitors.”</p>
+<p>She went back to staring at an icon where Fightipilota was, debating asking for an update on her position and whether it was worth the risk of Redscar telling her to ‘shut up’. Poisonbite looked up as the arguing grew louder, then heard a <em>crash.</em></p>
+<p>Venasteel went flying head-over-heels backwards and landed on the ground. Poisonbite drew her daggers in a second, and her fighters looked up—and saw someone standing in the doorway.</p>
+<p>“I said <em>move.</em>”</p>
+<p>Gothica lowered her hand, eyes flashing triumphantly as a wall of shadows whirled around her. Poisonbite’s mouth stayed open when she saw <em>Rianchi </em>hurrying forwards.</p>
+<p>“Poisonbite, Poisonbite, we need to send a message to Rags!”</p>
+<p>“What are <em>you</em> doing here? Get out! Being married doesn’t make you special!”</p>
+<p>She began to shout, then saw Asgra running forwards. All three looked frantic. Rianchi shoved something at Poisonbite, heedless of the angry female Goblins ready to drub him. Poisonbite snatched the letter, took one look at it, and stopped.</p>
+<p>“What the—who sent this?”</p>
+<p>“<em>Mrsha. </em>We think it’s real.”</p>
+<p>Poisonbite read, re-read, then put a finger to her head and tried a [Memo]. Then she leapt up, swearing.</p>
+<p>“<em>Get me every [Rogue], [Scout], and fast Goblin you can! Head to the Troll tunnels now!</em>”</p>
+<p>The message was simple and written by Mrsha. It read:</p>
+<p>&nbsp;</p>
+<p><em>TO CHIEFTAIN RAGS:</em></p>
+<p><em>DO NOT GO WITH THE TROLLS. DO NOT FIGHT THE THING DOWN IN THE TUNNELS. YOU WILL DIE.</em></p>
+<p><em>2</em><em>ND</em><em> ARMY OF PALLASS IS COMING FOR GOBLINHOME. SO IS A TRIBE OF GIANT GOBLINS. SPIES IN THE INN.&nbsp;</em></p>
+<p><em>COME TO DINNER AND ACT CASUAL.</em></p>
+<p><em>—Mrsha du Marquin. This is not a joke, I swear on Erin’s life.</em></p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>Rianchi was pacing back and forth as Poisonbite stood at the entrance to the Trolls’ caves. It was dark in there.</p>
+<p>Very dark. Poisonbite was shouting expletives.</p>
+<p>“What do you mean <em>slow?</em>”</p>
+<p>A visibly annoyed and dirty [Rogue] was snapping back at her. The Mountain City Goblin sounded exasperated as she enunciated a reply; she’d used to report to Tremborag himself and had more trappings of civilization about her; she was geared like an adventurer.</p>
+<p>“We can only run as fast as our legs, Poisonbite! It’s dark, there are damn rocks everywhere, and following the Trolls’ trails—well, it’s mostly just <em>far.</em>”</p>
+<p>No one had any idea how far down Rags had gone, but it was deep. They’d left a trail; there was a bit of luminescent gel that Rags had told her Goblins to leave in secret in case the Trolls had laid a trap.</p>
+<p>It didn’t sound like the Trolls were the trap, though, and Poisonbite was trying to get a Goblin within range of Rags to send Mrsha’s warning, but it was so far that they’d have to run for <em>hours</em> to get down there.</p>
+<p>The deep, dark tunnels that Trolls used. Mind you, they weren’t <em>that</em> bad for a Goblin. Given how big Trolls could be, if they could squeeze through anywhere, you could get through as a Goblin no problem. Even a Hob.</p>
+<p>Rianchi gulped as he stared into the mountain. Poisonbite just hissed.</p>
+<p>“Move as fast as you can, then. Send a warrior team if there are monsters! Who’s the fastest Goblin?”</p>
+<p>“Chickenruler on Coldcream? Leapwolf on a Carn Wolf.”</p>
+<p>“Leapwolf is with Redscar. Carn Wolves can’t see in there and won’t go in! <em>I mean on foot!</em>”</p>
+<p>The Goblins shrugged. Poisonbite was drawing breath to scream again when Rianchi raised a hand.</p>
+<p>“I am, Poisonbite. I can do it.”</p>
+<p>His voice was all shaky, and he felt like he did before Redfangs fought. He was no warrior; Rianchi didn’t even have more than a dagger on him, and he turned.</p>
+<p>“Anyone got a sword? And a stamina potion, maybe? Scroll?”</p>
+<p>He was too afraid to ask for a healing potion. Poisonbite just stared at Rianchi along with Asgra and Gothica.</p>
+<p>“You? You’re the worst Redfang. How are <em>you</em> the fastest?”</p>
+<p>Rianchi pulled his beloved treasure out of his bag of holding.</p>
+<p>“I have a bike.”</p>
+<p>Gothica’s eyes lit up, but Poisonbite just snorted.</p>
+<p>“And I have my skateboard. The tunnels are all rocks. Don’t be stupid and stop getting in my way.”</p>
+<p>She turned, and Rianchi rolled his bike forwards.</p>
+<p>“If Trolls can get through the tunnel, so can I. Even if I have to carry it, I’m a hundred times faster than anyone else.”</p>
+<p>Kevin had said you could go down stairs on a bike…rocks might be more than that, but if there were flats and if there wasn’t a squeeze or uphills, or even if there were…Poisonbite turned back.</p>
+<p>“You have wheels, Rianchi. That’s a mountain.”</p>
+<p>“I know. This is a mountain bike.”</p>
+<p>Poisonbite halted, mouth open, and Rianchi took the letter from Asgra’s hands. He was shaking now, but he gave the other Goblins a grin.</p>
+<p>“Plus, my bike is enchanted. Kevin made it for me.”</p>
+<p>He looked around, hoping someone would say something with common sense that would mean he wasn’t needed. But after a moment, Poisonbite just sighed.</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>The drumbeats were still playing hours later as Rags’ party kept going down. She had been marching fast for several hours after the Troll Queen had met them.</p>
+<p>Foolishly, Rags had thought the threat was on the Trolls’ doorstep and underestimated the <em>size</em> of this place. She’d set out the moment they had met with the Trolls. Which meant they were…</p>
+<p><em>How deep? How far?</em></p>
+<p>She had to trust her guides. The Troll Queen, whose name still escaped Rags, had assigned her new ones. These were Trolls who spoke both Ogre and the common tongue far better. Not scouts, though; they had a ponderousness to their movement, especially the most talkative one. But then, he was very, very old.</p>
+<p>“Closest one…is not much further. Cannot die. Came from Old Gates.”</p>
+<p>“Where are the Old Gates? What are they?”</p>
+<p>The Troll guide had white hair and the thickest hide of any Troll that Rags had ever seen. He rumbled at her as he clutched a spear with a jade-green tip.</p>
+<p>“Remember.”</p>
+<p>They seemed somewhat dismayed by Rags’ people, as if they had expected her to know everything. Rags hadn’t had time to delve further into her memories, and frankly, after Velan, she was a bit apprehensive about it.</p>
+<p>Rags changed subjects as they marched.</p>
+<p>“How do you know this language? Do Trolls have books? Study?”</p>
+<p>“No. Most Trolls not speak. Ogres sometimes trade.”</p>
+<p>Somo nodded, and Rags could see that. These two humanoid tribes might fight or rely on each other for things the other could not grant. It would be difficult, but it wasn’t like Humans or Drakes would help them.</p>
+<p>“Then you speak to Goblins and learn how to speak?”</p>
+<p><strong>“No. Speak Goblin to Goblins.”</strong></p>
+<p>The rumble from the Troll made Rags start. He turned his head and elaborated as the drumbeats grew faster. <em>Fighting had begun.</em> Rags’ [Dangersense] was pulsing louder with each minute, an echo to the drums.</p>
+<p><em>Something bad is down here. </em>She would rather have had Redscar here, but he still wasn’t back. Besides, Rags had to see the threat herself. They’d told her it was safe…enough. The Trolls were losing a war, not in immediate danger of collapse.</p>
+<p>The Troll spoke.</p>
+<p>“[Lady].”</p>
+<p>“Hm?”</p>
+<p>“We know this language for [Lady]. For Baron.”</p>
+<p>“…A Baron trades with Trolls? Which lady?”</p>
+<p>Rags expected some kind of apocryphal tale or a name she’d have to research or to be told to shut up and ‘remember’, but to her surprise, the Troll just rumbled after a moment.</p>
+<p>“Lady Wuvren. Her Baron. Us.”</p>
+<p>“What?”</p>
+<p>Taganchiel tripped as he heard that. Rags’ mind went blank for a moment.</p>
+<p>“Her Baron is a <em>Troll?</em>”</p>
+<p>“Yes.”</p>
+<p>The Troll seemed quite pleased by the revelation his words had caused. Rags opened her mouth to ask a bunch of questions, then remembered Lady Wuvren and the limited information she’d heard about the [Lady]. She connected two dots…and made a face.</p>
+<p>“Why am I not surprised?”</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>They came to a waystation of a kind, a circular area of stone that the Trolls could roll a boulder in front of and peek out from. It was a resting spot, and Rags took a nap.</p>
+<p>Not because she had to; she told Taganchiel to put a slumbering spell on her and closed her eyes.</p>
+<p>Remember.</p>
+<p>This time, she delved back as Velan had told her, trying to see what he had clearly uncovered. It was hard; Rags had never gone back this far in time, yet she <em>was</em> a Great Chieftain now. With Taganchiel’s aid, she sank deeper and deeper as the lives of Goblins flashed around her.</p>
+<p><em>Show me what this place was. Show me what I’m missing. Who were Trolls?</em></p>
+<p>When the memory came, it was blurrier than she wanted, like someone had rubbed grease over everything, and Rags put it down to the light napping and her lack of direct connection with this aspect of Goblin history. But she still saw it in flashes.</p>
+<p><em>—Giant caverns of stone. Tunnels lit by glowing rocks, and Trolls warily standing with armor and weapons, facing Dwarves who just as warily exchanged gold for precious stones. Trolls living in bright caverns with underground fauna, in settlements—no, a nation underground.&nbsp;</em></p>
+<p><em>A Kingdom of Trolls?</em></p>
+<p>The memory led to another one, sparking through Rags’ mind and setting off a chain reaction. She saw something else, vaguely.</p>
+<p><em>A meeting of three Kings in the deep. So old it was straining the limits of her class and status as Great Chieftain.</em></p>
+<p><em>The King of Trolls wearing some kind of armor of molded stone, a huge hammer in hand.</em></p>
+<p><em>The King of Dwarves on a pilgrimage, sitting in full Adamantium plate, a throng of warriors set for war around him.</em></p>
+<p><em>The King of Gnolls, a people in exile in the deeps, armored in Dragonscale, surrounded by [Shamans].</em></p>
+<p>Flicker—and Rags’ bones thrummed with the memory of something Goblins had been privy to, albeit on the outskirts. Hiding, staring, even fighting as mercenaries deep underground as the world above shook and roared—but impotently.</p>
+<p>As three species met hordes of invaders pouring into the caverns from above and routed them. Armies of Drakes, led by Dragons and even Wyrms and other dragonoid species, crawling down into the deep after their enemies.</p>
+<p>Routed, bested, before Gnolls had taken the surface. That ancient battle had spanned a continent underground. But here, at least—yes, <em>here</em>—one people had remained right where they had been at their greatest.</p>
+<p>The old, crumbling Kingdom of Trolls.</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>The last part of the dark descent into the Kingdom of Trolls was simple; if it had been a dream of another strange, underground world thus far, now it became a nightmare.</p>
+<p>The closer they got to the ‘Old Gates’, the less rubble they found. Something about what had been made down here indicated this was the most structurally sound part of the kingdom. But also, contradictorily, the most abandoned.</p>
+<p>It was probably because Trolls <em>knew</em> what the Old Gates were and stayed away on purpose. Rags found herself tracing a passage down walls of stone that were smooth, carved with ancient precision by Trolls of old…then which took on a residue that clung to her fingers. The air grew putrid; she felt an unpleasant pressure in the air.</p>
+<p>Then Rags put her hand into a soft wall that <em>moved,</em> and she realized an entire wall of insects was skittering out of the way. She jerked aside, and even her Goblins, who’d eat anything, just stomped and kicked at the insects.</p>
+<p>Then…they began finding the rotten flesh.</p>
+<p>It was everywhere, globs of rotting flesh so foul it was black or green, which refused to burn, even when Rags tried to blast a patch of it infested with bugs. It was also where said insects clearly came from; they ran in and out of the flesh, and Rags made a command decision the instant the smell grew overpowering.</p>
+<p>“Masks on.”</p>
+<p>Every Goblin donned a mask from the Molten Stone tribe, and Rags spoke.</p>
+<p>“[Darkvision].”</p>
+<p>The tunnel lit up a bit, and she wondered why the hell she hadn’t done this before. Oh, right—she had to breathe through the mask’s filters, and it got hot and uncomfortable. The old Troll had to just cover his face since they didn’t have a mask for him, but he didn’t seem to mind the odors. His grip on his spear was tense.</p>
+<p>“Almost there. Get ready.”</p>
+<p>Rags still didn’t know what they were up against. The Troll Queen had been very close-lipped, but even her guide couldn’t explain it, not really.</p>
+<p>Something had come from the Old Gates, which she now understood to be sealed parts of their Kingdom of Deep and Song.</p>
+<p>“How did the gates open?”</p>
+<p>“Don’t know. Something bad. Earth shook. Gates broke.”</p>
+<p>“Earthquake?”</p>
+<p>Rags didn’t recall any strong enough for that. The Troll gave her an arch look.</p>
+<p>“Earthquakes don’t move Old Gates. Something else. A…”</p>
+<p>He drew a line across his chest.</p>
+<p>“Thing.”</p>
+<p>“A…cut?”</p>
+<p>Rags began to get an ominous feeling. She asked <em>when</em> this had been, and the Trolls’ sense of time was different underground, but it lined up very neatly with…</p>
+<p><em>The Winter Solstice.</em> Something had cut straight through part of the mountain, it seemed, and damaged one of the Old Gates. From inside…</p>
+<p>Five things had come crawling. Or one thing? The Trolls were unclear, and Rags had marched down through the tunnels, as the drumming continued, to find the answer to her question. She came to a huge highway of stone filled with gigantic boulders turning it into a maze unto itself, and climbed onto the tallest boulder she could find.</p>
+<p>They were almost upon it—or rather, one of ‘it’—as her guide motioned them to slow. Rags could hear the drums again, beating hard and fast, a battle rhythm, and now there was the sound of Trolls fighting ahead, grunting and roaring—but no sounds of the enemy. Just a <em>thumping</em> and the buzzing of wings.</p>
+<p>“Get ready for battle. You, you, take that rock. Taganchiel, wards up. We’re scouting, so get ready to fall back. Shineshield, there.”</p>
+<p>Rags deployed her Goblins as the guide waited. Now, Rags could see something moving ahead of her, but it was so dark that even with [Darkvision]…</p>
+<p>Rags had to see, so she threw a single [Light] spell into the darkness, and it illuminated dozens of Troll warriors fighting in synchronized battle, aided by the drumbeats, against the only enemy that could withstand them. No—force them back. Rags took one look, and her [Dangersense] began to blare without end. She spoke down to Taganchiel and the other Goblins.</p>
+<p>“Old One.”</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>‘Old One’. A term for something you didn’t understand that had been buried in the ground so long that, when it came up, everything died. It was imprecise, broad, but when you heard one was around, you ran for your life.</p>
+<p>No exceptions. Rags wasn’t sure what she was looking at at first. It was a huge…<em>mound</em> of flesh. Flesh and bone, rotted so badly that when the light exposed it, Rags saw that the green ‘skin’ was the freshest. Most of it had mouldered until it was black, and yet however many aeons it had lain here, it had refused to rot completely.</p>
+<p><em>Parts of it were regrowing, even as Trolls tried to hack it to pieces. </em>Each blow from the brave warriors—and they were brave as Redfangs—released huge clouds of scuttling and flying filth. Insects, living on the thing’s body, assailed the Trolls until they had to retreat, clawing at the stuff in their lungs and wounds.</p>
+<p>The thing leaked ichor as well, so foul that Taganchiel identified it as poisonous even from here.</p>
+<p>“Keep away from that! No blood on skin!”</p>
+<p><em>It wasn’t a square. It wasn’t a circle. </em>It was some kind of structure; the Trolls had managed to hit bones in places. Rags was transfixed—then, as she saw the Trolls stumbling back from the bugs swirling around the rolling shape, she realized it was attacking!</p>
+<p>Or rather, the insects were? The Trolls seemed weak and sluggish for reasons not immediately apparent, but Rags had not come this far to watch them fight alone.</p>
+<p>“Open fire! Shineshield, keep back! Thunderbows, <em>there</em>. [Mark Target]! [Fast Fireball]!”</p>
+<p>“[Big Spell]!”</p>
+<p>Taganchiel shouted, and Rags’ [Fireball] <em>tripled</em> in size. A roaring flame turned the darkness into dawn as the Trolls cried out and Rags’ spell exploded, immolating bugs and coating the thing’s skin in fire and smoke.</p>
+<p>Her Hobgoblins on Thunderbows opened up at once, firing in a synchronized volley and reloading swiftly. Rags hurled another [Fireball] and shouted.</p>
+<p>“Fire! [Instantaneous Reload]! <em>Fire!</em>”</p>
+<p>Three volleys within a minute could have killed most threats, even a Passmaw. But as Somo raised her head, whispering a spell to whirl the dust and smoke out of her eyes, the Ogre grunted.</p>
+<p>“That bad.”</p>
+<p>Rags saw no damage to the gigantic mass of flesh. She <em>saw</em> huge crossbow bolts studding its side, but some had deflected entirely, and the rest left no blood. The thing just rolled over lazily, towards them. <em>Its skin wasn’t even scorched.</em></p>
+<p>All Rags’ [Fireballs] had done were destroy the insects, and more were emerging even as Rags watched. She heard a <em>thum</em> and frowned. It was coming from the flesh structure.</p>
+<p>“No good. Doesn’t work.”</p>
+<p>Rags’ guide pointed out the obvious. Rags gritted her teeth. Well then, they did it the hard way.</p>
+<p>“<strong>(You there! Advance while we attack!) </strong>Shineshield, <em>go!</em> Attack and fall back!”</p>
+<p>The Troll warriors lurched into motion as Rags shouted at them. If they were surprised, the drumbeats drove them onwards, but the Chieftain had a real shock for them with her next shout.</p>
+<p>“<em>[Ogre’s Charge]! </em>Somo—[Graceful Engagement]!”</p>
+<p>The Trolls sped <em>up,</em> and a roar ripped out of their mouths as they hit the mound of flesh hard enough for it to <em>ripple.</em> Suddenly, their swings were tearing off gobs of flesh, and on the other side, Somo lifted a greatsword and swung it in an elegant arc, slashing into the putrid flesh then spinning out of the way as the flesh erupted with black blood.</p>
+<p>“Skills.”</p>
+<p>The Troll below her grunted approvingly, and then hurled his spear. The jade spear streaked into the air, and Rags saw it grow <em>larger</em>—hit the giant mound of flesh, and sink in deep. The Troll raised his hand, and it tore loose, coming back towards him.</p>
+<p>All this damage—and the charge stalled out. Rags heard another <em>thum</em> from the construct, then another, and Shineshield backed away, sword bloodless, cursing. She fell back as the Trolls kept hacking, then disengaged as well.</p>
+<p><em>Something was wrong. </em>Rags should have seen a lot of gouges in the thing’s flesh. It was huge; Trolls and Goblins looked like tiny figurines around the huge mass, yet they had still cut and hacked pieces of it off. But it looked rotten as ever. Why?</p>
+<p>Rags saw a chunk Somo had torn off regrowing. The flesh the Ogre had cut was on the ground, but the thing was regrowing from its injury so fast it was almost healed as Somo backed away, eyes wide.</p>
+<p><em>Uh oh. </em>The Thunderbows kept firing, but the Hobgoblins were uncertain now, seeing the bolts just slowly being pushed out by the regenerating flesh. And Rags <em>still</em> had no idea what it was she was looking at.</p>
+<p>Only when Rags saw a Troll unearth another row of yellowed bone did she realize what it was.</p>
+<p>“<em>A rib cage?</em>”</p>
+<p>The monstrosity <em>rolled</em> over, forcing Trolls to back off or be crushed. They were retreating now, running from the rolling…yes, it had to be a rib cage! Rags heard the drums sound a retreat, frantic, but she heard another noise under the titanic beat of the Troll Queen.</p>
+<p><em>Thum. Thum. Thum.</em></p>
+<p>A heartbeat. The sound was so foul that Rags, unguarded, missed the warning shout from her guide. She didn’t understand until the nausea built up, and she pulled the mask off to spew the contents of her lunch down the side of the boulder. Then she leapt off of it.</p>
+<p><em>The heartbeat was dangerous. </em>Each time it pulsed, Rags felt unwell; if they stayed in cover, the Goblins were safer.</p>
+<p>“What <em>is</em> that, Chieftain? Dead Giant?”</p>
+<p>One of her Redfangs was unnerved. Rags peered back at whatever it was.</p>
+<p>“Smaller than the Giant at the Solstice. What is that heartbeat doing?”</p>
+<p>To her surprise, someone knew; it was one of the Molten Stone tribe. The same terrified young [Witch], who hugged her hat over her head.</p>
+<p>“We have to go, Chieftain! It—it using [Drain Life] on us!”</p>
+<p>“The <em>heart?</em>”</p>
+<p>One nod and Rags ordered an immediate retreat. The torso flopped over, again, and Rags realized it was headed in a specific direction, somehow. Where was unclear until the guide took her to the next ‘monster’. Then it became obvious.</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>A hand was scuttling across the ground, each finger—and it had seven—pulling itself forwards at an alarming rate. Trolls were running across a bridge as Rags caught up. Six miles away from the rib cage, the hand was fighting the Trolls. Only, the hand was far faster and more active than the rib cage.</p>
+<p>A finger <em>disengaged</em> with a slurp of sound, then wriggled and leapt at a Troll like a worm, trailing sinews behind it. It knocked the Troll down; screaming, the young warrior swung at it, and Rags saw the fingernail, filthy and huge, lever <em>up</em> and something peek out and try to stick red lines of sinew into his brain.</p>
+<p>She brought her sword down, and the lightning discharged. The tendons yanked back into the finger, which wriggled at her until Somo <em>kicked</em> it away. The Troll got up, and Rags shouted.</p>
+<p>“[Rapid Retreat]! Back, <em>back—</em>”</p>
+<p>The hand locked onto the new targets as her entire group ran for it. They crossed over a long bridge of stone; stone and huge ropes. It spanned a vast chasm where a vast, stone highway <em>had</em> been; now, a network of Troll-made rope-bridges crisscrossed the broken pieces.</p>
+<p>The hand scuttled after them, and Rags knew she and her group were running towards the torso in the distance. Even with [Rapid Retreat], the hand was so damn <em>fast—</em>it only slowed down where Taganchiel threw five Tripvine bags.</p>
+<p>“[Wild Overgrowth]! Keep running!”</p>
+<p>The vines tangled the hand for a few seconds until it tore free. Then it got <em>up</em>, balancing on all seven fingertips, and <em>ran </em>at the Goblins.</p>
+<p>It was halfway across the stone bridge when Rags’ guide, panting, shouted an order.</p>
+<p><strong>“(Now! Drop!)”</strong></p>
+<p>A Troll warrior next to Rags brought down a battleaxe on one side of the bridge as a Troll burst out of cover and sliced the same rope on the other side. The thick ropes had been pre-frayed for this purpose; the effect was instantaneous.</p>
+<p>The bridge jerked, then tilted sideways as one side of it dropped. The hand jerked as it sensed the change in gravity and made a wild grab for the piece of the bridge still staying upright. Rags saw Shineshield raise her sword, ready to cut the other side, but a Troll stopped her; the hand missed the grab and went plummeting into the darkness.</p>
+<p>Rags listened.</p>
+<p><em>One, two, three, four, five…</em>after ‘fourteen’, she heard a faint <em>thud</em> from below. The Trolls let out a breath with the Goblins, and her old guide spoke.</p>
+<p>“Bridge needs repairs. Or Trolls stuck.”</p>
+<p>Indeed, Trolls were already trying to wrestle it back up so they could reconnect the broken ropes. It was an excellent, if simplistic trap. Rags doubted she would have fallen for it, but falling…fourteen hundred feet or something would probably work on most threats.</p>
+<p>That was why she was really, <em>really</em> unhappy when she turned to her guide and asked the obvious.</p>
+<p>“Is it dead?”</p>
+<p>“No. Maybe stopped a bit. Soon, it will be climbing. Other parts try to follow it. Other traps down below. Those two…too close. Can’t let join up.”</p>
+<p><em>A thousand-foot fall only slowed it down? </em>Rags thought she knew what the damn thing was now. Thought she knew—but she turned to the guide.</p>
+<p>“Hand. Torso. You said ‘five’. That should be six. Is there no head?”</p>
+<p>She was hopeful…right up until the Troll with white hair smiled mirthlessly.</p>
+<p>“No. Head that way. You want to see? It only has one leg.”</p>
+<p>Rags took a deep breath.</p>
+<p>“Can we kill the head?”</p>
+<p>Her Goblins were looking at each other, checking their weapons, their usual bravado gone. The Trolls just watched her, expectant. Someone with <em>Skills.</em></p>
+<p>“Can try.”</p>
+<p>Rags steeled herself. If it had a head, it probably had a brain. If it had a brain…it might heal from that too. But the head was the weakest part of the body, in her opinion, aside from maybe male groins. She had to try. She had to kill it.</p>
+<p><em>She had to do something before Goblinhome was attacked. This might not even be the principal attack. </em>Part of her said it was time to go and find Redscar or Teriarch or something. But the rest of her was thinking of her level.</p>
+<p>Level 39. The rest of her was seeing a little Goblin in the grass. Let the Dragonlord of Flames handle it? Rags gripped her sword tighter in her hand.</p>
+<p>“How long?”</p>
+<p>“Hour?”</p>
+<p>“Show me.”</p>
+<p>She had to try.</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>He realized he was dead when the first Dropbat landed on his handlebars from above. Everything had gone, up to that point, if not well, <em>fast.</em></p>
+<p>It turned out Trolls liked picking their way up jagged, uneven rock faces as much as Humans or Goblins. The tunnels they had used that led down from the surface were by and large <em>smooth.</em> And wide enough for a Troll, which meant the only things keeping Rianchi from plunging straight down were his brakes and desire not to crash and die.</p>
+<p><em>He went fast, even so.</em> He had a bicycle light on the front that shone ahead of him, and his bicycle had magical suspension and Skills. Rianchi blew past the foremost Goblin [Scouts] heading down in less than a minute; he saw them running, turning, and staring as he rolled past them on a one-way ride into his death.</p>
+<p>He knew it was crazy, but that warning…if it was fake, Rianchi was going to get really mad at Mrsha, if he ever lived to meet her.</p>
+<p><em>He believed it. </em>Gothica and Asgra believed it. So Rianchi went.</p>
+<p>He should have said something to Dyeda, but it had happened so fast…</p>
+<p><em>Down Rianchi went until he hit the ruined highway. </em>He saw the luminescent dots that the Goblins had left and followed them, and when he saw the highway, his heart fell. But after scrambling over a few broken spots with his bicycle, swearing, Rianchi saw the broken ground was still more or less contiguous. Which meant he could still ride, even if it was in ways Kevin had never dreamed.</p>
+<p>“[Phantom Gears (-10)]!”</p>
+<p>Even on a huge, uphill ascent, Rianchi could pedal with low resistance and move up at a faster-than-walking pace. His [Double Pedaling] and the [Phantom Gears] meant he wasn’t straining for each rotation and sped up a rocky hill.</p>
+<p>Hedault’s enchantments on the tires meant he had good traction, and Pelt’s gears made his bicycle the most economical device in any world. Rianchi was the highest-level [Cycler] in the world, or so he assumed. He had just begun to get confident he’d actually make it when he remembered:</p>
+<p>Monsters.</p>
+<p>The Dropbats came down fast and hard, and Rianchi felt one tear at his shoulder, but his clothing tangled the claws. He flung his arm out, shouting wildly and flailing with his fists. The Dropbats landed as he did the only thing he could do: he pedaled faster.</p>
+<p><em>Down he went, and one flew off his bicycle, and the other finally let go, taking some blood with it. </em>Rianchi saw a wall coming up, and braked. He tried to catch his breath—then saw the Armored Crawler come around the corner and spot him and his bike. Rianchi began pedaling as it crawled forwards, <em>roaring—</em></p>
+<p>He saw a ledge up ahead and screamed.</p>
+<p>“[Bike Hop]!”</p>
+<p>He got up one ledge, and as it was climbing, accelerated away. Only after Rianchi had gotten ten minutes away from the monster and he had caught his breath did he realize…</p>
+<p>…<em>There were no luminescent paint strips anywhere around him.</em></p>
+<p>He was lost. Rianchi went pedaling forwards a few dozen feet, then turned, realizing he <em>had</em> to go back. The tunnel was sloping upwards ahead and behind—</p>
+<p><em>The Armored Crawler’s green flesh and metal-covered body was six feet behind him. </em>It had <em>crept</em> up on him. Rianchi began to pedal. It <em>lunged.</em></p>
+<p>He burst out the cave’s mouth, pedaling, saw the drop, and tried to brake. He stopped, going up on his front wheel, and the Armored Crawler <em>smashed</em> into his bike. He, the monster, and his bicycle went over the edge, and Rianchi shouted.</p>
+<p>“<em>Kevin—</em>”</p>
+<p>It occurred to him he really should have said ‘Dyeda’.</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>Rags stared at her foe and felt sick. She knew two things:</p>
+<p><em>This was insanity, but she had to try to fight it.</em></p>
+<p>And—</p>
+<p><em>She was pretty sure this thing had once been a Drake.</em></p>
+<p>It was the voice. The words that echoed down the tunnel. Rags had never heard the Drake script pronounced, but the sibilant noise sounded too…it was not just the noise.</p>
+<p>It was the decayed <em>neck spines</em>, which snapped against the ground, protruding from the head like swollen tubules. Nothing else was recognizable from the rotted head; even zombies looked better. A bloated mouth opened, releasing a cloud of flies. A tongue waggled as it spoke.</p>
+<p><span style="font-size: 181.818181818%!important;"><span style="font-family: 'DrakeScript2';">“Silence.”</span></span></p>
+<p>Rags lost the ability to hear for a second. A ripple of power spread outwards, and the shouting of the Trolls and drumbeats all went silent. It made the struggling grey figures falter, and in that moment, the rotted head acted.</p>
+<p>A ball of rotted flesh rolled forwards. It opened, and a lolling strip of plague-ridden meat snatched out and grabbed a Troll by the leg. It tried to drag the warrior towards the opening as the others hacked at the tendril—they severed it in a gout of black blood, but the sphere of flesh still made sound.</p>
+<p><span style="font-size: 181.818181818%!important;"><span style="font-family: 'DrakeScript2';">“Pain.”</span></span></p>
+<p>The second word made Rags feel like her skin was on <em>fire.</em> Goblins screamed as Trolls staggered, fleeing backwards as agony bloomed across everything that heard—Rags saw the cut flesh of the tongue wriggling back into the mouth. The empty-eye sockets released twining maggot-strings, reaching for more victims. The remains of the eyeballs.</p>
+<p><em>The head.</em></p>
+<p>Each time it <em>spoke</em>, something happened. It rolled forwards again and said a third word.</p>
+<p><span style="font-size: 181.818181818%!important;"><span style="font-family: 'DrakeScript2';">“Magicless.”</span></span></p>
+<p>Her vision dimmed. Rags had to take off her mask; she tossed it down and cursed as one of the Redfangs grabbed at a bunch of arrows exploding out of a sack at her side.</p>
+<p>“Chieftain! Bag of holding broke!”</p>
+<p>“I know.”</p>
+<p>Every enchanted weapon the Goblins had carried had just deactivated—save one. Rags unsheathed her lightning shortsword gifted to her by Erin and saw the enchantment glowing. The masks? Their bags of holding? Spell scrolls?</p>
+<p><em>Dead. </em>Rags saw the head <em>roll</em> again, then swivel. It was headed down a tunnel, and the Troll warriors regrouped, throwing crude spears, pushing boulders forwards. Trying to <em>stop</em> it—</p>
+<p>“Prepare to attack. Shineshield, Somo, hit the head from the side. There. Get into the brain and cut it apart.”</p>
+<p>Rags’ plan involved a flanking attack while the head didn’t know they were there. Her concept was simple. The head <em>had</em> to need the brain. It seemed to be conscious; it might even be directing the others. They had to crack into the brainpan, destroy the brain—and it might regenerate, but if they could <em>keep</em> destroying it, they might be able to restrain it or pull it apart and contain it that way.</p>
+<p>She had to do this. She had to. Retreating after all this travel and effort was foolish. Rags saw the Troll warriors on the ground, still in agony, and saw the two Goblins running from the Drake.</p>
+<p><em>Kill it.</em> She had her magic shortsword at the ready. Shineshield was hesitating, and Taganchiel was whispering.</p>
+<p>“Chieftain. What about Redscar? Our magic just—”</p>
+<p><em>Ask Teriarch. Ask for his help. Ask for aid from someone. Ask and ask, and someday they won’t be there. Level up. Do it. Attack. Attackattackattackattack—</em></p>
+<p>Rags couldn’t breathe. She knew what she had to do. The head rolled forwards again, biting now, rotten teeth gnashing for a Troll carrying his friend away. It paused—</p>
+<p><em>Then spun like a snake. </em>It opened its mouth and laughed, though it had no lungs. It smiled, through rotting lips, and said:</p>
+<p><span style="font-size: 181.818181818%!important;"><span style="font-family: 'DrakeScript2';">“Trap!”</span></span></p>
+<p>Gleefully, it faced the intruders it had pretended not to see, the little one and her too-loud mind who didn’t realize it could <em>hear her think.</em> The mouth opened and—</p>
+<p>Closed.</p>
+<p>The head stared with its empty sockets, then rolled forwards. Confused. It cast around and sensed the other minds fleeing, following the rapid drumbeat signaling a retreat.</p>
+<p>They were running away?</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>Rags’ mind cleared up the further she got from the head. And she realized her own thoughts might have been in jeopardy.</p>
+<p><em>Idiot.</em> She hadn’t saved herself; she should have known better than to commit after seeing what the enemy could do. But it had honestly, genuinely, terrified her, and she’d been afraid that she would have lost her nerve if she hadn’t fought it.</p>
+<p>She was afraid of…no, personal regrets aside, she didn’t owe her safety to any of her actions or even the Troll Queen. She raised a finger to her brow and replied to the hero of the hour.</p>
+<p>“[Memo]. Rags. We’ve evacuated from the area. Full report. Where are you, Rianchi?”</p>
+<p>“<em>In a cave? Very nice Trolls with me, Chieftain.</em>”</p>
+<p>Rags bared her teeth. She couldn’t help it. Shineshield and the other Goblins were looking at her, barely able to credit it. <em>Rianchi</em> had come all this way after them? Rianchi, the worst of Redfangs?</p>
+<p>“What are you doing here, you idiot?”</p>
+<p>“<em>Eh, you know, Chieftain. Sending a warning. Someone had to.</em>”</p>
+<p>He was trying to be casual. Rags just snorted. She headed back up through the tunnels fast, using her [Fast Travelling] Skill to make it to the Troll Queen. When she did, the leader of Trolls herself was inspecting Rianchi, who looked…well, terrible.</p>
+<p>He was cut all over and badly bruised; falling two hundred feet did that to you. But he was alive, which was more than could be said for the Armored Crawler that had gone with him, and he’d even found Trolls who’d been so amazed by the sight of a Goblin on a bicycle they’d brought him here.</p>
+<p>A few were prodding the bicycle, and the lighter ones were even trying to get on it. Rags shook her head.</p>
+<p>“How did you survive that fall?”</p>
+<p>He grinned at her and tapped his helmet and pointed a shaking finger at the bicycle.</p>
+<p>“Enchanted by Hedault, Chieftain. Falling safety spell, like on the skateboard. <em>Sort</em> of worked.”</p>
+<p>Rianchi owed Hedault a huge basket of whatever the [Enchanter] liked. And once they got back to Goblinhome, Rags decided he could have whatever <em>he</em> wanted. Especially since she thought she was looking at a new auxiliary [Scout].</p>
+<p>She clapped him on the shoulder and nodded.</p>
+<p>“We’ll get you back up. Now tell me what the message said?”</p>
+<p>She squatted down and listened. The Troll Queen sat there as Rags’ eyes flickered.</p>
+<p>“Mrsha said that?”</p>
+<p>“Yah, Chieftain.”</p>
+<p>“Mrsha?”</p>
+<p><em>How the hell did she know what Rags had just found? </em>The hairs on the back of Rags’ neck stirred. And with it—that pernicious, annoying, wonderful feeling she had to stop trusting.</p>
+<p>Hope.</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>In the clarity of the Trolls’ camp, as they made ready to leave, Rags assessed the threat completely. It was clear they were fighting something old, but weakened. A being…dismembered.</p>
+<p>Five body parts. Head, torso, arms, and one leg. For whatever reason, there was only <em>one</em> leg. They were squirming through the tunnels…trying to link up.</p>
+<p>The entire battle of the Trolls wasn’t to destroy any one body part; if they could do that, they would have done it already. They were trying to keep them from <em>uniting.</em></p>
+<p>Rags, as a [Strategist] approved by Niers Astoragon, was convinced the strategy here was sound. What left her shaken, what made her ill to the point where she could barely stand in front of the Troll Queen, was simple:</p>
+<p><em>She did not think she could kill it. </em>This looked like a foe from an age Teriarch belonged to. It looked like a foe <em>he</em> should fight. The head had nearly lured her into an ambush, and it was way out of the grade of the Flooded Waters tribe to handle.</p>
+<p>A Dragonlord’s concern. Not Rags. And she had to tell the Troll Queen that. Yet again, Rags had run into something that her tribe had no reasonable hope of killing.</p>
+<p>Pride, that little Goblin crouching in the grass, sympathy for the Trolls, said one thing. Instinct, her rational mind, all said it was impossible.</p>
+<p>Nor did Rags think that Teriarch would exactly rush to confront…whatever the hell this was. The tunnels were deep. His Dragon body had not a chance of getting down there, and if Rags was confident in any one thing, it was that the old ‘Tyrant’, as the Troll Queen referred to him, was a coward.</p>
+<p><strong>“(It is the enemy. You see it. We fight.)”</strong></p>
+<p>Rags shook her head.</p>
+<p><strong>“(You must </strong><em><strong>run.</strong></em><strong>)”</strong></p>
+<p><strong>“(Where? Up? Death’s Lands? No. Blood’s Lands? No. North? Human’s Lands? No. High? </strong><em><strong>No.)</strong></em><strong>”</strong></p>
+<p>The Troll Queen dismissed all the options, and Rags sat with the Troll Queen in the unearthly silence. Rags knew she had every right to defend her home. She felt the need to join the Troll Queen. But that message from Mrsha…</p>
+<p>It was either a guess, some aspect of the [World’s Eye Theatre], or something far more important. Rags turned to the Troll Queen and pointed down.</p>
+<p><strong>“(You can’t kill that thing. Escape it and buy time.)”</strong></p>
+<p><strong>“(It will follow.)”</strong></p>
+<p><strong>“(Let someone else take it on. Believe me, there’s at least two armies above.)”</strong></p>
+<p>Could the 7th Hive or Magnolia take it on? They had to. Was <em>this</em> the attack on Goblinhome? It seemed likely…yet Rags kept thinking of Mrsha’s message. She felt like if that thing were coming for Goblinhome, her [Dangersense] would have been going off even worse than it had been.</p>
+<p>The Troll Queen refused to budge. She sat there, chewing on some potatoes from above.</p>
+<p><strong>“(This is home. We fight, we die. You remember?)”</strong></p>
+<p>“The Dwarf, Gnoll, and Troll Kings fighting the Drakes? Yes. They won that war. You won’t…the odds are against you.”</p>
+<p>The Troll <em>Dulat</em> nodded. She rested a hand on her drums.</p>
+<p><strong>“(This is our home. We go, we lose it. Forever?)”</strong></p>
+<p><strong>“(You’ll live.)”</strong></p>
+<p><strong>“(How long, without a home? How long as many, not scattered few? You have no home.)”</strong></p>
+<p>The Great Chieftain recoiled, but it wasn’t an insult. Just a fact. The Troll Queen reached down, and Rags saw that her ‘drumsticks’ were actually maces. Rust-red, worn by ages of playing…tiny enough to be swung as musical instruments in her hands.</p>
+<p>She held one out to Rags, a pleading look in her eyes.</p>
+<p><strong>“(Go. Come back. Then, we go down. Together. Into the halls of the Folk of Deep and Song. One last time, to put old dreams to sleep. Then we will go up, some of us, and follow you wherever you go, until you have a home. Show Goblins a new memory.)”</strong></p>
+<p>She spoke well for someone who communicated mostly with drum beats. Rags recognized the desperation behind the calm rhetoric. She glanced over her shoulder and swore she could hear the pieces of that body moving towards each other, inexorably, in the darkness.</p>
+<p><em>Descend and slay an Old One to win great allies or stay above, alone, waiting for her enemies?</em></p>
+<p>Death.</p>
+<p>Death.</p>
+<p>Death.</p>
+<p>Rags got up slowly without taking the mace from the Troll Queen’s hands. She walked up wearily, higher and higher, not knowing where she went.</p>
+<p>It was automatic. She went to the place she always travelled to, the only spot that had ever given her hope or a vision for the future other than bleakness. It had taken her parents from her, her Chieftain. She had seen her friends and tribes die there. And the only kindness she’d ever received.</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>A Goblin walked into an inn and found a Gnoll girl waiting for her. She expected a trick or something silly or anything to betray the great expectations she always had of this place and the [Innkeeper]. Always.</p>
+<p>She would not have begrudged them if she found nothing. But when she sat down at a table, she learned she did like cabbage beef rolls. With spicy mustard.</p>
+<p>“Why, Chieftain Rags, what brings you back? You’re looking, uh, dirty.”</p>
+<p>Rags glanced at Lyonette and muttered something about caves, but her eyes were drawn to only one person in the inn. A little Gnoll girl, who’d frozen as Rags had walked in, half an hour late to dinner.</p>
+<p>Thank goodness for [Fast Travelling] Skills. If only she could win battles that easily. Rags was tired, beaten down, and afraid. She gazed at Mrsha, searching for a child or a prank, but she saw someone familiar looking back at her.</p>
+<p>A desperate, young expression. Young, yes, but so urgent, someone who wanted to help her. Save her…</p>
+<p><em>For a moment, Rags thought she saw a little girl crouching in the grass.</em> She blinked—and she realized it <em>was</em> a girl who’d been there. Who knew what it was like.</p>
+<p>Only, Mrsha hadn’t had to grow up as fast as Rags. The Goblin had always resented that a bit. Today, though, Mrsha pushed her plate back and stood up. She handed Rags a little card.</p>
+<p><span class="mrsha-write">I’m glad you’re alive.</span></p>
+<p>Rags blinked at the card, then smiled at Mrsha. Tiredly, she put a cabbage beef roll in her mouth and began to chew.</p>
+<p>“So am I.”</p>
+<p>It wasn’t much. Not with what she knew was coming. But again, to her surprise, Mrsha put out her paw. It was, Rags realized, trembling. Rags hesitated, then gently laid her claw in Mrsha’s paw, and the little girl squeezed. She refused to let go.</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>After dinner, the Gnoll girl pretended to want to brag about all the gold, and the Goblin followed her into a garden. They walked up a hill, past flowers that winked innocently at her, and into a hill covered in mists.</p>
+<p>There, the girl looked around and then opened a second door. Rags stared down, past twining roots, and then at Mrsha du Marquin. Her eyes opened wide. Her breath caught, and her weary mind suddenly came aflame. She turned to Mrsha.</p>
+<p>“W-what is this?”</p>
+<p>The girl just pointed: down. Rags paused and looked at Mrsha, looked around at the [Garden of Sanctuary].</p>
+<p>She took a deep breath, fresh, hopeful in her chest, as if she were truly alive again. Then she leapt.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>[Gearhead Cyclist Level 25!]</p>
+<p>[Skill – Bike: Smooth Roll (Rough Terrain) obtained!]</p>
+<p>[Skill – Summon Jump Ramp obtained!]</p>
+<p>[Skill – Lesser Toughness obtained!]</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><strong>Author’s Note:</strong></p>
+<p>Praise the edits. Praise the time off! Praise spicy Thai food—well, let’s not go too far. It’s spicy. Also, I feel like it doesn’t keep as well as other foods for leftovers. Might be the packaging. I mean, it’s still good, but it dries out a bit.</p>
+<p>…Hi.</p>
+<p>I’ve been enjoying not dying to write each chapter. Mind you, I’m still working pretty dang hard, but taking time off like Wednesday and Monday helps a lot with the ‘explosion meter’. Which is a real meter. In my head.</p>
+<p>Steamworld Heist 2 is a great game. Love it, beat it…now I’m sad. Five Nights at Freddy’s: Into the Pit was more casual and too easy. Beat it. Less sad. I should have read some books, but here we are.</p>
+<p>It’s getting a bit busy life-wise again, which is code for family and doing horrendous responsible life-stuff like looking for a home. If I’m stressed, it’s because I’m not good at that. I can barely write. But I do like these short chapters. I’m just nervous about quality, but the skill of editing has made me a lot more confident in chapters like this. Draft 1 was <em>okay</em> at best, mediocre, honestly. This is stronger.</p>
+<p>Thanks again to the beta-readers who I don’t give enough love, and to Thai food, and to the rising costs of my UberEats orders. But I’m ready to get that next chapter started! Tonight!</p>
+<p>…I’ve been working for 4 hours, and I haven’t started next chapter. Better be a short one. Wish me luck!</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><strong>Teriarch by Brack!</strong></p>
+<p><strong>DeviantArt:</strong> <a class="anchor_af404b anchorUnderlineOnHover_af404b" tabindex="0" title="https://www.deviantart.com/shurkin/gallery/" role="button" href="https://www.deviantart.com/shurkin/gallery/" target="_blank" rel="noreferrer noopener">https://www.deviantart.com/shurkin/gallery/</a></p>
+<p><strong>Ko-Fi:</strong> <a class="anchor_af404b anchorUnderlineOnHover_af404b" tabindex="0" title="https://ko-fi.com/brack" role="button" href="https://ko-fi.com/brack" target="_blank" rel="noreferrer noopener">https://ko-fi.com/brack</a></p>
+<p><strong>Twitter:</strong> <a class="anchor_af404b anchorUnderlineOnHover_af404b" tabindex="0" title="https://twitter.com/Brack_Giraffe" role="button" href="https://twitter.com/Brack_Giraffe" target="_blank" rel="noreferrer noopener">https://twitter.com/Brack_Giraffe</a></p>
+<p><a href="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/TeriarchSnooze-by-Brack.png?ssl=1"><img fetchpriority="high" decoding="async" data-attachment-id="17516" data-permalink="https://wanderinginn.com/2024/08/16/the-roots-pt-4/teriarchsnooze-by-brack/" data-orig-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/TeriarchSnooze-by-Brack.png?fit=700%2C350&amp;ssl=1" data-orig-size="700,350" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="TeriarchSnooze by Brack" data-image-description="" data-image-caption="" data-medium-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/TeriarchSnooze-by-Brack.png?fit=300%2C150&amp;ssl=1" data-large-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/TeriarchSnooze-by-Brack.png?fit=700%2C350&amp;ssl=1" class="alignnone size-full wp-image-17516" src="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/TeriarchSnooze-by-Brack.png?resize=700%2C350&amp;ssl=1" alt="" width="680" height="340" srcset="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/TeriarchSnooze-by-Brack.png?w=700&amp;ssl=1 700w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/TeriarchSnooze-by-Brack.png?resize=300%2C150&amp;ssl=1 300w" sizes="(max-width: 700px) 100vw, 700px"></a></p>
+<p>&nbsp;</p>
+<p><strong>Pavilion Erin by Gridcube!</strong></p>
+<p><a href="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/paverion-by-Gridcube.png?ssl=1"><img decoding="async" data-attachment-id="17506" data-permalink="https://wanderinginn.com/2024/08/16/the-roots-pt-4/paverion-by-gridcube/" data-orig-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/paverion-by-Gridcube.png?fit=1623%2C1760&amp;ssl=1" data-orig-size="1623,1760" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="paverion by Gridcube" data-image-description="" data-image-caption="" data-medium-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/paverion-by-Gridcube.png?fit=277%2C300&amp;ssl=1" data-large-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/paverion-by-Gridcube.png?fit=944%2C1024&amp;ssl=1" class="alignnone size-full wp-image-17506" src="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/paverion-by-Gridcube.png?resize=1623%2C1760&amp;ssl=1" alt="" width="1623" height="1760" srcset="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/paverion-by-Gridcube.png?w=1623&amp;ssl=1 1623w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/paverion-by-Gridcube.png?resize=277%2C300&amp;ssl=1 277w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/paverion-by-Gridcube.png?resize=944%2C1024&amp;ssl=1 944w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/paverion-by-Gridcube.png?resize=768%2C833&amp;ssl=1 768w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/paverion-by-Gridcube.png?resize=1416%2C1536&amp;ssl=1 1416w" sizes="(max-width: 1000px) 100vw, 1000px" data-recalc-dims="1"></a></p>
+<p>&nbsp;</p>
+<p><strong>FroggyErin by Wing!</strong></p>
+<p><strong>Instagram:</strong> <a class="anchor_af404b anchorUnderlineOnHover_af404b" tabindex="0" title="https://www.instagram.com/wingedhatchling/" role="button" href="https://www.instagram.com/wingedhatchling/" target="_blank" rel="noreferrer noopener">https://www.instagram.com/wingedhatchling/</a></p>
+<p><strong>Ko-Fi: </strong><a class="anchor_af404b anchorUnderlineOnHover_af404b" tabindex="0" title="https://ko-fi.com/wingedhatch" role="button" href="https://ko-fi.com/wingedhatch" target="_blank" rel="noreferrer noopener">https://ko-fi.com/wingedhatch</a></p>
+<p><strong>Hatchs Cara Art:</strong> <a class="anchor_af404b anchorUnderlineOnHover_af404b" tabindex="0" title="https://cara.app/wingedhatchling/all" role="button" href="https://cara.app/wingedhatchling/all" target="_blank" rel="noreferrer noopener">https://cara.app/wingedhatchling/all</a></p>
+<p><a href="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/FrogErin-by-Wing.png?ssl=1"><img decoding="async" data-attachment-id="17507" data-permalink="https://wanderinginn.com/2024/08/16/the-roots-pt-4/frogerin-by-wing/" data-orig-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/FrogErin-by-Wing.png?fit=1396%2C2218&amp;ssl=1" data-orig-size="1396,2218" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="FrogErin by Wing" data-image-description="" data-image-caption="" data-medium-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/FrogErin-by-Wing.png?fit=189%2C300&amp;ssl=1" data-large-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/FrogErin-by-Wing.png?fit=645%2C1024&amp;ssl=1" class="alignnone size-full wp-image-17507" src="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/FrogErin-by-Wing.png?resize=1396%2C2218&amp;ssl=1" alt="" width="1396" height="2218" srcset="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/FrogErin-by-Wing.png?w=1396&amp;ssl=1 1396w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/FrogErin-by-Wing.png?resize=189%2C300&amp;ssl=1 189w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/FrogErin-by-Wing.png?resize=645%2C1024&amp;ssl=1 645w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/FrogErin-by-Wing.png?resize=768%2C1220&amp;ssl=1 768w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/FrogErin-by-Wing.png?resize=967%2C1536&amp;ssl=1 967w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/FrogErin-by-Wing.png?resize=1289%2C2048&amp;ssl=1 1289w" sizes="(max-width: 1000px) 100vw, 1000px" data-recalc-dims="1"></a></p>
+<p>&nbsp;</p>
+<p><strong>[Like Fire, Memory] by lowey!</strong></p>
+<p><a href="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/LikeFire-by-lowey.png?ssl=1"><img loading="lazy" decoding="async" data-attachment-id="17508" data-permalink="https://wanderinginn.com/2024/08/16/the-roots-pt-4/likefire-by-lowey/" data-orig-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/LikeFire-by-lowey.png?fit=1789%2C1917&amp;ssl=1" data-orig-size="1789,1917" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="LikeFire by lowey" data-image-description="" data-image-caption="" data-medium-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/LikeFire-by-lowey.png?fit=280%2C300&amp;ssl=1" data-large-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/LikeFire-by-lowey.png?fit=956%2C1024&amp;ssl=1" class="alignnone size-full wp-image-17508" src="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/LikeFire-by-lowey.png?resize=1789%2C1917&amp;ssl=1" alt="" width="1789" height="1917" srcset="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/LikeFire-by-lowey.png?w=1789&amp;ssl=1 1789w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/LikeFire-by-lowey.png?resize=280%2C300&amp;ssl=1 280w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/LikeFire-by-lowey.png?resize=956%2C1024&amp;ssl=1 956w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/LikeFire-by-lowey.png?resize=768%2C823&amp;ssl=1 768w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/LikeFire-by-lowey.png?resize=1433%2C1536&amp;ssl=1 1433w" sizes="(max-width: 1000px) 100vw, 1000px" data-recalc-dims="1"></a></p>
+<p>&nbsp;</p>
+<p><strong>Baki Zel by Bread!</strong></p>
+<p><a href="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/BakiZel-by-Bread.png?ssl=1"><img loading="lazy" decoding="async" data-attachment-id="17509" data-permalink="https://wanderinginn.com/2024/08/16/the-roots-pt-4/bakizel-by-bread/" data-orig-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/BakiZel-by-Bread.png?fit=1680%2C1204&amp;ssl=1" data-orig-size="1680,1204" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="BakiZel by Bread" data-image-description="" data-image-caption="" data-medium-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/BakiZel-by-Bread.png?fit=300%2C215&amp;ssl=1" data-large-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/BakiZel-by-Bread.png?fit=1024%2C734&amp;ssl=1" class="alignnone size-full wp-image-17509" src="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/BakiZel-by-Bread.png?resize=1680%2C1204&amp;ssl=1" alt="" width="1680" height="1204" srcset="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/BakiZel-by-Bread.png?w=1680&amp;ssl=1 1680w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/BakiZel-by-Bread.png?resize=300%2C215&amp;ssl=1 300w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/BakiZel-by-Bread.png?resize=1024%2C734&amp;ssl=1 1024w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/BakiZel-by-Bread.png?resize=768%2C550&amp;ssl=1 768w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/BakiZel-by-Bread.png?resize=1536%2C1101&amp;ssl=1 1536w" sizes="(max-width: 1000px) 100vw, 1000px" data-recalc-dims="1"></a></p>
+<p>&nbsp;</p>
+<p><strong>Suave Antinium by Lime!</strong></p>
+<p><strong>Bluesky:</strong> <a class="anchor_af404b anchorUnderlineOnHover_af404b" tabindex="0" title="https://bsky.app/profile/arcticlime.bsky.social" role="button" href="https://bsky.app/profile/arcticlime.bsky.social" target="_blank" rel="noreferrer noopener">https://bsky.app/profile/arcticlime.bsky.social</a></p>
+<p><strong>Ko-Fi:</strong> <a class="anchor_af404b anchorUnderlineOnHover_af404b" tabindex="0" title="https://ko-fi.com/recapturedlime" role="button" href="https://ko-fi.com/recapturedlime" target="_blank" rel="noreferrer noopener">https://ko-fi.com/recapturedlime</a></p>
+<p><strong>Youtube:</strong> <a class="anchor_af404b anchorUnderlineOnHover_af404b" tabindex="0" title="https://youtube.com/@recapturedlime" role="button" href="https://youtube.com/@recapturedlime" target="_blank" rel="noreferrer noopener">https://youtube.com/@recapturedlime</a></p>
+<p><a href="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/SuaveAntinium-by-Lime.jpg?ssl=1"><img loading="lazy" decoding="async" data-attachment-id="17510" data-permalink="https://wanderinginn.com/2024/08/16/the-roots-pt-4/suaveantinium-by-lime/" data-orig-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/SuaveAntinium-by-Lime.jpg?fit=1511%2C1512&amp;ssl=1" data-orig-size="1511,1512" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="SuaveAntinium by Lime" data-image-description="" data-image-caption="" data-medium-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/SuaveAntinium-by-Lime.jpg?fit=300%2C300&amp;ssl=1" data-large-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/SuaveAntinium-by-Lime.jpg?fit=1024%2C1024&amp;ssl=1" class="alignnone size-full wp-image-17510" src="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/SuaveAntinium-by-Lime.jpg?resize=1511%2C1512&amp;ssl=1" alt="" width="1511" height="1512" srcset="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/SuaveAntinium-by-Lime.jpg?w=1511&amp;ssl=1 1511w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/SuaveAntinium-by-Lime.jpg?resize=300%2C300&amp;ssl=1 300w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/SuaveAntinium-by-Lime.jpg?resize=1024%2C1024&amp;ssl=1 1024w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/SuaveAntinium-by-Lime.jpg?resize=150%2C150&amp;ssl=1 150w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/SuaveAntinium-by-Lime.jpg?resize=768%2C769&amp;ssl=1 768w" sizes="(max-width: 1000px) 100vw, 1000px" data-recalc-dims="1"></a></p>
+<p>&nbsp;</p>
+<p><strong>Belavierr by Phosu!</strong></p>
+<p><a href="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Belavierr-by-Phosu.jpg?ssl=1"><img loading="lazy" decoding="async" data-attachment-id="17511" data-permalink="https://wanderinginn.com/2024/08/16/the-roots-pt-4/belavierr-by-phosu/" data-orig-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Belavierr-by-Phosu.jpg?fit=823%2C776&amp;ssl=1" data-orig-size="823,776" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="Belavierr by Phosu" data-image-description="" data-image-caption="" data-medium-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Belavierr-by-Phosu.jpg?fit=300%2C283&amp;ssl=1" data-large-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Belavierr-by-Phosu.jpg?fit=823%2C776&amp;ssl=1" class="alignnone size-full wp-image-17511" src="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Belavierr-by-Phosu.jpg?resize=823%2C776&amp;ssl=1" alt="" width="823" height="776" srcset="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Belavierr-by-Phosu.jpg?w=823&amp;ssl=1 823w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Belavierr-by-Phosu.jpg?resize=300%2C283&amp;ssl=1 300w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Belavierr-by-Phosu.jpg?resize=768%2C724&amp;ssl=1 768w" sizes="(max-width: 823px) 100vw, 823px" data-recalc-dims="1"></a></p>
+<p>&nbsp;</p>
+<p><strong>Relc by Fern!</strong></p>
+<p><a href="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Relc-by-Fern.png?ssl=1"><img loading="lazy" decoding="async" data-attachment-id="17512" data-permalink="https://wanderinginn.com/2024/08/16/the-roots-pt-4/relc-by-fern/" data-orig-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Relc-by-Fern.png?fit=1700%2C1300&amp;ssl=1" data-orig-size="1700,1300" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="Relc by Fern" data-image-description="" data-image-caption="" data-medium-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Relc-by-Fern.png?fit=300%2C229&amp;ssl=1" data-large-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Relc-by-Fern.png?fit=1024%2C783&amp;ssl=1" class="alignnone size-full wp-image-17512" src="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Relc-by-Fern.png?resize=1700%2C1300&amp;ssl=1" alt="" width="1700" height="1300" srcset="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Relc-by-Fern.png?w=1700&amp;ssl=1 1700w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Relc-by-Fern.png?resize=300%2C229&amp;ssl=1 300w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Relc-by-Fern.png?resize=1024%2C783&amp;ssl=1 1024w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Relc-by-Fern.png?resize=768%2C587&amp;ssl=1 768w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Relc-by-Fern.png?resize=1536%2C1175&amp;ssl=1 1536w" sizes="(max-width: 1000px) 100vw, 1000px" data-recalc-dims="1"></a></p>
+<p>&nbsp;</p>
+<p><strong>Lyonette by onionlittle!</strong></p>
+<p><strong>Ko-Fi:</strong> <a class="anchor_af404b anchorUnderlineOnHover_af404b" tabindex="0" title="https://ko-fi.com/littleonion" role="button" href="https://ko-fi.com/littleonion" target="_blank" rel="noreferrer noopener">https://ko-fi.com/littleonion</a></p>
+<p><strong>Twitter:</strong> <a class="anchor_af404b anchorUnderlineOnHover_af404b" tabindex="0" title="https://twitter.com/littleonion_art" role="button" href="https://twitter.com/littleonion_art" target="_blank" rel="noreferrer noopener">https://twitter.com/littleonion_art</a></p>
+<p><strong>Instagram:</strong> <a class="anchor_af404b anchorUnderlineOnHover_af404b" tabindex="0" title="https://www.instagram.com/littleonion.art/" role="button" href="https://www.instagram.com/littleonion.art/" target="_blank" rel="noreferrer noopener">https://www.instagram.com/littleonion.art/</a></p>
+<p><a href="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Lyonette-by-onionlittle.png?ssl=1"><img loading="lazy" decoding="async" data-attachment-id="17513" data-permalink="https://wanderinginn.com/2024/08/16/the-roots-pt-4/lyonette-by-onionlittle/" data-orig-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Lyonette-by-onionlittle.png?fit=1620%2C2160&amp;ssl=1" data-orig-size="1620,2160" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="Lyonette by onionlittle" data-image-description="" data-image-caption="" data-medium-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Lyonette-by-onionlittle.png?fit=225%2C300&amp;ssl=1" data-large-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Lyonette-by-onionlittle.png?fit=768%2C1024&amp;ssl=1" class="alignnone size-full wp-image-17513" src="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Lyonette-by-onionlittle.png?resize=1620%2C2160&amp;ssl=1" alt="" width="1620" height="2160" srcset="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Lyonette-by-onionlittle.png?w=1620&amp;ssl=1 1620w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Lyonette-by-onionlittle.png?resize=225%2C300&amp;ssl=1 225w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Lyonette-by-onionlittle.png?resize=768%2C1024&amp;ssl=1 768w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Lyonette-by-onionlittle.png?resize=1152%2C1536&amp;ssl=1 1152w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Lyonette-by-onionlittle.png?resize=1536%2C2048&amp;ssl=1 1536w" sizes="(max-width: 1000px) 100vw, 1000px" data-recalc-dims="1"></a></p>
+<p>&nbsp;</p>
+<p><strong>Northeastern Chandrar Map by LunarTactician! (For Dungeons and Dragons? Watch out for Sword Crabs and invisible leeches!)</strong></p>
+<p><a href="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/NortheastChandrarMap-by-LunarTactician.jpg?ssl=1"><img loading="lazy" decoding="async" data-attachment-id="17514" data-permalink="https://wanderinginn.com/2024/08/16/the-roots-pt-4/northeastchandrarmap-by-lunartactician/" data-orig-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/NortheastChandrarMap-by-LunarTactician.jpg?fit=2000%2C1750&amp;ssl=1" data-orig-size="2000,1750" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="NortheastChandrarMap by LunarTactician" data-image-description="" data-image-caption="" data-medium-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/NortheastChandrarMap-by-LunarTactician.jpg?fit=300%2C263&amp;ssl=1" data-large-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/NortheastChandrarMap-by-LunarTactician.jpg?fit=1024%2C896&amp;ssl=1" class="alignnone size-full wp-image-17514" src="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/NortheastChandrarMap-by-LunarTactician.jpg?resize=2000%2C1750&amp;ssl=1" alt="" width="2000" height="1750" srcset="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/NortheastChandrarMap-by-LunarTactician.jpg?w=2000&amp;ssl=1 2000w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/NortheastChandrarMap-by-LunarTactician.jpg?resize=300%2C263&amp;ssl=1 300w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/NortheastChandrarMap-by-LunarTactician.jpg?resize=1024%2C896&amp;ssl=1 1024w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/NortheastChandrarMap-by-LunarTactician.jpg?resize=768%2C672&amp;ssl=1 768w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/NortheastChandrarMap-by-LunarTactician.jpg?resize=1536%2C1344&amp;ssl=1 1536w" sizes="(max-width: 1000px) 100vw, 1000px" data-recalc-dims="1"></a></p>
+<p>&nbsp;</p>
+<hr>
+<p><a href="https://wanderinginn.com/2024/08/14/the-roots-pt-3/">Previous Chapter</a> <a href="https://wanderinginn.com/2024/08/18/the-roots-pt-5/"><span style="float: right;">Next Chapter</span></a></p>
+      </div>
+
+      <hr>
+          <span class="nav-previous">
+        <a href="https://wanderinginn.com/2024/08/14/the-roots-pt-3/" rel="prev"><span class="meta-nav">←</span> Previous Chapter</a>    </span>
+    <span class="nav-next" style="float: right" ;="">
+        <a href="https://wanderinginn.com/2024/08/18/the-roots-pt-5/" rel="next">Next Chapter <span class="meta-nav">→</span></a>    </span>
+    

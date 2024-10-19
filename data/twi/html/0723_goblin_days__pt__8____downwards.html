@@ -1,0 +1,310 @@
+
+
+          <span class="nav-previous">
+        <a href="https://wanderinginn.com/2024/08/02/goblin-days-pt-7-no-answers-and-answers/" rel="prev"><span class="meta-nav">←</span> Previous Chapter</a>    </span>
+    <span class="nav-next" style="float: right" ;="">
+        <a href="https://wanderinginn.com/2024/08/10/the-roots-pt-1/" rel="next">Next Chapter <span class="meta-nav">→</span></a>    </span>
+      <!-- <hr/> -->
+      <header class="entry-header">
+        <h1 class="entry-title">Goblin Days (Pt. 8) – Downwards</h1>
+                <button class="show-settings-btn" onclick="document.querySelector('#reader-settings-wrapper').classList.toggle('is-hidden')">
+          <img class="show-settings-btn-img" src="https://wanderinginn.com/wp-content/themes/solstice/assets/images/ui/reader-settings-button.webp">
+        </button>
+      </header>
+
+      
+<!-- Reader Settings -->
+<div id="reader-settings-wrapper" class="is-hidden">
+    <div id="reader-settings">
+        <header id="reader-settings-header">
+            <h2>Reader Settings</h2>
+            <button onclick="closeModal()">
+                <svg width="100%" height="100%" viewBox="0 0 33 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M16.5 30.75C24.0939 30.75 30.25 24.5939 30.25 17C30.25 9.40608 24.0939 3.25 16.5 3.25C8.90608 3.25 2.75 9.40608 2.75 17C2.75 24.5939 8.90608 30.75 16.5 30.75Z" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M20.625 12.875L12.375 21.125" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M12.375 12.875L20.625 21.125" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+            </button>
+        </header>
+
+        <fieldset id="fieldset-font">
+            <legend>Font</legend>
+
+            <div>
+                <label for="font-size-select">Size</label>
+                <select id="font-size-select" class="reader-settings-select" data-setting="reader-font-size" onchange="updateSetting(this.getAttribute('data-setting'), this.value);">
+                    <option value="10pt" class="reader-settings-option">10</option>
+                    <option value="11pt" class="reader-settings-option">11</option>
+                    <option value="12pt" class="reader-settings-option" selected="">12</option>
+                    <option value="13pt" class="reader-settings-option">13</option>
+                    <option value="14pt" class="reader-settings-option">14</option>
+                    <option value="16pt" class="reader-settings-option">16</option>
+                    <option value="18pt" class="reader-settings-option">18</option>
+                    <option value="20pt" class="reader-settings-option">20</option>
+                    <option value="22pt" class="reader-settings-option">22</option>
+                    <option value="24pt" class="reader-settings-option">24</option>
+                    <option value="26pt" class="reader-settings-option">26</option>
+                    <option value="28pt" class="reader-settings-option">28</option>
+                    <option value="30pt" class="reader-settings-option">30</option>
+                    <option value="36pt" class="reader-settings-option">36</option>
+                    <option value="42pt" class="reader-settings-option">42</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="font-family-select">Family</label>
+                <select id="font-family-select" class="reader-settings-select" data-setting="reader-font-family" onchange="updateSetting(this.getAttribute('data-setting'), this.value);">
+                    <optgroup label="Sans Serif">
+                        <option class="reader-settings-option" value="OpenSans, sans-serif" selected="">Open Sans</option>
+                        <option class="reader-settings-option" value="Arial, Helvetica, sans-serif">Arial</option>
+                        <option class="reader-settings-option" value="Roboto, sans-serif">Roboto</option>
+                    </optgroup>
+                    <optgroup label="Serif">
+                        <option class="reader-settings-option" value="Playfair, serif">Playfair</option>
+                        <option class="reader-settings-option" value="EBGaramond, serif">Garamond</option>
+                        <option class="reader-settings-option" value="'Times New Roman', Times, serif">Times New Roman</option>
+                    </optgroup>
+                    <optgroup label="Other">
+                        <option class="reader-settings-option" value="OpenDyslexic">OpenDyslexic</option>
+                        <option class="reader-settings-option" value="HennyPenny">Henny Penny</option>
+                    </optgroup>
+                </select>
+            </div>
+            <div>
+                <label for="font-weight-select">Thickness</label>
+                <select id="font-weight-select" class="reader-settings-select" data-setting="reader-font-weight" onchange="updateSetting(this.getAttribute('data-setting'), this.value);">
+                    <option class="reader-settings-option" value="300" selected="">Thin</option>
+                    <option class="reader-settings-option" value="400">Regular</option>
+                    <option class="reader-settings-option" value="500">Thick</option>
+                </select>
+            </div>
+        </fieldset>
+
+        <fieldset id="fieldset-spacing">
+            <legend>Spacing</legend>
+            <div>
+                <label for="margins-select">Page Width</label>
+                <select id="margins-select" class="reader-settings-select" data-setting="reader-article-width" onchange="updateSetting(this.getAttribute('data-setting'), this.value);">
+                    <option value="320px" class="reader-settings-option">Extra Narrow</option>
+                    <option value="500px" class="reader-settings-option">Narrow</option>
+                    <option value="680px" class="reader-settings-option" selected="">Medium</option>
+                    <option value="1000px" class="reader-settings-option">Wide</option>
+                    <option value="1200px" class="reader-settings-option">Extra Wide</option>
+                    <option value="100%" class="reader-settings-option">Max</option>
+                </select>
+            </div>
+            <div>
+                <label for="line-spacing-select">Line</label>
+                <select id="line-spacing-select" class="reader-settings-select" data-setting="reader-line-height" onchange="updateSetting(this.getAttribute('data-setting'), this.value);">
+                    <option class="reader-settings-option" value="1.2">Small</option>
+                    <option class="reader-settings-option" value="1.625" selected="">Medium</option>
+                    <option class="reader-settings-option" value="2.2">Large</option>
+                    <option class="reader-settings-option" value="3.5">Extra Large</option>
+                </select>
+            </div>
+            <div>
+                <label for="paragraph-spacing-select">Paragraph</label>
+                <select id="paragraph-spacing-select" class="reader-settings-select" data-setting="reader-paragraph-spacing" onchange="updateSetting(this.getAttribute('data-setting'), this.value);">
+                    <option class="reader-settings-option" value="0.5em">Small</option>
+                    <option class="reader-settings-option" value="1.625em" selected="">Medium</option>
+                    <option class="reader-settings-option" value="2.75em">Large</option>
+                    <option class="reader-settings-option" value="4.25em">Extra Large</option>
+                </select>
+            </div>
+        </fieldset>
+        <div class="ml-5 mb-4">
+            <label for="theme-select">Theme</label>
+            <select id="theme-select" class="reader-settings-select" data-setting="reader-theme" onchange="updateSetting(this.getAttribute('data-setting'), this.value);">
+                <option class="reader-settings-option" value="reader-theme-grey" selected="">Dark Grey</option>
+                <option class="reader-settings-option" value="reader-theme-blue">Dark Blue</option>
+                <option class="reader-settings-option" value="reader-theme-black">Black</option>
+                <option class="reader-settings-option" value="reader-theme-white">White</option>
+                <option class="reader-settings-option" value="reader-theme-sepia">Sepia</option>
+            </select>
+        </div>
+        <button id="reset-settings-btn" onclick="resetSettings()">Reset To Default</button>
+        <!-- <div> -->
+        <!-- </div> -->
+
+
+    </div>
+</div>
+      <div class="entry-content">
+        <p>It was not today. Rags sat there, in The Wandering Inn, and waited for the call. She knew she should have been at Goblinhome, but she couldn’t. She could neither pace about and alarm her tribe, looking to her for leadership, nor be in the presence of the Dragonlord of Flames.</p>
+<p>Nor the Wyvern Lord either. He had become, rather than a threat…a potential ally. She could not face him; not look into his bright yellow gaze full of wild intelligence, and feel the temptation. The twisted desire from the smart, ruthless part of her, to ask for his help, or even expect it.</p>
+<p>Down that road lay an [Innkeeper]’s tears and the garden of statues. It might save her tribe.</p>
+<p>She didn’t want to kill him and his.</p>
+<p>“I should.”</p>
+<p>Rags took another sip from her blue juice drink, the too-sweet, fruity beverage a cross between orange and blueberry for taste. Thick with pulp; nostalgic for a little Goblin who used to have nothing else to eat.</p>
+<p>How far she’d come. Rags took a longer drink, then raised a hand to her ear where a tiny speaking stone was held by a piece of wire looped around her pointed ears.</p>
+<p>“It’s me. What?”</p>
+<p>There was no clue, here, she could find about what might be coming. Though she had just received the most unwelcome news about a certain <em>Goblin Tribe</em> moving this way…</p>
+<p><em>Was it him after all? It seems too obvious. Why…</em></p>
+<p>She nursed her drink, sitting there and casually eying the regular patrons and guests who did come in to stare at the Antinium and Goblins or buy some cookies or food.</p>
+<p><em>Why do I feel like I’m being watched?</em></p>
+<p>Her visit to The Wandering Inn was making her suspect something else was at play beyond Naumel. Her only hope was that if this was going to turn into a full deck of problems, the Kraken Eaters might become a wildcard.</p>
+<p><em>“Chieftain. Can you come back to Goblinhome—now? Got a problem with huge poos. All over the tribe.”</em></p>
+<p>“Huge poos? What did you eat?”</p>
+<p><em>“Something bad with rocks in it. Sorry, Chieftain…”</em></p>
+<p>Rags kept her face straight, wondering if someone could monitor the speaking stone. If they could, they might guess what she was saying, but she bet most people didn’t give her tribe that much credence.</p>
+<p>“Rocks, you say?”</p>
+<p>She glanced out the window and then stood up.</p>
+<p>“I’ll be there.”</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>“Open a portal to that Goblin place? Come on. I know I’m a super [Door Gnoll], but do I have to do <em>another</em> spot?”</p>
+<p>Liska was complaining as a bunch of wet people dried off in her portal room. There were fresh towels being constantly laundered by a team of Antinium, but despite the efforts of Goldbody with a mop, the floor was muddy, and it smelled of wet Gnolls.</p>
+<p>She was <em>not</em> happy today; her services were doubly required because people either wanted to see Liscor or had had enough of the rains. When Rags pressed her for the service, she glowered…right up until Rags handed her a blue sapphire, cut from one of her [Miners]’ hauls.</p>
+<p>“How’s this?”</p>
+<p>“You can’t buy me with wealth! Who do you think I am?”</p>
+<p>Liska folded her arms, sneering, though she did eye the sparkling gemstone with interest. Rags took note of Liska’s padded seat and the table that held a drink and snacks. She sighed…then reached into her bag of holding and pulled out one of her travelling pillows. When Liska fluffed it in her paws, she brightened up.</p>
+<p>“Whoa. What’s this?‘</p>
+<p>“Baby Carn Wolf fur from their sheddings and a silk pillowcase.”</p>
+<p>“Door coming right up! You just let me know when you want to come back, okay? I won’t check it every thirty minutes. How about…every two hours?”</p>
+<p>“Deal.”</p>
+<p>Sighing, Rags walked through, cricking her neck as a few people in line stared at her with that curiosity, horror…</p>
+<p><em>She felt eyes on the back of her neck.</em></p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>On the other side of the portal, Rags surveyed the spot where it opened up. <em>Yep, same as last time. </em>It was just outside of Goblinhome along a thin ravine that led into the main valley with no exit wave towards the fortress; steep rock walls surrounded her.</p>
+<p>She glanced upwards, then spoke.</p>
+<p>“Poisonbite, keep anyone who comes through <em>alive.</em> It won’t happen when Liska’s awake. It might at night.”</p>
+<p>“Roger, roger, Chieftain. You think they will?”</p>
+<p><em>I hope so.</em> Rags just shrugged. It made sense to have a fast link to The Wandering Inn, for now. She didn’t want to put it in danger…</p>
+<p><em>But it was another way Goblins might flee if it came to it. And Lyonette will have to make her choice, and maybe it endangers them. But I’m just waiting and searching for the incoming attack.</em></p>
+<p><em>I hate waiting.</em></p>
+<p>Proactivity suited her. Which was why the <em>guests</em> waiting for her made Rags relieved. Even if it was incredibly unusual.</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>The two Trolls made a strange gesture, raising their heads and clenching their fists in her direction, which some of the Goblins took as a threat given their own body language. But Somo shook her head.</p>
+<p>The Ogre was bigger than the Trolls; they were seven feet tall, but they had thick, grey skin and looked just as tough in their way. They had shaggy, black hair and unreadable faces. Rags imagined they’d look like stone if they held still.</p>
+<p>“I am Chieftain Rags. I greet you in the name of the Flooded Waters tribe. Why have you come here? For peace or war?”</p>
+<p>She decided to be as straightforwards as possible. No one knew how <em>Trolls</em> behaved or interacted; they’d turned down food and been treated well when they appeared, and Somo had only vague hints on what to do.</p>
+<p><strong>“Haugh ber. Dooragh ker goi—”</strong></p>
+<p>One began, and Rags realized she had more than just the issues of culture to deal with.</p>
+<p>“Somo?”</p>
+<p>“Uh. One moment. <strong>Haugh dav gon?</strong>”</p>
+<p>She turned to the Trolls, and one hesitated.</p>
+<p><strong>“Haugh dav…”</strong></p>
+<p>He or she raised his hands and made a few gestures, rumbling a series of words that were probably explanations. Somo listened, rumbling a few back, then nodded.</p>
+<p>“Hmm. <strong>Dooragh dav gon?</strong>”</p>
+<p>Rags didn’t need anyone’s help to see the two Trolls look at each other and do a shuffling motion with their feet. One shook their head and turned; they had a nasty wound on one arm, Rags realized. A huge, red weal of a giant claw, scabbed over and no longer open and raw, but definitely within the last week.</p>
+<p>“What attacked them? Didn’t we heal them, Taganchiel?”</p>
+<p>The [Shaman] was fascinated as he leaned on his staff. He turned to Rags.</p>
+<p>“They were attacked by Eater Goats on their way here, Chieftain. We offered healing, but that one refused. They got hurt…two hours ago?”</p>
+<p><em>Two hours? </em>Rags blinked. The wound was already covered! It was Prixall who spoke, adjusting her pointed hat.</p>
+<p>“Chieftain, I delved into old Goblins’ memories about Trolls. They heal faster than any other species; they can see in the dark. They have histories here, older than our tribes. If you ask for something, they will expect a deed in return. They don’t break their vows lightly.”</p>
+<p>“Hm. I understand.”</p>
+<p>The Troll pulled something out and proffered it to Somo, who inspected it, then jerked her head to Rags. The Troll approached, and Rags thought they smelled like the deep mines that Pyrite had shown her a few times. She realized that the Troll was nervous; her aura told her that the way they stood so <em>still</em> was their reaction to nerves. Or fear.</p>
+<p>Rags tried to make herself less imposing and took the object. It was a stone…horn? Very wide, heavy; she eyed the inside and saw there was more than just a hollowed interior. She imagined if she blew it, the tubing would create a deep bass sound.</p>
+<p>“Chieftain. Give it back.”</p>
+<p>Somo whispered, and Rags glanced up, saw the Troll’s palms were open, and placed the horn back where it was. The Troll nodded, relieved. They raised it up, showing everyone, then stepped away, joining their companion.</p>
+<p>There, the Troll with the horn held out both arms, as if wanting Rags to take it. But they did not move forwards, nor beckon her.</p>
+<p>Rags sensed the ceremony here and didn’t ask questions. Answers would be forthcoming. The second Troll’s actions were even simpler; they reached for their side and drew a sword.</p>
+<p>Redfangs tensed slightly, but only that; Rags inspected the sword.</p>
+<p><em>Good steel, but rusted. They don’t understand the rust, or don’t have maintenance gear, but they took that from someone. </em>It was slightly deformed too. Signs of combat.</p>
+<p>The second Troll held the sword out, horizontally, and grunted at Rags. A word.</p>
+<p>“<strong>Wogot.</strong>”</p>
+<p>Then they pointed the sword down. They stood in a stone room of Goblinhome; no throne room because Rags hadn’t ever needed one. Even so, it was with great surprise that Rags saw the Troll thrust the blade into the stone as if it were water. The warrior pointed down.</p>
+<p>“<strong>Wogot bermal.</strong>”</p>
+<p>They looked expectantly at her and hopefully at Somo. Here, the Ogre brightened.</p>
+<p>“I know this. They say—”</p>
+<p>“This is an ancient Trollish ritual, Chieftain. A thing for a thing. They’re offering you the horn, which I think is some kind of pact, in exchange for your help, indicated by the sword!”</p>
+<p>Prixall jumped in excitedly, and Somo growled.</p>
+<p>“I know that. <em>Sword</em> is war. They said…down, Chieftain. Down is something bad. Killing them. Horn means alliance. Trolls fight and die here.”</p>
+<p>“What does ‘wogot’ mean?”</p>
+<p>“<em>Something very bad.</em>”</p>
+<p>The Ogre rumbled warily, eying the two Trolls. Rags had no idea of their numbers, but she knew that Kevin and the Goblins who’d been saved by the Trolls had seen enough to wipe out a lot of soldiers, even adventurers.</p>
+<p>They’d hidden and resisted attempts to communicate with her tribe so far. She guessed that something was bad; they’d been scouting the High Passes for a while now. She’d assumed they were keeping tabs on Teriarch and Magnolia and the Antinium.</p>
+<p><em>What if they were assessing the situation if they had to leave? And for allies?</em></p>
+<p>Rags turned to Somo.</p>
+<p>“How good is your Troll? Can you ask them if their Chieftain is the Troll with drums?”</p>
+<p>Somo hesitated, and then had someone get a visual aid—a literal drum—for help. The Trolls brightened up the instant they saw it. One nodded at once to Rags’ question, but then, to her astonishment, they came over and began to play.</p>
+<p>It was a fast, catchy tune, and Taganchiel started.</p>
+<p>“Chieftain. That’s the song Kevin played!”</p>
+<p>There was her answer there. Rags nodded and held up a hand; the Trolls stopped. They had a really good musical sense. Seeing one tap the drum expertly made them completely different from the imposing statues they’d been.</p>
+<p>“Somo, translate the rest for me. Troll visitors. I am Chieftain Rags. Flooded Waters tribe. Do you understand me?”</p>
+<p>They listened, ears twitching, and one raised a huge hand and wobbled it.</p>
+<p><em>Good enough.</em> Rags pointed at her tribe.</p>
+<p>“<strong>Wogot. </strong>Here, too. <strong>Wogot.</strong>”</p>
+<p>She waved a hand around, and the Trolls glanced at each other and nodded heavily. They began to turn away, and Rags stepped forwards.</p>
+<p>They watched her as she strode to the sword. Rags placed her hand on it and felt it moving with the slight pressure she exerted. She pulled the sword from the stone and blinked at the lack of a mark where it had been. <em>How did they do that?</em> The Trolls watched her weigh the blade, then look at the stone horn proffered to her.</p>
+<p>Rags did not lift the sword overhead. She was counting, now.</p>
+<p><em>Fightipilota wasn’t back with Redscar yet. </em>But the Kraken Eaters and any force would take time to get to Goblinhome. This…could be a disaster.</p>
+<p>Or it could be what she wanted. The Trolls waited. Rags handed the sword back to the one who had drawn it and heard a deep sigh, but then she pointed at the horn. Rags tapped it once, then her chest. Then the sword—the two Trolls looked at her, and she spoke.</p>
+<p>“I make no promises. Show me. Take me there.”</p>
+<p>They looked at Somo as she translated, then one smiled at Rags. Hesitantly, with their lips, no teeth. She copied the gesture.</p>
+<p><em>One more thing to pursue. One more ally—perhaps.&nbsp;</em></p>
+<p>She wondered what the Trolls had found down there. What fought Trolls like that? Rags couldn’t promise she could help. But she had always been curious.</p>
+<p>Slowly, in the back of her mind, her [Dangersense] began to pipe a small alarm. It grew louder, with that building intensity, from the whisper of leaves to a hurricane to make the High Passes tremble. But the Goblin just sighed.</p>
+<p>She was used to it.</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>A Goblin’s story.</p>
+<p>A Dragon’s endless days.</p>
+<p>A falling child.</p>
+<p>Down she plummeted. Out of the known world full of wonders turned to mundane sanctuary. Through the ground—and then the weft of the world, plunging headlong, flailing. Around her, roots tangled ever-downwards, thin, questing tendrils that belonged to the Faerie King’s realm and obeyed not even his will fully. Roots, opening a passageway into some place neither the roots nor she should be. The girl reached out desperately to seize them.</p>
+<p>She missed, and then she was gone.</p>
+<p>Leaving no trace of where she had been.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><strong>Author’s Notes:</strong></p>
+<p>I wrote two versions of Goblins Days (Pt. 8). One, on stream. Then I rewrote it. Then I deleted both. It was about 15,000 words and it didn’t work. It wasn’t right. I realized, as I was agonizing about it last night, talking over the issue with beta-readers. Realizing that it wasn’t good enough or I wasn’t sure about the problems…I had a simple conclusion.</p>
+<p>Ah, I’m doing it again.</p>
+<p>In <em>Mechwarriors 5, Mercenaries,</em> a game where you pilot a giant ‘battle mech’ in the future, all your enemies are faceless mercenaries or enemy soldiers. You stomp through cities and wastelands, fighting for ‘c-bills’ which you pay costs and upgrade your increasingly large battlemechs with more weapons.</p>
+<p>There is a campaign. The story’s not great. I play with tons of mods and make weird, laser-based mechs when I’m tired, like now; it’s a game where I can play on autopilot. Do I enjoy it? Not really. Sort of. I watch a Youtube video on the second monitor and de-stress and zone out.</p>
+<p>In the game, you never kill enemy pilots. Even when you blow the head off an enemy, they just say ‘my ct (center torso), is going crit (critical), I have to eject!’. No one screams. It’s a sanitized game in that sense, for all the arguably gratuitous violence, there is no blood; you play in a sandbox of the future with robots.</p>
+<p>One pilot I know is a female generic who says ‘lots of red lights here. Going to make my escape!’</p>
+<p>Some days I feel like that. Or I imagine a popup saying ‘you took 2d4 mental damage!’ Despite me never having played Dungeons and Dragons, really.</p>
+<p>I’m here again. Eight chapters, eight days of writing and I managed a sub-10k chapter on two of those days.</p>
+<p>I thought it’d be like my birthday week. I think I’m too nervous to slow down despite knowing it’d be better writing. If you understand boxing, it’d be like someone who throws everything into the first two rounds and is dead weight and loses the match.</p>
+<p>When I’m like this, what people call burnout, my writing quality is low, I know that—but I’m also far more easily stressed and snappy. I focus on negatives and think my writing is bad, and it often is worse. But I can’t come up with original ideas I like. I don’t enjoy anything as much.</p>
+<p>The short-term effects will fade if I take some days off. A week or two weeks helps a lot. The month off per year is to offset the year’s worth. Some days I wonder if taking a year off would help me…but that’s not really how I think web serials would work.</p>
+<p>We’re back to this exhaustion. I’ll be back on Saturday and I may wait until Friday to even start writing to recover. But I swear, I had an idea when I knew Rags’ poll chapter was coming. Something that dovetailed with plans I already had. This…was just the setup in a sense to a larger story. And here we are.</p>
+<p>I don’t like Part 8. Beta-readers, whom I trust for their opinions, had objections, which I both felt was fair, and which may be because they don’t see the picture in my head. So I intend to scrap a lot of what I wrote on stream. I swear everyone there to silence; whatever you see here is the result of me wanting to write it better, when I’m rested.</p>
+<p>It’s always ambitious. I worry, sometimes, about the end of Volume 9, of each plot point, whether this is the last time I can have the stakes go so high. Whether the impact is lessened or whether I’m losing my touch. Then I read comments by some readers who have every reaction I want, and I feel better.</p>
+<p>I’ll be back. And I’ll take my week’s break off if I need to; I can monitor my condition, so sometimes I look up and notice the status effect over my head. For a few days it’ll suck, but I’ll do suck-things like replay video games or watch videos or go for a walk. Maybe I’ll stop waking up at 6 PM and try living like a daylight person. A bit of repair, so I can run wild again until I’m back here.</p>
+<p>When I’m tired, I talk about burnout or why extreme effort is a good thing. When I’m happy, and motivated, and inspired and the top of my game, which is rarely, I never think of it and feel like I can write like magic or catch lightning.</p>
+<p>That’s why you rest. So, hope you enjoyed this eight-part series. I will try short chapters, still. Until then—thanks for reading.</p>
+<p>&nbsp;</p>
+<p><strong>Stream Art: Nirayicel Listening by Moerchen!</strong></p>
+<p><a href="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/the_memory_of_Nirayicel_sitting_on_a_stone-by-Moerchen.png?ssl=1"><img fetchpriority="high" decoding="async" data-attachment-id="17435" data-permalink="https://wanderinginn.com/2024/08/04/goblin-days-pt-8-downwards/the_memory_of_nirayicel_sitting_on_a_stone-by-moerchen/" data-orig-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/the_memory_of_Nirayicel_sitting_on_a_stone-by-Moerchen.png?fit=800%2C800&amp;ssl=1" data-orig-size="800,800" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="the_memory_of_Nirayicel_sitting_on_a_stone by Moerchen" data-image-description="" data-image-caption="" data-medium-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/the_memory_of_Nirayicel_sitting_on_a_stone-by-Moerchen.png?fit=300%2C300&amp;ssl=1" data-large-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/the_memory_of_Nirayicel_sitting_on_a_stone-by-Moerchen.png?fit=800%2C800&amp;ssl=1" class="alignnone size-full wp-image-17435" src="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/the_memory_of_Nirayicel_sitting_on_a_stone-by-Moerchen.png?resize=800%2C800&amp;ssl=1" alt="" width="800" height="800" srcset="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/the_memory_of_Nirayicel_sitting_on_a_stone-by-Moerchen.png?w=800&amp;ssl=1 800w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/the_memory_of_Nirayicel_sitting_on_a_stone-by-Moerchen.png?resize=300%2C300&amp;ssl=1 300w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/the_memory_of_Nirayicel_sitting_on_a_stone-by-Moerchen.png?resize=150%2C150&amp;ssl=1 150w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/the_memory_of_Nirayicel_sitting_on_a_stone-by-Moerchen.png?resize=768%2C768&amp;ssl=1 768w" sizes="(max-width: 800px) 100vw, 800px" data-recalc-dims="1"></a></p>
+<p>&nbsp;</p>
+<p><strong>Erin and Witch Erin by Spooky!</strong></p>
+<p><a href="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Erin-by-Spooky.png?ssl=1"><img decoding="async" data-attachment-id="17436" data-permalink="https://wanderinginn.com/2024/08/04/goblin-days-pt-8-downwards/erin-by-spooky/" data-orig-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Erin-by-Spooky.png?fit=2118%2C3500&amp;ssl=1" data-orig-size="2118,3500" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="Erin by Spooky" data-image-description="" data-image-caption="" data-medium-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Erin-by-Spooky.png?fit=182%2C300&amp;ssl=1" data-large-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Erin-by-Spooky.png?fit=620%2C1024&amp;ssl=1" class="alignnone size-full wp-image-17436" src="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Erin-by-Spooky.png?resize=2118%2C3500&amp;ssl=1" alt="" width="2118" height="3500" srcset="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Erin-by-Spooky.png?w=2118&amp;ssl=1 2118w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Erin-by-Spooky.png?resize=182%2C300&amp;ssl=1 182w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Erin-by-Spooky.png?resize=620%2C1024&amp;ssl=1 620w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Erin-by-Spooky.png?resize=768%2C1269&amp;ssl=1 768w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Erin-by-Spooky.png?resize=929%2C1536&amp;ssl=1 929w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Erin-by-Spooky.png?resize=1239%2C2048&amp;ssl=1 1239w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Erin-by-Spooky.png?w=2000&amp;ssl=1 2000w" sizes="(max-width: 1000px) 100vw, 1000px" data-recalc-dims="1"></a> <a href="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/WitchErin-by-Spooky.png?ssl=1"><img decoding="async" data-attachment-id="17437" data-permalink="https://wanderinginn.com/2024/08/04/goblin-days-pt-8-downwards/witcherin-by-spooky/" data-orig-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/WitchErin-by-Spooky.png?fit=2118%2C3500&amp;ssl=1" data-orig-size="2118,3500" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="WitchErin by Spooky" data-image-description="" data-image-caption="" data-medium-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/WitchErin-by-Spooky.png?fit=182%2C300&amp;ssl=1" data-large-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/WitchErin-by-Spooky.png?fit=620%2C1024&amp;ssl=1" class="alignnone size-full wp-image-17437" src="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/WitchErin-by-Spooky.png?resize=2118%2C3500&amp;ssl=1" alt="" width="2118" height="3500" srcset="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/WitchErin-by-Spooky.png?w=2118&amp;ssl=1 2118w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/WitchErin-by-Spooky.png?resize=182%2C300&amp;ssl=1 182w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/WitchErin-by-Spooky.png?resize=620%2C1024&amp;ssl=1 620w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/WitchErin-by-Spooky.png?resize=768%2C1269&amp;ssl=1 768w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/WitchErin-by-Spooky.png?resize=929%2C1536&amp;ssl=1 929w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/WitchErin-by-Spooky.png?resize=1239%2C2048&amp;ssl=1 1239w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/WitchErin-by-Spooky.png?w=2000&amp;ssl=1 2000w" sizes="(max-width: 1000px) 100vw, 1000px" data-recalc-dims="1"></a></p>
+<p>&nbsp;</p>
+<p><strong>The Box Pillow by Aeternus!</strong></p>
+<p><a href="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/TheBox-by-Aeternus.jpg?ssl=1"><img loading="lazy" decoding="async" data-attachment-id="17438" data-permalink="https://wanderinginn.com/2024/08/04/goblin-days-pt-8-downwards/thebox-by-aeternus/" data-orig-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/TheBox-by-Aeternus.jpg?fit=1588%2C1676&amp;ssl=1" data-orig-size="1588,1676" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;1&quot;}" data-image-title="TheBox by Aeternus" data-image-description="" data-image-caption="" data-medium-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/TheBox-by-Aeternus.jpg?fit=284%2C300&amp;ssl=1" data-large-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/TheBox-by-Aeternus.jpg?fit=970%2C1024&amp;ssl=1" class="alignnone size-full wp-image-17438" src="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/TheBox-by-Aeternus.jpg?resize=1588%2C1676&amp;ssl=1" alt="" width="1588" height="1676" srcset="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/TheBox-by-Aeternus.jpg?w=1588&amp;ssl=1 1588w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/TheBox-by-Aeternus.jpg?resize=284%2C300&amp;ssl=1 284w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/TheBox-by-Aeternus.jpg?resize=970%2C1024&amp;ssl=1 970w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/TheBox-by-Aeternus.jpg?resize=768%2C811&amp;ssl=1 768w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/TheBox-by-Aeternus.jpg?resize=1455%2C1536&amp;ssl=1 1455w" sizes="(max-width: 1000px) 100vw, 1000px" data-recalc-dims="1"></a> <a href="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/TheBox2-by-Aeternus.jpg?ssl=1"><img loading="lazy" decoding="async" data-attachment-id="17439" data-permalink="https://wanderinginn.com/2024/08/04/goblin-days-pt-8-downwards/thebox2-by-aeternus/" data-orig-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/TheBox2-by-Aeternus.jpg?fit=1818%2C1796&amp;ssl=1" data-orig-size="1818,1796" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;1&quot;}" data-image-title="TheBox2 by Aeternus" data-image-description="" data-image-caption="" data-medium-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/TheBox2-by-Aeternus.jpg?fit=300%2C296&amp;ssl=1" data-large-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/TheBox2-by-Aeternus.jpg?fit=1024%2C1012&amp;ssl=1" class="alignnone size-full wp-image-17439" src="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/TheBox2-by-Aeternus.jpg?resize=1818%2C1796&amp;ssl=1" alt="" width="1818" height="1796" srcset="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/TheBox2-by-Aeternus.jpg?w=1818&amp;ssl=1 1818w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/TheBox2-by-Aeternus.jpg?resize=300%2C296&amp;ssl=1 300w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/TheBox2-by-Aeternus.jpg?resize=1024%2C1012&amp;ssl=1 1024w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/TheBox2-by-Aeternus.jpg?resize=768%2C759&amp;ssl=1 768w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/TheBox2-by-Aeternus.jpg?resize=1536%2C1517&amp;ssl=1 1536w" sizes="(max-width: 1000px) 100vw, 1000px" data-recalc-dims="1"></a></p>
+<p>&nbsp;</p>
+<p><strong>Nerrhavia by Lanrae!</strong></p>
+<p><a href="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/nerrhavia-by-Lanrae.png?ssl=1"><img loading="lazy" decoding="async" data-attachment-id="17440" data-permalink="https://wanderinginn.com/2024/08/04/goblin-days-pt-8-downwards/nerrhavia-by-lanrae-2/" data-orig-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/nerrhavia-by-Lanrae.png?fit=4000%2C4000&amp;ssl=1" data-orig-size="4000,4000" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="nerrhavia by Lanrae" data-image-description="" data-image-caption="" data-medium-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/nerrhavia-by-Lanrae.png?fit=300%2C300&amp;ssl=1" data-large-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/nerrhavia-by-Lanrae.png?fit=1024%2C1024&amp;ssl=1" class="alignnone size-full wp-image-17440" src="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/nerrhavia-by-Lanrae.png?resize=4000%2C4000&amp;ssl=1" alt="" width="4000" height="4000" srcset="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/nerrhavia-by-Lanrae.png?w=4000&amp;ssl=1 4000w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/nerrhavia-by-Lanrae.png?resize=300%2C300&amp;ssl=1 300w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/nerrhavia-by-Lanrae.png?resize=1024%2C1024&amp;ssl=1 1024w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/nerrhavia-by-Lanrae.png?resize=150%2C150&amp;ssl=1 150w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/nerrhavia-by-Lanrae.png?resize=768%2C768&amp;ssl=1 768w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/nerrhavia-by-Lanrae.png?resize=1536%2C1536&amp;ssl=1 1536w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/nerrhavia-by-Lanrae.png?resize=2048%2C2048&amp;ssl=1 2048w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/nerrhavia-by-Lanrae.png?w=3000&amp;ssl=1 3000w" sizes="(max-width: 1000px) 100vw, 1000px" data-recalc-dims="1"></a></p>
+<p>&nbsp;</p>
+<p><strong>Orjin and Salii by Wing!</strong></p>
+<p><strong>Instagram:</strong> <a class="anchor_af404b anchorUnderlineOnHover_af404b" tabindex="0" title="https://www.instagram.com/wingedhatchling/" role="button" href="https://www.instagram.com/wingedhatchling/" target="_blank" rel="noreferrer noopener">https://www.instagram.com/wingedhatchling/</a></p>
+<p><strong>Ko-Fi:</strong> <a class="anchor_af404b anchorUnderlineOnHover_af404b" tabindex="0" title="https://ko-fi.com/wingedhatch" role="button" href="https://ko-fi.com/wingedhatch" target="_blank" rel="noreferrer noopener">https://ko-fi.com/wingedhatch</a></p>
+<p><strong>Hatchs Cara Art:</strong> <a class="anchor_af404b anchorUnderlineOnHover_af404b" tabindex="0" title="https://cara.app/wingedhatchling/all" role="button" href="https://cara.app/wingedhatchling/all" target="_blank" rel="noreferrer noopener">https://cara.app/wingedhatchling/all</a></p>
+<p><a href="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/OrajmSalii-by-Wing.png?ssl=1"><img loading="lazy" decoding="async" data-attachment-id="17442" data-permalink="https://wanderinginn.com/2024/08/04/goblin-days-pt-8-downwards/orajmsalii-by-wing/" data-orig-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/OrajmSalii-by-Wing.png?fit=1488%2C2266&amp;ssl=1" data-orig-size="1488,2266" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="OrajmSalii by Wing" data-image-description="" data-image-caption="" data-medium-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/OrajmSalii-by-Wing.png?fit=197%2C300&amp;ssl=1" data-large-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/OrajmSalii-by-Wing.png?fit=672%2C1024&amp;ssl=1" class="alignnone size-full wp-image-17442" src="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/OrajmSalii-by-Wing.png?resize=1488%2C2266&amp;ssl=1" alt="" width="1488" height="2266" srcset="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/OrajmSalii-by-Wing.png?w=1488&amp;ssl=1 1488w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/OrajmSalii-by-Wing.png?resize=197%2C300&amp;ssl=1 197w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/OrajmSalii-by-Wing.png?resize=672%2C1024&amp;ssl=1 672w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/OrajmSalii-by-Wing.png?resize=768%2C1170&amp;ssl=1 768w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/OrajmSalii-by-Wing.png?resize=1009%2C1536&amp;ssl=1 1009w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/OrajmSalii-by-Wing.png?resize=1345%2C2048&amp;ssl=1 1345w" sizes="(max-width: 1000px) 100vw, 1000px" data-recalc-dims="1"></a></p>
+<p>&nbsp;</p>
+<p><strong>Post-Solstice Erin by Chalyon!</strong></p>
+<p><a href="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/DepressedErin-by-Chalyon.png?ssl=1"><img loading="lazy" decoding="async" data-attachment-id="17443" data-permalink="https://wanderinginn.com/2024/08/04/goblin-days-pt-8-downwards/depressederin-by-chalyon/" data-orig-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/DepressedErin-by-Chalyon.png?fit=5000%2C5000&amp;ssl=1" data-orig-size="5000,5000" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="DepressedErin by Chalyon" data-image-description="" data-image-caption="" data-medium-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/DepressedErin-by-Chalyon.png?fit=300%2C300&amp;ssl=1" data-large-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/DepressedErin-by-Chalyon.png?fit=1024%2C1024&amp;ssl=1" class="alignnone size-full wp-image-17443" src="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/DepressedErin-by-Chalyon.png?resize=5000%2C5000&amp;ssl=1" alt="" width="5000" height="5000" srcset="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/DepressedErin-by-Chalyon.png?w=5000&amp;ssl=1 5000w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/DepressedErin-by-Chalyon.png?resize=300%2C300&amp;ssl=1 300w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/DepressedErin-by-Chalyon.png?resize=1024%2C1024&amp;ssl=1 1024w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/DepressedErin-by-Chalyon.png?resize=150%2C150&amp;ssl=1 150w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/DepressedErin-by-Chalyon.png?resize=768%2C768&amp;ssl=1 768w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/DepressedErin-by-Chalyon.png?resize=1536%2C1536&amp;ssl=1 1536w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/DepressedErin-by-Chalyon.png?resize=2048%2C2048&amp;ssl=1 2048w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/DepressedErin-by-Chalyon.png?w=3000&amp;ssl=1 3000w" sizes="(max-width: 1000px) 100vw, 1000px" data-recalc-dims="1"></a></p>
+<p>&nbsp;</p>
+<p><strong>Garia and Ryoka by Avi!</strong></p>
+<p><strong>Ko-Fi:</strong> <a class="anchor_af404b anchorUnderlineOnHover_af404b" tabindex="0" title="https://ko-fi.com/0avi0" role="button" href="https://ko-fi.com/0avi0" target="_blank" rel="noreferrer noopener">https://ko-fi.com/0avi0</a></p>
+<p><a href="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/GariaRyoka-by-Avi.png?ssl=1"><img loading="lazy" decoding="async" data-attachment-id="17444" data-permalink="https://wanderinginn.com/2024/08/04/goblin-days-pt-8-downwards/gariaryoka-by-avi/" data-orig-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/GariaRyoka-by-Avi.png?fit=1051%2C1027&amp;ssl=1" data-orig-size="1051,1027" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="GariaRyoka by Avi" data-image-description="" data-image-caption="" data-medium-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/GariaRyoka-by-Avi.png?fit=300%2C293&amp;ssl=1" data-large-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/GariaRyoka-by-Avi.png?fit=1024%2C1001&amp;ssl=1" class="alignnone size-full wp-image-17444" src="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/GariaRyoka-by-Avi.png?resize=1051%2C1027&amp;ssl=1" alt="" width="1051" height="1027" srcset="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/GariaRyoka-by-Avi.png?w=1051&amp;ssl=1 1051w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/GariaRyoka-by-Avi.png?resize=300%2C293&amp;ssl=1 300w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/GariaRyoka-by-Avi.png?resize=1024%2C1001&amp;ssl=1 1024w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/GariaRyoka-by-Avi.png?resize=768%2C750&amp;ssl=1 768w" sizes="(max-width: 1000px) 100vw, 1000px" data-recalc-dims="1"></a></p>
+<p>&nbsp;</p>
+<hr>
+<p><a href="https://wanderinginn.com/2024/08/02/goblin-days-pt-7-no-answers-and-answers/">Previous Chapter</a> <a href="https://wanderinginn.com/2024/08/10/the-roots-pt-1/"><span style="float: right;">Next Chapter</span></a></p>
+      </div>
+
+      <hr>
+          <span class="nav-previous">
+        <a href="https://wanderinginn.com/2024/08/02/goblin-days-pt-7-no-answers-and-answers/" rel="prev"><span class="meta-nav">←</span> Previous Chapter</a>    </span>
+    <span class="nav-next" style="float: right" ;="">
+        <a href="https://wanderinginn.com/2024/08/10/the-roots-pt-1/" rel="next">Next Chapter <span class="meta-nav">→</span></a>    </span>
+    

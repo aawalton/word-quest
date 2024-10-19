@@ -1,0 +1,865 @@
+
+
+          <span class="nav-previous">
+        <a href="https://wanderinginn.com/2024/08/02/goblin-days-pt-6-of-dragons/" rel="prev"><span class="meta-nav">←</span> Previous Chapter</a>    </span>
+    <span class="nav-next" style="float: right" ;="">
+        <a href="https://wanderinginn.com/2024/08/04/goblin-days-pt-8-downwards/" rel="next">Next Chapter <span class="meta-nav">→</span></a>    </span>
+      <!-- <hr/> -->
+      <header class="entry-header">
+        <h1 class="entry-title">Goblin Days (Pt. 7) – No Answers and Answers</h1>
+                <button class="show-settings-btn" onclick="document.querySelector('#reader-settings-wrapper').classList.toggle('is-hidden')">
+          <img class="show-settings-btn-img" src="https://wanderinginn.com/wp-content/themes/solstice/assets/images/ui/reader-settings-button.webp">
+        </button>
+      </header>
+
+      
+<!-- Reader Settings -->
+<div id="reader-settings-wrapper" class="is-hidden">
+    <div id="reader-settings">
+        <header id="reader-settings-header">
+            <h2>Reader Settings</h2>
+            <button onclick="closeModal()">
+                <svg width="100%" height="100%" viewBox="0 0 33 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M16.5 30.75C24.0939 30.75 30.25 24.5939 30.25 17C30.25 9.40608 24.0939 3.25 16.5 3.25C8.90608 3.25 2.75 9.40608 2.75 17C2.75 24.5939 8.90608 30.75 16.5 30.75Z" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M20.625 12.875L12.375 21.125" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M12.375 12.875L20.625 21.125" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+            </button>
+        </header>
+
+        <fieldset id="fieldset-font">
+            <legend>Font</legend>
+
+            <div>
+                <label for="font-size-select">Size</label>
+                <select id="font-size-select" class="reader-settings-select" data-setting="reader-font-size" onchange="updateSetting(this.getAttribute('data-setting'), this.value);">
+                    <option value="10pt" class="reader-settings-option">10</option>
+                    <option value="11pt" class="reader-settings-option">11</option>
+                    <option value="12pt" class="reader-settings-option" selected="">12</option>
+                    <option value="13pt" class="reader-settings-option">13</option>
+                    <option value="14pt" class="reader-settings-option">14</option>
+                    <option value="16pt" class="reader-settings-option">16</option>
+                    <option value="18pt" class="reader-settings-option">18</option>
+                    <option value="20pt" class="reader-settings-option">20</option>
+                    <option value="22pt" class="reader-settings-option">22</option>
+                    <option value="24pt" class="reader-settings-option">24</option>
+                    <option value="26pt" class="reader-settings-option">26</option>
+                    <option value="28pt" class="reader-settings-option">28</option>
+                    <option value="30pt" class="reader-settings-option">30</option>
+                    <option value="36pt" class="reader-settings-option">36</option>
+                    <option value="42pt" class="reader-settings-option">42</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="font-family-select">Family</label>
+                <select id="font-family-select" class="reader-settings-select" data-setting="reader-font-family" onchange="updateSetting(this.getAttribute('data-setting'), this.value);">
+                    <optgroup label="Sans Serif">
+                        <option class="reader-settings-option" value="OpenSans, sans-serif" selected="">Open Sans</option>
+                        <option class="reader-settings-option" value="Arial, Helvetica, sans-serif">Arial</option>
+                        <option class="reader-settings-option" value="Roboto, sans-serif">Roboto</option>
+                    </optgroup>
+                    <optgroup label="Serif">
+                        <option class="reader-settings-option" value="Playfair, serif">Playfair</option>
+                        <option class="reader-settings-option" value="EBGaramond, serif">Garamond</option>
+                        <option class="reader-settings-option" value="'Times New Roman', Times, serif">Times New Roman</option>
+                    </optgroup>
+                    <optgroup label="Other">
+                        <option class="reader-settings-option" value="OpenDyslexic">OpenDyslexic</option>
+                        <option class="reader-settings-option" value="HennyPenny">Henny Penny</option>
+                    </optgroup>
+                </select>
+            </div>
+            <div>
+                <label for="font-weight-select">Thickness</label>
+                <select id="font-weight-select" class="reader-settings-select" data-setting="reader-font-weight" onchange="updateSetting(this.getAttribute('data-setting'), this.value);">
+                    <option class="reader-settings-option" value="300" selected="">Thin</option>
+                    <option class="reader-settings-option" value="400">Regular</option>
+                    <option class="reader-settings-option" value="500">Thick</option>
+                </select>
+            </div>
+        </fieldset>
+
+        <fieldset id="fieldset-spacing">
+            <legend>Spacing</legend>
+            <div>
+                <label for="margins-select">Page Width</label>
+                <select id="margins-select" class="reader-settings-select" data-setting="reader-article-width" onchange="updateSetting(this.getAttribute('data-setting'), this.value);">
+                    <option value="320px" class="reader-settings-option">Extra Narrow</option>
+                    <option value="500px" class="reader-settings-option">Narrow</option>
+                    <option value="680px" class="reader-settings-option" selected="">Medium</option>
+                    <option value="1000px" class="reader-settings-option">Wide</option>
+                    <option value="1200px" class="reader-settings-option">Extra Wide</option>
+                    <option value="100%" class="reader-settings-option">Max</option>
+                </select>
+            </div>
+            <div>
+                <label for="line-spacing-select">Line</label>
+                <select id="line-spacing-select" class="reader-settings-select" data-setting="reader-line-height" onchange="updateSetting(this.getAttribute('data-setting'), this.value);">
+                    <option class="reader-settings-option" value="1.2">Small</option>
+                    <option class="reader-settings-option" value="1.625" selected="">Medium</option>
+                    <option class="reader-settings-option" value="2.2">Large</option>
+                    <option class="reader-settings-option" value="3.5">Extra Large</option>
+                </select>
+            </div>
+            <div>
+                <label for="paragraph-spacing-select">Paragraph</label>
+                <select id="paragraph-spacing-select" class="reader-settings-select" data-setting="reader-paragraph-spacing" onchange="updateSetting(this.getAttribute('data-setting'), this.value);">
+                    <option class="reader-settings-option" value="0.5em">Small</option>
+                    <option class="reader-settings-option" value="1.625em" selected="">Medium</option>
+                    <option class="reader-settings-option" value="2.75em">Large</option>
+                    <option class="reader-settings-option" value="4.25em">Extra Large</option>
+                </select>
+            </div>
+        </fieldset>
+        <div class="ml-5 mb-4">
+            <label for="theme-select">Theme</label>
+            <select id="theme-select" class="reader-settings-select" data-setting="reader-theme" onchange="updateSetting(this.getAttribute('data-setting'), this.value);">
+                <option class="reader-settings-option" value="reader-theme-grey" selected="">Dark Grey</option>
+                <option class="reader-settings-option" value="reader-theme-blue">Dark Blue</option>
+                <option class="reader-settings-option" value="reader-theme-black">Black</option>
+                <option class="reader-settings-option" value="reader-theme-white">White</option>
+                <option class="reader-settings-option" value="reader-theme-sepia">Sepia</option>
+            </select>
+        </div>
+        <button id="reset-settings-btn" onclick="resetSettings()">Reset To Default</button>
+        <!-- <div> -->
+        <!-- </div> -->
+
+
+    </div>
+</div>
+      <div class="entry-content">
+        <p>“<em>When you meet a truly ancient Dragon, count and parcel out each word. Waste no time, for each single syllable matters. Their memories stretch back to the dawn of this world, and their answers reveal the truth, so speak to them like a poet, with all the grace and authority and wisdom you can muster. When you get them talking, pour a cup of tea, because then they won’t shut up.</em>”</p>
+<p><em>—Empress Sheta, the Empire of Harpies, 2174.</em></p>
+<p>&nbsp;</p>
+<p>Events were in motion.</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>Marching an army north past the Bloodfields took time. Getting them into position without alerting anyone? Extraordinarily difficult. But it could be done; Drakes had ‘safe routes’ into the High Passes they had charted just for this event. At some point, all would be revealed, so they had agents on the ground. The most dangerous part of a Goblin tribe was a Chieftain. Remove her from the equation and it got easy.</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>“They’re running. They’re <em>running!</em> Clear the highways! They’re on the move, and I’ve never seen them go this fast!”</p>
+<p>“Stop screaming and sit <em>down. </em>You are a Courier, Hawk. Not an incontinent Street Runner. Where are they?”</p>
+<p>Mihaela Godfrey barked as the Rabbit Beastkin shouted into the scrying orb. She ripped a map from the unconcerned Drakes and began issuing orders.</p>
+<p>“<em>Send out an emergency message. Lock down every single road south of them. </em>The Kraken Eaters have caught City Runners and even Couriers on the march.”</p>
+<p>“Where are they even going? Their territory’s in the north. They’ve left the coastline, and they’re moving fast.”</p>
+<p>Mihaela traced a straight line south and grunted. If you took a ruler and moved it across half the continent…you’d have to be an idiot or a bird to plot your course like that. But she held her tongue on that as she responded to the Drake Guildmaster of Marwsh’s Runner’s Guild.</p>
+<p>“Too early to call. But if I’m right…somewhere stupid. Put the alert out. Oh, and find that idiot Persua. Tell her she’s going north immediately. She’s on Emergency Runner duty for anything needed in the path of the Kraken Eater tribe.”</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>Klbkchhezeim of the Free Antinium ran out of the gates of the city of Heidomat, arrows flying past him as he lost his disguise hat and his trenchcoat blew away to reveal his Antinium form. He was still determinedly eating a sandwich as the furious Watch chased after him.</p>
+<p>“<em>You are all disgraces to the Watch. I am reporting you to the relevant authorities.</em>”</p>
+<p>The Slayer ran. He had a Gnoll [Prostitute] on one shoulder, whom he was shielding from the arrows. It was not a kidnapping, despite the shouting. She was definitely not resisting and covering her face as the arrows flashed past her.</p>
+<p>These things happened. Klbkch raced away as the local authorities added ‘kidnapping’, ‘blackmailing a brothel owner’, and ‘assaulting members of the Watch’ to his growing rapsheet.</p>
+<p>Klbkch added ‘improper conduct towards working professionals’, ‘corruption within the Watch’, and ‘substandard working conditions and pay’ to theirs.</p>
+<p>He still hadn’t quite gotten to the New Lands, but given the velocity he was moving, he was on his way. Klbkch checked over his shoulder.</p>
+<p>“I feel as though someone’s walking on my backshell.”</p>
+<p>The Gnoll turned her head, wondering what that <em>meant.</em> But Klbkch rubbed the back of his neck as he deflected another arrow. He had the most uncanny feeling he should be at The Wandering Inn. Of course, he always felt like that. But what was this strange sense of rivalry?</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>Fetohep felt it too, across the world, as he listened to reports of the ‘raiders’ troubling his borders. The King of Khelt shifted, somewhat impatiently, and frowned.</p>
+<p>He had the distinct thought he should be putting on his best storytelling robes and impressing someone right now.</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>The Dragonlord of Flames, scales shining like a river of gold, copper mane swirling around his neck, lay on a pile of gold and treasures. His voice was deep as that of a Giant, diction refined like an Archmage of old, and his eyes flashed with the colors of magic itself.</p>
+<p>In front of him sat a Lightning Dragon, one-winged, face desperate and hungry and longing. She was sleek and fit, wounded; a scar across what she and the rest of the world had assumed to be flawless, perfect youth. In some ways, perhaps, a mockery because she tried to conform to that ideal she had been told she was. In other ways, the living embodiment. A Dragon who had eaten a Void Goat before her second century. But more than her taut muscle or gemstone scales, her eyes reflected that deep loneliness.</p>
+<p>Rafaema’s great weakness was at odds with the one the sulking Earth Dragon carried in his chest. He was as suspicious of the storyteller, confused both in general and specifics about what was going on. He was also the most vibrant of all the guests in the cave; he was young. He had no scars. He was like a magical seed, blooming, unripe and young, but filled with the entire promise of their species. If he was lonely or he mourned, his was a different kind of loss, though. A denial he bled like a thousand bandaids he’d forgotten he’d put on and pretended he couldn’t see.</p>
+<p>The Wyvern Lord, by contrast, outweighed both Dragons and was simultaneously more resplendent with his mane of frozen winter and his imposing scales scarred by battle, but instantly more bestial than the others for his lack of forelegs; he had to sit awkwardly or crouch, and both made him more like a caged animal than a thoughtful observer. He acted like it too, sniffing the air, cocking his head, distracted, as the others sometimes glowered at him, but other times, he seemed to listen or focus on an artifact in the room, a word in the air, as if that focus had a significance beyond any mere animal’s wavering focus.</p>
+<p>As for the Goblin, she didn’t fit. She was too young, too mortal; for all she strutted around in her boots and armor, she was a child among legends. If there was any reason for her place here, it was because the Brass Dragon accorded her a kind of deference. As if he knew what she <em>might</em> be, and more crucially—she knew what she might be. She was not chased out by the sheer magnitude of this meeting of Wyvern and Dragon because she had sat in the presence of legends before. In this moment of Dragons, she was awestruck and intent, desperate and youthful.</p>
+<p>But this was still no [Immortal Moment], so she abided with the dignity mortals found in the presence of infinity that only they could wield.</p>
+<p>They were here for the stories. Each for a different reason. Rafaema and Rags approached their needs differently, one with a hunger, the other with a desperation and a need for any scrap of information. Cire was here half out of longing, but he had deep suspicions about the strange Dragon he’d heard so much about.</p>
+<p>The Wyvern Lord was still getting his head around the ‘we are not fighting over mates’ aspect. But he listened as the Dragon spoke.</p>
+<p>It was a difficult task. Arguably fruitless. A certain Wind Runner and [Lady] of House Reinhart could have told the current listeners that they would be disappointed. You see, the old Dragon told stories. But they were never the stories you wanted.</p>
+<p>He told you the truth, but pieces of it. That was why they both didn’t rush across time and space to sit in front of him. They’d heard the tales, gotten tired of asking for him to fill in the gaps. In a way, he was a terrible storyteller, like the stage magician who refused to ever explain the trick or the twinkle-eyed [Bard] who concluded all his tales with ‘and only the [Bards] know the truth’.</p>
+<p>For instance, here was how one story began. It was as Teriarch provided refreshments to his guests.</p>
+<p>“I trust we’re all settled? No more Drakes buzzing about? Good. I am, of course, <em>anonymous</em> to your cities and tribes, and I trust you will be discreet.”</p>
+<p>Cire raised one wing. He tried not to be impressed by the cave they sat in. The cave was easy; it was just a hollowed out den of rock, but his eyes kept flickering to a wall of paintings, each of people—Drake, Human, Drowned Person, Djinni?—people who looked important.</p>
+<p>Unlike Rafaema, Cire’s eyes attention was not focused on racks of swords, piles of boots, or even gemstones. Oh, his eyes had bulged, and he’d run up a pile of gold and tried to dive into it with very predictable results, but he had grown up in Oteslia, in the First Gardeners’ homes.</p>
+<p>The paintings told him something he couldn’t articulate; if he had the vocabulary and time, and Mivifa’s help, Cirediel would have said it was the fact that the art of each ruler or person had an organic, natural quality to it.</p>
+<p>These were no slap-dashed [Drawn to Life] pictures that were just like a [Magic Picture] spell. This captured something intrinsic of the people in the labor of the [Artists]; they were chosen with taste, and Cirediel had seen enough portraits to know taste. Of note…not a single one had the Brass Dragon in it. But the Earth Dragon would have sworn all of them had his presence about them.</p>
+<p>When he looked around at a crude, hand-made, wobbly vase seemingly placed amidst the sea of gold on an enchanted plinth so it couldn’t be knocked around, or a flower preserved in a glass case, the Earth Dragon saw treasures amidst the pile of wealth. And had he said that, the Brass Dragon might have respected him and seen him differently.</p>
+<p>Unfortunately, then Cirediel spoke.</p>
+<p>“Sure, old dude. You’re just some <em>Giants </em>old Dragonlord monking about in the High Passes and you expect us to sit here and think it’s all Archmage? That’s total Creler eggs. Rafaema, you believe this guy? He’s the one who got your wing, um—”</p>
+<p>Teriarch’s brows crossed slightly as he tried to uncode Cire’s slang, and Rafaema buffeted Cire with her good wing several times.</p>
+<p>“Cire, shut up and go home.”</p>
+<p>“No way. I’m just saying, how do we know this old guy’s truegold?”</p>
+<p>“If you doubt my name, young Dragon, or the sheer fact of my existence or size—”</p>
+<p>“Yeah, you’re sorta porky. I didn’t even know we could get fat.”</p>
+<p>Teriarch inhaled deeply, and the Wyvern Lord grinned. Rafaema was so incandescent she snapped at Cire, and he flailed at her with his claws.</p>
+<p>“No biting! No biting! Are you crazy? What <em>happened</em> in the north, Raef?”</p>
+<p>Rags thought it was like two Goblin children fighting…with giant Dragon bodies that were in danger of crushing her if one fell on her. She sipped from her milkshake as Teriarch tried to restore order.</p>
+<p>“I am Teriarch, the last Dragonlord of Flames. I see there is much your cities did not tell you. I should, no, I must tell you of your pasts. But let us do it civilly. Come, sit. Take refreshments. Here.”</p>
+<p>He snapped his claws, and Rags’ milkshake refilled. She blinked at it, and a dish <em>popped</em> into being in front of her. It was a gigantic grilled tuna.</p>
+<p>The Wyvern Lord stared at a chalice filled with cuts of prime meat, and Rafaema blinked at what seemed like blue snow falling into a huge container. It was like a massive brazier, the kind you’d light the mother of all bonfires in, perfectly placed so she could dip her head down and eat.</p>
+<p>Cire got a bowl full of fruits. Bananas, giant strawberries, entire melons, rind and all…</p>
+<p>The four guests eyed their dishes, and the Wyvern Lord began eating after a moment, so greedily and carelessly that Cire raised a wing and grimaced, shielding himself from the splatter.</p>
+<p>The Wyvern Lord had just been smelling the meat to make sure it was good and had wondered how the Brass Dragon had over fifty-six different cow’s worth of meat, but he decided not to question it. Cire was less discerning about whether all his bananas had come from the same tree, having grown up in a city where that was possible, and complained instantly.</p>
+<p>“Hey! Okay, that was <em>sort</em> of Archmage. Are you, like, an actual [Archmage] archmage or is your spellcasting just Archmage?”</p>
+<p>The Brass Dragon’s face was colorful.</p>
+<p>“…Language certainly has shifted since the last time I slept. It’s mere magic food. Low on sustenance, high on taste.”</p>
+<p>“Sweet. I need to watch my figure. But why do I have all fruits? What’s that, Raef? <em>Ow!</em>”</p>
+<p>So said the smallest of the Dragons, who certainly seemed tiny compared to Teriarch and was even distinctly smaller than Rafaema. Cirediel had scales like a tree, glorious shades like wood, and moss-green wings and accents that reminded Rags of a swamp. He stuck his tongue into Rafaema’s bowl and yanked it back.</p>
+<p>“<em>Ith shocking!</em>”</p>
+<p>“Lightning crystal dust seasoned with sugar and a <em>hint</em> of horseradish. A Drathian dish they used to serve to Lightning Dragons who attended the courts of their [Emperor]. Each dish is what I assumed you might like. Earth Dragons are often vegetarians.”</p>
+<p>“What? We are?”</p>
+<p>Cire was indeed sniffing his meal with considerable interest. And it was <em>that</em> which made Rafaema sit up and Rags frown. She’d been cutting into her tuna, and Teriarch inclined his head to her.</p>
+<p>“Just as Goblins have a penchant for fish as a general rule, not in every case. I assure you, it is nothing more than careful courtesy. But trends do exist.”</p>
+<p>“Oh yeah? It’s speciesist to me. Do you give Gnolls only meat? Huh?”</p>
+<p>Cire could not shut up; he glared at Teriarch, but the Brass Dragon seemed…pleased by Cire’s presence. He certainly wasn’t ‘archmage’ about Cire, but, Rafaema realized to her displeasure, he was overjoyed to meet yet another Dragon.</p>
+<p>Even if it was Cire. Patiently, Teriarch shook his head.</p>
+<p>“Species informs some elements of creatures. For instance, Humans love sweet foods. Their tongues are literally receptive to the flavor. Lizardfolk and Garuda are also both highly receptive to sugary products, but Dullahans do not care for such meals as much. Individuals in the species have any taste they want. Gnolls are more primarily carnivores, as are Drakes. If I sometimes generalize, it is out of familiarity with each species—especially my own kind.”</p>
+<p>His gaze took in the two Dragons, who chewed on their food, dipping their heads into the bowls, and the Wyvern Lord, who had finished two-thirds of his food. He dodged as more meat dropped into his bowl and burped loudly.</p>
+<p>The sight of Cire trying to gulp down a huge mouthful of watermelon made Teriarch cough.</p>
+<p>“—Do you, ah, dine with each other often?”</p>
+<p>“We don’t really need to eat much, so it’s always as Drakes. Really stuffy, with the First Gardener or Dragonspeaker and all their cronies. What?”</p>
+<p>Rags had noticed the gigantic, curved soupspoon and forks. Teriarch stared pointedly at them as Rafaema and Cire paused. They exchanged a glance, then Rafaema tried to pick up a fork with her claw.</p>
+<p>It was such an awkward method that Rags knew, instantly, it was incorrect. A Dragon was not meant to use a fork like that, even if they could. Teriarch gave <em>her</em> a look, and Rags threw out a wild guess.</p>
+<p>“You use magic to eat?”</p>
+<p>Both Dragons peered at her, and Rags concentrated. Her milkshake rose, a tad wobbly, and she sipped from the straw. Teriarch gave her a surprised nod.</p>
+<p>“Just so. Is telekinesis not among your lessons, Rafaema?”</p>
+<p>“Magic? I can cast Tier…3 magic. It’s difficult. Let me, uh—”</p>
+<p>The two Dragons tried their best. Rafaema was actually worse than Cire; he managed to lift a spoon and get it into his bowl as her utensils kept clattering to the ground. But Cire just <em>flipped</em> his spoon and sent banana flying everywhere.</p>
+<p>Teriarch vanished the flying food with a cough.</p>
+<p>“—Dining with such utensils is difficult. Pay me no mind. Why don’t we dispense with the formalities?”</p>
+<p>Rather awkwardly, he created another chalice-bowl and dipped his head into it, munching on what seemed like a bunch of oats seasoned with raw egg and cooked ground beef. It looked gross, but Rafaema just muttered to Cire.</p>
+<p>“<em>He’s training.</em>”</p>
+<p>“<em>For what? Throwing up?</em>”</p>
+<p>“<em>Shut up and be polite. He’s another Dragon.</em>”</p>
+<p>“<em>I know that! It’d be totally Archmage if you weren’t making googly eyes at him every two seconds.</em>”</p>
+<p>“<em>I am not.</em>”</p>
+<p>“<em>Yes, you are—</em>”</p>
+<p>It was awkward, but once more, Teriarch’s mere act of providing food led into another topic. Rafaema broke away from the hissing match.</p>
+<p>“…Why do Goblins love fish? I get that I’d like food with lightning in it and Cire would like fruits. Wyverns love meat, I suppose. But fish? Goblins don’t live near the sea; they go everywhere.”</p>
+<p>It was a question that even the Wyvern Lord blinked at. Rags frowned suspiciously at Teriarch. Yeah. Why did they like fish?</p>
+<p>The Dragonlord’s eyes flicked towards Rags, re-invoking his refusal to tell her of the Goblin King secrets. Yet everything else seemed fair game, so he <em>hmmed</em> and, in his peculiar way, smiled.</p>
+<p>His tone, when he told stories, was that of Demsleth. The eternal old man by the fire, maybe a bit too knowing and condescending at times, but nostalgic and, yes, eager to tell what he knew. Like a former [Professor] at Wistram talking informally to a bunch of grandchildren or an old [Academic Shipcaptain] less pithy than most, whiling stories over a drink to young [Sailors].</p>
+<p>“The answer is simple, Rafaema. When Goblins were first crea—brought into being, they emerged next to the sea. The first tales of them were of a gentle people who spent their days fishing and swimming in the ocean. Even some of their names originate from old language; Fomirelin, one of the forms they learned, was ‘Great Goblin of the Sea’. The apocryphal tales of them were of Goblins who would walk into the sea and re-emerge giants ready for war.”</p>
+<p>His face clouded over as Rags sat up and Rafaema glanced at her.</p>
+<p>“Tragic. Like the War Walkers of Dullahans, it was an act of desperation and vengeance that a species might survive. So you see, Goblins loving fish may be ancestral or just how their first peoples lived. They also, incidentally, tend to be superlative swimmers.”</p>
+<p>Like her tribe? Rags was astounded. If that were so, it made sense why the Flooded Waters tribe had always loved the spring and the rains, for all the dangers. They would dive and catch fish with crude nets and bring them back to their tiny cave, despite the big predators in the water.</p>
+<p><em>She hadn’t missed the slip of his tongue either. </em>Cire just stared at Rags as if only now figuring out she was present. He mouthed ‘what the heck’ at Rafaema, but the Lightning Dragon was all focused on Teriarch.</p>
+<p>Rags was gratified by the knowledge of her people’s past. And at the same time…she had suddenly less her appetite for the tuna, which she <em>did</em> like.</p>
+<p>—She just didn’t like Teriarch telling her that she was going to like it. Rags didn’t stick up a hand this time, she just pushed her plate back.</p>
+<p>“You know a lot about Goblins for someone who isn’t a Goblin, Dragonlord of Flames.”</p>
+<p>Teriarch missed the edge in her voice. Cirediel snapped his mouth shut, which surprised Rags; had he been about to say the same thing, like his comment about Gnolls?</p>
+<p>The Dragonlord was glancing towards the mouth of his cave, where Mivifa and the Oteslians might have been still banging on the forcefield and shouting at him. They had <em>not</em> been happy about being barred from their ‘audience’ with him, but Teriarch had told Mivifa that they were under the same restrictions as the [Spearmaster]. And if they wanted trust, they had to earn it…which wasn’t exactly a specialty of Walled Cities, it had to be said.</p>
+<p>Teriarch chuckled at Rags, initiating a personal dialogue for the first time since he’d welcomed them into his cave. Now she had won her audience, he was as grand as she remembered…and she was glad this time she had experience not to be overwhelmed, but it was still hard when he loomed over her, his mouth big enough to snap her up in a gulp.</p>
+<p>“I may not <em>be</em> a Goblin, but I assure you, my knowledge of your and every other species is second only to actual members thereof, and arguably better, Chieftain Rags. I have, in fact, <em>been</em> a Goblin and walked among your kind. Shapeshifting, you know?”</p>
+<p>She folded her arms, glowering now.</p>
+<p>“That’s not the same. You say ‘most Goblins like fish’. Why? Because we grew up around the sea? Maybe most Goblins like fish because we don’t live near the sea and it tastes good and new. Mrsha likes honey more than meat. She’d die of cake-eating death if Lyonette let her.”</p>
+<p>“Yeah! Wait, that’s a way to die? Ancestors.”</p>
+<p>Cire swallowed, and Teriarch sighed.</p>
+<p>“I merely meant that, in general, across your species—”</p>
+<p>“How many Goblins like fish out of a hundred? How many say it’s their favorite food? What’s the percentage? The statistical distribution of landlocked tribes?”</p>
+<p>Rags had the immense satisfaction of watching Teriarch hesitate and thanked Kevin, once more, always Kevin, for his discussion of, well, statistics. Teriarch took a second, then laughed.</p>
+<p>“I’m sure I could provide some data analysis, but I don’t just have that lying around. Anecdotally, it’s certainly been a truism from me. I haven’t heard more than a handful of Goblins complain when I served them the dish.”</p>
+<p>“You mean a super fancy dish prepared by magic to taste good? Yah, most Goblins don’t complain if you hand them worms. Doesn’t prove we all like fish. Doesn’t prove that since we grew up near water we like it.”</p>
+<p>Rags was, in fact, less on board with fish and swimming the longer she talked. But the Dragon was getting—tetchy.</p>
+<p>“I’m not generalizing your species at all, Miss Rags. I’m simply pointing out historical facts—”</p>
+<p>“You weren’t there.‘</p>
+<p>“<em>I have it on the authority of beings who were there! My mother’s parents were at the dawn of your species.</em>”</p>
+<p>He boomed at her, and she flinched. There was no fire from his maw; he was too controlled for that. But every <em>other</em> lightsource in the room, enchanted flames, physical ones, bounced and wobbled as if a gale had broken loose.</p>
+<p>Teriarch saw the Wyvern Lord raise his head and growl, and Rafaema and Cire staring, and modulated his tone.</p>
+<p>“It—is the most quintessential, <em>defining</em> element of your species. The origin of Goblins is tied to the first centuries of your existence. Pivotal.”</p>
+<p>He was so sure. And yet, Rags pointed out as steadily as she could—</p>
+<p>“You won’t tell me what they are.”</p>
+<p>“I cannot. So trust me.”</p>
+<p>“No.”</p>
+<p>His affronted eyes widened, and Rags expounded on her statement.</p>
+<p>“Goblins do it all the time. Every tribe calls other tribes ‘not-Goblins’. When I was small—smaller than I am now—I thought being not-Goblin was a terrible thing. The worst you could be. When I saw the world, I realized it’s just something Goblins say. Everyone’s ‘not-Goblin’. It makes it easier to fight them and say your tribe is best. You say Goblins love fish, in general, not all, etcetera, etcetera. You don’t know anything. Stop feeding us fish.”</p>
+<p>She sat there, waiting for him to blow her away either physically or with a spell, trembling, but determined not to let him see it. But for her dignity, her tribe, for Goblinkind…</p>
+<p>She waited, and Cire gave Rags a grin and a furtive nudge with his tail. Teriarch? He took a breath, then smiled, swallowing any ire or retort and placing it behind such a summery front of politeness that Rags wondered if he had taught the Five Families <em>how it was done</em> back in the day.</p>
+<p>“I shall take your comments under advisement, Chieftain Rags. And I do apologize for any discourtesy I might have caused. May I serve anyone a refill?”</p>
+<p>He went round the group, and no one was that hungry; both Dragons had taken down half their meals and were more interested in listening. The Wyvern Lord, by now, had realized he wasn’t actually being that sated by all the meat and was sniffing around the cave. Rags ordered a milkshake and a steak.</p>
+<p>She chewed on it and slurped loudly as Teriarch genteeled at her. Rafaema broke the long silence, nervously bouncing into the conversation like a child trying to distract two warring adults.</p>
+<p>“So…you know all the origins of species, Teriarch?”</p>
+<p>He laughed at this without modesty.</p>
+<p>“I was there for only a few! No, as I said, I am removed from the origin of…well, levelling and time as we know it by two generations. An exceptionally long time, even if I have outlived my mother and my ‘grandparents’ by far.”</p>
+<p>His face fell, but he went on.</p>
+<p>“The origins of most of the…original…species of this world are beyond me. But I was around for the Selphids, the Stitch-folk, Jinn, I suppose, though it was more like the proliferation of their kind. I have seen too many species pass into the great beyond as well.”</p>
+<p>He sighed. And here came the Teriarch Effect™. That was the known condition where his audience, young women, other Dragons, or anyone else, had to raise a hand and seek clarification. And they were spoiled for choice. Rafaema interrupted, voice breathless.</p>
+<p>“Wait—wait—what do you mean Jinn?”</p>
+<p>Teriarch instantly changed subjects.</p>
+<p>“I merely meant that Jinn—wait, I suppose they are dead. Hah. Jinn are—were—well, half-breeds. No, wait, that’s derogatory…one picks up the phrasing of one’s associates, and I…ahem. Djinni who slept with mortals would bear young, or vice-versa. People of immense magical power, yet without the true immortality or full power of their Djinni halves.”</p>
+<p>“Whoa. Kinky. Wait, with <em>Djinni? </em>Dude. Isn’t that messed up because they’re all slaves? Oteslia doesn’t have slaves.”</p>
+<p>Here came the Cire Effect™. And it stumped Teriarch a bit, because for once, he realized he was shooting way over <em>Cire’s</em> awareness of things. Teriarch backtracked.</p>
+<p>“That is slightly incorrect, Cirediel Anvi’dualln Olicuemerdn—”</p>
+<p>“What’s with my full name? Are you my mom?”</p>
+<p>“I—thought you never met—”</p>
+<p>“He means the First Gardener, Teriarch. Go on.”</p>
+<p>A silence fell, and Rags upgraded the situation with the Dragons from ‘complex’ to ‘emotionally charged’ as Cire froze and hunched his wings slightly, as if to cover his face. She found the only person she could exchange glances with was the Wyvern Lord.</p>
+<p>He might have been more monster than person, but he was giving her that side-eye you got at a dinner party when the hosts were bringing up personal issues and you were just wondering when you could excuse yourself…or how much was going to come out when the drinks started flowing.</p>
+<p>In a way, it made her recognize him as more of an actual, thinking being than anything else she’d seen from him.</p>
+<p>Teriarch went on after a silence.</p>
+<p>“Let us consider the matter historically, Cirediel. Once, Djinni were free, or at least a sizeable portion of them were unbound. Their current plight is far from the species that once was; like Dragons, they were numerous. Your current attitude towards them and slavery is commendable, but know that at the time when Jinn first appeared, Djinni were a wild, free people of many nations. Jinn were, in this context, a rising power as they spread with that penchant of mortals.”</p>
+<p>Cire raised a claw.</p>
+<p>“What did they look like? Drowned Folk? Half-magic, half not?”</p>
+<p>The others wanted to imagine this. The Wyvern Lord yawned, and Teriarch flicked a wing.</p>
+<p>“Better to show you. No, they weren’t of every species. Some looked rather mortal. But they mostly looked like…”</p>
+<p>Rags studied a brown-skinned man balancing on a flying carpet with one foot made of what seemed like gold; his other foot was silver. He was frozen, like a magic picture, juggling three magical swords in what had to be Chandrar.</p>
+<p>He seemed more like a Djinni than anything else. Cire blinked.</p>
+<p>“Whoa. He’s mostly Human.”</p>
+<p>“Some had gaseous bodies or unique skin tones or features. Again, they were a diverse lot, but they mostly resembled their other halves. Human.”</p>
+<p>“Wait, they were part-Human? But Djinni mixed with every species?”</p>
+<p>Teriarch coughed into his wing again.</p>
+<p>“Ye-es. It was just that interbreeding between species, especially magical species, is very rarely fruitful, even with Skills. And one species has been the most numerous and prolific.”</p>
+<p>“Whoa. Humans get around. You know, I often noticed that in Oteslia. Like, the amount of Humans who come through is really low, but <em>wow</em> are they—”</p>
+<p>Rags was realizing that the conversation, enlightening as it was, was at the mercy of Cire and Rafaema’s bickering. Like the Ryokas and Magnolias before her, she tried to steer the conversation the ‘right’ way. With similar results.</p>
+<p>“I have a question: if you were present for so many species’ creation and deaths, you must know the truth behind so many mysteries.”</p>
+<p>The Dragon had a very Pisces-like smile on his face as his eyes shone at her, heliotrope purple and blue cerulean, glowing like gemstones, left, then right. She swore he did it on purpose, and it did remind her of Pisces, who had taught her magic, always showing off mid-lesson.</p>
+<p>“They were not mysteries to me. I suppose that is historically appropriate to mention for the education of my young peers. Though, I had intended to bring up dishware appropriate for Dragons. You see, the chalice is a customary vessel, and if you two require dishware before mastering telekinesis—how is your magical studying, incidentally?—I would recommend a kind of kebab. Skewers which allow you to eat quite civilly while conversing, not that we require as much sustenance.”</p>
+<p>He was dancing everywhere, and it was like the inverse of a hallway of traps. If you walked him into any topic, the Dragon would be off, lecturing you about how many spoons you used in a Terandrian banquet compared to how many were statistically necessary with references to the thickness of the pottage as the most dangerous variable.</p>
+<p>Rags’ hand waved as she kept it in the air.</p>
+<p>“What are the Eyes of Baleros and why do they matter so much?”</p>
+<p>Cire closed his mouth on a question about utensils, and the Wyvern Lord padded off to the side, yawning again. He didn’t follow any of this; he had no clue what Baleros was and patently didn’t care. He began nibbling on a ball of shoestrings, only stopping when Teriarch snapped at him. Growling, the Wyvern poked at it with his claw as the Dragon went on, turning to his attentive guests.</p>
+<p>“The Eyes of Baleros are back in play? I recall Magnolia mentioning that. Oh dear. Another Nagatine Empire. Maybe I should see about…but the Iron Vanguard is in Baleros, and they are one of the worst enemies of Dragons. Beware them above all, you two. Many species remember us and hate and fear us for good reasons, but Dullahans were exceptional dragonslayers of their time. Chandrar is also perilous depending on which nation you may visit for that same reason.”</p>
+<p>Cire and Rafaema shuddered, and Teriarch focused on Rags with a look.</p>
+<p>“The Eyes of Baleros are ancient relics—nay, <em>wonders</em>—forged at the dawn of time. They predate me; you could fuel a Tier 8 spell and keep it powered indefinitely from the mana they generate. They have been the hearts of magical empires and fought over for eons. Each time Lizardfolk gain them, they enter a renaissance of power…which tends towards empire.”</p>
+<p>He sighed.</p>
+<p>“Warring over the damned things has informed much of their species’ history. I knew I should have chucked it over the world’s edge that one time I had one, but you never know what might use it down there. And it was <em>so</em> useful—”</p>
+<p>The Dragon hesitated. Coughed and turned his head and distinctly blushed.</p>
+<p>“—Despite the best efforts of <em>many</em> guardians, Lizardfolk always get them back.”</p>
+<p>“What are they?”</p>
+<p>Here it came. The shifty eyes. The pretending to lift his chalice so he could eat from his cold food.</p>
+<p>“An impossible idea. Call it merely an energy source to fuel their transformation into Nagas. There’s not a chance of their real purpose ever coming to fruit…”</p>
+<p>He hesitated. Bit his tongue.</p>
+<p>“Oh dear. Let me, uh, just write this down. <em>Look into the Eyes of…</em>right. Excellent topic, young Goblin.”</p>
+<p>“What do they do?”</p>
+<p>Rags repeated herself. Teriarch was writing in a tiny spellbook. He ignored the question. Rafaema raised her voice.</p>
+<p>“What are they?”</p>
+<p>The Dragon hesitated, glanced up, and shook his head.</p>
+<p>“Even if you two knew, the position of Baleros relative to Manus’ influence, or your tribe’s, is meaningless.”</p>
+<p>“Erin is in Baleros. So are some of my Goblins.”</p>
+<p>“Yes, one or two versus the millions of Lizardfolk. Rest assured—”</p>
+<p>“Manus is the City of War. At least tell us!”</p>
+<p>The two rose to their feet, pressing Teriarch. Rags saw him hesitate and swallow. And she sensed a clue to something. Eagerly, Rags waited, and Rafaema stretched out her neck, listening. Teriarch paused, gazed past them, closed his eyes—then bellowed.</p>
+<p>“<em>What are you doing with my hoard?</em>”</p>
+<p>Rags and Rafaema whirled. She saw Cirediel and the Wyvern Lord freeze. Cirediel had a massive, Dragon-sized couch he had been trying to fit in his bag of holding. The Wyvern Lord had three crowns on his head and had been unsubtly scooping an entire pile of gold towards himself. And he’d somehow undone the entire ball of enchanted shoelaces and tied them around one claw!</p>
+<p>The two tried to look innocent.</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>Four hours later, Rags walked into Goblinhome, ignoring the questions from her lieutenants, pausing only to ask if they had seen any traces of monsters or an enemy force.</p>
+<p>Nothing yet. She walked into the kitchen, grabbed a bottle and a cup, walked towards her rooms, and shut the door. Then locked it. Then put a chair under the doorknob.</p>
+<p>She then poured herself a huge cup of bourbon and drank it in one go. Then another. And she knew.</p>
+<p>The Curse of Teriarch was upon her.</p>
+<p>It was like a superpower. It was four hours of…what? Informative knowledge. True things, like learning exactly how close Minotaurs had come to taking over a good portion of the world. Commentary on various Lizard evolutions into Naga.</p>
+<p><em>Speculations about Baleros’ wartime economy of mercenaries versus Izrilian economic structures in Drake cities, which had segued into a commentary on Oteslia’s great tree, its lack of status as a World Tree, Oteslia’s historical poverty as a gardening nation, and complete derailment from the question about WHAT THE EYES OF BALEROS WERE.</em></p>
+<p>It was a superpower. Or maybe it was how Teriarch consciously or unconsciously did things. Or it was the damn Wyvern Lord and Cirediel, who kept asking or doing inane things.</p>
+<p>It was…how the Dragonlord of Flames was. And Rags knew it wasn’t just her. When she had stomped out of the cave, even the grumpy Magnolia Reinhart had interrupted the Goblin from banging her head on the stones to offer her a snack before Rags caught her flight back to Goblinhome.</p>
+<p>One glance at Magnolia’s resigned expression…said it all, really. Rafaema had stayed, if only because she was arguing with Cire and the Wyvern Lord and the four of them were comparing Dragonbreaths. But Rags felt like pouring her next cup out of an acid jar.</p>
+<p>“The oldest Dragon in history and he’s <em>worse</em> than Greydath.”</p>
+<p>What was it with old people and not wanting to tell you anything? No, Rags realized as she took a deeper drink.</p>
+<p><em>He doesn’t think it’s worth telling us anything because he doesn’t think we can help. </em>It was implicit in everything Teriarch did and how he chivvied them around, getting exasperated, lecturing, but never confiding or asking for help. It was in a single story that Ryoka and Magnolia had heard.</p>
+<p>The apocryphal tale of the last [Warrior] to nearly kill Teriarch.</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>“They try to slay you whenever they know you exist. It’s rather, mm, like an obsession. Understandable, if annoying. A Dragon guarantees you at least a handful of levels if you’re under Level 50. Aside from that, we are highly profitable beings.”</p>
+<p>“Profitable?”</p>
+<p>Teriarch saw Rafaema, Rags, Cire, and the Wyvern Lord in front of him. He noted how Rafaema shifted uneasily and Cire tensed…and they knew something. But Teriarch could blink and see—</p>
+<p><em>Ryoka Griffin, sitting across from him, still sweating from her run through the High Passes.</em></p>
+<p>There were holes in that memory. So vast…even magic could not erase them, nor repair what he had lost. Yet sometimes he thought he vaguely remembered what he had lost, both in Eldavin and before that.</p>
+<p>It made it worse. The memories played on, and someone else was there that he wished he recalled.</p>
+<p><em>Magnolia Reinhart, barely seventeen, perched on a rock as her surly [Maid] practiced backflips and they watched the setting sun.</em></p>
+<p><em>Sheta, in her royal gardens, hiding from her parents and nursemaid as she pestered the Dragon Protector to tell her stories.</em></p>
+<p><em>A crimson Dragon, scales so bright red she appeared to be aflame, the one and only, sitting on the edge of the nest, listening to him as he tried to tell her how to be safe. His one and only daughter—</em></p>
+<p>Blink and time seemed to flow together. But memory was so painful, because you could never go back. Only see it and wish you could have done…or said…</p>
+<p>Teriarch could see the Dancer and wish he had never told her what he thought bravery was. In a girl’s eyes lay her entire journey to Rhir, a sacrifice to move a world to realize a threat.</p>
+<p><em>If he had lied…</em></p>
+<p>He watched Rags and saw in her Goblins he had known—and he had known them and called so many friends, and some, friends become enemies—and not one had ever broken their people’s curse.</p>
+<p><em>Tell her the truth? </em>He saw dead Goblins piled by the hundreds of thousands, and sometimes, he still tasted the flames he had burnt them with.</p>
+<p>And they thought he was reluctant to tell them out of pride or vanity or an abundance of caution. Teriarch realized he had paused when one of them prodded him to go on, then chuckled.</p>
+<p>“Where was I? Oh, yes. Armies are one thing. Armies are always…dangerous. Teams of adventurers likewise. But the individuals are the worst. You look at me, Sheta—”</p>
+<p>“<em>Ryoka.</em>”</p>
+<p>“Apologies. You look at me and see a Dragonlord of Flame. A noble specimen of old, a master of magic and combat.”</p>
+<p>“Dude. You’re sorta fat. Don’t kick me, Rafaema, it’s true! Can you even fly?”</p>
+<p>Teriarch ignored the scuffling between Magnolia and Ressa as they pulled at each other’s cheeks.</p>
+<p>“<em>Ahem.</em> The worst is the individuals. Yes, I am a Dragonlord. Yes, my kin have thousands of years of experience, honed power in magic and artifacts. Levels were made to equalize everything. One of the last times I recall fighting near to the death was when a warrior came to slay me. He was armed with no dragonslaying relics. His gear was, if I’m honest, rather substandard. Mithril, barely enchanted…I imagine the fellow was down on his luck. I took him lightly at first. He challenged me, the old ‘foul Dragon, hoarding the treasures stolen, end your menace’ sort of thing. I have to admit, I might have been tetchy at the time since I had just woken up, because I teleported him twenty miles up and went to sleep. I thought he was just a run-of-the-mill amateur, you see. No<em> protections, </em>and that’s a basic trick.”</p>
+<p>His audience listened as Teriarch set the scene. He could still see the man—white-haired, wiry, with a frame that suggested he was all sinew and would run out of energy after eight minutes of fighting. Wearing ill-fitting mithril armor, a desperate longing in his eyes, a lopsided mustache.</p>
+<p><em>A former [Lord]? </em>An adventurer come out of retirement? He slurred his esses and had a beaten-down maul, which showed he understood he’d need to crack Teriarch’s scales rather than do something fanciful like slice through the Dragon’s neck in a single swing.</p>
+<p>Teriarch whispered as he remembered waking up again and seeing that small figure charge into his cave and vanish in a blast of Dragonfire. Then…<em>keep coming</em> as the mithril melted off him. And the real terror.</p>
+<p>“He was Level 70. A [Warrior]. First, I teleported him into the sky, and I have to imagine he fell the entire way down. Then I breathed Dragonfire on him. Threw him out of my cave. Tried to disintegrate him, melt him with acid, suffocate him underwater—tear him to pieces. We fought for six days straight.”</p>
+<p><em>And each time, he got a little closer. </em>Each swing felt like it made Teriarch’s scales ripple and hurt. A tiny roach of a being compared to Teriarch—and like a roach, truly unkillable, unsquashable—</p>
+<p>“<em>Why didn’t you run?</em>”</p>
+<p>Fair question. Teriarch replied.</p>
+<p>“It became about pride. I could have fled; he could have run away, and I daresay I would have let him go. But neither of us would relent. I could not kill him; he could not kill me. We were wearing each other down.”</p>
+<p><em>Blow by blow, spell by spell, until it was fang and claw versus bare fist. </em>Teriarch whispered.</p>
+<p>“Level 70. Do you understand? I daresay that had I known he was coming, I could have found ways to best him. But that was what he was. Level 70. Not Level 80. Level 90? Perish the thought. A Dragonlord of Flame fought to death in an admittedly crude duel with a Level 70 [Warrior]. They can slay us, my child, and the more we kill and slaughter them and try to prevent them from gaining that strength…the closer they come. So we must have peace.”</p>
+<p>It was why he did not slay the Necromancer, despite the fact that he had a chance. He was ashamed to tell Magnolia that, but there it was. He didn’t know who would win. Be it [Necromancer] or [Warrior]—and he had not lived this long by gambling.</p>
+<p><em>“So, how did it end?”</em></p>
+<p>They all wanted to know that, except for his daughter, who hid in her nest as Teriarch received the scolding of a lifetime for frightening her so young. He laughed as an older Nirayicel asked him to finish the story, as a Goblin peered at him and a Wyvern Lord and Earth Dragon shoved at each other so they could sit next to Rafaema.</p>
+<p>Ruefully.</p>
+<p>“He and I were in the final blows of our strength. Every time I hit him, he came back with a punch that rattled my bones. Maybe it was another day of fighting—maybe one of us would slip and be brought down. I was desperate, focusing on the next blow, when I realized he had fallen on his face. I limped over, thinking it was a trick, but when I turned him over—he was dead.”</p>
+<p><em>Dead?</em> Teriarch nodded to all the questions and speculations. The answer was so mundane. And so…he always thought of the old man with nostalgia, with regret. With empathy.</p>
+<p>“His heart gave out. That’s the only explanation I could think of. It happens to older members of a species. He wasn’t in the best condition when he faced me—he had a [Warrior]’s body, but he and I were pushed to our limits. His heart stopped, and he passed away. In truth…I don’t know when it stopped. It might have been a day before he finally died. I have seen [Warriors] continue fighting with mortal wounds, even headless, for a while. He was a truly great foe.”</p>
+<p>That was his lie. He did lie, but the Dragonlord of Flames told it each and every time. One of his greatest foes; an unnamed [Warrior] who had hit Level 70, who had died matching the Dragonlord of Flames blow for blow.</p>
+<p>Not an old man with barely any gear worth his levels fighting a Dragon with no one to mourn or search for him when he was gone. A Level 70 [Warrior] who had no title nor purpose beyond one final fight in a cave and only a Dragon to bury him.</p>
+<p>That was Teriarch’s story. He looked upon Goblins, the City Runners he had known, [Ladies] and Harpies and Djinni. They asked him to explain every secret of the world. And he told them fragments and bits and left them to go figure it out themselves. For how unsatisfying and poor it would be if he told them it.</p>
+<p>He was a poor storyteller, after all.</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>The Dragon had lived for tens of thousands of years.</p>
+<p>Rags for less than a decade. She sat in her room and continued to pour herself drinks, because she got it. In his gaze, she saw that timeless loss. When he spoke and didn’t even know who he was with…</p>
+<p>She saw something terrifying that no Goblin had ever had a problem with. The lack of memory, the age, was a haunting thing that scared her, perhaps more because being Goblin <em>was</em> remembering the past.</p>
+<p>It was something she wished Goblins had to struggle with: the infirmities of age. But no one, not even Greydath, would live that long.</p>
+<p>Perhaps the Dragon would, indeed, save her tribe. But it would be as dawn broke and the Dragonlord of Flames swooped down.</p>
+<p>&nbsp;</p>
+<p><em>Last of all, upon the wings who had flown over lands lost to sea.</em></p>
+<p><em>The hero of only memories, born of the age of legends, last champion of his kind.</em></p>
+<p><em>Swooping down over mortality to speak wisdom.</em></p>
+<p><em>To threaten wrath and offer better days.</em></p>
+<p>&nbsp;</p>
+<p>Something like that. His very nature was grander than his audience; he belonged to the diction of kings, the poetry of high magic and valorous deeds.</p>
+<p>He might save her tribe.</p>
+<p>She could not.</p>
+<p>So the Goblin drank.</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>The Wyvern Lord was sated, not just in belly, but in something else. He had no name, for Wyverns did not have names.</p>
+<p>Once, they had names.</p>
+<p>Imagine that.</p>
+<p>After the little Goblin had gone, the Brass Dragon had told them tales of what they were. The Wyvern Lord somewhat understood. They treated him as if he didn’t know, but he was the Lord of the Weyr.</p>
+<p>He had listened to the rock-things speaking. Taught himself how to understand the Goblins in both their weird languages, and the annoying hunters who had come to kill his people. Not well; he barely understood any other people, so maybe he was stupid.</p>
+<p>Gargoyles, Trolls, Goblins, adventurers, each with their own tongue, all made his head hurt. So did the big Dragon. A threat, or so the Wyvern Lord had thought. A competitor for the affections of the Lightning Dragon. But he was old, the Wyvern Lord realized.</p>
+<p><em>Probably too old to mate. </em>Seeing the small Earth Dragon proved that. Though the Wyvern Lord had dark suspicions about which one the Lightning Dragon would pick.</p>
+<p>But his talk was…interesting. He spoke of what Dragons were. What they were supposed to be. Good at magic. The Wyvern Lord didn’t ‘do’ magic. He had been about to try to steal more gold by eating it—it could be pooped later and cleaned off—when the Dragon had looked at him with sorrowful eyes.</p>
+<p>“You are most _____ed (good thing?) or cursed of us all, Lord of Weyrs. For in you there is the ___entiality (pots?) of your species, as it has endured and thrived as we ____ (go away?). You may become a Wyvern King.”</p>
+<p>The Wyvern Lord hadn’t known what that meant, nor had the Dragons. The Dragonlord had said:</p>
+<p>“No, Rafaema (cute). For him it is more than a title. His very mind grows as his magical ___ass-ity (helmet?) grows. Wyrms. Dragons. All our kind and the many offshoots. Lindwyrms and kirin—very distant relatives—and even knuckers…there are perhaps three old Dragons left, including me. One Wyrm.”</p>
+<p>They had asked questions, and he had refused to answer. Instead, he had talked about breath, flying, and how both the Lightning Dragon and Earth Dragon were ‘doing it wrong’, how their natures would allow them all kinds of cool stuff. And the Wyvern had decided that maybe, just maybe, he had made a mistake trying to drive the Dragon out of his lair.</p>
+<p>But he’d only done <em>that</em> because he’d been forced away from the top of the mountains by <em>them.</em> The hairy ones with their spears and blades that could knock a Wyvern out of the air, much like the Goblins’ weapons.</p>
+<p>Anyways, the Wyvern Lord was pleasantly drunk and full; they’d had real food, and the two little Dragons were snoring while the big one did weird press-ups with his front legs.</p>
+<p>Forelegs. Who needed ‘em? Hah! The Wyvern Lord flew, somewhat unsteadily, thinking only of himself. Because if he thought of his Weyr…</p>
+<p>They’d lost Wyverns fighting that stupid city. They’d lost them fighting the Goblins. And when the hunters came. Less than a third of the ones who had followed him down from above were alive.</p>
+<p>It had been the right choice. If they’d stayed and fought, the hairy ones would have picked them off. They were immune to all but his breath, and if they fought, the <em>big</em> bad things would kill both sides. The hairy ones could hide to ambush the big Wyverns and…</p>
+<p><em>And his Weyr was splintering. </em>More were leaving for other mountains, despite the risks. Was he a bad leader? No, no…</p>
+<p>If he was, no one was smarter than he. The Wyvern Lord wondered how long the Frost Wyverns would survive here; they couldn’t nest together. They were fighting too many monsters. Drunkenly, he wished the old Lords of the Weyr were alive.</p>
+<p>There had been six when he was small. He distinctly remembered the Weyr being better. Multiple Weyrs up there. But they had died one by one; the last three had died fighting a Goblin who climbed up that high.</p>
+<p>Bad things. But the Weyrs had already been in trouble ever since the Queen had died. A real Frost Wyvern Queen. She must have been smart. Someone the Dragon would have respected for sure.</p>
+<p>The Wyvern Lord wondered whether the Dragonlord knew what had happened to her.</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>He knew he couldn’t sleep here on the Goblins’ stupid stone fort. He was too big. Even if he let them put a collar on him or let the weird voice in his head make him a…tame Wyvern, his Weyr could not.</p>
+<p>Too big. Too many. Too hungry.</p>
+<p>He knew it, but the Wyvern Lord still flew about, crashing into rocks, searching for the little one who’d fed him some ‘spaghet’ and who was a good rival. And killed Wyverns, but fair, they’d tried to kill her. And she’d saved some, in a way. They got food, grooming, beds…did she know some of them were letting the Goblins capture them rather than fight and starve up here?</p>
+<p><em>Hey, hey you. You missed something fun.</em></p>
+<p>After a while, the Wyvern Lord saw a Goblin who smelled as drunk as he did toddle onto the rooftop and throw a fireball in his face. It stung a bit, but he tried to grin at her as he waddled over.</p>
+<p>He was drunk, she was drunk. They were <em>best</em> friends.</p>
+<p>She didn’t…look happy. The Wyvern Lord didn’t get it. He equated drunkenness, a new phenomenon, with sheer fun. But he saw her stand there and heard her tell him to go away. The Wyvern Lord tried to nip at her. Then he ate another fireball to the face.</p>
+<p>A hard one.</p>
+<p><em>Ow. </em>He recoiled, sobering slightly, and began to get mad. The Wyvern Lord opened his mouth, wondering how she’d like it if she got a taste of <em>her</em> medicine. Then he saw the tears.</p>
+<p>The little Goblin called ‘Rags’ gazed up at the Wyvern Lord. The good things the Dragonlord had told the Wyvern and the Dragons—were her despair. The Wyvern Lord opened his jaws. And then he realized those stories of bygone ages were not for her.</p>
+<p>Nor even for him. They were civilized tales of long-dead eras for the last children of a people who were dead.</p>
+<p>Her entire home smelled of fear. It stank like a place soon to become carrion. The Wyvern closed his mouth. He stared at her, and they were both children of these feral wilds.</p>
+<p>Not he, that dignified, clean specimen of noble grace, stronger, well-taught, and resplendent even in age with his accomplishments. Born to regal houses of Dragons when they had not feared being eaten in eggs or hunted as monsters.</p>
+<p>The Goblin kept crying until she realized the Wyvern Lord was watching her. She stopped, about to throw another fireball—and he met her gaze. Then he dipped his head in slow acknowledgement of their shared being.</p>
+<p>He wondered if she understood anything he ever said.</p>
+<p>The Goblin wept. Not in front of the Dragonlord, despite his weakness for tears, for he would save her or not irregardless, and her tears mattered not to him, in a way. The Wyvern Lord bowed his head—and gazed into that bleak future for his Weyr and her tribe. For the future of when both were no more.</p>
+<p>Not ‘if’, but when. Then he beat his wings. She shielded her face, and Goblins emerged, covering their eyes as a mighty gale roared around them, fearful.</p>
+<p>A Wyvern Lord flew and screamed a lone challenge in the High Passes. A flying Antinium made of beautiful blue, a Lord of Stone, bounding herds of Abyssal Spiders, and even the fearless Eater Goats peered up.</p>
+<p>They did not get in his way. The Wyvern Lord descended in a dive as a bleary Brass Dragon emerged from his cave, demanding to know whether the Wyvern knew what time it was and why—</p>
+<p>He ate a full torrent of icy breath that froze the ground and turned the world to winter. A glacier formed on the bottom of the High Passes as a bunch of little [Knights] looked up, compared their flames to the Wyvern Lord’s breath, and ran for it.</p>
+<p>Satisfaction—for about five seconds. Then the Wyvern Lord saw the ice melting as an infernal glow burned within.</p>
+<p>&nbsp;</p>
+<p><em>He of brass and metal scale</em></p>
+<p><em>Made of metal, heart and lungs burning</em></p>
+<p><em>Breathed flames from a world ago</em></p>
+<p><em>Turning the sky to dawn.</em></p>
+<p>&nbsp;</p>
+<p>The Wyvern Lord dodged and breathed again, and the Dragonlord was rising. Demanding to know why they quarreled. The Wyvern Lord knew he would lose.</p>
+<p>But that was not why you fought.</p>
+<p>&nbsp;</p>
+<p><em>~The Wyvern Lord’s Tale, End~</em></p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>The next day, Rags had a hangover for the first time in her life. It was <em>almost</em> as bad as a Wyvern Lord, who woke up singed with a massive headache from being smacked by a giant metal claw and an Eater Goat gnawing on one of his legs.</p>
+<p>Sometimes, the days were mysteries. Teriarch, for instance, had no idea why the Wyvern Lord had attacked him after a rather thoughtful discussion yesterday and complained heartily and at length to a largely unsympathetic Unicorn just there for a free drink.</p>
+<p>Two Dragons sat there, wanting to know more about their heritage. Despite their upset and arguing minders, both of them wanted an audience Teriarch was not minded to give.</p>
+<p>It was, as a sour Magnolia Reinhart would have said, ‘business as usual’ for Teriarch, even if he was being more helpful than usual.</p>
+<p>Armies marched closer to Goblinhome. Fightipilota prepared to head north. Erin Solstice was the size of a Fraerling. The Titan was heading towards the Dyed Lands. There was a hole in space.</p>
+<p>These were just facts. Realities, events happening with occasional overlap or influence upon each other. All according to plan, neatly accounted for by the Grand Design of a long dead god, and events marched—slowly—towards their conclusions, which built towards larger conclusions.</p>
+<p>And there was a little Gnoll girl wearing robes.</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>She had white fur, which she’d combed flat today, over two hundred times. So much so that her paw hurt. Her robes were a rich, velvet brown, but not…bad brown.</p>
+<p>Normal brown robes made you seem like a [Hermit] or some mysterious old man who gave you advice whether you wanted it or not, then got killed fighting an evil villain in the first part of a great movie series.</p>
+<p>These robes weren’t boring brown. They were the most beautiful brown in existence, the color of the eternal forest, that made you want to walk and stand under canopies that filled the sky. The most unboring brown, the most glorious…</p>
+<p>Or they should have been. She’d done her best and added the green leaves of color that became a kaleidoscope, as if the ‘tree’ were changing colors through every season, herself.</p>
+<p>Everyone had said it was beautiful in class when they made clothing, and Mrsha had gotten a ‘Gold Coin’, which was a little badge students got for being good at things.</p>
+<p>She’d chucked it in the outhouse. It didn’t belong to her. She’d just copied something she couldn’t have forgotten if she tried.</p>
+<p>Thus attired, Mrsha stood with her little wand raised. Hoping like heck this call worked. She’d already tried Nalthaliarstrelous twice; he must have been shielded. When someone <em>did</em> pick up in the [World’s Eye Theatre], she sighed with relief.</p>
+<p>“…Hello?”</p>
+<p>A man appeared in front of her, sitting in a huge room made of bones. In fact, he sat in the mouth of a giant skeleton of a fish, deep underwater, as the ancient hide of the sea creature kept him and his crew safe from the crushing depths.</p>
+<p>He was a [Druid], an imposing Drowned Man who was half-Shark. He had a lot of teeth on either side of his face and his shark-half’s eye was placed too high and to the side. He was big, carried a staff, yes, but one lined with big teeth.</p>
+<p>He didn’t recognize Mrsha at once as his eyes narrowed, but he didn’t <em>un-</em>recognize her either. It was the Mrsha Effectᴺᵒ ᴿᶦᵍʰᵗˢ ᴿᵉˢᵉʳᵛᵉᵈ, which meant that people <em>sort of </em>knew her.</p>
+<p>They’d say, ‘wait a second, do I know you?’, then have to think and remember the white Gnoll girl from this moment or that. Quasi-fame.</p>
+<p>It helped Mrsha get over the initial hump of introductions. The [Druid] motioned a few suspicious other [Druids]—holding shoulder-mounted bone harpoon guns—aside.</p>
+<p>“Few people can track down the Sea’s Shepherds. We’ll take precautions against next time. If you’re from…The Wandering Inn? Seas and land owe the [Innkeeper] a debt of gratitude for the Yellow Rivers cure. I am Druid Godreiad of the Sea’s Shepherds. Leader of the Circle of Shepherds. Why did you call me?”</p>
+<p>He was scary in a way Nalthal wasn’t. He wasn’t trying to be scary to <em>her</em>, but Mrsha’s knees shook a bit. She talked a big game with Fetohep and other people she knew, or thought were kind, but this guy made her nervous.</p>
+<p>She wished she’d gone to the bathroom before all this, but Mrsha waved her wand as she wrote on a card. He had to lean forwards to read it.</p>
+<p>“Mrsha du Marquin. Hm. Where have I heard…?”</p>
+<p>He glanced towards someone and nodded. Then sat in his chair. It looked like something else made of old scales, worn away to show hide beneath. A fish’s skin?</p>
+<p><em>These [Druids] lived in a ship made of a sea monster, and they killed [Pirates] and anyone else who threatened sea life. </em>They had threatened to murder Fezimet of the Featherfolk Brigade for burning the forests.</p>
+<p>They were <em>not</em> like Shassa Weaverweb. They were like Nalthal when he got mad. In fact, the [Druid] was carefully covering a map that looked like plans of some kind; there were a lot of red lines and a bunch of x’s. Mrsha felt like each ‘x’ would have been worth tens of thousands of gold pieces to the right [Strategists].</p>
+<p>The Gnoll girl realized it was her [Druid] senses telling her this. Like the other [Druids] she had met, she could sense, even via Erin’s Skill, a bit of their thoughts and intent.</p>
+<p><em>These [Druids] were planning on killing people. A lot of people.&nbsp;</em></p>
+<p>Godreiad read Mrsha’s nervousness. In fact—he read Mrsha’s thoughts. It had been so long since she’d spoken, druid-to-druid, that when he spoke in her head, it made her nearly fall over on her back.</p>
+<p><em>“You have nothing to fear from me, little landtender. Only those who despoil and destroy should quake and watch the seas for when we rise. Nor are you close to where we plan to strike. Why did you contact us?”</em></p>
+<p>Even his voice was less kind than the other two. Mrsha flinched, but she had come this far. And she saw him studying her robes curiously. She had to know, so she firmed her back and thought back at him.</p>
+<p>“<em>I am Mrsha. I…outrank you?</em>”</p>
+<p>It was more of a question than a statement, despite her best efforts. Godreiad’s brows twisted together, hair and shark skin, then he barked with laughter.</p>
+<p><em>“…No.”</em></p>
+<p>There was a <em>barest</em> hint of a pause. He frowned, and Mrsha’s heart leapt. The man scratched at his chin, then gave her a sharp look.</p>
+<p><em>“What are you wearing?”</em></p>
+<p>“<em>Fancy robes.</em>”</p>
+<p>She was evasive, and the [Druid]’s brows bobbed. He blinked at Mrsha, and someone whispered to him.</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>“High Druid. Is she a spy, perhaps? She might ruin our plans or be an agent of smog and steel.”</p>
+<p>They were often hunted by their enemies; the Sea’s Shepherds would attack any nation for their crimes against nature. Druid Godreiad didn’t think this was the case. It could be the child just wanted attention or something, but why contact him?</p>
+<p>He frowned at her. The question she’d asked him was ridiculous. Silly. A child’s question—and yet—</p>
+<p><em>He swore he had had a dream last night about this. </em>But it was faint, foggy…the [Druid] shook his head.</p>
+<p>“Keep any plans and our heading out of sight. If she moves, I’ll try to dispel the magic. And…note down her robes.”</p>
+<p>One of the other [Druids] stopped and blinked at him. She was part shifted owl, unhappy about being underwater, but able to see in the gloom of the ship as they ran dark, even by Drowned Folk standards. She peered at Mrsha’s robes, and like him…</p>
+<p>“What part?”</p>
+<p>“Everything.”</p>
+<p>She began taking a sketch of Mrsha’s robes as Godreiad stepped closer and thought at her. Her tone was earnest; she was young. An innocent child, for all she was a [Druid]. He didn’t even consider her a full one; you could play at the class, but you weren’t a guardian of this world until you had taken and lost a life in defense of it.</p>
+<p>He humored her. It wasn’t bad to have children aspire to love nature, regardless. And now he was curious.</p>
+<p><em>“Is that all? We don’t have ranks like you imagine, girl.”</em></p>
+<p><em>We have circles, and they are independent. And dying. The land’s circles alternate between too small to do good, protective of their domain like the Vale Forest, or sold out to cities like Oteslia.</em></p>
+<p>Again, she didn’t need to know that. But the girl hesitated, then fixed him with her earnest eyes.</p>
+<p>She had a…disconcertingly adult voice, which sounded like some kind of rather formal [Lady] in her mid-forties dictating in very precise language.</p>
+<p><em>“Are you quite sure? Because I think you’re the leader of all these [Druids]. Of six ships. And a bunch of whales.”</em></p>
+<p>His alarm was fully suppressed, and he was glad everyone else was out of her view. <em>She should not know that.</em></p>
+<p><em>Find out how she knows.</em> The [Druid] glanced at the person taking notes, and Mrsha was now on the Sea’s Shepherds’ lists, not a good place to be if she was a foe. His voice was calm. He’d bluffed [Kings] from where he sat. This time, he spoke; he could control speech better than wildthoughts.</p>
+<p>“I think you’re mistaken, Druid Mrsha, just as you’re mistaken about outranking me. Did you come to ask these questions? You shouldn’t bother the Sea’s Shepherds. We don’t have time to waste.”</p>
+<p>A call had begun; not one of [Druids], but of nature itself. They would answer and wreak a vengeance on the folk of smog and steel who had trespassed so greatly. This was an almighty call; they had felt it in the depths. He wondered who else was coming. But the Mrsha girl just waved her little wand.</p>
+<p><em>“I had one more question, please and thank you! You’re the only [Druid] I can ask! My guy isn’t here, and the other [Druid]’s only, like, Level 25.”</em></p>
+<p>“Ask, then.”</p>
+<p>He expected a third silly question, but she took a huge breath, then thought at him—</p>
+<p>“<em>If you get high level, like, um, super high-level, can you…no, wait. How can I say this? If you reach the apex of levelling, a truly splendiferous level—</em>”</p>
+<p>What kind of child knew ‘splendiferous’?</p>
+<p><em>“—can you sense all the big, dying trees? I mean…not the Vale Forest, which is all too young. I mean the </em>big<em> ones. The sad ones who’re mostly dead but alive because they’re all corally. The ones guarding the undersea forests.”</em></p>
+<p>Treants. He felt a shock down his spine. She meant Treants. And she understood that the true trees, the ones with voices and thoughts, however strange, were dead. From the Vale Forest—the Treants had left the land.</p>
+<p>But she could have known that. It was merely unsettling until she continued.</p>
+<p>“<em>And if you can sense them and stuff…are they all around Baleros right now? And if they are, why?</em>”</p>
+<p>Every [Druid] in the command room of the ship had gone silent. The heads turned to Godreiad, and he drummed his fingers on the table. If not for the wild call to arms, they would have been investigating that very…</p>
+<p>He had suspicions. But rather than voice them, he spoke shortly.</p>
+<p>“By what authority do you claim to command the Sea’s Shepherds, Druid Mrsha? Do you have any other proof you would stand above me?”</p>
+<p>Druids <em>had</em> no higher ranking than a High Druid of a Circle; there weren’t enough, and there were no great [Druids] of old. If there <em>were…</em>that faint not-memory twinged at him.</p>
+<p><em>Somewhere, the Grand Design’s analysis of the future snarled slightly around something it didn’t quite understand. Something that should not have occurred. It auto-corrected absently.</em></p>
+<p>And the child just thought at him—</p>
+<p><em>“If I was in charge, I wouldn’t have to tell you. I’d think something and you’d know. I’d be a scary, bad person, even if I was really sad and didn’t want to. Because I could think and call scary ships and animals and make the forests and land go to war.”</em></p>
+<p>She gave him a big, round-eyed look, then flinched and tugged a branch-patterned hood over her head. Godreiad didn’t understand why, until he realized—he was smiling.</p>
+<p>With all his teeth. Shark and sharp Human teeth, a grin for a vision of a true [Druid], one who would speak and make the lands shake off the people who had tended them unwisely. Someone to clear the earth fallow so great forests and wilds could emerge once more.</p>
+<p><em>A single being to call forth [Barbarian] tribes and the Gnolls and all those who respect that dream and wash away even nations under—</em></p>
+<p>Why was he imagining it? It was a boy’s dream, the kind Godreiad and every [Druid] probably had until they realized they would not likely live to that level. Why, when he watched her, did he imagine…</p>
+<p>“Wait. Sit. Do you want to speak? Here, let me get some younger [Druids]. Tell me what you wanted, Druid Mrsha. Ask me anything you want.”</p>
+<p>He tried to coax her, but she was shaking her head.</p>
+<p>“<em>I think I’m fine! Sorry! Thank you! I must have been mistaken! Goodbye!</em>”</p>
+<p>She fled as he tried to stop her, her pale illusion vanishing as he cursed and lowered his hand. Godreiad sat there for a moment and wondered why he had dreamed all that.</p>
+<p>Then he picked up the illustration of the robes and stared at them for a long time. After a while, he sent a wild thought to a land [Druid]. To ask her to pass the design around and see if it meant anything.</p>
+<p>Mrsha was on the Sea’s Shepherds’ list, now. A different list.</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>Mrsha tore her robes off and lay, panting, in the [Garden of Sanctuary] for a good fifteen minutes until her heart stopped racing.</p>
+<p><em>That was one scary guy. </em>She was beginning to think Nalthaliarstrelous was a kindly, reasonable [Druid]. And that Shassa was a weak pacifist, at least by [Druid] standards.</p>
+<p>Okay. Okay…Apista buzzed down, a hecking <em>giant</em> orange bee patterned with black death stripes that made Mrsha almost run for the hills until she realized it was Apista’s new Scourgebee form.</p>
+<p><em>Apista, you silly willy! I’m already scared! Don’t do that!</em></p>
+<p>The bee buzzed around Mrsha, reverting back to normal as she sensed Mrsha was only nervous. The two hugged, and Mrsha wiped at her brows.</p>
+<p>As Godreiad had observed, Mrsha had a range of mental tones, ranging from a faux-Lyonette Terandrian [Lady] to what you might expect a normal child to sound like.</p>
+<p><em>Okay, I’ve proven that was no dream. Evidentiary analysis proves that I had the powers. Ergo…something smart here. I think I was super-Mrsha for a while?</em></p>
+<p>That was her only conclusion. But why?</p>
+<p>She had never actually dreamed of being Mrsha the Super Druid. In all her dreams, it was literally below Mrsha the Sweeper or Mrsha the Filing Accountant for future visions. She liked being a [Druid], but she hadn’t envisioned being a Level 70 one.</p>
+<p>She could tell Lyonette. Or Nanette. But the two were fighting, and honestly, Mrsha didn’t know if they’d believe her. Heck, she didn’t believe her!</p>
+<p>After a while, Apista buzzed off, and Mrsha was reminded it was early morning. She had chores to do; thankfully, it was the weekend—three days of weekend, Lundas, Gnorna, and Zenze, obviously, and this was the first one—so no school.</p>
+<p>Mrsha couldn’t imagine living a life where you only got <em>two</em> days off. But she had chores.</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>First, Mrsha filled Apista’s water bowl with sugar water. The bee buzzed around it, and Mrsha cleared away a bunch of ash from the nest Apista had made in the jungle-side of the [Garden of Sanctuary].</p>
+<p>Part of the job of feeding and cleaning up after Apista was getting rid of all the Dreamleaf cigars she smoked. Thankfully, they were biodegradable…Mrsha brought them over to a snowy part of the garden and kicked them into the permanent frost there.</p>
+<p>Thanks to the [Garden of Sanctuary], any spot aside from the hill of statues or central hill got rained on daily. Erin could have turned on the rain on top of the hill too, but she wasn’t here, and Mrsha had a routine.</p>
+<p>She lugged a bucket of water from the pond, splashed it over the bright, short little Faerie Flowers, and poked them a few times.</p>
+<p><em>Get big, get big, get big…</em>no dice so far. Mrsha sighed. They were still runty, even if she was sure they should be growing. They <em>had</em> been growing a few inches, or so she swore…but then they’d shrunk?</p>
+<p>Damn flowers. She took care of them even if they were no longer in the inn proper.</p>
+<p>People kept trying to steal them. Mrsha tossed her bucket down, sighing. And since they were growing in Oteslia, there was less demand for the flowers. She couldn’t sell a few to Saliss on the sly for fun potions.</p>
+<p>After that, Mrsha headed into the inn and found Nanette. She and Nanette walked out of the inn—stared at the pouring rain—and came back ten minutes later in full rain gear.</p>
+<p>“—And she says she’ll handle the dead dryads or whomever they are. She says I’m—we’re—not old enough to understand the risks! She said it to me, a witch!”</p>
+<p>Mrsha endured Nanette’s grousing all the way across the bridge to the graves. It was super wet, but at least the graves looked okay. Dalimont kept checking the waters; he had been briefed fully on the threats that might snatch the two girls, even with the bridges, and had requested backup.</p>
+<p>Ishkr was doing fine; he stood with an umbrella streaming sunlight from under it, and Mrsha glanced at the Christmas umbrella Erin had gotten from Niers. She felt like the Gnoll was warning every predator in range not to mess with him. He winked at her.</p>
+<p>Vaulont had to go throw up before joining them. Apparently, crossing over the water via the bridge had done things to his stomach. A bunch of fish tried to eat his breakfast as he grimly wiped his mouth.</p>
+<p>Aside from that, the inn was quiet, and Nanette stomped back in to resume her glaring match with Lyonette. For once, Mrsha wasn’t all on her side.</p>
+<p>She got the issue. Lyonette was being a conservative poo-face who didn’t want to do the right thing and help the people who’d saved her life and who wanted the wand. At the same time…</p>
+<p><em>[Druids] were hecking scary. </em>Nature was scary. Mrsha was suddenly reminded of how bad it was when <em>interesting things happened.</em> The sensation of being Level 70 had actually made her less excited than you’d expect. When Mrsha had felt like what it was to be…Belavierr…?</p>
+<p>The rest of her daily tasks were other small things. Cleaning up her room, taking breakfast up to Bird; she was sitting in her tower, singing about the rain. And watching the Rheirgest villagers outside.</p>
+<p>For a group of [Necromancers] used to the mountains, they were getting on swimmingly here, no pun intended. Some were actually swimming, despite the risks, or fishing from the hill as their undead continued to work on the inn. When Lyonette had warned them about the big fish, they’d been happy.</p>
+<p>Why?</p>
+<p><em>More bones and bodies for them. </em>They were experimenting with aquatic undead. Mrsha shook her head affectionately at the village of miniature Pisceses.</p>
+<p>After that, Mrsha went into Liscor to check on some Antinium. And the beavers. Grass Shell, the Antinium [Shaman] in charge of Selys’ mansion, assured her the beavers were fine.</p>
+<p>“They are very healthy, Miss Mrsha. They miss Miss Selys, but I have taken them with me on my journey through the ocean of death’s shadow. I fear no drowning, for they are with me.”</p>
+<p>When she gave him a blank look, he elaborated.</p>
+<p>“When I feed the bees. I must cross…bridges…of water.”</p>
+<p>Oh. That was what she’d been worried about, but apparently, he’d already prepared for that, and they’d dragged him out of the water once when he’d fallen into it. Mrsha high-fived one of the Fortress Beavers and handed them a wood-cookie that Calescent had made for them. Then she went to Krshia and handed her the day’s shopping list.</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>No one who lived in Liscor long liked the rains. All the old Liscorians were grumpy, muttering about leaks and lack of travel and sewers flooding. But the new Liscorians were great.</p>
+<p>“This is amazing. I’m sure I’ll tire of it eventually, but my inn’s dry as a bone. Architect Hexel was very good about making sure the 3rd District was enchanted and waterproofed months in advance. Why, between the elections and living on top of a sea for a few months, I think it’s a grand time to be in Liscor!”</p>
+<p>Timbor Parithad, the [Innkeeper] who ran The Drunken Gnoll, was jawing away happily with the glowering Drakes and Gnolls. At his words, Krshia gave him a long, searching look.</p>
+<p>“Not a single leak in your rooms, no? Every Gnoll in my district has at least one.”</p>
+<p>“Nary one. I suppose it’s new construction, then?”</p>
+<p>“By an [Architect], not an apartment barely upkept by a bunch of damn [Landlords] for the last sixty years.”</p>
+<p>One of the Drakes groused, and someone else shot back in the crowd.</p>
+<p>“Oh yeah? Well, why doesn’t the Council have them fix that too? Seems like <em>my</em> tax money hasn’t gone to waterproofing Liscor, only the new district.”</p>
+<p>“Well, you propose it to the Council.”</p>
+<p>“Maybe I will. And maybe I’ll vote for a Council that respects the people’s will this spring.”</p>
+<p>“What does <em>that</em> mean? Also, the Council is re-elected next year, scales-for-brains.”</p>
+<p>“Not if Proposition #1 goes through.”</p>
+<p>“Propo…<em>what? </em>You mean those people shouting in front of City Hall? Hold on, <em>why…</em>”</p>
+<p>Mrsha watched the two Drakes argue, and Krshia’s ears perked up. The Councilwoman kept a straight face as her shop attendant handed Timbor his change, but she whispered to Mrsha so only they could hear.</p>
+<p>“I may visit Miss Lyonette soon, yes? Important times are coming. You are being good, Mrsha? You and I don’t see as much of each other as we used to.”</p>
+<p>Mrsha wrote on a card.</p>
+<p><span class="mrsha-write">I’ve got school now, and I’m a big girl with lots of people to hang out with in the inn. Plus, your apartment smells like Lism.</span></p>
+<p>She gave Krshia a pointed glance as the Gnoll jumped, then tore up the card. And ate it. She gave Ser Dalimont a waxy smile as her customers gaped at her.</p>
+<p>“Er—edible cards. The newest thing. Heh. Next?”</p>
+<p>Mrsha backed away as Krshia shot her a glower, and she decided maybe that wasn’t a good topic with the elections.</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>Anyways, her other duties included checking in on everyone. Mrsha ticked off her list of people, noting that she had failed again to contact the Horns, Rabbiteater, and Ylawes’ groups.</p>
+<p><em>More worry for me. </em>She kept thinking about the levels in between all this. It had to be real. Right? But if it was…what caused it?</p>
+<p>A mistake? But even a mistake had to have a reason. Had she done something? She was awesome, sure, but like, Level 50 awesome. Not that awesome.</p>
+<p>She had cause to ask someone about it after all. Not another [Druid]; King Fetohep of Khelt sat there seeming—tired.</p>
+<p>“All is well, Mrsha. Splendid, in fact. If I do not presume to a surplus of time, it is, I suggest, because my kingdom is so varied and occupied as to require my attention.”</p>
+<p><em>Something was wrong. </em>Mrsha’s eyes flicked around the throne room, but apart from a few servants, she saw noth—</p>
+<p><span style="font-size: 54.5454545455%!important;;"><em>“—jesty’s aid! Your Majesty’s aid! We are suffering!”</em></span></p>
+<p>It was the faintest of cries from the window. It was a chant; Mrsha flicked one ear up, and she edged sideways as Fetohep reached for another [Message] scroll. He glanced up, saw her ears twitching, and raised a finger.</p>
+<p>The window drapes closed, and the noise was gone. Mrsha stood there as he smiled at her.</p>
+<p>“Is that all, Mrsha? I must prepare for a banquet.”</p>
+<p>She made a note on the clipboard. Lyonette? Who could actually…Mrsha stared at it and then glanced up.</p>
+<p><span class="mrsha-write">I know you’re busy, Fetohep, but I have a really important question if you can answer it?</span></p>
+<p>“A question? Ah, very well. Age must condescend to youth betimes. Speak.”</p>
+<p>Mrsha wrote quickly, noting the [Servants]’ expressions. They were always smiley and in awe of Fetohep. She had seen them nervous when they forgot something, but never…</p>
+<p>Worried. She couldn’t read the Revenant’s face. So she just wrote her question down swiftly, so as not to bother him.</p>
+<p>The ancient ruler of Khelt had time for Mrsha, as he did for children, his people, and he liked to put on a good face, regardless of the moment. His preserved, undead one wasn’t much to look at anyways.</p>
+<p>He was humoring her—right up until his golden eye-flames happened across her message. Then they narrowed to pinpricks. It said:</p>
+<p><span class="mrsha-write">If you hit a high level, like, over Level 50, do you…feel different? Like your body’s no longer normal? Does your head…not hurt, but feel like instead of up and down and left and right, it can think in new directions?</span></p>
+<p>The King of Khelt sat there for a moment, then laughed. A huge, amused laugh of actual delight. He leaned back, and his servants relaxed and smiled as if Mrsha had done a grand thing.</p>
+<p>“My word. This schooling must indeed be so exceedingly academic as to rival that of my own academies. That is a splendid account, albeit in purely experiential terms, of what it feels like. Yes. I, myself, felt more as though my body were in strange agony when I grew my first Galas muscle. When one passes Level 50…”</p>
+<p>He stood up, strode to the door to the balcony, and opened it. Mrsha saw him pause, heard a chanting—then Fetohep closed the blinds suddenly. A few flies buzzed around him, and he stood there. Then turned to her as if nothing had happened.</p>
+<p>“…When one passes Level 50, yes. One changes. The mind? I heard Queen Xierca often state the feeling, along with the few individuals of the more thought-based classes I conversed with. Were you, perhaps, concerned for Erin Solstice? She has not indicated any such pains, but I am sure she passed them in the company of…Fraerlings well enough. I am sure she is well.”</p>
+<p>His tone sounded—odd—and Mrsha frowned at him. What was this?</p>
+<p>Fetohep was off his game today. He didn’t even notice Mrsha’s expression as he sat back down.</p>
+<p>“I do wonder which, if either sensation, she might feel. If I meet her, I shall inquire.”</p>
+<p><span class="mrsha-write">I will too!</span></p>
+<p>“How? Has sh—of course she has spoken to you from the Titan’s academy. My apologies. It is foolish to presume she would not speak to her family. Of course, she has all the time for me.”</p>
+<p>Slowly, Mrsha wrote down something else next to Erin. Underlined it. Circled it. Added three !!! and drew a line to ‘Fetohep’. So he knew, too. But he didn’t know that she…</p>
+<p>Fetohep did notice that and swiftly changed the subject.</p>
+<p>“Ah. Was that all? The experience is entirely genuine. I suppose your teacher is empowering you to dream of higher levels?”</p>
+<p><span class="mrsha-write">Nope.</span></p>
+<p>“Then you read of it in a book. Which one? You can often tell the authenticity of the writer by such innocuous statements.”</p>
+<p><span class="mrsha-write">Um, it was Tales of Adventure and Woe. I forget which edition.</span></p>
+<p>Mrsha wrote hurriedly, and Fetohep’s golden gaze <em>flickered</em> in the right eye hole so fast that Mrsha didn’t spot it as she wrote. Slowly, he glanced down at something on his throne of gold. Brushed his hand at it and made a complex gesture that Mrsha didn’t see as she raised her card.</p>
+<p><span class="mrsha-write">So you really feel different? All…big-minded? Does it change you forever? Because that’s scary. You’d get strong, wouldn’t you? So strong you couldn’t play with other people or even feel things the same way.</span></p>
+<p>The King of Khelt sat forwards slightly, and his voice was poised, face turned towards her.</p>
+<p>“If one was truly powerful. Yes. And you…read this. This is an experience you have never had?”</p>
+<p>Mrsha gave him a big, goofy grin.</p>
+<p><span class="mrsha-write">I’m Mrsha the Super Duper! Why would <span style="text-decoration-line: underline;">I</span> have that kinda level? I read about it, and, uh, Zel talked about it. That’s how I know.</span></p>
+<p>“I see. Mrsha, I have changed my mind. Why do you not tell me about your day? It is good, you see, for a King of Khelt to partake in other lands.”</p>
+<p><span class="mrsha-write">Me? I’m sure you’re busy.</span></p>
+<p>Mrsha was glancing at the window, and Fetohep hesitated.</p>
+<p>“Perhaps, but why don’t you sit? I could—arrange for Miss Imani to bring you some sweets. Elucidate to me anything new that went on. In this hypothetical of high levels, what level would you imagine this occurs at? Level 50? Level 60?”</p>
+<p><span class="mrsha-write">No clue! But it would all feel the same, right? Or does it feel even weirder at high levels?</span></p>
+<p>Fetohep’s fingers drummed on the armrest of his chair.</p>
+<p>“I…would not know, having never passed Level 60 myself. I could inquire, academically. There are many records, if not as many personal accounts of that nature. Perhaps the former rulers of Khelt had journals with such notes? I shall ask the [Historians]. So…nothing of note? At all?”</p>
+<p><span class="mrsha-write">Nope! I’d better go!</span></p>
+<p>“What if—”</p>
+<p>She vanished, and the King of Khelt sat there. Then he stood up.</p>
+<p>“Summon the [Mages]. Have someone inspect the enchantments on the throne for its veracity now. Compile a full report on the truth spells.”</p>
+<p>Then he strode out of the room, wishing he could address <em>that.</em> It had to be a malfunction. Or…he was as stumped as Mrsha.</p>
+<p>It was just impossible.</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>Im. Pos. Si. Ble. Mrsha knocked the word out in the rest of her day, sweeping popcorn out of the World’s Eye Theatre with Rosencrantz, collecting her allowance, chewing on her dinner while staring at Elia Arcsinger reading a book…</p>
+<p>Mrsha was so distracted she didn’t even make a fuss about her dessert not being there—she had almost served the 35 days of no-dessert sentences for her various misdeeds. Lyonette would have asked if she was feeling well, but she was busy preparing for a meeting, and Elia Arcsinger closed her book and had to go pee.</p>
+<p>Again.</p>
+<p>Mrsha was so distracted, in fact, that she only looked up when Rags entered The Wandering Inn. There was a big fuss of Lyonette welcoming her in, but the Goblin just sat at a table, seeming hungover and tired.</p>
+<p>“Can I visit Erin’s [Garden of Sanctuary]?”</p>
+<p>“Of course, Rags! How are you? I have so much to show you…oh my, the gardens.”</p>
+<p>Mrsha saw Lyonette give her an excited wave, and Rags’ ears perked up, but the gold was mostly tidied away.</p>
+<p>…Mostly. It was a huge pile, but it didn’t swamp the entire place, and they’d gotten rid of a ton of it thanks to the gambling and other stuff. The box was still going…Mrsha sat there after dinner as Rags was shown the garden and…did not throw a fuss.</p>
+<p>She just sat in the inn. Poking at her food and having a drink as Lyonette, somewhat crestfallen, asked Rags how things were.</p>
+<p>“You can have as much as you need—”</p>
+<p>“Thanks. No time. Might try something. Taganchiel, see about how fast our contact can…no. Got to be clever about it. No time.”</p>
+<p>Rags was having a bad day. Mrsha wanted to go over to her, but the Goblin didn’t like her, and Mrsha didn’t know her that well. So Mrsha sat, and Rags sat, and the two both had deep thoughts, and Mrsha wondered what the <em>heck</em> it could be.</p>
+<p>Level 70. Her. Something she was doing…she only glanced up when someone tapped her on the shoulder.</p>
+<p>“Psst. Hey, kid. You seen General Shirka around?”</p>
+<p>It was her favorite naked Drake! Mrsha brightened up a bit. She debated asking Saliss about the levelling thing, but she thought she had an answer. And besides, Saliss just seemed tired.</p>
+<p>“No Shirka? Damn. And here I came out of my busy schedule making weapons to see her. I heard she was here.”</p>
+<p><span class="mrsha-write">How’re things, Saliss? I haven’t seen you about.</span></p>
+<p>He waved a claw.</p>
+<p>“Oh, you know me. Investigating seith. Making the kinds of weapons that could level the 9th Floor. Fun stuff.”</p>
+<p>A Pallassian stopped staring at the Antinium and Rags in disgust and edged away from Saliss. He grinned. Mrsha didn’t think it was a joke.</p>
+<p><span class="mrsha-write">Watcha gonna do with it?</span></p>
+<p>“Make sure no one but the ‘good guys’ can get more of it? I’m nearly restocked on my stuff at last. And you know what an adventurer has to do.”</p>
+<p><span class="mrsha-write">…Drink and party?</span></p>
+<p>“Go <em>adventuring. </em>Hah.”</p>
+<p>He looked a tiny bit excited, a tiny bit…his head craned around the room, and he eyed Rags.</p>
+<p>“So no Shirka?”</p>
+<p><span class="mrsha-write">Nope. She was here yesterday.</span></p>
+<p>Saliss relaxed a bit.</p>
+<p>“Good. I mean, in that she’s not a good customer like I am. She must have just liked the inn from me talking it up. Imagine that. Someone who listens to me. Alright, kid. I’m going to see Octavia—wait a second.”</p>
+<p>He pinched Mrsha’s cheek and pulled her out of her thoughts. She punched his arm furiously, but Saliss just whispered in her ear.</p>
+<p>“Since I’m not allowed in the garden for <em>perfectly good reasons</em>, can you get me a resupply of the flowers? I might be away from Pallass for a bit, and I want to make sure I’m stocked up on flower-type potions.”</p>
+<p>He actually made potions with the Faerie Flowers? Mrsha blinked, then recalled they were good as painkillers and other stuff. She nodded and padded upstairs to get his flowers. She had to open the door to the garden in secrecy.</p>
+<p>The gold pile, again. Mrsha had been told they were going to move it to another garden so they could re-open access, but hauling all that gold around, even with bags of holding, took ages.</p>
+<p>She had a bit of trouble with the hill of flowers. Mrsha <em>tugged,</em> and the damn flowers, less than six inches high at ‘full grown’, refused to come out. She tried for a damn good six minutes, but her paws refused to lever them out, and she just landed on her butt.</p>
+<p>In the end, she plucked the heads off, the only part that mattered, and ran them back to Saliss. He thanked her, vanished, and Mrsha was then told she had ‘detritus on her carriage’ by Dame Ushar.</p>
+<p>When she figured out that meant ‘dirt on her bum’, she wiped it off and, sighing heavily, went to Rosencrantz, who was on duty.</p>
+<p>“Long grabby things? Tongs?”</p>
+<p>She shook her head and motioned with her arms, and he scratched his head.</p>
+<p>“Long…grabby things. I think Calescent has extra-long tongs for the oven.”</p>
+<p>That sounded like her best bet. Mrsha went to him, and he willingly turned them over.</p>
+<p>“You wash first, okay? For prank? No?”</p>
+<p>He was disappointed when she assured him it was just for boring gardening. Mrsha entered the garden from the kitchen and, with a sigh, went over to the now-flowerless stalks.</p>
+<p>They were green and actually sort of boring-looking without the flowers. The yellow flowers were bright and sometimes seemed like gold if you glanced at them out of the corner of your eyes. The rest of the Faerie Flowers?</p>
+<p>They had a curvy, spiral-like cast to them, in miniature, and the stalks were thick. Mrsha had sworn they’d been growing since the Solstice, but again…the ones she glared at were short and stubby. Mrsha grabbed one with the tongs. If they were flowerless, she knew from experience that they’d soon wilt and die, so she had to get rid of them so the others could be healthy.</p>
+<p>She seized the first shoot with the tongs and heaved, using the application of leverage and the grip strength of the tongs to exert more force than her little body had. Kevin had taught her that.</p>
+<p><em>Give me a lever long enough and I’ll move Moore.</em></p>
+<p>It made her smile.</p>
+<p>It made her sad.</p>
+<p>She took it out on the Faerie Flower stalks, but they refused to budge. What was <em>wrong</em> with them? Mrsha <em>heaved</em>. She <em>pulled,</em> and this time, the soil shifted a bit, but, panting, it didn’t…</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>Twenty minutes later, Mrsha ran into the inn, whining as she held out her paws, which were red and sore. Valeterisa was flirting with Relc and making kissy-faces as she ran up to him.</p>
+<p>“Hey, kiddo, what’s going on?”</p>
+<p>A red-faced Valeterisa broke off from her chat with Relc, and he listened as Mrsha pointed and stamped her foot. Relc wasn’t allowed to see the gold, she recalled, because he might blab, and she hesitated, but Valeterisa solved that for her.</p>
+<p>“A gardening issue? Relc could help you, but why don’t I, ah…[Lion’s Strength]. There.”</p>
+<p>She tapped Mrsha on the forehead, and the Gnoll’s jaw dropped as her arms suddenly felt <em>swole.</em> She flexed her arms, and Relc hesitated, then sat with Valeterisa with a laugh. They were putting their heads together to do gross things as Mrsha raced back into the garden.</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p><em>This time, you’re mine.</em> Mrsha spat on her paws, put the tongs together over the offending stalk of the Faerie Flower, and positioned herself with the strength spell on her.</p>
+<p>An Archmage’s magic plus the tongs? The flowers had no chance. Mrsha <em>pulled</em>, grateful that she hadn’t ruined the Faerie Flower stalks with all her efforts with the tongs. Actually…she had a thought as she leaned back and heaved.</p>
+<p><em>They’re pretty sturdy if they survived me banging them up. They didn’t use to be this—hrggh—</em></p>
+<p>Her eyes bulged. She <em>pulled</em>. The <em>ground</em> began to move. Incredulously, Mrsha saw the single, <em>tiny</em> shoot of Faerie Flower resisting the strength that could have let Mrsha pick a <em>table</em> up. Her eyelids began to twitch.</p>
+<p><em>What the heck was going—</em></p>
+<p>The tongs began to <em>bend</em>, and Mrsha felt them giving, but at the last moment, she <em>finally</em> sensed the ground giving. The Faerie Flower gave up the fight, and Mrsha fell backwards with a silent shout of triumph. Got you! <em>I got—</em></p>
+<p>She landed on her butt, the tongs raised overhead, a huge, long, green strand of Faerie Flower yanked out of the ground, covered in dirt. Mrsha stared at it—then at the long strand of…flower…sticking out of the ground?</p>
+<p><em>The stalk of the Faerie Flower was six feet long and counting. </em>Delicate spirals of the stalk had been yanked straight by the bent tongs, but little offshoots of new flowers were budding, blooming—and down the length of the long, <em>long</em> Faerie Flower were little yellow flowers.</p>
+<p>Dozens of them. Mrsha’s jaw dropped. She stared at the longest Faerie Flower she had ever seen, then at the others.</p>
+<p><em>But—they were—she had repotted them before the Solstice and—</em></p>
+<p>She scrabbled forwards, peering at the ground. It was all pulled up from the force of her struggle, but she saw down at least another four feet, and it was just more green and yellow down there. Mrsha studied the flower.</p>
+<p><em>They’d grown down? This one was ten feet long and…</em>she bent down over the flowers, then glanced around. After a second, Mrsha shrugged and began to dig.</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>After ten minutes, she went to grab a shovel.</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>After an hour, she washed herself off in the pond and bundled up the entire amount of flower she’d pulled out so far like a coil of rope. But she was in real danger of destroying part of the hill, so she looked around for Valeterisa and Relc.</p>
+<p>When she knocked on Relc’s door, a <em>very</em> harried Archmage of Izril came out in a bathrobe and peered at Mrsha.</p>
+<p>“What? Dirt? A spell? Uh—uh—[Groundswim]. There. Go away. <em>Please?</em>”</p>
+<p>Mrsha brightened up. She thanked the Archmage, who slammed the door. Then, after a second and some muffled conversation, opened the door and put a sock on the handle. Mrsha went back to the garden.</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>Okay. She filled in the dirt pile and patted the other Faerie Flowers; she didn’t want to damage them, though they were as deep as the others! She’d seen their long bodies snaking down…</p>
+<p>Mrsha didn’t know how the spell worked, but she imagined herself sinking through the ground and then panicked when she realized she was up to her neck in what felt like water.</p>
+<p>To her relief, she could go up and down effortlessly, and she could breathe, even with her head underground. Mrsha sank under the ground and then spent five minutes popping out of the earth like the world’s largest groundhog, scaring Apista, and swimming around the garden—until she slammed into a web of the flowers.</p>
+<p><em>They were all the way through the middle of the hill! </em>Dead gods, they were twenty feet deep! Reminded of her task, and now reflecting that she’d have to get everyone to excavate the entire hill to collect this lot, Mrsha dove.</p>
+<p>The [Garden of Sanctuary] was, she realized, more like a full sphere instead of a half-dome. It was just that the two-thirds you saw was the part above-ground. Like the Dullahan [General]’s…there was a lot of ground beneath.</p>
+<p>Ten feet. Twenty. Thirty…she didn’t know how deep the hill was, but she imagined she was at ‘ground’ level now, and still, the compressed yellow flowers and green tendrils went down. She could ‘see’ them through the earth, and yet there was still more ground to go, obviously.</p>
+<p>Now, she didn’t know how far below the ground she was, hill or not, and Mrsha saw a tangle of huge stalks at last. More offshoots of the Faerie Flowers going in every direction, trapped underground. She put her hands on her hips.</p>
+<p><em>Well now! Those stupid flowers had gone down instead of up! </em>It was just like them, really. But here they were. The base of the plants was brushing against what she realized was the ‘bottom’ of the [Garden of Sanctuary]; she saw the wooden walls curving upwards. So it was a giant sphere. Like…a terrarium, she supposed, only, it was a place to live.</p>
+<p>Well, neat. And now she has super Faerie Flowers. Mrsha brightened up. A new observation about Erin’s garden and maybe a clue about what might lie hidden in the other ones if anyone had been that smart. <em>And</em> Saliss would go crazy for these. Though…she wondered if the effects were any different? They still had the same stupid fl…</p>
+<p>She peered down at the base of the Faerie Flowers. Hold up. What was <em>that?</em></p>
+<p>Mrsha dove down. That wasn’t a regular Faerie Flower. It was…a lot bigger. A huge flower compared to the regular ones. A sunburst of petals. Mrsha’s eyes widened. And this was only one of—</p>
+<p><em>They were all blooming. </em>She swam deeper, to the very bottom of the [Garden of Sanctuary], and only then wondered what happened if her, uh, [Groundswim] spell ran out with her underground. Nervously, Mrsha inspected the roots. They were all twined together and she tried to guess how many flowers were blooming above. They were practically like ropes, they were so long, and she grimaced as she wondered how she’d even pulled up part of one Faerie Flower in this state.</p>
+<p><em>How the heck are we going to dig these up? Valeterisa, duh. Archmages make everything easy. Maybe I should keep watering these? This could be a big secret. Those are some long roots.</em></p>
+<p>They stretched down and down…if the <em>plant</em> was this hecking huge, the roots were crazy! Mrsha frowned. Wait. The roots kept going down, but the garden’s base was there. She swam closer, reaching out.</p>
+<p>That didn’t make sense. How far down did th—</p>
+<p>And then Mrsha’s paw passed <em>through</em> something as she traced down the roots. She froze—and then felt a suction. A pull as her paws touched air. She flailed wildly, and then she was falling. Falling—as dirt sprayed around her, and she gasped real air, and the roots were still going down.</p>
+<p><em>Down, down, down—</em></p>
+<p>It hurt a lot when you hit the ground. Mrsha had experience.</p>
+<p>When she woke up…she had no idea where she was. Only that her normal days had suddenly come to an end.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><strong>Writing Note:</strong></p>
+<p>I may have to do the box chapter soon. And maybe the Liscor election one. Break up this ongoing arc with it? It is past-time for that. Let alone the Horns, Erin, Nerin, Oteslia, New Lands…</p>
+<p>Uh oh.</p>
+<p>&nbsp;</p>
+<p><strong>Author’s Note:</strong></p>
+<p>Sometimes I write notes to myself like the above. Normally, it’s not like that, it’s something in all caps in one of my notes documents, saying ‘don’t forget’ and listing a plot point.</p>
+<p>I have so many viewpoints and places to be, and you know what? That’s fine. It’s a good thing for stories like this. I’d rather have too much to tell, than not enough. The key is that each arc should be riveting and cause riots when we step away from it.</p>
+<p>An author should sometimes be a professional who knows how the story is going to end, who can write an essay about the thematic and structural elements of each character, story beat, and chapter, and who has enough dictionary words to win any scrabble game ever.</p>
+<p>Sometimes, the author should also be coming up with new plot points as they write, revising in the middle of the night, burning the midnight oil with messy hair (if they have any), and frothing at the mouth and about to die, but still typing.</p>
+<p>Both are very real ends of the writing spectrum, and a good writer should be able to do both. I probably fall on the latter end more often, but I do know…the bones of this arc.</p>
+<p>We may have passed out of Goblin Days into something else. But I may also continue the naming appellation and one-chapter-per day theme.</p>
+<p>I don’t know. What I do know is that I am going to <em><strong>not post anything till next Saturday. </strong></em>Why?</p>
+<p>Because I’m tired. I’m out of my backlog, and I’m tired. Even with coffee, my body hurts. I’m tensed up, and I have been told I’ve passed 80,000 words in these seven chapters. So I wrote 10,000 words each day.</p>
+<p>The short chapter thing, uh, didn’t work. But the momentum sure did. I liked this, and I want to keep refining the art. One more chapter on Saturday for Patreon readers. Also, I am looking forwards to that monthly break, but that’ll be a bit later…wish me luck on the last chapter.</p>
+<p>You’re going to want it too.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><strong>The Innkeeper by JuanD!</strong></p>
+<p><a href="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/TheInnkeeper-by-JuanD.jpg?ssl=1"><img fetchpriority="high" decoding="async" data-attachment-id="17424" data-permalink="https://wanderinginn.com/2024/08/02/goblin-days-pt-7-no-answers-and-answers/theinnkeeper-by-juand/" data-orig-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/TheInnkeeper-by-JuanD.jpg?fit=1640%2C2048&amp;ssl=1" data-orig-size="1640,2048" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="TheInnkeeper by JuanD" data-image-description="" data-image-caption="" data-medium-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/TheInnkeeper-by-JuanD.jpg?fit=240%2C300&amp;ssl=1" data-large-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/TheInnkeeper-by-JuanD.jpg?fit=820%2C1024&amp;ssl=1" class="alignnone size-full wp-image-17424" src="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/TheInnkeeper-by-JuanD.jpg?resize=1640%2C2048&amp;ssl=1" alt="" width="1640" height="2048" srcset="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/TheInnkeeper-by-JuanD.jpg?w=1640&amp;ssl=1 1640w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/TheInnkeeper-by-JuanD.jpg?resize=240%2C300&amp;ssl=1 240w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/TheInnkeeper-by-JuanD.jpg?resize=820%2C1024&amp;ssl=1 820w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/TheInnkeeper-by-JuanD.jpg?resize=768%2C959&amp;ssl=1 768w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/TheInnkeeper-by-JuanD.jpg?resize=1230%2C1536&amp;ssl=1 1230w" sizes="(max-width: 1000px) 100vw, 1000px" data-recalc-dims="1"></a></p>
+<p>&nbsp;</p>
+<p><strong>Erin Solstice by Relia!</strong></p>
+<p><strong>Tumblr:</strong> <a class="anchor_af404b anchorUnderlineOnHover_af404b" tabindex="0" title="https://www.tumblr.com/reliaofdreams" role="button" href="https://www.tumblr.com/reliaofdreams" target="_blank" rel="noreferrer noopener">https://www.tumblr.com/reliaofdreams</a></p>
+<p><a href="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/ErinSolstice-by-Relia.png?ssl=1"><img decoding="async" data-attachment-id="17425" data-permalink="https://wanderinginn.com/2024/08/02/goblin-days-pt-7-no-answers-and-answers/erinsolstice-by-relia/" data-orig-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/ErinSolstice-by-Relia.png?fit=2376%2C3168&amp;ssl=1" data-orig-size="2376,3168" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="ErinSolstice by Relia" data-image-description="" data-image-caption="" data-medium-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/ErinSolstice-by-Relia.png?fit=225%2C300&amp;ssl=1" data-large-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/ErinSolstice-by-Relia.png?fit=768%2C1024&amp;ssl=1" class="alignnone size-full wp-image-17425" src="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/ErinSolstice-by-Relia.png?resize=2376%2C3168&amp;ssl=1" alt="" width="2376" height="3168" srcset="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/ErinSolstice-by-Relia.png?w=2376&amp;ssl=1 2376w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/ErinSolstice-by-Relia.png?resize=225%2C300&amp;ssl=1 225w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/ErinSolstice-by-Relia.png?resize=768%2C1024&amp;ssl=1 768w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/ErinSolstice-by-Relia.png?resize=1152%2C1536&amp;ssl=1 1152w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/ErinSolstice-by-Relia.png?resize=1536%2C2048&amp;ssl=1 1536w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/ErinSolstice-by-Relia.png?w=2000&amp;ssl=1 2000w" sizes="(max-width: 1000px) 100vw, 1000px" data-recalc-dims="1"></a></p>
+<p>&nbsp;</p>
+<p><strong>The Witch vs the Bee and the Fraerling by Brownie!</strong></p>
+<p><a href="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/b.vs_.n.eyeballin-by-brownie.png?ssl=1"><img decoding="async" data-attachment-id="17426" data-permalink="https://wanderinginn.com/2024/08/02/goblin-days-pt-7-no-answers-and-answers/b-vs-n-eyeballin-by-brownie/" data-orig-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/b.vs_.n.eyeballin-by-brownie.png?fit=3508%2C2480&amp;ssl=1" data-orig-size="3508,2480" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="b.vs.n.eyeballin by brownie" data-image-description="" data-image-caption="" data-medium-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/b.vs_.n.eyeballin-by-brownie.png?fit=300%2C212&amp;ssl=1" data-large-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/b.vs_.n.eyeballin-by-brownie.png?fit=1024%2C724&amp;ssl=1" class="alignnone size-full wp-image-17426" src="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/b.vs_.n.eyeballin-by-brownie.png?resize=3508%2C2480&amp;ssl=1" alt="" width="3508" height="2480" srcset="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/b.vs_.n.eyeballin-by-brownie.png?w=3508&amp;ssl=1 3508w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/b.vs_.n.eyeballin-by-brownie.png?resize=300%2C212&amp;ssl=1 300w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/b.vs_.n.eyeballin-by-brownie.png?resize=1024%2C724&amp;ssl=1 1024w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/b.vs_.n.eyeballin-by-brownie.png?resize=768%2C543&amp;ssl=1 768w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/b.vs_.n.eyeballin-by-brownie.png?resize=1536%2C1086&amp;ssl=1 1536w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/b.vs_.n.eyeballin-by-brownie.png?resize=2048%2C1448&amp;ssl=1 2048w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/b.vs_.n.eyeballin-by-brownie.png?w=3000&amp;ssl=1 3000w" sizes="(max-width: 1000px) 100vw, 1000px" data-recalc-dims="1"></a></p>
+<p>&nbsp;</p>
+<p><strong>Silvenia Sushi and Silvenia Forsooth by Maoxfhan, commissioned by Linu!</strong></p>
+<p><a href="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/SilveniaSushi-by-Maoxfhan-commissioned-by-Linu.png?ssl=1"><img loading="lazy" decoding="async" data-attachment-id="17427" data-permalink="https://wanderinginn.com/2024/08/02/goblin-days-pt-7-no-answers-and-answers/silveniasushi-by-maoxfhan-commissioned-by-linu/" data-orig-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/SilveniaSushi-by-Maoxfhan-commissioned-by-Linu.png?fit=2480%2C2480&amp;ssl=1" data-orig-size="2480,2480" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="SilveniaSushi by Maoxfhan, commissioned by Linu" data-image-description="" data-image-caption="" data-medium-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/SilveniaSushi-by-Maoxfhan-commissioned-by-Linu.png?fit=300%2C300&amp;ssl=1" data-large-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/SilveniaSushi-by-Maoxfhan-commissioned-by-Linu.png?fit=1024%2C1024&amp;ssl=1" class="alignnone size-full wp-image-17427" src="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/SilveniaSushi-by-Maoxfhan-commissioned-by-Linu.png?resize=2480%2C2480&amp;ssl=1" alt="" width="2480" height="2480" srcset="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/SilveniaSushi-by-Maoxfhan-commissioned-by-Linu.png?w=2480&amp;ssl=1 2480w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/SilveniaSushi-by-Maoxfhan-commissioned-by-Linu.png?resize=300%2C300&amp;ssl=1 300w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/SilveniaSushi-by-Maoxfhan-commissioned-by-Linu.png?resize=1024%2C1024&amp;ssl=1 1024w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/SilveniaSushi-by-Maoxfhan-commissioned-by-Linu.png?resize=150%2C150&amp;ssl=1 150w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/SilveniaSushi-by-Maoxfhan-commissioned-by-Linu.png?resize=768%2C768&amp;ssl=1 768w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/SilveniaSushi-by-Maoxfhan-commissioned-by-Linu.png?resize=1536%2C1536&amp;ssl=1 1536w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/SilveniaSushi-by-Maoxfhan-commissioned-by-Linu.png?resize=2048%2C2048&amp;ssl=1 2048w" sizes="(max-width: 1000px) 100vw, 1000px" data-recalc-dims="1"></a> <a href="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/SilveniaSmile-by-Maoxfhan-commissioned-by-Linu.png?ssl=1"><img loading="lazy" decoding="async" data-attachment-id="17428" data-permalink="https://wanderinginn.com/2024/08/02/goblin-days-pt-7-no-answers-and-answers/silveniasmile-by-maoxfhan-commissioned-by-linu/" data-orig-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/SilveniaSmile-by-Maoxfhan-commissioned-by-Linu.png?fit=2480%2C2480&amp;ssl=1" data-orig-size="2480,2480" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="SilveniaSmile by Maoxfhan, commissioned by Linu" data-image-description="" data-image-caption="" data-medium-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/SilveniaSmile-by-Maoxfhan-commissioned-by-Linu.png?fit=300%2C300&amp;ssl=1" data-large-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/SilveniaSmile-by-Maoxfhan-commissioned-by-Linu.png?fit=1024%2C1024&amp;ssl=1" class="alignnone size-full wp-image-17428" src="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/SilveniaSmile-by-Maoxfhan-commissioned-by-Linu.png?resize=2480%2C2480&amp;ssl=1" alt="" width="2480" height="2480" srcset="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/SilveniaSmile-by-Maoxfhan-commissioned-by-Linu.png?w=2480&amp;ssl=1 2480w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/SilveniaSmile-by-Maoxfhan-commissioned-by-Linu.png?resize=300%2C300&amp;ssl=1 300w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/SilveniaSmile-by-Maoxfhan-commissioned-by-Linu.png?resize=1024%2C1024&amp;ssl=1 1024w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/SilveniaSmile-by-Maoxfhan-commissioned-by-Linu.png?resize=150%2C150&amp;ssl=1 150w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/SilveniaSmile-by-Maoxfhan-commissioned-by-Linu.png?resize=768%2C768&amp;ssl=1 768w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/SilveniaSmile-by-Maoxfhan-commissioned-by-Linu.png?resize=1536%2C1536&amp;ssl=1 1536w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/SilveniaSmile-by-Maoxfhan-commissioned-by-Linu.png?resize=2048%2C2048&amp;ssl=1 2048w" sizes="(max-width: 1000px) 100vw, 1000px" data-recalc-dims="1"></a></p>
+<p>&nbsp;</p>
+<p><strong>Klbkch Worker and Klbkch’s Walk by Lime!</strong></p>
+<p><strong>Bluesky:</strong> <a class="anchor_af404b anchorUnderlineOnHover_af404b" tabindex="0" title="https://bsky.app/profile/arcticlime.bsky.social" role="button" href="https://bsky.app/profile/arcticlime.bsky.social" target="_blank" rel="noreferrer noopener">https://bsky.app/profile/arcticlime.bsky.social</a></p>
+<p><strong>Ko-Fi:</strong> <a class="anchor_af404b anchorUnderlineOnHover_af404b" tabindex="0" title="https://ko-fi.com/recapturedlime" role="button" href="https://ko-fi.com/recapturedlime" target="_blank" rel="noreferrer noopener">https://ko-fi.com/recapturedlime</a></p>
+<p><strong>Youtube:</strong> <a class="anchor_af404b anchorUnderlineOnHover_af404b" tabindex="0" title="https://youtube.com/@recapturedlime" role="button" href="https://youtube.com/@recapturedlime" target="_blank" rel="noreferrer noopener">https://youtube.com/@recapturedlime</a></p>
+<p><a href="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Klbkch_Worker_form-by-Lime.jpg?ssl=1"><img loading="lazy" decoding="async" data-attachment-id="17429" data-permalink="https://wanderinginn.com/2024/08/02/goblin-days-pt-7-no-answers-and-answers/klbkch_worker_form-by-lime/" data-orig-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Klbkch_Worker_form-by-Lime.jpg?fit=1024%2C1280&amp;ssl=1" data-orig-size="1024,1280" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="Klbkch_Worker_form by Lime" data-image-description="" data-image-caption="" data-medium-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Klbkch_Worker_form-by-Lime.jpg?fit=240%2C300&amp;ssl=1" data-large-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Klbkch_Worker_form-by-Lime.jpg?fit=819%2C1024&amp;ssl=1" class="alignnone size-full wp-image-17429" src="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Klbkch_Worker_form-by-Lime.jpg?resize=1024%2C1280&amp;ssl=1" alt="" width="1024" height="1280" srcset="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Klbkch_Worker_form-by-Lime.jpg?w=1024&amp;ssl=1 1024w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Klbkch_Worker_form-by-Lime.jpg?resize=240%2C300&amp;ssl=1 240w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Klbkch_Worker_form-by-Lime.jpg?resize=819%2C1024&amp;ssl=1 819w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Klbkch_Worker_form-by-Lime.jpg?resize=768%2C960&amp;ssl=1 768w" sizes="(max-width: 1000px) 100vw, 1000px" data-recalc-dims="1"></a> <a href="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/klb_walk-byt-Lime.jpg?ssl=1"><img loading="lazy" decoding="async" data-attachment-id="17430" data-permalink="https://wanderinginn.com/2024/08/02/goblin-days-pt-7-no-answers-and-answers/klb_walk-byt-lime/" data-orig-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/klb_walk-byt-Lime.jpg?fit=1000%2C1000&amp;ssl=1" data-orig-size="1000,1000" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="klb_walk byt Lime" data-image-description="" data-image-caption="" data-medium-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/klb_walk-byt-Lime.jpg?fit=300%2C300&amp;ssl=1" data-large-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/klb_walk-byt-Lime.jpg?fit=1000%2C1000&amp;ssl=1" class="alignnone size-full wp-image-17430" src="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/klb_walk-byt-Lime.jpg?resize=1000%2C1000&amp;ssl=1" alt="" width="1000" height="1000" srcset="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/klb_walk-byt-Lime.jpg?w=1000&amp;ssl=1 1000w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/klb_walk-byt-Lime.jpg?resize=300%2C300&amp;ssl=1 300w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/klb_walk-byt-Lime.jpg?resize=150%2C150&amp;ssl=1 150w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/klb_walk-byt-Lime.jpg?resize=768%2C768&amp;ssl=1 768w" sizes="(max-width: 1000px) 100vw, 1000px" data-recalc-dims="1"></a></p>
+<p>&nbsp;</p>
+<p><strong>Acid by Brack!</strong></p>
+<p><strong>DeviantArt: </strong><a class="anchor_af404b anchorUnderlineOnHover_af404b" tabindex="0" title="https://www.deviantart.com/shurkin/gallery/" role="button" href="https://www.deviantart.com/shurkin/gallery/" target="_blank" rel="noreferrer noopener">https://www.deviantart.com/shurkin/gallery/</a></p>
+<p><strong>Ko-Fi:</strong> <a class="anchor_af404b anchorUnderlineOnHover_af404b" tabindex="0" title="https://ko-fi.com/brack" role="button" href="https://ko-fi.com/brack" target="_blank" rel="noreferrer noopener">https://ko-fi.com/brack</a></p>
+<p><strong>Twitter: </strong><a class="anchor_af404b anchorUnderlineOnHover_af404b" tabindex="0" title="https://twitter.com/Brack_Giraffe" role="button" href="https://twitter.com/Brack_Giraffe" target="_blank" rel="noreferrer noopener">https://twitter.com/Brack_Giraffe</a></p>
+<p><a href="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Acid-by-Brack.png?ssl=1"><img loading="lazy" decoding="async" data-attachment-id="17431" data-permalink="https://wanderinginn.com/2024/08/02/goblin-days-pt-7-no-answers-and-answers/acid-by-brack-2/" data-orig-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Acid-by-Brack.png?fit=2712%2C2725&amp;ssl=1" data-orig-size="2712,2725" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="Acid by Brack" data-image-description="" data-image-caption="" data-medium-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Acid-by-Brack.png?fit=300%2C300&amp;ssl=1" data-large-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Acid-by-Brack.png?fit=1019%2C1024&amp;ssl=1" class="alignnone size-full wp-image-17431" src="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Acid-by-Brack.png?resize=2712%2C2725&amp;ssl=1" alt="" width="2712" height="2725" srcset="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Acid-by-Brack.png?w=2712&amp;ssl=1 2712w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Acid-by-Brack.png?resize=300%2C300&amp;ssl=1 300w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Acid-by-Brack.png?resize=1019%2C1024&amp;ssl=1 1019w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Acid-by-Brack.png?resize=150%2C150&amp;ssl=1 150w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Acid-by-Brack.png?resize=768%2C772&amp;ssl=1 768w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Acid-by-Brack.png?resize=1529%2C1536&amp;ssl=1 1529w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Acid-by-Brack.png?resize=2038%2C2048&amp;ssl=1 2038w" sizes="(max-width: 1000px) 100vw, 1000px" data-recalc-dims="1"></a></p>
+<p>&nbsp;</p>
+<p><strong>Blue Traffy by Samsung!</strong></p>
+<p><a href="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/blueTraffy-by-samsung.png?ssl=1"><img loading="lazy" decoding="async" data-attachment-id="17432" data-permalink="https://wanderinginn.com/2024/08/02/goblin-days-pt-7-no-answers-and-answers/bluetraffy-by-samsung/" data-orig-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/blueTraffy-by-samsung.png?fit=2880%2C2880&amp;ssl=1" data-orig-size="2880,2880" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="blueTraffy by samsung" data-image-description="" data-image-caption="" data-medium-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/blueTraffy-by-samsung.png?fit=300%2C300&amp;ssl=1" data-large-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/blueTraffy-by-samsung.png?fit=1024%2C1024&amp;ssl=1" class="alignnone size-full wp-image-17432" src="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/blueTraffy-by-samsung.png?resize=2880%2C2880&amp;ssl=1" alt="" width="2880" height="2880" srcset="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/blueTraffy-by-samsung.png?w=2880&amp;ssl=1 2880w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/blueTraffy-by-samsung.png?resize=300%2C300&amp;ssl=1 300w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/blueTraffy-by-samsung.png?resize=1024%2C1024&amp;ssl=1 1024w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/blueTraffy-by-samsung.png?resize=150%2C150&amp;ssl=1 150w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/blueTraffy-by-samsung.png?resize=768%2C768&amp;ssl=1 768w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/blueTraffy-by-samsung.png?resize=1536%2C1536&amp;ssl=1 1536w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/blueTraffy-by-samsung.png?resize=2048%2C2048&amp;ssl=1 2048w" sizes="(max-width: 1000px) 100vw, 1000px" data-recalc-dims="1"></a></p>
+<p>&nbsp;</p>
+<p><strong>Nerrhavia by Yura!</strong></p>
+<p><strong>Ko-Fi:</strong> <a class="anchor_af404b anchorUnderlineOnHover_af404b" tabindex="0" title="https://ko-fi.com/yurariria" role="button" href="https://ko-fi.com/yurariria" target="_blank" rel="noreferrer noopener">https://ko-fi.com/yurariria</a></p>
+<p><a href="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/nerrhavia-by-Yura.png?ssl=1"><img loading="lazy" decoding="async" data-attachment-id="17433" data-permalink="https://wanderinginn.com/2024/08/02/goblin-days-pt-7-no-answers-and-answers/nerrhavia-by-yura/" data-orig-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/nerrhavia-by-Yura.png?fit=2451%2C2228&amp;ssl=1" data-orig-size="2451,2228" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="nerrhavia by Yura" data-image-description="" data-image-caption="" data-medium-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/nerrhavia-by-Yura.png?fit=300%2C273&amp;ssl=1" data-large-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/nerrhavia-by-Yura.png?fit=1024%2C931&amp;ssl=1" class="alignnone size-full wp-image-17433" src="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/nerrhavia-by-Yura.png?resize=2451%2C2228&amp;ssl=1" alt="" width="2451" height="2228" srcset="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/nerrhavia-by-Yura.png?w=2451&amp;ssl=1 2451w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/nerrhavia-by-Yura.png?resize=300%2C273&amp;ssl=1 300w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/nerrhavia-by-Yura.png?resize=1024%2C931&amp;ssl=1 1024w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/nerrhavia-by-Yura.png?resize=768%2C698&amp;ssl=1 768w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/nerrhavia-by-Yura.png?resize=1536%2C1396&amp;ssl=1 1536w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/nerrhavia-by-Yura.png?resize=2048%2C1862&amp;ssl=1 2048w" sizes="(max-width: 1000px) 100vw, 1000px" data-recalc-dims="1"></a></p>
+<p>&nbsp;</p>
+<hr>
+<p><a href="https://wanderinginn.com/2024/08/02/goblin-days-pt-6-of-dragons/">Previous Chapter</a> <a href="https://wanderinginn.com/2024/08/04/goblin-days-pt-8-downwards/"><span style="float: right;">Next Chapter</span></a></p>
+      </div>
+
+      <hr>
+          <span class="nav-previous">
+        <a href="https://wanderinginn.com/2024/08/02/goblin-days-pt-6-of-dragons/" rel="prev"><span class="meta-nav">←</span> Previous Chapter</a>    </span>
+    <span class="nav-next" style="float: right" ;="">
+        <a href="https://wanderinginn.com/2024/08/04/goblin-days-pt-8-downwards/" rel="next">Next Chapter <span class="meta-nav">→</span></a>    </span>
+    

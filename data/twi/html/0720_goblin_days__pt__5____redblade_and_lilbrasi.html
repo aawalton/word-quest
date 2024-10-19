@@ -1,0 +1,586 @@
+
+
+          <span class="nav-previous">
+        <a href="https://wanderinginn.com/2024/07/31/goblin-days-pt-4-order-oddity/" rel="prev"><span class="meta-nav">←</span> Previous Chapter</a>    </span>
+    <span class="nav-next" style="float: right" ;="">
+        <a href="https://wanderinginn.com/2024/08/02/goblin-days-pt-6-of-dragons/" rel="next">Next Chapter <span class="meta-nav">→</span></a>    </span>
+      <!-- <hr/> -->
+      <header class="entry-header">
+        <h1 class="entry-title">Goblin Days (Pt. 5) – Redblade and Lilbrasi</h1>
+                <button class="show-settings-btn" onclick="document.querySelector('#reader-settings-wrapper').classList.toggle('is-hidden')">
+          <img class="show-settings-btn-img" src="https://wanderinginn.com/wp-content/themes/solstice/assets/images/ui/reader-settings-button.webp">
+        </button>
+      </header>
+
+      
+<!-- Reader Settings -->
+<div id="reader-settings-wrapper" class="is-hidden">
+    <div id="reader-settings">
+        <header id="reader-settings-header">
+            <h2>Reader Settings</h2>
+            <button onclick="closeModal()">
+                <svg width="100%" height="100%" viewBox="0 0 33 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M16.5 30.75C24.0939 30.75 30.25 24.5939 30.25 17C30.25 9.40608 24.0939 3.25 16.5 3.25C8.90608 3.25 2.75 9.40608 2.75 17C2.75 24.5939 8.90608 30.75 16.5 30.75Z" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M20.625 12.875L12.375 21.125" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M12.375 12.875L20.625 21.125" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+            </button>
+        </header>
+
+        <fieldset id="fieldset-font">
+            <legend>Font</legend>
+
+            <div>
+                <label for="font-size-select">Size</label>
+                <select id="font-size-select" class="reader-settings-select" data-setting="reader-font-size" onchange="updateSetting(this.getAttribute('data-setting'), this.value);">
+                    <option value="10pt" class="reader-settings-option">10</option>
+                    <option value="11pt" class="reader-settings-option">11</option>
+                    <option value="12pt" class="reader-settings-option" selected="">12</option>
+                    <option value="13pt" class="reader-settings-option">13</option>
+                    <option value="14pt" class="reader-settings-option">14</option>
+                    <option value="16pt" class="reader-settings-option">16</option>
+                    <option value="18pt" class="reader-settings-option">18</option>
+                    <option value="20pt" class="reader-settings-option">20</option>
+                    <option value="22pt" class="reader-settings-option">22</option>
+                    <option value="24pt" class="reader-settings-option">24</option>
+                    <option value="26pt" class="reader-settings-option">26</option>
+                    <option value="28pt" class="reader-settings-option">28</option>
+                    <option value="30pt" class="reader-settings-option">30</option>
+                    <option value="36pt" class="reader-settings-option">36</option>
+                    <option value="42pt" class="reader-settings-option">42</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="font-family-select">Family</label>
+                <select id="font-family-select" class="reader-settings-select" data-setting="reader-font-family" onchange="updateSetting(this.getAttribute('data-setting'), this.value);">
+                    <optgroup label="Sans Serif">
+                        <option class="reader-settings-option" value="OpenSans, sans-serif" selected="">Open Sans</option>
+                        <option class="reader-settings-option" value="Arial, Helvetica, sans-serif">Arial</option>
+                        <option class="reader-settings-option" value="Roboto, sans-serif">Roboto</option>
+                    </optgroup>
+                    <optgroup label="Serif">
+                        <option class="reader-settings-option" value="Playfair, serif">Playfair</option>
+                        <option class="reader-settings-option" value="EBGaramond, serif">Garamond</option>
+                        <option class="reader-settings-option" value="'Times New Roman', Times, serif">Times New Roman</option>
+                    </optgroup>
+                    <optgroup label="Other">
+                        <option class="reader-settings-option" value="OpenDyslexic">OpenDyslexic</option>
+                        <option class="reader-settings-option" value="HennyPenny">Henny Penny</option>
+                    </optgroup>
+                </select>
+            </div>
+            <div>
+                <label for="font-weight-select">Thickness</label>
+                <select id="font-weight-select" class="reader-settings-select" data-setting="reader-font-weight" onchange="updateSetting(this.getAttribute('data-setting'), this.value);">
+                    <option class="reader-settings-option" value="300" selected="">Thin</option>
+                    <option class="reader-settings-option" value="400">Regular</option>
+                    <option class="reader-settings-option" value="500">Thick</option>
+                </select>
+            </div>
+        </fieldset>
+
+        <fieldset id="fieldset-spacing">
+            <legend>Spacing</legend>
+            <div>
+                <label for="margins-select">Page Width</label>
+                <select id="margins-select" class="reader-settings-select" data-setting="reader-article-width" onchange="updateSetting(this.getAttribute('data-setting'), this.value);">
+                    <option value="320px" class="reader-settings-option">Extra Narrow</option>
+                    <option value="500px" class="reader-settings-option">Narrow</option>
+                    <option value="680px" class="reader-settings-option" selected="">Medium</option>
+                    <option value="1000px" class="reader-settings-option">Wide</option>
+                    <option value="1200px" class="reader-settings-option">Extra Wide</option>
+                    <option value="100%" class="reader-settings-option">Max</option>
+                </select>
+            </div>
+            <div>
+                <label for="line-spacing-select">Line</label>
+                <select id="line-spacing-select" class="reader-settings-select" data-setting="reader-line-height" onchange="updateSetting(this.getAttribute('data-setting'), this.value);">
+                    <option class="reader-settings-option" value="1.2">Small</option>
+                    <option class="reader-settings-option" value="1.625" selected="">Medium</option>
+                    <option class="reader-settings-option" value="2.2">Large</option>
+                    <option class="reader-settings-option" value="3.5">Extra Large</option>
+                </select>
+            </div>
+            <div>
+                <label for="paragraph-spacing-select">Paragraph</label>
+                <select id="paragraph-spacing-select" class="reader-settings-select" data-setting="reader-paragraph-spacing" onchange="updateSetting(this.getAttribute('data-setting'), this.value);">
+                    <option class="reader-settings-option" value="0.5em">Small</option>
+                    <option class="reader-settings-option" value="1.625em" selected="">Medium</option>
+                    <option class="reader-settings-option" value="2.75em">Large</option>
+                    <option class="reader-settings-option" value="4.25em">Extra Large</option>
+                </select>
+            </div>
+        </fieldset>
+        <div class="ml-5 mb-4">
+            <label for="theme-select">Theme</label>
+            <select id="theme-select" class="reader-settings-select" data-setting="reader-theme" onchange="updateSetting(this.getAttribute('data-setting'), this.value);">
+                <option class="reader-settings-option" value="reader-theme-grey" selected="">Dark Grey</option>
+                <option class="reader-settings-option" value="reader-theme-blue">Dark Blue</option>
+                <option class="reader-settings-option" value="reader-theme-black">Black</option>
+                <option class="reader-settings-option" value="reader-theme-white">White</option>
+                <option class="reader-settings-option" value="reader-theme-sepia">Sepia</option>
+            </select>
+        </div>
+        <button id="reset-settings-btn" onclick="resetSettings()">Reset To Default</button>
+        <!-- <div> -->
+        <!-- </div> -->
+
+
+    </div>
+</div>
+      <div class="entry-content">
+        <p>Fightipilota decided after four days of living at Nombernaught that she couldn’t enjoy Goblinhome the same way.</p>
+<p>No offense to Goblinhome; it was the best place made for Goblins, by Goblins, that Fightipilota had ever been to. Tremborag’s mountain had been bigger, yes, but far less pleasant. <em>Part of that had been their dungeons.</em></p>
+<p>But even with all of Goblinhome’s amenities, even with the luxuries a Goblin like Fightipilota could scrounge up, it didn’t beat a city with thousands of years of culture. Alright, fine. Fighti was also getting her rooms paid for by House Lanight, and maybe there were places in Nombernaught that sucked.</p>
+<p>However! She knew there were rooms in Goblinhome that had sixty Goblins to a ‘bed’; they lay on a giant mat, rolling on top of each other, snoring in each other’s ears, and heavens forbid one got up to use the bathroom.</p>
+<p>Goblins were communal, and the Goblins who liked that sort of thing gravitated towards it, especially the young, but the point was while there might be someone sleeping on the streets of this city, commensurate with how Goblins in lesser tribes lived, their heights were not the same.</p>
+<p>Fightipilota had a small room in Goblinhome in the [Wyvern Riders] section, close to the bestiary where the Wyverns and Carn Wolves could sleep and move about. No one had reassigned her since Snowscale had died.</p>
+<p>It was wide enough for her to lie down and stretch her arms halfway and <em>just</em> touch the other wall. Lengthwise, about three times her height.</p>
+<p>Fightipilota was four foot something. It was a narrow cubicle, and Fighti would wake up, crawl over to her ‘dresser’ full of flight clothes, which was a wicker bin, grab her toothbrush, and line up with Goblins to brush her teeth and then go to breakfast. The walls of her room were grey stone, windowless, obviously; it was pitch black save for the lights flickering in the hallway beyond and a candle, if Fighti had one.</p>
+<p>The walls were thick enough that Fighti couldn’t hear snores from outside, and her blankets were a scratchy wool with a small sheet underneath made of cheap cotton that had a bunch of holes in it, but mostly kept her from itching at night. During the winter, Fighti would roll herself into a ball or, if it got really cold, sleep next to some of the other [Riders] with their Wyverns or Carn Wolves, or just in a row in someone’s room, like cloth sausages.</p>
+<p>It was great. It was her first room ever, and Fightipilota thought that if you had gone back to the small Goblin she’d once been in the Redfang tribe and told her she’d get her own room like that, she would have been in denial.</p>
+<p>The problem, in Fighti’s opinion, was not stopping there but showing Goblins there could be <em>even more.</em> If you starved, you’d be over the moon to eat as much slightly rotten food as you wanted for the rest of your life.</p>
+<p>But the moment some kindly [Innkeeper] with a crazy hat handed you a milkshake and you stood on a beach with the tide rushing around your ankles and Kevin playing music on his iPhone in the background—you couldn’t go back.</p>
+<p>That was, Fighti decided, the curse of civilization. So, for her time in Nombernaught, she got a damn good cursing because if she had to have Goblinhome ruined for her, she might as well go <em>all the way.</em></p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>The Prawn’s Repose was an inn just off the main street that led through Nombernaught’s ‘gate’. As Fighti had observed, the city had never been meant to dock with land, so this was merely the closest street to land on the 11th level; there were seven above, ten below, the middle levels far larger than the top or bottom ones.</p>
+<p>Nombernaught had erected a ‘gate’ of sorts, though it was more like a ceremonial portal. Two faded red pillars of wood rose, and a simple arch stretched overhead of the visitors; dangling charms, bells, and even ornamental seaweed made you feel like you were passing into a submerged city.</p>
+<p>Which, to be fair, was reinforced the moment you saw the buildings made out of ships’ hulls, the living coral growing from the central spires, and the Drowned Folk and water passageways.</p>
+<p>Fighti was a bit shy, so she hadn’t explored the city—much. She got butterflies in her stomach every time she walked out there and saw so many people about. She was convinced some of them might be able to pierce her Skill, so she’d barely get a few streets in, then hurry back to her rooms or leave Nombernaught.</p>
+<p>Half the time, it was to threaten to beat up an old man; the other half was to deliver supplies to a team in the field. Since she was stuck here, waiting for Redscar, the Drowned Folk had asked if she’d deliver supplies by air and were very complimentary about her for doing so.</p>
+<p>Anyways. The inn was half a ship placed vertically; the rounded hull had been converted into circular floors that met in the middle and joined a single stairway that went up. Each room was bigger than Fighti’s room in Goblinhome, filled with that same motif Drowned Folk found stylish: a mix of that traditional admiral look and the shipwrecked look.</p>
+<p>For reference, some of the Drowned Folk [Captains] loved dressing up in dark, navy-blue uniforms with epaulets, those gold tassels on the shoulders, huge gold buttons on big military coats—that <em>also</em> looked like someone had submerged them in water for a decade. Some of the [Tailors] that Fighti had watched yesterday would artfully make holes along the edges, paint algae along the trim, and even add barnacles to the coat. Weird, but she liked the style.</p>
+<p>They even weathered good stone and wood and encouraged algae, seaweed, and fronds to grow to get that authentic effect.</p>
+<p>So she was staying in a themed inn. Great. Fightipilota had sent a memo to Rags after getting permission to stay and requesting Redscar and his Hobs. The Chieftain of the Flooded Waters tribe hadn’t been impressed.</p>
+<p><em>‘Flighti the Drake’ </em>might be a welcome guest in Nombernaught and a minor hero for rescuing some Terandrian nobles, but she was a liability. Fighti and the three Goblins all had to speak in code, pretend they were from a Drake city, and refer to their comrades by other names.</p>
+<p>Living near Liscor helped with the illusion, and Fighti had begun to refer to Goblinhome as ‘Flooded Waters’ the city. Rags was now, instead of Chieftain, the ‘Little Boss’.</p>
+<p>And so on.</p>
+<p>Anyways, she eventually sold Rags with her description of The Prawn’s Repose by explaining what made it so special.</p>
+<p>Wake up, get out of your soft bed to the rocking of the city; it moved on the currents slightly, which unsettled Chickenruler to no end, but Fighti loved it. Smell the fresh sea air out the window and see the boats coming in.</p>
+<p>Drowned Folk fished. It was their primary source of food, not agriculture. Each morning, colorful sails and ships would emerge from the sea, bearing their catches to port. It would be bustling at dawn, and Fighti would trot out of her room and begin to head down the long, central staircase.</p>
+<p><strong>“Morning and fair currents to ye.”</strong></p>
+<p>“Morning. Uh, may your tail be straight.”</p>
+<p>Fighti nodded to a Drowned Man, who paused at the greeting, then grinned. She felt like that was a good greeting. Both of them were sniffing the air, and Fighti heard someone <em>sizzling</em> something hot. She smacked her lips together.</p>
+<p>Drowned Folk did amazing things with spices that even Calescent could learn from. She paused on the first floor to watch a [Chef] in the open kitchen carefully rolling a piece of fish in a kelp-based powder filled with the spices. Once coated, he tied a little string around the tail, then added it to a full fistful of prepared fish. Then? He strode over to a pot of oil and dunked the fish inside, securing the strings to a small loop overhead.</p>
+<p><em>How decadent. </em>Fighti’s mouth began watering instantly. The kitchen didn’t throw out the cooking oil either and took great pains to preserve it with spells and Skills, so it had the flavors of hundreds, nay, thousands of meals before it. Apparently, you could buy good ‘oil stock’ for cooking that had subtle flavors baked into it.</p>
+<p>Fighti had some kind of memory from Calescent arguing with Rags about not re-using oil, and she’d asked the [Chef] about it only to be informed that was <em>landfolk</em> oil. By which he apparently meant vegetable oils and the stuff used above the water. Fighti had bought a flask of this special oil from a [Merchant] who said this particular brand could be reused forever; the others had only said it was good for up to ten or twenty days with the right preservation techniques, max.</p>
+<p>Because Drowned Folk had so little access to land-based agriculture, they used seaweed and kelp, some of the few plants that they grew, as their flour analogues. It resulted in a different texture to the food, tougher, but they loved their spices and pulled them from around the world.</p>
+<p>However, because they fished so much, oil was in great supply, and they used it in a lot of their cooking.</p>
+<p>So that was breakfast. Above average already for getting to see it made. But here was where Fighti sold Rags on the experience. As she waited for food to come to her—you ate what was the dish of the day or you didn’t eat at all, which she approved of—she took a seat in a jelly chair.</p>
+<p>As in a slightly wobbly, yet firm chair filled with something called ‘thick water’, made from the membrane of a giant jellyfish. They were like deformed potatoes, and Fighti settled back, put her bare feet down as she kicked off her slippers—and felt them splash into the pool.</p>
+<p>Yes, the pool. There was a huge pool connected to one of the waterways that ran through Nombernaught; unlike the ones that Drowned Folk used for travel, both by swimming and riding above, this one had a specific task.</p>
+<p>It had fishes in it. Tiny little ones that flocked to anything in the water by the hundreds. Fighti felt the weirdest sensation on her feet as they nibbled at her calluses and dead skin. She lay back and relaxed as some of the other patrons did the same.</p>
+<p><strong>“Huh. And here I thought the fish wouldn’t like a Drake, scales and all. I guess new food’s better than none.”</strong></p>
+<p>Her Drowned Folk friend from the stairwell was copying the act a few seats away, his feet a Human foot and a fin foot that he massaged wearily before inserting into the water. He had a leg-brace to help him walk, Fighti realized. She responded after a moment, voice casual.</p>
+<p>“Eh. I’m tasty, probably.”</p>
+<p>He grinned at that. Before Fighti could say anything else, the food arrived, hot on a plate, and she tossed a crumb of fish into the water just to watch them go wild. Fighti was enjoying this inn way more than the other Goblins, who were nervous and ate in their rooms.</p>
+<p>And a lot more than the Humans from House Lanight; one of them was awake and eating at a table. The maid, or whomever she was, had a haunted look on her face and wasn’t enjoying the feet-cleaning fish. Fair to her; her entire expedition had been wiped out, and she had problems, even now. She kept glancing at the stairs above, waiting for her mistress, Lady Calva, to wake.</p>
+<p>She was an odd maid. Fighti had seen Magnolia Reinhart’s, and this maid wasn’t as professional looking. She ate alone, though she did run messages back and forth between Lady Calva and Terandria constantly. Maybe it was a cultural thing.</p>
+<p>Anyways, Fighti ate with her plate on her lap as someone began to play on the huge harps in the back of the room. A server came by and handed her a non-alcoholic drink the color of amber with a dark bottom; it was bitter, but in that great way. If she wanted to, Fighti could then head to the sea where Drowned Folk swam or the markets; she could descend into the lower levels, which were still underwater, or charter a ship to anywhere in the world.</p>
+<p>But mostly, she just wanted to ride a boat across the canals that bridged the entire city and admire it from up close. She wasn’t brave enough to do that yet—but the Drowned Man encouraged her as they struck up a conversation.</p>
+<p><strong>“Don’t just ride the waterways. Ride a Sea Ferry; they’ll take you down a thousand feet and show you wonders.”</strong></p>
+<p>“That’s a thing?”</p>
+<p><strong>“Oh yes. Don’t you landfolk have guided tours?”</strong></p>
+<p>“Eh. Land isn’t <em>that</em> interesting. What else can be done here?”</p>
+<p><strong>“Visit the Surface Scopes? Now they’re above water, the view’s different, but they’re made for people to stare up at the sky from the deeps. All you can see now are stars, distant places, and the sea from above. Or you could try wavesurfing. That’s more for Drowned Folk who live next to the air, but we all’re half landfolk, I suppose.”</strong></p>
+<p>“I saw that yesterday. Sounds fun.”</p>
+<p>She’d bought souvenirs as well; the oil, several lovely fishhooks that Fighti thought she could use if she got to a freshwater source in the New Lands, some fine squid ink for Rags so she wouldn’t get mad at Fighti for using her emergency funds…</p>
+<p>And, uh, souvenirs. <em>Just a few! </em>The other Goblins hadn’t been able to get mad at Fighti for buying a carved miniature of Felkhr the Flying Gnoll and his glider. Or else she would tell Rags about the Colth doll that Mousebite had in her bags. They sold Named-rank adventurer merchandise here, and Fighti had gotten one of Saliss for half-off. No one wanted a naked Drake.</p>
+<p>Fighti sighed longingly as a bowl of popcorn shrimp was placed in front of her. And no, that wasn’t a dish from Earth; Drowned Folk had simply invented something almost directly similar to the concept. Regretfully, she shook her head at the Drowned Man.</p>
+<p>“Sounds like fun. But I have to go beat up an old man after breakfast.”</p>
+<p><strong>“Uh. What?”</strong></p>
+<p>“Sorry, I meant threaten to shoot him. We don’t beat him up. Well, I watch. Maybe it’d be better if we broke his knees, though. But hey, not my job.”</p>
+<p>The maid half-turned to Fighti with an appalled expression, but one that suggested that part of her thought Fighti was right. The Drowned Man just stared at her as half the guests looked over. She sipped her drink. The moment she saw Lady Calva run downstairs, Fighti sighed.</p>
+<p>“He’s left the city again! Miss Fighti, quickly!”</p>
+<p>Fightipilota helpfully pointed at the [Lady].</p>
+<p>“Sorry, got to go. Threatening old men is a full-time job.”</p>
+<p>Though she could swear that of all his people and the Goblins, Lord Olvos Lanight liked Fightipilota the least. She wondered why. She was pretty charming, in Fighti’s personal opinion.</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>A [Knight] rode towards the Sword Crabs again, panting for breath. His horse didn’t want to go; the brave stallion kept trying to turn, but he’d urge it into place and raise his lance.</p>
+<p>A new lance. The same man. The same look in his eyes. Four days now, he’d been here. Enough that the Sword Crabs had begun to recognize him. But every time they scuttled forwards to ensnare him, he rode back, set himself, and charged again.</p>
+<p>It was pointless. Even if he landed a good hit—and it was by no means a sure thing since they could parry his lance—his lance would barely pierce their chests.</p>
+<p>The blunt truth was that the lance was the wrong weapon to use here, at least alone. It was a fine weapon for killing larger monsters, but to strike a fatal blow, the [Knight] had to charge in and commit to the full strike.</p>
+<p>He could not. The Sword Crabs would catch him and unhorse him or kill the horse before he could deal them the mortal wound. Perhaps a hundred [Lancers] on open ground would do well, but it was still a costly, dangerous maneuver.</p>
+<p>—And the old man was not <em>that</em> high-level. There were sixty-plus crabs in this nest, still snapping at bones, but mostly fishing in the waters with their long claws, looking for more food, mating—</p>
+<p>Bones and shattered dreams. He rode in one himself, white hair blowing in the sea breeze, lance raised, and struck a crab as it swatted at him.</p>
+<p>Once, twice—the Sword Crab retreated, leaking blue ichor from its chest, and another took its place, warily swatting at the [Knight]. He could drive one back, then another, force as many as a dozen to retreat. But then his horse would slow or his hand would lose the strength to grip the lance properly.</p>
+<p><em>Still, he rode. </em>His mithril armor had taken on another layer of dents. It was a miracle his horse was alive, but the stallion seemed more aware than its master; it leapt back from a swing of a crab’s claw as the [Knight]’s lance cut the air in a miss. He turned—</p>
+<p>And Fightipilota sighed as she flew Lady Calva and her retinue in for landing. Evilknee, Mousebite, and Chickenruler all shook their heads.</p>
+<p>“<em>Grandfather, stop! Please!</em>”</p>
+<p>The young woman ran across the sands, heedless of the danger of the Sword Crabs. Her two warriors, a [Man-at-Arms] and the [Archer], watched the crabs nervously. If they decided they were hungry…</p>
+<p>Fighti sat on Coldcream’s back, Thunderbow casually trained on the nearest Sword Crabs. The presence of the Frost Wyvern made the crabs hesitate.</p>
+<p>The old man was Lord Olvos Lanight of the Lantocracy of Bitorm. An important man? Fighti eyed the maid striding next to the [Lady] and wasn’t sure. He could certainly pay for the inn, and the Drowned Folk were humoring Lady Calva. They’d even searched for a ship to take her home—but the situation with Lord Olvos had sort of put a hole in their plans.</p>
+<p>He was here again. The first day, nearly a hundred Drowned Folk had gone racing out to find him. The second day, they’d sent a party the moment he slipped out and had tried to bar the gates against his passage.</p>
+<p>The third, they’d let him go. Today, Calva and the Goblins were the only people trying to talk the old man down. Fighti leaned on her Thunderbow as she watched the young woman pleading with him, tugging at his arm, and his gaze straying down to her.</p>
+<p>Then towards the Sword Crabs, like a ship headed towards a distant light only he could see. Fighti grunted to herself.</p>
+<p>The Drowned Folk got it. The only people who didn’t seem to were the Humans.</p>
+<p>Day after day. Fighti heard the two warriors speaking quietly to themselves; the two camp servants were out of the picture. She listened in. One of them had a bow, the other a sword and a crutch.</p>
+<p>The [Man-at-Arms] was mobile, and his legs were <em>sort</em> of mended, but he more slumped against the side of Coldcream’s leg, waving a sword at the Sword Crabs. If they charged, he might buy everyone a second with his body. But he kept insisting on tagging along, and Redfangs liked that kind of stupidity. The conversation between the two men was distinctly pained.</p>
+<p>“…lost his senses with grief. Lord Arcite should give the order to have his father arrested and put on a ship north for his own good. How does he even get out of the city?”</p>
+<p>“He bribed the Drowned Folk at the gates the first time. The next day, they let him out. They don’t care.”</p>
+<p>“Yah, they do.”</p>
+<p>Fighti called down to them, and the two men stiffened. One looked up at her with a flash of—the [Archer] mastered his tongue and bowed.</p>
+<p>“House Lanight’s in your debt, Miss Drake. But please, this is a personal affair. Lord Lanight has…every right to…”</p>
+<p>His voice broke. Fighti didn’t like it. Not the grief, but the way his voice wobbled and…it was a terrible thing to see the man’s unshaven jaw clench, see the arrow waver. The [Man-At-Arms] had his sword up, but his eyes were filled with tears.</p>
+<p>“Amateur.”</p>
+<p>That came from Mousebite. Chickenruler nudged the Redfang. Fighti just gazed at the old man as he went back for another pass.</p>
+<p>Tilting. That was the word for it. His form was as excellent as Tyrion Veltras’. A grave insult, but the only reference Fighti had. She watched Lady Calva run after him, and the maid dragged her back. The [Lady] was fighting, and Fighti winced as the Sword Crab landed a blow this time.</p>
+<p>It sent Lord Olvos reeling backwards, and he lolled, one arm dangling, holding the lance as it dragged behind him. He was definitely out for a good ten seconds as his horse carried him away. The two men groaned, but didn’t go to stop him as the girl ran to talk with the old man again.</p>
+<p>“Why don’t you hit him over the head and tie him up?”</p>
+<p>Fighti was curious. The [Archer] bristled.</p>
+<p>“<em>Strike him? </em>That is—Lord Olvos is one of the nobles of Bitorm, Miss Fighti. His roots date back to the Hundred Families of Terandria!”</p>
+<p>“I don’t know what that is. What’s your name?”</p>
+<p>“<em>Izrilians.</em>”</p>
+<p>The man-at-arms muttered. The [Archer] raised a hand to his head; it was bandaged. He favored Fighti with a grief-filled expression, like one of Erin’s flames settled to the bottom of a drink. Only, it was his face.</p>
+<p>“[Master of the Hunt] Urei, of House Lanight. There stands Maukset, a retainer to Lady Calva. Yonder is Miss Zemine, in service to Lady Calva. The two men you rescued were hired help. We are all that remains of the expedition to the new lands by House Lanight.”</p>
+<p>“A disaster. From the moment the storm sent our ship awry to the damnation of Terandria’s fleets by the treacherous [Pirates], Dullahans, and that <em>[Innkeeper].</em> This entire land is cursed.”</p>
+<p>Maukset spat. Fighti eyed both men. They both had on just ordinary clothes; they’d rushed out after their [Lord] once he’d escaped the minders set on him by his granddaughter. But even now, they both carried one other thing along with their weapons: an unlit lantern.</p>
+<p>“The [Innkeeper]’s nice. What does Bitorm do? What’s House Lanight do? What’s a retainer? Don’t you all work for that old guy?”</p>
+<p>She hadn’t had a chance to really chat the last few days; emotions had been high. They were still high, but at least…</p>
+<p>A groan. Lord Olvos rode again at the Sword Crab, lance steady as his horse galloped. This Sword Crab must have been young or talented; the [Knight] went to parry the claw and received <em>two</em> blows to his shield arm.</p>
+<p>It had been broken; even with a potion, Fighti guessed it was weak, and he was half out of the saddle as the Sword Crab raised an arm to hammer down on horse and rider.</p>
+<p>“[Piercing Shot]!”</p>
+<p>Urei shot it straight into the crab’s chest, and the crab didn’t even flinch, despite the arrow penetrating its shell. Fighti spoke and squeezed the trigger.</p>
+<p>“[Double Tap].”</p>
+<p><em>Her</em> bolt made the crab rock; one hit it dead in the chest, the other struck the claw, and it swiveled towards her, swinging its claw in a defensive pattern. Fighti reloaded as the [Archer] gave her a shamefaced bow.</p>
+<p>“<em>Hey, old man. Don’t make me shoot you again. You want to die? Go without the lance and horse next time! Leave the brave horsie to live!</em>”</p>
+<p>That provoked a noise of outrage from Lady Calva, and the [Knight] raised his head and gave Fightipilota his attention. The first instance he had looked at anything except for his granddaughter and the crabs.</p>
+<p>The other Goblins, the two men, the Frost Wyvern, Lord Olvos ignored. But Fighti…he inspected her face, then jerked his eyes towards his granddaughter and her maid. Then away. Fighti leaned over and whispered to the two men.</p>
+<p>“I think he’s mad because I shot him.”</p>
+<p>She could think of no other reason why he kept giving her the side-eye. The [Knight] rode, slowly resetting his lance. His granddaughter tried to grab the reins.</p>
+<p>“He holds no grudge, Miss. Speak to him with some—decorum, I beg you. Lord Olvos has every right to his grief. He…Lady Minhwe’s body lies yonder. <em>And we cannot even retrieve her remains.</em>”</p>
+<p>Ah. The [Man-at-Arms] was holding his sword in a shaking hand.</p>
+<p>“The Drowned Folk wouldn’t even send a group to recover the remains. <em>Heartless—</em>”</p>
+<p>“They warned you, they said. They don’t want to die for bones.”</p>
+<p>Maukset almost attacked her. He turned, sword in hand, and Fighti aimed the crossbow at his chest. He vibrated with fury, and Urei’s voice was strangled.</p>
+<p>“The Drowned Folk gave us no warning, Miss.”</p>
+<p>“They used lanterns.”</p>
+<p>Pale-faced, Maukset muttered an insult.</p>
+<p>“Those wickless [Pirates] first declared <em>their</em> claim on the land in low-light signs to us. On the heels of their kind attacking Terandrian Kingdoms! Then they claimed the coast was ‘infested with crabs’. The warning never reached Lady Calva or anyone else in seniority, no matter what the Drowned Folk claim on their end. <em>I </em>never heard it.”</p>
+<p>Fighti leaned on her Thunderbow.</p>
+<p>“That was [Pirates]. They’re Drowned Folk. They have a city; good claim to me. Did they say ‘crabs’ or Sword Crabs?”</p>
+<p>Urei broke in, his voice straining like a piece of taut rope slowly fraying.</p>
+<p>“<em>It was lost in translation. </em>How were we to know—”</p>
+<p>They fell silent, and Fighti’s voice was cheerful and direct, like a blade of glass through the ribs.</p>
+<p>“You should have. Or gone over to ask what they meant.”</p>
+<p><em>Or not tried to fight a bunch of crabs that weigh several tons each. </em>Fighti was trying to be nice, she really was. She felt bad for the Humans.</p>
+<p>They really were a weird lot, these Humans. Grief did things to you, but the four just sort of wrung their hands about the old knight without doing much. The [Lady] made sense; she was in shock. First time to a real battle, Fighti guessed. But the ‘maid’ seemed almost resigned to the knight trying to kill himself.</p>
+<p>At least the two warriors had an excuse; Maukset was in grave pain as he leaned against Coldcream, his face grey from standing upright. Urei was more put-together, but he had taken a head wound and seemed not to trust his feet either. Maukset muttered to Urei, turning from Fighti.</p>
+<p>“If only we had a <em>light</em> we might do aught to recover some—<em>some</em> remains. But our entire store of Lantern Lights is gone. Lord Lanight might have some…”</p>
+<p>“Little good they would have done.”</p>
+<p>“Some. <em>Could</em> we pull Lord Lanight onboard a ship?”</p>
+<p>“Even in his age, he might thrash us both, Maukset. Not to mention we could be hung ‘ere we return home.”</p>
+<p>Maukset licked his lips as Mousebite pointed at the two men incredulously. Fighti half-nodded. What was this? The [Man-at-Arms] turned to the [Master of the Hunt] for clarity.</p>
+<p>“Not by him, surely? Nor the rest of House Lanight…?”</p>
+<p>“The matter may seem to the other Lantern Lords as improper—”</p>
+<p>“They’ll kill you for touching that old guy?”</p>
+<p>Fighti leaned over her Thunderbow, and the two men jumped slightly. They turned back to Fighti.</p>
+<p>“He is a Lantern Lord.”</p>
+<p>“What? You can’t even slap him on the back?”</p>
+<p>“We cannot <em>force</em> him to do anything, Miss Fighti. Surely you would not force a—a [General] to quit the field? Lady Calva is the only person here who may reason with Lord Lanight.”</p>
+<p>Fighti just spat over the side of Coldcream’s neck.</p>
+<p>“That’s stupid. I’d kick my own Chieft—my own [General]’s ass if she told me something stupid. Why would anyone trust him?”</p>
+<p>She snapped at them, and for answer, the two men just turned to Lord Lanight.</p>
+<p>“It’s a beautiful light he carries, Miss Fighti. You cannot see it in his grief. But it stems from his lantern to the others. One lantern illuminates an entire province. He should have brought it to a glorious city founded on this damned continent.”</p>
+<p>Fighti just shook her head as they gazed at their [Lord] with genuine reverence. Perhaps it was because she just saw him now. He had not the look of a [Lord] of Terandria to Fighti now. He looked like a Redfang. And there was only one thing she believed was needed right now…</p>
+<p>Fighti shifted her aim up, eying the [Knight]. This was getting nowhere. He was even less receptive to his granddaughter’s pleas than the first three times they’d gotten him back.</p>
+<p><em>His cheeks looked thinner, and it wasn’t as if he’d had a lot of fat to lose when she’d first seen him. </em>He didn’t feel the blows he’d taken, and yet he finally landed a blow on the Sword Crab, making it buckle as the lance took out a leg. The Sword Crab dragged itself back, and another moved forwards…</p>
+<p>Yes, she knew the old [Knight]’s type. With a sigh, Fighti glanced at Chickenruler.</p>
+<p>“Redscar coming, you think?”</p>
+<p>“Eh. Maybe tomorrow. Long way, even with C—Little Boss’ Skills for [Fast Traveling].”</p>
+<p>“Aspat. Fine. Mousebite, cover me.”</p>
+<p>The Redfang climbed up, grumbling, as Fightipilota slid down Coldcream’s wing. She sauntered forwards, checking the shortsword at her side. The [Knight] was riding back to her, and the [Lady] was weeping now.</p>
+<p>She was some kind of [Strategist], or so she’d claimed. Fighti had never seen Rags crying when lives were on the line. Lady Calva seemed young. New to battle. Her maid… Miss Zemine, was it?</p>
+<p>If that woman was a [Maid], Fightipilota decided that<em> she</em> was a [Submarine Captain]. She looked too calm given her proximity to Gold-rank monsters. Which meant she might be a Magnolia-type [Battle Maid], but she hadn’t given her [Lady] a handkerchief for the boogers.</p>
+<p>“Hey, old man. How many times are we doing this? Come back to the city. At least today. Tomorrow’s a better day to die, promise.”</p>
+<p>At first, the [Knight] didn’t seem to hear her. Calva gasped and looked at Fighti, but then Lord Olvos’ gaze swung down. He didn’t halt, but his horse did, sniffing at Fighti, who patted it on the nose. She pulled it towards the Wyvern.</p>
+<p>“Come on, Bravehoofies, you deserve grass…kelp stuff. Let’s go.”</p>
+<p>The Sword Crabs were beginning to object to the presence of the outsiders. They were moving slowly, maneuvering right and left subtly, but Fightipilota knew they had time. The horse trotted a few steps, licking Fighti’s hands, before the man halted the horse with his legs.</p>
+<p>Fighti slapped his knee, and he jerked slightly.</p>
+<p>“Stop that dumb face. Or I’ll shoot you—again.”</p>
+<p>“Miss Fighti, that is a <em>Lumis Lantern Lord</em> of Bitorm! You may not speak to him like—”</p>
+<p>Maid Zemine spoke sharply, and Fighti ignored her. She glanced up at the old man. It was he who spoke in a voice like a reed’s whisper. Hoarse. Surprised, as if he hadn’t thought he needed to speak again.</p>
+<p>“She doesn’t care nor know. Let go of me.”</p>
+<p>His eyes bored into Fighti’s with real animosity this time. She grinned up at him with all her teeth, knowing Drakes had a smile almost as toothy as Goblins.</p>
+<p>“Nah. You make granddaughter cry. You come or Mousebite snipes you. But her aim is worse than mine.”</p>
+<p>She jerked a thumb at the Goblin in the gunner’s seat, and the old man’s eyes flicked up to her. Then down to Fightipilota. He glanced at Zemine, not his granddaughter, Calva, and said a word.</p>
+<p>“Drakes?”</p>
+<p>Fighti frowned, but the maid seized upon the question.</p>
+<p>“From the Flooded Waters city, Lord Lanight. Far to the northeast; Rider Fighti has volunteered her time given the circumstances. I beg you, sire, your son and the entire house and the Lantocracy’s Illuminated Courts all wait for your return. If you would just come back and speak with—”</p>
+<p>He tuned her out even as she spoke. A thousand-yard stare at the Sword Crabs…then at Fighti.</p>
+<p><em>Uh oh. </em>Fighti had a sudden, very worrying thought. Why was he giving her that look? It couldn’t be. It wasn’t as if she’d attacked h—</p>
+<p><em>She’d shot him with the Thunderbow. Aspat, aspat, aspat—</em>but Rags had said nothing! Then again, it wasn’t like any Goblins had failed the Skill before, and she was so far away—</p>
+<p><em>Rags was going to kill her. She was going to feed Fighti to the Wyvern Lord. </em>For a second, Fighti debated letting go and allowing the [Knight] ride to his death.</p>
+<p>But only for a second. She looked at him and saw the same expression she had seen the first day when he’d ridden calmly at the Sword Crabs without pride. Without hope, raising a broken lance skywards and keeping himself up by sheer force of will.</p>
+<p>If she had met the Lord Olvos Lanight of today, she might have let him ride until he was nothing more than bloody paste on the ground. Eh—she would have tried to save the horse.</p>
+<p>But for this stupid [Knight]…for the things she had lost, Fightipilota pulled.</p>
+<p>“Come on. One more day, then I’ll let you get eaten. Promise.”</p>
+<p>He resisted a second.</p>
+<p>“Promise by what?”</p>
+<p>“My honor or something.”</p>
+<p>The pilot gave the knight a smile like the sun shining down on them all. He gazed down at her, face expressionless.</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>Lord Olvos sat stiffly between the others as his granddaughter’s head swung from him to Fighti. As if both the man she had known since before she could walk was as strange to her as the Drake who called herself a ‘pilot’.</p>
+<p>His voice was flat. Fighti’s cheerful. Maid Zemine listened intently, eyes flicking to Lord Olvos with faint confusion now and then, an expression mirrored on her retainers.</p>
+<p>The other disguised Goblins let Fighti talk, mostly on her side.</p>
+<p>Coldcream wondered when he’d be allowed to land and pee.</p>
+<p>“Name your reward, flier. Gold? Potions. They may be bought. Arms.”</p>
+<p>“Eh. Little Boss says she doesn’t want anything but gratitude. Just stop riding into Sword Crabs.”</p>
+<p>“What…do you…<em>want?</em> My granddaughter shall leave for her home. Name it or the debt will be unfulfilled.”</p>
+<p>Lady Calva spoke up, voice nervous.</p>
+<p>“Grandfather, I—I could stay. As long as you’re h—”</p>
+<p>Both knight and pilot ignored her. The Goblin grinned at the man again and shook her head.</p>
+<p>“Nothing. Okay. A basket of crunchy fried fish from the inn. Is very tasty. Good for the road back.”</p>
+<p>Silence. A rasp, like someone knocking dust off a drawing sword, and the distant tone came closer to the present.</p>
+<p>“—I am the Lantern Lord of Lanight. My noble house controls the mithril mines of Bitorm. My armor, my weapons. Your leader knows this.”</p>
+<p>“She does? Wow. Guess she probably does. Is very cool. Nice armor. Saved you from the Sword Crabs. Should have had more.”</p>
+<p>“<em>How much and to where?</em>”</p>
+<p>“How much what? Mithril? Uh, Little Boss didn’t say. So it’s okay. Lantocracy of Bitorm. What do you do with the lanterns?”</p>
+<p>Lord Olvos said nothing. He kept staring, as if waiting for Fightipilota to break and reveal something. When she did not, his confused silence compelled his granddaughter to speak.</p>
+<p>“The Lantocracy is known for our magical lanterns and the powers of their light, Miss Fighti. Across the world. The Lantern Lands of Chandrar were inspired by our ancient customs. This—this leader of your city? Of your unit? Is she a [Commander]? An officer? I am a graduate of Bitorm’s own academies. What is her name? I should like to send her a [Message] expressing my profound gratitude and that of Bitorm.”</p>
+<p>“Her name? I—uh—well—she doesn’t like [Messages] from strangers. Hates the Mage’s Guild. Yep. <em>Peh!</em> Oops, sorry, Coldcream.”</p>
+<p>Fighti wiped spit off the Wyvern’s scales. The Humans stared at her.</p>
+<p>“At least her name, then? If I send a Runner to the city…no, we’re so far. What would be the best way to contact her?”</p>
+<p>“Uh—uh—maybe I’ll give her your name, and she’ll do something with [Message]? Yeah, that’s a good idea. She has a Skill so we don’t need it. [Memo].”</p>
+<p>“Oh, I see. How advanced. She must be a gifted leader.”</p>
+<p>“[Strategist], actually. She’s very young. Her name? L-Lilbrasi.”</p>
+<p>“<em>Strategist Lilbrasi? </em>Light my lanterns. I thought this entire time you were saying ‘Little Boss’.”</p>
+<p>“Aha! That’s her nickname. Because she’s short. And bossy. Heh. Heheheheheh…”</p>
+<p>If the other Goblins could have kicked her without giving anything away, Fightipilota’s sides would have been a mass of bruises. Even Coldcream was giving her the fisheye. However, Lady Calva fell silent. It was Lord Olvos who tried one last time, voice laden with heavy suspicion. Exhaustion.</p>
+<p>Curiosity?</p>
+<p>“Why did you come here?”</p>
+<p>“Eh. Lots of people need rescuing. People like you. Sorry we didn’t get there sooner. Some fancy [Lady] hired us for the job. Why did <em>I</em> come? I like flying. Your people died. It’s…tragic. Very bad. There aren’t enough words to say. You can’t die yet. Not with cute granddaughter around. Trust me.”</p>
+<p>The Goblin said all this between turning and checking the skies around her, signaling for the Wyvern to descend a bit, meeting his eyes. The knight gazed at her. Then down at something in his hand.</p>
+<p>His eyes flickered. He turned to where the Sword Crabs still were and gave up. Then lifted the object in his hands.</p>
+<p>A glowing, white lantern reflected in his eyes. Mithril, etched and holding a pure light that had no flame. Calva blinked at the lantern, then her eyes shifted to Fighti. Reassured, she smiled at her grandfather.</p>
+<p>“You see, Grandfather? Everything is going to be—fine—”</p>
+<p>She swallowed, and the lantern’s light flickered black. Lord Olvos gazed at the light. He looked at Fighti, who gave him a round-eyed, puzzled expression.</p>
+<p>Silently, Lord Olvos hurled the lantern off the Wyvern’s back.</p>
+<p>Both his retainers nearly leapt off the Wyvern trying to grab for it. Fighti had no idea what was up with the old guy. But she still got it.</p>
+<p>They never found the lantern. Lord Olvos was brought back to Nombernaught, where the Drowned Folk nodded at him and a desperate man and many people were brought over via scrying orb to remonstrate with him.</p>
+<p>He just stared at Fighti until she ducked out of sight. She had never been more grateful to hear Rags’ [Memo] in her head.</p>
+<p>“<em>Fighti. Finish this up and get back immediately. Don’t tell House Bitorm anything about the ‘Flooded Waters’ city. I’ll fake what I can.</em>”</p>
+<p>“<em>Hi, boss. Your name is Lilbrasi. And, uh…about that. Don’t get mad! Have a nice drink first. Did wedding go well?</em>”</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>Nothing would stop the [Knight]. He rose despite the two men posted outside his room. Urei and Maukset were asleep, despite their best efforts, late in the night. They were exhausted from healing and had help on their way to slumberland.</p>
+<p>The Drowned Folk hired by House Lanight to watch the [Lord] had strict orders not to harm him. If they had intended to stop him, their loyalty for gold would probably not have gone further than him drawing his sword.</p>
+<p>The Drowned Folk had their own opinions on the tragedy. But regardless, the watchers in the common room, and the rest of the slumbering inn, never noticed the man leave his rooms.</p>
+<p>He passed over the two slumbering figures. His granddaughter might try to stop him—if she were awake, but he’d palmed the sleeping powder into her drinks too. As for the observers downstairs—they missed the flicker moving down the staircase.</p>
+<p>Lord Olvos’ mithril armor was damaged; the [Invisibility] spell wasn’t working perfectly, and he would be vaguely visible, like a silhouette or ghost.</p>
+<p><em>Ghosts, like those that had set Bitorm to all their excitement not long ago. </em>It was a bitter thought.</p>
+<p>The [Knight] passed out of the inn. No one noticed or stopped him. The only person who could have conceivably done so was Zemine, who had the levels and experience on even Calva to notice the powder and the illusion spells.</p>
+<p>But she had no right to stop him. The hand of the crown should have noticed…something. Anything. She should have done something, but she, like he, had trusted to the metal he wore, to their name that was ill-known elsewhere in the world.</p>
+<p>He saddled his horse and wondered if the Goblin was right. He should take another one—but the horse just grabbed his gloved hands and didn’t resist, though it surely knew where he went.</p>
+<p>“Fleance. It’s time to go.”</p>
+<p>He rode out of the gates, and Drowned Folk watched him go. Some offered him their strange salutes. He was grateful for that.</p>
+<p>The man rode through the night towards where his love, so much of it, lay. He was grateful his granddaughter was alive. He was relieved his son had not come with them. He was…</p>
+<p>Empty.</p>
+<p>He had been wearier as he lifted his lance, trying to buy time for the Sword Crabs to lose interest in the survivors. He had been more desperate in the first moments.</p>
+<p>He had been weaker as time came to crawl and reached a point where it could never go back.</p>
+<p>As he rode, the knight simply wondered what the Goblins wanted. A poor thought. An unworthy one. The only one he had; the rest was a calm certainty and short journey through the night.</p>
+<p>Who could really gainsay him? Who would pull him aside, look him in the eyes, and tell him he had a right to walk or sail away and call this merely a disaster, a turn of fate? He had taken his vows as a [Knight], and if they meant anything…</p>
+<p><em>That Sword Crab with a mark in its chest. </em>Of them all, he wondered if he could kill it, even if he rode at it. He knew, now, the entire horde would not die. The Drowned Folk had told him an entire Gold-rank team would hesitate to take the fight to them. They could be blown to pieces, perhaps, from afar.</p>
+<p><em>Just one, then. </em>Now, Lord Olvos was questioning himself as his horse rode across the sand.</p>
+<p>Not this. But why he had even been set on them.</p>
+<p>They were monsters. Crabs. They understood nothing. Day after day, and during those hours that would never cease, that eternity of setting his lance against them, he had looked for malice, for hatred. And there was a kind of malice. Hunger. Anger, hurt, pain, even vengeance.</p>
+<p>But nothing else. No grand plan that had led them forwards other than hunger. No enjoyment besides the kind an animal had.</p>
+<p>There was no point. Not for them.</p>
+<p>So the [Knight] rode until he was in sight of his destination. Slumbering mounds; the entire cast of crabs asleep. They were in the same place as the last six days, though their food was long gone. They must have found regular food in this place, but there was another more obvious reason for their presence: they were spawning new eggs after the bounty of nutrition they’d received.</p>
+<p>The thought was sickening to him, yet the [Knight] slowed and chose his approach. The crabs were alert, even in slumber they’d wake as he rode at them. The [Knight] lifted his lance and set it once.</p>
+<p>Tilting with Sword Crabs. He nudged his horse in the flanks and began to ride. At a trot, at first, then faster. A cold breeze blowing across his armor, trying to race past time itself, backwards, waiting and waiting—</p>
+<p>Then he heard the beating of wings and cursed. The [Knight] looked up, ready to shout and do violence this time no matter what he owed her. Or perhaps it was his armor she and her kind were after.</p>
+<p>Lord Olvos saw <em>two</em> Wyverns in the air. One had a familiar figure on the back of it, sitting with a giant crossbow mounted to the huge saddle, waving at him. The waving figure had two pointed ears sticking out from under a leather flying cap and glass goggles amplifying her crimson eyes.&nbsp; She was shorter than the others on the back: three Drakes in leather armor.</p>
+<p>The second Wyvern—he tensed as he saw a figure leap from it, a dozen feet, and land. There was a cheer—then eight more figures landed.</p>
+<p><em>Drakes. </em>Their leader was shorter than the rest by a bit, but he was very clearly in charge; he waved a hand as the Wyverns flew around him. Then reached for his sides.</p>
+<p>The Goblin in disguise drew two blades. One red, a longsword, the other a longsword as well, but crackling with lightning. Lord Olvos switched targets. Nine, plus two Wyverns and a crossbow.</p>
+<p>He felt relief, at least. The knight waited, and he heard a chant begin. It came from the eight warriors, then they were shushed—faltered—and amended the word slightly.</p>
+<p>“Redf—<em>Redsc…Redblade! Redblade! Redblade!</em>”</p>
+<p>The Sword Crabs instantly woke up.</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>‘Redblade’ was grinning at the [Knight]. The man had stopped on horseback, sitting proud, though it seemed he had nothing left to be proud of except his posture. He looked resigned, even relieved—then confused as Redscar turned.</p>
+<p>The Sword Crabs rose to their feet at once, alarmed by the intruders. The <em>clacking</em> began, a warning sound that turned anticipatory as they saw more food had come for them. They spread out, scuttling fast to encircle their prey and not let go. The [Knight] swung his lance from side to side, clearly aiming between the disguised Goblins and the crabs.</p>
+<p>Then he found his target.</p>
+<p>A huge crab in the back, biggest of the lot, a single, precise wound almost healed on his chest. When he saw it, the world ceased to exist for him and anything else.</p>
+<p>“That one.”</p>
+<p>Redscar murmured to his warriors. Each one was daubed in fresh warpaint; the eight best Redfangs still alive in his tribe. They didn’t have Carn Wolves; they were too heavy to bring on a trip like this at short notice.</p>
+<p><em>It would be fine. </em>Rags hadn’t been happy about Fightipilota’s request, but the moment he’d heard it, Redscar had known he had to go and see for himself.</p>
+<p>He hadn’t been disappointed. The [Blademaster] thrust one sword into the sky, holding it high overhead for the Sword Crabs to see. They recognized that, and the [Knight] dragged his attention away from his foe. With his other hand, Redscar pointed.</p>
+<p>“[You Are My Worthy Foe]. Warriors. <em>Follow me.</em>”</p>
+<p>The leader of the Sword Crab pack recoiled when Redscar pointed at it. It snapped its pincers warily, and the Goblins let out a ululating cry. Then they tensed.</p>
+<p>The circling crabs were closing inwards, but Redscar paid no attention to them. He turned to the [Knight] and gestured. A beckoning ‘come on’, universal to Humans as well as Goblins.</p>
+<p>Once, he did it. The lance wavered.</p>
+<p>A second time, Redscar motioned, and he saw confused eyes shifting from him to the Sword Crab. Then—hesitation. Incredulity.</p>
+<p>That would do. Redscar whirled as a Sword Crab scuttled forwards, claw arm raised to slash downwards with deceptive speed.</p>
+<p><em>[Crimson Whirls My Blade].</em></p>
+<p>When he swung his sword, the claw fell to the ground, and the crab stared at the stump of its limb, recoiling. The other Sword Crabs fell silent, incredulous, and Redscar pivoted. His warriors charged with a single howl, and the Sword Crabs fell back, claws on the defensive. A [Knight] galloped forwards, lance levelled, and struck one in the eyestalk.</p>
+<p>The [Blademaster] walked. The moons cast vast shadows, dancing around huge, lumbering Sword Crabs, Goblins leaping, dodging, slashing—the shadows split around him, tiny wisps, like blades of grass.</p>
+<p><em>Or blades. </em>A million blades made of shadows that reached out and passed over the Sword Crabs surrounding Redscar. Just a Skill.</p>
+<p>Only a Skill delivered as a consolation prize by one of the greatest masters of blades to ever walk the world.</p>
+<p>Three Sword Crabs flinched. One maneuvered an eyestalk to stare down at the thousands of cuts standing out on its shell. Not a single one was deep, but it was like someone had run flechettes across the crab’s entire body.</p>
+<p>Two of the Sword Crabs, unnerved, backed away. Redscar let them go. If you balked at that, you were not ready.</p>
+<p>A claw swung at his chest, and he leaned under it. <em>Fast.</em> As fast as Garen said—</p>
+<p><em>It opened and tried to snap,</em> and he threw himself left, leg coming down. Spinning. A slash turned the ground into billowing dust, but the Goblin was gone. The Sword Crab was fast; it had lost one of its six legs, but it attacked with both claws, swinging them into offense and defense with barely any openings.</p>
+<p>The Goblin leapt one claw, kicking off of it as it snapped. He used the flat of his sword to <em>push</em> against another claw and move himself out of the way. Landed, stabbed the ground, and vanished—</p>
+<p>Only at the end did a claw slash at his head, too fast for Redscar to dodge. So he grunted.</p>
+<p>The Sword Crab’s claw, as wide as he was, <em>flicked</em> to the side as the red blade parried it, and the giant crab pulled its claw back and waved it a few times in front of its face, before scuttling back.</p>
+<p>[Effortless Parry].</p>
+<p>Redscar kept grinning, but he clenched his sword hilt tighter. A waste of a Skill. Sloppy. But he had seen what the crab could do.</p>
+<p>The Goblin raised his sword as the Sword Crab scuttled left and right, seeking an opening. This time, when it stabbed with its claw, he waited until it jerked down to try and snag his legs. The crab snapped—saw the Goblin was <em>on</em> its claw, and tried to slash at Redscar.</p>
+<p>Six steps and he slashed the claw off and then impaled the Sword Crab from above. Redscar landed as it flailed with its left claw. Turned, still trying to kill him.</p>
+<p>The crab collapsed onto its side as he cut one leg off. It snapped at him, and he cut another off. Then it was dragging itself back.</p>
+<p>Redscar let it go, exhaling. It would live if it was lucky. Then he ducked another claw and turned, parrying another blow.</p>
+<p>He spoke no Skills. Nor did most of the Redfangs, except in necessity. They fought in careful groups, refusing to be drawn out of their close formation, watching each other’s backs. Redscar’s chest was hot, but his blood was cold.</p>
+<p>It confused the knight, who rode forwards, impaling another Sword Crab. He wrenched the lance back and saw Redscar stride past him and point.</p>
+<p>Two Redfangs charged the wounded crab with shouts, but the Goblin held up a hand, forestalling the [Knight] pressing his attack. He gestured; their path towards the leader was waiting.</p>
+<p>Focused. That was it. Redscar leaned out of the way of another crab’s claw and cut it off at the joint. He didn’t look bored, but he moved from blow to dodge to parry as if unsurprised by it all. As if this were not combat, but something else. Something that mattered more than just battle. Redscar checked his companion as the [Knight] surveyed the battle.</p>
+<p>Frost breath was keeping a lot of Sword Crabs back; the Redfangs had driven four more off, and now the [Knight] was studying Redscar.</p>
+<p>He’d seen Redscar best the first crab. He gazed up as two Thunderbows boomed and another crab collapsed, legs shot out from under it. His eyes were roaming the confused cast of crabs—that was what you called a pack of crabs, apparently. A cast. Redscar had looked the word up.</p>
+<p>“There.”</p>
+<p>The man seemed confused by Redscar’s ability to speak. He followed the finger and saw the leader, advancing slowly, <em>clacking</em> its pincers.</p>
+<p>“They don’t have any real intelligence. They’re crabs. There was never a point to this. Nor honor or valor.”</p>
+<p>The man meant the Frost Wyverns blasting the majority of the crabs and keeping them wide. Or maybe the little Sword Crabs. Even ‘small’ ones reached up to the Goblin waist. They had cute little claws and snapped them as the adults kept them back.</p>
+<p>The knight stared at them. Eyes sunken, as if he were looking into the past. His eyes sought something in the biggest Sword Crab’s strange ‘face’.</p>
+<p>Redscar just saw a crab. But he had seen this before.</p>
+<p>Fightipilota was a Redfang. Of course she’d recognized the signs.</p>
+<p>In response to the man’s statement, the [Blademaster] just lifted his swords.</p>
+<p>“True. There’s no meaning in them or the fighting.”</p>
+<p>The knight turned to him, betrayed by the statement and almost relieved. Redscar whistled, and his Redfangs formed up.</p>
+<p>“The meaning is in the doing. <em>That one.</em> Leapwolf, keep them off us.”</p>
+<p>He pointed his sword. A Hobgoblin nodded, brushing blue blood from his face. Once more, the Goblins charged with their name on their lips.</p>
+<p>This time—the Sword Crabs backed away. Redscar ran as the largest Sword Crab rushed at them, properly fearless. He saw that lance rise.</p>
+<p>Neither Human or Goblin saw glory in it, but the Goblin still began to run. When he swung his sword, he cut another crab’s claw, taking off the lower half. He slashed outwards as he dove under another crab, taking its legs out. Electrified another with a single stab of his blade and opened up another’s chest—lightly—</p>
+<p>Swinging his swords until they were covered in blue blood and the crabs backed away from him. The Goblin raised his sword over his head, brimming with silent pride, and walked forwards with the [Knight].</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>The Sword Crab deserved its place as the biggest and strongest. It kept fighting, even when the Goblin took out both its eyestalks. The deed surprised the [Knight], but it was not <em>easy</em>, not even between the two of them.</p>
+<p>None of the Redfangs interfered, nor Fightipilota and the Wyverns; the man was on his feet, his horse stumbling away, when he carved open the crab’s chest, letting more entrails spill out. It kept snapping, its claws notched by Redscar’s blade leaking little blood, and tried to back away at last.</p>
+<p>The knight hesitated. Blue blood streaked his armor, and he had dealt the mortal wound. Redscar delivered the finishing blow. He side-stepped.</p>
+<p><em>Clack.</em></p>
+<p>Then he brought Garen Redfang’s blade down, and most of the crab split apart, only held intact by the shell on its back.</p>
+<p>It was done. The Redfangs didn’t cheer as the Sword Crabs backed up several paces, realizing their leader was dead. None of the Goblins had fallen. Redscar shook blood off his blade and heard an unsteady voice.</p>
+<p>“Enough. The rest would be a slaughter. Let me…”</p>
+<p>He was on the ground, bending over broken mithril. Gathering something in his arms. Redscar averted his gaze out of respect and muttered to his warriors.</p>
+<p>They were not done.</p>
+<p>When Lord Olvos rose, he saw the Redfangs had brought something out of their bags of holding. Two were fiddling on the ground as the rest created a circle of blades around him and Redscar. Then he saw a flare of light as one struck a match and dropped it on a pile of tinder.</p>
+<p>They cupped their hands, blew, tossed some oil down, and soon had a fire going. The knight stared at it, uncomprehending.</p>
+<p><em>The Sword Crabs were all about them. </em>However, Redscar had something. He walked back and offered the [Knight] it.</p>
+<p>It was a lump of meat, which Redscar held over the fire on his sword. He motioned, and another Goblin laid a strip of meat on a frying pan and stuck it straight on the fire. As soon as the meat had charred enough, the Goblin pulled it off his blade and, swearing since it was hot enough to burn his fingers, tore it in half.</p>
+<p>“Here.”</p>
+<p>He handed it to the man. Olvos had recovered his wife’s bones. He waved a hand weakly.</p>
+<p>“No.”</p>
+<p>He was halfway towards Fleance when a hand pulled him back. The Goblin shoved the meat in his face; charred Sword Crab flesh, without seasoning.</p>
+<p>“Here. Eat. It isn’t for <em>you.</em>”</p>
+<p>All the numbness in the knight’s body might have turned to violence. Or just a collapse. But he stared at the Goblin—then at the way the warriors took a bite of the meat. They chewed, talking quietly, eating without apparent relish as the Sword Crabs <em>clicked.</em></p>
+<p>Olvos didn’t know why he took the meat, but he tried a bite.</p>
+<p>It wasn’t good. It tasted like, well, crab, but he wasn’t hungry, it burned his tongue. And yet he chewed and swallowed, and Redscar grilled another section.</p>
+<p>The crabs were all watching him. And the knight. They kept scuttling forwards a bit, testing the ring of swords, but—Olvos saw the little ones at the back and almost threw up his bite.</p>
+<p>It was Redscar’s words that kept him grounded. He began to grill another bite and spoke.</p>
+<p>“They are just crabs. If we kill them, they don’t understand. Not like Gargoyles. Eater Goats, Carn Wolves, they’re all stupid. Smart sometimes, but stupid. They understand <em>this.</em> They need to know not to do it again.”</p>
+<p>He took a bite of the dead Sword Crab he had killed, and Olvos understood. This time, he took another piece of crab and ate. The cast of crabs observed.</p>
+<p><em>Predators? </em>They watched the ten figures devouring their leader. The Sword Crabs were guarding their clutches of eggs; they would fight to the death. They should have rushed in, but they were watching him.</p>
+<p>Redscar. Whenever he lifted his swords, they raised their claws. As if they saw him as a kind of crab with deadly claws, for all his height. There was a strange magic to it; he held the Sword Crabs spellbound for a while.</p>
+<p>Redscar took two more bites, then tossed the rest of the meat into the fire. He pointed at the crabs as he spoke to Olvos.</p>
+<p>“No more than this. No children. No hunting. No…”</p>
+<p>One of the Sword Crabs had decided to resume the fighting. It scuttled forwards, claw raised, snapping, and Olvos tensed. Redscar spun and <em>bellowed</em> at the Sword Crab.</p>
+<p>It was a [War Leader]’s scream, wrath and fury incarnate and warning in a single twisting syllable. The Sword Crab recoiled; scuttled back amidst the ranks of the others. Redscar turned back to Olvos.</p>
+<p>“Is there anything else?”</p>
+<p>The knight stared at the stranger, who, to his eyes, appeared to be a short Drake with two magical blades. He shook his head as he gazed upwards, and the pilot waved at him.</p>
+<p>“No.”</p>
+<p>Redscar clapped his shoulder hard. Not in respect. Nor sympathy. As if those two gestures meant nothing in this moment and he knew it. It was just a hard clap to the shoulder.</p>
+<p>“Let’s go.”</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>The knight sat with the Redfangs on the beach, later. Far from the Sword Crabs. He swore he could still see smoke rising from that brief fire, but it had been hours.</p>
+<p>The other Redfangs didn’t say much. They didn’t celebrate except to comment on the fighting and their own satisfaction with how they’d done against the Sword Crabs.</p>
+<p>Warriors did that. Olvos heard ‘Garen said’ and ‘dangerous’, and other comments now and then along with expressive body language.</p>
+<p>Redscar was silent. So was Fightipilota. She’d come off the Wyvern and taken a seat around another fire. The [Blademaster] was skipping flat stones into the sea.</p>
+<p>He was bad at it. He scowled as Fightipilota got thirty-five skips and went to sit with Olvos.</p>
+<p>“We tell stories of how they fought as they lived, and how they died. You don’t have to. Fightipilota…Flighti or whatever her name is, called me. You look like my people.”</p>
+<p>“Drakes.”</p>
+<p>The two Goblins exchanged a look as Fighti nodded energetically and with considerable relief.</p>
+<p>“Yep, Drakes.”</p>
+<p>Redscar just snorted. He tapped his chest.</p>
+<p>“I’m…Redblade. I have seen warriors like you. So I came. After I go, it depends on what you want.”</p>
+<p>“You flew all this way to do what…give me closure? To keep me from killing myself?”</p>
+<p>Was this condescension? Kindness? The [Blademaster] just chuckled.</p>
+<p>“To show you how it is done. How many have you lost before?”</p>
+<p>Olvos’ head rose. He had no idea how old Redscar was, but he looked <em>young.</em> Lord Olvos’ hair was completely white. He had lived for seven decades, ruled as a [Lord], retired, and decided to ward his granddaughter on an expedition to lands untamed.</p>
+<p>“I have buried dozens…over a hundred friends. Soldiers. I have mourned my siblings and parents and even—children.”</p>
+<p>Redscar shook his head and crossed his legs.</p>
+<p>“Not buried. Lost. Lost their bodies. Couldn’t go back. Not died in battle or in sleep. Not sickness. Died when an Eater Goat ate them. Vanished in the snow.”</p>
+<p>The question…the [Lord]’s eyes flickered.</p>
+<p>“Enough. Too many.”</p>
+<p>“Yeah. Me? Hundreds. Brothers. Sisters. Father.”</p>
+<p>He kept grinning as he laid his swords before him, sitting cross-legged. The [Blademaster] spoke to the knight as the pilot sat there.</p>
+<p>“You come from good lands. You know death. I would never say otherwise. You know grief. I am here to show you how it is done when beasts kill us. That is what we are best at.”</p>
+<p>“Us Drakes.”</p>
+<p>Fighti added unhelpfully and got a kick for her troubles. She rubbed at her stomach as she tossed sand at Redscar, and Fighti looked at the knight.</p>
+<p>“Sorry for you. We all are.”</p>
+<p>“Thank you. And thank you for saving my granddaughter. And me.”</p>
+<p>The man felt empty. He sat there as the sun rose, and eventually, a screaming [Lady] came galloping towards him and threw herself from the saddle. His granddaughter. She looked so lost and desperate that Lord Olvos wondered how he could have imagined…</p>
+<p><em>Just a bit longer. </em>He touched his bag of holding.</p>
+<p>“Calva, send for a funeral barge, please. I am…not going back. Someone look at Fleance. I think he sprained a leg. These are…these are companions of Miss Fighti, was it?”</p>
+<p>“And Lilbrasi. This is, uh, Redblade. Her best warrior.”</p>
+<p>Calva turned, and the Drake picked up his swords and sheathed them. He shook hands, far more awkwardly than he had danced with the sword, and the knight sat there.</p>
+<p>At length, as the voices rose and fell around him, he buried his face in his hands.</p>
+<p>Then he wept.</p>
+<p>After a while, the pilot patted him on the shoulder, and he leaned against her for a while.</p>
+<p>That was all.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><strong>Author’s Note:</strong></p>
+<p>I am continuing to write a chapter a day. I have one more already ‘done’, so we at least have six days.</p>
+<p>How long will this continue, you may ask? Well, as long as I feel it’s working.</p>
+<p>Honestly, I may need to take gap days just so I don’t burn out, but I am going wholesale into a new style. Or an old one?</p>
+<p>The rhythm is different. Twice now, I’ve realized I’m tired and I can’t write as much as I want. So I truncate, I leave other points for later and have the reassurance that tomorrow be another chapter. However, I still have to provide an entertaining experience, so the attempt is made.</p>
+<p>Day by day.</p>
+<p>Thank my beta-readers, who are still keeping up with the speed of output. Thus far, I have had time to edit as WELL as write, so that may become the bottleneck later on. But for now, the chapters are coming out like…things that come out in order.</p>
+<p>Dominos.</p>
+<p>Oh, and one more thing. After much agonizing, I am back on the devil’s drink. The black sauce. The…coffee. I’m drinking coffee. I want the push it gets me to get to 100% effort in the mornings, or at least, higher than normal. I may regret it as the effect of caffeine wears off, but I’m back.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><strong>Volume 1 of The Wandering Inn, bound by Vellichor! (No, you can’t buy it.)</strong></p>
+<div class="tiled-gallery type-rectangular" data-original-width="500" data-carousel-extra="{&quot;blog_id&quot;:1,&quot;permalink&quot;:&quot;https:\/\/wanderinginn.com\/2024\/08\/01\/goblin-days-pt-5-redblade-and-lilbrasi\/&quot;,&quot;likes_blog_id&quot;:233997562}" itemscope="" itemtype="http://schema.org/ImageGallery"> <div class="gallery-row" style="width: 500px; height: 356px;" data-original-width="500" data-original-height="356"> <div class="gallery-group images-1" style="width: 167px; height: 356px;" data-original-width="167" data-original-height="356"> <div class="tiled-gallery-item tiled-gallery-item-small" itemprop="associatedMedia" itemscope="" itemtype="http://schema.org/ImageObject"> <a href="https://wanderinginn.com/2024/08/01/goblin-days-pt-5-redblade-and-lilbrasi/volume1-by-vellichor/" border="0" itemprop="url"> <meta itemprop="width" content="163"> <meta itemprop="height" content="352"> <img decoding="async" class="" data-attachment-id="17396" data-orig-file="https://wanderinginn.com/wp-content/uploads/2024/08/Volume1-by-Vellichor-scaled.jpg" data-orig-size="1183,2560" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="Volume1 by Vellichor" data-image-description="" data-medium-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Volume1-by-Vellichor-scaled.jpg?fit=139%2C300&amp;ssl=1" data-large-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Volume1-by-Vellichor-scaled.jpg?fit=473%2C1024&amp;ssl=1" src="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Volume1-by-Vellichor-scaled.jpg?w=163&amp;h=352&amp;ssl=1" srcset="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Volume1-by-Vellichor-scaled.jpg?w=1183&amp;ssl=1 1183w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Volume1-by-Vellichor-scaled.jpg?resize=139%2C300&amp;ssl=1 139w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Volume1-by-Vellichor-scaled.jpg?resize=473%2C1024&amp;ssl=1 473w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Volume1-by-Vellichor-scaled.jpg?resize=768%2C1662&amp;ssl=1 768w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Volume1-by-Vellichor-scaled.jpg?resize=710%2C1536&amp;ssl=1 710w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Volume1-by-Vellichor-scaled.jpg?resize=946%2C2048&amp;ssl=1 946w" width="163" height="352" loading="lazy" data-original-width="163" data-original-height="352" itemprop="http://schema.org/image" title="Volume1 by Vellichor" alt="Volume1 by Vellichor" style="width: 163px; height: 352px;"> </a> </div> </div> <!-- close group --> <div class="gallery-group images-1" style="width: 167px; height: 356px;" data-original-width="167" data-original-height="356"> <div class="tiled-gallery-item tiled-gallery-item-small" itemprop="associatedMedia" itemscope="" itemtype="http://schema.org/ImageObject"> <a href="https://wanderinginn.com/2024/08/01/goblin-days-pt-5-redblade-and-lilbrasi/volume1-2-by-vellichor/" border="0" itemprop="url"> <meta itemprop="width" content="163"> <meta itemprop="height" content="352"> <img decoding="async" class="" data-attachment-id="17397" data-orig-file="https://wanderinginn.com/wp-content/uploads/2024/08/Volume1-2-by-Vellichor-scaled.jpg" data-orig-size="1183,2560" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="Volume1 2 by Vellichor" data-image-description="" data-medium-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Volume1-2-by-Vellichor-scaled.jpg?fit=139%2C300&amp;ssl=1" data-large-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Volume1-2-by-Vellichor-scaled.jpg?fit=473%2C1024&amp;ssl=1" src="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Volume1-2-by-Vellichor-scaled.jpg?w=163&amp;h=352&amp;ssl=1" srcset="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Volume1-2-by-Vellichor-scaled.jpg?w=1183&amp;ssl=1 1183w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Volume1-2-by-Vellichor-scaled.jpg?resize=139%2C300&amp;ssl=1 139w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Volume1-2-by-Vellichor-scaled.jpg?resize=473%2C1024&amp;ssl=1 473w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Volume1-2-by-Vellichor-scaled.jpg?resize=768%2C1662&amp;ssl=1 768w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Volume1-2-by-Vellichor-scaled.jpg?resize=710%2C1536&amp;ssl=1 710w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Volume1-2-by-Vellichor-scaled.jpg?resize=946%2C2048&amp;ssl=1 946w" width="163" height="352" loading="lazy" data-original-width="163" data-original-height="352" itemprop="http://schema.org/image" title="Volume1 2 by Vellichor" alt="Volume1 2 by Vellichor" style="width: 163px; height: 352px;"> </a> </div> </div> <!-- close group --> <div class="gallery-group images-1" style="width: 166px; height: 356px;" data-original-width="166" data-original-height="356"> <div class="tiled-gallery-item tiled-gallery-item-small" itemprop="associatedMedia" itemscope="" itemtype="http://schema.org/ImageObject"> <a href="https://wanderinginn.com/2024/08/01/goblin-days-pt-5-redblade-and-lilbrasi/volume1-3-by-vellichor/" border="0" itemprop="url"> <meta itemprop="width" content="162"> <meta itemprop="height" content="352"> <img decoding="async" class="" data-attachment-id="17398" data-orig-file="https://wanderinginn.com/wp-content/uploads/2024/08/Volume1-3-by-Vellichor-scaled.jpg" data-orig-size="1183,2560" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="Volume1 3 by Vellichor" data-image-description="" data-medium-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Volume1-3-by-Vellichor-scaled.jpg?fit=139%2C300&amp;ssl=1" data-large-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Volume1-3-by-Vellichor-scaled.jpg?fit=473%2C1024&amp;ssl=1" src="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Volume1-3-by-Vellichor-scaled.jpg?w=162&amp;h=352&amp;ssl=1" srcset="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Volume1-3-by-Vellichor-scaled.jpg?w=1183&amp;ssl=1 1183w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Volume1-3-by-Vellichor-scaled.jpg?resize=473%2C1024&amp;ssl=1 473w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Volume1-3-by-Vellichor-scaled.jpg?resize=768%2C1662&amp;ssl=1 768w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Volume1-3-by-Vellichor-scaled.jpg?resize=946%2C2048&amp;ssl=1 946w" width="162" height="352" loading="lazy" data-original-width="162" data-original-height="352" itemprop="http://schema.org/image" title="Volume1 3 by Vellichor" alt="Volume1 3 by Vellichor" style="width: 162px; height: 352px;"> </a> </div> </div> <!-- close group --> </div> <!-- close row --> <div class="gallery-row" style="width: 500px; height: 191px;" data-original-width="500" data-original-height="191"> <div class="gallery-group images-1" style="width: 91px; height: 191px;" data-original-width="91" data-original-height="191"> <div class="tiled-gallery-item tiled-gallery-item-small" itemprop="associatedMedia" itemscope="" itemtype="http://schema.org/ImageObject"> <a href="https://wanderinginn.com/2024/08/01/goblin-days-pt-5-redblade-and-lilbrasi/volume1-4-by-vellichor/" border="0" itemprop="url"> <meta itemprop="width" content="87"> <meta itemprop="height" content="187"> <img decoding="async" class="" data-attachment-id="17399" data-orig-file="https://wanderinginn.com/wp-content/uploads/2024/08/Volume1-4-by-Vellichor-scaled.jpg" data-orig-size="1183,2560" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="Volume1 4 by Vellichor" data-image-description="" data-medium-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Volume1-4-by-Vellichor-scaled.jpg?fit=139%2C300&amp;ssl=1" data-large-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Volume1-4-by-Vellichor-scaled.jpg?fit=473%2C1024&amp;ssl=1" src="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Volume1-4-by-Vellichor-scaled.jpg?w=87&amp;h=187&amp;ssl=1" srcset="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Volume1-4-by-Vellichor-scaled.jpg?w=1183&amp;ssl=1 1183w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Volume1-4-by-Vellichor-scaled.jpg?resize=139%2C300&amp;ssl=1 139w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Volume1-4-by-Vellichor-scaled.jpg?resize=473%2C1024&amp;ssl=1 473w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Volume1-4-by-Vellichor-scaled.jpg?resize=768%2C1662&amp;ssl=1 768w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Volume1-4-by-Vellichor-scaled.jpg?resize=710%2C1536&amp;ssl=1 710w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Volume1-4-by-Vellichor-scaled.jpg?resize=946%2C2048&amp;ssl=1 946w" width="87" height="187" loading="lazy" data-original-width="87" data-original-height="187" itemprop="http://schema.org/image" title="Volume1 4 by Vellichor" alt="Volume1 4 by Vellichor" style="width: 87px; height: 187px;"> </a> </div> </div> <!-- close group --> <div class="gallery-group images-1" style="width: 409px; height: 191px;" data-original-width="409" data-original-height="191"> <div class="tiled-gallery-item tiled-gallery-item-large" itemprop="associatedMedia" itemscope="" itemtype="http://schema.org/ImageObject"> <a href="https://wanderinginn.com/2024/08/01/goblin-days-pt-5-redblade-and-lilbrasi/volume1-5-by-vellichor/" border="0" itemprop="url"> <meta itemprop="width" content="405"> <meta itemprop="height" content="187"> <img decoding="async" class="" data-attachment-id="17400" data-orig-file="https://wanderinginn.com/wp-content/uploads/2024/08/Volume1-5-by-Vellichor-scaled.jpg" data-orig-size="2560,1183" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="Volume1 5 by Vellichor" data-image-description="" data-medium-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Volume1-5-by-Vellichor-scaled.jpg?fit=300%2C139&amp;ssl=1" data-large-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Volume1-5-by-Vellichor-scaled.jpg?fit=1024%2C473&amp;ssl=1" src="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Volume1-5-by-Vellichor-scaled.jpg?w=405&amp;h=187&amp;ssl=1" srcset="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Volume1-5-by-Vellichor-scaled.jpg?w=2560&amp;ssl=1 2560w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Volume1-5-by-Vellichor-scaled.jpg?resize=300%2C139&amp;ssl=1 300w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Volume1-5-by-Vellichor-scaled.jpg?resize=1024%2C473&amp;ssl=1 1024w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Volume1-5-by-Vellichor-scaled.jpg?resize=768%2C355&amp;ssl=1 768w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Volume1-5-by-Vellichor-scaled.jpg?resize=1536%2C710&amp;ssl=1 1536w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Volume1-5-by-Vellichor-scaled.jpg?resize=2048%2C946&amp;ssl=1 2048w" width="405" height="187" loading="lazy" data-original-width="405" data-original-height="187" itemprop="http://schema.org/image" title="Volume1 5 by Vellichor" alt="Volume1 5 by Vellichor" style="width: 405px; height: 187px;"> </a> </div> </div> <!-- close group --> </div> <!-- close row --> </div>
+<p>&nbsp;</p>
+<p><strong>Ceria and Pisces ‘Arise’ by Yura!</strong></p>
+<p><strong>Ko-Fi: </strong><a class="anchor_af404b anchorUnderlineOnHover_af404b" tabindex="0" title="https://ko-fi.com/yurariria" role="button" href="https://ko-fi.com/yurariria" target="_blank" rel="noreferrer noopener">https://ko-fi.com/yurariria</a></p>
+<p><a href="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Ceria-by-Yura.png?ssl=1"><img fetchpriority="high" decoding="async" data-attachment-id="17401" data-permalink="https://wanderinginn.com/2024/08/01/goblin-days-pt-5-redblade-and-lilbrasi/ceria-by-yura/" data-orig-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Ceria-by-Yura.png?fit=2800%2C2800&amp;ssl=1" data-orig-size="2800,2800" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="Ceria by Yura" data-image-description="" data-image-caption="" data-medium-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Ceria-by-Yura.png?fit=300%2C300&amp;ssl=1" data-large-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Ceria-by-Yura.png?fit=1024%2C1024&amp;ssl=1" class="alignnone size-full wp-image-17401" src="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Ceria-by-Yura.png?resize=2800%2C2800&amp;ssl=1" alt="" width="2800" height="2800" srcset="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Ceria-by-Yura.png?w=2800&amp;ssl=1 2800w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Ceria-by-Yura.png?resize=300%2C300&amp;ssl=1 300w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Ceria-by-Yura.png?resize=1024%2C1024&amp;ssl=1 1024w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Ceria-by-Yura.png?resize=150%2C150&amp;ssl=1 150w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Ceria-by-Yura.png?resize=768%2C768&amp;ssl=1 768w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Ceria-by-Yura.png?resize=1536%2C1536&amp;ssl=1 1536w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Ceria-by-Yura.png?resize=2048%2C2048&amp;ssl=1 2048w" sizes="(max-width: 1000px) 100vw, 1000px" data-recalc-dims="1"></a> <a href="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/PiscesArise-by-Yura.png?ssl=1"><img decoding="async" data-attachment-id="17402" data-permalink="https://wanderinginn.com/2024/08/01/goblin-days-pt-5-redblade-and-lilbrasi/piscesarise-by-yura/" data-orig-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/PiscesArise-by-Yura.png?fit=2800%2C2154&amp;ssl=1" data-orig-size="2800,2154" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="PiscesArise by Yura" data-image-description="" data-image-caption="" data-medium-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/PiscesArise-by-Yura.png?fit=300%2C231&amp;ssl=1" data-large-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/PiscesArise-by-Yura.png?fit=1024%2C788&amp;ssl=1" class="alignnone size-full wp-image-17402" src="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/PiscesArise-by-Yura.png?resize=2800%2C2154&amp;ssl=1" alt="" width="2800" height="2154" srcset="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/PiscesArise-by-Yura.png?w=2800&amp;ssl=1 2800w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/PiscesArise-by-Yura.png?resize=300%2C231&amp;ssl=1 300w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/PiscesArise-by-Yura.png?resize=1024%2C788&amp;ssl=1 1024w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/PiscesArise-by-Yura.png?resize=768%2C591&amp;ssl=1 768w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/PiscesArise-by-Yura.png?resize=1536%2C1182&amp;ssl=1 1536w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/PiscesArise-by-Yura.png?resize=2048%2C1575&amp;ssl=1 2048w" sizes="(max-width: 1000px) 100vw, 1000px" data-recalc-dims="1"></a></p>
+<p>&nbsp;</p>
+<p><strong>The Grand Design, Birthday, and Silvenia, by Yootie!</strong></p>
+<p><strong>Ko-Fi:</strong> <a class="anchor_af404b anchorUnderlineOnHover_af404b" tabindex="0" title="https://ko-fi.com/yootie" role="button" href="https://ko-fi.com/yootie" target="_blank" rel="noreferrer noopener">https://ko-fi.com/yootie</a> <time datetime="2024-08-01T02:11:25.540Z" aria-label="Edited Today at 10:11 PM"></time></p>
+<p><a href="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/GrandDesign-by-Yootie.png?ssl=1"><img decoding="async" data-attachment-id="17403" data-permalink="https://wanderinginn.com/2024/08/01/goblin-days-pt-5-redblade-and-lilbrasi/granddesign-by-yootie/" data-orig-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/GrandDesign-by-Yootie.png?fit=757%2C544&amp;ssl=1" data-orig-size="757,544" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="GrandDesign by Yootie" data-image-description="" data-image-caption="" data-medium-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/GrandDesign-by-Yootie.png?fit=300%2C216&amp;ssl=1" data-large-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/GrandDesign-by-Yootie.png?fit=757%2C544&amp;ssl=1" class="alignnone size-full wp-image-17403" src="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/GrandDesign-by-Yootie.png?resize=757%2C544&amp;ssl=1" alt="" width="757" height="544" srcset="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/GrandDesign-by-Yootie.png?w=757&amp;ssl=1 757w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/GrandDesign-by-Yootie.png?resize=300%2C216&amp;ssl=1 300w" sizes="(max-width: 757px) 100vw, 757px" data-recalc-dims="1"></a> <a href="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Silvenia-by-Yootie.png?ssl=1"><img loading="lazy" decoding="async" data-attachment-id="17405" data-permalink="https://wanderinginn.com/2024/08/01/goblin-days-pt-5-redblade-and-lilbrasi/silvenia-by-yootie/" data-orig-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Silvenia-by-Yootie.png?fit=639%2C800&amp;ssl=1" data-orig-size="639,800" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="Silvenia by Yootie" data-image-description="" data-image-caption="" data-medium-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Silvenia-by-Yootie.png?fit=240%2C300&amp;ssl=1" data-large-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Silvenia-by-Yootie.png?fit=639%2C800&amp;ssl=1" class="alignnone size-full wp-image-17405" src="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Silvenia-by-Yootie.png?resize=639%2C800&amp;ssl=1" alt="" width="639" height="800" srcset="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Silvenia-by-Yootie.png?w=639&amp;ssl=1 639w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Silvenia-by-Yootie.png?resize=240%2C300&amp;ssl=1 240w" sizes="(max-width: 639px) 100vw, 639px" data-recalc-dims="1"></a> <a href="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Birthday-by-Yootie.png?ssl=1"><img loading="lazy" decoding="async" data-attachment-id="17404" data-permalink="https://wanderinginn.com/2024/08/01/goblin-days-pt-5-redblade-and-lilbrasi/birthday-by-yootie/" data-orig-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Birthday-by-Yootie.png?fit=856%2C908&amp;ssl=1" data-orig-size="856,908" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="Birthday by Yootie" data-image-description="" data-image-caption="" data-medium-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Birthday-by-Yootie.png?fit=283%2C300&amp;ssl=1" data-large-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Birthday-by-Yootie.png?fit=856%2C908&amp;ssl=1" class="alignnone size-full wp-image-17404" src="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Birthday-by-Yootie.png?resize=856%2C908&amp;ssl=1" alt="" width="856" height="908" srcset="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Birthday-by-Yootie.png?w=856&amp;ssl=1 856w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Birthday-by-Yootie.png?resize=283%2C300&amp;ssl=1 283w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Birthday-by-Yootie.png?resize=768%2C815&amp;ssl=1 768w" sizes="(max-width: 856px) 100vw, 856px" data-recalc-dims="1"></a></p>
+<p>&nbsp;</p>
+<p><strong>Hamster by Chalyon!</strong></p>
+<p><a href="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Hamster-by-Chalyon.png?ssl=1"><img loading="lazy" decoding="async" data-attachment-id="17406" data-permalink="https://wanderinginn.com/2024/08/01/goblin-days-pt-5-redblade-and-lilbrasi/hamster-by-chalyon/" data-orig-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Hamster-by-Chalyon.png?fit=2100%2C2800&amp;ssl=1" data-orig-size="2100,2800" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="Hamster by Chalyon" data-image-description="" data-image-caption="" data-medium-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Hamster-by-Chalyon.png?fit=225%2C300&amp;ssl=1" data-large-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Hamster-by-Chalyon.png?fit=768%2C1024&amp;ssl=1" class="alignnone size-full wp-image-17406" src="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Hamster-by-Chalyon.png?resize=2100%2C2800&amp;ssl=1" alt="" width="2100" height="2800" srcset="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Hamster-by-Chalyon.png?w=2100&amp;ssl=1 2100w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Hamster-by-Chalyon.png?resize=225%2C300&amp;ssl=1 225w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Hamster-by-Chalyon.png?resize=768%2C1024&amp;ssl=1 768w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Hamster-by-Chalyon.png?resize=1152%2C1536&amp;ssl=1 1152w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Hamster-by-Chalyon.png?resize=1536%2C2048&amp;ssl=1 1536w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Hamster-by-Chalyon.png?w=2000&amp;ssl=1 2000w" sizes="(max-width: 1000px) 100vw, 1000px" data-recalc-dims="1"></a></p>
+<p>&nbsp;</p>
+<p><strong>Jewel Dancing and Idle by Rumina!</strong></p>
+<p><a href="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/JewelDance-by-SuperRumina.gif?ssl=1"><img loading="lazy" decoding="async" data-attachment-id="17407" data-permalink="https://wanderinginn.com/2024/08/01/goblin-days-pt-5-redblade-and-lilbrasi/jeweldance-by-superrumina/" data-orig-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/JewelDance-by-SuperRumina.gif?fit=448%2C328&amp;ssl=1" data-orig-size="448,328" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="JewelDance by SuperRumina" data-image-description="" data-image-caption="" data-medium-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/JewelDance-by-SuperRumina.gif?fit=300%2C220&amp;ssl=1" data-large-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/JewelDance-by-SuperRumina.gif?fit=448%2C328&amp;ssl=1" class="alignnone size-full wp-image-17407" src="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/JewelDance-by-SuperRumina.gif?resize=448%2C328&amp;ssl=1" alt="" width="448" height="328" data-recalc-dims="1"></a> <a href="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/JeweIdle-by-Rumina.gif?ssl=1"><img loading="lazy" decoding="async" data-attachment-id="17408" data-permalink="https://wanderinginn.com/2024/08/01/goblin-days-pt-5-redblade-and-lilbrasi/jeweidle-by-rumina/" data-orig-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/JeweIdle-by-Rumina.gif?fit=316%2C408&amp;ssl=1" data-orig-size="316,408" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="JeweIdle by Rumina" data-image-description="" data-image-caption="" data-medium-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/JeweIdle-by-Rumina.gif?fit=232%2C300&amp;ssl=1" data-large-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/JeweIdle-by-Rumina.gif?fit=316%2C408&amp;ssl=1" class="alignnone size-full wp-image-17408" src="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/JeweIdle-by-Rumina.gif?resize=316%2C408&amp;ssl=1" alt="" width="316" height="408" data-recalc-dims="1"></a></p>
+<p>&nbsp;</p>
+<p><strong>“Work For Me” by Rocky!</strong></p>
+<p><a href="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/work_for_me-by-Rocky.png?ssl=1"><img loading="lazy" decoding="async" data-attachment-id="17409" data-permalink="https://wanderinginn.com/2024/08/01/goblin-days-pt-5-redblade-and-lilbrasi/work_for_me-by-rocky/" data-orig-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/work_for_me-by-Rocky.png?fit=1522%2C1522&amp;ssl=1" data-orig-size="1522,1522" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="work_for_me by Rocky" data-image-description="" data-image-caption="" data-medium-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/work_for_me-by-Rocky.png?fit=300%2C300&amp;ssl=1" data-large-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/work_for_me-by-Rocky.png?fit=1024%2C1024&amp;ssl=1" class="alignnone size-full wp-image-17409" src="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/work_for_me-by-Rocky.png?resize=1522%2C1522&amp;ssl=1" alt="" width="1522" height="1522" srcset="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/work_for_me-by-Rocky.png?w=1522&amp;ssl=1 1522w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/work_for_me-by-Rocky.png?resize=300%2C300&amp;ssl=1 300w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/work_for_me-by-Rocky.png?resize=1024%2C1024&amp;ssl=1 1024w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/work_for_me-by-Rocky.png?resize=150%2C150&amp;ssl=1 150w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/work_for_me-by-Rocky.png?resize=768%2C768&amp;ssl=1 768w" sizes="(max-width: 1000px) 100vw, 1000px" data-recalc-dims="1"></a></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<hr>
+<p><a href="https://wanderinginn.com/2024/07/31/goblin-days-pt-4-order-oddity/">Previous Chapter</a> <a href="https://wanderinginn.com/2024/08/02/goblin-days-pt-6-of-dragons/"><span style="float: right;">Next Chapter</span></a></p>
+      </div>
+
+      <hr>
+          <span class="nav-previous">
+        <a href="https://wanderinginn.com/2024/07/31/goblin-days-pt-4-order-oddity/" rel="prev"><span class="meta-nav">←</span> Previous Chapter</a>    </span>
+    <span class="nav-next" style="float: right" ;="">
+        <a href="https://wanderinginn.com/2024/08/02/goblin-days-pt-6-of-dragons/" rel="next">Next Chapter <span class="meta-nav">→</span></a>    </span>
+    

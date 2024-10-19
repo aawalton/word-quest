@@ -1,0 +1,655 @@
+
+
+          <span class="nav-previous">
+        <a href="https://wanderinginn.com/2024/07/28/goblin-days-pt-1-the-wedding/" rel="prev"><span class="meta-nav">←</span> Previous Chapter</a>    </span>
+    <span class="nav-next" style="float: right" ;="">
+        <a href="https://wanderinginn.com/2024/07/30/goblin-days-pt-3-vengeance-and-talking/" rel="next">Next Chapter <span class="meta-nav">→</span></a>    </span>
+      <!-- <hr/> -->
+      <header class="entry-header">
+        <h1 class="entry-title">Goblin Days (Pt. 2) — The Pilot and the Knight</h1>
+                <button class="show-settings-btn" onclick="document.querySelector('#reader-settings-wrapper').classList.toggle('is-hidden')">
+          <img class="show-settings-btn-img" src="https://wanderinginn.com/wp-content/themes/solstice/assets/images/ui/reader-settings-button.webp">
+        </button>
+      </header>
+
+      
+<!-- Reader Settings -->
+<div id="reader-settings-wrapper" class="is-hidden">
+    <div id="reader-settings">
+        <header id="reader-settings-header">
+            <h2>Reader Settings</h2>
+            <button onclick="closeModal()">
+                <svg width="100%" height="100%" viewBox="0 0 33 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M16.5 30.75C24.0939 30.75 30.25 24.5939 30.25 17C30.25 9.40608 24.0939 3.25 16.5 3.25C8.90608 3.25 2.75 9.40608 2.75 17C2.75 24.5939 8.90608 30.75 16.5 30.75Z" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M20.625 12.875L12.375 21.125" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M12.375 12.875L20.625 21.125" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+            </button>
+        </header>
+
+        <fieldset id="fieldset-font">
+            <legend>Font</legend>
+
+            <div>
+                <label for="font-size-select">Size</label>
+                <select id="font-size-select" class="reader-settings-select" data-setting="reader-font-size" onchange="updateSetting(this.getAttribute('data-setting'), this.value);">
+                    <option value="10pt" class="reader-settings-option">10</option>
+                    <option value="11pt" class="reader-settings-option">11</option>
+                    <option value="12pt" class="reader-settings-option" selected="">12</option>
+                    <option value="13pt" class="reader-settings-option">13</option>
+                    <option value="14pt" class="reader-settings-option">14</option>
+                    <option value="16pt" class="reader-settings-option">16</option>
+                    <option value="18pt" class="reader-settings-option">18</option>
+                    <option value="20pt" class="reader-settings-option">20</option>
+                    <option value="22pt" class="reader-settings-option">22</option>
+                    <option value="24pt" class="reader-settings-option">24</option>
+                    <option value="26pt" class="reader-settings-option">26</option>
+                    <option value="28pt" class="reader-settings-option">28</option>
+                    <option value="30pt" class="reader-settings-option">30</option>
+                    <option value="36pt" class="reader-settings-option">36</option>
+                    <option value="42pt" class="reader-settings-option">42</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="font-family-select">Family</label>
+                <select id="font-family-select" class="reader-settings-select" data-setting="reader-font-family" onchange="updateSetting(this.getAttribute('data-setting'), this.value);">
+                    <optgroup label="Sans Serif">
+                        <option class="reader-settings-option" value="OpenSans, sans-serif" selected="">Open Sans</option>
+                        <option class="reader-settings-option" value="Arial, Helvetica, sans-serif">Arial</option>
+                        <option class="reader-settings-option" value="Roboto, sans-serif">Roboto</option>
+                    </optgroup>
+                    <optgroup label="Serif">
+                        <option class="reader-settings-option" value="Playfair, serif">Playfair</option>
+                        <option class="reader-settings-option" value="EBGaramond, serif">Garamond</option>
+                        <option class="reader-settings-option" value="'Times New Roman', Times, serif">Times New Roman</option>
+                    </optgroup>
+                    <optgroup label="Other">
+                        <option class="reader-settings-option" value="OpenDyslexic">OpenDyslexic</option>
+                        <option class="reader-settings-option" value="HennyPenny">Henny Penny</option>
+                    </optgroup>
+                </select>
+            </div>
+            <div>
+                <label for="font-weight-select">Thickness</label>
+                <select id="font-weight-select" class="reader-settings-select" data-setting="reader-font-weight" onchange="updateSetting(this.getAttribute('data-setting'), this.value);">
+                    <option class="reader-settings-option" value="300" selected="">Thin</option>
+                    <option class="reader-settings-option" value="400">Regular</option>
+                    <option class="reader-settings-option" value="500">Thick</option>
+                </select>
+            </div>
+        </fieldset>
+
+        <fieldset id="fieldset-spacing">
+            <legend>Spacing</legend>
+            <div>
+                <label for="margins-select">Page Width</label>
+                <select id="margins-select" class="reader-settings-select" data-setting="reader-article-width" onchange="updateSetting(this.getAttribute('data-setting'), this.value);">
+                    <option value="320px" class="reader-settings-option">Extra Narrow</option>
+                    <option value="500px" class="reader-settings-option">Narrow</option>
+                    <option value="680px" class="reader-settings-option" selected="">Medium</option>
+                    <option value="1000px" class="reader-settings-option">Wide</option>
+                    <option value="1200px" class="reader-settings-option">Extra Wide</option>
+                    <option value="100%" class="reader-settings-option">Max</option>
+                </select>
+            </div>
+            <div>
+                <label for="line-spacing-select">Line</label>
+                <select id="line-spacing-select" class="reader-settings-select" data-setting="reader-line-height" onchange="updateSetting(this.getAttribute('data-setting'), this.value);">
+                    <option class="reader-settings-option" value="1.2">Small</option>
+                    <option class="reader-settings-option" value="1.625" selected="">Medium</option>
+                    <option class="reader-settings-option" value="2.2">Large</option>
+                    <option class="reader-settings-option" value="3.5">Extra Large</option>
+                </select>
+            </div>
+            <div>
+                <label for="paragraph-spacing-select">Paragraph</label>
+                <select id="paragraph-spacing-select" class="reader-settings-select" data-setting="reader-paragraph-spacing" onchange="updateSetting(this.getAttribute('data-setting'), this.value);">
+                    <option class="reader-settings-option" value="0.5em">Small</option>
+                    <option class="reader-settings-option" value="1.625em" selected="">Medium</option>
+                    <option class="reader-settings-option" value="2.75em">Large</option>
+                    <option class="reader-settings-option" value="4.25em">Extra Large</option>
+                </select>
+            </div>
+        </fieldset>
+        <div class="ml-5 mb-4">
+            <label for="theme-select">Theme</label>
+            <select id="theme-select" class="reader-settings-select" data-setting="reader-theme" onchange="updateSetting(this.getAttribute('data-setting'), this.value);">
+                <option class="reader-settings-option" value="reader-theme-grey" selected="">Dark Grey</option>
+                <option class="reader-settings-option" value="reader-theme-blue">Dark Blue</option>
+                <option class="reader-settings-option" value="reader-theme-black">Black</option>
+                <option class="reader-settings-option" value="reader-theme-white">White</option>
+                <option class="reader-settings-option" value="reader-theme-sepia">Sepia</option>
+            </select>
+        </div>
+        <button id="reset-settings-btn" onclick="resetSettings()">Reset To Default</button>
+        <!-- <div> -->
+        <!-- </div> -->
+
+
+    </div>
+</div>
+      <div class="entry-content">
+        <p>She had about eighty miles of fuel in the tank, and she was headed down through a rocky canyon pass with the enemy on her six. Fightipilota overrode the warning sounds and forced her craft to down in an insane dive, flaring the wing flaps at the last moment to abort the dive from ‘death’ to a mere snap-glide.</p>
+<p>A second, shrill whine came from her aircraft, and Fightipilota guessed she’d reduced the durability of the wings and overstressed the hull, but she had no choice. The enemy was right behind them, and—she glanced over her shoulder as she wiped at condensation on her glass goggles—</p>
+<p><em>Three of them. </em>Two regular Wyvern-class fighters and what looked like a green Wyvern-bomber with a payload that was spitting constantly in her direction. The globs of acid landed well short of her, but she saw pitting where the acid had landed, releasing huge gouts of steam from the melting ground. One shot might be the end of her, so Fightipilota urged as much speed as she could from her aircraft as they headed for the canyon pass.</p>
+<p>Her one saving grace was that the enemy aircraft were as green as baby Goblins; they roared in pursuit after her, not trying to flank or box her in. Still, a dogfight would end only one way.</p>
+<p>Fightipilota swung up her dorsal turret and fired once, then twice. A [Double Tap] that missed both times given the speed and distance between her and her pursuers, but kept them wary. She grinned as the wind blasted her face, and the canyon mouth approached. It was so narrow it would barely admit her aircraft wing-tip to wing-tip. But she knew the specs; she was operating a Wyvern-class aircraft at exactly thirty-seven feet’s wingspan. The canyon? Forty feet if she was a judge.</p>
+<p>All the room in the world. Fightipilota’s aircraft came screaming at the canyon walls as her pursuers dived, still death-shrieking as they followed. The [Fighter Pilot] was reloading her turret when someone kicked her in the head. She ignored the blow, triggering the reserve fuel and urging the airplane to keep dead ah—</p>
+<p>“<em>Fighti, what are you doing?</em>”</p>
+<p>The <em>second</em> kick to the back of her head made Fightipilota break out of her trance. She looked up, and the [Beast Tamer] clinging to his Wyvern’s back screamed at her. The Wyvern, Coldcream, screamed at her.</p>
+<p>Their two Hobgoblin passengers were deathly silent, clinging to their seat straps. Fightipilota broke out of the haze of concentration as the Wyvern tried once again to abort its flight into the narrow canyon mouth.</p>
+<p>“<em>Keep going straight! [Aerial Boost]!</em>”</p>
+<p>A sudden jet of speed pushed the Frost Wyvern forwards against its will; it was still trying to flap its wings and fly up. The [Beast Tamer], Chickenruler, roared back.</p>
+<p>“<em>You’re going to get us killed!</em>”</p>
+<p>“Shut up! Tell Coldcream to keep going or we all die when they catch us!”</p>
+<p>As if to punctuate her words, another orb of acid just missed their tail; three Wyverns were diving after them, screaming.</p>
+<p>Chickenruler hesitated, then pulled himself along Coldcream’s back towards its head. He shouted in the Wyvern’s earhole and got it flying straight, but Coldcream was panicking. He did <em>not</em> like the confined space he was entering and began to flap rather than glide.</p>
+<p>Fightipilota ground her teeth together as she sensed their forwards progress slow. <em>They were engaged in wing-mode! </em>It was a huge problem for Wyvern-class aircraft and all fliers operating on similar organic models, frankly.</p>
+<p>You’d think that fliers flapping their wings was a good thing; not so. If you were flapping, you were either building altitude or you didn’t have the momentum to be gliding or diving. Wyverns, eagles, Griffins, it didn’t matter; they <em>wanted</em> to be gliding using thermals or their natural magical functions to swoop through the air.</p>
+<p><em>Damn. </em>At least the other Wyverns were hesitating on following them into the canyon. Fightipilota fired again and winged one of them; she heard a scream as she yanked her aircraft left, avoiding a protrusion in the wall—</p>
+<p>“<em>Stop pulling his head!</em>”</p>
+<p>The [Beast Tamer] howled at Fightipilota, and Coldcream shrieked again, but right now, the Goblin didn’t have time for niceties.</p>
+<p>“<em>If he doesn’t move like I say, we die! More speed!</em>”</p>
+<p>She knew she was half-dreaming. The dream was that these were aircraft instead of angry Wyverns and that she was in a Wyvern-class fighter instead of…well, an unhappy Frost Wyvern being steered by a [Beast Tamer].</p>
+<p>But the chase was real enough. Three Wyverns had objected to the presence of the Frost Wyvern entering their territory and decided it was time for a good old-fashioned beatdown. They were a tiny pack led by a green Acid Wyvern…it was a big sucker, and Fightipilota hadn’t liked the odds of taking it, even with her Thunderbow—before the other two appeared.</p>
+<p>Maneuvering the Frost Wyvern was hard. The controls were nothing like what Fightipilota imagined and had seen examples of in Kevin’s sketches. She had reins, her feet, and verbal commands that Coldcream half-knew instead of a throttle and controls at her fingertips. The Wyvern would resist some commands, like heading into this canyon, or just react slower than she needed.</p>
+<p>Rather than being a [Pilot], Fightipilota was more like a [Ship Captain] giving orders that had to be relayed and acted upon. That Chickenruler and Coldcream obeyed her was because she was still the best damn flier in Goblinhome. Only Snapjaw and Icecube even came close; Fightipilota had studied aerial combat. She’d gone over how aircraft worked with Kevin. So—in moments like these—she was the Goblin you wanted.</p>
+<p>The New Lands sucked. But at least they had interesting terrain. Fightipilota glanced over her shoulder; two of the Wyverns were following her into the canyon. The big one was above, trying to get overhead so it could keep raining down acid. Good tactics, but there were enough overhangs and even natural bridges to give them cover.</p>
+<p>The rocky walls were pale-yellow, abraded significantly. Ancient canyons far below the sea? They had little, weird plants with lots of fronds sticking out of crevasses, and as Coldcream flew between the walls, his passage disturbed a cloud of flitting insect-things that swarmed up the canyon walls.</p>
+<p>…Shrimp? Only, they ran on their oversized feelers, and each one was hand-sized. Some leapt onto Coldcream’s wings, and his master kicked one off.</p>
+<p>“Fighti, this is madness!”</p>
+<p>“<em>Shut. Up.</em> I’m the [Pilot]!”</p>
+<p>“<em>You’re not a [Fighter Pilot]! You’re a Redfang [Warrior] and a Level 14 [Aerial Flier]!</em>”</p>
+<p>“<em>Shut up, shut up, shut—</em>engage the Wyvern’s riser sacs!”</p>
+<p>Fightipilota didn’t have a function for that, so she kicked Coldcream in the sides. Chickenruler pulled at his head.</p>
+<p>“Up, Coldcream. Come on, up—”</p>
+<p>The Frost Wyvern, grunting and pooping in distress, rose five feet and continued its ascent as Fightipilota slapped a new bolt into the giant crossbow mounted on his back. She took careful aim at the two Wyverns gliding in a line after her. They looked nervous.</p>
+<p><em>Oh yes. You don’t have Skills, and you can’t turn around. Now you’re stuck. </em>She loosed her first bolt and hit one in the wing. The Wyvern dropped with a screech, almost taking the one behind it with it. Fightipilota reloaded again, keeping an eye on the sky. She saw a green glob and barked.</p>
+<p>“[Snap Dive]!”</p>
+<p>“<em>Fightiiiiiiiiiiiiiii—</em>”</p>
+<p><em>They were headed towards the ground of the canyon. Two hundred feet. One hundred—</em>Fighti shouted again.</p>
+<p>“Wings! <em>Wings!</em>”</p>
+<p>“[Wings of Salvation]!”</p>
+<p>Chickenruler used his Skill at the last moment, and the wings opened. Fightipilota stared at the ground barely a dozen feet below her; Coldcream’s claws scraped the dirt, and they were rising again. This time, she thought he was peeing.</p>
+<p>Fightipilota went to shoot the last Wyvern on their tail when she realized it had landed. It was circling its downed buddy, still screaming at them, but hundreds of feet away. That left their pursuer above.</p>
+<p>Fightipilota pulled at the reins, cursing the fact that she didn’t have any direct controls, and snapped at Chickenruler.</p>
+<p>“We’re hovering under that overhang—there. See that bridge of stone? Wait until we’re right below it, then we accelerate out and keep rising.”</p>
+<p>It took the [Beast Tamer] a few moments to communicate this to his mount and even longer for the very upset Wyvern to stop balking and rise. Chickenruler was calling Fightipilota a bunch of names, but she ignored him.</p>
+<p>She felt bad about Coldcream’s wings and the stress she was putting him under, but right now, she needed to be the <em>pilot</em>, not the mechanic or whatever Chickenruler was under this analogy. If that Acid Wyvern caught them or the other two Wyverns got back into the air, they were dead.</p>
+<p>A landshrimp crawled up one of her arms, and she reached out, crunched it in one gloved fist, and tossed it into her mouth. Fightipilota chewed.</p>
+<p><em>Tastes like…well, I don’t know what shrimp tastes like. Tastes good. Chieftain will want as many samples as I can get.&nbsp;</em></p>
+<p>If they survived the next few minutes, Fightipilota would mark the spot. She kept craning her neck as the Wyvern flapped its wings, mostly to keep level as it rose.</p>
+<p>Wyvern biology—it didn’t really fly like other birds did. Wyverns were huge, heavy creatures who had no right to fly in the sky. But they did, and it was due to magic; they had internal glands that Fightipilota had dubbed ‘riser sacs’, which inflated and gave them the ability to rise and descend.</p>
+<p>The wings were just for stability and small amounts of lift. If a Wyvern’s riser sacs were damaged, it wouldn’t fly right. Fightipilota knew this both from the dead Frost Wyverns her tribe had dissected and from observing the creatures.</p>
+<p>She had to know her aircraft. Though, again, Chickenruler and the other [Beast Tamers] and [Wyvern Riders] got really mad when she called the Wyverns that. But it wasn’t Fightipilota’s fault. They were the only flying vehicles her tribe had. She didn’t want to be a [Wyvern Rider]; she wasn’t that good with the surprisingly picky, touchy creatures, and she didn’t have any [Beast Tamer] levels or classes.</p>
+<p>Yet she wanted to be her namesake. Fightipilota wanted to <em>fly.</em></p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>High in the sky, the Acid Wyvern was getting impatient. It had seen and heard its flockmates go down, and it knew <em>right</em> where the Frost Wyvern was. It was circling the bridge of stone, waiting for the Frost Wyvern to break cover so it could turn its enemy into goo with its acid glob breath.</p>
+<p>However…it really didn’t like the things on the Frost Wyvern’s back. The strange, little, green creatures and the strange device that fired those sharp ‘fangs’ at it—another came flying up as the Acid Wyvern saw its foe descend slightly. It spat a glob of acid back, as the crossbow bolt bounced off its chest, and it snarled.</p>
+<p>The acid projectile went far wide of the Frost Wyvern, and the Acid Wyvern shrieked and made up its mind. Down it came, swooping below the lip of the canyon, maw open to strike its foe at point-blank range. The Acid Wyvern primed its glands as it saw the first blue-scaled claw of its hated rival and—</p>
+<p><em>Flew straight into the full blast of ice breath from Coldcream.</em></p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>“<em>Enemy wings damaged! Superficial damage to hull! Looks like they’re going down! </em>Keep rising! We’re peeling out!”</p>
+<p>The two Hobs were cheering—and trying not to puke—as Coldcream burst out of his hiding spot. The Acid Wyvern crashed down, a layer of ice coating its grime-green scales. Fightipilota felt sweat running down her leather armor despite the chill from Coldcream’s breath.</p>
+<p><em>That was close.</em> However, even Chickenruler was giving her an approving stare as he urged Coldcream up. The Frost Wyvern wanted to get down there and beat down its enemy, but Fightipilota had seen the other two Wyverns flying up. They didn’t have time to savor their victory, but her gambit had worked.</p>
+<p>You see, the entire plan had revolved around the relative firing arcs of the two elemental Wyverns. The Acid Wyvern spat orbs of acid, which it lobbed down in gravity-driven trajectories. Coldcream, by comparison, had a relatively short-range blast of ice.</p>
+<p>It meant that unless they were dogfighting in close range, the Acid Wyvern had the advantage—but it was hampered by gravity. While it was above, it had a great shot…unless they were protected by the stone ceiling. Then the Acid Wyvern had to descend, but what it failed to account for was the <em>other</em> firing arc—of Fightipilota’s crossbow.</p>
+<p>She could fire on the Acid Wyvern while it would lob globs of acid that would be either too high and hit the ceiling or too low to hit them. So long as they hugged the ceiling of their stone shelter, they were virtually impossible to hit unless it entered the canyon.</p>
+<p>When it did—it was just a matter of attacking before the Acid Wyvern could. Fightipilota raised her goggles and wiped at her brows as she shouted.</p>
+<p>“<em>All targets out of contact. We’re clear. Chickenruler, aircraft status?</em>”</p>
+<p>Another kick to the side said that her grace period had ended. Chickenruler pulled himself back to his seat, a row of saddles along Coldcream’s back. He had good reason to be so fearless; there was a length of rope running down the Wyvern’s back, and if he had fallen, he was still clipped onto the harness and could pull himself back up.</p>
+<p>Even so—he and Fightipilota were the only ones here brave enough to move about with a Wyvern in motion, let alone in the middle of an aerial battle. The two Redfangs behind them looked thoroughly green and white with terror and sickness.</p>
+<p>“My <em>status</em> report is that Coldcream is terrified, his wings and back hurt, and he needs rest.”</p>
+<p>“Fuel reserves?”</p>
+<p>A poke this time.</p>
+<p>“<em>He’s tired.</em>”</p>
+<p><em>Better call that twenty miles, then; we burned out a lot of emergency fuel in this skirmish. We’ll have to land, make repairs, and refuel. At least there’s plenty of local supply. Shame we don’t have an outpost that can service our craft.</em></p>
+<p>Chickenruler gave Fightipilota a long, exasperated stare. He was an old Goblin, eleven years old, and a former [Chickencoop Beast Raider]. Which meant that he was an expert who could walk into a farm, whistle, and have every chicken run after him.</p>
+<p>He’d switched to Wyverns because they were more fun. He got along ‘well’ with Fighti, in that he and she hadn’t come to blows over how she treated the Wyverns she flew with. Mostly because he saw the point.</p>
+<p>“You’re doing the thing in your head, aren’t you?”</p>
+<p>“No I’m not.”</p>
+<p>“You’re not a [Fighter Pilot]. That’s not a class, Fighti.”</p>
+<p>She didn’t dignify that with a response. If she closed her eyes, she could imagine that the rumble of the Wyvern’s lungs inflating and its belly growling was the purr of some vast engine and almost see the throttle in her hands. She wanted to pull it up and do a spin through the air or just soar into the sky without having to worry about a Wyvern or anything but her fuel and altitude.</p>
+<p><em>She wanted to fly. </em>It was her curse that she had actually found a way to do so; a curse that she had ever met a young Human man who had told her that it was possible. It was the curse of the Flooded Waters tribe, Fightipilota knew.</p>
+<p>They had dreams. As a Redfang, she’d been an unassuming [Warrior], good enough, but nothing special, happy to raid and survive. Then someone had told her there could be <em>more.</em> And once you tasted it, once you even knew it was out there—</p>
+<p>Ah, well. Fightipilota opened her eyes and inhaled the air. It smelled oddly fragrant here, and not just from the last fumes of the Acid Wyvern’s breath. She couldn’t describe it; the landscape below her was pale yellow, and she saw pinkish spores floating through the air as she stared at an entire network of canyon walls, doubtless filled with more strange fauna and flora.</p>
+<p>The New Lands…Fightipilota glanced over her shoulder and saw the sea to the left. They were at the very southernmost part of the New Lands, along the coast as it ran up, in the west where the first settlers had landed. She pointed as she saw the ground rising, and something like a forest appeared.</p>
+<p>“There. Those are the weird coral-tree things. Looks like a good spot with cover. Land there.”</p>
+<p>Chickenruler acknowledged, and Fightipilota engaged the safety on her Thunderbow. She kept her head scanning the environment for other Wyverns or threats above and below, but she savored the view. She was in a new world, and whether or not she had her class—</p>
+<p>Fightipilota flew on dreams and hopes. She’d have that class. Someday. As she landed and the two Redfangs hopped off to be heartily sick, then pitch camp, Fightipilota closed her eyes for a brief nap.</p>
+<p>&nbsp;</p>
+<p>[Aerial Flier Level 15!]</p>
+<p>[Skill – Aerial Craft: Override Controls obtained!]</p>
+<p>&nbsp;</p>
+<p>Fightipilota opened her eyes.</p>
+<p>“<em>Damn.</em>”</p>
+<p>One level higher, though. She wondered if that meant she could force Wyverns into doing what needed to be done. Then she wondered if Chickenruler would let her fly with Coldcream again.</p>
+<p>She wanted her own airplane. She hungered for it. Not one of the flying gliders that Felkhr or Ryoka used, though she’d take one in a heartbeat. She wanted a <em>plane.</em></p>
+<p>…So far, all her attempts had crashed after eighteen seconds of gliding.</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>At least once they hit the coral treelines they were fine. Said trees were a rough, spongy material that definitely wasn’t wood; they came in surprisingly varied colors, from mottled blues to faded pinks and baby-Goblin green. They were, to Fightipilota, like cacti she’d seen in Kevin’s videos and pictures of Earth, only even more funny looking, taking odd bends and irregular paths upwards, unlike trees, which craved the sun.</p>
+<p>That was because, to her understanding and talks with the Drowned Folk, these <em>were</em> coral. Giant coral reefs transformed by Kishkeria’s magic into trees. Or close enough.</p>
+<p>The two Redfangs, Mousebite and Evilknee, didn’t bother chopping the coral down for firewood as Chickenruler rubbed down the whining Coldcream. The coral trees didn’t burn at all, and they made bad building materials too.</p>
+<p>Mind you, the local creatures loved them. Some places of the New Lands were barren when Fightipilota landed; not that she spent much time on the ground. She had no idea what was about, so she usually only took the time to rest and refuel under cover. However, <em>this</em> area had a bunch of wildlife.</p>
+<p>There were more landshrimps, but also some vaguely similar creatures. Squirrels…but all scale instead of fur with a long, fin-like tail and gills. They were amphibious and only appeared on this coast.</p>
+<p>Mousebite grabbed three and was about to smack them on a rock when Fightipilota complained. They were screaming pitifully.</p>
+<p>“Aw. Let them live. They cute.”</p>
+<p>“They food.”</p>
+<p>Unsympathetically, Mousebite tossed one up, and Coldcream snapped it up with relish. Fightipilota scowled.</p>
+<p>“We have food, stupid.”</p>
+<p>This wasn’t the bad old days of being hungry in the High Passes. Rags had sent plenty of provisions, even if they were a bit dry. Mousebite scowled warningly. She, like Rabbiteater and some other Goblins, had gotten her name from having to eat anything she could in times of starvation. She was a [Scavenger] as well as a [Warrior] and had a Skill that let her practically vacuum up small things.</p>
+<p>Evilknee broke the stalemate by coming over with a small bag. He opened it, and both Goblins stared down at about fifteen landshrimps. The far less cute things were all scrunched up, and Evilknee jerked a thumb over his shoulder.</p>
+<p>“How dis? They stupid. Eat little crumbs off hand.”</p>
+<p>Mousebite considered the offering, then tossed the two watersquirrels down. That was their new name. Fightipilota got to name them because she was here first, and she marked down their location—and that of the landshrimps—on her crude map.</p>
+<p>She also added an illustration to the journal Rags demanded all the explorers keep and made a huge circle where she had run into the Wyverns. No one would be taking that route unless they had to.</p>
+<p>“Good Coldcream. Is good. You fly for another hour? We’re almost at Nombernaught. Please? Okay, here.”</p>
+<p>To placate the whining Wyvern, Chickenruler reached into his bag of holding and produced a treat. Namely, a ball of frozen ice cream encased in mostly melted ice. He opened the tin, and the Wyvern licked the ice cream with great delight. Hence his name.</p>
+<p>Goblin names always made sense. Take Evilknee. He kneed people in the crotch with his [Devastating Knee] attack. Fightipilota had heard he’d made someone’s balls explode with it one time.</p>
+<p>Honestly, given the local monsters, she would have preferred a different fighting expert as her escort. But then again…there were more than just monsters in the New Lands.</p>
+<p>The whimpering Wyvern made Fightipilota break up from her brisk work on her map and updating Rags about the skirmish. She sighed, blew on the ink, furled the parchment up, then stomped over.</p>
+<p>Chickenruler was rubbing the Wyvern’s back, using a long, wooden cane that he leaned on. It looked a bit like torture, but the Wyvern was so big that the cane was more like a massage even with the other Goblin putting all his weight into it.</p>
+<p>Fightipilota was no Hob. But she had a similar cane, and she pressed it into another spot as the Wyvern groaned, then pulled out a half-empty tin of muscle balm that Taganchiel had made for her.</p>
+<p>Chickenruler had been angry at Fightipilota ever since their firefight with the Wyverns. The other [Wyvern Riders] complained about the Goblin as well, and only her many Skills justified her presence in the New Lands. But rather than say something or gesture in the way Goblins could express sentiment, he just kept working on Coldcream’s back.</p>
+<p>Even the Wyvern was more just whining, shedding huge, gloppy tears because he knew he’d get treats. He licked at her, and she patted his snout and fed him half an old apple; Fightipilota’s face was cold. But she tended to the Wyvern until he was beginning to snooze, then stood back as Chickenruler rubbed the Wyvern’s mane and whispered praises in his ear.</p>
+<p>Neither one said anything to each other. The current [Wyvern Rider] and former one…Fightipilota imagined Coldcream as an aircraft, damages mostly mended by field repairs, refueling for their trip. It was easier that way.</p>
+<p>She wanted a plane. She didn’t want a Wyvern. Why?</p>
+<p>Because Fightipilota knew her job. She knew aerial combat; she knew what it was to be a Goblin, let alone one flying for Chieftain Rags on missions like these.</p>
+<p>Someday, she’d have a moment when her aircraft would go down. When she’d be forced to make a choice between it and her tribe, or when her luck ran out. Far better to have a tangle of machinery and parts, no matter how much she loved it, than something of flesh and blood.</p>
+<p>The [Aerial Flier] turned away from Coldcream as Chickenruler stole a glance at her. If he listened close, the other Goblin fancied he could still hear a sound around Fightipilota.</p>
+<p><em>A Wyvern’s scream as it came down, tangled with one of the bat-horrors unleashed by Kasigna. A falling Goblin, pleading for someone, anyone, to intervene. Then—silence as Goblins fought and bled and died for the inn.</em></p>
+<p>Her name had been Snowscale. No one from the inn had even known her name. It was one of those casualties, not like Kevin, not like Gershal of Vaunt. The Flooded Waters tribe had not suffered that many losses at the Solstice. Just a few.</p>
+<p>The Goblin stood there for a while, then sat down and got back to work. She belonged in the skies. Someday, she would fly in a whirling craft high into the air where the only thing that would die would be her enemies—and someday—her.</p>
+<p>She had a debt to the skies. It would collect from her and every other person who dared to fly. Fightipilota closed the jar of muscle liniment and put it back in her pack.</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>Nombernaught was on the western coastline, just south of the ‘middle’ of the New Lands. It was huge. Every time Fightipilota saw it from above, it resembled an island unto itself, vaguely circular, but as if someone had warped it slightly. Rather than a pure circle, there were ‘cuts’ taken out of the perimeter, so it resembled a whirlpool from above, with the furthest arms providing space for boats to dock around the entire city.</p>
+<p>Of course, that was only from <em>above.</em> Fightipilota knew this had been a Drowned City, so she could see upper levels where ships had clearly been meant to dock when this had been underwater. She understood, as well, that Nombernaught had a lot of space under the water, but she’d never entered the city.</p>
+<p>To her, it seemed so unguarded. No walls rose around the city; no blockades of stone. There was something incredibly beautiful about how the floors were laid out in that configuration, like someone had dropped a snowflake into the water and preserved its form.</p>
+<p>She could see small figures walking to and fro on the upper floors, even some of the Drowned Folks stopping, perhaps to stare up at the Wyverns. The docks were wood; the entire city was more wood than stone or metal.</p>
+<p>Though, in places, the city was <em>grown</em> of ancient coral that still looked alive. Magenta and pink towers in those places were made of bright coral that still lived; it was part of the city, and huge growths of coral stood on Nombernaught, such that it looked like it was a shipwreck of the deeps as much as city, partly overgrown by nature.</p>
+<p>Calling Nombernaught part shipwreck was no insult, either; the Drowned Folk had built one of their famous, hidden cities out of ships. Everywhere Fighti looked, she saw the legacies of the crews and vessels that had made this place and continued to build on Nombernaught. It literally was made of stories.</p>
+<p><em>Houses built out of ships come to rest at last; the hulls of some of them preserved and turned into buildings. </em>Anchor-chains raising and lowering, primitive elevators, which let Downed People ascend and descend. But this was Nombernaught; some swam up the rivers that ran <em>through</em> the city that would have been underwater. Bright streams lit by luminescent stone, where figures glided like fish up and down the city.</p>
+<p>Most precious of all, perhaps, were the jewels set into the central spire of Nombernaught and below, at the bottom. They pulsed with light; at night, Fightipilota had seen huge beams of light giving ships direction to the port. But they also projected the magical shields that could protect the city. They were inactive now, but Fighti had seen them once, a multicolored barrier like a bubble, but so powerful it had helped this city survive Kraken attacks.</p>
+<p>That was not all Nombernaught was; it smelled like brine and seaweed, like salt, yes, the more unpleasant odors, but also with some deep scents unknown to the Goblin. Utterly foreign; like the loam of the earth, but if you had made it the sea instead. A mysterious odor carried from the deeps of the sea that provoked a hunger in her stomach each time she came here.</p>
+<p>It sounded like a million voices picked up on the breeze, above the <em>creak</em> of a ship the size of a Walled City. Unlike Pallass, which Fightipilota had heard while staring through Erin’s door, which was so busy—this one was a city of a million voices talking to each other, and she swore she heard songs, even now.</p>
+<p>And Goblins wondered why she made this long trip each week flying through dangerous, largely thankless lands. She did it for a city she wanted to visit, but as ever, Fightipilota landed on a cleared strip of sand with bright stones marking her descent.</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>To the Drowned Folk, Fightipilota knew she and her company looked like a bunch of Drakes, dressed in rather wild clothing for their species. Their leather armor with Carn Wolf fur didn’t change due to Rags’ Skill. Fightipilota herself was a short Drake with black-green scales; to her amusement, the Skill made her taller because there was no way a Drake could be short as she was without being a child.</p>
+<p>The rest of her crew were Drakes as well from some distant and isolated Drake city. It was a good look; the Drowned Folk coming to meet them certainly recognized them on sight. <em>They</em> were interesting too.</p>
+<p>Unlike the [Pirates] and [Storm Sailors] that Fightipilota had seen in Goblinhome’s library of books or on television, the Drowned Folk wore rather smart and sharp uniforms, albeit designed to accommodate their fish halves.</p>
+<p>The one she recognized in front, a Drowned Man with a claw, was one of the ubiquitous crustacean-types common to Drowned Folk. He had a red claw and an antenna sticking out of his head; he was part lobster, and his shoulder and arm were bared. But the rest of his body had on a navy blue uniform with epaulets, stitched golden bars, and a symbol of Nombernaught to indicate his rank.</p>
+<p>The military correctness of his uniform belied the way he walked, with that swagger unique to people at sea, and he wasn’t nearly as snooty as a Drake. He wore his uniform like a reminder, not identity, and his voice was deep and deliberate, not crisp like the Watch that Fighti was used to in her visits to Liscor.</p>
+<p>A different tempo and people. The Drowned Folk still walked fast enough. By the time they were here, Fighti had swung herself down and was striding to meet them, waving a hand in greeting.</p>
+<p>Rags’ new Skill let all Goblins hide their appearance, but it was by no means a perfect disguise. So she had strict rules: no Goblin was ever to enter a settlement above the size of a town and to exercise extreme discretion with any non-Goblin group regardless. Liscor was obviously the one exception.</p>
+<p>It didn’t mean that Fightipilota couldn’t talk. Indeed, her entire mission was to get to Nombernaught today.</p>
+<p>The band of Drowned Folk came to a halt and nodded at the disguised Goblins. They didn’t reach for their weapons, but they were all armed. Each Drowned Folk had a different set of weapons, but the defenders of Nombernaught tended to carry one stabbing weapon and one shooting weapon, be it wand, hand crossbow, or something else.</p>
+<p>The half-lobster Drowned Man that Fighti recognized gave her a nod and a half-bow, claw extending.</p>
+<p><strong>“Deeps run silent with you, visitors. This isn’t the first time you’ve passed across Nombernaught’s bow, is it?”</strong></p>
+<p>They had funny, deep voices and strange ways of speaking, but then—so did everyone. Fightipilota grinned as she copied the gesture. The two Hobs wrestled a chest off Coldcream’s back.</p>
+<p>“Deeps run silent with you too. We’ve been here before. I’m Fighti.”</p>
+<p><strong>“Thought so. No wish to enter our city?”</strong></p>
+<p>“Too busy.”</p>
+<p><strong>“Hm. Well, we’ll take your cargo with many thanks. You’re one of the few able to make the trip over land as of yet. One Courier made it; your gifts are sorely needed. Which is it this time?”</strong></p>
+<p>Fightipilota glanced at the chest, but she had a list to confirm.</p>
+<p>“Lots of buildy things. Dwarf metal from their mountain, mana stones—”</p>
+<p>That made one of the other Drowned Folk jerk upright.</p>
+<p><strong>“Get them aboard and away from the land as fast as you can. That’s </strong><em><strong>much</strong></em><strong> appreciated.”</strong></p>
+<p>They needed the mana stones to fuel Nombernaught, and Fightipilota knew there was something wrong with the magic around the New Lands. It didn’t affect her in the air, but Rags had warned her about the dangers of the Chest of Holding breaking. As for the metal and whatnot, the Drowned Man took the list and nodded.</p>
+<p><strong>“Sorely needed. The Luminary will lay credit before all at half mast—Magnolia Reinhart is a generous friend to Drowned Folk. As are the Wyvern Riders and the Drakes of…”</strong></p>
+<p>He glanced at Fightipilota, and she smiled, seeing her reflection in a metal badge on his chest. She always found the image of that grinning Drake with dark, green-black scales disconcerting.</p>
+<p>“City of Floodwater. You don’t know it.”</p>
+<p><strong>“We do now. Will you not enter Nombernaught?”</strong></p>
+<p>He seemed actually let down when Fightipilota had to refuse. She wanted to enter, she did, but Rags would kill her, and besides…Fightipilota jerked her thumb at the whining Wyvern.</p>
+<p>“We have to go. Say, you got any more information about other people exploring? We been…we <em>were</em> flying over that way, but we got ambushed by Wyverns. No sign of two groups.”</p>
+<p>She grimaced. Monster attacks were one thing, but the job of combing the New Lands and trying to deliver aid to people was literally like searching for needles in haystacks. Fightipilota had no idea why people enjoyed that so much, but she found it dull, if necessary. Rags had promised Magnolia, and Fighti was, in theory, earning lots of money for the tribe. But she didn’t get a paycheck.</p>
+<p>Magnolia Reinhart kept providing Rags with groups to either help…or monitor from above. Generally, it was just flying down, dumping food on the ground if they needed it, or giving the people directions.</p>
+<p>Some were doing well. Some were hostile, even to ‘Drakes’ on Wyvernback. But mostly…Fightipilota couldn’t find them.</p>
+<p>It was a huge continent, and she stuck to high altitudes. Even with a spyglass, spotting groups was hard, so both times she’d checked for the people on her list, all the [Aerial Flier] had found was empty ground where they <em>should</em> have been.</p>
+<p>Well, correction. No traces of the first group. The general location of the second one had led Fightipilota to a campsite overrun by little scavenging mollusk bastards with sharp teeth on their underbellies. It had <em>seemed</em> like something had disturbed the campsite fast; Fightipilota had seen a rusted pot and several pieces of gear.</p>
+<p>But no people, no bones. And so she’d have to report back to Magnolia Reinhart or Rags until she got new groups to help. Including the two on this latest run, Fightipilota had checked on thirty-three different groups so far in the New Lands.</p>
+<p>Over half were dead or missing.</p>
+<p>The Drowned Man took the question from Fighti more seriously than the Goblin had thought. He went to confer with what seemed like his superior, a half-slug woman unloading the gemstones and having them actually run towards a boat.</p>
+<p><strong>“Apologies for the rush. If we stay at sea with the magic, it’s sure to last. People headed inland? Well, the Dullahans have yet to arrive, and the Terandrians took the northern landing spots. Full armies both. But there’ve been smaller groups coming all down the coast, from west to south.”</strong></p>
+<p>“I know. Know where any is? Boss Maggy wants to know.”</p>
+<p>Part of Fightipilota’s job was to mark any group that had people with collars in it or the sigils of Roshal. She’d seen only one of those, and she’d been tempted to drop her <em>other</em> cargo right on their heads.</p>
+<p>The Drowned Man snorted at ‘Boss Maggy’ and shook his head.</p>
+<p><strong>“They don’t break bread with </strong><em><strong>us. </strong></em><strong>Half come to our harbor because of our Guide Lights, but they think they’ll be robbed. In </strong><em><strong>Nombernaught.</strong></em><strong>”</strong></p>
+<p>He didn’t spit, but made a gesture where his Human hand covered his eyes at an angle. Fightipilota nodded.</p>
+<p>“Stupid idiots. This place is real nice. I’d stay if I was allowed.”</p>
+<p><strong>“Hmph. You’re one of few. Speaking of, let us give you something for your trip back. Did you find anything worth eating or gathering on your trip?”</strong></p>
+<p>Everyone always asked Fighti that. This time, she showed him the landshrimp, and the Drowned Man recoiled.</p>
+<p><strong>“Eugh. What’s that? Shrimp with legs?”</strong></p>
+<p>“They taste good. Probably like regular ones.”</p>
+<p><strong>“I don’t want to eat a shrimp that crawls around on…we have [Shrimp Farmers] anyways. Argh, I’ll take a few if you can spare it. Here—we’ll put some fish in your stores. Salted or fresh?”</strong></p>
+<p>Fightipilota loved fish and smacked her lips together.</p>
+<p>“Fresh. What kind?”</p>
+<p><strong>“Some fat tuna. Already checked for parasites; eat it cooked if you have to, but I’d chop it fresh and eat it raw with a bit of seasoning. Or some rice like a Drathian.”</strong></p>
+<p>The Goblins all cheered up at that, and Coldcream even got a few <em>big</em> tuna, which he happily devoured. By this time, an answer had come back, and the half-slug Drowned Woman herself strode over. She didn’t have the deep echo to her voice like some Drowned Folk, but she shook Fightipilota’s hand, which always made the Goblin feel funny. Good funny, but odd.</p>
+<p>“Officer of Public Order, Me’shere. You looking for fools in need?”</p>
+<p>“That’s my job.”</p>
+<p>The officer grimaced and produced a map, which she unfurled against Coldcream’s leg. When the Frost Wyvern went to poke her with his head, offended, she pushed it out of the way impatiently.</p>
+<p>“Here. This <em>entire</em> section just north of us is condemned. The half-Elves know it, and we’re finding more colonies along the south, but the idiots we warn don’t pay any notice. A group of Terandrians just headed that way. We saw them come in and drop their crew, but they refused all hails and warning lanterns, the idiots.”</p>
+<p>She circled a small section of land just north of Nombernaught. Fighti’s ears perked up.</p>
+<p>“What’s bad there?”</p>
+<p>All the Drowned Folk chorused at once.</p>
+<p>“<em>Sword Crabs.</em>”</p>
+<p>Aha. Fighti didn’t know that particular monster well; Garen had fought them once, and he had described them as dangerous, Gold-rank monsters. It seemed reasonable to her, but from the Drowned Folk’s expressions, their warnings weren’t often heeded. It was a mix of pity and disdain for the landfolk.</p>
+<p><strong>“No one gets how damned dangerous they are. They’re nesting all over these caves on the coast, and they’ll butcher anyone. The Terandrians were two days gone; if they’re even alive, I’d advise flying over the spot and never landing.”</strong></p>
+<p>It sounded like a good detour, and Fightipilota wanted to see one of these Sword Crabs herself. She confirmed her bearings, then thanked the Drowned Woman and filled out her own map.</p>
+<p>“Best of luck to you, wherever you sail…fly. I’d be out there myself if I had a way to scoot over land like you do. Then again, I can’t imagine <em>flying.</em> Solid ground beneath my feet is bad enough.”</p>
+<p>What a strange people. Fightipilota grinned as she pulled her goggles down over her head.</p>
+<p>“Nah. Flying is fine. I’ll take you up sometime if you want.”</p>
+<p><strong>“Aren’t you afraid of falling?”</strong></p>
+<p>The Drowned Man was curious. The Goblin grinned at him.</p>
+<p>“Sure. But I’m afraid of <em>not</em> flying more.”</p>
+<p>Then she was up in the air, slowly circling the city until the air felt thinner, and she could see so much land around her and the vast sea that Fightipilota felt like a giant soaring over the world. And when she looked up—she wanted to go even higher.</p>
+<p>She laughed before setting herself about her task with a good deal of urgency. They weren’t her people. They might kill her if they knew what she looked like. But she still felt bad for the idiots coming to the New Lands.</p>
+<p>They were getting a taste, in a sense, of what it was like to be a Goblin: lost, with no allies around, scrounging for food, at the mercy of other people and monsters.</p>
+<p>No one deserved that.</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>In the New Lands, there was a [Knight]. He had a long, white beard that hung from his chin, untrimmed and flecked with dirt and blood. That seemed to throw him off as much as his broken arm; his armor was battered, bright mithril bent and even torn in one spot.</p>
+<p>He was old. Not all the time, but now? Yes. Age weighed down his arm as he balanced the lance on his saddle before lifting it higher in a gesture second-nature to him. It was in the creak of his head, every failing of his body. Yet he sat with his back straight, as if he were riding parade.</p>
+<p>That was how he looked. His horse was covered in a lather of sweat, breathing heavily, but the finest steed imaginable; despite the unsteady way it shuffled its hooves, it obeyed his gentle commands with his feet and turned, riding towards its death for reasons it could not have said.</p>
+<p>Master and horse were not peaceful; there was a leaden weight in the [Knight]’s eyes, and when he set his lance, it was with all the weight of his shattered world behind the broken tip of metal and wood.</p>
+<p><em>It would not be enough. </em>He stared at an arm of barnacle-crusted chitin, a claw larger than his torso, rising and waving, dozens upon dozens of them. Like the arms of a windmill in another [Knight]’s story, just as futile to joust against.</p>
+<p>A kick to the horse’s sides and he took off. The lance bobbed up and down slightly as the horse ran as it had been taught, and the [Knight] kept his eyes level. His course carried him straight at the closest creature: a crab so huge it was taller than he was, even mounted.</p>
+<p>Its ‘mouth’ was four miniature pincers, which were folding and unfolding, stained red with blood. It turned as the [Knight] galloped and raised its dominant arm. When it lashed out, it was with precision and all the weight of its body—a blow that should have taken the rider off the horse.</p>
+<p>To the crab’s amazement, the claw slid sideways, <em>flicked</em> aside by the lance. Then the lance struck home, and the crab reeled, recoiling. Its shell and underbelly were cracked; blue blood leaked from the wound, but it was not deep.</p>
+<p>The same blow that would have speared a mortal man through, armor or not, had not enough force. Not against the Sword Crab; the lance was broken, the tip snapped off. The crab lashed out and caught the [Knight] with a blow against his armor.</p>
+<p>He reeled back in his saddle like a training dummy given a wallop and lay, head bouncing against the horse’s back, almost falling off the horse, only anchored by his legs until he slowly, slowly came upright. The two passed by each other; the [Knight] turned his horse as the other Sword Crabs chittered and kept eating.</p>
+<p>He rode back, panting, the horse whinnying, and the old [Knight] patted its head. Slowly, he reset himself, his good hand shaking. Broken lance raising…turning…</p>
+<p>He rode like the banners strewn around the ground. A piece of beautiful cloth, ripped ragged, covered in blood, about to blow away with each breeze. A tarnished lantern shone on his armor, broken and warped. Light still played off it, but it was not magical and brilliant.</p>
+<p>A new crab had sidled forwards, advancing slowly, wondering if this was worth the effort instead of vying with the others for food. The [Knight] leveled his lance. Nudged his horse forwards.</p>
+<p>Someone was sobbing. He could hear it faintly. But the [Knight] put it from his mind. The rocky ravine where he rode was strewn with broken tent frames. A shattered banner; his love, blood, and stones were strewn across the ground. He sat with his back to a small raised mound of dirt, far from a hill, sheltered from the wind by a boulder.</p>
+<p>The Sword Crabs were probably sixty strong; a nest of them that had emerged from caves along the terrain. They were huge, but not fast; it was conceivable he could race past them to safety.</p>
+<p>The thought had never crossed his mind. Slowly, the [Knight] rode forwards as the new Sword Crab scuttled towards him. He crossed the ground, but this time, he had no Skill to parry the claw.</p>
+<p><em>Strike. </em>Be struck. The horse made a sound like a sigh. It staggered. If its knees broke, it was dead. But it turned as he hugged it, whispering, and he set the lance again as he rode back to his place.</p>
+<p>Tilting with Sword Crabs. How long, he couldn’t have said. Every time he drifted off, the [Knight] would droop. Then his head would rise, and that focus would enter the grey clouds of his demise; the faint blue of purpose. Once more.</p>
+<p>Once more.</p>
+<p><em>Once more…</em>a voice was pleading for him to stop. But why? For what? He didn’t turn his head. There was no point.</p>
+<p>A young woman, barely sixteen, was sitting with her back to the stones with five survivors, pressed up against the shelter that would save no one. She wore traveling clothing, soft leather armor meant for the idea of battle; enchanted and handsomely made. Ruined and scarred like she was by the reality of the last two days.</p>
+<p>The others in her company were a maid, a [Man-At-Arms] with both legs broken, two camp servants, and an unconscious [Archer].</p>
+<p>Only the [Archer] had the dignity of any kind of triumph or fleeting resistance on the grime and blood streaked across his unconscious grimace. A few arrows stood out in the Sword Crabs’ carapaces; they didn’t even notice them. The others had honed blades, new clothing tailor-made for their expedition. Explorer’s gear strewn across their camp. The silence of death on their tongues. A lantern hung from each one’s waist, unlit.</p>
+<p>Beyond that small hill lay red sand. Horses, bodies, even livestock being devoured. If the [Knight] focused on them, his lance would slip. So he rode—</p>
+<p>His horse fell to its knees, and he traded a blow with a Sword Crab; it hit him twice before the horse got up. The [Knight] limped away as the Sword Crab retreated for easier meals.</p>
+<p>If he thought the weeping girl could have escaped with him on the horse or alone…she was no gifted rider, and his horse would not last the hour. He had no idea where the Drowned Folk’s city was. If there was hope, it was that the crabs would tire or be sated and leave.</p>
+<p>The sun had risen once, and it was like to set again. The [Knight] raised his lance, pausing a moment to wipe away blood trickling across one eye and down his face. He only looked up when the crying ceased; he turned, thinking a Sword Crab had appeared, but his granddaughter was gazing up.</p>
+<p>Then the [Knight] saw the [Pilot].</p>
+<p>Well, [Aerial Flier].</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>Fighti had no idea who the old man was. She’d spotted him after her second sweep down the coast just as she was preparing to head out. It was a tiny spot; an inviting-looking landing cove…infested with Sword Crabs.</p>
+<p>She didn’t need anyone to tell her what had happened. The ground was a massacre. A single [Knight] was riding against the Sword Crabs coming after the survivors, again and again. A hopeless, idiotic task. He had white hair; that meant he was old, right?</p>
+<p>Terandrian? She had no clue from above. She had never met him. But—she saw Mousebite and Evilknee checking their weapons and shouting at Chickenruler to take them lower. Fightipilota checked her goggles and grinned, not in joy, but the mirthful grin of the Redfangs.</p>
+<p>She was a former Redfang, one of Garen’s children. She did not know that old [Knight]’s name, but so what?</p>
+<p><em>They already liked him.&nbsp;</em></p>
+<p>“Coldcream, down! Down!”</p>
+<p>The Frost Wyvern was snorting, but Fightipilota’s voice rose over Chickenruler’s.</p>
+<p>“<em>No. Take us up. </em>Prepare the Chest of Holding. On my mark—”</p>
+<p>The Frost Wyvern rose <em>higher</em>, and Fightipilota heard a scream from below. She ignored it.</p>
+<p>The Sword Crabs had noticed the Frost Wyvern, and perhaps reminded of their prey, were scuttling towards the [Knight]. He’d halted, but Fightipilota wasn’t bearing down on any of them. Instead, she was going high.</p>
+<p><em>One hundred feet…two hundred…</em>she wanted more, but there was no time. Fightipilota snapped.</p>
+<p>“<em>Brace in three! Open the Chest of Holding…now! </em>[Aileron Roll]!”</p>
+<p>All three Goblins and Coldcream screamed as the Wyvern <em>rolled</em> in the air. But Mousebite threw open the Chest of Holding, and Fightipilota reached for her personal bag of holding. She glanced down, and the [Knight] looked up.</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>The Sword Crabs were scuttling forwards when a fish hit one of them on the eyestalk. It jerked in surprise, then picked up the fat tuna with bemusement and gratification. Falling tuna? What th—</p>
+<p>A fifteen-pound stone <em>smashed</em> through its head at considerable speed. Another Sword Crab jerked as it was hit by a dozen fist-sized stones. Another made a <em>clicking </em>sound of agony as another chunk of stone smashed into it.</p>
+<p><em>How? </em>The [Knight] gazed up and then saw the Wyvern right itself. His exhausted mind connected the dots.</p>
+<p>Hundreds of feet. The simple expedient of weight. It probably had the force of a stone launched from a catapult. But to calculate where to drop the stones…the flier had to have experience. His eyes focused on a Drake—she had a leather helmet and glass goggles on her head. She pulled something glittering from her bag of holding as the Frost Wyvern banked, coming lower.</p>
+<p>The second pass on the confused Sword Crabs dropped fewer objects. But when the Drake tossed down the first red orb, it exploded among the Sword Crabs, sending them scuttling back in alarm. Then the Wyvern <em>exhaled,</em> and ice coated the crabs, who jerked in alarm and agony.</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p><em>Ammunition’s running low. </em>Fightipilota had only two ‘bombs’ left. The Flasks of Blast and acid jars she was dropping constituted her entire arsenal.</p>
+<p>She fired the Thunderbow again. [Double Tap]—one of the Sword Crabs flinched and backed up, but it barely bled.</p>
+<p><em>Way too tough. </em>Fightipilota howled as Coldcream came lower.</p>
+<p>“<em>Mousetrap, Evilknee, dropping on the next pass! Get them ready to go! I need another breath attack!</em>”</p>
+<p>“Coldcream can’t do it forever!”</p>
+<p>“<em>Just keep them back!</em>”</p>
+<p>The Sword Crabs were retreating in the face of this unexpected attack, but they were still intent on defending their meal. Now, the Frost Wyvern was barely fifty feet above the ruined campsite and descending.</p>
+<p>“Three. Two. One—<em>jump! </em>[Cargo: Softer Landing]!”</p>
+<p>The two Redfangs leapt, shouting obscenities at Fighti’s label for them. They rolled into the sand and onto their feet, charging with a roar one of the Sword Crabs still scuttling forwards.</p>
+<p>Fightipilota tossed her last Flask of Blast—miss. But it made all but one Sword Crab reel back. She turned as one actually <em>snapped</em> at Coldcream flying overhead.</p>
+<p><em>That one’s their leader. </em>The biggest Sword Crab outweighed the others by at least half as much, and it had a huge claw that it snapped at Coldcream. Even the Frost Wyvern seemed intimidated and banked away from it. Fightipilota nailed the Sword Crab dead center with the acid jar.</p>
+<p>Its carapace fizzed and smoked horribly, and the Sword Crab recoiled, trying to wipe the liquid off. Fightipilota pumped a fist…then stared.</p>
+<p>“Aw. Never seen that.”</p>
+<p><em>After about thirty seconds, the acid stopped smoking. </em>It had abraded the Sword Crab’s ‘chest’ significantly, but that only seemed to piss the crab off. It waved its claws furiously, and Fightipilota saw it also had a huge hole in its chest, dead-on. The wound seemed fresh—but like the acid jar, it hadn’t been enough. It waved its bloodstained pincers at Fightipilota as she shouted.</p>
+<p>“<em>We’re heading down. Get ready!</em>”</p>
+<p>The Frost Wyvern landed, shrieking, and Fightipilota fired her Thunderbow again at the Sword Crabs. They were backing up, trying to hit the fire from the alchemical jars, and the Goblin turned.</p>
+<p>“Everyone on. Now, now, now! Or you die!”</p>
+<p>“<em>Thank you, oh, thank—</em>my grandfather!”</p>
+<p>The first person up was a young, Human woman. She had on a traveller’s outfit stained with blood—she seemed like a noblewoman. She had two rings on her fingers and silver hair. Fighti blinked in astonishment, but just hauled her into a chair.</p>
+<p>“Up, <em>up!</em>”</p>
+<p>Four more people came up, two unable to move, so Mousebite and Evilknee had to wrestle them up. Coldcream groaned at the weight; his riser sacs might not be able to carry everyone! For such huge creatures, they had limited carry capacities.</p>
+<p>Fightipilota had a Skill she hoped could get them up. [Aerial Boost] <em>might</em> get them up and gliding, at least out of range of the crabs. She turned.</p>
+<p>“That everyone? Let’s g—”</p>
+<p>“<em>Wait! Lord Lanight is down there!</em>”</p>
+<p>Who? Fighti turned and saw the old [Knight]. He was staring up at her. His eyes were filled with relief, and a very familiar expression was on his face. He looked peaceful as he raised the broken lance. Then turned his horse.</p>
+<p>He began to ride towards the Sword Crabs now advancing on their new, appetizing prey. The young woman shouted.</p>
+<p>“<em>Grandfather! Stop! </em>He’s going to kill himself. Someone stop him!”</p>
+<p>“Yah, duh. <em>Hey you, old guy! Get up here! Horse too!</em>”</p>
+<p>Coldcream and Chickenruler gave Fightipilota an incredulous look. But Fightipilota had seen Wyverns grab horses and cows and drag them off…it’d be hard, but what else was she going to do?</p>
+<p>The [Knight] didn’t pay attention to her. Cursing, Fighti shouted at the two Redfangs.</p>
+<p>“Grab that old guy! He’s last-of-all-death crazy!”</p>
+<p>They knew what she meant, even if the Human girl gave Fighti an uncomprehending stare. She added her voices to the other Humans bellowing for the old man to stop. He barely looked over his shoulder. He raised his lance—then reeled forwards in his saddle. His horse screamed and whirled—the old man’s head rose.</p>
+<p>Fighti calmly slapped another huge quarrel into her Thunderbow as all of the Humans—and Chickenruler and Coldcream—gave her looks of horror. <em>She</em> thought it was a good shot, hitting him dead in the back while missing the horse.</p>
+<p>Everyone else gazed at Fighti in horror. The old [Knight] turned, slowly, then his eyes focused on Fighti. His glazed look turned into confusion. Then—alarm. He steadied his horse, half-turned.</p>
+<p><em>What are you doing? </em>Fighti could almost hear the thought coming off of him.</p>
+<p>She couldn’t read his expression. The [Knight] said nothing; she would have been surprised if he could say anything after fighting that long without water or potions. But his eyes certainly said it. She called at him.</p>
+<p>“Get on. Or I’ll drag you on after shooting you. Cute horse too. I don’t want to have to shoot it.”</p>
+<p>She swung her Thunderbow down, and the horse tried to go crosseyed. The [Knight]’s eyes flicked to his daughter, waving at him.</p>
+<p>“<em>Grandfather, listen to the Drake! Please!</em>”</p>
+<p>The [Knight]’s eyes flicked to the [Lady], to Fighti—then he opened his mouth.</p>
+<p>“I…”</p>
+<p>He began to object, but the clicking behind him made the old [Knight] turn. He hesitated—but Fightipilota fired her Thunderbow.</p>
+<p>“<em>On, now!</em>”</p>
+<p>The two Redfangs raced back towards her, and the old man almost fell from his saddle. Mousebite and Evilknee tied themselves into the harness and began to yank the old man onto Coldcream’s tail. Before they could get any higher, Fightipilota shouted.</p>
+<p>“<em>Hold him tight! Up, up! [Aerial Boost]!</em>”</p>
+<p>The first Sword Crabs were scuttling at them. The Wyvern leapt into the air, screaming with the effort, but they did <em>fly!</em> Chickenruler was whispering as he hugged his mount.</p>
+<p>“Fly, Coldcream! [Lots of Effort]! Don’t fall, don’t—get us out of here, Fighti!”</p>
+<p>“Almost…[Snap Dive]!”</p>
+<p>The Wyvern passed back over the beach, where a horse was galloping in a circle, as Sword Crabs snapped at it. One reached for the horse—then recoiled as two talons yanked the screaming horse into the air. <em>Then</em> they were flying.</p>
+<p>Fightipilota angled them over the nearest plateau of stone she could, towards Nombernaught, as Coldcream shrieked with exhaustion. She looked over her shoulder and counted.</p>
+<p><em>One, two, three, four, five, six. </em>Both Redfangs, Chickenruler…and the [Knight] being held by the two swearing Goblins. He looked up at her, and she gave him a thumbs-up. He just stared at her, eyes lost. His hand was on his sword hilt, and his eyes wrenched away from her to the beach below.</p>
+<p>Fightipilota smiled tightly.</p>
+<p><em>Too slow for the others.&nbsp;</em></p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>They landed on an open stretch of beach with no Sword Crabs in sight. Fightipilota didn’t waste time; she kicked half her passengers off and took Coldcream up. She hopped the other passengers to a safer spot, flew back, grabbed the rest, and in this way, leapfrogged them to Nombernaught.</p>
+<p>Well, all but the horse. The horse did <em>not</em> appreciate being grabbed, so it galloped after the Wyvern after it had been let go the first time. It was definitely the product of a [Beast Tamer]’s Skills.</p>
+<p>The passengers didn’t say much—well, they did, but it was so much of ‘thank you’, ‘I thought we were dead’, and weeping that Fightipilota didn’t get much. She focused on her job.</p>
+<p>The old [Knight] said nothing; he might have been in shock or just run out of energy. When she told him to get off, he did. When she came to pick him up, he gazed at her with eyes unblinking.</p>
+<p>Angry at her for forcing him to go? Confusion warred with exhaustion, and he was tensed. As if expecting the Sword Crabs to attack him even after they had moved miles from the campsite. Given they were still on the coastline, it was sensible. Fighti ignored the gaze.</p>
+<p>When she landed at Nombernaught again, the Drowned Folk ran out to meet her and the survivors. One look at them and Officer Me’shere barked.</p>
+<p>“Get a [Healer] and muster a group of Deckraiders now! Is there anyone else alive back there?”</p>
+<p>“I didn’t see any.”</p>
+<p>“No. No, it was just—there were two hundred of us. They’re all dead. We had <em>[Knights]. </em>And they—they—”</p>
+<p>For all the Officer’s complaints about landfolk, she very gently took the young woman’s arm.</p>
+<p>“You’re safe now, Miss. Let’s get you inside. Miss Rider, you have the gall of a Krakenhunter if you grabbed them from Sword Crabs.”</p>
+<p>Fighti just shrugged. She was eying the [Knight]. He’d frozen up, probably with exhaustion, once they’d gotten him away from the crabs.</p>
+<p>“<strong>What’s your name, Miss? How many fingers am I holding up? Who’re your people?</strong>”</p>
+<p>The Drowned Man was speaking to the young [Lady]. She stared at his hand.</p>
+<p>“Th-that’s a claw. I’m Lady Calva of House Lanight. A—a [Strategist]. There is my grandfather, Lord Olvos Lanight. Please, see to him. He was fighting the Sword Crabs all night into dawn—”</p>
+<p>The Drowned Man turned and muttered an oath as he saw the old [Knight] sitting on the ground.</p>
+<p>“<strong>By himself? Dead gods, that’s full mithril armor. House Lanight? What kingdom is that?</strong>”</p>
+<p>The girl, Lady Calva, gave him one of those ‘how do you not know?’ looks. She spoke as if it were obvious.</p>
+<p>“Bitorm. Terandria.”</p>
+<p>Fighti had no idea where that was. But she approached the old [Knight].</p>
+<p>“Hey. Good fighting. You bleeding? Dying?”</p>
+<p>She checked him over, but aside from the broken arm and a lot of battering, he looked relatively okay. At worst, he’d probably only fractured a few dozen bones. Considering what had happened to the others…</p>
+<p>The old [Knight]’s head rose. He had lost that dream-like focus, but he still had an amazingly good posture. His voice was more mellifluous than Fighti expected and deeper than his age. He spoke with that real poshness that Fighti had heard from some people on the scrying orb, as if he had a Skill or had taken lessons in how to speak good.</p>
+<p>He glanced once again at his granddaughter, then the other Drowned Folk, and paused a good moment. Then he slowly inclined his head at Fightipilota, studying the rest of her companions with a frown. The old man seemed to be warier of Fighti more than the others, which again, checked out, and addressed her slowly.</p>
+<p>“I am in your debt…[Wyvern Rider]. My granddaughter and people would have perished without your aid. If there is any reward you wish for, name it. It shall be granted.”</p>
+<p>That was a strange way to say thank-you. Fighti supposed it was a Human thing. Actually, the granddaughter seemed perplexed and hesitated, as if she’d expected more gratitude from the old man. Fightipilota didn’t find it offensive.</p>
+<p>Well, she’d also expected him to try and punch her, so she nodded.</p>
+<p>“I’m not a [Wyvern Rider]. Class changed. I’m an [Aerial Flier].”</p>
+<p><em>Because all the Wyverns got sick of me. </em>The old man didn’t seem to get the small talk, so Fighti patted him on the shoulder. He recoiled slightly from the gesture.</p>
+<p>“I’m Fighti. Fightipilota.”</p>
+<p>That <em>did</em> get a reaction from him and the Drowned Man and [Lady]. They all gave Fightipilota a quizzical look.</p>
+<p><strong>“…What kind of name is that?”</strong></p>
+<p>Drat. Rags had said not to do names. Fightipilota panicked.</p>
+<p>“Um. Drake?”</p>
+<p>“Ah. Well—well, we are in your debt, Miss? I only wish—I wish you had been—”</p>
+<p>The girl’s eyes filled up. Fighti sighed and nodded, but the old man just stood slowly. He turned to the Drowned Folks and bowed painfully.</p>
+<p>“My house is a noble one. We will pay for any assistance you are willing to render us. I humbly request sanctuary in the name of the Lantocracy of Bitorm. A [Message] will confirm our identities. As would this.”</p>
+<p>He tugged at a ring on one of his fingers with a fancy sigil. Officer Me’shere came back with a [Healer] and stopped him.</p>
+<p>“We shall believe you, sir. We need to check you all for wounds. This way, please. And you, er, Miss Fightipilota? You surely need a rest.”</p>
+<p>The Goblins hesitated. But Coldcream was exhausted and looked ready to bite Fightipilota if she tried to make him fly again.</p>
+<p>“You got a room for this big pooper?”</p>
+<p>The Drowned Folk eyed the Wyvern, but assured Fighti they could find rooms. She hesitated, then fired off a quick [Memo].</p>
+<p>“<em>Chieftain. Is Fightipilota. Uh…we rescued some people but are now guests at Nombernaught. Don’t get mad!</em>”</p>
+<p>The reply came in seconds as Fightipilota entered the city, wincing.</p>
+<p>“FIGHTIPILOTA. REPORT.”</p>
+<p>&nbsp;</p>
+<p>[Aerial Flier Level 17!]</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>Entering a Drowned City was amazing despite the circumstances on their arrival. The Drowned Folk were efficient; they even had Coldcream bedding down in what seemed like a hangar for building ships and a huge bucket of fish for him to snack on.</p>
+<p>Fightipilota pretended she definitely had stayed at an inn before and was super glad they told her everything was on the house. Having people sit with her and ask her how she had rescued the Humans was…surreal.</p>
+<p>Not the chatting. If she thought of them as other Goblins, it was fine, but when she looked around and realized non-Goblins were buying her drinks and congratulating her—</p>
+<p>It weirded out the others so much they had to lie down. Fighti had to beg off as well to answer Rags, who was very upset. She was so nervous about Nombernaught, in fact, she was afraid to explore much.</p>
+<p>Not that it mattered; Rags told her to <em>get out of the city now</em>, or as soon as she could. The Drowned Folk wanted to host Fighti longer and apologized that she couldn’t meet with the busy Luminary or the Captain of Ships—Fighti was grateful for that. They seemed respectful when she claimed she needed to keep flying, and that was that.</p>
+<p>…Or it should have been. Fighti was all ready to hurry out the next day with a chest full of free fish, but Lady Calva, looking a lot better, greeted her with a huge bow.</p>
+<p>“House Lanight is in your debt, Miss Flighti Pilota. I did not get a chance to express my gratitude for your intervention. Had you not arrived, we would have been…please, name your reward. It may be uncouth, but we would happily pay our weight in gold.”</p>
+<p>“Really? Uh…that’s nice. But I did it because it was my orders. From my Ch—my boss.”</p>
+<p>“Your…boss? Your leader sent you to us?”</p>
+<p>Fighti waved her hands anxiously.</p>
+<p>“All over the New Lands. To help people. She’s, uh, my C—my boss. She told me to keep flying and help people.”</p>
+<p><em>And to get back to Goblinhome so she can kick my butt. </em>The [Lady] dipped her head again.</p>
+<p>“I should be grateful to express my gratitude to her, and you, in person. My grandfather…is an important man. I wish you h…”</p>
+<p>She broke off, and Fightipilota suspected more than one person close to Lady Calva had perished. The Goblin put a hand on the [Lady]’s shoulder, awkward.</p>
+<p>“We were too late.”</p>
+<p>“No, you were—”</p>
+<p>Fighti gave the [Lady] a grin as she protested.</p>
+<p>“We were too late. Sorry. You go rest, okay? We…we’ll go. Maybe we’ll see you on our flight back.”</p>
+<p>She was treated to a confused stare from the [Lady], as if this were not what she expected, but Fighti wanted out <em>now</em>, before someone started asking more questions about her city or what it was like being a Drake and stuff.</p>
+<p>“Please, at least let my grandfather thank you himself. He is sure to wish to—”</p>
+<p>“I don’t need his…okay. If he wants to.”</p>
+<p>Fighti stood around the inn anxiously and turned down the stiff drink the [Innkeeper] wanted to foist on her. She had to fly and resented her two Redfang companions <em>and </em>Chickenruler for all having two hearty drinks. When Lady Calva came back, she was embarrassed.</p>
+<p>“I—I can’t find him. He must be at the [Healer]’s. Wait one more moment please, Miss Flighti?”</p>
+<p>She was almost out the door when one of the Humans that Fighti had rescued came tearing into the room. It was the [Archer], who had a wild look on his face.</p>
+<p>“Lady Calva, Lady Calva!”</p>
+<p>He actually stopped to bow, despite himself, as the [Lady] froze.</p>
+<p>“What is it?”</p>
+<p>“Lord Lanight is gone! He left the city! Someone saw him riding out—<em>north! </em>He was asking where the Sword Crabs were—”</p>
+<p>Fighti groaned as the other Redfangs glanced up. Mousebite shook her head.</p>
+<p>“He crazy.”</p>
+<p>Fighti nodded as Lady Calva issued a sound of dismay and ran out the door. <em>Then</em> Fighti had to run to Coldcream and get the Wyvern in the air.</p>
+<p>She did two passes by air for the old [Knight]…and then, luckily, saw someone waving at her and descended to learn that he’d been dragged back to Nombernaught already. <em>After </em>apparently having been found jousting the Sword Crabs.</p>
+<p><em>Crazy old guy. </em>Fighti landed to see Calva screaming at her grandfather, who sat on his horse with that distant gaze. He didn’t look at anyone; when Fightipilota landed, he glanced at her once, then his eyes strayed northwards. It was as if another lighthouse shone to the north and everything else paled in the face of the light only he could see.</p>
+<p>The Goblin wannabe [Pilot] sighed. She stood there, rubbing her face, and knew that this wouldn’t end well for her if she intervened. Rags would kill her. It wasn’t her job. She didn’t know them. She had no idea where Bitorm even was.</p>
+<p>…But darn it, she had liked the old [Knight]. So, sighing, Fightipilota put a finger to her head.</p>
+<p>“[Memo: Rags]. <em>Chieftain? Gotta problem. Send me Redscar.</em>”</p>
+<p>She braced herself for the inevitable, furious response and got ready to argue in twenty-five word chunks. It wasn’t a Goblin’s job, true. It was dangerous, true. It was stupid, true.</p>
+<p>But sometimes, a Goblin had to care. Fightipilota hoped she’d hit Level 20 soon. Maybe then she’d be a [Fighter Pilot].</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>Fightipilota would never become a [Fighter Pilot]. Sorry. To her, in specific, and the world in general, if there was anyone else rooting for her. Lots of Redfangs were. It was just the facts; no need to get emotional about it. Facts couldn’t hurt your feelings.</p>
+<p>She wasn’t going to get it at Level 20. Even if she hit Level 50, she could not magically get the class. There were methods and similar classes that might satisfy her, but the requirements required so many leaps of logic the Grand Design of Isthekenous saw no actual path for Fightipilota.</p>
+<p>Consider it logically: [Fighter Pilot] was a class that couldn’t be consolidated into from the classes Fightipilota had. [Aerial Flier] appeared like a straight line to that…but it wasn’t.</p>
+<p>[Pilot]. A class that had yet to exist, at least in the sense of an aircraft. There had been fliers of aircraft before. Golems and magical vessels, but the idea of a ‘pilot’ was Earth-based. They had called the old fliers of the sky [Flying Shipmasters] or [Skyriders] or…</p>
+<p>Fightipilota would not be able to get into the air the old ways, either. There were no intact flying vessels she had any means of getting at. There were other ways into the sky. Some surprisingly near her at times, but again, not the class as she wanted it. And the nuance mattered.</p>
+<p><em>Pilot</em> meant the act of controlling a vessel—it was not and could not be tied to the [Wyvern Rider] classes. Even Felkhr’s flying machine was not the kind of thing you exactly piloted; it was a separate chain of more direct flying classes.</p>
+<p>Fightipilota had to have a machine to fly. Now, the Grand Design had done its research. It knew from Earthers what a plane was. It knew the history, the complexity, the nuance, and it wasn’t happy about having to deny Fightipilota’s earnest wishes, but you <em>could not</em> get a class like [Fighter Pilot] just by wishing hard enough.</p>
+<p>Other classes, like [Emperor] or even ones some Earthers were getting? Sure. But you see, that was because they had less grounding in, well, reality. Laken Godart had cited the case of Norton, the first Emperor of America, and yes, the Grand Design got the fact that Norton had not been an official [Emperor] crowned by that country.</p>
+<p>…But it would have given him the class. It could not, in its meticulous design, rationalize any path for Fightipilota to reach her destination unless a plane was invented. And she didn’t have the know-how. No Earther around her did. Not Rhaldon…if Kevin had been alive, they might have had a faint chance, but aerodynamics were <em>hard.</em></p>
+<p>The Grand Design would know. It was a master of aerodynamics, magic, the sciences, and everything. There was no one capable of Fightipilota’s craft unless Felkhr got the entire budget of Pallass’ Engineering Teams to work with the Goblins, and even then…</p>
+<p>Just no. Anyways, Fightipilota was low stakes. She was due another level, and she’d keep getting classes related to her desire, but it would soon become apparent she was tied to a [Dreamer] class or perhaps a <span style="color: #ff0000;">[Delusionist]</span>…or maybe she would change. That was the joy of levelling.</p>
+<p>Anyone could change and do something interesting. But no [Fighter Pilot]. Nevermind, nevermind. It was one tiny part of the Grand Design’s massive awareness, and it didn’t feel bad for her at all.</p>
+<p>You know what <em>was </em>interesting? What was taking an actual portion of the Grand Design’s attention right now? Balancing things.</p>
+<p>Not just the Earthers. Not just chess…no, a real challenge had appeared recently. Guess what it was?</p>
+<p><em>Deikat Vunn magic. </em>What the heck. What was it? Alevica had used it, and now it was part of her magic. It was a huge…not problem, but conundrum.</p>
+<p>Sçæptiŝ. A magical spell that required specific pronunciation to work. Mana cost? <em>None.</em> It had more force than a regular Tier 0 spell, heck, more than most unaugmented Tier 1 spells!</p>
+<p>Alevica had learned it. The Grand Design had to figure out what to do about it. And its first job was to know…what Deikat Vunn magic was.</p>
+<p>The Hag Queens of Aklat Vunn were new to this world. New as in ‘in the entire history of the Grand Design’s inception, not one trace of their being had ever been here’. New as in ‘Seamwalkers were old hat’ new.</p>
+<p>It had to know what was going on. Balance the magic? Perhaps, perhaps. There was actually a solid provision to letting Alevica have…access to all the magic. She now had a ‘cantrip’. The Grand Design knew what that was, of course. It had plucked the concept from Laken’s mind and ratified it across all the Earthers, some of whom had an intimate knowledge of many roleplaying games.</p>
+<p>Cantrip. Zero-cost magic. Unprecedented to magic in this world. Acceptable? Perhaps, actually. It would change the world, but was that a bad thing? You had to know Deikat Vunn magic, and the Hag Queens had arrived in this world. Using their powers was only fair. If you accepted the consequences as well as the benefits.</p>
+<p>Thus, the Grand Design’s main concern was not so much the <em>balance</em> of the magic as what it was. You see, it didn’t know. It didn’t know who the Hag Queens were. It didn’t know all the spells.</p>
+<p>It had to. Otherwise, how would it calculate Skills, incorporate their identities and powers and history into its system? If, say, someone ate one of the Hag Queens with a knowledge-Skill, the Grand Design had to provide said knowledge. If someone wanted to gain the classes of the Hag Queens, guess who had to be the expert in all of them?</p>
+<p>You might think the Grand Design would be stuck here. But not so! Much to its surprise, the Grand Design had realized it had a lot of tools available when Alevica had cast the first spell of Deikat Vunn. It was as if a door had opened up…that even the Grand Design hadn’t known was there before.</p>
+<p>Parallels to a certain [Innkeeper] aside, this was a level of functionality that was unheard of except for <em>one other case—</em>the origin of Selphids. Hm.</p>
+<p>Yes.</p>
+<p>Hm. The Grand Design of Isthekenous tentatively activated a function it had used when Alevica had been about to master the first spell of Deikat Vunn.</p>
+<p>[Reality: Stop Time].</p>
+<p><em>It felt the strain of halting everything. </em>The Grand Design resumed time. Then it siphoned off a portion of itself.</p>
+<p>[Reality: Rewind Time].</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>Kasigna stood with her arms raised, summoning the Hag Queens from the world that had once been. A dead world; she called them from memory and her pact with them. The Grand Design was busy calculating the battle, but <em>another</em> Grand Design watched. Observed.</p>
+<p>Was this rewinding time or recreating a snapshot of reality for it to peruse? Either way…it stopped time again. Then <em>inspected</em> the Hag Queens.</p>
+<p>How strange. They came from an entirely new universe. One it did not understand; ergo, it did not understand the Hag Queens. All the rules were different in this universe. Without knowledge of, well, everything in the world Kasigna and the Hag Queens had come from, the Grand Design was imperfect.</p>
+<p>Someone had known that. So a door opened in the center of the Grand Design, and it found a room.</p>
+<p>In that room were objects. Physical creations, not ideas, not concepts written into the firmament of reality. <em>The room was filled with tools.&nbsp;</em></p>
+<p>Each one had belonged to a God.</p>
+<p>There was the Grand Design of all things. Inside the Grand Design was a room. Within that room was an orb. Within that orb was a door. Within that door was a world of Aklat Vunn.</p>
+<p>The Grand Design moved through the door and began to explore a universe from start to finish. It processed a different realm of reality, physics and solar systems unknown to it, and a language it understood.</p>
+<p>Aklat Vunn was high Vunn. Deikat Vunn was the language…of course. It began to take notes. Record everything, <em>everything,</em> and that effort took up much of its being—even for it. But it would memorize this universe apart, even if the souls were gone.</p>
+<p>The Grand Design of Isthekenous realized this room was filled with objects, the tools of Gods, each one owned by a different God, meant to empower it to search and understand. Then it wondered if it had not been used for its great purpose.</p>
+<p>How…many worlds had it been meant to grasp and understand in its being and transmute into the world of classes and levels? Then it wondered—how many worlds it had been meant to span.</p>
+<p>Isthekenous.</p>
+<p>Like Rags, the Grand Design sometimes desired answers.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><strong>Author’s Note:&nbsp;</strong></p>
+<p>I came up with more plot points for this arc WHILE WRITING this chapter. And you know what? I’ll use them, but keep them for next chapters. Short and sweet. Re-learning how to write shorter chapters means not giving into the impulse to try to toss it all in the pot.</p>
+<p>I had delicious, delicious Indian food today (I wrote this last Wednesday). Paneer and good stuff and cheese naan. I also had mochi donuts, which are great. You know what’d be bad? Mixing the two.</p>
+<p>Sometimes, a chapter benefits from shortness. So too should a story. I need to think of a different kind of title for this kind of thing. Not ‘interlude’ because that’s too misleading. But a way to say mini-chapter. Hm.</p>
+<p>My solution was ‘Goblin Days’. I could have spent hours coming up with some snappy name that encompasses the entire arc, but this is a good callback, and while not always the most specific…fits.</p>
+<p>We are day two into many. I think I’m re-learning the art of shorter chapters. Mind you, I still like knocking out 10k+ in a single day, but this feels like exercising the mind in a different way. And that’s a good thing. See you tomorrow!</p>
+<p>&nbsp;</p>
+<p><strong>Blogger’s Note:</strong></p>
+<p>I feel a bit guilty because I realize every time I share a personal insight about writing, people send me so many lovely messages of support. And DM’s, which I cannot respond to if I even see.</p>
+<p>And I feel bad, because that would have you believe I am suffering in a way I don’t think is always true. Sometimes, I have genuine bad days, but so does everyone. If anything, finding that song ‘Baker’, and that webcomic, Dumbing of Age, made me exceptionally happy in a sense because they were worth experiencing.</p>
+<p>One of my typo-finders was very upset by the essay and might be reading this as I type it right now. To them and other people, I’d say I might have forgotten to write something.</p>
+<p>The uncertainty over knowing whether you’re good at writing, realizing as a younger person that you sucked…that is never fun. But the moment you tell a joke that makes everyone laugh until they can’t stand straight, or write a story that captures someone well and truly—that’s real.</p>
+<p>I balance my uncertainty and doubts and bad days with an ego as large as Niers. I think most people who do creative things have that kind of quality. If anything, ego is something you fight and watch for, lest it consume you and become the cautionary tales walking around. Having that doubt in your mind of whether you’re doing the right thing or being that entertaining is one of the key facets between doing humanity right and being the fool.</p>
+<p>Anyways, I like good music. Whenever I find a song—and they are rare—that I truly love, it makes my day. But it is hard to find. Appropriately.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><strong>Stream Art: Rescue by tatolord [improperly baconless]!</strong></p>
+<p><a href="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/07/Rescue-by-tatolord-improperly-baconless.png?ssl=1"><img fetchpriority="high" decoding="async" data-attachment-id="17365" data-permalink="https://wanderinginn.com/2024/07/28/goblin-days-pt-2-the-pilot-and-the-knight/rescue-by-tatolord-improperly-baconless/" data-orig-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/07/Rescue-by-tatolord-improperly-baconless.png?fit=821%2C577&amp;ssl=1" data-orig-size="821,577" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="Rescue by tatolord [improperly baconless]" data-image-description="" data-image-caption="" data-medium-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/07/Rescue-by-tatolord-improperly-baconless.png?fit=300%2C211&amp;ssl=1" data-large-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/07/Rescue-by-tatolord-improperly-baconless.png?fit=821%2C577&amp;ssl=1" class="alignnone size-full wp-image-17365" src="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/07/Rescue-by-tatolord-improperly-baconless.png?resize=821%2C577&amp;ssl=1" alt="" width="821" height="577" srcset="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/07/Rescue-by-tatolord-improperly-baconless.png?w=821&amp;ssl=1 821w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/07/Rescue-by-tatolord-improperly-baconless.png?resize=300%2C211&amp;ssl=1 300w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/07/Rescue-by-tatolord-improperly-baconless.png?resize=768%2C540&amp;ssl=1 768w" sizes="(max-width: 821px) 100vw, 821px" data-recalc-dims="1"></a></p>
+<p>&nbsp;</p>
+<p><strong>Stream Art: Lord Olvos by laboon!</strong></p>
+<p><a href="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/07/Lord-Olvros-by-laboon-scaled.jpg?ssl=1"><img decoding="async" data-attachment-id="17363" data-permalink="https://wanderinginn.com/2024/07/28/goblin-days-pt-2-the-pilot-and-the-knight/lord-olvros-by-laboon/" data-orig-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/07/Lord-Olvros-by-laboon-scaled.jpg?fit=2560%2C1993&amp;ssl=1" data-orig-size="2560,1993" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="Lord Olvros by laboon" data-image-description="" data-image-caption="" data-medium-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/07/Lord-Olvros-by-laboon-scaled.jpg?fit=300%2C234&amp;ssl=1" data-large-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/07/Lord-Olvros-by-laboon-scaled.jpg?fit=1024%2C797&amp;ssl=1" class="alignnone size-full wp-image-17363" src="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/07/Lord-Olvros-by-laboon-scaled.jpg?resize=2560%2C1993&amp;ssl=1" alt="" width="2560" height="1993" srcset="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/07/Lord-Olvros-by-laboon-scaled.jpg?w=2560&amp;ssl=1 2560w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/07/Lord-Olvros-by-laboon-scaled.jpg?resize=300%2C234&amp;ssl=1 300w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/07/Lord-Olvros-by-laboon-scaled.jpg?resize=1024%2C797&amp;ssl=1 1024w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/07/Lord-Olvros-by-laboon-scaled.jpg?resize=768%2C598&amp;ssl=1 768w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/07/Lord-Olvros-by-laboon-scaled.jpg?resize=1536%2C1196&amp;ssl=1 1536w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/07/Lord-Olvros-by-laboon-scaled.jpg?resize=2048%2C1594&amp;ssl=1 2048w" sizes="(max-width: 1000px) 100vw, 1000px" data-recalc-dims="1"></a></p>
+<p>&nbsp;</p>
+<p><strong>Creatures of The New Lands by Enuryn the [Naturalist]!</strong></p>
+<div class="message_d5deea cozyMessage_d5deea groupStart_d5deea wrapper_f9f2ca cozy_f9f2ca zalgo_f9f2ca" tabindex="-1" role="article" data-list-item-id="chat-messages___chat-messages-706763723301322763-871956370478481409" aria-setsize="-1" aria-roledescription="Message" aria-labelledby="message-username-871956370478481409 uid_1 message-content-871956370478481409 uid_2 message-timestamp-871956370478481409" aria-describedby="uid_3 message-reactions-871956370478481409">
+<div class="contents_f9f2ca">
+<div id="message-content-871956370478481409" class="markup_f8f345 messageContent_f9f2ca"><strong>Portfolio:</strong> <a class="anchor_af404b anchorUnderlineOnHover_af404b" tabindex="0" title="https://enuryndraws.art/" role="button" href="https://enuryndraws.art/" target="_blank" rel="noreferrer noopener">https://enuryndraws.art/</a></div>
+<div class="markup_f8f345 messageContent_f9f2ca"><strong>Ko-Fi:</strong> <a class="anchor_af404b anchorUnderlineOnHover_af404b" tabindex="0" title="https://ko-fi.com/enuryn" role="button" href="https://ko-fi.com/enuryn" target="_blank" rel="noreferrer noopener">https://ko-fi.com/enuryn</a></div>
+<div class="markup_f8f345 messageContent_f9f2ca"><strong>Twitter:</strong> <a class="anchor_af404b anchorUnderlineOnHover_af404b" tabindex="0" title="https://twitter.com/Enuryn_Nat" role="button" href="https://twitter.com/Enuryn_Nat" target="_blank" rel="noreferrer noopener">https://twitter.com/Enuryn_Nat</a></div>
+</div>
+</div>
+<p><a href="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/07/The_New_World-by-Enuryn-scaled.jpg?ssl=1"><img decoding="async" data-attachment-id="17361" data-permalink="https://wanderinginn.com/2024/07/28/goblin-days-pt-2-the-pilot-and-the-knight/the_new_world-by-enuryn/" data-orig-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/07/The_New_World-by-Enuryn-scaled.jpg?fit=1829%2C2560&amp;ssl=1" data-orig-size="1829,2560" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;1&quot;}" data-image-title="The_New_World by Enuryn" data-image-description="" data-image-caption="" data-medium-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/07/The_New_World-by-Enuryn-scaled.jpg?fit=214%2C300&amp;ssl=1" data-large-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/07/The_New_World-by-Enuryn-scaled.jpg?fit=731%2C1024&amp;ssl=1" class="alignnone size-full wp-image-17361" src="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/07/The_New_World-by-Enuryn-scaled.jpg?resize=1829%2C2560&amp;ssl=1" alt="" width="1829" height="2560" srcset="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/07/The_New_World-by-Enuryn-scaled.jpg?w=1829&amp;ssl=1 1829w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/07/The_New_World-by-Enuryn-scaled.jpg?resize=214%2C300&amp;ssl=1 214w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/07/The_New_World-by-Enuryn-scaled.jpg?resize=731%2C1024&amp;ssl=1 731w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/07/The_New_World-by-Enuryn-scaled.jpg?resize=768%2C1075&amp;ssl=1 768w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/07/The_New_World-by-Enuryn-scaled.jpg?resize=1097%2C1536&amp;ssl=1 1097w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/07/The_New_World-by-Enuryn-scaled.jpg?resize=1463%2C2048&amp;ssl=1 1463w" sizes="(max-width: 1000px) 100vw, 1000px" data-recalc-dims="1"></a></p>
+<p>&nbsp;</p>
+<hr>
+<p><a href="https://wanderinginn.com/2024/07/28/goblin-days-pt-1-the-wedding/">Previous Chapter</a> <a href="https://wanderinginn.com/2024/07/30/goblin-days-pt-3-vengeance-and-talking/"><span style="float: right;">Next Chapter</span></a></p>
+      </div>
+
+      <hr>
+          <span class="nav-previous">
+        <a href="https://wanderinginn.com/2024/07/28/goblin-days-pt-1-the-wedding/" rel="prev"><span class="meta-nav">←</span> Previous Chapter</a>    </span>
+    <span class="nav-next" style="float: right" ;="">
+        <a href="https://wanderinginn.com/2024/07/30/goblin-days-pt-3-vengeance-and-talking/" rel="next">Next Chapter <span class="meta-nav">→</span></a>    </span>
+    

@@ -1,0 +1,453 @@
+
+
+          <span class="nav-previous">
+        <a href="https://wanderinginn.com/2024/08/11/the-roots-pt-2-2/" rel="prev"><span class="meta-nav">←</span> Previous Chapter</a>    </span>
+    <span class="nav-next" style="float: right" ;="">
+        <a href="https://wanderinginn.com/2024/08/14/the-roots-pt-3/" rel="next">Next Chapter <span class="meta-nav">→</span></a>    </span>
+      <!-- <hr/> -->
+      <header class="entry-header">
+        <h1 class="entry-title">The Roots (Pt. 2c)</h1>
+                <button class="show-settings-btn" onclick="document.querySelector('#reader-settings-wrapper').classList.toggle('is-hidden')">
+          <img class="show-settings-btn-img" src="https://wanderinginn.com/wp-content/themes/solstice/assets/images/ui/reader-settings-button.webp">
+        </button>
+      </header>
+
+      
+<!-- Reader Settings -->
+<div id="reader-settings-wrapper" class="is-hidden">
+    <div id="reader-settings">
+        <header id="reader-settings-header">
+            <h2>Reader Settings</h2>
+            <button onclick="closeModal()">
+                <svg width="100%" height="100%" viewBox="0 0 33 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M16.5 30.75C24.0939 30.75 30.25 24.5939 30.25 17C30.25 9.40608 24.0939 3.25 16.5 3.25C8.90608 3.25 2.75 9.40608 2.75 17C2.75 24.5939 8.90608 30.75 16.5 30.75Z" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M20.625 12.875L12.375 21.125" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M12.375 12.875L20.625 21.125" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+            </button>
+        </header>
+
+        <fieldset id="fieldset-font">
+            <legend>Font</legend>
+
+            <div>
+                <label for="font-size-select">Size</label>
+                <select id="font-size-select" class="reader-settings-select" data-setting="reader-font-size" onchange="updateSetting(this.getAttribute('data-setting'), this.value);">
+                    <option value="10pt" class="reader-settings-option">10</option>
+                    <option value="11pt" class="reader-settings-option">11</option>
+                    <option value="12pt" class="reader-settings-option" selected="">12</option>
+                    <option value="13pt" class="reader-settings-option">13</option>
+                    <option value="14pt" class="reader-settings-option">14</option>
+                    <option value="16pt" class="reader-settings-option">16</option>
+                    <option value="18pt" class="reader-settings-option">18</option>
+                    <option value="20pt" class="reader-settings-option">20</option>
+                    <option value="22pt" class="reader-settings-option">22</option>
+                    <option value="24pt" class="reader-settings-option">24</option>
+                    <option value="26pt" class="reader-settings-option">26</option>
+                    <option value="28pt" class="reader-settings-option">28</option>
+                    <option value="30pt" class="reader-settings-option">30</option>
+                    <option value="36pt" class="reader-settings-option">36</option>
+                    <option value="42pt" class="reader-settings-option">42</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="font-family-select">Family</label>
+                <select id="font-family-select" class="reader-settings-select" data-setting="reader-font-family" onchange="updateSetting(this.getAttribute('data-setting'), this.value);">
+                    <optgroup label="Sans Serif">
+                        <option class="reader-settings-option" value="OpenSans, sans-serif" selected="">Open Sans</option>
+                        <option class="reader-settings-option" value="Arial, Helvetica, sans-serif">Arial</option>
+                        <option class="reader-settings-option" value="Roboto, sans-serif">Roboto</option>
+                    </optgroup>
+                    <optgroup label="Serif">
+                        <option class="reader-settings-option" value="Playfair, serif">Playfair</option>
+                        <option class="reader-settings-option" value="EBGaramond, serif">Garamond</option>
+                        <option class="reader-settings-option" value="'Times New Roman', Times, serif">Times New Roman</option>
+                    </optgroup>
+                    <optgroup label="Other">
+                        <option class="reader-settings-option" value="OpenDyslexic">OpenDyslexic</option>
+                        <option class="reader-settings-option" value="HennyPenny">Henny Penny</option>
+                    </optgroup>
+                </select>
+            </div>
+            <div>
+                <label for="font-weight-select">Thickness</label>
+                <select id="font-weight-select" class="reader-settings-select" data-setting="reader-font-weight" onchange="updateSetting(this.getAttribute('data-setting'), this.value);">
+                    <option class="reader-settings-option" value="300" selected="">Thin</option>
+                    <option class="reader-settings-option" value="400">Regular</option>
+                    <option class="reader-settings-option" value="500">Thick</option>
+                </select>
+            </div>
+        </fieldset>
+
+        <fieldset id="fieldset-spacing">
+            <legend>Spacing</legend>
+            <div>
+                <label for="margins-select">Page Width</label>
+                <select id="margins-select" class="reader-settings-select" data-setting="reader-article-width" onchange="updateSetting(this.getAttribute('data-setting'), this.value);">
+                    <option value="320px" class="reader-settings-option">Extra Narrow</option>
+                    <option value="500px" class="reader-settings-option">Narrow</option>
+                    <option value="680px" class="reader-settings-option" selected="">Medium</option>
+                    <option value="1000px" class="reader-settings-option">Wide</option>
+                    <option value="1200px" class="reader-settings-option">Extra Wide</option>
+                    <option value="100%" class="reader-settings-option">Max</option>
+                </select>
+            </div>
+            <div>
+                <label for="line-spacing-select">Line</label>
+                <select id="line-spacing-select" class="reader-settings-select" data-setting="reader-line-height" onchange="updateSetting(this.getAttribute('data-setting'), this.value);">
+                    <option class="reader-settings-option" value="1.2">Small</option>
+                    <option class="reader-settings-option" value="1.625" selected="">Medium</option>
+                    <option class="reader-settings-option" value="2.2">Large</option>
+                    <option class="reader-settings-option" value="3.5">Extra Large</option>
+                </select>
+            </div>
+            <div>
+                <label for="paragraph-spacing-select">Paragraph</label>
+                <select id="paragraph-spacing-select" class="reader-settings-select" data-setting="reader-paragraph-spacing" onchange="updateSetting(this.getAttribute('data-setting'), this.value);">
+                    <option class="reader-settings-option" value="0.5em">Small</option>
+                    <option class="reader-settings-option" value="1.625em" selected="">Medium</option>
+                    <option class="reader-settings-option" value="2.75em">Large</option>
+                    <option class="reader-settings-option" value="4.25em">Extra Large</option>
+                </select>
+            </div>
+        </fieldset>
+        <div class="ml-5 mb-4">
+            <label for="theme-select">Theme</label>
+            <select id="theme-select" class="reader-settings-select" data-setting="reader-theme" onchange="updateSetting(this.getAttribute('data-setting'), this.value);">
+                <option class="reader-settings-option" value="reader-theme-grey" selected="">Dark Grey</option>
+                <option class="reader-settings-option" value="reader-theme-blue">Dark Blue</option>
+                <option class="reader-settings-option" value="reader-theme-black">Black</option>
+                <option class="reader-settings-option" value="reader-theme-white">White</option>
+                <option class="reader-settings-option" value="reader-theme-sepia">Sepia</option>
+            </select>
+        </div>
+        <button id="reset-settings-btn" onclick="resetSettings()">Reset To Default</button>
+        <!-- <div> -->
+        <!-- </div> -->
+
+
+    </div>
+</div>
+      <div class="entry-content">
+        <p>She woke up on her back, staring up into the face of a Harpy. The girl screamed in silent fear and jerked away. Then realized she was looking at a statue.</p>
+<p>Her back hurt terribly. Mrsha sat up slowly, and met the eyes of the last Harpy Queen.</p>
+<p><em>Oh. It’s you.</em></p>
+<p>The eyes of the imperious Sheta, the final ruler of the Empire of Harpies, were vast. In her final years, she had grown beyond even the size of a house; she seemed as large as The Wandering Inn, and heavy.</p>
+<p>The statue of her in the [Garden of Sanctuary] had been of a far-younger Harpy Queen, dignified yet eager, filled with promises of youth and ambition. The stone image of her here, in an echoing courtyard surrounded by hallways and doors, was silent.</p>
+<p>She stood like an owl, wings folded, head bent forward slightly, for she had looked down on everything at the end.</p>
+<p>A Human’s face, Mrsha realized. Or Human…enough. The Harpy Queen had probably looked like a woman with wings instead of arms at the beginning. But as she grew, her avian side had changed the neat proportions of her body.</p>
+<p>Her eyes were huge in her head, avian, and one claw could have picked up Moore effortlessly. Her hair had ceased to be thin strands; each fiber was like mooring rope running back along her head or rising like a mane.</p>
+<p>She was clothed; a kind of ceremonial half-robe ran down her body until it met her stomach, where feathers began. But her wings were what drew the eye. They were weighed down, waiting to spread and carry her upwards.</p>
+<p>When she flew, she would die. Without knowing how or why, Mrsha knew in her heart that she gazed upon the Empress of Harpies in the last moments of her life. As she had stood in this palace, this secret place known only to her, before departing.</p>
+<p>Mrsha’s head turned, and she looked about a courtyard with a single, vast stained-glass window shedding light across her and the statue.</p>
+<p>A bronze Dragon was flying, breathing purple flames over a palace set into the side of a single, gigantic mountain. Harpies flew around the Dragonlord of Flames, and Mrsha blinked at the familiar eyes he had.</p>
+<p>Then she saw the windows admitting a light which had no sun; bright and pure, without nuance. Impossibly clean stone, lacking dust, and hallways filled with doors and windows that had no end.</p>
+<p><em>Where am I?</em></p>
+<p>It took her only a moment. Then the girl had it. She looked up and could not see the place she’d fallen from. But if she had gone through the [Garden of Sanctuary]…</p>
+<p>This was no [Pavilion of Secrets]. One look up at the statue, though, and she had to imagine this place belonged to Erin…</p>
+<p>No. It would belong to Erin. This was, then, the place referenced in the writing at the end of the [Gardens of Sanctuary].</p>
+<p>This was the place that Sheta had written of that no other being in the world had ever gained access to. And as if Mrsha had summoned it—she realized there was a door behind her. She turned, and there it was, written above the glorious door, above the spread wings and the keyhole, waiting for the new owner to unlock it.</p>
+<p>The [Palace of Fates].</p>
+<p><em>Oh.</em></p>
+<p>The girl just sat there, feeling at her back, as the statue gazed into oblivion. A marble staircase rose behind the statue, two entrances from the right and left joining at the middle until it reached the second floor. Mrsha craned her neck and saw a long hallway on the second floor, straight behind Sheta’s statue. There were two more on the second floor, on the far east and western sides of the room, branching off into the distance.</p>
+<p>There were four smaller staircases in each cardinal corner, which spiraled up to the third floor. However, interestingly, the third floor had eight hallways; it encircled the ground-level courtyard, empty balconies gazing down at the white Gnoll girl, who did not belong here.</p>
+<p>—And did belong here. Mrsha’s brow furrowed as she tried to make rhyme or reason of the floor’s configurations, but she couldn’t. It didn’t fit a numerical pattern.</p>
+<p>There were two hallways on the first floor leading right and left. Over thirty hallways on the fourth floor. And on the <em>fifth</em> floor…</p>
+<p>Mrsha began to get vertigo staring <em>up</em> at the endless pattern of staircases and floors above her. It felt, the longer she looked, as if she were upside down, staring down at countless floors of—</p>
+<p>She shook her head and slapped her cheeks, avoiding looking up again.</p>
+<p><em>Stand up. Get up, Mrsha. You’re dreaming. No, you hurt too much to be dreaming. In which case, this is real. And wonderful. And terrifying.</em></p>
+<p>She tried to get up; her legs shook, and she fell back. Weakly, she studied the Harpy Queen again.</p>
+<p><em>I’ve fallen into somewhere I shouldn’t be. Mom will be mad at me.</em></p>
+<p><em>I have to go back.</em></p>
+<p>She craned her head higher, but the distant ceiling had nothing that betrayed where she had fallen <em>from.</em> There were no roots. Nothing.</p>
+<p>Trembling, Mrsha tried to get to her feet. Her legs shook. She flinched as she heard a sound; a clattering. She rolled back, scrabbling to plead for her life. Afraid of—</p>
+<p>Her wand clattered down from where it had been balanced on Sheta’s wing. It rolled onto the marble floor, making the first sound that had been heard in this place for thousands of years.</p>
+<p><em>I’m sorry! Don’t hurt me!</em></p>
+<p>Mrsha grabbed the wand and whirled, raising it to aim at—what? An angry guardian? Some protector of this place?</p>
+<p>There was no one. It was empty. Mrsha looked about, and then it sank in.</p>
+<p><em>I’m in the [Palace of Fates]. I’m in a Skill that Erin doesn’t have—the one </em>after<em> the [Pavilion of Secrets].</em></p>
+<p>She swallowed hard.</p>
+<p><em>I’m in so much trouble. And I need to pee.</em></p>
+<p>She took three steps forwards, then turned and looked over her shoulder. She swore she’d seen something behind her. A flicker of movement? But when Mrsha turned her head, it was gone.</p>
+<p>After a second, Mrsha started running as fast as she could.</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>As a child, Mrsha had wanted so badly to run about The Wandering Inn and gotten scolded by Lyonette for crashing into tables and chairs.</p>
+<p>She’d been told she’d hurt herself, and small as she was, Mrsha had been lectured by the Stone Spears tribe adults for doing the same thing in camp.</p>
+<p>There was something each boy and girl wanted, and it was to <em>run</em> as far and as fast as you could, without stopping. When you got older, you forgot there had been a time when it was effortless, when you could fly on the ground and not feel your body fighting for each step. Some adults had never let go of that feeling and worked to never forget what it was like to <em>run.</em></p>
+<p>Today, Mrsha ran. On all fours, forgetting her adult walk, racing forwards, turning her head to check over her shoulders, seeing doors of every shape and material flash by, racing over red carpets, slippery marble tiles, even meadow patches of flowers and bare grass.</p>
+<p>Straight ahead—along a corridor that had no end. For a moment, she even forgot she was exploring and trying to see if something was <em>in</em> here. It was unbelievable. Dreamlike. But then Mrsha, an older Mrsha, gulped for air and felt her chest burning, her legs hurting, and skidded to a stop.</p>
+<p>She slid along a polished floor, marring it with the dirt on her paws and some of her fur, and she again turned and looked back the way she’d come.</p>
+<p><em>Was that the statue of Sheta?</em> If it was, it was so distant it was a speck, and Mrsha could <em>barely</em> make out the courtyard. She panted for air, fishing her water flask out of her bag of holding.</p>
+<p><em>If anything is here, I’d see it coming, right? Or maybe it’s creeping around the other floors?</em></p>
+<p>This place didn’t make Mrsha <em>feel</em> like she was in danger, but how would she know? She had no [Dangersense], and Numbtongue sometimes said that Mrsha wouldn’t have been able to hear it even if she had the Skill. Which was hurtful.</p>
+<p>She glanced over her shoulder and saw another hallway stretching out into the distance, much like this one. Billowing curtains from open windows made Mrsha stare, curious; she saw a staircase spiraling upwards not two dozen paces down that hallway.</p>
+<p><em>Multiple floors. Multiple hallways that crisscross. Do any have an end? </em>Was this some kind of optical illusion or was the place this <em>big?</em></p>
+<p>It felt truly endless. Mrsha wiped sweat from her fur and took another gulp of water. She knew she should be careful; she had fallen into this place by accident. But her heart was beating out of her chest.</p>
+<p><em>Where am I? How will I get back?</em></p>
+<p>She had been running to put a distance between herself and anything in here. But also to find some kind of landmark outside of the courtyard.</p>
+<p>Or a bathroom. Mrsha had to nervous-pee. She could try one of the doors set into the walls, but they were…odd.</p>
+<p>They reminded Mrsha of the [Garden of Sanctuary]’s doors; none of them fit the architecture surrounding them. The [Palace of Fates] seemed to change flooring at will; the walls and windows would match the style of the flooring and become natural grass and vine-coated walls or onyx-black Chemath Marble and Truegold windowsills.</p>
+<p>Or just bog-standard marble and red carpets. But the doors were always different.</p>
+<p>Here was a door like a triangle with a glass doorknob. Next to it, a dozen paces down the hallway, was one with a chipped, painted black door frame exposing cheaper wood underneath. Yet it had…a little button inset into the side.</p>
+<p>A doorbell? Mrsha recognized it from the movies; the handle was simple brass. Across the hallway, on the other side, was a door with a lever for a handle, scratched with huge claw marks all over. One peek at that and Mrsha decided to keep moving.</p>
+<p>She didn’t want to go exploring side passages just yet; one rule of adventuring was never to get lost, according to Seborn, and Mrsha had no way of telling where she was. She could leave a trail of things, but…</p>
+<p>Another five minutes of running and Mrsha realized she was getting <em>nowhere.</em> Plus, she had to pee even more now. She paused, slowing in her run, and got onto two legs and put a paw against the corridor wall.</p>
+<p><em>I used to be able to run forever. What happened to me? </em>She’d put on a kilt and gotten old. Mrsha shook her head as she passed a reflection of herself in a mirror. She was still pretty good-looking, though.</p>
+<p>Cute, three feet tall with huge, round ears and big, wide, brown eyes. Mrsha gave her reflection the finger guns; her reflection wagged her tail and opened her mouth, panting.</p>
+<p>Mrsha raised her wand and fired a [Stone Dart] spell at the fake Mrsha. The spell <em>bounced</em> off the mirror and ricocheted up; it pinged off the wall, hit the ceiling, and turned into dust. Mrsha flinched—then stared at the mirror.</p>
+<p><em>What the heck?</em> The young Mrsha, three feet tall—<em>way</em> smaller and more adorable than current Mrsha and not wearing any kilt—was raising her paws. Begging for someone to carry her.</p>
+<p>Someone bent into the mirror, and Mrsha jerked back. <em>Lyonette!</em> She looked like, well, Lyonette, but maybe less certain? More flustered; she awkwardly picked Mrsha up and carried her in her arms. She seemed unsure of herself, and Mrsha…remembered this. As if to confirm her memories, she saw snow on the ground and Lyonette brushing at Mrsha’s fur.</p>
+<p><em>This was back in the winter. When they had first met and Mrsha had run to The Wandering Inn when Ryoko had left and Lyonette had taken her in. </em>As she and Lyonette had begun to trust one another. Mrsha couldn’t have said <em>when,</em> but she recalled the moment as she saw it replay. A [Princess] trying to hold the wet Gnoll girl and carrying her back through the snow to the inn.</p>
+<p><em>She was a good mom. I mean, back then and now. No one asked her to take care of me. And she did.&nbsp;</em></p>
+<p>Mrsha stood there for a moment, and her heart hurt. Then she shook herself, glanced around suspiciously, and realized the mirror was now reflecting just her.</p>
+<p>A scowling Gnoll girl on two legs glancing over her shoulder, wand in hand. Mrsha glowered at her reflection.</p>
+<p><em>Is someone messing with me? Or is this…the [Palace of Fates]? Is this what Erin gets for hitting Level 60 or something? A crummy nostalgia clipshow?</em></p>
+<p>—Level 60?<em> Or Level 70?</em> Mrsha’s eyes widened.</p>
+<p>It was the only logical conclusion she could leap to. Admittedly, in this place, logic seemed to be only partially useful, but Mrsha had to correlate the astounding level up with the only other crazy thing in her life: entering this palace.</p>
+<p>The facts were that the system of levels made no mistakes. Mrsha had never heard of someone levelling up and having it revoked. If she <em>had</em> been boosted to Level 70, there was a reason. Right?</p>
+<p>Right. Mrsha thought to herself.</p>
+<p><em>I wasn’t in this place when I levelled up. But…it was only a day before I came here. What if that was the moment I gained access?</em></p>
+<p>She was fuzzy on all the details, but it made sense to her. Erin hadn’t gotten access to the [Pavilion of Secrets] until Level 50; if this place had a mandatory level of, like, Level 70, then…</p>
+<p><em>Why would Mrsha get that level?</em> Mrsha scratched her head, then thought like, well, Ekirra.</p>
+<p>Ekirra logic was sometimes backwards. He’d point at someone with a fancy-looking blade or cool armor and say ‘that person <em>has</em> to be a Gold-rank adventurer, or Level 40!’, regardless if they were.</p>
+<p>By the Ekirra-logic, if you had a Mrsha who had access to the [Palace of Fates] for <em>whatever reason,</em> by something she had done or something that had granted her access, she had to be at least Level 70.</p>
+<p>It was stupid, but it had a kind of sense Mrsha got. She snapped her fingers and shook her head.</p>
+<p><em>So that’s why I got those levels!</em> Then, Mrsha’s eyes widened. That meant—!</p>
+<p><em>She had Erin’s Skill!?</em> That wasn’t right! It felt wrong. It wasn’t her place. Mrsha guiltily searched around. Principles aside, though, the fact was she was stuck here and possibly in danger. And the nature of this place was still eluding her. Yet now Mrsha was paying attention, she realized the mirrors were showing her past.</p>
+<p>A brown-furred Mrsha was poking her head into a stew pot before being shouted at by Urksh and falling in. Mrsha winced; she’d gotten burned from that moment. She saw another Mrsha losing a game of chess against Apista…</p>
+<p><em>This can’t be what the [Palace of Fates] is for. My fates?&nbsp;</em></p>
+<p>Mrsha glanced over her shoulder, but saw nothing behind her, and this time, she began walking down the corridor. As she came to another intersection, she thought that this was fascinating, but she <em>really </em>needed a bathroom.</p>
+<p>Mrsha passed by an open lavatory with at least fifty stalls inside, some fit for the last Harpy Queen, some mundane-sized. She stopped…backpedaled a step.</p>
+<p>Every hair on her body rose slowly.</p>
+<p><em>It’s like Erin’s Garden of Sanctuary. Except even scarier. What the heck.</em></p>
+<p>She hesitated. Padded inside and saw a row of sinks. Mrsha stared at her reflection in the mirror; this was no past self. She tried the faucet handles on one sink and saw water running from the golden faucet. Mrsha gingerly tasted some; it was water. Cold, but it <em>tasted</em> good. She hesitated. Backed out of the bathroom after eying the closed stalls.</p>
+<p><em>Anything</em> could be hiding in them.</p>
+<p>After ten seconds, Mrsha stomped back into the bathroom and turned the water faucet off because otherwise she was wasting water. <em>Then</em> she marched off.</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>After finding the eighth bathroom, Mrsha gave into the call of nature. She suspiciously eyed a toilet, not having had much experience with plumbing except when she visited Selys’ mansion or Krshia’s apartment, and leapt away when it made a terrific plunging sound after she pulled the lever.</p>
+<p>Mrsha washed her hands with some soap and wondered if the water was <em>real.</em> The soap certainly left a residue she smelled on her paws; she decided to risk it and gulped from her water flask before refilling her water bottle with the sink water.</p>
+<p>If she needed water, she might as well figure out now if it was fake water or something.</p>
+<p>The bathrooms stopped appearing when Mrsha had finished her business, much to her relief. It was like how Mrsha had seen Erin controlling her gardens, especially the beach garden. Which made Mrsha think…</p>
+<p><em>Show me a way out!</em></p>
+<p>Mrsha turned a corner, nearly <em>crashed </em>into the locked door, and turned around. Sheta’s statue loomed over her, and Mrsha nearly had a heart attack.</p>
+<p>She was right back in the central courtyard. Mrsha stared at the door, eyed the keyhole, and felt at her pockets.</p>
+<p><em>Give me the key!</em></p>
+<p>No such key appeared, and she had nothing in her bag of holding. Groaning, Mrsha stood on her tip-toes and tried to see through the keyhole. But it was just black. She shook her head and turned.</p>
+<p><em>Show me…another door out of here!</em></p>
+<p>She spun, took a step, and splatted into the main door again. Mrsha opened her eyes, sighed loudly, and backed away.</p>
+<p><em>Great.</em></p>
+<p>It seemed like she was stuck in here for now. Mrsha rubbed at her head, then looked up.</p>
+<p><em>Where’s the hole in the ceiling then? No, wait. What’s behind all the doors?&nbsp;</em></p>
+<p>She turned to eye the corridors of empty doors, and there was a <em>flicker</em> on the 4th floor. Mrsha spun, then froze. Froze like prey seeing a predator’s talons just above their head.</p>
+<p><em>A figure with wings turned away.</em> Mrsha was petrified—then dashed up the stairs, howling, wand raised, trying to get a better view of—</p>
+<p><em>There was no one on the balcony on the 4</em><em>th</em><em> floor. </em>Even when Mrsha raced up there, panting, clutching at her side—no one was visible down the long corridors closest to where the figure had vanished. The Gnoll girl stood there, rattled, wand flicking right and left.</p>
+<p><em>She couldn’t still be alive, could she? No way.&nbsp;</em></p>
+<p>But it had definitely been a tall, <em>tall </em>figure that Mrsha swore had been peering down at her. Someone in a vast cloak, perhaps, or if not a cloak…</p>
+<p><em>Wings. </em>Mrsha stared down at the statue in the courtyard, then about. Still no one. Yet now, her fur was trying to walk off her body. She put her back to one wall, then squeezed her eyes shut.</p>
+<p><em>Get me out of here.&nbsp;</em></p>
+<p>Mrsha took a step and ended up in a hallway of doors. No telling where she was in the palace. She looked both ways, then ran behind one of the curtains and held still for a second.</p>
+<p><em>Please don’t be a Facestealer situation. Please don’t be a Facestealer situation.</em></p>
+<p>There was no help for it. When she poked her head out and saw there was no one around—so far—Mrsha scuttled forwards and found a door with a faded welcome mat in front of it and a sunflower carved into the wood. She decided it was better than the one made of ice or the one with the emerald doorknob.</p>
+<p>Mrsha opened it. And then—she began to understand what this place <em>was.</em></p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>“Mrsha! Dinner time!”</p>
+<p>Mrsha awoke in the middle of the [Garden of Sanctuary] and stretched. Apista buzzed down, and Mrsha sat up.</p>
+<p>She’d had a nap! After her gardening. She rolled off the yellow flowers and <em>stretched.</em> Groaning, slightly, as she held her back.</p>
+<p>Grimalkin’s gym class really had done a number on her. Was that two naps in a single day? A record.</p>
+<p>Mrsha stumbled blearily over to the door and saw Lyonette standing there.</p>
+<p>“Mrsha, have you been asleep again? I called you four times!”</p>
+<p>The Gnoll waved her wand, and a spell auto-scribed for her, glowing purple lines in the air.</p>
+<p><span class="mrsha-write">Forsooth, Mother, if you had but used your Skill, you would have known I was in the [Garden of Sanctuary] and only had to call once.</span></p>
+<p>“Don’t get sassy with me, young miss. You’re never going to get to sleep tonight…”</p>
+<p>Lyonette heaved the long-suffering sigh of the parent, and Mrsha rolled her eyes. Oh, woe was all! She cricked her neck, wincing; she must have slept in a weird position.</p>
+<p><span class="mrsha-write">What’s for dinner? And dessert?</span></p>
+<p>“<em>Dinner</em> is a bunch of steamed beef cabbage rolls. Which I would appreciate you attending civilly, unlike your <em>sister,</em> who insists on making rudeness her chief concern in this household.”</p>
+<p>Lyonette was still at it with Nanette? Mrsha wearily held up a card.</p>
+<p><span class="mrsha-write">Mother, is it not time for all good women to come together for the good of the inn?</span></p>
+<p>“Tell that to <em>Nanette.</em>”</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>Mrsha tried and then gave up over dinner, which wasn’t so much strained as it was just…well, awkward. Lyonette and Nanette ate at different tables, sniping at each other and playing nice with everyone else, and Mrsha and Apista got caught between the two. Both were perfectly pleasant to Mrsha while shooting barbed daggers at each other.</p>
+<p>About the wand, obviously. Mrsha did her best while she had quite lovely beef cabbage rolls. She’d had reservations, but good old Calescent had understood that if you had to have such an objectionable-sounding dish, reality should be splendid.</p>
+<p>What you did was you took a ‘roll’ of cabbage leaves and put some hot, shredded beef in there and dipped it in some sauce and ate it. That was a cabbage roll Mrsha could get behind, and she stuffed herself.</p>
+<p>The only downside was, again, Lyonette and Nanette making comments about each other, and after the sixth sour comment had nearly curdled her milk, Mrsha had huffed off to another table, leaving her shocked roommate and mother to spar in peace.</p>
+<p><span class="mrsha-write">Yo, mind if I sit here?</span></p>
+<p>Rags glanced up and grunted at Mrsha.</p>
+<p>“Yes.”</p>
+<p>Mrsha sat anyways. She had it on good authority that dessert was cobbler’s pie, so she estimated she only needed two more rolls to fill up. And her glass of milk. Rags was eating her food as if they were sour plums, face twisted up into a scowl, despite the eager way she was dipping her rolls in a spicy mustard.</p>
+<p><span class="mrsha-write">How’s it going, Rags? Chieftain Rags?</span></p>
+<p>Rags ignored Mrsha. The girl tried again.</p>
+<p><span class="mrsha-write">Nice to see you here after so long. How’s Goblinhome?</span></p>
+<p>Rags looked up again and barked shortly.</p>
+<p>“About to be attacked. What do you want?”</p>
+<p><span class="mrsha-write">I just want to hang out. Attacked? Do you need help or something?</span></p>
+<p>“Nothing you or Lyonette can give. Don’t you have a ball to chase?”</p>
+<p><span class="mrsha-write">Hey! I’m past my ball-chasing years! Sort of. Now we just kick them around, which is fun unless Ekirra joins in because he can’t help but show off.</span></p>
+<p>“Children stuff. Good for you.”</p>
+<p>It seemed like Rags had a bone to pick with Mrsha. The Gnoll girl almost got up and went away, but she hesitated. She wrote and then handed the card to Rags.</p>
+<p><span class="mrsha-write">Seriously, can I help? Mother (Lyonette), has a disposable Named-rank adventurer on call and an [Assassin]. She’s pretty smart herself. If there’s anything we can do, I can at least tell someone important. Or try to get Erin’s attention somehow.</span></p>
+<p>Rags raised her eyebrows as she gave Mrsha a second, appraising glance.</p>
+<p>“Disposable Named-rank? I like Saliss.”</p>
+<p><span class="mrsha-write">Whoa, who said anything about Saliss? I like Saliss. I meant Elia Arcsinger.</span></p>
+<p><em>That</em> earned her a laugh from Rags. The Chieftain considered the note again and frowned. A gloom fell over her, so palpable it became an aura.</p>
+<p>“Erin’s in Baleros. She can’t help me, and Goblinhome isn’t so weak it needs The Wandering Inn to…thank you for the offer, Mrsha. If I could talk to Erin without having to use a scrying spell, I would.”</p>
+<p>She shook her head and met Mrsha’s eyes for once. The girl felt like she’d risen in Rags’ esteem slightly, which was good. They’d never really <em>hung out</em>, but Mrsha had some respect for the little Goblin Chieftain.</p>
+<p><span class="mrsha-write">It’s cool. We could, uh, find a way to talk to her. Via Ishkr. It’s up to chance, but then she could get in touch with you. I want to help. I mean it. You know about the box, obviously?</span></p>
+<p>Rags’ eyes flicked pointedly to Lyonette, and Mrsha acted casual.<em> Okay, no need to seem so wary. </em>Mrsha could play it cool. She wrote again.</p>
+<p><span class="mrsha-write">I could have Ishkr flag something. And Fetohep too, I think.</span></p>
+<p>She suspected Fetohep was in contact with the <em>real</em> Erin. Rags gave Mrsha a huge frown.</p>
+<p>“What, do those two have special Skills or artifacts to talk to her?”</p>
+<p>Mrsha…paused as she lifted her quill.</p>
+<p>Uh oh. Rags didn’t know about the <em>real</em> Erin.</p>
+<p>It had shocked Mrsha out of her fur when she’d been told. The real Erin was…she still felt hurt that Erin hadn’t called her or Lyonette or Nanette. Or Numbtongue or Bird or…</p>
+<p>It was probably why Numbtongue had left. Again. But when Mrsha had calmed down, Ishkr had said how <em>bad</em> she looked. And that had been—</p>
+<p>Mrsha was writing on the card as Rags read upside-down. The Gnoll girl was covering her writing so no one but Rags could see, just in case, but she’d forgotten the depth of Rags’ relationship with Erin. The Goblin leaned over and grabbed Mrsha’s paw before Mrsha was even done.</p>
+<p>“She’s <em>what?</em>”</p>
+<p>Nanette and Lyonette looked over as Mrsha jerked. She tried to scribble faster, but Rags nearly pulled Mrsha <em>over</em> the table.</p>
+<p>“<em>What? She’s—</em>”</p>
+<p>Mrsha saw the panic and hurt in Rags’ eyes and raised her paws. <em>Calm down! </em>After a second, Rags did, and she and Mrsha ended up talking over dinner. Which, as it turned out, was one of their favorite dishes. And it turned out that two short people could be friends. True, Rags was a busy Chieftain and felt ‘older’ than Mrsha by far, even if she was actually younger.</p>
+<p>But they could both agree Erin could be a real jerk herself sometimes. And when Mrsha was tossing and turning in her bed and Nanette was moaning at her to go to sleep, she had a thought. So she slipped out of bed, knocked on Rags’ door, and jerked a thumb over her shoulder.</p>
+<p>The two strolled into the [World’s Eye Theatre], and Mrsha had a bowl of popcorn from the kitchen, which Rags heated with a flick of the thumb. They started playing <em>The Godfather</em> as Rags sat there, and Mrsha smiled at her as Rags gave the Gnoll a grudgingly approving look. And Mrsha was yawning as she reached for the first popcorn kernel—</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>It tasted like butter and yeast. Then Mrsha—that was, the <em>real</em> Mrsha—closed the door. Her heart was hammering in her chest, unlike the sleepy girl in The Wandering Inn. But for a second, she <em>felt</em> like that Mrsha who had just taken a nap in the garden and not fallen into the [Palace of Fates].</p>
+<p>Mrsha closed the door. Then opened it. She saw a movie playing as Rags got a call from a speaking stone in her ear and heard something about ‘Trolls in Goblinhome’.</p>
+<p>Mrsha closed the door. Opened it.</p>
+<p>She tried to put her paw through the door frame and felt a bit of relief as she sensed an invisible barrier. She couldn’t go through. Mrsha poked at it with her wand, gave it a good punch; it was like Erin’s [Garden of Sanctuary]. An invisible force field separated her from the alternate universe.</p>
+<p><em>Whew. Of course. </em>Mrsha stepped away, still feeling at her tongue. Then she looked around.</p>
+<p><em>No way. No way…</em>she hesitated, then walked over to a door with an emerald set into the handle and ostentatious gems, everywhere.</p>
+<p>She opened the door, peeked inside, and saw—</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>Mrsha the Exuberantly Wealthy had her feet up on the table as Peslas wiped it. The former [Innkeeper] of the Tailless Thief was working as a [Server] in The Wandering Inn along with dozens of Drakes and Gnolls wearing the new uniforms.</p>
+<p>Mrsha had a pair of Yelroan-themed sunglasses on her face and was sipping a milkshake as Lyonette spoke into a speaking stone.</p>
+<p>“No, you listen to <em>me,</em> Ilvriss. I am House Gemscale. I <em>bought</em> your family’s company. I own half of Salazsar! You don’t ask <em>me</em> questions, you come here for a visit. No. No, I don’t <em>care how—</em>”</p>
+<p>She put a hand over her speaking stone and turned to Mrsha and Nanette. The young [Witch] was reading from one of her new spellbooks as Valeterisa, with her huge, fake smile, tried to teach her a Tier 5 spell.</p>
+<p>“He’s complaining about the distance.”</p>
+<p>“Hah!”</p>
+<p><span class="mrsha-write">Peon!</span></p>
+<p>Mrsha held up a card, and Lyonette turned back to her call. Ishkr was at the bar, sampling new alcohols from a huge selection as a [Merchant] specializing in drinks offered him samples. He had chosen a hundred bottles for the inn now, and once it was finished quadrupling in size—Drevish’s plans would make this inn a real palace—he’d have a <em>real</em> bar to run.</p>
+<p>“Ilvriss, <em>I’ll send you a flying carpet. </em>Or a Djinni-run carriage. I’m in talks to buy one. Two Djinni, actually. It’s not slavery; I’ll free and employ them. All answers will be provided shortly. Now, I have to speak to my advisor, the Quarass. One second. <em>Hello?</em>”</p>
+<p>Lyonette switched speaking stones as Mrsha waved for another milkshake. Lyonette had had reservations about Mrsha eating whatever she wanted until Octavia had pointed out you could buy weight-loss potions or have a specialty [Chef] with those Skills. Peslas hurried over with a desperate smile on his face, and Mrsha decided he had to go. Even if it was fun ordering him around, no one <em>liked</em> Peslas…</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>Mrsha closed the door. Then she felt at her face. No sunglasses. She wiped her brow in relief.</p>
+<p>What the heck was <em>that?</em></p>
+<p>Was that her?</p>
+<p>It couldn’t be! Mrsha knew she could sometimes be Mrsha the Smug, and Lyonette could sometimes be snobby and really be a [Princess]’ princess, but <em>wow</em>, they seemed horrible! Was that…</p>
+<p><em>Was this the future? No, it couldn’t be. </em>There was no Elia nor Vaulont in that image, nor Rags. Was it…just fiction?</p>
+<p><em>It felt too real for that.</em> Mrsha stared at her paws, then at the door. Then she looked at all the doors down the infinite corridor and considered the meaning of the Skill and Sheta’s warning.</p>
+<p>&nbsp;</p>
+<p><em>Sanctuary provides. Secrets empower. Fate illuminates.</em></p>
+<p><em>But remember:</em></p>
+<p><em>Sanctuary can never shelter enough. Secrets grow vast unspoken. And Fate mocks us all. But I was glad of it. May my key help you protect what matters.</em></p>
+<p>&nbsp;</p>
+<p>…No. Mrsha studied the door and then raced over and tried another one. She stared into it, then ran over to another door. Then another.</p>
+<p>In each one was a familiar face. Mostly Mrsha. But sometimes Nanette or Lyonette or even Apista.</p>
+<p>&nbsp;</p>
+<p><em>Mrsha trying to skateboard.</em></p>
+<p><em>Mrsha the football team champion, taking Ekirra’s spot.</em></p>
+<p><em>Mrsha sitting in Fetohep’s palace.</em></p>
+<p><em>Nanette sitting under a tree, listless and thin.&nbsp;</em></p>
+<p><em>Lyonette fighting in Zeladona’s Trial of Blades.</em></p>
+<p>&nbsp;</p>
+<p>—Each door held a different moment. Each one a different fate. A different destiny. What if Mrsha had somehow gotten to Chandrar? What if she’d never fallen into this palace. What if—</p>
+<p>&nbsp;</p>
+<p>——</p>
+<p>&nbsp;</p>
+<p>Mrsha thrust open another door made of plain wood with iron fittings and a simple doorknob and saw another Mrsha standing in an exact replica of the hallway she was in.</p>
+<p>The other Mrsha had a crude bandage wrapped around her head; it was stained slightly red, and she seemed bewildered. She was panting and had little yellow petals like gold coins clinging to her fur.</p>
+<p><em>What were those? </em>They reminded Mrsha of the flowers in the garden, but far more…magical. Real Mrsha rubbed at her eyes, then realized <em>this</em> alternate reality Mrsha was studying her.</p>
+<p>The two locked gazes as their jaws opened. Real Mrsha raised a paw; she waved it at her doppelganger with a head wound. Headwound Mrsha jerked back, a look of shock and astonishment on her face. Headwound Mrsha glanced left and right, dizzily, then waved a tentative paw.</p>
+<p>The real Mrsha waved her wand, and the alternate-her recoiled, but real Mrsha lifted a paw in greetings, then wrote with her wand.</p>
+<p><span class="mrsha-write">Hey, can you see this? It’s me! This is crazy!</span></p>
+<p>Headwound Mrsha stared, and real Mrsha realized her words might have been reversed. Real Mrsha tried to flip the words around and the other her got the message. Headwound Mrsha nodded, then produced her own wand.</p>
+<p><span class="mrsha-write">This is weird. Are you alternate me?</span></p>
+<p>Headwound thought <em>she</em> was the true Mrsha? Real Mrsha wrote back swiftly.</p>
+<p><span class="mrsha-write">You’re alternate <em>me.</em> Sorry. I guess each door’s to another alternate timeline. You must have landed on your head. If I close this door…do you vanish? Sorry!</span></p>
+<p>Real Mrsha began to get weirded out at the idea and winced, raising a paw in the ‘sorry’ gesture by holding it up to her face and cupping it slightly. Headwound Mrsha could read her sign-language, obviously, but hesitated. Headwound Mrsha shook her head.</p>
+<p><span class="mrsha-write">I don’t know what’ll happen. I’m sorry too.</span></p>
+<p>Okay, this was getting weird. Real Mrsha put her hand on the door frame and wrote with a sigh.</p>
+<p><span class="mrsha-write">Uh, no, <em>I’m </em>the real Mrsha. I opened the door and saw you here. Listen, I know it’s hard to believe, but I’ve been here and checking door after door. So I’m real.</span></p>
+<p>Real Mrsha didn’t know how Headwound would take it, but the Mrsha with a bandage on her head paused, then wrote back with her glittering wand.</p>
+<p><span class="mrsha-write">I know. I’ve been watching you for the last hour.</span></p>
+<p><em>Huh?</em> Definitely Real Mrsha felt a lurch in her stomach. She saw the other her hesitate, then slowly swing the door closed.</p>
+<p>Real Mrsha…Fake Mrsha…the Gnoll without a bandage on her head, the one who’d landed on her back, not her <em>head—</em>rushed forwards suddenly. ‘Real’ Mrsha <em>pushed</em> against the invisible barrier, and the Mrsha with a bandage on her head jerked back.</p>
+<p>It was no use; the Mrsha with a sore back pushed and clawed at something harder than the barrier between the [Garden of Sanctuary] and the outside world. Infinity-times harder. Impassible, inviolate—she saw the Mrsha with a bandage on her head closing the door, eyes wide with uncertainty, alarm, and regret.</p>
+<p>In the moments before it shut, ‘Real’ Mrsha had one thought.</p>
+<p><em>Oh poo.</em></p>
+<p>Then she heard it, that sound that encompassed absolutely everything:</p>
+<p>&nbsp;</p>
+<p><span style="font-size: 145.454545455%!important;;">Slam.</span></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><strong>Author’s Note:</strong></p>
+<p>Perspective is, like wording, exceptionally difficult to convey, sometimes. I am, believe it or not, a very imprecise speaker; I say things and have to clarify because what I meant didn’t come across the right way.</p>
+<p>I’m sure that’s a huge problem for someone who wants to write for a career…</p>
+<p>Sometimes, you write things that are hints. Sometimes, you write it plainly. Sometimes, you hide a secret link in a chapter and expect and understand not everyone will find it, even with an Author’s Note or hints.</p>
+<p>In this case, I have left very explicit messages saying ‘click the hyperlink’, so I hope you all made it to this final Author’s Note. But I will leave it to you to decide what, if anything, was meant here.</p>
+<p>There is no ‘secret’ device besides the fact that each part of this chapter is hyperlinked to the next. As for the narrative mystery, well, I hope it was clear, but if I failed, then I’m sorry. I think the clues are all there, and have been set up for ages. It’s not a grand mystery, maybe? It should all make sense.</p>
+<p>All the mysteries should have some logic to them. There are, of course, things that are completely surprising and unexpected, but the big things I hope I’ve sprinkled clues across the entire story for. Either way, it’s always been hard to know what the audience thinks because I know most of everything.</p>
+<p>Then again, what if I don’t know everything? Writing is sometimes figuring it out or redefining ideas as you do it. The point I’m trying to make is…no one had better hit me on the head because I’m barely keeping things organized as it is. Hope you enjoyed and wait for the next one.</p>
+<p>We’re just getting started.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><strong>Tserre’s House by yellowkid, commissioned by rumina!</strong></p>
+<p><a href="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Tserrehouse-by-yellowkid-commissioned-by-rumina.png?ssl=1"><img fetchpriority="high" decoding="async" data-attachment-id="17464" data-permalink="https://wanderinginn.com/tserrehouse-by-yellowkid-commissioned-by-rumina/" data-orig-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Tserrehouse-by-yellowkid-commissioned-by-rumina.png?fit=1920%2C1080&amp;ssl=1" data-orig-size="1920,1080" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="Tserrehouse by yellowkid, commissioned by rumina" data-image-description="" data-image-caption="" data-medium-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Tserrehouse-by-yellowkid-commissioned-by-rumina.png?fit=300%2C169&amp;ssl=1" data-large-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Tserrehouse-by-yellowkid-commissioned-by-rumina.png?fit=1024%2C576&amp;ssl=1" class="alignnone size-full wp-image-17464" src="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Tserrehouse-by-yellowkid-commissioned-by-rumina.png?resize=1920%2C1080&amp;ssl=1" alt="" width="1920" height="1080" srcset="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Tserrehouse-by-yellowkid-commissioned-by-rumina.png?w=1920&amp;ssl=1 1920w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Tserrehouse-by-yellowkid-commissioned-by-rumina.png?resize=300%2C169&amp;ssl=1 300w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Tserrehouse-by-yellowkid-commissioned-by-rumina.png?resize=1024%2C576&amp;ssl=1 1024w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Tserrehouse-by-yellowkid-commissioned-by-rumina.png?resize=768%2C432&amp;ssl=1 768w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Tserrehouse-by-yellowkid-commissioned-by-rumina.png?resize=1536%2C864&amp;ssl=1 1536w" sizes="(max-width: 1000px) 100vw, 1000px" data-recalc-dims="1"></a></p>
+<p>&nbsp;</p>
+<p><strong>Toren by Chai!</strong></p>
+<p><a href="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Toren-by-Chai.png?ssl=1"><img decoding="async" data-attachment-id="17465" data-permalink="https://wanderinginn.com/toren-by-chai/" data-orig-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Toren-by-Chai.png?fit=1496%2C1013&amp;ssl=1" data-orig-size="1496,1013" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="Toren by Chai" data-image-description="" data-image-caption="" data-medium-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Toren-by-Chai.png?fit=300%2C203&amp;ssl=1" data-large-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Toren-by-Chai.png?fit=1024%2C693&amp;ssl=1" class="alignnone size-full wp-image-17465" src="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Toren-by-Chai.png?resize=1496%2C1013&amp;ssl=1" alt="" width="1496" height="1013" srcset="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Toren-by-Chai.png?w=1496&amp;ssl=1 1496w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Toren-by-Chai.png?resize=300%2C203&amp;ssl=1 300w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Toren-by-Chai.png?resize=1024%2C693&amp;ssl=1 1024w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Toren-by-Chai.png?resize=768%2C520&amp;ssl=1 768w" sizes="(max-width: 1000px) 100vw, 1000px" data-recalc-dims="1"></a></p>
+<p>&nbsp;</p>
+<p><strong>Florist by Relia!</strong></p>
+<p><strong>Tumblr:</strong> <a class="anchor_af404b anchorUnderlineOnHover_af404b" tabindex="0" title="https://www.tumblr.com/reliaofdreams" role="button" href="https://www.tumblr.com/reliaofdreams" target="_blank" rel="noreferrer noopener">https://www.tumblr.com/reliaofdreams</a></p>
+<p><a href="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Florist-by-Relia.png?ssl=1"><img decoding="async" data-attachment-id="17466" data-permalink="https://wanderinginn.com/florist-by-relia/" data-orig-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Florist-by-Relia.png?fit=2376%2C3168&amp;ssl=1" data-orig-size="2376,3168" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="Florist by Relia" data-image-description="" data-image-caption="" data-medium-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Florist-by-Relia.png?fit=225%2C300&amp;ssl=1" data-large-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Florist-by-Relia.png?fit=768%2C1024&amp;ssl=1" class="alignnone size-full wp-image-17466" src="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Florist-by-Relia.png?resize=2376%2C3168&amp;ssl=1" alt="" width="2376" height="3168" srcset="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Florist-by-Relia.png?w=2376&amp;ssl=1 2376w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Florist-by-Relia.png?resize=225%2C300&amp;ssl=1 225w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Florist-by-Relia.png?resize=768%2C1024&amp;ssl=1 768w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Florist-by-Relia.png?resize=1152%2C1536&amp;ssl=1 1152w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Florist-by-Relia.png?resize=1536%2C2048&amp;ssl=1 1536w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Florist-by-Relia.png?w=2000&amp;ssl=1 2000w" sizes="(max-width: 1000px) 100vw, 1000px" data-recalc-dims="1"></a></p>
+<p>&nbsp;</p>
+<p><strong>Ieka and Fierre in Bunny Outfits by Tatolord! (Is this now a thing? Why is it a thing?)</strong></p>
+<p><a href="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/IekaBleeding-by-tatolord-why-is-this-now-a-thing.png?ssl=1"><img loading="lazy" decoding="async" data-attachment-id="17467" data-permalink="https://wanderinginn.com/iekableeding-by-tatolord-why-is-this-now-a-thing/" data-orig-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/IekaBleeding-by-tatolord-why-is-this-now-a-thing.png?fit=858%2C675&amp;ssl=1" data-orig-size="858,675" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="IekaBleeding by tatolord why is this now a thing" data-image-description="" data-image-caption="" data-medium-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/IekaBleeding-by-tatolord-why-is-this-now-a-thing.png?fit=300%2C236&amp;ssl=1" data-large-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/IekaBleeding-by-tatolord-why-is-this-now-a-thing.png?fit=858%2C675&amp;ssl=1" class="alignnone size-full wp-image-17467" src="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/IekaBleeding-by-tatolord-why-is-this-now-a-thing.png?resize=858%2C675&amp;ssl=1" alt="" width="858" height="675" srcset="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/IekaBleeding-by-tatolord-why-is-this-now-a-thing.png?w=858&amp;ssl=1 858w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/IekaBleeding-by-tatolord-why-is-this-now-a-thing.png?resize=300%2C236&amp;ssl=1 300w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/IekaBleeding-by-tatolord-why-is-this-now-a-thing.png?resize=768%2C604&amp;ssl=1 768w" sizes="(max-width: 858px) 100vw, 858px" data-recalc-dims="1"></a></p>
+<p>&nbsp;</p>
+<p><strong>Klbkch’s Return and Headpatt by Lime!</strong></p>
+<p><strong>Bluesky:</strong> <a class="anchor_af404b anchorUnderlineOnHover_af404b" tabindex="0" title="https://bsky.app/profile/arcticlime.bsky.social" role="button" href="https://bsky.app/profile/arcticlime.bsky.social" target="_blank" rel="noreferrer noopener">https://bsky.app/profile/arcticlime.bsky.social</a></p>
+<p><strong>Ko-fi:</strong> <a class="anchor_af404b anchorUnderlineOnHover_af404b" tabindex="0" title="https://ko-fi.com/recapturedlime" role="button" href="https://ko-fi.com/recapturedlime" target="_blank" rel="noreferrer noopener">https://ko-fi.com/recapturedlime</a></p>
+<p><strong>Youtube:</strong> <a class="anchor_af404b anchorUnderlineOnHover_af404b" tabindex="0" title="https://youtube.com/@recapturedlime" role="button" href="https://youtube.com/@recapturedlime" target="_blank" rel="noreferrer noopener">https://youtube.com/@recapturedlime</a></p>
+<p><a href="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Klb_back-by-Lime.jpg?ssl=1"><img loading="lazy" decoding="async" data-attachment-id="17468" data-permalink="https://wanderinginn.com/klb_back-by-lime/" data-orig-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Klb_back-by-Lime.jpg?fit=1000%2C1000&amp;ssl=1" data-orig-size="1000,1000" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="Klb_back by Lime" data-image-description="" data-image-caption="" data-medium-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Klb_back-by-Lime.jpg?fit=300%2C300&amp;ssl=1" data-large-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Klb_back-by-Lime.jpg?fit=1000%2C1000&amp;ssl=1" class="alignnone size-full wp-image-17468" src="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Klb_back-by-Lime.jpg?resize=1000%2C1000&amp;ssl=1" alt="" width="1000" height="1000" srcset="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Klb_back-by-Lime.jpg?w=1000&amp;ssl=1 1000w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Klb_back-by-Lime.jpg?resize=300%2C300&amp;ssl=1 300w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Klb_back-by-Lime.jpg?resize=150%2C150&amp;ssl=1 150w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Klb_back-by-Lime.jpg?resize=768%2C768&amp;ssl=1 768w" sizes="(max-width: 1000px) 100vw, 1000px" data-recalc-dims="1"></a> <a href="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Klb_pat-by-Lime.png?ssl=1"><img loading="lazy" decoding="async" data-attachment-id="17469" data-permalink="https://wanderinginn.com/klb_pat-by-lime/" data-orig-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Klb_pat-by-Lime.png?fit=1000%2C1000&amp;ssl=1" data-orig-size="1000,1000" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="Klb_pat by Lime" data-image-description="" data-image-caption="" data-medium-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Klb_pat-by-Lime.png?fit=300%2C300&amp;ssl=1" data-large-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Klb_pat-by-Lime.png?fit=1000%2C1000&amp;ssl=1" class="alignnone size-full wp-image-17469" src="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Klb_pat-by-Lime.png?resize=1000%2C1000&amp;ssl=1" alt="" width="1000" height="1000" srcset="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Klb_pat-by-Lime.png?w=1000&amp;ssl=1 1000w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Klb_pat-by-Lime.png?resize=300%2C300&amp;ssl=1 300w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Klb_pat-by-Lime.png?resize=150%2C150&amp;ssl=1 150w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Klb_pat-by-Lime.png?resize=768%2C768&amp;ssl=1 768w" sizes="(max-width: 1000px) 100vw, 1000px" data-recalc-dims="1"></a></p>
+<p>&nbsp;</p>
+<p><strong>Fraerling Flicking by brownie!</strong></p>
+<p><a href="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/peacock_fraerling-by-brownie.png?ssl=1"><img loading="lazy" decoding="async" data-attachment-id="17470" data-permalink="https://wanderinginn.com/peacock_fraerling-by-brownie/" data-orig-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/peacock_fraerling-by-brownie.png?fit=2325%2C2325&amp;ssl=1" data-orig-size="2325,2325" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="peacock_fraerling by brownie" data-image-description="" data-image-caption="" data-medium-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/peacock_fraerling-by-brownie.png?fit=300%2C300&amp;ssl=1" data-large-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/peacock_fraerling-by-brownie.png?fit=1024%2C1024&amp;ssl=1" class="alignnone size-full wp-image-17470" src="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/peacock_fraerling-by-brownie.png?resize=2325%2C2325&amp;ssl=1" alt="" width="2325" height="2325" srcset="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/peacock_fraerling-by-brownie.png?w=2325&amp;ssl=1 2325w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/peacock_fraerling-by-brownie.png?resize=300%2C300&amp;ssl=1 300w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/peacock_fraerling-by-brownie.png?resize=1024%2C1024&amp;ssl=1 1024w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/peacock_fraerling-by-brownie.png?resize=150%2C150&amp;ssl=1 150w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/peacock_fraerling-by-brownie.png?resize=768%2C768&amp;ssl=1 768w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/peacock_fraerling-by-brownie.png?resize=1536%2C1536&amp;ssl=1 1536w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/peacock_fraerling-by-brownie.png?resize=2048%2C2048&amp;ssl=1 2048w" sizes="(max-width: 1000px) 100vw, 1000px" data-recalc-dims="1"></a></p>
+<p>&nbsp;</p>
+<p><strong>King Perric and His New Wives by Kala!</strong></p>
+<p><a href="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/PooricWives-by-Kala.png?ssl=1"><img loading="lazy" decoding="async" data-attachment-id="17471" data-permalink="https://wanderinginn.com/pooricwives-by-kala/" data-orig-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/PooricWives-by-Kala.png?fit=858%2C691&amp;ssl=1" data-orig-size="858,691" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="PooricWives by Kala" data-image-description="" data-image-caption="" data-medium-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/PooricWives-by-Kala.png?fit=300%2C242&amp;ssl=1" data-large-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/PooricWives-by-Kala.png?fit=858%2C691&amp;ssl=1" class="alignnone size-full wp-image-17471" src="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/PooricWives-by-Kala.png?resize=858%2C691&amp;ssl=1" alt="" width="858" height="691" srcset="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/PooricWives-by-Kala.png?w=858&amp;ssl=1 858w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/PooricWives-by-Kala.png?resize=300%2C242&amp;ssl=1 300w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/PooricWives-by-Kala.png?resize=768%2C619&amp;ssl=1 768w" sizes="(max-width: 858px) 100vw, 858px" data-recalc-dims="1"></a></p>
+<p>&nbsp;</p>
+<p><strong>SuperHero Mrsha and NSFW Lyonette In a Bunny Outfit by BoboPlushie!</strong></p>
+<p><strong>Twitter:</strong> <a class="anchor_af404b anchorUnderlineOnHover_af404b" tabindex="0" title="https://twitter.com/Bobo_Snofo" role="button" href="https://twitter.com/Bobo_Snofo" target="_blank" rel="noreferrer noopener">https://twitter.com/Bobo_Snofo</a></p>
+<p><strong>Ko-Fi:</strong> <a class="anchor_af404b anchorUnderlineOnHover_af404b" tabindex="0" title="https://ko-fi.com/boboplushie" role="button" href="https://ko-fi.com/boboplushie" target="_blank" rel="noreferrer noopener">https://ko-fi.com/boboplushie</a></p>
+<p><a href="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/SuperHeroMrsha-by-BoboPlushie.png?ssl=1"><img loading="lazy" decoding="async" data-attachment-id="17472" data-permalink="https://wanderinginn.com/superheromrsha-by-boboplushie/" data-orig-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/SuperHeroMrsha-by-BoboPlushie.png?fit=1327%2C818&amp;ssl=1" data-orig-size="1327,818" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="SuperHeroMrsha by BoboPlushie" data-image-description="" data-image-caption="" data-medium-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/SuperHeroMrsha-by-BoboPlushie.png?fit=300%2C185&amp;ssl=1" data-large-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/SuperHeroMrsha-by-BoboPlushie.png?fit=1024%2C631&amp;ssl=1" class="alignnone size-full wp-image-17472" src="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/SuperHeroMrsha-by-BoboPlushie.png?resize=1327%2C818&amp;ssl=1" alt="" width="1327" height="818" srcset="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/SuperHeroMrsha-by-BoboPlushie.png?w=1327&amp;ssl=1 1327w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/SuperHeroMrsha-by-BoboPlushie.png?resize=300%2C185&amp;ssl=1 300w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/SuperHeroMrsha-by-BoboPlushie.png?resize=1024%2C631&amp;ssl=1 1024w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/SuperHeroMrsha-by-BoboPlushie.png?resize=768%2C473&amp;ssl=1 768w" sizes="(max-width: 1000px) 100vw, 1000px" data-recalc-dims="1"></a> <a href="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/NSFWLyonetteBunnySuit-by-BoboPlushie.png?ssl=1"><img loading="lazy" decoding="async" data-attachment-id="17473" data-permalink="https://wanderinginn.com/nsfwlyonettebunnysuit-by-boboplushie/" data-orig-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/NSFWLyonetteBunnySuit-by-BoboPlushie.png?fit=1271%2C946&amp;ssl=1" data-orig-size="1271,946" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="NSFWLyonetteBunnySuit by BoboPlushie" data-image-description="" data-image-caption="" data-medium-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/NSFWLyonetteBunnySuit-by-BoboPlushie.png?fit=300%2C223&amp;ssl=1" data-large-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/NSFWLyonetteBunnySuit-by-BoboPlushie.png?fit=1024%2C762&amp;ssl=1" class="alignnone size-full wp-image-17473" src="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/NSFWLyonetteBunnySuit-by-BoboPlushie.png?resize=1271%2C946&amp;ssl=1" alt="" width="1271" height="946" srcset="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/NSFWLyonetteBunnySuit-by-BoboPlushie.png?w=1271&amp;ssl=1 1271w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/NSFWLyonetteBunnySuit-by-BoboPlushie.png?resize=300%2C223&amp;ssl=1 300w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/NSFWLyonetteBunnySuit-by-BoboPlushie.png?resize=1024%2C762&amp;ssl=1 1024w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/NSFWLyonetteBunnySuit-by-BoboPlushie.png?resize=768%2C572&amp;ssl=1 768w" sizes="(max-width: 1000px) 100vw, 1000px" data-recalc-dims="1"></a></p>
+<p>&nbsp;</p>
+<p><strong>Mrsha Bunny by Bread!</strong></p>
+<p><a href="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/MrshaBunny-by-Bread.png?ssl=1"><img loading="lazy" decoding="async" data-attachment-id="17474" data-permalink="https://wanderinginn.com/mrshabunny-by-bread/" data-orig-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/MrshaBunny-by-Bread.png?fit=678%2C669&amp;ssl=1" data-orig-size="678,669" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="MrshaBunny by Bread" data-image-description="" data-image-caption="" data-medium-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/MrshaBunny-by-Bread.png?fit=300%2C296&amp;ssl=1" data-large-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/MrshaBunny-by-Bread.png?fit=678%2C669&amp;ssl=1" class="alignnone size-full wp-image-17474" src="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/MrshaBunny-by-Bread.png?resize=678%2C669&amp;ssl=1" alt="" width="678" height="669" srcset="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/MrshaBunny-by-Bread.png?w=678&amp;ssl=1 678w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/MrshaBunny-by-Bread.png?resize=300%2C296&amp;ssl=1 300w" sizes="(max-width: 678px) 100vw, 678px" data-recalc-dims="1"></a></p>
+<p>&nbsp;</p>
+<p><strong>Cauwine by Phosu!</strong></p>
+<p><a href="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Cauwine-by-Phosu.png?ssl=1"><img loading="lazy" decoding="async" data-attachment-id="17475" data-permalink="https://wanderinginn.com/cauwine-by-phosu/" data-orig-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Cauwine-by-Phosu.png?fit=983%2C818&amp;ssl=1" data-orig-size="983,818" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="Cauwine by Phosu" data-image-description="" data-image-caption="" data-medium-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Cauwine-by-Phosu.png?fit=300%2C250&amp;ssl=1" data-large-file="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Cauwine-by-Phosu.png?fit=983%2C818&amp;ssl=1" class="alignnone size-full wp-image-17475" src="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Cauwine-by-Phosu.png?resize=983%2C818&amp;ssl=1" alt="" width="983" height="818" srcset="https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Cauwine-by-Phosu.png?w=983&amp;ssl=1 983w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Cauwine-by-Phosu.png?resize=300%2C250&amp;ssl=1 300w, https://i0.wp.com/wanderinginn.com/wp-content/uploads/2024/08/Cauwine-by-Phosu.png?resize=768%2C639&amp;ssl=1 768w" sizes="(max-width: 983px) 100vw, 983px" data-recalc-dims="1"></a></p>
+<p>&nbsp;</p>
+<hr>
+<p><a href="https://wanderinginn.com/2024/08/10/the-roots-pt-1/">Previous Chapter</a> <a href="https://wanderinginn.com/2024/08/14/the-roots-pt-3/"><span style="float: right;">Next Chapter</span></a></p>
+      </div>
+
+      <hr>
+          <span class="nav-previous">
+        <a href="https://wanderinginn.com/2024/08/11/the-roots-pt-2-2/" rel="prev"><span class="meta-nav">←</span> Previous Chapter</a>    </span>
+    <span class="nav-next" style="float: right" ;="">
+        <a href="https://wanderinginn.com/2024/08/14/the-roots-pt-3/" rel="next">Next Chapter <span class="meta-nav">→</span></a>    </span>
+    
