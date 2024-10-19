@@ -67,4 +67,6 @@ async function downloadChapters() {
   }
 }
 
-downloadChapters();
+if (require.main === module) {
+  downloadChapters().catch(console.error);
+}

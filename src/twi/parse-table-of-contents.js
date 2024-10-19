@@ -41,4 +41,6 @@ async function parseTableOfContents() {
   console.log(`Table of contents saved to ${jsonPath}`);
 }
 
-parseTableOfContents().catch(console.error);
+if (require.main === module) {
+  parseTableOfContents().catch(console.error);
+}

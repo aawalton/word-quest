@@ -83,4 +83,6 @@ async function processChapters() {
   }
 }
 
-processChapters();
+if (require.main === module) {
+  processChapters().catch(console.error);
+}

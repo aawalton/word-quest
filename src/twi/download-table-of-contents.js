@@ -31,3 +31,6 @@ async function downloadTableOfContents() {
 
 downloadTableOfContents();
 
+if (require.main === module) {
+  downloadTableOfContents().catch(console.error);
+}
