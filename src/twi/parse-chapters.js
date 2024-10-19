@@ -1,6 +1,10 @@
-const puppeteer = require('puppeteer');
-const fs = require('fs').promises;
-const path = require('path');
+import puppeteer from 'puppeteer';
+import { promises as fs } from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 async function extractChapterText(filePath) {
   const browser = await puppeteer.launch();
@@ -42,7 +46,7 @@ async function extractChapterText(filePath) {
   return chapterText;
 }
 
-async function processChapters() {
+export async function processChapters() {
   const chaptersDir = path.join(__dirname, '..', '..', 'data', 'twi', 'html');
   const outputDir = path.join(__dirname, '..', '..', 'data', 'twi', 'json');
 

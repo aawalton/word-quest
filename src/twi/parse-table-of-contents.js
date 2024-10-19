@@ -1,8 +1,12 @@
-const puppeteer = require('puppeteer');
-const fs = require('fs').promises;
-const path = require('path');
+import puppeteer from 'puppeteer';
+import { promises as fs } from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
 
-async function parseTableOfContents() {
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+export async function parseTableOfContents() {
   const browser = await puppeteer.launch();
   const page = await browser.newPage();
 

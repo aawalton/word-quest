@@ -1,11 +1,9 @@
-const fs = require('fs').promises;
-const path = require('path');
-const puppeteer = require('puppeteer');
+import { promises as fs } from 'fs';
+import path from 'path';
+import puppeteer from 'puppeteer';
+import { setTimeout } from 'timers/promises';
 
-// Add this import at the top of the file
-const { setTimeout } = require('timers/promises');
-
-async function downloadChapters() {
+export async function downloadChapters() {
   try {
     // Read the table of contents JSON file
     const tocPath = path.join('data', 'twi', 'table-of-contents.json');

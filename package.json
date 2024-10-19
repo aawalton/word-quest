@@ -10,6 +10,13 @@
   "license": "ISC",
   "dependencies": {
     "puppeteer": "^23.5.3"
-  }
+  },
+  "engines": {
+    "node": "18.x",
+    "yarn": "3.x"
+  },
+  "packageManager": "yarn@4.5.1",
+  "cacheDirectories": [
+    ".yarn/cache"
+  ]
 }
-
