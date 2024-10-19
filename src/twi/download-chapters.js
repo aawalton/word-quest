@@ -2,6 +2,9 @@ const fs = require('fs').promises;
 const path = require('path');
 const puppeteer = require('puppeteer');
 
+// Add this import at the top of the file
+const { setTimeout } = require('timers/promises');
+
 async function downloadChapters() {
   try {
     // Read the table of contents JSON file
@@ -42,6 +45,9 @@ async function downloadChapters() {
       } else {
         console.log(`No content found for: ${title}`);
       }
+
+      // Add a delay between requests
+      await setTimeout(1000);
     }
 
     await browser.close();
@@ -50,3 +56,4 @@ async function downloadChapters() {
   }
 }
 
+downloadChapters();
