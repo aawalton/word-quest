@@ -25,7 +25,7 @@ async function syncTWI() {
   }
 }
 
-if (require.main === module) {
+if (import.meta.url === `file://${process.argv[1]}`) {
   syncTWI().catch(console.error);
 }
 

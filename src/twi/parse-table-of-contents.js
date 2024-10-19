@@ -45,6 +45,6 @@ export async function parseTableOfContents() {
   console.log(`Table of contents saved to ${jsonPath}`);
 }
 
-if (require.main === module) {
+if (import.meta.url === `file://${process.argv[1]}`) {
   parseTableOfContents().catch(console.error);
 }

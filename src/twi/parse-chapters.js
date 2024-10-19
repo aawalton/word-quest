@@ -87,6 +87,6 @@ export async function processChapters() {
   }
 }
 
-if (require.main === module) {
+if (import.meta.url === `file://${process.argv[1]}`) {
   processChapters().catch(console.error);
 }

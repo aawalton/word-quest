@@ -775,7 +775,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"puppeteer@npm:^23.5.3":
+"puppeteer@npm:^23.6.0":
   version: 23.6.0
   resolution: "puppeteer@npm:23.6.0"
   dependencies:
@@ -998,7 +998,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "word-quest@workspace:."
   dependencies:
-    puppeteer: "npm:^23.5.3"
+    puppeteer: "npm:^23.6.0"
   languageName: unknown
   linkType: soft
 

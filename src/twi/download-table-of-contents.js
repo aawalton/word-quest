@@ -31,6 +31,6 @@ export async function downloadTableOfContents() {
 
 downloadTableOfContents();
 
-if (require.main === module) {
+if (import.meta.url === `file://${process.argv[1]}`) {
   downloadTableOfContents().catch(console.error);
 }

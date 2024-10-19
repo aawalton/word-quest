@@ -65,6 +65,6 @@ export async function downloadChapters() {
   }
 }
 
-if (require.main === module) {
+if (import.meta.url === `file://${process.argv[1]}`) {
   downloadChapters().catch(console.error);
 }
