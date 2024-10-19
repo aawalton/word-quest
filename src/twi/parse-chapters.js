@@ -54,11 +54,21 @@ async function processChapters() {
     for (const file of files) {
       if (path.extname(file) === '.html') {
         const filePath = path.join(chaptersDir, file);
+        const outputPath = path.join(outputDir, `${path.parse(file).name}.json`);
+        
+        // Check if the output file already exists
+        try {
+          await fs.access(outputPath);
+          console.log(`Skipping: ${file} (already processed)`);
+          continue; // Skip to the next file
+        } catch (error) {
+          // File doesn't exist, proceed with processing
+        }
+
         const chapterText = await extractChapterText(filePath);
         
         if (chapterText) {
           const jsonOutput = JSON.stringify({ chapterText }, null, 2);
-          const outputPath = path.join(outputDir, `${path.parse(file).name}.json`);
           await fs.writeFile(outputPath, jsonOutput);
           console.log(`Processed: ${file}`);
         } else {
