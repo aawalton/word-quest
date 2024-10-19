@@ -1,7 +1,7 @@
 import fs from 'fs/promises';
 import path from 'path';
 
-async function calculateTotalWordCount() {
+export async function calculateTotalWordCount() {
   try {
     // Read the word-counts.json file
     const filePath = path.join(process.cwd(), 'progress', 'word-counts.json');
