@@ -56,6 +56,17 @@ export async function downloadChapters() {
         }
       }
 
+      // Check if the chapter is a Patron Early Access chapter
+      const isPatronEarlyAccess = await page.evaluate(() => {
+        const titleElement = document.querySelector('h1.entry-title');
+        return titleElement && titleElement.textContent.includes('Patron Early Access');
+      });
+
+      if (isPatronEarlyAccess) {
+        console.log(`Skipping ${title}`);
+        continue;
+      }
+
       // Extract the main content of the chapter
       const content = await page.evaluate(() => {
         const articleElement = document.querySelector('article.post');
