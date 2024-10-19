@@ -10,6 +10,7 @@ async function countWordsInJsonFiles(baseDirectoryPath) {
       .map(dirent => path.join(baseDirectoryPath, dirent.name, 'json'));
 
     let allResults = [];
+    let stopMarking = false;
 
     // Process each JSON directory
     for (const directoryPath of jsonDirectories) {
@@ -31,10 +32,17 @@ async function countWordsInJsonFiles(baseDirectoryPath) {
             return count + text.split(/\s+/).filter(word => word.length > 0).length;
           }, 0);
           
+          const chapterName = path.join(path.basename(path.dirname(directoryPath)), file);
+          
+          // Check if we should stop marking chapters as completed
+          if (chapterName.includes('10_15')) {
+            stopMarking = true;
+          }
+          
           return { 
-            file: path.join(path.basename(path.dirname(directoryPath)), file), 
+            file: chapterName, 
             wordCount,
-            completed: true
+            completed: !stopMarking
           };
         }));
         
