@@ -7,52 +7,69 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 export async function getSeriesJson() {
-  const browser = await puppeteer.launch();
-  const page = await browser.newPage();
-
-  // Load the HTML file
   const htmlPath = path.join(__dirname, '../../../data/html/series/the-wandering-inn/the-wandering-inn.html');
-  await page.goto(`file://${htmlPath}`);
+  const outputDir = path.join(__dirname, '../../../data/json/series/the-wandering-inn');
 
-  const chapters = await page.evaluate(() => {
-    const chapterElements = document.querySelectorAll('.chapter-entry');
-    return Array.from(chapterElements).map(el => {
-      const linkElement = el.querySelector('a');
+  try {
+    // Check if input file exists
+    try {
+      await fs.access(htmlPath);
+    } catch (error) {
+      console.error(`Input HTML file not found: ${htmlPath}`);
+      return;
+    }
 
-      if (!linkElement) {
-        return null;
-      }
+    // Ensure output directory exists
+    await fs.mkdir(outputDir, { recursive: true });
 
-      return {
-        title: linkElement.textContent.trim(),
-        url: linkElement.href,
-      };
-    }).filter(chapter => chapter !== null);
-  });
+    const browser = await puppeteer.launch();
+    const page = await browser.newPage();
 
-  await browser.close();
+    // Load the HTML file
+    await page.goto(`file://${htmlPath}`);
 
-  // Transform chapters to match schema
-  const formattedChapters = chapters.map((chapter, index) => ({
-    order: index + 1,
-    title: chapter.title,
-    url: chapter.url
-  }));
+    const chapters = await page.evaluate(() => {
+      const chapterElements = document.querySelectorAll('.chapter-entry');
+      return Array.from(chapterElements).map(el => {
+        const linkElement = el.querySelector('a');
 
-  // Create the complete series object
-  const seriesData = {
-    "series-id": "the-wandering-inn",
-    "series-name": "The Wandering Inn",
-    "author-ids": ["pirateaba"],
-    "books": [], // No book information available in current HTML
-    "chapters": formattedChapters
-  };
+        if (!linkElement) {
+          return null;
+        }
 
-  // Save the result as JSON
-  const jsonPath = path.join(__dirname, '../../../data/json/series/the-wandering-inn/the-wandering-inn.json');
-  await fs.writeFile(jsonPath, JSON.stringify(seriesData, null, 2));
+        return {
+          title: linkElement.textContent.trim(),
+          url: linkElement.href,
+        };
+      }).filter(chapter => chapter !== null);
+    });
 
-  console.log(`Table of contents saved to ${jsonPath}`);
+    await browser.close();
+
+    // Transform chapters to match schema
+    const formattedChapters = chapters.map((chapter, index) => ({
+      order: index + 1,
+      title: chapter.title,
+      url: chapter.url
+    }));
+
+    // Create the complete series object
+    const seriesData = {
+      "series-id": "the-wandering-inn",
+      "series-name": "The Wandering Inn",
+      "author-ids": ["pirateaba"],
+      "books": [], // No book information available in current HTML
+      "chapters": formattedChapters
+    };
+
+    // Save the result as JSON
+    const jsonPath = path.join(__dirname, '../../../data/json/series/the-wandering-inn/the-wandering-inn.json');
+    await fs.writeFile(jsonPath, JSON.stringify(seriesData, null, 2));
+
+    console.log(`Table of contents saved to ${jsonPath}`);
+  } catch (error) {
+    console.error(`Error processing series data: ${error}`);
+  }
 }
 
 if (import.meta.url === `file://${process.argv[1]}`) {

@@ -59,8 +59,16 @@ export async function getChaptersJson() {
   const outputDir = path.join(__dirname, '../../../data/json/series/the-wandering-inn/chapters');
 
   try {
+    // Ensure both input and output directories exist
+    await fs.mkdir(chaptersDir, { recursive: true });
     await fs.mkdir(outputDir, { recursive: true });
+
+    // Check if input directory is empty
     const files = await fs.readdir(chaptersDir);
+    if (files.length === 0) {
+      console.log('No HTML files found in input directory:', chaptersDir);
+      return;
+    }
 
     for (const file of files) {
       if (path.extname(file) === '.html') {

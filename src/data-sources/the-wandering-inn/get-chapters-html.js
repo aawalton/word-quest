@@ -4,16 +4,24 @@ import puppeteer from 'puppeteer';
 import { setTimeout } from 'timers/promises';
 
 export async function getChaptersHtml() {
+  const tocPath = path.join('data', 'json', 'series', 'the-wandering-inn.json');
+  const outputDir = path.join('data', 'html', 'series', 'the-wandering-inn', 'chapters');
+
   try {
-    // Read the table of contents JSON file
-    const tocPath = path.join('data', 'json', 'series', 'the-wandering-inn.json');
+    // Check if TOC file exists
+    try {
+      await fs.access(tocPath);
+    } catch (error) {
+      console.error(`Table of contents file not found: ${tocPath}`);
+      return;
+    }
+
+    // Ensure output directory exists
+    await fs.mkdir(outputDir, { recursive: true });
+
     const tocData = await fs.readFile(tocPath, 'utf-8');
     const seriesData = JSON.parse(tocData);
     const chapters = seriesData.chapters;  // Access the chapters array from the series object
-
-    // Create the output directory if it doesn't exist
-    const outputDir = path.join('data', 'html', 'series', 'the-wandering-inn', 'chapters');
-    await fs.mkdir(outputDir, { recursive: true });
 
     // Launch a browser instance
     const browser = await puppeteer.launch();
