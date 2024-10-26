@@ -1,8 +1,8 @@
-import { calculateTotalWordCount } from './total-word-count.js';
+import { getTotalWordCount } from './get-total-word-count.js';
 
-async function calculateLevelInfo() {
+async function getLevelInfo() {
   try {
-    const totalWordCount = await calculateTotalWordCount();
+    const totalWordCount = await getTotalWordCount();
     const totalXp = totalWordCount; // Total XP is equal to the total number of words read
 
     // Calculate current level
@@ -12,7 +12,7 @@ async function calculateLevelInfo() {
     const nextLevel = currentLevel + 1;
     const xpNeededForNextLevel = nextLevel * 1000;
     const xpNeededForCurrentLevel = currentLevel * (currentLevel + 1) / 2 * 1000;
-    
+
     // Calculate progress towards next level
     const xpGainedTowardsNextLevel = totalXp - xpNeededForCurrentLevel;
     const percentProgressToNextLevel = (xpGainedTowardsNextLevel / xpNeededForNextLevel) * 100;
@@ -37,7 +37,7 @@ async function calculateLevelInfo() {
 }
 
 if (import.meta.url === `file://${process.argv[1]}`) {
-  calculateLevelInfo().then(({ currentLevel, totalXp, xpNeededForNextLevel, xpGainedTowardsNextLevel, percentProgressToNextLevel }) => {
+  getLevelInfo().then(({ currentLevel, totalXp, xpNeededForNextLevel, xpGainedTowardsNextLevel, percentProgressToNextLevel }) => {
     console.log(`Current level: ${currentLevel}`);
     console.log(`Total XP: ${totalXp}`);
     console.log(`XP needed for next level: ${xpNeededForNextLevel}`);
@@ -46,4 +46,4 @@ if (import.meta.url === `file://${process.argv[1]}`) {
   });
 }
 
-export { calculateLevelInfo };
+export { getLevelInfo };

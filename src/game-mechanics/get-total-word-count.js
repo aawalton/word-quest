@@ -1,7 +1,7 @@
 import fs from 'fs/promises';
 import path from 'path';
 
-export async function calculateTotalWordCount() {
+export async function getTotalWordCount() {
   try {
     // Read the word-counts.json file
     const filePath = path.join(process.cwd(), 'progress', 'word-counts.json');
@@ -24,7 +24,7 @@ export async function calculateTotalWordCount() {
 }
 
 if (import.meta.url === `file://${process.argv[1]}`) {
-  calculateTotalWordCount().then(totalWordCount => {
+  getTotalWordCount().then(totalWordCount => {
     console.log(`Total word count for completed entries: ${totalWordCount}`);
   });
 }
