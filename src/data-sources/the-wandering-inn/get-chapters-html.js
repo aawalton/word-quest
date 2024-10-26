@@ -8,7 +8,8 @@ export async function getChaptersHtml() {
     // Read the table of contents JSON file
     const tocPath = path.join('data', 'json', 'series', 'the-wandering-inn.json');
     const tocData = await fs.readFile(tocPath, 'utf-8');
-    const chapters = JSON.parse(tocData);
+    const seriesData = JSON.parse(tocData);
+    const chapters = seriesData.chapters;  // Access the chapters array from the series object
 
     // Create the output directory if it doesn't exist
     const outputDir = path.join('data', 'html', 'series', 'the-wandering-inn', 'chapters');
@@ -18,11 +19,11 @@ export async function getChaptersHtml() {
     const browser = await puppeteer.launch();
 
     for (const chapter of chapters) {
-      const { number, title, url } = chapter;
+      const { order, title, url } = chapter;  // Changed from number to order
 
       // Create a safe filename from the chapter title with a 4-digit zero-padded prefix
       const safeTitle = title.replace(/[^a-z0-9]/gi, '_').toLowerCase();
-      const paddedNumber = number.toString().padStart(4, '0');
+      const paddedNumber = order.toString().padStart(4, '0');  // Changed from number to order
       const fileName = `${paddedNumber}_${safeTitle}.html`;
       const filePath = path.join(outputDir, fileName);
 
