@@ -93,7 +93,7 @@ export async function getChaptersJson() {
             "series-id": "the-wandering-inn",
             "chapter-text": chapterData.chapterText,
             "word-count": chapterData.chapterText.split(/\s+/).length,
-            "completed": true
+            "completed": false
           };
 
           await fs.writeFile(outputPath, JSON.stringify(jsonOutput, null, 2));
