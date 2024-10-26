@@ -2,16 +2,24 @@ import fs from 'fs/promises';
 import path from 'path';
 
 async function readJsonFiles(directory) {
-  const files = await fs.readdir(directory);
-  const jsonFiles = files.filter(file => file.endsWith('.json'));
-  const fileContents = await Promise.all(
-    jsonFiles.map(async file => {
-      const filePath = path.join(directory, file);
-      const content = await fs.readFile(filePath, 'utf-8');
-      return JSON.parse(content);
-    })
-  );
-  return fileContents;
+  try {
+    const files = await fs.readdir(directory);
+    const jsonFiles = files.filter(file => file.endsWith('.json'));
+    const fileContents = await Promise.all(
+      jsonFiles.map(async file => {
+        const filePath = path.join(directory, file);
+        const content = await fs.readFile(filePath, 'utf-8');
+        return JSON.parse(content);
+      })
+    );
+    return fileContents;
+  } catch (error) {
+    if (error.code === 'ENOENT') {
+      // Directory doesn't exist, return empty array
+      return [];
+    }
+    throw error; // Re-throw other errors
+  }
 }
 
 export async function getTotalWordCount() {
@@ -19,8 +27,11 @@ export async function getTotalWordCount() {
     const chaptersDir = path.join(process.cwd(), 'data', 'json', 'series', 'the-wandering-inn', 'chapters');
     const booksDir = path.join(process.cwd(), 'data', 'json', 'series', 'the-wandering-inn', 'books');
 
-    const chapters = await readJsonFiles(chaptersDir);
-    const books = await readJsonFiles(booksDir);
+    // Get contents from both directories, if they exist
+    const [chapters, books] = await Promise.all([
+      readJsonFiles(chaptersDir),
+      readJsonFiles(booksDir)
+    ]);
 
     const chapterWordCount = chapters.reduce((total, chapter) => {
       if (chapter.completed) {

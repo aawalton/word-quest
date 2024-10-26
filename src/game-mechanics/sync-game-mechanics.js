@@ -26,3 +26,8 @@ async function syncGameMechanics() {
 
 export { syncGameMechanics };
 
+
+if (import.meta.url === `file://${process.argv[1]}`) {
+  syncGameMechanics().catch(console.error);
+}
+
