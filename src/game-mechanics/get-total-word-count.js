@@ -1,20 +1,42 @@
 import fs from 'fs/promises';
 import path from 'path';
 
+async function readJsonFiles(directory) {
+  const files = await fs.readdir(directory);
+  const jsonFiles = files.filter(file => file.endsWith('.json'));
+  const fileContents = await Promise.all(
+    jsonFiles.map(async file => {
+      const filePath = path.join(directory, file);
+      const content = await fs.readFile(filePath, 'utf-8');
+      return JSON.parse(content);
+    })
+  );
+  return fileContents;
+}
+
 export async function getTotalWordCount() {
   try {
-    // Read the word-counts.json file
-    const filePath = path.join(process.cwd(), 'progress', 'word-counts.json');
-    const fileContent = await fs.readFile(filePath, 'utf-8');
-    const wordCounts = JSON.parse(fileContent);
+    const chaptersDir = path.join(process.cwd(), 'data', 'json', 'series', 'the-wandering-inn', 'chapters');
+    const booksDir = path.join(process.cwd(), 'data', 'json', 'series', 'the-wandering-inn', 'books');
 
-    // Calculate total word count for completed entries
-    const totalWordCount = wordCounts.reduce((total, entry) => {
-      if (entry.completed) {
-        return total + entry.wordCount;
+    const chapters = await readJsonFiles(chaptersDir);
+    const books = await readJsonFiles(booksDir);
+
+    const chapterWordCount = chapters.reduce((total, chapter) => {
+      if (chapter.completed) {
+        return total + chapter['word-count'];
       }
       return total;
     }, 0);
+
+    const bookWordCount = books.reduce((total, book) => {
+      if (book.completed) {
+        return total + book['word-count'];
+      }
+      return total;
+    }, 0);
+
+    const totalWordCount = chapterWordCount + bookWordCount;
 
     return totalWordCount;
   } catch (error) {
