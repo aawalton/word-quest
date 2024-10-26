@@ -3,7 +3,7 @@ import path from 'path';
 import puppeteer from 'puppeteer';
 import { setTimeout } from 'timers/promises';
 
-export async function downloadChapters() {
+export async function getChaptersHtml() {
   try {
     // Read the table of contents JSON file
     const tocPath = path.join('data', 'twi', 'table-of-contents.json');
@@ -19,7 +19,7 @@ export async function downloadChapters() {
 
     for (const chapter of chapters) {
       const { number, title, url } = chapter;
-      
+
       // Create a safe filename from the chapter title with a 4-digit zero-padded prefix
       const safeTitle = title.replace(/[^a-z0-9]/gi, '_').toLowerCase();
       const paddedNumber = number.toString().padStart(4, '0');
@@ -38,7 +38,7 @@ export async function downloadChapters() {
 
       // Create a new page for each chapter
       const page = await browser.newPage();
-      
+
       // Add retry mechanism
       let retries = 3;
       while (retries > 0) {
@@ -92,5 +92,5 @@ export async function downloadChapters() {
 }
 
 if (import.meta.url === `file://${process.argv[1]}`) {
-  downloadChapters().catch(console.error);
+  getChaptersHtml().catch(console.error);
 }

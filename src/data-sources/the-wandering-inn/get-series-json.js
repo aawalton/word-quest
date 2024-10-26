@@ -6,7 +6,7 @@ import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-export async function parseTableOfContents() {
+export async function getSeriesJson() {
   const browser = await puppeteer.launch();
   const page = await browser.newPage();
 
@@ -18,7 +18,7 @@ export async function parseTableOfContents() {
     const chapterElements = document.querySelectorAll('.chapter-entry');
     return Array.from(chapterElements).map(el => {
       const linkElement = el.querySelector('a');
-      
+
       if (!linkElement) {
         return null;
       }
@@ -46,5 +46,5 @@ export async function parseTableOfContents() {
 }
 
 if (import.meta.url === `file://${process.argv[1]}`) {
-  parseTableOfContents().catch(console.error);
+  getSeriesJson().catch(console.error);
 }

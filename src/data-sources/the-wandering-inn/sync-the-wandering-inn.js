@@ -1,29 +1,27 @@
-import { downloadTableOfContents } from './download-table-of-contents.js';
-import { parseTableOfContents } from './parse-table-of-contents.js';
-import { downloadChapters } from './download-chapters.js';
-import { processChapters } from './parse-chapters.js';
-// Add these new imports
+import { getSeriesHtml } from './get-series-html.js';
+import { getSeriesJson } from './get-series-json.js';
+import { getChaptersHtml } from './get-chapters-html.js';
+import { getChaptersJson } from './get-chapters-json.js';
 import { countWordsInJsonFiles } from '../progress/word-count.js';
 import { calculateTotalWordCount } from '../progress/total-word-count.js';
 import { calculateLevelInfo } from '../progress/level.js';
 
-async function syncTWI() {
+async function syncTheWanderingInn() {
   try {
     console.log('Starting TWI sync process...');
 
     console.log('Downloading table of contents...');
-    await downloadTableOfContents();
+    await getSeriesHtml();
 
     console.log('Parsing table of contents...');
-    await parseTableOfContents();
+    await getSeriesJson();
 
     console.log('Downloading chapters...');
-    await downloadChapters();
+    await getChaptersHtml();
 
     console.log('Parsing chapters...');
-    await processChapters();
+    await getChaptersJson();
 
-    // Add new steps
     console.log('Calculating word counts...');
     await countWordsInJsonFiles('./data');
 
@@ -40,16 +38,16 @@ async function syncTWI() {
     console.log(`Progress towards next level: ${levelInfo.percentProgressToNextLevel}%`);
 
     console.log('TWI sync process completed successfully!');
-    process.exit(0); // Exit with success code
+    process.exit(0);
   } catch (error) {
     console.error('An error occurred during the TWI sync process:', error);
-    process.exit(1); // Exit with error code
+    process.exit(1);
   }
 }
 
 if (import.meta.url === `file://${process.argv[1]}`) {
-  syncTWI().catch((error) => {
+  syncTheWanderingInn().catch((error) => {
     console.error(error);
-    process.exit(1); // Exit with error code if an unhandled error occurs
+    process.exit(1);
   });
 }
