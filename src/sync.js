@@ -1,3 +1,6 @@
+import { syncDataSources } from './data-sources/sync-data-sources.js';
+import { syncGameMechanics } from './game-mechanics/sync-game-mechanics.js';
+
 async function sync() {
   try {
     console.log('Starting sync process...');

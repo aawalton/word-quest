@@ -27,3 +27,7 @@ async function syncTheWanderingInn() {
 }
 
 export { syncTheWanderingInn };
+
+if (import.meta.url === `file://${process.argv[1]}`) {
+  syncTheWanderingInn().catch(console.error);
+}

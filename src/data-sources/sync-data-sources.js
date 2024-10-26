@@ -13,3 +13,7 @@ async function syncDataSources() {
 
 export { syncDataSources };
 
+
+if (import.meta.url === `file://${process.argv[1]}`) {
+  syncDataSources().catch(console.error);
+}

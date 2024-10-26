@@ -8,7 +8,7 @@ export async function getChaptersHtml() {
     // Read the table of contents JSON file
     const tocPath = path.join('data', 'json', 'series', 'the-wandering-inn.json');
     const tocData = await fs.readFile(tocPath, 'utf-8');
-    const chapters = JSON.parse(tocData).chapters;
+    const chapters = JSON.parse(tocData);
 
     // Create the output directory if it doesn't exist
     const outputDir = path.join('data', 'html', 'series', 'the-wandering-inn', 'chapters');
