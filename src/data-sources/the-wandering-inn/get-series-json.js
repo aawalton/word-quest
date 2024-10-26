@@ -25,22 +25,32 @@ export async function getSeriesJson() {
 
       return {
         title: linkElement.textContent.trim(),
-        url: linkElement.href
+        url: linkElement.href,
       };
     }).filter(chapter => chapter !== null);
   });
 
   await browser.close();
 
-  // Add chapter numbers
-  const numberedChapters = chapters.map((chapter, index) => ({
-    number: index + 1,
-    ...chapter
+  // Transform chapters to match schema
+  const formattedChapters = chapters.map((chapter, index) => ({
+    order: index + 1,
+    title: chapter.title,
+    url: chapter.url
   }));
+
+  // Create the complete series object
+  const seriesData = {
+    "series-id": "the-wandering-inn",
+    "series-name": "The Wandering Inn",
+    "author-ids": ["pirateaba"],
+    "books": [], // No book information available in current HTML
+    "chapters": formattedChapters
+  };
 
   // Save the result as JSON
   const jsonPath = path.join(__dirname, '../../../data/json/series/the-wandering-inn/the-wandering-inn.json');
-  await fs.writeFile(jsonPath, JSON.stringify(numberedChapters, null, 2));
+  await fs.writeFile(jsonPath, JSON.stringify(seriesData, null, 2));
 
   console.log(`Table of contents saved to ${jsonPath}`);
 }
