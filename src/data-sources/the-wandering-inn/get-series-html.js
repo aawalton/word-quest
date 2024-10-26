@@ -14,11 +14,11 @@ export async function getSeriesHtml() {
     const htmlContent = await page.content();
 
     // Ensure the directory exists
-    const dirPath = path.join('data/twi');
+    const dirPath = path.join('data', 'html', 'series', 'the-wandering-inn');
     await fs.mkdir(dirPath, { recursive: true });
 
     // Write the HTML content to a file
-    const filePath = path.join(dirPath, 'table-of-contents.html');
+    const filePath = path.join(dirPath, 'the-wandering-inn.html');
     await fs.writeFile(filePath, htmlContent);
 
     console.log(`HTML content saved to ${filePath}`);

@@ -6,12 +6,12 @@ import { setTimeout } from 'timers/promises';
 export async function getChaptersHtml() {
   try {
     // Read the table of contents JSON file
-    const tocPath = path.join('data', 'twi', 'table-of-contents.json');
+    const tocPath = path.join('data', 'json', 'series', 'the-wandering-inn.json');
     const tocData = await fs.readFile(tocPath, 'utf-8');
-    const chapters = JSON.parse(tocData);
+    const chapters = JSON.parse(tocData).chapters;
 
     // Create the output directory if it doesn't exist
-    const outputDir = path.join('data', 'twi', 'html');
+    const outputDir = path.join('data', 'html', 'series', 'the-wandering-inn', 'chapters');
     await fs.mkdir(outputDir, { recursive: true });
 
     // Launch a browser instance

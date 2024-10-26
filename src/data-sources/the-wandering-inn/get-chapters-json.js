@@ -47,8 +47,8 @@ async function extractChapterText(filePath) {
 }
 
 export async function getChaptersJson() {  // renamed from processChapters
-  const chaptersDir = path.join(__dirname, '..', '..', 'data', 'twi', 'html');
-  const outputDir = path.join(__dirname, '..', '..', 'data', 'twi', 'json');
+  const chaptersDir = path.join(__dirname, '../../../data/html/series/the-wandering-inn/chapters');
+  const outputDir = path.join(__dirname, '../../../data/json/series/the-wandering-inn/chapters');
 
   try {
     await fs.mkdir(outputDir, { recursive: true });
