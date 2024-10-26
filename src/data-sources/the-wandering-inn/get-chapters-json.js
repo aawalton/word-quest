@@ -12,9 +12,13 @@ async function extractChapterText(filePath) {
 
   await page.goto(`file:${filePath}`);
 
-  const chapterText = await page.evaluate(() => {
+  const chapterData = await page.evaluate(() => {
     const content = document.querySelector('.entry-content');
     if (!content) return null;
+
+    // Get chapter title
+    const title = document.querySelector('.entry-title');
+    const chapterName = title ? title.textContent.trim() : '';
 
     // Remove any script tags
     const scripts = content.querySelectorAll('script');
@@ -39,20 +43,23 @@ async function extractChapterText(filePath) {
       textArray.pop();
     }
 
-    return textArray;
+    // Join the text array into a single string
+    return {
+      chapterName,
+      chapterText: textArray.join('\n\n')
+    };
   });
 
   await browser.close();
-  return chapterText;
+  return chapterData;
 }
 
-export async function getChaptersJson() {  // renamed from processChapters
+export async function getChaptersJson() {
   const chaptersDir = path.join(__dirname, '../../../data/html/series/the-wandering-inn/chapters');
   const outputDir = path.join(__dirname, '../../../data/json/series/the-wandering-inn/chapters');
 
   try {
     await fs.mkdir(outputDir, { recursive: true });
-
     const files = await fs.readdir(chaptersDir);
 
     for (const file of files) {
@@ -68,11 +75,20 @@ export async function getChaptersJson() {  // renamed from processChapters
           // File doesn't exist, proceed with processing
         }
 
-        const chapterText = await extractChapterText(filePath);
+        const chapterData = await extractChapterText(filePath);
 
-        if (chapterText) {
-          const jsonOutput = JSON.stringify({ chapterText }, null, 2);
-          await fs.writeFile(outputPath, jsonOutput);
+        if (chapterData) {
+          const chapterId = path.parse(file).name;
+          const jsonOutput = {
+            "chapter-id": chapterId,
+            "chapter-name": chapterData.chapterName,
+            "series-id": "the-wandering-inn",
+            "chapter-text": chapterData.chapterText,
+            "word-count": chapterData.chapterText.split(/\s+/).length,
+            "completed": true
+          };
+
+          await fs.writeFile(outputPath, JSON.stringify(jsonOutput, null, 2));
           console.log(`Processed: ${file}`);
         } else {
           console.log(`Failed to extract text from: ${file}`);
